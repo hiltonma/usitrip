@@ -73,7 +73,7 @@ if (isset($_GET['action']) && ($_GET['action'] == 'process')) {
 			$customer_email_address = $str_arr[0].'@'.$str_arr[1];
 
 			$_content = '亲爱的会员：'.$customer_email_address."您好！";
-			$_content.= "感谢您使用走四方旅游网（www.usitrip.com）！";
+			$_content.= "感谢您使用走四方旅游网（208.109.123.18）！";
 			$_content.= "根据您找回密码的申请，我们已自动为您变更了新的登录密码。";
 			$_content.= "您的新密码为：".$new_password.'（注意区分大小写）';
 			$_content.= '请使用新密码登录，或及时修改成便于您记住的密码，并妥善保管。';

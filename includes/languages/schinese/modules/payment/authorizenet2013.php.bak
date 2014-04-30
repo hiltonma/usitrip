@@ -1,0 +1,4 @@
+<?php 
+define('MODULE_PAYMENT_AUTHORIZENET2013_TEXT_TITLE', 'Authorizenet信用卡2013版');
+define('MODULE_PAYMENT_AUTHORIZENET2013_TEXT_DESCRIPTION', 'Authorizenet信用卡2013版');
+?>

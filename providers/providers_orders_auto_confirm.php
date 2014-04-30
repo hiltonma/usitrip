@@ -1,5 +1,5 @@
 <?php
-//if($_SERVER['HTTP_HOST'] != 'www.usitrip.com' && $_SERVER['HTTP_HOST'] != 'cn.usitrip.com'){ //only allow for demo site  
+//if($_SERVER['HTTP_HOST'] != '208.109.123.18' && $_SERVER['HTTP_HOST'] != 'cn.usitrip.com'){ //only allow for demo site  
 	
  if($orders_products_id > 0){
 	/*

@@ -309,13 +309,13 @@ function ajax_remove_shopping_cart(pid){
 
      <?php
 	  /*?>
-	 <div class="myTours" id="tit"><span><a href="http://www.usitrip.com/account.php">我的走四方</a></span>
+	 <div class="myTours" id="tit"><span><a href="http://208.109.123.18/account.php">我的走四方</a></span>
          <ul class="myAnother" id="my_another_tours" style="display:none">
-           <li><a href="http://www.usitrip.com/new_orders.php">我的订单</a></li>
-           <li><a href="http://www.usitrip.com/my_favorites.php">我的收藏</a></li>
+           <li><a href="http://208.109.123.18/new_orders.php">我的订单</a></li>
+           <li><a href="http://208.109.123.18/my_favorites.php">我的收藏</a></li>
          </ul>
      </div>
-     <div class="integral"><a rel="nofollow" href="http://www.usitrip.com/points.php" target="_blank">积分奖励</a></div>
+     <div class="integral"><a rel="nofollow" href="http://208.109.123.18/points.php" target="_blank">积分奖励</a></div>
 	 */?>
 
    </div>

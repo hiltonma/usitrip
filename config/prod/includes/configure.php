@@ -13,7 +13,7 @@ define('IS_LIVE_SITES', true); // if is prod site set true else set false
 define('IS_QA_SITES', false);
 define('IS_DEV_SITES', false);
 
-define('SCHINESE_HTTP_SERVER', 'http://www.usitrip.com'); //CN site 简体站域名
+define('SCHINESE_HTTP_SERVER', 'http://208.109.123.18'); //CN site 简体站域名
 define('TW_CHINESE_HTTP_SERVER', 'http://tw.usitrip.com'); //TW site 繁体站域名
 
 define('ENABLE_SSL', (in_array($_SERVER["REMOTE_ADDR"], array('113.106.94.150','223.255.242.69')) ? false : true));	//是否使用SSL安全链接(深圳的ssl没有搞好暂时不用https)
@@ -26,8 +26,8 @@ if ($_SERVER['HTTP_HOST'] == 'tw.usitrip.com' || $_GET['language']=='tw') {
 	//图片服务器主机如：http://imagecss.usitrip.com.cn，http://208.109.123.18:88不要与主站域名相同，否则会产生cookie传送的流量与时间，浪费时间
 	define('IMAGES_HOST', ($_SERVER['SERVER_PORT'] == '443' ? HTTPS_SERVER : HTTP_SERVER));
 } else {
-	define('HTTP_SERVER', 'http://www.usitrip.com');
-	define('HTTPS_SERVER', 'https://www.usitrip.com');
+	define('HTTP_SERVER', 'http://208.109.123.18');
+	define('HTTPS_SERVER', 'https://208.109.123.18');
 	define('HTTP_COOKIE_DOMAIN', '.usitrip.com');
 	define('HTTPS_COOKIE_DOMAIN', '.usitrip.com');
 	//图片服务器主机如：http://imagecss.usitrip.com.cn，http://208.109.123.18:88不要与主站域名相同，否则会产生cookie传送的流量与时间，浪费时间

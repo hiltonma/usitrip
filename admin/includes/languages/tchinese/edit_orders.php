@@ -156,7 +156,7 @@ define('TITLE_LODGING_RED_BOX', 'Please arrange no. or rooms/passengers accordin
 define('TITLE_PROVIDER_RED_BOX', 'Please send notification to provider for rooms/passengers change');
 define('TITLE_PRICE_RED_BOX', 'Do not forget to adjust price according to guest info changes');
 define('TXT_REGARDS', '真誠地,');
-define('TXT_SITE_ADDRESS_STORE', 'www.usitrip.com');
+define('TXT_SITE_ADDRESS_STORE', '208.109.123.18');
 define('TXT_REPRESNT_SIGNATURE','走四方網 客戶服務部');
 define('ERROR_GUESTNAMES_NOT_MATCHING', '<font color="#FF0000">Number of guests does not match <br />under Guest Name and Lodging.  <br />Please make adjustment.</font>');
 define('TXT_ETICKET_NOTE_CALL_TO_RECONFIRM', '<strong>Please call tour/product service company one day prior to tour start date to re-confirm your tour or pickup details.</strong><br />');

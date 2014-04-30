@@ -807,11 +807,11 @@ define('TEXT_DROP_DOWN_SELECT_REGION','選擇類別/目的地');
 define('TEXT_MU_DI_DI','選擇目的地');
 
 if(HTTP_SERVER==TW_CHINESE_HTTP_SERVER){
-	define('LANGUAGE_BUTTON','<li><a href="'.SCHINESE_HTTP_SERVER.$_SERVER['REQUEST_URI'].'" title="訪問簡體版的usitrip">&#31616;&#20307;</a></li><li class="us" style="display:none"><a href="http://www.usitrip.com/" title="to usitrip" >English</a></li>');
+	define('LANGUAGE_BUTTON','<li><a href="'.SCHINESE_HTTP_SERVER.$_SERVER['REQUEST_URI'].'" title="訪問簡體版的usitrip">&#31616;&#20307;</a></li><li class="us" style="display:none"><a href="http://208.109.123.18/" title="to usitrip" >English</a></li>');
 	define('LANGUAGE_BUTTON_1','<a href="'.SCHINESE_HTTP_SERVER.$_SERVER['REQUEST_URI'].'" title="訪問簡體版的usitrip">&#31616;&#20307;</a>');
 }else{
 	if(preg_match('/\?/',$_SERVER['REQUEST_URI'])){ $strlink = '&';}else{ $strlink = '?';}
-	define('LANGUAGE_BUTTON','<li><a href="'.HTTP_SERVER.preg_replace('/(&*)language=(tw|sc)(&*)/','',$_SERVER['REQUEST_URI']).$strlink.'language=sc'.'" title="訪問簡體版的usitrip" class="bai_lan">&#31616;&#20307;</a></li><li class="us"><a href="http://www.usitrip.com/" title="to usitrip" style="display:none">English</a></li>');
+	define('LANGUAGE_BUTTON','<li><a href="'.HTTP_SERVER.preg_replace('/(&*)language=(tw|sc)(&*)/','',$_SERVER['REQUEST_URI']).$strlink.'language=sc'.'" title="訪問簡體版的usitrip" class="bai_lan">&#31616;&#20307;</a></li><li class="us"><a href="http://208.109.123.18/" title="to usitrip" style="display:none">English</a></li>');
 	define('LANGUAGE_BUTTON_1','<a href="'.HTTP_SERVER.preg_replace('/(&*)language=(tw|sc)(&*)/','',$_SERVER['REQUEST_URI']).$strlink.'language=sc'.'" title="訪問簡體版的usitrip" class="bai_lan">&#31616;&#20307;</a>');
 }
 

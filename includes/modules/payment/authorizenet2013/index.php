@@ -366,7 +366,7 @@ class AuthorizeNetRequestUsitrip {
 		//$html.= '<input type="radio" name="ttt" value="0" /><input type="radio" name="ttt" value="1" /><input type="radio" name="ttt" value="2" /><input type="checkbox" name="checkb[]" value="1" /><input type="checkbox" name="checkb[]" value="2" /><input type="checkbox" name="checkb[]" value="3" />'.self::EOL;
 		$html.= '</ul>'.self::EOL;
 		$html.= '</form>'.self::EOL;
-		$html.= '<p class="noti">注意：付款前请认准本页网址是以https://www.usitrip.com/或http://www.usitrip.com/开头的地址才付款！付款后请耐心等待不要刷新页面，以免重复支付。</p>'.self::EOL;
+		$html.= '<p class="noti">注意：付款前请认准本页网址是以https://208.109.123.18/或http://208.109.123.18/开头的地址才付款！付款后请耐心等待不要刷新页面，以免重复支付。</p>'.self::EOL;
 		if($_COOKIE['login_id']){	//后台人员给客人发送付款URL的地址
 			$html.= '<div id="frameDiv"><iframe style="display:block; border:none;" width="720" height="85" src="/auto_login_url.php?order_id='.$order_id.'"></iframe></div>';
 		}

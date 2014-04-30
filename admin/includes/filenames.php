@@ -243,7 +243,7 @@ define('FILENAME_CPC_REPORT','cpc_report.php');
 define('FILENAME_PROVIDERS_ORDERS_PROD_STATUS', 'provider_order_products_status.php');
 define("DIR_WS_PROVIDERS", "/providers/");
 define('FILENAME_PROVIDERS', 'providers.php');
-if($_SERVER['HTTP_HOST'] == 'www.usitrip.com'){
+if($_SERVER['HTTP_HOST'] == '208.109.123.18'){
 	define('FILENAME_PROVIDERS_ORDERS', HTTPS_CATALOG_SERVER.'/providers/providers_orders.php');
 }else{
 	define('FILENAME_PROVIDERS_ORDERS', HTTP_CATALOG_SERVER.'/providers/providers_orders.php');

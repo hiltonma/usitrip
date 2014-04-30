@@ -1,0 +1,1 @@
+<?php include('ajax_ask_module.php'); ?>

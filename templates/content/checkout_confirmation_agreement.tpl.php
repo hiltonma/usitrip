@@ -8,7 +8,7 @@
     <td>
 	<p>请在预订和购买走四方网（usitrip.com）网站上的旅行团以及旅行团相关的产品前仔细阅读此顾客须知的各项条款，以便您能全面了解双方的权利和责任。作为走四方网的顾客，您必须认同您所阅读的内容，理解并同意以下各项条款，并赞成其所有内容, 包括其它的一些更新， 走四方网保持最终解释权。 </p>
       <br>
-	  <p style="padding:5px 0 10px;">走四方网注册商标<img style="vertical-align:middle;" title="此商标归走四方网所有。" alt="此商标归走四方网所有。" src="<?php if ($_SERVER['SERVER_PORT'] == 443) {?>https<?php }else{?>http<?php }?>://www.usitrip.com/image/logo_s.gif">。</p>
+	  <p style="padding:5px 0 10px;">走四方网注册商标<img style="vertical-align:middle;" title="此商标归走四方网所有。" alt="此商标归走四方网所有。" src="<?php if ($_SERVER['SERVER_PORT'] == 443) {?>https<?php }else{?>http<?php }?>://208.109.123.18/image/logo_s.gif">。</p>
 	  		<p> <strong>旅行权益 </strong><br>
 导游在旅行途中会为客人推荐自费项目，客人自主决定是否参加。<br>
 行程中导游若有违反合同之处，旅客有权抵制。如有争议，请旅客和导游先行友好协商，并请及时联络我们反馈，我们将协调解决。为了有效的维护旅客的利益，请旅客在争端开始前联络我们调解。行程结束之后的投诉，如无证据证明，旅行社保留不予受理的权力。<br>
@@ -87,7 +87,7 @@
 
 	   <table width="100%" cellspacing="0" cellpadding="0" border="0">
   <tbody><tr> 
-    <td class="main">	* 您的订单一旦成功提交，我们就开始启动为您预定的程式。通常我们会在1-2个工作日内为您确认。订单预定程式启动后，取消费用即刻生效。如果您的预订因为座位已满或无法出团而未能确认，我们将全额退款。我们建议每位参团的游客都仔细阅读我们的退款条例，同时也请考虑购买一份 <a href="http://www.usitrip.com/tour_america_need.php">旅游保险</a>。请阅读可供选择的 <a href="http://www.usitrip.com/tour_america_need.php">旅游保险</a> 类别。<br>
+    <td class="main">	* 您的订单一旦成功提交，我们就开始启动为您预定的程式。通常我们会在1-2个工作日内为您确认。订单预定程式启动后，取消费用即刻生效。如果您的预订因为座位已满或无法出团而未能确认，我们将全额退款。我们建议每位参团的游客都仔细阅读我们的退款条例，同时也请考虑购买一份 <a href="http://208.109.123.18/tour_america_need.php">旅游保险</a>。请阅读可供选择的 <a href="http://208.109.123.18/tour_america_need.php">旅游保险</a> 类别。<br>
 
       <br>      * 以下所列订单取消费用标准适用于所有预订，包括团及其相关服务、酒店、接驳服务及其它，旅游行程页面“特别提醒”中提到的所定团有特殊费率的除外。 <br>
       <br>	 
@@ -138,7 +138,7 @@
 
 		
 	   
-	    <br>* 请将扫描件或电子版 <a target="_blank" href="http://www.usitrip.com/cancellation_request_form.doc">退单申请表</a> 发送至：<a href="mailto:service@usitrip.com" class="sp3">service@usitrip.com</a> 。请点击<a target="_blank" href="http://www.usitrip.com/cancellation_request_form.doc"><u>退单申请表</u></a>进行表格下载。<br>
+	    <br>* 请将扫描件或电子版 <a target="_blank" href="http://208.109.123.18/cancellation_request_form.doc">退单申请表</a> 发送至：<a href="mailto:service@usitrip.com" class="sp3">service@usitrip.com</a> 。请点击<a target="_blank" href="http://208.109.123.18/cancellation_request_form.doc"><u>退单申请表</u></a>进行表格下载。<br>
 
 	 * 请在表单中完整填写以下内容：您的预订号码，预订人全名，电子邮件位址，出团日期，团的名称，信用卡交易时间（您预订产品的时间），交易金额，电话号码，简短阐述取消的原因（我们需要知道确切的资讯，才能对您的退款进行评估。）</p>	
 <br>* 修改订单费用：<br>

@@ -114,7 +114,7 @@ class companions_reminder_mail extends send_mail_ready{
 		foreach ($lines as $key => $val) {
 			$this->mail_content .= '线路是：<a href="' . str_replace('/admin/','/',tep_href_link($val['products_urlname']) . '.html') . '" target="_blank">' . $val['products_name'] . '</a>' . "\n";
 		}
-		$this->mail_content .= '若您还需要订购行程，请重新在走四方<a href="http://www.usitrip.com/" target="_blank">www.usitrip.com</a>上选择订购，若有问题请您及时联系走四方客服人员，谢谢。' . "\n";
+		$this->mail_content .= '若您还需要订购行程，请重新在走四方<a href="http://208.109.123.18/" target="_blank">208.109.123.18</a>上选择订购，若有问题请您及时联系走四方客服人员，谢谢。' . "\n";
 		$this->mail_content .= '点此连接查看被取消的订单<a href="'.$links.'" target="_blank">' . $links . '</a>。（注：如果点击打不开链接，请复制该地址到浏览器地址栏打开。）' . "\n\n";
 		
 

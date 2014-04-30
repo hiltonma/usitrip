@@ -6,7 +6,7 @@
  */
 /**
  * 记录在线人数等信息
- * @see 在http://www.usitrip.com/admin/whos_online.php会用到这里记录的这些信息
+ * @see 在http://208.109.123.18/admin/whos_online.php会用到这里记录的这些信息
  */
 function tep_update_whos_online() {
 	$wo_ip_address = tep_get_ip_address(); //getenv('REMOTE_ADDR');

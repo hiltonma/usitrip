@@ -90,7 +90,7 @@ require_once('travel_companion_tpl.php');
 
 <?php
 // display only on prod site .
-if($_SERVER['HTTP_HOST']=='www.usitrip.com' || $_SERVER['HTTP_HOST']=='www.usitrip.com'){
+if($_SERVER['HTTP_HOST']=='208.109.123.18' || $_SERVER['HTTP_HOST']=='208.109.123.18'){
 
 	/*google track code*/
 	if(strtolower(CHARSET)=='gb2312'){

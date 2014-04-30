@@ -52,7 +52,7 @@
                   </dl>
                 </div>
               <div class="about3_3">
-           		<h4 class="about-title">公司地址<span>走四方旅游网 http://www.usitrip.com/</span></h4>
+           		<h4 class="about-title">公司地址<span>走四方旅游网 http://208.109.123.18/</span></h4>
     <dl>
                 	<dt class="s_1">美国</dt>
                     <dd>

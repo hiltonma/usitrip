@@ -778,7 +778,7 @@ define('BOX_FEATURED_GROUP_DEAL', 'Group Deals');
 define('TEXT_FILENAME_WAITLIST','Wait List');
 define('BOX_PHONE_BOOKING','Phone Booking');
 
-define('EMAIL_FOOTER_SIGNATURE', "\n \n Best Regards \n\n 旅游顾问工号(Travel Advisor): %s \n <a href=http://www.usitrip.com target=_blank>usitrip.com</a>(走四方)&nbsp;&nbsp;&nbsp;&nbsp;Email: service@usitrip.com \n %s ");
+define('EMAIL_FOOTER_SIGNATURE', "\n \n Best Regards \n\n 旅游顾问工号(Travel Advisor): %s \n <a href=http://208.109.123.18 target=_blank>usitrip.com</a>(走四方)&nbsp;&nbsp;&nbsp;&nbsp;Email: service@usitrip.com \n %s ");
 
 define('EMAIL_SEPARATOR', '------------------------------------------------------');
 define('EMAIL_TEXT_SUBJECT', 'Order Update');

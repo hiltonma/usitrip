@@ -50,7 +50,7 @@ if($_POST['action']=='send_mail_to_friends'){
 		$hotel_sql = tep_db_query('SELECT * FROM `hotel` WHERE hotel_id="'.(int)$hotel_id.'" LIMIT 1');
 		$hotel_row = tep_db_fetch_array($hotel_sql);
 
-		$email_text = 'Hi，我在走四方网（www.usitrip.com）上发现了一个很不错的酒店 '.$hotel_row['hotel_name'].'，你不妨去看看吧！'."\n";
+		$email_text = 'Hi，我在走四方网（208.109.123.18）上发现了一个很不错的酒店 '.$hotel_row['hotel_name'].'，你不妨去看看吧！'."\n";
 		$email_text .= '这个酒店的网址是：'.tep_href_link('hotel.php','hotel_id='.(int)$hotel_row['hotel_id'])."\n";
 		$email_text = db_to_html($email_text);
 		

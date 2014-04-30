@@ -9,7 +9,7 @@ ob_start();
 //我们的优势start{
 
 ?>
-<?php $temp_href = tep_href_link('about_us.php'); $temp_href='http://www.usitrip.com/web_action/2013_6youshi/';?>
+<?php $temp_href = tep_href_link('about_us.php'); $temp_href='http://208.109.123.18/web_action/2013_6youshi/';?>
     <!--  <div class="advantage_warp border_1 margin_b10 background_1"> 
           <div class="title_1">
             <h2><a href="<?php echo $temp_href?>" target="_blank">为什么选择走四方</a></h2>

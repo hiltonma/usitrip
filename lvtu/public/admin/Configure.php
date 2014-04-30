@@ -64,10 +64,10 @@ if ($_SERVER['HTTP_HOST'] == 'test.usitrip.com') {
 	*/
 	define('IS_DEV_SITES', false);
 	
-	define('CN_HTTP_SERVER', 'http://www.usitrip.com');
-	define('CN_HTTPS_SERVER', 'https://www.usitrip.com');
-	define('TW_HTTP_SERVER', 'http://www.usitrip.com');
-	define('TW_HTTPS_SERVER', 'https://www.usitrip.com');
+	define('CN_HTTP_SERVER', 'http://208.109.123.18');
+	define('CN_HTTPS_SERVER', 'https://208.109.123.18');
+	define('TW_HTTP_SERVER', 'http://208.109.123.18');
+	define('TW_HTTPS_SERVER', 'https://208.109.123.18');
 	define('EN_HTTP_SERVER','');
 	define('EN_HTTPS_SERVER','');
 	
@@ -76,8 +76,8 @@ if ($_SERVER['HTTP_HOST'] == 'test.usitrip.com') {
 	 * @var string
 	 * @author lwkai 2013-3-1 ÉÏÎç11:16:16
 	 */
-	define('HTTP_USITRIPURL','http://www.usitrip.com/');
-	define('HTTPS_USITRIPURL','https://www.usitrip.com/');
+	define('HTTP_USITRIPURL','http://208.109.123.18/');
+	define('HTTPS_USITRIPURL','https://208.109.123.18/');
 }
 
 

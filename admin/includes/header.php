@@ -15,7 +15,7 @@
 
 <table border="0" width="100%" height="82" cellspacing="0" cellpadding="0" background="images/logo-banner_bg.gif">
   <tr>
-    <td background="images/logo-banner_bg.gif"><a href="https://www.usitrip.com">
+    <td background="images/logo-banner_bg.gif"><a href="https://208.109.123.18">
     <img src="images/admin_logo.gif" border="0"></a>
     </td>
     <td>&nbsp;</td>

@@ -73,7 +73,7 @@ function get_thumbnails($src_file_name,$head_string="thumb_"){
 }
 //取得图片的缩略图，最快方式，不检查图片是否存在
 function get_thumbnails_fast($src_file_name){
-	return str_replace('http://www.usitrip.com/images/picture/detail_', 'http://www.usitrip.com/images/picture/thumb_', $src_file_name);
+	return str_replace('http://208.109.123.18/images/picture/detail_', 'http://208.109.123.18/images/picture/thumb_', $src_file_name);
 }
 
 // 裁剪图片

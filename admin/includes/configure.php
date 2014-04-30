@@ -13,18 +13,18 @@ define('IS_LIVE_SITES', true); // if is prod site set true else set false
 define('IS_QA_SITES', false);
 define('IS_DEV_SITES', false);
 
-define('SCHINESE_HTTP_SERVER', 'http://www.usitrip.com'); //CN site
+define('SCHINESE_HTTP_SERVER', 'http://208.109.123.18'); //CN site
 define('TW_CHINESE_HTTP_SERVER', 'http://tw.usitrip.com'); //TW site
 
-define('HTTP_SERVER', 'http://www.usitrip.com');
-define('HTTPS_SERVER', 'http://www.usitrip.com');
+define('HTTP_SERVER', 'http://208.109.123.18');
+define('HTTPS_SERVER', 'http://208.109.123.18');
 define('HTTP_COOKIE_DOMAIN', '.usitrip.com');
 define('HTTPS_COOKIE_DOMAIN', '.usitrip.com');
-define('HTTP_CATALOG_SERVER', 'http://www.usitrip.com');
-define('HTTPS_CATALOG_SERVER', 'http://www.usitrip.com');
+define('HTTP_CATALOG_SERVER', 'http://208.109.123.18');
+define('HTTPS_CATALOG_SERVER', 'http://208.109.123.18');
 define('ENABLE_SSL_CATALOG', 'false');
 
-if (isset($_SERVER['HTTP_HOST']) && $_SERVER['HTTP_HOST'] != "www.usitrip.com") {
+if (isset($_SERVER['HTTP_HOST']) && $_SERVER['HTTP_HOST'] != "208.109.123.18") {
 	$url = SCHINESE_HTTP_SERVER . $_SERVER['REQUEST_URI'];
 	header('Location: ' . $url);
 	exit();

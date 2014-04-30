@@ -1,0 +1,1 @@
+<?php echo 'cancellation-and-refund-policy.tpl.php';?>

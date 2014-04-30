@@ -113,7 +113,7 @@ Your trip ,Our care!<br />
         <tr>
         	<td style="text-align:right;padding-bottom:10px;">
             	<div style="margin:0;padding:0;line-height:22px;">
-                	<p style="margin:0;padding:0;padding-right:10px;text-decoration:underline;font-weight:bold;">www.usitrip.com|走四方旅游网</p>
+                	<p style="margin:0;padding:0;padding-right:10px;text-decoration:underline;font-weight:bold;">208.109.123.18|走四方旅游网</p>
                     <div style="margin:0;padding:0;position:relative;">
                     	<img src="<?php echo HTTP_SERVER?>/image/plus.jpg" height="33" width="32" style="position:absolute;right:10px;top:3px;" />
                         <p style="margin:0;padding:0;padding-right:50px;">全球华人首选出国旅游网站<br />美国BBB认证最高商誉评级</p>

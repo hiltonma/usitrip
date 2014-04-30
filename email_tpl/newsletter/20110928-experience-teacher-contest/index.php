@@ -8,7 +8,7 @@ header("Content-type: text/html; charset=gb2312");
 	<tr><td background="{HTTP_SERVER}/email_tpl/newsletter/20110928-experience-teacher-contest/{_IMAGES_}/nl_02.jpg" width="658" height="402" valign="top" align="left" title="走四方网，走四方旅游体验师大赛，Ipad2大奖等你拿，更有机会赢取$1000美国之旅！"><a href="{HTTP_SERVER}/trip_player.php" style="width:652px; height:402px; display:block"  title="走四方网，走四方旅游体验师大赛，Ipad2大奖等你拿，更有机会赢取$1000美国之旅！"></a></td></tr>
 	<tr><td background="{HTTP_SERVER}/email_tpl/newsletter/20110928-experience-teacher-contest/{_IMAGES_}/nl_03.jpg" width="658" height="109" valign="top" align="left">
 	<p style="padding-left:30px; padding-top:10px; font-size:14px; color:#3a3a3a; line-height:20px;"><span style="color:#FF6600">活动时间：2011年10月12日--2011年11月22日。</span><br />
-<span style=" font-size:18px; line-height:26px;">www.usitrip.com<br />
+<span style=" font-size:18px; line-height:26px;">208.109.123.18<br />
 快乐旅行，从走四方开始</span></p>
 	</td></tr>
     <tr><td background="{HTTP_SERVER}/email_tpl/newsletter/20110928-experience-teacher-contest/{_IMAGES_}/nl_04.jpg" width="658" height="76" valign="top" align="left">

@@ -3695,7 +3695,7 @@ function auto_cancelled_orders_for_days($daysNum = 15){
 	$customer_notified.='（温馨提示：在您成功支付、收到旅游电子参团凭证前，您的座位未被保留）'."\n";
 	$customer_notified.='订单详情：<a target="_blank" href="{订单详细页}">{订单ID}</a>（您可以使用预订时注册的Email登录您的账户来查询订单详情）'."\n";
 	$customer_notified.='如果您已经成功付款，请直接与我们客服人员联系进行核实，及时帮您处理。'."\n";
-	$customer_notified.='如果您还需要继续预订此行程或者更换其他行程，请在<a target="_blank" href="http://www.usitrip.com">www.usitrip.com</a>重新选购，感谢您对走四方的信任和支持！'."\n\n";
+	$customer_notified.='如果您还需要继续预订此行程或者更换其他行程，请在<a target="_blank" href="http://208.109.123.18">208.109.123.18</a>重新选购，感谢您对走四方的信任和支持！'."\n\n";
 
 	while ($rows = tep_db_fetch_array($sql)){
 		$date_time = date('Y-m-d H:i:s');

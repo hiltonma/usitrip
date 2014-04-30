@@ -101,11 +101,11 @@ define(EMAIL_TITLE_RECEIPT_SENT,'Receipt of Reservation');
 
 //status id: 100002
 define(EMAIL_TITLE_TICKET_ISSUED,'Your E-Ticket has been issued.');
-define(EMAIL_COMMENTS_TICKET_ISSUED,"您的參團憑證已發送到您的電子郵箱。請仔細閱讀參團憑證上的所有信息，如果有問題，請及時通知我們。我們將不會對在出團的72小時內才通知參團憑證出錯而造成的任何後果承擔責任。\n\n您還可以通過訪問http://www.usitrip.com/login.php ，「查看」您的前一個預訂，並點擊「參團憑證」按鈕查看您的參團憑證。");
+define(EMAIL_COMMENTS_TICKET_ISSUED,"您的參團憑證已發送到您的電子郵箱。請仔細閱讀參團憑證上的所有信息，如果有問題，請及時通知我們。我們將不會對在出團的72小時內才通知參團憑證出錯而造成的任何後果承擔責任。\n\n您還可以通過訪問http://208.109.123.18/login.php ，「查看」您的前一個預訂，並點擊「參團憑證」按鈕查看您的參團憑證。");
 
 //status id: 100000
 define(EMAIL_TITLE_CONFIRMED,'Reservation Confirmation');
-define(EMAIL_COMMENTS_CONFIRMED,"祝賀您！您在usitrip的預訂已經被確定了。請保留此確定郵件和訂單號以備以後使用。我們會在您出發日期的前兩天或三天，也可能更短時間內，發給您參團憑證。\n\n如果您預訂的團包含機場接/送機，並且您還沒有提供我們您的航班信息，請您儘快到http://www.usitrip.com/account.php 更新您的航班信息。如果沒有航班信息，我們將無法出票。");
+define(EMAIL_COMMENTS_CONFIRMED,"祝賀您！您在usitrip的預訂已經被確定了。請保留此確定郵件和訂單號以備以後使用。我們會在您出發日期的前兩天或三天，也可能更短時間內，發給您參團憑證。\n\n如果您預訂的團包含機場接/送機，並且您還沒有提供我們您的航班信息，請您儘快到http://208.109.123.18/account.php 更新您的航班信息。如果沒有航班信息，我們將無法出票。");
 
 //status id: 100003
 define(EMAIL_TITLE_UPDATE,'Reservation Update');
@@ -123,13 +123,13 @@ define(EMAIL_COMMENTS_PAYMENT_ADJUSTED,"調整後的價格:    調整後的底價:\n\n原始價
 define(EMAIL_COMMENTS_CANCELLED,"很遺憾，現在我們暫時不能為您預訂此團，但仍然感謝您對我們的關注.\n\n期待您的再次訪問。");
 
 //status id: 100011  Charge Failed
-define(EMAIL_COMMENTS_CHARGE_FAILED,"我們試圖在您提供的信用卡上收取$  ，但系統操作失敗了。\n\n請您與您的信用卡發行商聯係，以確保下次我們在收到您的文件後再次操作時可以成功。\n\n或者如果您想使用另一張信用卡，請在信用卡帳戶委託表上填寫更改後的信息，並連同附加文件發送給我們。\nhttp://www.usitrip.com/acknowledgement_of_card_billing.php.\n非常感謝您的購買，期待您儘快的回答。 ");
+define(EMAIL_COMMENTS_CHARGE_FAILED,"我們試圖在您提供的信用卡上收取$  ，但系統操作失敗了。\n\n請您與您的信用卡發行商聯係，以確保下次我們在收到您的文件後再次操作時可以成功。\n\n或者如果您想使用另一張信用卡，請在信用卡帳戶委託表上填寫更改後的信息，並連同附加文件發送給我們。\nhttp://208.109.123.18/acknowledgement_of_card_billing.php.\n非常感謝您的購買，期待您儘快的回答。 ");
 
 //status id: 100012  Flight Information Needed
-define(EMAIL_COMMENTS_FLIGHT_INFO_NEEDED,"請在您預訂航班後，儘快登陸http://www.usitrip.com/account.php在您的帳戶信息裏更新您的航班信息。沒有航班信息，我們將無法發送參團憑證給您。希望您能在完成次操作後發郵件到service@usitrip.com，以通知我們您已經進行了更新。非常感謝您的參與。");
+define(EMAIL_COMMENTS_FLIGHT_INFO_NEEDED,"請在您預訂航班後，儘快登陸http://208.109.123.18/account.php在您的帳戶信息裏更新您的航班信息。沒有航班信息，我們將無法發送參團憑證給您。希望您能在完成次操作後發郵件到service@usitrip.com，以通知我們您已經進行了更新。非常感謝您的參與。");
 
 //status id: 100013  Confirmed, Doc. Pending
-define(EMAIL_COMMENTS_CONFIRM_DOC_PENDING,"祝賀您！您在usitrip的預訂已經被確定了。請保留此確定郵件和訂單號以備以後使用。\n\n在收到您發送的所需支持文件後我們會儘快發給您參團憑證（參加旅行團的憑證）。\n閱讀所需支持文件詳情以及如何發送文件，請參考http://www.usitrip.com/acknowledgement_of_card_billing.php\n感謝您的參與。");
+define(EMAIL_COMMENTS_CONFIRM_DOC_PENDING,"祝賀您！您在usitrip的預訂已經被確定了。請保留此確定郵件和訂單號以備以後使用。\n\n在收到您發送的所需支持文件後我們會儘快發給您參團憑證（參加旅行團的憑證）。\n閱讀所需支持文件詳情以及如何發送文件，請參考http://208.109.123.18/acknowledgement_of_card_billing.php\n感謝您的參與。");
 
 //status id: 100014  Confirmed, Full Doc. Received
 define(EMAIL_COMMENTS_CONFIRM_FULL_DOC_RECEIVED,"感謝您在在最短的時間內發送給我們所需的文件。我們已經確定收到您的文件，一切正常，並處於進程中。我們將儘快發給您參團憑證。");

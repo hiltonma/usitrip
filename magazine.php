@@ -189,13 +189,13 @@ if(!isset($_GET['download']) || !(int)$_GET['download']){
 	//}
 	
 	if(CHARSET == 'big5'){
-		$Content = str_replace('www.usitrip.com','tw.usitrip.com',$Content);
+		$Content = str_replace('208.109.123.18','tw.usitrip.com',$Content);
 		
 		$Content = str_replace('"images/','"'.$WEBROOT.'images_ft/',$Content);
 		$Content = str_replace('\'images/','\''.$WEBROOT.'images_ft/',$Content);
 		$Content = str_replace(':images/',':'.$WEBROOT.'images_ft/',$Content);
 	}else{
-		//$Content = str_replace('www.usitrip.com','cn.usitrip.com',$Content);
+		//$Content = str_replace('208.109.123.18','cn.usitrip.com',$Content);
 		
 		$Content = str_replace('"images/','"'.$WEBROOT.'images/',$Content);
 		$Content = str_replace('\'images/','\''.$WEBROOT.'images/',$Content);

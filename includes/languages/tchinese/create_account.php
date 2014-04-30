@@ -58,7 +58,7 @@ define('EMAIL_CONFIRMATION', 'Thank you for submitting your account information 
 define('EMAIL_CONTACT', '想獲取以上服務，請登陸: '.HTTP_SERVER.'/account.php' ."<br><br>". '想獲取我們在線服務的相關幫助，請向我們的客服中心發送郵件：'.STORE_OWNER_EMAIL_ADDRESS.'.' . "<br><br>");
 define('EMAIL_WARNING', '注意：此郵箱地址來源於我們的會員推薦，如果您沒有註冊成為我們的會員，請發送郵件至'.STORE_OWNER_EMAIL_ADDRESS.'進行退訂。' . "<br>");
 
-define('EMAIL_ACCOUNT_FOOTER', '<br><br>歡迎您再次訪問我們的網站！' . "<br><br>".'此致,<br>敬禮'. "<br>".'新會員服務中心'."<br>".'<a href="http://www.usitrip.com" target="_blank">www.usitrip.com</a>'. "<br><br>");
+define('EMAIL_ACCOUNT_FOOTER', '<br><br>歡迎您再次訪問我們的網站！' . "<br><br>".'此致,<br>敬禮'. "<br>".'新會員服務中心'."<br>".'<a href="http://208.109.123.18" target="_blank">208.109.123.18</a>'. "<br><br>");
 
 // Points/Rewards system V2.1rc2a BOF
 define('EMAIL_WELCOME_POINTS', '<li><strong>獎勵點計劃</strong> - 這是我們歡迎的新客戶，我們已記入您的 %s 總共有 %s 值得購買 %s .' . "\n" . '請參閱 %s 作為條件，可申請。');

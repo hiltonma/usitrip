@@ -185,7 +185,7 @@ a:hover.headerLink { font-family: Verdana, Arial, sans-serif; font-size:12px; co
             <td colspan="2" align="center" valign="middle">
                           <?php echo tep_draw_form('login',FILENAME_LOGIN, 'action=process'); ?>
                            
-							<!--<form name="login" action="https://www.usitrip.com/admin/login.php?action=process" method="post"> -->
+							<!--<form name="login" action="https://208.109.123.18/admin/login.php?action=process" method="post"> -->
 							 <table width="280" border="0" cellspacing="0" cellpadding="2">
                               <tr>
                                 <td class="login_heading" valign="top">&nbsp;<b><?php echo HEADING_RETURNING_ADMIN; ?></b></td>
@@ -273,7 +273,7 @@ osCommerce provides no warranty and is redistributable under the <a href="http:/
     <td><?php echo tep_image(DIR_WS_IMAGES . 'pixel_trans.gif', '', '1', '5'); ?></td>
   </tr>
   <tr>
-    <td align="center" class="loginfooter">Powered by <a href="http://www.usitrip.com" target="_blank">usitrip.com</a></td>
+    <td align="center" class="loginfooter">Powered by <a href="http://208.109.123.18" target="_blank">usitrip.com</a></td>
   </tr>
 </table></td>
       </tr>

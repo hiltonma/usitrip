@@ -166,7 +166,7 @@ define('TXT_EMAIL_NOTIFY_CUSTOMER_REFUND_BY_CHECK','我們已將$%s 以支票的方式退還
 define('TXT_EMAIL_NOTIFY_CUSTOMER_REFUND_BY_CASH_PAYMENT','我們已按要求將您為預訂支付的$%s 以現金的方式退還給您。<br><br> 很高興能夠為您服務，歡迎再次訂購我們的產品。<br><br> We have refunded $%s in cash to you per your request for your reservation.<br><br>We appreciate the opportunity that you provided for us to serve you and we hope that you will come back visit us in the future.');
 define('TXT_EMAIL_NOTIFY_CUSTOMER_REFUND_BY_WIRE_TRANFER','我們已經以電匯的方式將您為預訂支付的 $%s 退還給您。電匯退款需要幾天處理時間，請諒解。<br><br> 很高興能夠為您服務，歡迎再次訂購我們的產品。<br><br> We have refunded you $%s by wire transfer per your request for your reservation. Please allow a few days for you to receive the refund by wire transfer.<br><br>We appreciate the opportunity that you provided for us to serve you and we hope that you will come back visit us in the future.');
 define('TXT_REGARDS', '真誠地,');
-define('TXT_SITE_ADDRESS_STORE', 'www.usitrip.com');
+define('TXT_SITE_ADDRESS_STORE', '208.109.123.18');
 define('TXT_REPRESNT_SIGNATURE','走四方網 客戶服務部');
 define('TXT_EMAIL_NOTIFY_CUSTOMER_REFUND_BY_CREDIT_ISSUED','我們已經按要求將您為預定支付的 $%s 以信用的方式退還到您的帳戶中。<br><br>請登陸我的走四方，在我的帳號>>我的信用中查看金額：<br><br>'.HTTP_SERVER.'/my_credits.php<br><br>很高興能夠為您服務，歡迎再次訂購我們的產品。');
 ?>

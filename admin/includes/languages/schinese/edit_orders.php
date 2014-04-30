@@ -100,7 +100,7 @@ define('TXT_SEND_MESSAGE', '发送信息');
 define('TXT_PROVIDER_STATUS_MAIL_FROM', 'USITRIP');
 define('EMAIL_ORDERS_PRODUCTS_STATUS_CHANGED_SUBJECT', '(%s) Please help '.TXT_PROVIDER_STATUS_MAIL_FROM.' update your orders NO: %s-%s ');	//三个%s分别为供应商订单状态、订单号和供应商代码
 define('EMAIL_ORDERS_PRODUCTS_STATUS_CHANGED_SUBJECT_NEW_ORDER', '(%s) Please help '.TXT_PROVIDER_STATUS_MAIL_FROM.' confirm order NO: %s-%s ');	//new booking时的邮件主题
-define('EMAIL_ORDERS_PRODUCTS_STATUS_CHANGED_BODY', " Tour: %s \n Departure Date: %s \n Order Status: %s %s \n\n Please click the following link to do this order. Thanks. \n\n <a href='%s'>%s</a> (log in with your Email and password)\n\n<b style=color:#F00;>(Don't send the comfirmation by this email, Just send invoice back by this email)</b>\n\n Thanks \n %s (Operator: %s) \n\n\n"."Usitrip走四方 (United stars International Ltd) \n Tel: 1-626-898-7800, 1-225-754-4325, 1-225-304-4893 \n Fax: 1-626-569-0580 \n Email: order@usitrip.com usitrip@gmail.com \n Website: www.usitrip.com");
+define('EMAIL_ORDERS_PRODUCTS_STATUS_CHANGED_BODY', " Tour: %s \n Departure Date: %s \n Order Status: %s %s \n\n Please click the following link to do this order. Thanks. \n\n <a href='%s'>%s</a> (log in with your Email and password)\n\n<b style=color:#F00;>(Don't send the comfirmation by this email, Just send invoice back by this email)</b>\n\n Thanks \n %s (Operator: %s) \n\n\n"."Usitrip走四方 (United stars International Ltd) \n Tel: 1-626-898-7800, 1-225-754-4325, 1-225-304-4893 \n Fax: 1-626-569-0580 \n Email: order@usitrip.com usitrip@gmail.com \n Website: 208.109.123.18");
 define('TEXT_INVOICE_NO', 'Invoice NO:');
 define('TEXT_INVOICE_TOTAL', 'Invoice Total:');
 define('TEXT_INVOICE_COMMENT', 'Invoice Comment:');
@@ -149,7 +149,7 @@ define('TITLE_LODGING_RED_BOX', 'Please arrange no. or rooms/passengers accordin
 define('TITLE_PROVIDER_RED_BOX', 'Please send notification to provider for rooms/passengers change');
 define('TITLE_PRICE_RED_BOX', 'Do not forget to adjust price according to guest info changes');
 define('TXT_REGARDS', '真诚地,');
-define('TXT_SITE_ADDRESS_STORE', 'www.usitrip.com');
+define('TXT_SITE_ADDRESS_STORE', '208.109.123.18');
 define('TXT_REPRESNT_SIGNATURE','走四方网 客户服务部');
 define('ERROR_GUESTNAMES_NOT_MATCHING', '<font color="#FF0000">Number of guests does not match <br />under Guest Name and Lodging.  <br />Please make adjustment.</font>');
 define('TXT_ETICKET_NOTE_CALL_TO_RECONFIRM', '<strong>Please call tour/product service company one day prior to tour start date to re-confirm your tour or pickup details.</strong><br />');

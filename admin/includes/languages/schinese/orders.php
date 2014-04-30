@@ -137,7 +137,7 @@ define('TXT_SEND_MESSAGE', 'Send');
 define('TXT_PROVIDER_STATUS_MAIL_FROM', '走四方网');
 define('EMAIL_ORDERS_PRODUCTS_STATUS_CHANGED_SUBJECT', '(%s) Please help '.TXT_PROVIDER_STATUS_MAIL_FROM.' update your orders NO: %s-%s ');	//三个%s分别为供应商订单状态、订单号和供应商代码
 define('EMAIL_ORDERS_PRODUCTS_STATUS_CHANGED_SUBJECT_NEW_ORDER', '(%s) Please help '.TXT_PROVIDER_STATUS_MAIL_FROM.' confirm order NO: %s-%s ');	//new booking时的邮件主题
-define('EMAIL_ORDERS_PRODUCTS_STATUS_CHANGED_BODY', " Tour: %s \n Departure Date: %s \n Order Status: %s %s \n\n Please click the following link to do this order. Thanks. \n\n <a href='%s'>%s</a> (log in with your Email and password)\n\n<b style=color:#F00;>(Don't send the comfirmation by this email, Just send invoice back by this email)</b>\n\n Thanks \n %s (Operator: %s) \n\n\n"."Usitrip走四方 (United stars International Ltd) \n Tel: 1-626-898-7800, 1-225-754-4325, 1-225-304-4893 \n Fax: 1-626-569-0580 \n Email: order@usitrip.com usitrip@gmail.com \n Website: www.usitrip.com");
+define('EMAIL_ORDERS_PRODUCTS_STATUS_CHANGED_BODY', " Tour: %s \n Departure Date: %s \n Order Status: %s %s \n\n Please click the following link to do this order. Thanks. \n\n <a href='%s'>%s</a> (log in with your Email and password)\n\n<b style=color:#F00;>(Don't send the comfirmation by this email, Just send invoice back by this email)</b>\n\n Thanks \n %s (Operator: %s) \n\n\n"."Usitrip走四方 (United stars International Ltd) \n Tel: 1-626-898-7800, 1-225-754-4325, 1-225-304-4893 \n Fax: 1-626-569-0580 \n Email: order@usitrip.com usitrip@gmail.com \n Website: 208.109.123.18");
 define('TEXT_INVOICE_NO', 'Invoice NO:');
 define('TEXT_INVOICE_TOTAL', 'Invoice Total:');
 define('TEXT_INVOICE_COMMENT', 'Invoice Comment:');
@@ -167,7 +167,7 @@ define('TXT_EMAIL_NOTIFY_CUSTOMER_REFUND_BY_CHECK','我们已将$%s 以支票的方式退还
 define('TXT_EMAIL_NOTIFY_CUSTOMER_REFUND_BY_CASH_PAYMENT','我们已按要求将您为预订支付的$%s 以现金的方式退还给您。<br> 很高兴能够为您服务，欢迎再次订购我们的产品。<br><br> We have refunded $%s in cash to you per your request for your reservation.<br><br>We appreciate the opportunity that you provided for us to serve you and we hope that you will come back visit us in the future.');
 define('TXT_EMAIL_NOTIFY_CUSTOMER_REFUND_BY_WIRE_TRANFER','我们已经以电汇的方式将您为预订支付的 $%s 退还给您。电汇退款需要几天处理时间，请谅解。<br> 很高兴能够为您服务，欢迎再次订购我们的产品。<br><br> We have refunded you $%s by wire transfer per your request for your reservation. Please allow a few days for you to receive the refund by wire transfer.<br><br>We appreciate the opportunity that you provided for us to serve you and we hope that you will come back visit us in the future.');
 define('TXT_REGARDS', '真诚地,');
-define('TXT_SITE_ADDRESS_STORE', 'www.usitrip.com');
+define('TXT_SITE_ADDRESS_STORE', '208.109.123.18');
 define('TXT_REPRESNT_SIGNATURE','走四方网 客户服务部');
 define('TXT_EMAIL_NOTIFY_CUSTOMER_REFUND_BY_CREDIT_ISSUED','我们已经按要求将您为预定支付的 $%s 以信用的方式退还到您的帐户中。<br><br>请登陆用户中心，在我的帐号&gt;&gt;我的信用中查看金额：<br><br>'.HTTP_SERVER.'/my_credits.php<br><br>很高兴能够为您服务，欢迎再次订购我们的产品。');
 

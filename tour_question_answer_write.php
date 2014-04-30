@@ -91,7 +91,7 @@
 		       	"<td valign='top'><a href=".tep_href_link(FILENAME_PRODUCT_INFO, "products_id=$products_id&cPath=$cPath",'NONSSL',false,true,"qanda").">".tep_href_link(FILENAME_PRODUCT_INFO, "products_id=$products_id&cPath=$cPath",'NONSSL',false,true,"qanda")."</a></td>".
 				"</tr>".
 				"<tr>".
-		       	"<td valign='top'><br><br>лл<br><a href='".HTTP_SERVER."'>www.usitrip.com</a></td>".
+		       	"<td valign='top'><br><br>лл<br><a href='".HTTP_SERVER."'>208.109.123.18</a></td>".
 				"</tr>".	
 				"</table>";
 // zhh fix and added

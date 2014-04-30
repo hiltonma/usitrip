@@ -73,7 +73,7 @@ $exter_invoke_ip = '';
 //扩展功能参数——其他//
 
 //商品展示地址，要用 http://格式的完整路径，不允许加?id=123这类自定义参数
-//$show_url			= 'http://www.usitrip.com/order/myorder.php';
+//$show_url			= 'http://208.109.123.18/order/myorder.php';
 $show_url			= MODULE_PAYMENT_ALIPAY_DIRECT_PAY_SHOW_URL;
 
 //扩展功能参数——分润(若要使用，请按照注释要求的格式赋值)

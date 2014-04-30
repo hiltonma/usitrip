@@ -1,0 +1,4 @@
+<?php
+define('MODULE_PAYMENT_A_CHINABANK_TEXT_TITLE','网银在线');
+define('MODULE_PAYMENT_A_CHINABANK_TEXT_DESCRIPTION','网银在线即时到账收款');
+?>

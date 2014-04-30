@@ -558,7 +558,7 @@ echo '上车地址：'.$depature_full_address;
                		我们始终坚持为您提供最贴心最满意的旅游服务，在您的旅途中，有任何需求，请随时联系我们的服务人员。<br />
                     Usitrip走四方祝您旅途愉快！<br />
                     <br />
-                    <span style="text-decoration:underline;font-weight:bold;">www.usitrip.com|走四方旅游网</span><br />
+                    <span style="text-decoration:underline;font-weight:bold;">208.109.123.18|走四方旅游网</span><br />
                     Your trip , Our care!<br />
                     您的旅行,我的关注!
                 </p>
@@ -573,7 +573,7 @@ echo '上车地址：'.$depature_full_address;
             	<p style="margin:0;padding:0;">美加(热线):888-887-2816  国际热线:1-626-898-7800<br />中国(热线):4006-333-926  </p>
             </td>
             <td style="border-top:3px solid #000099;text-align:right;">
-            	<p style="margin:0;padding:0;">Unitedstars International Ltd<br />www.usitrip.com|走四方旅游网</p>
+            	<p style="margin:0;padding:0;">Unitedstars International Ltd<br />208.109.123.18|走四方旅游网</p>
             </td>
         </tr>
     </tbody>

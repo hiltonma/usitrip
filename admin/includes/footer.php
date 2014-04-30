@@ -30,7 +30,7 @@
   Please leave this comment intact together with the
   following copyright announcement.
 */
-if(SCHINESE_HTTP_SERVER != 'http://www.usitrip.com'){	//走四访的网站不需要GNU的版权信息
+if(SCHINESE_HTTP_SERVER != 'http://208.109.123.18'){	//走四访的网站不需要GNU的版权信息
 ?>
 E-Commerce Engine Copyright &copy; 2003 <a href="http://www.oscommerce.com" target="_blank">osCommerce</a><br>
 osCommerce provides no warranty and is redistributable under the <a href="http://www.fsf.org/licenses/gpl.txt" target="_blank">GNU General Public License</a>
@@ -41,7 +41,7 @@ osCommerce provides no warranty and is redistributable under the <a href="http:/
    <td><?php echo tep_image(DIR_WS_IMAGES . 'pixel_trans.gif', '', '1', '5'); ?></td>
   </tr>
   <tr>
-    <td align="center" class="smallText">Powered by <a href="http://www.usitrip.com" target="_blank">usitrip.com</a></td>
+    <td align="center" class="smallText">Powered by <a href="http://208.109.123.18" target="_blank">usitrip.com</a></td>
   </tr>
 </table>
 <!--<a href="http://www.oscommerce.com" target="_blank">Oscommerce</a><font color="red"> Supercharged by</font> <a href="http://www.chainreactionweb.com" target="_blank">CRE Loaded</a> -->

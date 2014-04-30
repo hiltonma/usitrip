@@ -1,0 +1,186 @@
+<IfModule mod_security.c>
+  SecFilterEngine Off
+</IfModule>
+
+# $Id: .htaccess,v 1.3 2003/06/12 10:53:20 hpdl Exp $
+#
+# This is used with Apache WebServers
+#
+# For this to work, you must include the parameter 'Options' to
+# the AllowOverride configuration
+#
+# Example:
+#
+# <Directory "/usr/local/apache/htdocs">
+#   AllowOverride Options
+# </Directory>
+#
+# 'All' with also work. (This configuration is in the
+# apache/conf/httpd.conf file)
+
+# The following makes adjustments to the SSL protocol for Internet
+# Explorer browsers
+
+<IfModule mod_setenvif.c>
+  <IfDefine SSL>
+    SetEnvIf User-Agent ".*MSIE.*" \
+             nokeepalive ssl-unclean-shutdown \
+             downgrade-1.0 force-response-1.0
+  </IfDefine>
+</IfModule>
+
+# Fix certain PHP values
+# (commented out by default to prevent errors occuring on certain
+# servers)
+
+# 关闭自动目录列表功能
+Options -Indexes
+# 关闭TRACE Method
+# TraceEnable off
+#
+# Gzip files 文件发送到浏览器之前先压缩
+<IfModule mod_deflate.c>
+    # AddOutputFilterByType DEFLATE text/html text/plain text/xml application/x-javascript application/x-httpd-php image/jpeg application/x-bmp image/gif image/png gif和png就别压了，压了也是白压
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript application/x-javascript application/rss+xml application/atom_xml text/javascript application/x-bmp
+    AddOutputFilter DEFLATE html htm xml php js css bmp
+</IfModule>
+
+#设置在开启session的情况下也能缓存（实际是告诉apache不要自作主张发这些头出去）
+<ifModule mod_headers.c>
+	#添加
+    <FilesMatch ".(js|css|xml|gz)$">
+    Header append Vary Accept-Encoding
+    </FilesMatch>
+    
+    #不发过期时间
+	Header unset Expires
+	Header unset Cache-Control
+	Header unset Pragma
+	#设置缓存有效期#private, max-age=100
+	Header set Cache-Control "max-age=10"
+	#不暴露服务器PHP信息
+	Header set X-Powered-By "Martian"
+	
+	#首页、搜索结果页缓存1800秒
+ 	<FilesMatch "(index|advanced_search_result)\.php$">
+        Header set Cache-Control "max-age=1800"
+	</FilesMatch>
+	#帮助、团队介绍等宣传页面缓存1天
+	<FilesMatch "(faq_question|team_introduced|about_us|contact_us|privacy\-policy|sinotour|partner|recruitment|order_agreement|visa_related|companions_process|tour_america_need|faq_points)\.php$">
+        Header set Cache-Control "max-age=86400"
+	</FilesMatch>
+	#通过伪静态生成的页面缓存180秒
+	<FilesMatch "404\.php$">
+        Header set Cache-Control "max-age=180"
+	</FilesMatch>
+	#网js,css和媒体文件缓存一周(若有修改请在后面添加时间截)
+	<FilesMatch "\.(flv|swf|js|css)$">
+	    Header set Cache-Control "max-age=604800"
+	</FilesMatch>
+    #图片文件缓存一周
+	<FilesMatch "\.(gif|ico|png|jpg|jpeg|bmp)$">
+    	Header set Cache-Control "max-age=604800"
+	</FilesMatch>
+	# 文档不缓存
+	<FilesMatch "\.(pdf|doc|zip|rar)$">
+        Header set Expires "Thu, 19 Nov 1981 00:00:00 GMT"
+        Header set Pragma "no-cache"
+        Header set Cache-Control "no-cache, must-revalidate, max-age=0"
+	</FilesMatch>
+	# 静态页面
+	<FilesMatch "\.(htm|html|shtml)$">
+	    Header set Cache-Control "max-age=3600"
+	</FilesMatch>
+	# javascript.php
+	<FilesMatch "javascript\.php">
+	    Header set Cache-Control "max-age=3601"
+	</FilesMatch>
+    # 前台用户中心各页面，购物车和结账过程各页面不缓存
+	<FilesMatch "(login|logoff|shopping_cart|.*account.*|my_.+|eticket(_.+)*|group_buys|.*ajax.*|tour_question|checkout.*|redirect)\.php$">
+        Header set Expires "Thu, 19 Nov 1981 00:00:00 GMT"
+        Header set Pragma "no-cache"
+        Header set Cache-Control "no-cache, must-revalidate, max-age=0"
+	</FilesMatch>
+	# 结伴同游首页
+    <FilesMatch "new_travel_companion_index.php">
+        Header set Cache-Control "max-age=60"
+	</FilesMatch>
+	# 结伴同游详细页
+    <FilesMatch "new_bbs_travel_companion_content.php">
+        Header set Cache-Control "max-age=60"
+	</FilesMatch>
+    # 产品评论页面
+    <FilesMatch "reviews.php">
+        Header set Cache-Control "max-age=240"
+	</FilesMatch>
+
+	# 所有php文件暂时不缓存
+	#<FilesMatch ".+\.php$">
+    #    Header set Expires "Thu, 19 Nov 1981 00:00:00 GMT"
+    #    Header set Pragma "no-cache"
+    #    Header set Cache-Control "no-cache, must-revalidate, max-age=0"
+	#</FilesMatch>
+	
+    # 支付模块不可缓存modules
+    ### 具体请参考支付模块目录的.ht文件
+</ifModule>
+
+##设置静态资源默认缓存时间(实际上mod_expires 和 mod_headers 只需要其中一种就可以了。mod_headers的优先级更高)
+#FileETag MTime Size
+#<ifModule mod_expires.c>
+#ExpiresActive On
+#ExpiresDefault "access plus 59 minutes"
+#ExpiresByType image/png "access plus 86400 seconds"
+#ExpiresByType image/jpeg "access plus 365 days"
+#ExpiresByType image/gif "access plus 86400 seconds"
+#ExpiresByType image/x-icon "access plus 14400 minutes"
+#ExpiresByType application/x-javascript "access plus 1 day"
+#ExpiresByType text/css "access plus 1 days"
+#ExpiresByType text/html "access plus 30 minutes"
+#</ifModule>
+
+#定义403和404处理页面
+ErrorDocument 403 /403.php
+ErrorDocument 404 /404.php
+
+#修改php.ini的默认值
+php_value register_globals 1
+php_value register_long_arrays 1
+php_value register_argc_argv 1
+
+#设置默认编码（在有生成静态html页面的情况下此处不要设置编码）
+#AddDefaultCharset gb2312
+
+#伪静态设置，除了产品列表和产品详细页(太TMD个性化了)，其它页面的伪静态都在这里设置即可
+Options +FollowSymLinks
+RewriteEngine on
+RewriteBase /
+# Rewrite 规则
+# 结伴同游-详细页面
+RewriteRule ^jiebantongyou\-content/tci-([0-9]+)\.html$ new_bbs_travel_companion_content.php?t_companion_id=$1
+# 结伴同游-列表
+RewriteRule ^jiebantongyou/$ new_travel_companion_index.php
+RewriteRule ^jiebantongyou/([a-zA-Z\_]+)-([0-9a-zA-Z\_]+)\.html$ new_travel_companion_index.php?$1=$2
+RewriteRule ^jiebantongyou/([a-zA-Z\_]+)-([0-9a-zA-Z\_]+)-([a-zA-Z\_]+)-([0-9a-zA-Z\_]+)\.html$ new_travel_companion_index.php?$1=$2&$3=$4
+RewriteRule ^jiebantongyou/([a-zA-Z\_]+)-([0-9a-zA-Z\_]+)-([a-zA-Z\_]+)-([0-9a-zA-Z\_]+)-([a-zA-Z\_]+)-([0-9a-zA-Z\_]+)\.html$ new_travel_companion_index.php?$1=$2&$3=$4&$5=$6
+RewriteRule ^jiebantongyou/([a-zA-Z\_]+)-([0-9a-zA-Z\_]+)-([a-zA-Z\_]+)-([0-9a-zA-Z\_]+)-([a-zA-Z\_]+)-([0-9a-zA-Z\_]+)-([a-zA-Z\_]+)-([0-9a-zA-Z\_]+)\.html$ new_travel_companion_index.php?$1=$2&$3=$4&$5=$6&$7=$8
+RewriteRule ^jiebantongyou/([a-zA-Z\_]+)-([0-9a-zA-Z\_]+)-([a-zA-Z\_]+)-([0-9a-zA-Z\_]+)-([a-zA-Z\_]+)-([0-9a-zA-Z\_]+)-([a-zA-Z\_]+)-([0-9a-zA-Z\_]+)-([a-zA-Z\_]+)-([0-9a-zA-Z\_]+)\.html$ new_travel_companion_index.php?$1=$2&$3=$4&$5=$6&$7=$8&$9=$10
+RewriteRule ^jiebantongyou/([a-zA-Z\_]+)-([0-9a-zA-Z\_]+)-([a-zA-Z\_]+)-([0-9a-zA-Z\_]+)-([a-zA-Z\_]+)-([0-9a-zA-Z\_]+)-([a-zA-Z\_]+)-([0-9a-zA-Z\_]+)-([a-zA-Z\_]+)-([0-9a-zA-Z\_]+)-([a-zA-Z\_]+)-([0-9a-zA-Z\_]+)\.html$ new_travel_companion_index.php?$1=$2&$3=$4&$5=$6&$7=$8&$9=$10&$11=$12
+# 评论列表
+RewriteRule ^previews\.html$ reviews.php
+RewriteRule ^previews/page-([0-9]+)\.html$ reviews.php?page=$1
+# 问题咨询
+RewriteRule ^all\_question\_answers\/$ all_question_answers.php
+
+#RewriteCond %{HTTP_HOST} ^888trip.com
+#RewriteRule ^(.*)$ http://www.888trip.com/$1 [R=permanent,L]
+
+#RewriteCond %{HTTP_HOST} ^big5.888trip.com [NC]
+#RewriteRule ^(.*)$ http://www.888trip.com/$1 [L,R=301]
+#RewriteCond %{HTTP_HOST} ^gb.888trip.com [NC]
+#RewriteRule ^(.*)$ http://cn.888trip.com/$1 [L,R=301]
+
+#AuthType Basic
+#AuthName "First door for osCommerce"
+#AuthUserFile /etc/first-door-for-oscommerce
+#Require valid-user

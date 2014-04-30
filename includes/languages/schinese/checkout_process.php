@@ -39,7 +39,7 @@ define('EMAIL_TEXT_SIGNATURE','谢谢您的次序!' . "\n\n" . '请与我们联系如果您有任
 define('TXT_PROVIDER_STATUS_MAIL_FROM', '走四方网');
 define('EMAIL_ORDERS_PRODUCTS_STATUS_CHANGED_SUBJECT', TXT_PROVIDER_STATUS_MAIL_FROM.' has changed status of Reservation #%s (%s)');
 define('EMAIL_ORDERS_PRODUCTS_STATUS_CHANGED_BODY', "Hi,\n\n %s has updated Reservation #%s as below, \n\n Tour: %s \n Reservation: #%s \n Start Date: %s \n Reservation Status: %s %s \n Message: %s. \n\n For review or reply please checkout below link,\n\n <a href='%s'>%s</a>\n\n Thanks \n %s \n");
-if($_SERVER['HTTP_HOST'] == 'www.usitrip.com' || $_SERVER['HTTP_HOST'] == 'cn.usitrip.com'){ //only allow for demo site  
+if($_SERVER['HTTP_HOST'] == '208.109.123.18' || $_SERVER['HTTP_HOST'] == 'cn.usitrip.com'){ //only allow for demo site  
 define('AUTO_CANCELED_EMAIL_TEXT_SUBJECT', '预订#%s被自动取消 ');
 }else{
 define('AUTO_CANCELED_EMAIL_TEXT_SUBJECT', '预订#%s被自动取消 - QA ORDER');

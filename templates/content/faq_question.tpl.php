@@ -120,7 +120,7 @@
                                 </li>
                                 <li>
                                 <a href="javascript:void(0);">15.ÈçºÎÅÐ¶ÏÕæÕýµÄÃÀ¹úÂÃÐÐÉç£¿</a>
-                                <div class="hide2">ÈýÖÖ·½Ê½  Á¢¿ÉÅÐ¶Ï(×¨ÌâÒ³Á´½Ó£º<a href="http://www.usitrip.com/web_action/there_html/" target="_blank">http://www.usitrip.com/web_action/there_html/</a>)<br/>
+                                <div class="hide2">ÈýÖÖ·½Ê½  Á¢¿ÉÅÐ¶Ï(×¨ÌâÒ³Á´½Ó£º<a href="http://208.109.123.18/web_action/there_html/" target="_blank">http://208.109.123.18/web_action/there_html/</a>)<br/>
 
 Ò»¡¢ºËÊµÃÀ¹úÂÃÐÐÉçÓªÒµÖ´ÕÕ<br/>
 Èç¹ûÎªÄú·þÎñµÄÊÇÃÀ¹úÂÃÐÐÉç£¬Ò»¶¨ÓµÓÐÃÀ¹úÓªÒµÖ´ÕÕ¡£<br/>
@@ -148,14 +148,14 @@ CSTÖ¤ÊéÎªÃÀ¹ú¼ÓÖÝÂÃÐÐÉçÌØÐíÖ´ÕÕ£¬Ö»ÓÐÓµÓÐCSTÖ¤Êé²Å¿ÉÔÚÃÀ¹ú¾­ÓªÂÃÓÎ²úÆ·¡£Ã¿¸öCSTÖ
                         <div class="hide">
                         	<ul class="hidebox">
                             	<li>
-                                <a href="javascript:void(0);">1. www.usitrip.com ½ÓÊÜÄÄÐ©¸¶¿î·½Ê½?</a>
+                                <a href="javascript:void(0);">1. 208.109.123.18 ½ÓÊÜÄÄÐ©¸¶¿î·½Ê½?</a>
                                 <div class="hide2">
                                  ÎÒÃÇÖ÷Òª½ÓÊÜÒÔÏÂÐÎÊ½µÄ¸¶¿î£ºÏÖ½ð¡¢ÐÅÓÃ¿¨¡¢µç»ã¡¢Paypal¡¢»ãÆ±/Ö§Æ±µÈ¡£ÐÅÓÃ¿¨Ö§¸¶ÊÇÍ¨¹ýPaypalµÄÖ§¸¶Æ½Ì¨À´ÊµÏÖµÄ£¬¼´°²È«ÓÖÊ¡Ê±¡£ÐÅÓÃ¿¨ ÓÃ»§ÎÞÐèÓµÓÐPaypalÕÊ»§¡£ÁíÍâ£¬ÈÎºÎÍË¿î½«ÒÔÓë¸¶¿î·½Ê½ÏàÍ¬µÄÐÎÊ½ÍË»¹¡£ÔÚÍË¿î¹ý³ÌÖÐÓÐ¹ØµÄPaypalºÍÒøÐÐÊÖÐø·ÑµÈµÈ»áÔÚÍË¿î×Ü¶îÖÐ±»¼õÈ¥¡£
                                 </div>
                                 </li>
                                 
 								<li>
-                                <a href="javascript:void(0);">2. www.usitrip.comÊÇ·ñ½ÓÊÜÖÐ¹úÐÅÓÃ¿¨£¿ </a>
+                                <a href="javascript:void(0);">2. 208.109.123.18ÊÇ·ñ½ÓÊÜÖÐ¹úÐÅÓÃ¿¨£¿ </a>
                                 <div class="hide2">
                                  ½ÓÊÜ£¬µ«ÄúµÄ¿¨Ðè·ûºÏÒÔÏÂÁ½¸öÌõ¼þ:1.ÃÀ½ðÐÅÓÃ¿¨ (Ë«±ÒÖÖ) 2.ÒÑ¿ªÍ¨ÃÀ¹úÍøÉÏ¹ºÂòÒµÎñ¡£ÎÞÈÎºÎÊÖÐø·Ñ
                                 </div>
@@ -326,7 +326,7 @@ CSTÖ¤ÊéÎªÃÀ¹ú¼ÓÖÝÂÃÐÐÉçÌØÐíÖ´ÕÕ£¬Ö»ÓÐÓµÓÐCSTÖ¤Êé²Å¿ÉÔÚÃÀ¹ú¾­ÓªÂÃÓÎ²úÆ·¡£Ã¿¸öCSTÖ
                                 <li>
                                 <a href="javascript:void(0);">4. ÄãÃÇµÄÍøÕ¾°²È«Âð£¿ </a>
                                 <div class="hide2">
-                                www.usitrip.com ÍøÕ¾ÓÃSSL¼°Ê±ÓëÄú½»Á÷ &ndash; ÄúÓëÍøÕ¾Ö®¼äµÄÐÅÏ¢´«µÝ¶¼±»¼ÓÃÜ¡£ www.usitrip.com ÔËÓÃ·À»ðÇ½£¬IPSµÈÍøÉÏ°²È«¼¼ÊõÓë´ëÊ©À´±£»¤ÎÒÃÇµÄ·þÎñÆ÷¡£ÁíÍâ£¬www.usitrip.com ²»´¢´æÄúµÄÖ§¸¶ÐÅÏ¢£¬ÈçÐÅÓÃ¿¨ºÅµÈ¡£
+                                208.109.123.18 ÍøÕ¾ÓÃSSL¼°Ê±ÓëÄú½»Á÷ &ndash; ÄúÓëÍøÕ¾Ö®¼äµÄÐÅÏ¢´«µÝ¶¼±»¼ÓÃÜ¡£ 208.109.123.18 ÔËÓÃ·À»ðÇ½£¬IPSµÈÍøÉÏ°²È«¼¼ÊõÓë´ëÊ©À´±£»¤ÎÒÃÇµÄ·þÎñÆ÷¡£ÁíÍâ£¬208.109.123.18 ²»´¢´æÄúµÄÖ§¸¶ÐÅÏ¢£¬ÈçÐÅÓÃ¿¨ºÅµÈ¡£
                                 </div>
                                 </li>
                                 

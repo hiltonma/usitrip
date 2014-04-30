@@ -402,7 +402,7 @@ $500-$1000</span></td>
 </td>
 </tr>
 </table>
-<div style="float:left; width: 600px; background-color: #223C6A;"><p style="font-family: Tahoma; font-size: 11px; color: #FFF; text-decoration: none; text-align:right; line-height:16px;  margin-right:3px; margin-top:7px;"><a href="'.HTTP_SERVER.'" style="color:#fff; text-decoration:underline;">www.usitrip.com </a></p><img src="'.HTTP_SERVER.'/image/newsletter2_r2_c2_1.jpg" width="600" height="13" border="0" /></div>
+<div style="float:left; width: 600px; background-color: #223C6A;"><p style="font-family: Tahoma; font-size: 11px; color: #FFF; text-decoration: none; text-align:right; line-height:16px;  margin-right:3px; margin-top:7px;"><a href="'.HTTP_SERVER.'" style="color:#fff; text-decoration:underline;">208.109.123.18 </a></p><img src="'.HTTP_SERVER.'/image/newsletter2_r2_c2_1.jpg" width="600" height="13" border="0" /></div>
 </form>
 </div>';
 

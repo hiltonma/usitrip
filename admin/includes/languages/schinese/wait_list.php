@@ -30,7 +30,7 @@ define('TEXT_EMAIL','E-mail Add :');
 define('TEXT_PHONE','Phone :');
 define('TEXT_MESSAGE','Your Message :');
 define('TEXT_MAIL_SUB','Your waiting tour start');
-define('TEXT_BODY_HEADER','<div style="margin:0 auto; width:600px; padding:10px 17px; border:1px solid #000; text-align:left;"><img src="http://www.usitrip.com/image/newsletters/waitlist_header_img.jpg" alt="" style="float:left;" />');
+define('TEXT_BODY_HEADER','<div style="margin:0 auto; width:600px; padding:10px 17px; border:1px solid #000; text-align:left;"><img src="http://208.109.123.18/image/newsletters/waitlist_header_img.jpg" alt="" style="float:left;" />');
 define('TEXT_MAIL_HEADER','<div style="float:left; margin:0px; width:100%; font-size:18px; font-family:Arial; padding-top:40px;">');
 define('TEXT_MAIL_HEAD','Hello %s, </div>');
 define('TEXT_MAIL_BODY1','<div style="float:left; margin:0px; width:100%; font-size:18px; font-family:Arial; padding-top:30px; line-height:24px;">');

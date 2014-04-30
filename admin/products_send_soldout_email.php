@@ -18,7 +18,7 @@ if($product_id>0){
 		//邮件标题及内容 Start =========================
 		//简体
 		$mail_title['gb2312'] = '产品恢复预订通知-usitrip';
-		$mail_content['gb2312'] = '<p>Dear {email}<br />尊敬的走四方网用户</p><p>行程:<a href="{products_url}" target="_blank">{products_name}</a><br />地址：<a href="{products_url}" target="_blank">{products_url}</a><br />（如无法点击连接，请将地址复制到浏览器进行访问！）</p><p>已经恢复预定，您现在可以马上进行预定该行程。<br />走四方网欢迎您的光临！</p><p> 走四方网 - usitrip<br />www.usitrip.com</p>';
+		$mail_content['gb2312'] = '<p>Dear {email}<br />尊敬的走四方网用户</p><p>行程:<a href="{products_url}" target="_blank">{products_name}</a><br />地址：<a href="{products_url}" target="_blank">{products_url}</a><br />（如无法点击连接，请将地址复制到浏览器进行访问！）</p><p>已经恢复预定，您现在可以马上进行预定该行程。<br />走四方网欢迎您的光临！</p><p> 走四方网 - usitrip<br />208.109.123.18</p>';
 		
 		$mail_content['gb2312'] = str_replace('{products_url}',$product_url,$mail_content['gb2312']);
 		$mail_content['gb2312'] = str_replace('{products_name}',$products_name,$mail_content['gb2312']);

@@ -8,7 +8,7 @@ set_time_limit(0);
 //每天自动发一次邮件给未完成订单的客户
 //总开关
 $off_on = true;
-if($_SERVER['HTTP_HOST']=="www.usitrip.com.php5-22.dfw1-2.websitetestlink.com"){
+if($_SERVER['HTTP_HOST']=="208.109.123.18.php5-22.dfw1-2.websitetestlink.com"){
 	$off_on=false;
 }
 if($off_on==false){

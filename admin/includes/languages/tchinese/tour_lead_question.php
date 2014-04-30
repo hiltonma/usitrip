@@ -20,7 +20,7 @@ define('TEXT_DEFULT_ANSWER_REPLY_CONTENT','<br><br>
 Thank you for your inquiry. Please reply to this email or call us at 1-626-898-7800  888-887-2816 (8:00am ~~ 8:00pm Pacific Standard Time Monday ~ Sunday) if you have further questions.<br /><br><br>
 Regards,<br>
 Customer Service Rep.
-<br><a href="'.HTTP_SERVER.'" target="_blank">www.usitrip.com</a>');
+<br><a href="'.HTTP_SERVER.'" target="_blank">208.109.123.18</a>');
 define('TEXT_DEFAULT_EMAIL_SUBJECT', STORE_NAME.' has replied to your inquiry!');
 define('TEXT_HEADING_EMAIL_DEAR','Dear ');
 define('TEXT_NO_RECORD_FOUND','No record found.');

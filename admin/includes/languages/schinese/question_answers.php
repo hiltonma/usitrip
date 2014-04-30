@@ -26,7 +26,7 @@ define('TEXT_DEFULT_ANSWER_REPLY_CONTENT','
 谢谢您的咨询！
  
 走四方网客服部 
-www.usitrip.com
+208.109.123.18
 ');
 
 define('TEXT_DEFULT_ANSWER_REPLY_FOOT','
@@ -35,14 +35,14 @@ define('TEXT_DEFULT_ANSWER_REPLY_FOOT','
 <br />
 <br />
 Customer Service Rep.<br />
-<a target="_blank" href="'.HTTP_SERVER.'">www.usitrip.com</a><br /><br />
+<a target="_blank" href="'.HTTP_SERVER.'">208.109.123.18</a><br /><br />
 <br />
 
 谢谢您的咨询！<br />
 
 <br />
 走四方网客服部 <br />
-<a target="_blank" href="'.HTTP_SERVER.'">www.usitrip.com</a><br />
+<a target="_blank" href="'.HTTP_SERVER.'">208.109.123.18</a><br />
 ');
 
 

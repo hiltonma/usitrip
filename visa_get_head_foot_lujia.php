@@ -1,7 +1,7 @@
 <?php
 $order   = array("\r\n", "\n", "\r");
 $replace = '';
-$url = 'http://www.usitrip.com/visa_get_head_foot.php?position='.$_GET['position'].'&UID='.(int)($_GET['UID']);
+$url = 'http://208.109.123.18/visa_get_head_foot.php?position='.$_GET['position'].'&UID='.(int)($_GET['UID']);
 
 // 1. ³õÊ¼»¯
 $ch = curl_init();

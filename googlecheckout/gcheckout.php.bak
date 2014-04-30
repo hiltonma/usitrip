@@ -177,7 +177,7 @@ for ($i = 0, $n = sizeof($products); $i < $n; $i++) {
 			$guest_name .= $_SESSION['guestname'.$h][$i]."####";
 			
 			if($_SESSION['guestbodyweight'.$h][$i]  != ''){
-			$guest_body_weight .= $_SESSION['guestbodyweight'.$h][$i]."####";
+			$guest_body_weight .= $_SESSION['guestbodyweight'.$h][$i]." ".$_SESSION['guestweighttype'.$h][$i]."####";
 			}
 			
 			$h++;

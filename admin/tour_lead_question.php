@@ -221,7 +221,7 @@ if ($HTTP_GET_VARS['action']) {
 						"<td valign='top' colspan='2'>$anwers</td>".
 						"</tr>".
 						"<tr>".
-						"<td valign='top'><br><br>Thanks<br><a href='".HTTP_SERVER."'>www.usitrip.com</a></td>".
+						"<td valign='top'><br><br>Thanks<br><a href='".HTTP_SERVER."'>208.109.123.18</a></td>".
 						"</tr>".
 						"</table>";
 

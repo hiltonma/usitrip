@@ -79,11 +79,11 @@
                     <?php 
                     if (CHARSET == 'big5'){
                     ?>
-                        http://www.usitrip.com/
+                        http://208.109.123.18/
                     <?php 
                     }else{
                     ?>
-                        http://www.usitrip.com/
+                        http://208.109.123.18/
                     <?php 
                     }
                     ?>

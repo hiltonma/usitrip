@@ -189,7 +189,7 @@ class Url{
 	 * 		is_ssl 是否需要使用SSL方式，在网站开启SSL后。
 	 * 		is_noseo 是否此URL不需要按SEO的形式生成
 	 * 		is_ajax 是否此URL是用在AJAX请求上
-	 * 		is_self 是否是生成本系统所用的URL，'self'[本系统],'usitrip'[www.usitrip.com站点用],其它请自己定义
+	 * 		is_self 是否是生成本系统所用的URL，'self'[本系统],'usitrip'[208.109.123.18站点用],其它请自己定义
 	 * @return string
 	 * @author lwkai 2012-11-20 上午10:47:10
 	 */

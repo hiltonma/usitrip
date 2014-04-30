@@ -8,7 +8,7 @@ session_start();
 define('PATH_DIR','/home/howard/public_html/usitrip/admin/images_db/');  
 define('WEB_DIR','http://howard-dev.usitrip.com/admin/images_db/');  
 define('IMAGES_DIR','/var/www/html/usitrip/images/db/');  
-define('IMAGES_HTTP_DIR','http://www.usitrip.com/images/db/');  
+define('IMAGES_HTTP_DIR','http://208.109.123.18/images/db/');  
 */
 //ÍøÕ¾ËùÔÚÂ·¾¶Prod
 define('TOP_DIR', str_replace('/admin/images_db/includes','',str_replace('\\','/',dirname(__FILE__))));

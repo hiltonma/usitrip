@@ -157,7 +157,7 @@ while($categories_rows=tep_db_fetch_array($categories_sql)){
 
 <?php if(!(int)$_GET['tours_experience_id']){?>
 <?php //美国旅游建议目录?>
-<div class="left_bg2" ><h1><?php echo db_to_html('美国旅游建议')?><span class="bg3_right_title_r xiaozi" style="margin-top:-15px;"><a href="http://www.usitrip.com/resources/" class="chengse_font cu"><?php echo db_to_html('更多建议(英文)')?></a></span></h1>
+<div class="left_bg2" ><h1><?php echo db_to_html('美国旅游建议')?><span class="bg3_right_title_r xiaozi" style="margin-top:-15px;"><a href="http://208.109.123.18/resources/" class="chengse_font cu"><?php echo db_to_html('更多建议(英文)')?></a></span></h1>
       
 	 <?php
 	 do{

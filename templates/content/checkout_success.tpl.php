@@ -98,7 +98,7 @@ signname = "\n\n";
                           <tr>
                             <td align="center" valign="middle"><img src="image/shop_dot5.gif" width="74" height="53"></td>
                             <td style="color:#6f6f6f"><p style="padding:10px 10px 10px 0px"><b><?php echo db_to_html('旅美须知')?></b><br>
- <?php echo db_to_html('1.我们建议您在收到确认电子旅游票后再预订您的机票，在订购完机票后请回到本网站www.usitrip.com “我的账户”里面补填机票信息以便导游接机。<br>2. 按出发日不同,行程次序可能前后稍作调整。<br>3. 出发前请详细检查您的行李及确定旅行证件齐全。')?>
+ <?php echo db_to_html('1.我们建议您在收到确认电子旅游票后再预订您的机票，在订购完机票后请回到本网站208.109.123.18 “我的账户”里面补填机票信息以便导游接机。<br>2. 按出发日不同,行程次序可能前后稍作调整。<br>3. 出发前请详细检查您的行李及确定旅行证件齐全。')?>
 <br>
 <?php echo db_to_html('更多信息,请查看')?><a href="<?php echo tep_href_link('tour_america_need.php') ?>" target="_blank"><?php echo db_to_html('帮助中心。')?></a></p></td>
                           </tr>

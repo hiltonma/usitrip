@@ -159,7 +159,7 @@
                     $linkurl = 'http://howard-dev.usitrip.com/links.html';
                 }
                 if (IS_LIVE_SITES){
-                    $linkurl = 'http://www.usitrip.com/links.html';
+                    $linkurl = 'http://208.109.123.18/links.html';
                 }
                 $email_text = "您好，".$links_contact_name."：<br/> 您提交的友情链接申请已经审核通过并发布到以下页面，请登录以下页面查看你的网站信息：<br/> 链接发布页面URL地址:". $linkurl ."<br/>如链接信息有误，请联系我们的链接专员：<br/>QQ：2216364379<br/>MSN: usi4trip_charles@hotmail.com<br/>email: charles.huang@usitrip.com<br/>走四方网敬上";  
                 tep_mail(db_to_html($links_contact_name), $links_contact_email, '', db_to_html($email_text), STORE_OWNER, STORE_OWNER_EMAIL_ADDRESS);
@@ -317,7 +317,7 @@
                     $linkurl = 'http://howard-dev.usitrip.com/links.html';
                 }
                 if (IS_LIVE_SITES){
-                    $linkurl = 'http://www.usitrip.com/links.html';
+                    $linkurl = 'http://208.109.123.18/links.html';
                 }
                 $email_text = "您好，".$links_contact_name."：<br/> 您提交的友情链接申请已经审核通过并发布到以下页面，请登录以下页面查看你的网站信息：<br/> 链接发布页面URL地址:". $linkurl ."<br/>如链接信息有误，请联系我们的链接专员：<br/>QQ：2216364379<br/>MSN: usi4trip_charles@hotmail.com<br/>email: charles.huang@usitrip.com<br/>走四方网敬上";  
                 tep_mail(db_to_html($links_contact_name), $links_contact_email, '', db_to_html($email_text), STORE_OWNER, STORE_OWNER_EMAIL_ADDRESS);
