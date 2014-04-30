@@ -1,0 +1,35 @@
+@charset "gb2312";
+/* CSS Document */
+
+ul,li,a,h1,h2,h3,h4,h5,h6{text-decoration: none; font-size: 12px;list-style:none;margin:0;padding:0;color:#666666;word-wrap:break-word;}
+i{ font-style:normal;}
+body,div,form,img,ul,ol,li,dl,dt,dd,p,tr,td,input,em,a,ol{margin: 0; padding: 0; border: 0;font-size:12px; font-family:Verdana, Geneva; margin:0 auto; }
+
+.fr{ float:right;}
+.fl{ float:left;}
+.fonts{ font-family:Verdana, Arial, Helvetica, sans-serif;}
+.gray{ color:#c2c2c2;}
+em{ font-style:normal;}
+a:hover{text-decoration:underline;}
+a:active {color: #0862DA;text-decoration: none;}
+img{border:0;}
+.clearfix:after ,.area:after {content:".";display:block;height:0;clear:both;visibility:hidden;}
+.clearfix , .area{_zoom:1;}
+
+
+/* 头部样式 */
+#header_bg{ height:52px; background:#fff; border-bottom:solid 1px #c0c0c0; }
+#header{ width:1000px; height:52px; margin:0 auto;background:#fff;}
+#header h1{ width:140px; height:52px; display:block; float:left; padding-top:1px;}
+#header dl{ float:right; width:700px; padding-top:4px;}
+#header dl dt{ height:19px; background: url(../images/header_phone.gif) no-repeat right center; text-indent:-999em; padding-bottom:3px; }
+#header dl dd{ text-align:right; overflow:hidden; _zoom:1;}
+#header dl dd ul{ float:right; font-size:0; padding-top:4px;}
+#header dl dd li{ padding:0 16px; display:inline-block; font-size:0; display:inline-block; _display:inline; _zoom:1; }
+#header dl dd li a{ color:#4b4b4b; font-size:14px;}
+#header dl dd li a:hover{ color:#e40808;}
+
+
+/* 底部样式 */
+#copyright{ line-height:22px; text-align:center; color:#6d6c6c; padding-top:15px; width:100%; background:#f3f3f1; height:90px; float:left; margin-top:8px; border-top: solid 1px #dfdfdf; }
+#copyright a{ padding:10px;}

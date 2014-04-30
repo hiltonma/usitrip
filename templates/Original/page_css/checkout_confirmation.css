@@ -1,0 +1,40 @@
+@charset "gb2312";
+
+.cart_progress .cart_left{float:left;height:80px;width:200px; line-height:80px;}
+.cart_progress .cart_left .cart_icon{display:block;background:url(/image/nav/carts.gif) no-repeat left -99px;width:47px;height:45px;margin-top:13px;margin-left:10px;float:left;}
+.cart_progress .cart_left h3{color:#2686ff;font-size:24px; font-family:microsoft YaHei;}
+.cart_progress .cart_right{float:right;width:666px;height:80px;padding-top:18px;}
+.cart_progress .cart_right ul{float:right;}
+.cart_progress .cart_right li{float:left;background:#ffedca;width:161px;line-height:29px;font-size:12px;text-align:center}
+.cart_progress .cart_right li span{background:url(/image/nav/carts.gif) no-repeat -5px -144px;width:19px;height:29px;float:left;display:block;}
+.cart_progress .cart_right li.first span{background:url(/image/nav/carts.gif) no-repeat left -144px;width:5px;height:29px;display:block;float:left;}
+.cart_progress .cart_right li.cur{background:#ff6600;color:#fff;font-weight:bold;font-size:14px;}
+.cart_progress .cart_right li.cur span{ background-position:-24px -144px;}
+.cart_progress .cart_right li span.cur{background-position:-43px -144px;}
+.cart_progress .cart_right li.last{width:5px;}
+.cart_progress .cart_right li.last span{background-position:-62px -144px;width:5px;height:29px;}
+.cart_progress .cart_right li.last span.cur{background-position:-67px -144px;width:5px;height:29px;}
+
+
+TD.infoBoxHeading{border-left:1px solid #a2cbf4;border-right:1px solid #a2cbf4;padding-left:25px;background:url(/image/nav/carts.gif) repeat-x left -173px;height:36px;line-height:36px;border-top:1px solid #a2cbf4;}
+TD.blue{border-top:3px solid #2686ff;height:32px;line-height:32px;background:url(/image/nav/tab_button_20130723.gif) repeat-x left -115px;}
+TD.infoBoxHeading .heading_bg{font-size:14px;color:#134da3;border:none;background:none;margin:0;padding:0;}
+TD.infoBoxHeading .head_note{margin-top:0;padding-right:15px;}
+.infoBox_outer{border-left:1px solid #a2cbf4;border-right:1px solid #a2cbf4;}
+.infoBox_new{border:none;}
+.separator{height:9px;}
+.dazi{font-size:12px; font-weight:normal;height:36px;line-height:36px;padding-left:20px;}
+.sp1{padding-right:15px;height:36px;line-height:36px;}
+.bg{background-color:#ebf7ff;}
+.infoBoxCt_n_c .main{padding:10px;padding-left:30px;}
+.infoBoxCt_n_c .dazi{color:#ff6900;font-size:14px;font-weight:bold;padding-left:0;}
+.infoBox{border:none;}
+.infoBox .infoBoxContents{background:none;}
+
+a.btn{display:block;height:29px;line-height:29px;width:82px;padding-left:30px;background:url(/image/nav/carts.gif) no-repeat left -30px;color:#4d4d4d;}
+a.btn span{display:block;float:right;background:url(/image/nav/carts.gif) no-repeat right -30px;height:29px;width:10px;}
+
+.subbtn input{border:none;width:130px;height:40px;line-height:40px;background:url(/image/nav/carts.gif) no-repeat left -209px;text-align:left;padding-left:30px;font-family:microsoft YaHei;font-weight:bold;font-size:16px;color:#fff;text-shadow:0 1px 1px #111;border-radius:4px;cursor:default;}
+#ConfirmationsWords {width:915px;}
+
+

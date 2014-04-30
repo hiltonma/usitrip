@@ -1,0 +1,21 @@
+<style>
+.publicSuccess{ float:left;margin:15px 0 15px -10px;;width:950px; min-height:120px; border-top:1px solid #C8F29C; border-bottom:1px solid #C8F29C; background:#F9FFF1;}
+.publicSuccess .left{float:left; margin:30px 40px 0 40px; display:inline;}
+.publicSuccess .right{float:left;margin:15px 0; font-family:Tahoma;width:800px;} 
+.publicSuccess .right ul li{line-height:30px; font-size:14px; }
+.publicSuccess .right a{ text-decoration:underline;}
+.publicSuccess .right p{margin-top:10px;}
+</style>
+<div class="publicSuccess">
+  <div class="left"><img src="image/showmsg/{:$style:}.gif" align="absmiddle"></div>
+  <div class="right">
+	<ul>{:db_to_html text=$msg:}</ul>
+	<p>
+	{:if !$jsurl:}
+		{:$ifjump:}<a href="{:$jumpurl:}">{:db_to_html text='如果您的浏览器没有成功挑转，请点击这里&gt;&gt;':}</a>
+	{:else:}
+		<a href="{:$jumpurl:}" class="btn btnGrey"><button type="button">{:db_to_html text=' 返 回 ':}</button></a>
+    {:/if:}
+	</p>
+  </div>
+</div>

@@ -1,0 +1,85 @@
+div.menuBar,
+div.menuBar a.menuButton,
+div.menu,
+div.menu a.menuItem {
+  font-family: "MS Sans Serif", Arial, sans-serif;
+  font-size: 8pt;
+  font-style: normal;
+  font-weight: normal;
+  color: #000000;
+}
+
+div.menuBar {
+	background-color: #F1F3F5;
+	border: 2px solid #F1F3F5;
+	padding: 4px 2px 4px 2px;
+	text-align: center;
+	font-weight: bold;
+}
+
+div.menuBar a.menuButton {
+  background-color: transparent;
+  border: 1px solid #e0e0e0;
+  color: #000000;
+  cursor: default;
+  left: 0px;
+  margin: 1px;
+  padding: 2px 6px 2px 6px;
+  position: relative;
+  text-decoration: none;
+  top: 0px;
+  z-index: 100;
+}
+
+div.menuBar a.menuButton:hover {
+  background-color: transparent;
+  border: 1px outset #e0e0e0;
+  color: #000000;
+}
+
+div.menuBar a.menuButtonActive,
+div.menuBar a.menuButtonActive:hover {
+  background-color: #B5CDE8;
+  border: 1px solid #30559C;
+  color: #000000;
+  left: 1px;
+  top: 1px;
+}
+
+div.menu {
+	background-color: #F1F3F5;
+	position:	absolute;
+	visibility:	hidden;
+	z-index:	100;
+	border:		0;
+	padding:	0;
+	overflow:	visible;
+	border:		1px solid #8C867B;
+	filter:progid:DXImageTransform.Microsoft.Shadow(color=#BDC3BD, Direction=135, Strength=4);
+}
+
+div.menu a.menuItem {
+	color: #000000;
+	cursor: default;
+	display: block;
+	padding: 3px;
+	text-decoration: none;
+	white-space: nowrap;
+}
+
+div.menu a.menuItem:hover, div.menu a.menuItemHighlight {
+	background-color: #B5CDE8;
+	border:	1px solid #30559C;
+}
+
+div.menu a.menuItem span.menuItemText {}
+
+div.menu a.menuItem span.menuItemArrow {
+/*  margin-right: -.75em;*/
+}
+
+div.menu div.menuItemSep {
+  border: 1px inset #e0e0e0;
+  margin: 4px 2px;
+}
+

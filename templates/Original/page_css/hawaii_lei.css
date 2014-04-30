@@ -1,0 +1,93 @@
+@charset "gb2312";
+/* CSS Document */
+#hawaii_lei{ width:950px; margin-left:-10px; float:left; display: inline;}
+#hawaii_lei .rightside {WIDTH: 650px}
+#search{ float:right;}  .nei-leftside{ float:right;} .nei_leftside_ad{float:right;} .guanjianzi{float:right;}
+#hawaii_lei .hawaii_banner_left{ float:left; width:10px;}
+#hawaii_lei .hawaii_banner_top{ float:left; width:270px;}
+#hawaii_lei .leftside{ width:280px; margin-top:0px;}
+#hawaii_lei .nei-leftside .cate_list {
+	PADDING-BOTTOM: 3px; PADDING-LEFT: 0px; WIDTH: 94%; PADDING-RIGHT: 0px; DISPLAY: inline; BACKGROUND: url(/image/xuxian-dot.gif) repeat-x left top; BORDER-BOTTOM-WIDTH: 0px; COLOR: #999999; MARGIN-LEFT: 6px; PADDING-TOP: 10px
+}
+#hawaii_lei .Bread {
+	PADDING-BOTTOM: 10px; PADDING-LEFT: 0px; WIDTH: 100%; PADDING-RIGHT: 0px; FLOAT: left; PADDING-TOP: 0px
+}
+#hawaii_lei .Bread .product-title{ font-size:12px; font-family:"ËÎÌו";}
+#hawaii_lei .Bread p{ padding-top:0px;}
+#hawaii_lei .guanjianzi FORM {
+	DISPLAY: block
+}
+#hawaii_lei .hawaii_qa_guid{ background:#F8F8F8; float:left; width:648px; padding:10px 0px; position:relative; border:1px solid #CECECE;}
+#hawaii_lei .so-BtnLink{ display:block; position:relative; width:26px; height:18px;  }
+#hawaii_lei .so-BtnLink img{ float:none; position:absolute; bottom:0px; }
+.hawaii_qa{ width:47%; border-right:1px solid #E0E0E0; padding:0px 10px; float:left;}
+.hawaii_qa_title{ width:100%; float:left;}
+.hawaii_qa_title li.l{ float:left;} .hawaii_qa_title li.r{ float:right;}
+.hawaii_qa_list { width:100%; float:left; background:url(/image/xuxian-dot.gif) repeat-x scroll left top; margin-bottom:5px;}
+.hawaii_qa_list li{ height:19px; line-height:1.5;}
+.hawaii_qa_list li span{ float:right;}
+.hawaii_qa_list li a{ display:block; width:85%; white-space:nowrap; overflow:hidden;}
+.hawaii_guid{ width:48%; padding:0px 5px; float:right;}
+.hawaii_guid p{ width:100%; padding:10px 0px 0px 0px;}
+.hawaii_guid p a{ padding-right:7px;}
+.hawaii_map{ width:308px; height:180px; overflow:hidden; }
+.qa_guid_icon{position:absolute; background-image:url(/image/bg.png); width:3px; height:3px; overflow:hidden;}
+.qa_guid_tl{ top:-1px; left:-1px; background-position: -19px -783px; }
+.qa_guid_tr{ top:-1px; right:-1px; background-position: -24px -783px;}
+.qa_guid_bl{ bottom:-1px; left:-1px; background-position: -19px -787px;}
+.qa_guid_br{ bottom:-1px; right:-1px; background-position: -24px -787px;}
+
+.hawaii_pro{ width:100%; float:left;}
+.hawaii_banner{ float:left;}
+.hawaii_two_pro{ width:157px; background:#FFFBEC; border:#CECECE 1px solid; margin:10px 0px 0px 10px; position:relative; float: right;}
+.two_pro_t_l{ position:absolute; top:-1px; left:-1px; background: url(/image/bg.png) -3px -783px; width:3px; height:3px; overflow:hidden;}
+.two_pro_t_r{ position:absolute; top:-1px; right:-1px; background: url(/image/bg.png) -8px -783px; width:3px; height:3px; overflow:hidden;}
+.two_pro_b_l{ position:absolute; bottom:-1px; left:-1px; background: url(/image/bg.png) -3px -787px; width:3px; height:3px; overflow:hidden;}
+.two_pro_b_r{ position:absolute; bottom:-1px; right:-1px; background: url(/image/bg.png) -8px -787px; width:3px; height:3px; overflow:hidden;}
+.hawaii_two_pro p{ padding:9px 8px;}
+
+.hawaii_hotel_search{ background:#E7F6FF; border:1px #E3E3E3 solid; border-left:0px; border-right:0px; float:left; width:100%; margin:5px 0 10px; padding-bottom:5px;}
+.hawaii_hotel_search_title{ padding:10px 0px 10px 0px; border-right:1px solid #D6D6D6; color:#6F6F6F; font-weight:bold; width:109px; text-align:center; float:left; margin-top:5px;}
+.hawaii_search_input{ float:left; padding:10px 0px 0px 10px;}
+.hawaii_search_input a img{ float:right; padding-left:5px;}
+.hawaii_search_input p{ color:#6f6f6f;}
+.hawaii_search_input input,select{ width:110px; border:1px solid #999999; padding:1px;}
+.free_combination_step1{border-bottom:1px solid #999999; float:left; width:100%; margin-top:10px; padding-bottom:5px; position:relative;}
+.free_combination_shadow{ background: url(/image/hawaii_shadow2.gif) repeat-x; height:3px; width:100%; position:absolute; bottom:-4px; _bottom:-15px;  left:0px; }
+.free_combination{font-weight:normal;  }
+.free_combination_step1 input,select{width:70px;}
+.free_combination_step1 p{ color:#353535; padding-bottom:5px;}
+.hawaii_search_input2{ padding-left:25px;}
+.hawaii_search_input3{ padding-left:8px;}
+.hawaii_search_input3 a img{ float:right; padding-left:4px;}
+.hawaii_search_input3 p{ float:left; padding:2px 2px 0px 0px;}
+.free_combination_day{ float:left; width:100%; }
+.free_combination_day .daybyday{ float:left; background:#F0F0F0; width:20%;}
+.free_combination_day .daybyday_ou{background:#F8F8F8;}
+.daybyday p{ float:left; width:93px; white-space:nowrap; overflow:hidden; padding-bottom:8px; }
+.day_box{ float:left; padding:12px 0px 0px 16px;}
+.daybyday p.day_title a{ float:right;}
+.daybyday p.day_title span{ float:left;}
+.free_combination_day .s{ background:#F78A18;}
+.free_combination_day .s p.day_title span{ color:#fff;}
+.free_combination_step2{ width:646px; border:2px solid #F78A18; float:left;}
+.step2_hotel{ float:left; width:100%; padding-bottom:10px;}
+.hotel_title_hawaii{ width:100%; float:left; border-top:1px solid #F0F0F0; }
+.hotel_title_hawaii_tt{ background:#F8F8F8; }
+.hotel_title_hawaii_tt td{ color:#6F6F6F;}
+.td_one_left_p{ padding-left:10px}
+.pipei_hotel_hawaii{ font-weight:bold;}
+.pipei_hotel_hawaii a{ text-decoration:underline;}
+.jiantou_tours{ padding: 3px 0px 0px 8px;}
+.pipei_tours_box{background:#FEEBDA; width:100%; float:left; padding-top:15px;}
+.pipei_tours_box table{ width:96%; margin-left:10px;}
+.pipei_tours_title{ background:#fff;} .pipei_tours_title td{color:#6F6F6F;}
+.sub_orangle_txt{ color:#FFB992;}
+.pipei_note{ float:left; background:#fff; margin: 5px 0px 10px 10px; padding: 3px 5px 3px 10px; display: inline; width:94%;}
+.pipei_note_h{ border:2px solid #BDE7FF; line-height:20px;}
+.pipei_note_h a{ font-weight:bold;}
+.day_box_img{ float:left; border:1px solid #9F9F9F; width:93px; height:60px; overflow:hidden; background:#fff;}
+#hawaii_lei .day_des{ padding:4px 0px 0px 0px; height:14px;}
+#hawaii_lei .day_des2{ padding:3px 0px; height:12px;}
+.hotel_single_slect{ width:98%; float:left; padding:10px 0px 10px 10px; border-top:1px solid #999999;}
+.hotel_single_slect table{ line-height:16px; width:99%;}

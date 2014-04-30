@@ -1,0 +1,23 @@
+@charset "gb2312";
+
+.information {clear:both; background: url(/image/nav/user_bg10.gif);height:30px;line-height:30px;    border-top: 1px dotted #B2B2B2;    color: #fff;    padding: 0 10px;}
+.information .float_r{float:right;cursor:pointer;width:50px;}
+.information .float_r em{font-style:normal;float:right;width:18px;height:9px;margin-top:11px;margin-left:5px;background:url(/image/nav/users.gif) no-repeat -125px top;}
+.information .float_r em.yc{background-position:-145px top;}
+
+ .flight {    border-bottom: 1px dotted #D3D3D3;}
+ .flight .box_warp{ overflow:hidden; _zoom:1;     padding: 18px 0;}
+ .flight .box_warp ul{ width:100%;}
+ .flight .box_warp ul li{ margin-bottom:8px;line-height:20px;height:20px;float:left;}
+ .flight .box_warp ul li.textR{text-align:right;width:15%;}
+ .flight .box_warp ul li.textL{text-align:left;width:34.9%;}
+ .flight .box_warp ul li.textL input{border:1px solid #ccc;padding-top:3px;height:17px;width:130px;}
+ .flight .box_warp ul li .box1{ margin-left:7px; border:1px solid #B1D2EB;height:20px; line-height:20px;width:166px;}
+
+
+a.print_btn:hover{ text-decoration:none;color:#76270e;}
+a.print_btn{background:url(/image/nav/users.gif) no-repeat -172px -220px;width:107px;font-size:12px;font-weight:normal;float:right;height:23px;display:block;line-height:22px;text-indent:35px; text-decoration:none;color:#76270e;}
+a.print_btn span{float:right;width:5px;height:23px;background:url(/image/nav/users.gif) right -220px;}
+
+a.btn{display:block;height:29px;line-height:29px;width:82px;padding-left:30px;background:url(/image/nav/carts.gif) no-repeat left -30px;}
+a.btn span{display:block;float:right;background:url(/image/nav/carts.gif) no-repeat right -30px;height:29px;width:10px;}

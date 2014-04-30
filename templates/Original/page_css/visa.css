@@ -1,0 +1,140 @@
+@charset "utf-8";
+/* CSS Document */
+/*=======================================================公共样式======================================================
+body,div,form,img,ul,ol,li,dl,dt,dd,p,tr,td,input,em,a,ol{margin: 0; padding: 0;font-size:12px; }
+h1,h2,h3,h4,h5,h6,p{ margin:0; padding:0; font-weight:normal;}
+input,textarea,select{ color:#999999; font:12px/1.5 tahoma,arial,宋体; }
+body{ background:#fff url(/image/visa/body_bg.jpg) repeat-x; font:12px/1.5 tahoma,arial,宋体; color:#4d4d4d;line-height:22px; }
+img{ border:0px; font-size:0px; display:block;}
+ul,li,ol{ list-style:none; }
+em{ font-style:normal;}
+a{text-decoration:none; color:#19569e; outline:none;}
+a:hover{ text-decoration:underline; color:#ff6600; outline:none;}
+a,area{blr:expression(this.onFocus=this.blur())}
+.font14{ font-size:14px;}
+.font12{ font-size:14px;}
+.fontBold{ font-weight:bold;}
+.color1{ color:#f84500;}
+.color2{ color:#016cb9;}
+*/
+
+/*==============================页眉==============================
+#header{ width:100%; height:203px; background: url(/image/visa/header.jpg) no-repeat center top;}
+/*==============================面包屑导航==============================
+#usiPosition{ height:32px; line-height:32px; color:#004082; width:980px; margin:0 auto;}
+*/
+
+/*==============================签证整体内容==============================*/
+#visa_wrap{ width:980px; margin:0 auto 10px auto; overflow:hidden; _zoom:1;}
+#left_wrap{ width:702px; float:left;}
+#right_wrap{ width:270px; float:right; }
+.visa_content{ width:660px; background:#f4fdff; border:1px solid #c1edf8; padding:0 20px; min-height:733px; height:auto !important; height:733px; }
+.module{ margin-top:10px;}
+.module .tit_visa{ background:url(/image/visa/right_tit_bg.gif) repeat-x; height:34px; line-height:34px; color:#fff; font-weight:bold; padding:0 20px; font-size:14px;}
+.module .cont{ background:#f4fdff; border:1px solid #c1edf8; border-top:1px solid #fff;}
+
+/*美国签证*/
+.usa_visa dl{ overflow:hidden; _zoom:1; padding:25px 0 20px 0}
+.usa_visa dl dt{ width:153px; height:98px; float:left;}
+.usa_visa dl dd{ width:490px; float:left; padding-left:15px;}
+.usa_visa dl dd li h1{ padding-bottom:10px; color:#014b97; font-weight:bold; font-family:"微软雅黑"; font-size:24px;}
+
+/*签证办理流程*/
+.visa_flow{ position:relative; height:112px; background:url(/image/visa/visa_flow_bg.gif) no-repeat center 0; padding-top:42px;}
+.visa_flow ul.imgs li { width:132px; float:left; font-size:0; text-align:center;}
+.visa_flow ul.imgs li img{ margin:0 auto;}
+.visa_flow ul.imgs li p{ line-height:26px; font-size:12px;}
+.visa_flow ul.arrowhead{ position:absolute; width:534px; height:31px; display:block; top:57px; left:110px;}
+.visa_flow ul.arrowhead li{ float:left; width:132px; background:url(/image/visa/visa_flow_dot.gif) no-repeat; height:31px;}
+
+/*签证分类*/
+.visa_list{ padding:15px 0 30px}
+.visa_list li{overflow:hidden; _zoom:1;}
+.visa_list li .tit{background:url(/image/visa/visa_list_titBg.gif) repeat-x; height:33px; line-height:33px; border-bottom:1px solid #dee6e8;}
+.visa_list li h3{ font-size:12px; color:#016cb9; background:url(/image/visa/visa_list_dot2.gif) no-repeat 0 center; padding-left:20px; margin-left:15px; cursor:pointer;/**/} 
+.visa_list li p{ float:right; width:135px; height:33px; padding-right:15px;}
+.visa_list li p a{ width:71px; height:22px; background:url(/image/visa/visa_list_dot3.gif) no-repeat; text-align:center; line-height:22px; color:#fff; float:right; display:block; margin-top:6px}
+.visa_list li p a:hover{ color:#FF0000;}
+.visa_list li.current { border-bottom:none;}
+.visa_list li.current .tit{ display:block;}
+.visa_list li.current h3{ font-weight:bold; font-size:12px; background:url(/image/visa/visa_list_dot1.gif) no-repeat 0 center;  }
+
+.visa_list_content{ color:#666; line-height:22px; margin-bottom:5px; background:#fff; display:none;}
+
+.visa_list  li.current .visa_list_content{ display:block;}
+
+.visa_list_content .padding15{ padding:15px;}
+.visa_list_content .paddingL{ padding-left:20px; color:#f84500}
+
+/*使馆分区*/
+.embassy{ width:650px; background:#fefeeb url(/image/visa/embassy_bg.gif) no-repeat right; border:1px solid #ffdbb5; margin:10px 0; padding:25px;}
+.embassy h3{ font-family:"微软雅黑"; font-size:24px; color:#f84500; padding-bottom:12px;}
+.embassy li{ height:30px; line-height:30px;}
+.embassy a{ padding:0 5px; color:#4d4d4d;}
+.embassy a:hover{ color:#f84500;}
+
+/*签证常见问题*/
+.faq_visa .tit{ background: url(/image/visa/faq_bg.gif) repeat-x; height:36px; line-height:36px; padding:0 20px;}
+.faq_visa .tit li{ cursor:pointer; width:100px; float:left; height:36px; text-align:center; background:url(/image/visa/faq_fgx.gif) no-repeat right; font-weight:bold; font-size:14px; color:#fff;} 
+.faq_visa .tit li.cur{ background:url(/image/visa/faq_cur.gif) no-repeat center; color:#0062b4;}
+.faq_visa .cont{ padding:20px 25px; background:#f4fdff; border:1px solid #c1edf8; border-top:none;}
+.faq_visa .cont dl{ padding-bottom:25px; line-height:22px;}
+.faq_visa .cont dl dt{ color:#f84500;}
+.faq_visa .cont li{ padding-bottom:22px;}
+
+/*独家中文在线填表*/
+.prime .cont{ padding-bottom:10px;}
+.prime p.aerobus{ height:22px; background:#d9edf8; color:#0070bd; padding:0 20px; margin-bottom:10px;}
+.prime dl{ overflow:hidden; _zoom:1; border-bottom:1px dashed #a8e4f2; margin:0 14px; padding:10px 0; }
+.prime dt{ float:left; width:39px; height:37px;}
+.prime dd{ width:190px; float:left; line-height:18px; padding-left:10px;}
+
+/*联系我们*/
+.contact_visa .cont{ padding:10px 17px;}
+.contact_visa dl{ border-bottom:1px dashed #a8e4f2; padding:12px 0}
+.contact_visa dt{ font-weight:bold; font-size:14px; color:#006fc0; padding-left:28px; margin-bottom:5px;}
+.contact_visa dt.s_1{ background:url(/image/visa/contact_dot1.gif) no-repeat 0 center;}
+.contact_visa dt.s_2{ background:url(/image/visa/contact_dot2.gif) no-repeat 0 center;}
+.contact_visa dt.s_3{ background:url(/image/visa/contact_dot3.gif) no-repeat 0 center;}
+.contact_visa dd li{ height:22px; line-height:22px; padding-left:28px;}
+.contact_visa dd li.s1{ background:url(/image/visa/contact_dot4.gif) no-repeat 0 center}
+.contact_visa dd li.s2{ background:url(/image/visa/contact_dot5.gif) no-repeat 0 center}
+
+/*签证流程*/
+.process{ height:29px; background:#ffebbb;}
+.process li{ height:29px; float:left; text-align:center; line-height:29px; color:#545454;}
+.process li.step1{ width:215px;}
+.process li.step2{ width:244px;}
+.process li.step3{ width:201px;}
+#process1{ background: url(/image/visa/process1.gif) no-repeat;}
+#process2{ background: url(/image/visa/process2.gif) no-repeat;}
+#process3{ background: url(/image/visa/process3.gif) no-repeat;}
+#process1 li.step1{ color:#fff; font-weight:bold;}
+#process2 li.step2{ color:#fff; font-weight:bold;}
+#process3 li.step3{ color:#fff; font-weight:bold;}
+
+/*签证流程内容*/
+.visaNum{ margin-top:35px;}
+.visaNum h4{ font-size:18px; font-family:"微软雅黑"; color:#016cb9; font-weight:bold; padding-bottom:18px;}
+.visaNum .padding18{ padding:25px 18px;}
+.visaNum .box1{ width:256px; height:22px; line-height:22px; border:1px solid #90b5e0; color:#666} 
+.visaNum p{ color:#a9a9a9}
+.visaNum .paddingR{ padding-right:8px;}
+.visaNum .marginT10{ margin-top:8px;}
+.visa_input a{width:150px; height:35px; display:block; margin:20px auto;}
+.visa_input2 a{width:137px; height:35px; display:block; margin:20px auto;}
+.nottce{ background:url(/image/visa/nottce_bg.gif) no-repeat; height:90px; line-height:20px; padding:14px 23px 0 76px; margin:17px 0 30px 0}
+.visaNum3_wrap{ margin-bottom:26px;}
+.visaNum3_wrap .tit h5.color2{ height:26px; line-height:26px; color:#004e96}
+.visaNum3_wrap .tip{ background:#e6f5fd url(/image/visa/tip_dot1.gif) no-repeat 10px center; border-bottom:1px solid #cfe9f9; color:#2780c0; height:28px; line-height:28px; padding-left:30px;}
+.visaNum3_wrap .box1{width:256px; height:22px;  line-height:22px; border:1px solid #90b5e0; color:#666} 
+.visaNum3_wrap .box2{ width:486px; height:110px; line-height:22px; border:1px solid #90b5e0; color:#666} 
+.visaNum3_wrap .padding20{ padding:18px;}
+.visaNum3_wrap .paddingLR{ padding:8px 15px;}
+.announce{ background:#dff8fc; padding:20px; margin-bottom:20px;}
+.announce p{ text-align:center;}
+
+/*==============================页脚==============================*/
+#bottom{ background:url(/image/visa/bottom.jpg) no-repeat center; height:368px; width:100%;}
+
+.jipiaoshang h4{line-height:15px;}

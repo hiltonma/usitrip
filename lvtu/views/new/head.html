@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!--[if ie]>
+<html xmlns:wb="http://open.weibo.com/wb">
+<![endif]-->
+<head>
+<base href="{{$head_base_href}}" />
+<meta http-equiv="Content-Type" content="text/html; charset={{$head_charset}}" />
+<link href="{{$smarty.const.DIR_WS_CSS}}public.css" rel="stylesheet" type="text/css" />
+<link href="{{$smarty.const.DIR_WS_CSS}}{{$current_css_file}}" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="{{$smarty.const.DIR_WS_JS}}lwk.js" charset="utf-8"></script>
+<script type="text/javascript" src="{{$smarty.const.DIR_WS_JS}}jquery.js" charset="utf-8"></script>
+<script type="text/javascript" src="{{$smarty.const.DIR_WS_JS}}public.js" charset="utf-8"></script>
+
+<title>{{$page_title}}</title>
+<meta name="Robots" content="index,follow,NOODP" />
+<meta name="keywords" content="{{*旅行,拍照,图片,游记,滤镜,分享,旅途,旅图,攻略,自助游,去哪儿网,去那儿,*}}" />
+<meta name="description" content="{{*简单的操作与精致的滤镜，帮助您随时记录旅途中精彩的片段，并制作成游记与好友分享。探索旅途中的热点，尽情享受您的旅途！*}}" />
+<meta http-equiv="cache-control" content="no-cache" />
+<script type="text/javascript">
+{{if $smarty.const.ENABLE_SSL}}
+var is_ssl = true;
+{{else}}
+var is_ssl = false;
+{{/if}}
+var base_url = '{{$head_base_href}}';
+if (!lwkai) {
+    var lwkai = {};
+};
+/**
+ * 登录地址 
+ * @var string
+ */
+lwkai.loginUrl = '{{$js_login}}';
+lwkai.logoutUrl = '{{$js_logout}}';
+lwkai.imageUrl = '{{$smarty.const.DIR_WS_IMG}}';
+</script>
+</head>
+<body>
+<div id="sitebg">
+	<!--div class="lvtu_header" id="topbar"-->
+		<div class="qn_nav">
+			<div class="qn_header wrapper">
+				<div class="fr">
+					<ul class="fl uhmenu">
+						<li id="loginOrLogin" class="freeregister">
+						{{if $customer_id == ''}}
+							<a href="{{$login_href}}">会员登录</a>
+							<a href="{{$reg_href}}">免费注册</a>
+						{{else}}
+							<a href="{{$user_account}}">您好，{{$username}}</a>|<a href="{{$logout_href}}">退出</a>
+						{{/if}}
+							<!--会员登录信息提示-->
+						</li>
+                    	<li class="userhome">
+                    		<a href="{{$user_account}}">用户中心</a>
+                        	<div class="uhmenutree hide">
+                        		<a href="{{$my_orders}}">我的订单</a>
+                            	<a href="{{$my_favorites}}">我的收藏</a>
+                        	</div>
+                    	</li>
+					</ul>
+					<ul class="fl helpmenu">
+                		<li class="helpcenter"><a href="{{$help}}">帮助中心</a></li>
+                    	<!--li><a href="" class="traditional">繁体</a></li>
+                    	<li><a href="" class="english">English</a></li-->
+                	</ul>
+					<!--script type="text/javascript">G.writeLoginInfo();</script-->
+					<input type="hidden"  id="userid" value="{{$customer_id}}"/>
+				</div>
+				<span class="left"><wb:follow-button uid="3223551651" type="red_2" width="136" height="24" class="weibo"></wb:follow-button>USItrip走四方旅游网-Your Trip , Our Care !</span>
+			</div>
+		</div>
+	<!--/div-->
+	<div id="head">
+    	<div class="hd">
+        	<div class="fl logo"><a href="{{$nav_index}}" title="欢迎来到走四方网">走四方网</a></div>
+            <div class="fl grade">
+            	<a href="{{$a_jia_href}}" target="_blank">全球华人首选出国旅游网站<br>美国BBB认证最高商誉评级</a>
+            </div>
+            <div class="fl hdsearch">
+            	<form method="get" action="{{$top_search_action}}" id="TopSearchForm" name="TopSearchForm">
+        			<div class="fl rel hdsearchIpt">
+                    	<input type="text" name="w" class="hdsearchWords autocomplete_input" placeholder="请输入出发城市或想去的景点" dataurl="{{$top_search_ajax_url}}"/>
+                        {{*<ul class="abs hdAutocomplete hide">
+                        	<li><a href="">纽约</a></li>
+                            <li><a href="">黄石公园</a></li>
+                        </ul>*}}
+                    </div>
+                    <input type="submit" class="fr hdsearchSubmit" value="搜索" />
+                </form>
+            </div>
+            <div class="fr hdContact">
+            	<ul>
+                	<li>1-888-887-2816(美加)</li>
+                    <li>4006-333-926(中国)</li>
+                </ul>
+            </div>
+        </div>
+        <div class="nav">
+        	<ul class="navItems">
+				{{section name=i loop=$navlist}}
+				<li {{if $smarty.section.i.last}}class="last"{{/if}}><a href="{{$navlist[i].href}}" target="_blank" hidefocus="on"><span>{{$navlist[i].text}}</span></a></li>
+	 			{{/section}}
+            </ul>
+        </div>
+    </div>

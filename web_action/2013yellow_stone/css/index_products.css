@@ -1,0 +1,5 @@
+
+
+
+.proListTop { POSITION: relative; margin:0 auto; width:977px; height:35px;}
+.compareBar {background:red; LEFT: 0; OVERFLOW: hidden; WIDTH: 977px; POSITION: absolute; TOP: 0; height:35px; z-index:9999;}

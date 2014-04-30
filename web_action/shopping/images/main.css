@@ -1,0 +1,68 @@
+@charset "utf-8";
+body { background:#0086FF; margin:0; padding:0; }
+i{ font-style:normal;}
+.clear { clear:both; height:0px; }
+#wp { background:#FFF; height:100%; overflow:auto; margin:0 auto; width:950px; }
+#header { background:url(topimg.jpg) top center no-repeat; height:429px; margin-bottom:20px; width:100%; }
+#usitrip { }
+#usitrip h3 { background:url(usitrip.jpg) top center no-repeat; height:56px; line-height:56px; margin:0; padding:0; text-align:right; width:100%; }
+#usitrip h3 strong { display:none; padding-top:50px; }
+#usitrip h3 strong span { color:#F00; font-size:24px; }
+.list { background:url(listbg.jpg) top center no-repeat; height:338px; margin:0 auto; padding-top:10px; text-align:left; width:950px; }
+.info { border:2px solid #F93; margin:0 auto; margin-bottom:10px; text-align:center; height:93px; width:872px; }
+/*.list ul{ list-style:none; margin:0; padding:10px 0 0 0;}
+.list ul li{ border:2px solid #F93; display:block; height:93px; margin:0 0 10px 35px; text-align:left; width:872px;}*/
+.showimg { background:url(imgborder.jpg) right center no-repeat; float:left; margin:0; padding:0;  padding-right:8px; width:238px; }
+.showimg img { border:0; margin:0; padding:0;}
+.details { float:left; text-align:left; width:490px; }
+.details dt { margin:3px 0; padding:0 0 0 10px; }
+.details dl { margin:0; padding:0; }
+.details dt a { color:#0175EC; font-weight:bold; }
+.details dd { color:#FE5200; font-size:12px; margin:0; padding:0 0 0 0px; }
+.yellow { color:#F30; font-weight:bold; }
+.price { float:right; text-align:center; width:135px; }
+.price p { font-size:18px; padding:3px 0; }
+.price p span { color:#FF6300; font-weight:bold; padding:2px 0; }
+
+.main{}
+.main h3 { background:url(mainh3.jpg) center top no-repeat; height:93px; margin:0; padding:0;}
+.place { background:url(showbg.jpg) center top no-repeat; height:300px;}
+.place { }
+.place a { text-decoration:none;}
+.place p { padding:0 5px; margin:5px 0; font-size:12px;}
+.place p em{ color:#0175EC; font-style:normal; font-weight:bold; text-align:left; font-size:14px;}
+.place p span { color:#FF6300; font-weight:bold; padding:2px 0; font-size:18px; }
+.place ul { list-style:none; margin:0 auto; padding:0; padding-top:16px; width:872px;}
+.place ul li { float:left; margin-right:10px; margin-left:10px; text-align:center; word-break:break-all; white-space: nowrap; overflow:hidden; !important; width:194px; }
+.place ul li img { border:none;}
+
+.place ul li a { color:#000;}
+
+.shopping { margin:0 auto; width:904px;}
+
+.pleft {  float:left; height:407px; width:650px;}
+.pleft h3 { background:url(shoph3bg.jpg) center top no-repeat; height:56px; margin:0; padding:0; width:650px;}
+.pleft ul { background:url(shopbg.jpg) center top no-repeat; list-style:none; height:352px; margin:0; padding:0;}
+.pleft ul li { border:1px solid #CCC; float:left; height:158px; margin:5px 0px 5px 20px; text-align:center; overflow:hidden; width:183px;}
+.pleft ul li p { margin:0; padding:0; text-align:center; font-size:13px;}
+.pleft ul li a { text-decoration:none; color:#06C;}
+.pleft ul li img { border:none; height:136px; margin:0; padding:0; width:183px;}
+.pright { background:url(brandbg.jpg) center top no-repeat; float:right; height:407px; width:253px;}
+.pright ul { background:url(brandbg.jpg) center top no-repeat; list-style:none; height:407px; margin:0; padding:15px 0 0 5px;}
+.pright ul li { border:1px solid #CCC; float:left; height:86px; margin:3px; text-align:center; overflow:hidden; width:110px;}
+.pright ul li a { text-decoration:none; color:#06C;}
+.pright ul li img { border:none; height:86px; margin:0; padding:0; width:110px;}
+
+.morelines { margin:0 auto; width:934px;}
+.morelines h3 { background:url(moreh3bg.jpg) center top no-repeat; height:42px; margin:5px 0; padding:0; width:198px;}
+.morelines ul { list-style:none; margin:0 auto; padding:0; height:100px; text-align:center; width:100%;}
+.morelines ul li { border:1px solid #ccc; float:left; height:105px; margin-left:6px;  width:200px; margin-left:15px; margin-right:10px;}
+.morelines ul li img { border:none; height:106px; width:201px;}
+
+.head{ width:100%; height:62px; background:url(../images/headbg.gif) repeat-x;}
+.head_box{ width:980px; margin:0 auto;}
+.fg{ padding:0 8px; color:#badcfe;}
+a.menua{ font-size:14px;}
+.top_menu{ float:left; padding-top:13px; }
+.phone{ text-align:right;}
+.footer{ background:#FFF; width:100%; text-align:center; line-height:35px; color:#999; margin-top:20px;}

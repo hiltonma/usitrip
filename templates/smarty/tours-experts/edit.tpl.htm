@@ -1,0 +1,300 @@
+<form action="{:gethref page=$baseUrl uid=$uid mod=$mod action=$action tmod=$tmod seo='false' expertsAjax='true':}" method="post" id="experts_form_{:$action:}" onsubmit="return false;">
+{:if $action == 'remarks':}
+<ul class="expertAddSort" style="width: 570px;">
+  <li><label>{:db_to_html text='姓名：':}</label>
+  {:html_input name='remarks[name]' enterkey='true' value=$remarks.name|escape:"html" parameters=' class="required text" title="姓名不能为空！"':}
+  </li>
+
+  <li><label>{:db_to_html text='性别：':}</label>
+  <input type="radio" name="remarks[sex]" value="{:db_to_html text='男':}" {:$checked1:}/> {:db_to_html text='男':}
+  <input type="radio" name="remarks[sex]" value="{:db_to_html text='女':}" {:$checked0:}/> {:db_to_html text='女':}
+  </li>
+
+  <li>
+  {:html_textarea name='remarks[remarks]' value=$remarks.remarks|escape:"html" parameters='class="required textarea" title="专家简介不能为空！" style="width:95%;height:100px;"':}
+  </li>
+</ul>
+<div class="popupBtn">
+  <a href="javascript:;" class="btn btnOrange"><button type="submit">{:db_to_html text='确 定':}</button></a>
+</div>
+{:elseif $action == 'photo':}
+	<div id="fileQueue"></div>
+    <div class="expertEditPic" style="width: 450px;">
+      <p><input type="file" name="photo" id="photo" />
+      <br><br>{:db_to_html text='允许上传图片格式jpg,gif,png,建议图片大小140px*190px小于200KB.':}</p>
+    </div>
+    <div class="popupBtn">
+      <a href="javascript:;" class="btn btnOrange" onclick="javascript:jQuery('#photo').uploadifyUpload();"><button type="button" onclick="javascript:jQuery('#photo').uploadifyUpload();">{:db_to_html text='上 传':}</button></a>
+    </div>
+<link href="jquery-1.3.2/uploadify/uploadify.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jquery-1.3.2/uploadify/swfobject.js"></script>
+<script type="text/javascript" src="jquery-1.3.2/uploadify/jquery.uploadify.js"></script>
+<script language="javascript">
+jQuery("#photo").uploadify({
+	uploader     		: 'jquery-1.3.2/uploadify/uploadify.swf',
+	script       		: "{:gethref page=$baseUrl mod=$mod action=$action tmod=$tmod seo='false' expertsAjax='true' urlencode='true' customer_id=$customer_id customers_group=$customers_group:}",
+	cancelImg    		: 'jquery-1.3.2/uploadify/cancel.png',
+	fileDataName 		: 'photo',
+	removeCompleted		: false,
+	queueID      		: 'fileQueue',
+	buttonImg   		: 'image/changeimage.png',
+	sizeLimit	 		: 2097152,/*2M*/
+	fileDesc    		: '*.gif;*.jpg;*.jpeg;*.png',
+	fileExt    			: '*.gif;*.jpg;*.jpeg;*.png',
+	scriptData			: {jQueryAjaxPost:'true',oldPhoto:'{:$photo|escape:"url":}'},
+	auto        		: false,
+	multi       		: false,
+	onComplete  		: function (event, queueID, fileObj, response, data){
+		//alert(response);
+		expertsAjaxSuccessFunc(response);
+	},
+	onError				: function(event, queueID, fileObj){ 
+		alert("File:" + fileObj.name + " Upload error!\r\nThe maximum file size can not exceed 2M!");
+	} 
+});
+</script>
+{:elseif $action == 'edit_writings_type' || $action == 'del_writings_type' || $action == 'add_writings_type':}
+    {:if $action == 'edit_writings_type' || $action == 'add_writings_type':}
+        <ul class="expertAddSort" style="width:450px;">
+          <li><label>{:db_to_html text='所属分组：':}</label>
+          {:if $isWritingsTG:}
+          {:formatwgroup groupid=$gid sex=$expertsInfo.sex expertslef=$isExpertsSelf:}
+          <input type="hidden" name="add_writings_type[group_id]" value="{:$gid:}" />
+          {:else:}
+          <select name="add_writings_type[group_id]" id="expert_ajaxTGroup">
+        {:foreach from=$expertsWritingsGroup item=WritingsGroup name=expertsWritingsGroup:}
+          <option value="{:$WritingsGroup.id:}">{:formatwgroup groupid=$WritingsGroup.id sex=$expertsInfo.sex expertslef=$isExpertsSelf:}</option>
+        {:/foreach:}
+          </select>
+          {:/if:}
+          </li>
+          <li><label>{:db_to_html text='类别名称：':}</label>
+          {:html_input name='add_writings_type[name]' id="expert_ajaxTName" enterkey='true' parameters=' class="required text" title="请输入文章类别的名称。" maxlength=15':}
+          </li>
+        </ul>
+    {:else:}
+        <div class="expertEditPic" style="width: 350px;">
+              <div class="notes_top">
+                  <div class="notes_img"><img src="image/unsuccessful.jpg" align="absmiddle"></div>
+                  <div class="notes_text">
+                    <p>{:db_to_html text='要删除的文章类别：':}</p>
+                    <p id="expert_ajaxTName_html" class="tip"></p>
+                    <p>{:db_to_html text='您确定要删除该类别吗？':}</p>
+                  </div>
+              </div>
+        </div>
+    {:/if:}
+    <div class="popupBtn">
+    <input type="hidden" name="add_writings_type[tid]" id="expert_ajaxTtid" value="0" />
+    <a href="javascript:;" class="btn btnOrange"><button type="submit" id="SubmitButton_{:$action:}">{:db_to_html text='确 定':}</button></a>
+    </div>
+{:if $action == 'edit_writings_type' || $action == 'del_writings_type':}
+<script type="text/javascript">
+var writings_type = jQuery('#writings_type_{:$customer_id:}');
+if(writings_type.is('select')){
+	var selectedOption = writings_type.find("option:selected");
+	if(selectedOption.is('option')){
+		var val = selectedOption.attr('value');
+		var text = selectedOption.html();
+		text = text.replace('-&nbsp;','');
+		var group_id = selectedOption.attr('group_id');
+		val = parseInt(val);
+		if(!isNaN(val) && val>0){
+			<!--{:if $action == 'edit_writings_type':}-->
+			
+			jQuery('#expert_ajaxTGroup').val(group_id);
+			jQuery('#expert_ajaxTName').val(text);
+			
+			<!--{:else:}-->
+			jQuery('#expert_ajaxTName_html').html(text);
+			<!--{:/if:}-->
+			jQuery('#expert_ajaxTtid').val(val);
+		}else{
+			closePopup('popupMainPanel');
+			isShowPopup = false;
+			alert('{:db_to_html text="请选择您要编辑的文章类别！":}');
+		}
+	}else{
+		closePopup('popupMainPanel');
+		isShowPopup = false;
+		alert('{:db_to_html text="您还没有添加文章类别，请先添加文章类别！":}');
+	}
+}else{
+	closePopup('popupMainPanel');
+	isShowPopup = false;
+	alert('{:db_to_html text="错误，对象不存在！":}');
+}
+</script>
+{:/if:}
+
+{:elseif $action == 'writings_type':}
+
+<div class="editSort" style="width: 580px;">
+    <h2>{:formatwgroup groupid=$gid sex=$expertsInfo.sex expertslef=$isExpertsSelf:}</h2>
+    <ul>
+    {:foreach from=$writingsType item=writings_type name=WritingsGroup_writings_type:}
+    {:assign var="tid" value=$writings_type.tid:}
+        <li id="del_wgt_{:$tid:}">
+        <input type="checkbox" class="checkbox" name="tids[]" value="{:$tid:}">
+        {:html_input name="wtname[$tid]" enterkey='true' value=$writings_type.name|db_to_html class="text" maxlength=15:}
+        <span>({:$writings_type.writingsnum:}{:db_to_html text="篇":})</span>
+        {:if $writings_type.writingsnum < 1:}
+        <a href="javascript:;" tid="{:$tid:}" onclick="return delWGT(this);"><img title="{:db_to_html text='删除此分类':}" alt="{:db_to_html text='删除此分类':}" src="image/icons/icon_del_red.gif"></a>
+        {:/if:}
+        </li>
+    {:/foreach:}
+    </ul>
+{:foreach from=$expertsWritingsGroup item=WritingsGroup name=expertsWritingsGroup:}
+{: if $gid != $WritingsGroup.id:}
+    <div class="moveSort">
+        <div class="moveLeft">{:db_to_html text="将选中的类别移动到:":}<span>{:formatwgroup groupid=$WritingsGroup.id sex=$expertsInfo.sex expertslef=$isExpertsSelf:}</span></div><a href="javascript:;" class="btn btnGrey"><button type="button" onclick="return setJObGroup({:$WritingsGroup.id:},'move')">{:db_to_html text="移 动":}</button></a>
+    </div>
+{:/if:}
+{:/foreach:}
+<div class="popupBtn">
+    <a class="btn btnOrange" href="javascript:;"><button type="submit" onclick="return setJObGroup({:$gid:},'update')">{:db_to_html text="更 新":}</button></a>
+<button type="submit" id="move_wgt_submit" style="display:none;"></button>
+</div>
+</div>
+<input type="hidden" name="gid" id="ajax_manawgt_gid" value="{:$gid:}" />
+<input type="hidden" name="job" id="ajax_manawgt_job" value="update" />
+<script type="text/javascript">
+function delWGT(obj){
+	if(confirm('{:db_to_html text="您确定要删除此分类吗？":}')){
+		obj = jQuery(obj);
+		var href = "{:gethref page=$baseUrl mod='edit' uid=$expertsInfo.uid action='writings_type' seo='false':}";
+		var postdata = 'jQueryAjaxPost=true&job=del&tid='+obj.attr('tid');
+		jQuery.ajax({
+			global: false,
+			type: 'POST',
+			url: href,
+			data: postdata,
+			cache: false,
+			processData :false,
+			dataType: 'html',
+			success: function(data){
+				expertsAjaxSuccessFunc(data);
+			},
+			error: function (XMLHttpRequest, textStatus, errorThrown) {
+				alert('Ajax Error!Refresh Please!');
+			}
+		});
+	}
+	return false;
+}
+function setJObGroup(gid,job){
+	jQuery('#ajax_manawgt_gid').val(gid);
+	jQuery('#ajax_manawgt_job').val(job);
+	var form = jQuery('#experts_form_{:$action:}');
+	if(job=='move'){
+		var checkednum = 0;
+		form.find(':checkbox').each(function(){
+			var element = jQuery(this);
+			var name = element.attr('name');
+			if(name == 'tids[]' && element.attr('checked')){
+				checkednum++;
+			}
+		});
+		if(checkednum>0){
+			jQuery('#move_wgt_submit').click();	
+		}else{
+			alert('{:db_to_html text="请选择您要移动的类别！":}');
+		}
+	}else{
+		var retval = true;
+		form.find(':text[name^="wtname["]').each(function(){
+			var element = jQuery(this);
+			var val = element.val();
+			if(jQuery.trim(val)==''){
+				alert('{:db_to_html text="请输入您要更新的类别名称！":}');
+				element.focus();
+				retval = false;
+			}
+		});
+		return retval;
+	}
+}
+</script>
+{:elseif $action == 'delwritings':}
+
+<div class="expertEditPic" style="width: 350px;">
+{:if !$writings:}
+	<div style="color:red;">{:db_to_html text='对不起，您要删除的文章不存在！':}</div>
+{:else:}
+      <div class="notes_top">
+          <div class="notes_img"><img src="image/unsuccessful.jpg" align="absmiddle"></div>
+          <div class="notes_text">
+          	<p>{:db_to_html text='要删除的文章：':}</p>
+            <p><a href="{:gethref page=$baseUrl mod='writings' action='view' uid=$customer_id aid=$aid:}" target="_blank">{:db_to_html text=$writings.title:}</a></p>
+            <p>{:db_to_html text='您确定要删除该文章吗？':}</p>
+          </div>
+      </div>
+{:/if:}
+</div>
+{:if $writings:}
+<div class="popupBtn">
+<input type="hidden" name="aid" value="{:$aid:}" />
+<input type="hidden" name="tid" value="{:$writings.tid:}" />
+<a href="javascript:;" class="btn btnOrange"><button type="submit" id="SubmitButton_{:$action:}">{:db_to_html text='确 定':}</button></a>
+<a class="btn btnGrey" href="javascript:;"><button type="button" onclick="expert_closePopup();">{:db_to_html text='取消':}</button></a>
+</div>
+{:/if:}
+{:elseif $action == 'add_answer':}
+	<div class="expertEditInfo">
+	  {:html_textarea name='a_content' parameters=' class="required textarea" title="请输入您的回复内容" ':}
+    </div>
+	<div class="popupBtn">
+      <input name="q_id" type="hidden" value="{:$q_id:}" />
+	  <a class="btn btnOrange" href="javascript:;"><button type="submit">{:db_to_html text='回 复':}</button></a>
+    </div>
+{:elseif $action == 'delanswers':}
+	<div class="expertEditPic" style="width: 350px;">
+      <div class="notes_top">
+          <div class="notes_img"><img src="image/unsuccessful.jpg" align="absmiddle"></div>
+          <div class="notes_text">
+          	<p>{:db_to_html text='您确定要删除该回复吗？':}</p>
+          </div>
+      </div>
+    </div>
+    <div class="popupBtn">
+      <input name="qid" type="hidden" value="{:$qid:}" />
+      <input name="aid" type="hidden" value="{:$aid:}" />
+	  <a class="btn btnOrange" href="javascript:;"><button type="submit">{:db_to_html text='确定':}</button></a>
+      <a class="btn btnGrey" href="javascript:;"><button type="button" onclick="expert_closePopup();">{:db_to_html text='取消':}</button></a>
+    </div>
+{:elseif $action == 'delquestion':}
+	<div class="expertEditPic" style="width: 350px;">
+      <div class="notes_top">
+          <div class="notes_img"><img src="image/unsuccessful.jpg" align="absmiddle"></div>
+          <div class="notes_text">
+          	<p>{:db_to_html text='您确定要删除该咨询吗？':}</p>
+          </div>
+      </div>
+    </div>
+    <div class="popupBtn">
+      <input name="qid" type="hidden" value="{:$qid:}" />
+	  <a class="btn btnOrange" href="javascript:;"><button type="submit">{:db_to_html text='确定':}</button></a>
+      <a class="btn btnGrey" href="javascript:;"><button type="button" onclick="expert_closePopup();">{:db_to_html text='取消':}</button></a>
+    </div>
+{:else:}
+	{:if !$isExperts:}
+		<div style="color:red;">{:db_to_html text='访问失败，您还没有登陆，或者您不是专家用户！':}</div>
+    {:else:}
+    	<div style="color:red;">{:db_to_html text='访问失败，您访问的功能不存在！':}</div>
+    {:/if:}
+{:/if:}
+</form>
+<script type="text/javascript">
+function formCallback(result, form) {
+	if(result==true){
+		jQuery("#SubmitButton_{:$action:}").attr("disabled","disabled");
+		var formid = '{:$action:}';
+		if(formid!='photo'){
+			formid = 'experts_form_'+formid;
+			var form = jQuery('#'+formid);
+			jQuery_SendFormData(formid,function(data){expertsAjaxSuccessFunc(data);},function(formid){expertsAjaxStartFunc(formid);});
+		}
+	}
+}
+var valid = new Validation('experts_form_{:$action:}', {immediate : true,useTitles:true, onFormValidate : formCallback});
+</script>

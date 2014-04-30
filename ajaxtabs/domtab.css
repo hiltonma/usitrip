@@ -1,0 +1,91 @@
+.domtab {
+	
+}
+
+#contentmain ul.domtabs{
+	list-style:none;		
+	margin: 0;
+	padding-left:15px;
+}
+
+
+
+#contentmain ul.domtabs li {
+	background: none;
+	float: left;
+	margin: 0;
+	padding: 0 3px 0 0;
+	text-align: center;
+}
+
+ul.domtabs a:link, ul.domtabs a:visited, ul.domtabs a:active, ul.domtabs a:hover {
+	color: #000000;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:10px;
+	font-weight:bold;
+	display: block;
+	height: 2em;
+	padding-bottom: 5px;
+	text-decoration: none;
+	width: 6em;
+}
+
+html>body .domtabs a {
+	height:auto;
+	min-height:2em;
+}
+		
+.domtabs a#call911, .domtabs a#doctornow, .domtabs a#doctorlater, .domtabs a#homecare {
+	background: #e5e5e5;
+}
+
+.domtabs a#call911:hover, .domtabs a#doctornow:hover, .domtabs a#doctorlater:hover, .domtabs a#homecare:hover {
+	color: #990000;
+}
+
+.domtabs li.active a#call911, .domtabs li.active a#doctornow, .domtabs li.active a#doctorlater, .domtabs li.active a#homecare {
+	color: #000;
+}
+			
+.domtabs a#call911:hover, .domtabs li.active a#call911 {
+	background: #99D2ED;
+}
+
+.domtabs a#doctornow:hover, .domtabs li.active a#doctornow {
+	background: #DCF4FE;
+}
+
+
+/*content css*/
+
+#call_911, #call_now, #call_later, #home_care {
+	clear: left;
+	
+}
+
+#call_911 h3, #call_now h3, #call_later h3, #home_care h3 {
+	margin-top: 10px;
+}
+
+#call_911 {
+	 
+	/* background: #99D2ED;*/
+	  BORDER-RIGHT: #99D2ED 1px solid;
+    BORDER-TOP: #99D2ED 1px solid;
+    BORDER-LEFT: #99D2ED 1px solid;
+    BORDER-BOTTOM: #99D2ED 1px solid;
+	/* background: #C4DEF6; background-image: url(../images/products_tabs_15.jpg);background-repeat: repeat-x;*/
+	
+}
+
+#call_now {
+
+	/* background: #DCF4FE;*/
+	 BORDER-RIGHT: #DCF4FE 1px solid;
+    BORDER-TOP: #DCF4FE 1px solid;
+    BORDER-LEFT: #DCF4FE 1px solid;
+    BORDER-BOTTOM: #DCF4FE 1px solid;
+	 
+	/*background: #F6E6AD;  background-image: url(../images/products_tabs_15_1.jpg);background-repeat: repeat-x;*/
+}
+

@@ -1,0 +1,11 @@
+@charset "gb2312";
+
+.ui_rules_faq{border:1px solid #AED5FF;padding:10px;}
+.ui_rules_faqlist{padding:10px;}
+.ui_rules_faqlist li{background: url(/image/nav/help_bg06.gif) no-repeat 0 12px;height:30px;line-height:30px;padding-left:15px;border-bottom:1px dashed #cccccc;}
+.ui_rules_faqlist li a{color:#00388A;font-size:14px;}
+.ui_rules_faqlist li a:hover{color:#000000;}
+.ui_rules_faqcnt{margin-top:10px;}
+.ui_rules_faqcnt div{margin:5px 0;padding:0 5px;}
+.ui_rules_faqcnt div h3{color:#0099FF;line-height:28px;background:#F7F7F7;border-bottom:1px dashed #d3d3d3;}
+.ui_rules_faqcnt div p{line-height:24px;text-indent:20px;}

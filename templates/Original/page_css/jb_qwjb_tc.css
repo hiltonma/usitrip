@@ -1,0 +1,26 @@
+@charset "GB2312";
+/* CSS Document 
+.jb_fb_tc{ margin:0 auto; padding:10px; position:absolute; top:40%; left:30%; width:600px;background:#fff; z-index:999; border:#8ca7c2 solid 10px;}
+.jb_fb_tc_2{padding-bottom:15px; width:580px; padding-left:15px; padding-right:15px;position:fixed !important; padding-top:15px;width:580px;background:#fff; border:#656565 solid 1px;}
+.jb_fb_tc_bt{ width:580px; border-bottom:#dbdbdb dashed 1px; float:left; display:block;}
+.jb_fb_tc_bt h3{ color:#000000; font-weight:bold; font-size:12px; float:left; display:block; margin-bottom:3px;}
+.jb_fb_tc_bt_a{ color:#3380F4; text-decoration:none;}
+.jb_fb_tc_bt_a:hover{ text-decoration:underline}
+.jb_fb_tc_bt .icon_fb_bt{ display:block; background:url(/image/icons/icon_x.gif) no-repeat top left; width:16px; height:16px; border:none; float:right}
+.jb_fb_tc_tab{ width:563px; padding:15px 20px; color:#999;}
+.jb_fb_tc_tab table{ width:100%}
+.jb_fb_tc_tab table td{ padding-top:10px; vertical-align:top;}
+.jb_fb_tc_tab span{ width:60px; color:#666;}
+.jb_fb_tc_tab .text_fb_bt{ width:416px; height:18px; padding:3px 8px; font-size:12px; border:#ccc solid 1px;}
+.jb_fb_tc_tab label{ color:#000000; }
+.a_sex_fav{ width:48px; border:#ccc solid 1px; padding:4px 8px; margin:auto 5px; color:#000000; text-decoration:none;}
+.a_sex_del{ width:44px; border:#7ACD01 solid 2px; padding:3px 8px; background:url(/image/a_sex_s.gif) bottom right no-repeat; margin:auto 4px; color:#000000; text-decoration:none;}
+.textarea_fb_bt{ width:416px; height:29px; padding:3px 8px; font-size:12px; border:#ccc solid 1px; color:#bbb; }
+.in_text{ float:right; margin-right:53px; margin-top:3px;}
+.in_text span{ color:#F98702; font-size:16px; font-weight:bold}
+.more_jb{ color:#000000;}
+.jb_fb_all{ background:url(/image/jb_fb_all.gif) no-repeat left top; width:88px; height:25px; border:none;color:#000; cursor:pointer; font-weight:bold;}
+.note-jb-more{ width:335px; position:absolute; right:90px; top:260px;}
+.note-jb-fb_1{ background:#fffdf0; border:#fede77 solid 1px; padding:10px 15px; color:#000000;}
+.note-jb-more_2{ background:url(/image/note_jb_fb1.gif) no-repeat left top; right:260px; top:-6px; width:13px; height:10px; position:absolute;}
+.m_l{ margin-left:20px;}*/

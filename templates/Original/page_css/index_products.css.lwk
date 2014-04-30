@@ -1,0 +1,267 @@
+@charset "gb2312";
+
+/*  
+ * @888trip.com   
+ * @包含了景点,搜索，对比，对比详情，出发城市的css  
+ * @version 2011-01-12   
+ * -------------------------------------------------- */
+
+.proLeft{ float:left; margin:0px 5px; display:inline; width:185px; overflow:hidden;}
+.proLeft .titleSmall{ margin-top:10px;}
+.proLeft a{ color:#111;}
+/* 按旅游景点查看列表 */
+.proLeft dl{ width:183px; border:1px solid #58BAF9; border-top:0px; border-bottom:0px; line-height:24px;}
+.proLeft dl dt{ margin-bottom:6px; padding-left:10px; width:173px; height:24px; background:#F3F8FC; font-weight:bold; color:#111;}
+.proLeft dl dd{ padding-left:5px; width:173px; height:24px; }
+.proLeft dl.place dd a{ float:left; width:163px; padding:3px 0 4px 10px; *padding:5px 0 3px 10px; line-height:12px; }
+.proLeft dl.place dd a:hover,.proLeft dl.place dd a.selected{ background:#3684C6; text-decoration:none; color:#fff;}
+.proLeft dl.placeBot{ border-bottom:1px solid #58BAF9;}
+
+/* 按出发城市查看列表 */
+.proLeft .route{ border-bottom:1px #58BAF9 solid; overflow:hidden;}
+.proLeft .route dt{ float:left;}
+.proLeft .route dd{ float:left; padding:2px 0px 5px 5px; display:inline; width:84px; height:auto; overflow:hidden; }
+.proLeft .route dd a{ float:left; margin:2px 0px; padding:3px 0 4px 10px; *padding:5px 0 3px 10px; width:74px; line-height:12px;}
+
+.proLeft .route dd a.selected,.proLeft .route dd a.selected:hover,.proLeft .route dd a:hover{ background:#3684C6; color:#fff; text-decoration:none;}
+
+.proLeft .route dd.right{ float:right; margin-right:5px;}
+.proLeft ul{ padding:5px 0; width:183px; border:1px solid #C5E6F9; border-top:0; overflow:hidden;}
+.proLeft ul li{ float:left; margin:0 0 2px 10px; display:inline; width:165px; line-height:18px;}
+
+/* 本类特价 */
+.proLeft .specials li a{ display:block; float:left; width:125px; }
+.proLeft .specials li a:hover{ color:#00388A;}
+.proLeft .specials li del{ float:right; font-size:11px; color:#777; font-family:Tahoma;}
+.proLeft .specials li span{ clear:both; float:left; width:125px; color:#f7860f; font-family:Tahoma;}
+.proLeft .specials li b{float:right; color:#f7860f; font-family:Tahoma;}
+
+/* 更多出发城市 */
+.proLeft .moreroute li h3{ margin-top:8px; height:20px; line-height:20px; font-size:14px; font-weight:bold; color:#777}
+.proLeft .moreroute li a{ float:left; display:block; width:140px; margin:3px 0 3px 2px; padding:3px 8px 4px 10px; *padding:5px 8px 3px 10px; line-height:12px; }
+.proLeft .moreroute li a:hover{ background:#3684C6; color:#fff; text-decoration:none;}
+
+/* 结伴同游 */
+.proLeft .companion li{ width:168px; line-height:22px;}
+.proLeft .companion li a{ display:block; float:left; width:140px;}
+.proLeft .companion li a:hover{ color:#00388A;}
+.proLeft .companion li p{ float:right; width:28px; color:#777; *line-height:20px;}
+.proLeft .companion li p a{ color:#223C6D;}
+.proLeft .companion li a.more{ width:168px; text-align:right; line-height:35px; color:#223C6D; font-family:\5b8b\4f53}
+
+
+/* 我们的优势 */
+.proLeft .superior li{ margin:6px 3px 3px; display:inline; padding-left:20px; width:157px; background:url(/image/icons/icon_right.jpg) no-repeat; }	
+.proLeft .superior li a{ float:left; width:157px;}
+.proLeft .superior li a:hover{ color:#00388A;}
+.proLeft .superior li p{ width:157px; line-height:14px; color:#777}
+
+/* 联系我们 */
+.proLeft .contact li{ margin:5px 3px 7px; display:inline; padding-left:20px; width:157px; line-height:15px; }
+.proLeft .contact .no1{background:url(/image/icons/icon_flag_1.gif) no-repeat 0px 3px;}
+.proLeft .contact .no2{background:url(/image/icons/icon_flag_2.gif) no-repeat 0px 3px;}
+.proLeft .contact .no3{background:url(/image/icons/icon_flag_3.gif) no-repeat 0px 3px;}
+.proLeft .contact .no4{background:url(/image/icons/icon_flag_4.gif) no-repeat 0px 3px;}
+.proLeft .contact .no5{background:url(/image/icons/icon_flag_5.gif) no-repeat 0px 0px;}
+.proLeft .contact li p{ color:#777;}
+.proLeft .contact li a{ display:block; margin-bottom:12px; width:100%; color:#223c6a; text-decoration:underline; }
+
+.productLeftAd{ margin-top:15px; width:183px; overflow:hidden;}
+
+/* 右侧定义 */
+.proRight{ float:left; margin:0 5px; display:inline; width:745px; overflow:hidden;}
+
+/* 搜索超出提示 */
+.searchNoResult{ height:40px; padding:20px 0 20px 100px; border:1px solid #FFED8B; background:url(/image/alert_big.gif) no-repeat scroll 30px 10px #FFFEE9; line-height:40px; font-size:14px;}
+
+/* banner */
+.proRight .banner{ width:745px; margin-top:4px; overflow:hidden;height:auto;}
+
+/* 选项内容 */
+.chooseCon{ padding:20px; width:703px; border-left:1px solid #C5E6F9; border-right:1px solid #C5E6F9; overflow:hidden; }
+.chooseConHr{ margin-top:7px; border-top:1px solid #C5E6F9;}
+.chooseCon h1{ height:1px; text-indent:-999px;}
+.chooseCon h2{ height:30px; border-bottom:1px #E7E7E7 dashed; }
+.chooseCon h2 b{ float:left; padding-right:20px; background:url(/image/icons/icon_uparrow.gif) right center no-repeat; font-size:14px; color:#00378A;  line-height:25px; cursor:pointer}
+.chooseCon h2 b.hidden{ background:url(/image/icons/icon_downarrow.gif) right center no-repeat;}
+.chooseCon h2 span{ float:right; line-height:30px; font-weight:normal}
+.chooseCon ul{ width:100%;}
+.chooseCon li{ float:left; width:100%; line-height:38px; border-bottom:1px #E7E7E7 dashed; color:#111; overflow:hidden;}
+.chooseCon li b{ float:left; margin-left:15px; display:inline; width:70px; }
+.chooseCon li div{ float:left; padding:5px 0; *padding:5px 0px 10px; width:618px; overflow:hidden}
+.chooseCon li div a{ float:left; display:block;  margin:5px 16px 5px 0; padding:2px 3px 3px; *padding:4px 3px 2px; line-height:12px; white-space:nowrap;  color:#111}
+.chooseCon li div a.selected,.chooseCon li a.selected:hover{ background:#138DDA; color:#fff; text-decoration:none;}
+.chooseCon li div a:hover{ background:#138DDA; color:#fff; text-decoration:none;}
+.chooseCon li div a.more{ margin-right:0; color:#3380f4; font-family:\5b8b\4f53} 
+.chooseCon li div a.more:hover{ background:none; text-decoration:underline}
+.moreOpts{ padding-left:15px; line-height:35px;}
+
+/* 已选内容 */
+.proRight .chosen{ padding:0 14px; width:715px; height:35px; line-height:35px; background:#F1F1F1; border-left:1px solid #C5E6F9; border-right:1px solid #C5E6F9;}
+.proRight .chosen p{ float:left; }
+.proRight .chosen span{ float:left; margin:7px 5px 0 0; display:inline; padding:0 8px; height:20px; border:1px solid #FDD01B; background:#fff;  }
+.proRight .chosen span i{ float:left; margin-top:1px; line-height:19px; font-style:normal;}
+.proRight .chosen span img{ float:left; margin:5px 0 0 15px; display:inline;}
+
+/* 线路列表 */
+.proList{ width:743px; border:1px solid #C5E6F9; border-top:0px; overflow:hidden;}
+.proListTop{ position:relative; color:#00388a; height:34px; background:#FEFEF6; border-bottom:#E8E8E8 1px solid;}
+.proList .page{ margin-top:9px;}
+.proListBot{ height:34px;}
+
+/* 搜索关键字背景变色 */
+.proList i,.proList a i{ padding:2px 2px 1px; *padding:2px 2px 0; _padding:2px 2px 1px; background:#FFEF7D; font-style:normal;}
+
+/* 线路分页 右边选项 */
+.proListTop .option{ float:right; margin:9px 10px 0 0; display:inline; width:270px;}
+.proListTop .option .orderby{ float:right; margin:0 10px 0 5px; display:inline; padding-right:16px; height:15px;  background:url(/image/option_arrow.gif) no-repeat right -30px; text-align:right; line-height:15px;}
+.proListTop .option .selecteda{ background-position:right -45px;}
+.proListTop .option .selectedd{ background-position:right -15px;}
+.proListTop .option select{ float:right; margin-left:5px; display:inline; }
+.proListTop .option a,.proList .proListTop .option a:hover{ color:#111; text-decoration:none;}
+
+/* 线路分页下面的浮动框 */
+.compareBar{  position:absolute; padding-bottom:1px; left:530px; top:80px; width:96px; background:#DEA415; overflow:hidden; }
+.compareBar .con{ padding-bottom:5px; width:93px; background:#fff; border:1px solid #F8DF7A; overflow:hidden}
+.compareBar .con h2{ padding-left:6px; width:87px; height:22px; background:#FFEA97; color:#111; border-bottom:1px #DCDCDC dashed; line-height:22px; font-weight:normal;}
+.compareBar .con ul li{ float:left; padding-left:6px; width:87px; height:22px; border-bottom:1px #DCDCDC dashed; cursor:pointer}
+.compareBar .con ul li p{ float:left; width:70px; line-height:22px; overflow:hidden;} 
+.compareBar .con ul li p a{ color:#111; white-space:nowrap;}
+.compareBar .con ul li p a:hover{text-decoration:none;}
+.compareBar .con ul li span{ display:none; float:left;  width:11px; height:11px; line-height:11px; } 
+.compareBar .con ul li span a{ padding:0; margin:0;}
+.compareBar .con ul li.over{ background:#FFFAEA;}
+.compareBar .con ul li.over span{ margin:5px 0 0 3px; display:inline;}
+.compareBar .btnCompareSmall{ margin:5px 0 0 10px; }
+.compareBar .btnCompareSmall button{ width:70px;}
+
+/* 对比弹出层 */
+#popupTip h3{ color:#F7860F;}
+.popupCon ul li{ float:left; padding:0 10px; width:470px; height:40px; line-height:40px; border-bottom:1px #DBDBDB dashed; cursor:pointer; overflow:hidden;} 
+.popupCon ul li p{ float:left; width:450px; overflow:hidden;} 
+.popupCon ul li span{ display:none; float:right; margin-top:15px; width:20px; height:20px; line-height:20px;} 
+.popupCon ul li.over{ background:#FFFAEA;}
+.popupCon ul li.over span{ display:block;}
+.btnCompare button{ width:100px;}
+
+/* 线路列表 */
+.proListCon{ margin-bottom:1px; padding:20px 15px; width:713px; overflow:hidden; border-bottom:1px solid #E0E0E0; word-spacing:-3px; letter-spacing:-3px;}
+
+/* 线路列表偶数排 */
+.proListConEven{ background:#F7F7F7;}
+
+/* 线路列表偶数排 */
+.proListConSelected{ padding:19px 14px 20px; width:713px; border:1px solid #FE8A00; background:#FFFFF7;}
+
+/* 线路列表标题 */
+.proListCon h2{ font-size:14px; color:#111; line-height:24px; word-spacing:normal; letter-spacing:normal;}
+.proListCon h2 a{color:#111;}
+.proListCon h2 a:hover{color:#00388A;}
+.proListCon h3{ margin-bottom:4px; line-height:14px; font-size:12px; color:#319114; font-weight:normal; word-spacing:normal; letter-spacing:normal;}
+
+/* 线路列表左边 */
+.proListCon .left{ display:inline-block; *display:inline; *zoom:1; padding:20px 25px 0 0; width:159px; word-spacing:normal; letter-spacing:normal;  vertical-align:top;}
+.proListCon .left .pic{ position:relative; width:159px; height:103px; }
+.proListCon .left .pic img{ width:159px; height:103px;}
+.proListCon .left .pic .gift{position:absolute; right:-20px; top:-17px; width:78px; height:41px; background:url(/image/gift.png); _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true', sizingMethod='scale', src="/image/gift.png");_background:none; text-align:center; color:#fff; padding-top:12px; padding-left:1px;}
+.proListCon .left .pic .groupTag{ position:absolute; top:-12px; width:77px; height:35px; left:-13px; background:url(/image/group_tag.png);}
+.proListCon .left ul{ margin-top:10px; width:159px; word-spacing:-3px; letter-spacing:-3px;}
+.proListCon .left li{ display:inline-block; *display:inline; *zoom:1; margin-top:3px; width:79px; line-height:15px; color:#F78610; word-spacing:normal; letter-spacing:normal;}
+.proListCon .left .compare{ width:159px; height:25px; line-height:25px;}
+.proListCon .left .compare .compareLeft{ float:left;}
+.proListCon .left .compare .compareLeft input{ float:left; margin:5px 2px 0 0; display:inline; width:13px; height:13px;}
+.proListCon .left .compare button{ width:50px;}
+.proListCon .left .compare .btnCompareSmall{ display:none; float:left;}
+
+
+/* 线路列表中间 */
+.proListCon .mid{ display:inline-block; *display:inline; *zoom:1; margin-top:15px; width:437px; overflow:hidden; color:#111; line-height:24px; vertical-align:top;}
+.proListCon .mid li{ display:inline-block; *display:inline; *zoom:1; width:100%;}
+.proListCon .mid h4{ display:inline-block; *display:inline; *zoom:1;  color:#777; width:63px; font-weight:normal; word-spacing:normal; letter-spacing:normal; vertical-align:top;}
+.proListCon .mid p{ display:inline-block; *display:inline; *zoom:1; width:310px; word-spacing:normal; letter-spacing:normal;}
+.con .popupCon .myUnionHelp{ width:500px; background:url(/image/loading_32x32.gif) no-repeat center;}
+.con .popupCon .popupConTop h3 b{ font-weight:bold; height:24px; line-height:24px;}
+.proListCon .mid b{ display:inline-block; *display:inline; *zoom:1; color:#223c6a; font-weight:normal; word-spacing:normal; letter-spacing:normal;}
+.proListCon .mid li.NotReqVisa{ padding:3px 5px; width:350px; background:#F2F8D8; border:1px dotted #D7E59A; color:#319114; line-height:18px; word-spacing:normal; letter-spacing:normal;}
+.proListCon .mid .mapView{ width:70px; height:19px; padding-left:13px; background:url(/image/icons/map_flag.gif) no-repeat 0 -1px; line-height:19px; color:#327EF6;}
+
+/* 线路列表右边 */
+.proListCon .right{ display:inline-block; *display:inline; *zoom:1; margin-top:15px; width:92px; text-align:right; word-spacing:normal; letter-spacing:normal;  vertical-align:top;}
+.proListCon .right del{ width:92px; font-size:14px; color:#777; font-family:Tahoma;}
+.proListCon .right b{ width:92px; font-size:18px; color:#f7860f; font-family:Tahoma; font-weight:normal;}
+.proListCon .right .btnAddCar{ margin-top:28px;}
+.proListCon .right .btnAddCollect{ margin-top:10px; }
+.proListCon .right button{ width:90px;}
+
+/* 比较详情 */
+.titleCompare{ float:left; margin-left:5px; display:inline; width:940px;}
+.compareTable{ float:left; margin-left:5px; display:inline; width:940px; }
+.compareTable li{list-style-type:none;}
+.compareTable td{ vertical-align:top; padding:15px 10px; border-right:1px solid #C5E6F9; border-bottom:1px solid #C5E6F9; line-height:18px; width:287px; }
+.compareTable td.left{ padding:15px 0; width:74px; border-left:1px solid #C5E6F9; background:#F3FBFE; text-align:center; color:#396BB4; font-weight:bold}
+.compareTable td.leftB{ border-bottom:none;}
+.compareTable td h1{ font-size:12px;}
+.compareTable td h1 a{ color:#111;}
+.compareTable td h2{ color:#4DA501; font-size:12px; font-weight:normal;}
+.compareTable td h3{ font-size:18px; color:#f5870c; font-family:Tahoma; font-weight:normal;}
+.compareTable td.even{  background:#F7F7F7; }
+.compareTable td.evenB{border-bottom:1px solid #EBEBEB;}
+.compareTable b{ color:#F8860A;}
+.compareTable span.hotel{ clear:both; float:left; margin-top:5px; padding-left:18px;background:url(/image/icons/icon_hotal.gif) left 3px no-repeat; }
+
+#content{background:none repeat scroll 0 0 #FFFFFF;overflow:hidden;padding:10px 0 8px;width:950px;margin:0 auto;float:none;}
+.guid{ margin-left:10px;}
+.search-5list {float:left;padding-left:12px;padding-top:10px;}
+.search-5list li {float:left;line-height:19px;text-align:left;width:98%;}
+.infoBox {border:1px solid #83CDF5;}
+.infoBoxContents {background:none repeat scroll 0 0 #D9F0FD;font-size:12px;}
+.automarginclass {margin:auto;}
+
+/* old css */
+.tab_biaoti { float:left; height:22px; width:100%; margin-left:5px;  border-bottom:2px solid #ACDEF9; margin-top:8px; display:inline;}
+.biaoti5 {float: left; height: 22px; width:auto; margin-left:2px;}
+.biaoti5 h5 { font-size: 16px; color:#0F2447; text-decoration:none;}
+.tab_video {float:left; width:100%; margin-top:5px; margin-left: 5px; display:inline;}
+.video { float: left; margin-top: 5px;  margin-left: 5px;  display: inline;}
+.c_tt {float: left; width: 400px; font-size: 12px; color: #223C6A; text-decoration: none; margin-top: 12px; margin-left: 18px; line-height: 18px; display: inline;}
+.tab_xunhuan {float: left; width: 100%; margin-top: 10px;}
+.tab_xunhuan_img{ padding: 5px; float: left; height: auto; border: 1px solid #CBEBFC; display: inline; margin-top: 6px;}
+.tab_xunhuan_tt{ margin-top: 6px;}
+.c_tt2 { float: left; width: 435px; font-size: 12px; color: #223C6A; text-decoration: none; margin-left: 12px; line-height: 18px;}
+.ladt_tt { font-size: 9px; color: #108BCD;text-decoration: none; text-align: right; padding-bottom: 5px; margin-top: 15px; width: 98%; float: left;}
+.a_3 {text-decoration: underline;font-size: 12px;}
+
+.cl_table {background:none repeat scroll 0 0 #FEEBDA; border-color:#FFB58D -moz-use-text-color; border-style:solid none; border-width:1px 0; float:left; height:24px; margin-top:10px; padding-top:4px; width:100%;}
+.m_tours {float:left;margin-top:0;width:100%;}
+.m_tours1 {float:left;width:100%;}
+.input_search{border:#666 solid 1px;margin-top:5px;}
+
+/* 收藏成功的提示 */
+.addSuccess .btn{ margin-right:20px;}
+.addSuccess div#Favorites_Content{color:#F7860F;}
+
+/* 搜索结果为空的情况 */
+.notFound{ border-top:0px; overflow:hidden;border-bottom: 1px solid #C5E6F9;}
+.notFound .topTip{ height:80px; padding-left:150px; background:#FFFCF5; background:url(/image/no_found.jpg) no-repeat 80px 15px #FFFCF5; line-height:80px; font-size:14px; border-bottom: 1px solid #F7E5B3;border-top: 1px solid #F7E5B3;}
+.notFound .suggest{ margin:10px 25px; line-height:24px;}
+.notFound .suggest h3{ font-size:14px;}
+.notFound .phone{ margin-bottom:15px; line-height:20px;}
+.notFound .phone li{ display:inline-block; *display:inline; *zoom:1; width:100%; margin-left:10px; padding-left:22px; background:url(/image/icons/phone_blue.gif) left center no-repeat;}
+.notFound .phone li.first{ width:200px;}
+.notFound .phone li.service{ width:auto; background:url(/image/icons/icon_flag_4.gif) left center no-repeat;}
+.notFound .message{ margin:5px 10px 15px 12px;}
+.notFound .message li{ margin:4px 0;}
+.notFound .message label{ display:inline-block; *display:inline; *zoom:1;  width:65px; color:#777; vertical-align:top; }
+.notFound .message .text{ width:180px;}
+.notFound .message .textarea{ width:385px; height:65px;}
+.notFound .message span{ display:inline-block; *display:inline; *zoom:1; margin-left:10px; vertical-align:top; color:#777;  }
+
+
+/* 您可能喜欢 */
+.suggestRoute{margin-bottom: 10px;margin-left:7px;margin-top:10px;width:730px;}
+.suggestRoute ul{ border:1px solid #C5E6F9; border-top:0px; overflow:hidden;}
+.suggestRoute li{ width:100%; padding:12px 20px 10px; border-bottom:1px solid #efefef; overflow:hidden; line-height:18px;}
+.suggestRoute li.bottom{ border:0;}
+.suggestRoute .left{ float:left; width:630px;}
+.suggestRoute p{ color:#319114;}
+.suggestRoute b{ color:#F7860F; font-family:Tahoma;}

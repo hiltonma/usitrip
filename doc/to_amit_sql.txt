@@ -1,0 +1,2411 @@
+ALTER TABLE `countries` ADD `countries_tel_code` VARCHAR( 8 ) NOT NULL ;
+ALTER TABLE `countries` ADD INDEX ( `countries_iso_code_2` ) ;
+
+ALTER TABLE `countries` ADD INDEX ( `countries_tel_code` );
+
+
+ALTER TABLE `customers` ADD `customers_mobile_phone` VARCHAR( 32 ) NOT NULL AFTER `customers_selected_template` ;
+
+
+UPDATE `configuration` SET `configuration_value` = 'Sincerely, 真誠地， <a></a> 888trip 客戶服務部 Customer Service Team <a href="http://www.888trip.com" target="_blank">www.888trip.com</a>' WHERE `configuration_id` = '291' LIMIT 1 ;
+
+# howard 20090327 added
+
+ALTER TABLE `customers_basket` ADD `latest_mail_date` VARCHAR( 8 ) NOT NULL ,
+ADD `sent_num` INT NOT NULL ,
+ADD `next_send_date` VARCHAR( 8 ) NOT NULL ;
+
+CREATE TABLE `cron` (
+  `cron_id` int(11) unsigned NOT NULL auto_increment,
+  `cron_code` varchar(100) NOT NULL default '',
+  `cron_name` varchar(200) NOT NULL default '',
+  `cron_start_date` date NOT NULL default '0000-00-00',
+  `cron_interval_day_num` int(11) NOT NULL default '1',
+  `cron_latest_send_date` date NOT NULL default '0000-00-00',
+  `cron_ation_state` tinyint(4) NOT NULL default '0',
+  PRIMARY KEY  (`cron_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+#
+# 列出以下資料庫的數據： `cron`
+#
+
+INSERT INTO `cron` VALUES (1, 'ShoppingCartCall', '提示購物車不為空的用戶去完成訂單', '2009-03-22', 0, '2009-03-27', 0);
+INSERT INTO `cron` VALUES (2, 'CustomersPoint', '定期給客戶發送積分提示郵件', '2008-10-01', 30, '0000-00-00', 0);
+
+# howard 20090330 added
+ALTER TABLE `customers` ADD `customers_char_set` VARCHAR( 8 ) DEFAULT 'big5' NOT NULL ;
+
+# added vote system 2009-04-02
+CREATE TABLE `vote_system` (
+`v_s_id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+`v_s_title` VARCHAR( 256 ) NOT NULL ,
+`v_s_state` TINYINT( 2 ) DEFAULT '0' NOT NULL ,
+`v_s_date` DATETIME NOT NULL ,
+`v_s_start_date` DATE NOT NULL ,
+`v_s_end_date` DATE NOT NULL ,
+`v_s_description` TEXT NOT NULL ,
+PRIMARY KEY ( `v_s_id` )
+);
+
+CREATE TABLE `vote_system_item` (
+`v_s_i_id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+`v_s_i_title` VARCHAR( 256 ) NOT NULL ,
+`v_s_id` INT NOT NULL ,
+`v_s_i_type` TINYINT( 2 ) DEFAULT '0' NOT NULL ,
+`v_s_i_sort` INT NOT NULL ,
+PRIMARY KEY ( `v_s_i_id` )
+);
+
+CREATE TABLE `vote_system_item_options` (
+`v_s_i_o_id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+`v_s_i_o_title` VARCHAR( 256 ) NOT NULL ,
+`v_s_i_id` INT NOT NULL ,
+`v_s_i_o_total` INT NOT NULL ,
+PRIMARY KEY ( `v_s_i_o_id` )
+);
+
+CREATE TABLE `vote_system_results` (
+`v_s_r_id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+`v_s_i_o_id` INT NOT NULL ,
+`customers_id` INT NOT NULL ,
+`v_s_r_date` DATETIME NOT NULL ,
+PRIMARY KEY ( `v_s_r_id` )
+);
+
+ALTER TABLE `vote_system` ADD `v_s_sort` INT NOT NULL ;
+
+# howard added 2009-04-05
+ALTER TABLE `vote_system_results` ADD `v_s_id` INT NOT NULL AFTER `v_s_r_id` ,
+ADD `v_s_i_id` INT NOT NULL AFTER `v_s_id` ;
+
+ALTER TABLE `vote_system_results` ADD `text_vote` TEXT NOT NULL ;
+
+ALTER TABLE `vote_system` ADD `v_s_points` INT( 10 ) NOT NULL ;
+
+ALTER TABLE `vote_system_results` ADD `orders_id` INT NOT NULL ;
+ALTER TABLE `orders` CHANGE `orders_status` `orders_status` INT( 8 ) DEFAULT '0' NOT NULL ;
+ALTER TABLE `orders` ADD `tours_back_mail` TINYINT( 1 ) NOT NULL ;
+
+ALTER TABLE `vote_system` ADD `v_s_repeat` TINYINT( 2 ) NOT NULL ;
+
+
+
+#2009-04-09
+
+ALTER TABLE `vote_system_item_options` ADD `v_s_i_o_sort` INT NOT NULL ;
+
+#2009-04-10
+ALTER TABLE `tour_leads_info` ADD `que_id` INT( 11 ) NOT NULL ;
+
+#2009-04-11
+ALTER TABLE `coupons` ADD `coupon_order_min_customers_num` INT NOT NULL AFTER `date_modified` ;
+
+#2009-04-14
+ALTER TABLE `admin` ADD `admin_publicity_name` VARCHAR( 50 ) NOT NULL AFTER `admin_lastname` ;
+
+UPDATE `configuration` SET `configuration_value` = 'true' WHERE `configuration_key` = 'AFFILIATE_USE_BANK' LIMIT 1 ;
+INSERT INTO `configuration` ( `configuration_id` , `configuration_title` , `configuration_key` , `configuration_value` , `configuration_description` , `configuration_group_id` , `sort_order` , `last_modified` , `date_added` , `use_function` , `set_function` )
+VALUES (
+'', '用戶每天推薦客戶郵件被有效計入積分的總個數', 'EVERY_DAY_POINTS_EMAIL_NUM', '設置用戶每天推薦客戶郵件被有效計入積分的總個數。', '50', '1', NULL , '2009-04-17 18:33:33', '', NULL , NULL
+);
+
+UPDATE  `configuration`  SET  `configuration_value`  =  '50',
+ `configuration_description`  =  '設置用戶每天推薦客戶郵件被有效計入積分的總個數。'
+ WHERE  `configuration_key`  =  'EVERY_DAY_POINTS_EMAIL_NUM' LIMIT 1 ;
+
+ALTER TABLE `products` ADD `min_num_guest` TINYINT( 2 ) DEFAULT '1' NOT NULL ;
+
+#2009-04-24
+ALTER TABLE `customers` ADD `customers_validation_code` VARCHAR( 10 ) NOT NULL ,
+ADD `customers_validation` TINYINT( 1 ) NOT NULL ;
+
+#2009-05-20
+CREATE TABLE `hotel` (
+  `hotel_id` int(10) unsigned NOT NULL auto_increment,
+  `hotel_name` varchar(100) NOT NULL default '',
+  `hotel_stars` tinyint(2) NOT NULL default '0',
+  `hotel_reviews_rating` tinyint(2) NOT NULL default '0',
+  `hotel_address` varchar(200) NOT NULL default '',
+  `hotel_phone` varchar(50) NOT NULL default '',
+  `hotel_fax` varchar(50) NOT NULL default '',
+  `hotel_description` longtext NOT NULL,
+  `hotel_map` text NOT NULL,
+  `related_hotel` varchar(200) NOT NULL default '',
+  `related_high_hotel` varchar(200) NOT NULL default '',
+  `hotel_url_name` varchar(200) NOT NULL default '',
+  `add_date` datetime NOT NULL default '0000-00-00 00:00:00',
+  `up_date` datetime NOT NULL default '0000-00-00 00:00:00',
+  `reviews_num` int(11) NOT NULL default '0',
+  PRIMARY KEY  (`hotel_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+# --------------------------------------------------------
+
+#
+# 資料表格式： `hotel_pic`
+#
+# 建立: May 15, 2009 at 09:49 AM
+# 最後更新: May 19, 2009 at 11:44 PM
+# 最後檢查: May 19, 2009 at 11:44 PM
+#
+
+CREATE TABLE `hotel_pic` (
+  `hotel_pic_id` int(10) unsigned NOT NULL auto_increment,
+  `hotel_id` int(11) NOT NULL default '0',
+  `hotel_pic_alt` varchar(200) NOT NULL default '',
+  `hotel_pic_url` varchar(200) NOT NULL default '',
+  `hotel_pic_sort` int(10) NOT NULL default '0',
+  PRIMARY KEY  (`hotel_pic_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+# --------------------------------------------------------
+
+#
+# 資料表格式： `hotel_reviews`
+#
+# 建立: May 15, 2009 at 10:09 AM
+# 最後更新: May 20, 2009 at 02:04 PM
+#
+
+CREATE TABLE `hotel_reviews` (
+  `hotel_reviews_id` int(10) unsigned NOT NULL auto_increment,
+  `hotel_id` int(11) NOT NULL default '0',
+  `customers_id` int(11) NOT NULL default '0',
+  `customers_name` varchar(100) NOT NULL default '',
+  `customers_email` varchar(100) NOT NULL default '',
+  `reviews_rating` tinyint(1) NOT NULL default '0',
+  `date_added` datetime NOT NULL default '0000-00-00 00:00:00',
+  `last_modified` datetime NOT NULL default '0000-00-00 00:00:00',
+  `reviews_status` int(3) NOT NULL default '0',
+  `reviews_text` text NOT NULL,
+  PRIMARY KEY  (`hotel_reviews_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+# --------------------------------------------------------
+
+#
+# 資料表格式： `hotel_to_travel_agency`
+#
+# 建立: May 15, 2009 at 03:15 PM
+# 最後更新: May 21, 2009 at 12:03 AM
+# 最後檢查: May 21, 2009 at 12:03 AM
+#
+
+CREATE TABLE `hotel_to_travel_agency` (
+  `hotel_to_travel_agency_id` int(11) unsigned NOT NULL auto_increment,
+  `hotel_id` int(11) NOT NULL default '0',
+  `agency_id` int(11) NOT NULL default '0',
+  PRIMARY KEY  (`hotel_to_travel_agency_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+
+#2009-05-21
+
+ALTER TABLE `tours_experience` ADD `meta_title` TEXT NOT NULL ,
+ADD `meta_keywords` TEXT NOT NULL ,
+ADD `meta_description` TEXT NOT NULL ;
+
+ALTER TABLE `usa_tours_info` ADD `meta_title` TEXT NOT NULL ,
+ADD `meta_keywords` TEXT NOT NULL ,
+ADD `meta_description` TEXT NOT NULL ;
+
+ALTER TABLE `information` ADD `meta_title` TEXT NOT NULL ,
+ADD `meta_keywords` TEXT NOT NULL ,
+ADD `meta_description` TEXT NOT NULL ;
+
+#2009-05-27
+ALTER TABLE `customers` ADD `customers_referer_type` TINYINT( 2 ) NOT NULL AFTER `customers_referer_url` ;
+
+#
+# 資料表格式： `customers_ref_type`
+#
+
+CREATE TABLE `customers_ref_type` (
+  `customers_ref_type_id` tinyint(3) unsigned NOT NULL auto_increment,
+  `customers_ref_type_name` varchar(100) NOT NULL default '',
+  PRIMARY KEY  (`customers_ref_type_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+
+#
+# 列出以下資料庫的數據： `customers_ref_type`
+#
+
+INSERT INTO `customers_ref_type` VALUES (1, 'google繁體CPC');
+INSERT INTO `customers_ref_type` VALUES (2, 'google簡體CPC');
+INSERT INTO `customers_ref_type` VALUES (3, 'yahooCPC');
+INSERT INTO `customers_ref_type` VALUES (4, 'google自然');
+INSERT INTO `customers_ref_type` VALUES (5, 'referl site newsletter');
+INSERT INTO `customers_ref_type` VALUES (6, '其他SE');
+INSERT INTO `customers_ref_type` VALUES (7, '自然');
+INSERT INTO `customers_ref_type` VALUES (8, '其他');
+
+# 2011-09-23 09:25 分类的目录进行二级细分 BY PANDA{
+CREATE TABLE `customers_ref_type2` (
+`customers_ref_type_id` TINYINT( 3 ) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`customers_ref_type_name` VARCHAR( 100 ) NOT NULL ,
+`customers_ref_type_value` VARCHAR( 100 ) NOT NULL ,
+`customers_ref_type_pid` TINYINT( 3 ) NOT NULL ,
+`sort_num` INT NOT NULL
+) ENGINE = MYISAM ;
+INSERT INTO `customers_ref_type2` VALUES (1, 'SEM', 'sem', 0, 0);
+INSERT INTO `customers_ref_type2` VALUES (2, 'SEO', 'seo', 0, 0);
+INSERT INTO `customers_ref_type2` VALUES (3, 'Email', 'email', 0, 0);
+INSERT INTO `customers_ref_type2` VALUES (4, 'SMM', 'smm', 0, 0);
+INSERT INTO `customers_ref_type2` VALUES (5, 'Affiliate', 'affiliate', 0, 0);
+INSERT INTO `customers_ref_type2` VALUES (6, 'AD', 'ad', 0, 0);
+INSERT INTO `customers_ref_type2` VALUES (7, 'CSSA', 'cssa', 0, 0);
+INSERT INTO `customers_ref_type2` VALUES (8, '站群', '站群', 0, 0);
+INSERT INTO `customers_ref_type2` VALUES (9, 'Other', 'other', 0, 0);
+INSERT INTO `customers_ref_type2` VALUES (10, 'Google_zh', 'google_zh', 1, 0);
+INSERT INTO `customers_ref_type2` VALUES (11, 'Google_tw', 'google_tw', 1, 0);
+INSERT INTO `customers_ref_type2` VALUES (12, 'Yahoo_tw', 'yahoo_tw', 1, 0);
+INSERT INTO `customers_ref_type2` VALUES (13, 'Baidu', 'baidu', 1, 0);
+INSERT INTO `customers_ref_type2` VALUES (14, 'Youdao', 'youdao', 1, 0);
+INSERT INTO `customers_ref_type2` VALUES (15, 'Soso', 'soso', 1, 0);
+INSERT INTO `customers_ref_type2` VALUES (16, 'Sogou', 'sogou', 1, 0);
+INSERT INTO `customers_ref_type2` VALUES (17, 'Google_nature', 'google_nature', 2, 0);
+INSERT INTO `customers_ref_type2` VALUES (18, 'Yahoo_nature', 'yahoo_nature', 2, 0);
+INSERT INTO `customers_ref_type2` VALUES (19, 'Baidu_nature', 'baidu_nature', 2, 0);
+INSERT INTO `customers_ref_type2` VALUES (20, 'Youdao_nature', 'youdao_nature', 2, 0);
+INSERT INTO `customers_ref_type2` VALUES (21, 'Soso_nature', 'soso_nature', 2, 0);
+INSERT INTO `customers_ref_type2` VALUES (22, 'Sogou_nature', 'sogou_nature', 2, 0);
+INSERT INTO `customers_ref_type2` VALUES (23, 'usi4trip', 'usi4trip', 2, 0);
+INSERT INTO `customers_ref_type2` VALUES (24, 'Newsletter', 'newsletter', 3, 0);
+INSERT INTO `customers_ref_type2` VALUES (25, '163', '163', 3, 0);
+INSERT INTO `customers_ref_type2` VALUES (26, '126', '126', 3, 0);
+INSERT INTO `customers_ref_type2` VALUES (27, 'QQ', 'qq', 3, 0);
+INSERT INTO `customers_ref_type2` VALUES (28, 'Sina', 'sina', 3, 0);
+INSERT INTO `customers_ref_type2` VALUES (29, 'Sohu', 'sohu', 3, 0);
+INSERT INTO `customers_ref_type2` VALUES (30, 'Hotmail', 'hotmail', 3, 0);
+INSERT INTO `customers_ref_type2` VALUES (31, 'Live', 'live', 3, 0);
+INSERT INTO `customers_ref_type2` VALUES (32, 'Yahoo', 'yahoo', 3, 0);
+INSERT INTO `customers_ref_type2` VALUES (33, 'Other', 'Other', 3, 0);
+INSERT INTO `customers_ref_type2` VALUES (34, 'Renren', 'renren', 4, 0);
+INSERT INTO `customers_ref_type2` VALUES (35, 'Renren_cpc', 'renren_cpc', 4, 0);
+INSERT INTO `customers_ref_type2` VALUES (36, 'kaixin001', 'kaixin001', 4, 0);
+INSERT INTO `customers_ref_type2` VALUES (37, 'Facebook', 'facebook', 4, 0);
+INSERT INTO `customers_ref_type2` VALUES (38, 'Facebook_cpc', 'facebook_cpc', 4, 0);
+INSERT INTO `customers_ref_type2` VALUES (39, 'Twitter', 'twitter', 4, 0);
+INSERT INTO `customers_ref_type2` VALUES (40, 't.sina', 't.sina', 4, 0);
+INSERT INTO `customers_ref_type2` VALUES (41, 'blog.sina', 'blog.sina', 4, 0);
+INSERT INTO `customers_ref_type2` VALUES (42, 'chineseinla', 'chineseinla', 5, 0);
+INSERT INTO `customers_ref_type2` VALUES (43, 'suixinyou', 'suixinyou', 5, 0);
+INSERT INTO `customers_ref_type2` VALUES (44, 'lkcn', 'lkcn', 6, 0);
+INSERT INTO `customers_ref_type2` VALUES (45, 'visa01', 'visa01', 6, 0);
+INSERT INTO `customers_ref_type2` VALUES (46, '6park', '6park', 6, 0);
+INSERT INTO `customers_ref_type2` VALUES (47, 'uiuc', 'uiuc', 7, 0);
+INSERT INTO `customers_ref_type2` VALUES (48, 'uwcssa', 'uwcssa', 7, 0);
+INSERT INTO `customers_ref_type2` VALUES (49, 'cssatamu', 'cssatamu', 7, 0);
+# 2011-09-23 09:25 分类的目录进行二级细分 BY PANDA}
+
+#2009-05-31
+ALTER TABLE `orders` ADD `orders_cancelled_total` DECIMAL( 15, 4 ) NOT NULL ;
+
+#2009-06-01
+CREATE TABLE `orders_remove_log` (
+`orders_remove_log_id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+`orders_id` INT NOT NULL ,
+`admin_id` INT NOT NULL ,
+`admin_name` VARCHAR( 100 ) NOT NULL ,
+`orders_remove_log_date` DATETIME NOT NULL ,
+PRIMARY KEY ( `orders_remove_log_id` )
+);
+
+#2009-06-16
+ALTER TABLE `hotel` ADD `hotel_name_length` INT NOT NULL AFTER `hotel_name` ;
+
+ALTER TABLE `hotel` ADD INDEX ( `hotel_name_length` ) ;
+
+#2009-06-17
+CREATE TABLE `zh_usa_class` (
+  `class_id` int(3) NOT NULL auto_increment,
+  `parent_id` int(3) NOT NULL default '1',
+  `class_name` varchar(100) NOT NULL default '',
+  PRIMARY KEY  (`class_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=23 ;
+
+#
+# 列出以下資料庫的數據： `zh_usa_class`
+#
+
+INSERT INTO `zh_usa_class` VALUES (1, 0, '美國城市');
+INSERT INTO `zh_usa_class` VALUES (2, 0, '美國文化');
+INSERT INTO `zh_usa_class` VALUES (3, 0, '加拿大城市');
+INSERT INTO `zh_usa_class` VALUES (4, 0, '加拿大文化');
+INSERT INTO `zh_usa_class` VALUES (5, 1, '華盛頓');
+INSERT INTO `zh_usa_class` VALUES (6, 1, '紐約');
+INSERT INTO `zh_usa_class` VALUES (7, 1, '夏威夷');
+INSERT INTO `zh_usa_class` VALUES (8, 1, '芝加哥');
+INSERT INTO `zh_usa_class` VALUES (9, 1, '費城');
+INSERT INTO `zh_usa_class` VALUES (10, 1, '西雅圖');
+INSERT INTO `zh_usa_class` VALUES (11, 1, '休斯敦');
+INSERT INTO `zh_usa_class` VALUES (12, 1, '費城');
+INSERT INTO `zh_usa_class` VALUES (13, 1, '鹽湖城');
+INSERT INTO `zh_usa_class` VALUES (14, 1, '拉斯維加斯');
+INSERT INTO `zh_usa_class` VALUES (15, 1, '邁阿密');
+INSERT INTO `zh_usa_class` VALUES (16, 1, '波士頓');
+INSERT INTO `zh_usa_class` VALUES (17, 1, '亞特蘭大');
+INSERT INTO `zh_usa_class` VALUES (18, 1, '舊金山');
+INSERT INTO `zh_usa_class` VALUES (19, 1, '丹佛');
+INSERT INTO `zh_usa_class` VALUES (20, 1, '匹茲堡');
+INSERT INTO `zh_usa_class` VALUES (21, 1, '堪薩斯城');
+INSERT INTO `zh_usa_class` VALUES (22, 1, '底特律');
+
+
+#20090622
+CREATE TABLE `travel_companion` (
+  `t_companion_id` int(10) unsigned NOT NULL auto_increment,
+  `t_companion_title` varchar(200) NOT NULL default '',
+  `customers_name` varchar(30) NOT NULL default '',
+  `customers_id` int(11) NOT NULL default '0',
+  `customers_phone` varchar(100) NOT NULL default '',
+  `email_address` varchar(100) NOT NULL default '',
+  `t_companion_content` text NOT NULL,
+  `reply_num` int(11) NOT NULL default '0',
+  `products_id` int(11) NOT NULL default '0',
+  `categories_id` int(11) NOT NULL default '0',
+  `status` tinyint(1) NOT NULL default '0',
+  `add_time` datetime NOT NULL default '0000-00-00 00:00:00',
+  `last_time` datetime NOT NULL default '0000-00-00 00:00:00',
+  PRIMARY KEY  (`t_companion_id`)
+) ;
+
+# --------------------------------------------------------
+
+#
+# 資料表格式： `travel_companion_reply`
+#
+
+CREATE TABLE `travel_companion_reply` (
+  `t_c_reply_id` int(10) unsigned NOT NULL auto_increment,
+  `t_companion_id` int(11) NOT NULL default '0',
+  `customers_name` varchar(30) NOT NULL default '',
+  `customers_id` int(11) NOT NULL default '0',
+  `customers_phone` varchar(100) NOT NULL default '',
+  `email_address` varchar(100) NOT NULL default '',
+  `t_c_reply_content` text NOT NULL,
+  `status` tinyint(1) NOT NULL default '0',
+  `add_time` datetime NOT NULL default '0000-00-00 00:00:00',
+  `last_time` datetime NOT NULL default '0000-00-00 00:00:00',
+  PRIMARY KEY  (`t_c_reply_id`)
+);
+
+ALTER TABLE `travel_companion` ADD `click_num` INT NOT NULL ;
+
+#2009-07-07
+ALTER TABLE `products` ADD `products_surcharge` DOUBLE( 10, 4 ) NOT NULL ;
+
+#2009-07-09
+CREATE TABLE `seo_class` (
+  `class_id` int(10) unsigned NOT NULL auto_increment,
+  `class_name` varchar(100) NOT NULL default '',
+  `parent_id` int(11) NOT NULL default '0',
+  PRIMARY KEY  (`class_id`),
+  KEY `parent_id` (`parent_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+#
+# 列出以下資料庫的數據： `seo_class`
+#
+
+INSERT INTO `seo_class` VALUES (1, '美國西海岸', 0);
+INSERT INTO `seo_class` VALUES (2, '美國東海岸', 0);
+INSERT INTO `seo_class` VALUES (3, '加拿大', 0);
+INSERT INTO `seo_class` VALUES (4, '洛杉磯', 1);
+
+CREATE TABLE `seo_news` (
+  `news_id` int(10) unsigned NOT NULL auto_increment,
+  `news_title` varchar(200) NOT NULL default '',
+  `news_click_num` int(11) NOT NULL default '0',
+  `news_add_date` datetime NOT NULL default '0000-00-00 00:00:00',
+  `news_state` tinyint(1) NOT NULL default '1',
+  `news_links_ids` varchar(200) NOT NULL default '',
+  PRIMARY KEY  (`news_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+CREATE TABLE `seo_news_description` (
+  `news_id` int(10) unsigned NOT NULL auto_increment,
+  `news_description` longtext NOT NULL,
+  `meta_title` varchar(200) NOT NULL default '',
+  `meta_keywords` varchar(200) NOT NULL default '',
+  `meta_description` varchar(250) NOT NULL default '',
+  `news_page` tinyint(3) NOT NULL default '1',
+  PRIMARY KEY  (`news_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+CREATE TABLE `seo_news_to_class` (
+  `news_id` int(11) NOT NULL default '0',
+  `class_id` int(11) NOT NULL default '0',
+  PRIMARY KEY  (`class_id`,`news_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+#2009-07-20
+ALTER TABLE `products` ADD `use_buy_two_get_one_price` TINYINT DEFAULT '0' NOT NULL ;
+
+#2009-07-21
+ALTER TABLE `travel_companion` ADD `t_show_email` TINYINT( 1 ) DEFAULT '0' NOT NULL ;
+ALTER TABLE `travel_companion` ADD `t_show_phone` TINYINT( 1 ) DEFAULT '0' NOT NULL ;
+
+#2009-08-08
+ALTER TABLE `customers_basket` ADD `travel_comp` TINYINT( 1 ) DEFAULT '0' NOT NULL ;
+
+#2009-08-15
+CREATE TABLE `paypal_travel_companion` (
+  `paypal_id` int(11) NOT NULL auto_increment,
+  `txn_type` varchar(10) NOT NULL default '',
+  `reason_code` varchar(15) default NULL,
+  `payment_type` varchar(7) NOT NULL default '',
+  `payment_status` varchar(17) NOT NULL default '',
+  `pending_reason` varchar(14) default NULL,
+  `invoice` varchar(64) default NULL,
+  `mc_currency` char(3) NOT NULL default '',
+  `first_name` varchar(32) NOT NULL default '',
+  `last_name` varchar(32) NOT NULL default '',
+  `payer_business_name` varchar(64) default NULL,
+  `address_name` varchar(32) default NULL,
+  `address_street` varchar(64) default NULL,
+  `address_city` varchar(32) default NULL,
+  `address_state` varchar(32) default NULL,
+  `address_zip` varchar(10) default NULL,
+  `address_country` varchar(64) default NULL,
+  `address_status` varchar(11) default NULL,
+  `payer_email` varchar(96) NOT NULL default '',
+  `payer_id` varchar(32) NOT NULL default '',
+  `payer_status` varchar(10) NOT NULL default '',
+  `payment_date` datetime default NULL,
+  `payment_time_zone` varchar(4) NOT NULL default '',
+  `business` varchar(96) NOT NULL default '',
+  `receiver_email` varchar(96) NOT NULL default '',
+  `receiver_id` varchar(32) NOT NULL default '',
+  `txn_id` varchar(17) NOT NULL default '',
+  `parent_txn_id` varchar(17) default NULL,
+  `num_cart_items` tinyint(4) unsigned NOT NULL default '1',
+  `mc_gross` decimal(7,2) NOT NULL default '0.00',
+  `mc_fee` decimal(7,2) NOT NULL default '0.00',
+  `payment_gross` decimal(7,2) default NULL,
+  `payment_fee` decimal(7,2) default NULL,
+  `settle_amount` decimal(7,2) default NULL,
+  `settle_currency` char(3) default NULL,
+  `exchange_rate` decimal(4,2) default NULL,
+  `for_auction` varchar(5) NOT NULL default 'false',
+  `auction_buyer_id` varchar(64) NOT NULL default '',
+  `auction_closing_date` datetime NOT NULL default '0000-00-00 00:00:00',
+  `auction_multi_item` tinyint(4) NOT NULL default '0',
+  `quantity` int(11) NOT NULL default '0',
+  `tax` decimal(7,2) default NULL,
+  `notify_version` decimal(2,1) NOT NULL default '0.0',
+  `verify_sign` varchar(128) NOT NULL default '',
+  `last_modified` datetime default NULL,
+  `date_added` datetime default NULL,
+  `memo` text,
+  PRIMARY KEY  (`paypal_id`,`txn_id`)
+);
+ALTER TABLE `paypal_travel_companion` ADD `orders_id` INT NOT NULL ;
+ALTER TABLE `paypal_travel_companion` CHANGE `invoice` `invoice` VARCHAR( 164 ) DEFAULT NULL ;
+ALTER TABLE `paypal_travel_companion` CHANGE `payment_date` `payment_date` VARCHAR( 50 ) DEFAULT NULL;
+
+#增加的表 orders_travel_companion;
+#2009-08-25
+ALTER TABLE `orders_travel_companion` ADD `payment_name` VARCHAR( 100 ) NOT NULL AFTER `payment` ;
+ALTER TABLE `orders_travel_companion` CHANGE `payment_description` `payment_description` TEXT NOT NULL ;
+
+#2009-08-29
+ALTER TABLE `orders_travel_companion` ADD `last_send_mail_date` DATE NOT NULL ;
+
+#2009-10-10
+ALTER TABLE `products_departure` ADD `products_hotels_ids` VARCHAR( 100 ) NOT NULL ;
+
+#2009-10-10 
+#产品接送地酒店资料products_hotels,是酒店在products表的补充。products_hotels表主要包括products_hotels_id, 酒店id products_id
+#
+#
+
+CREATE TABLE `products_hotels` (
+  `products_hotels_id` int(10) unsigned NOT NULL auto_increment,
+  `products_id` int(11) NOT NULL,
+  `hotel_star` tinyint(4) NOT NULL,
+  `hotel_address` varchar(255) NOT NULL,
+  PRIMARY KEY  (`products_hotels_id`)
+) ENGINE=MyISAM;
+
+ALTER TABLE `products` ADD `sort_order` INT NOT NULL ;
+
+ALTER TABLE `products` ADD INDEX ( `sort_order` ) ;
+
+#2009-10-26 
+ALTER TABLE `products_to_categories` ADD `products_sort_order` TINYINT( 3 ) NOT NULL ;
+ALTER TABLE `products_to_categories` ADD INDEX ( `products_sort_order` ) ;
+ALTER TABLE `products` DROP `sort_order` 
+
+
+#added for wap site
+CREATE TABLE IF NOT EXISTS `recommend_products` (
+  `recommend_id` int(11) NOT NULL auto_increment,	
+  `categories_id` int(11) NOT NULL,	#/*分类的ID*/
+  `parent_id` int(11) NOT NULL,		#/*所属的大类*/
+  `products_id` int(11) NOT NULL,	#/*产品ID*/
+  `types` int(11) NOT NULL default '0',	#/*0 代表出发地，1代表目的景点*/
+  PRIMARY KEY  (`recommend_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- 导出表中的数据 `recommend_products`
+--
+
+INSERT INTO `recommend_products` (`recommend_id`, `categories_id`, `parent_id`, `products_id`, `types`) VALUES
+(1, 55, 25, 143, 0),
+(2, 55, 25, 143, 1);
+
+#2009-10-28
+ALTER TABLE `travel_companion` ADD `bbs_type` TINYINT(4) NOT NULL default '100';
+
+
+
+CREATE TABLE `travel_companion_bbs_type` (
+`type_id` TINYINT( 3 ) UNSIGNED NOT NULL AUTO_INCREMENT ,
+`type_name` VARCHAR( 20 ) NOT NULL ,
+PRIMARY KEY ( `type_id` )
+) CHARACTER SET = latin1;
+INSERT INTO `travel_companion_bbs_type` ( `type_id` , `type_name` )
+VALUES (
+'', '置顶'
+);
+INSERT INTO `travel_companion_bbs_type` ( `type_id` , `type_name` )
+VALUES (
+'', '精华'
+);
+
+UPDATE `travel_companion_bbs_type` SET `type_name` = '公告' WHERE `type_id` = '1' LIMIT 1 ;
+UPDATE `travel_companion_bbs_type` SET `type_name` = '置顶' WHERE `type_id` = '2' LIMIT 1 ;
+INSERT INTO `travel_companion_bbs_type` ( `type_id` , `type_name` )
+VALUES (
+'', '精华'
+);
+
+#2009-10-29
+ALTER TABLE `travel_companion` ADD `hope_departure_date` DATE NOT NULL default '0000-00-00';
+ALTER TABLE `travel_companion_reply` ADD `gender` TINYINT( 1 ) DEFAULT '0' NOT NULL AFTER `customers_name` ;
+ALTER TABLE `travel_companion` ADD `t_top_day` TINYINT( 3 ) DEFAULT '0' NOT NULL ;
+
+#2009-10-31
+ALTER TABLE `travel_companion_reply` ADD `parent_id` INT DEFAULT '0' NOT NULL AFTER `t_c_reply_id` ;
+ALTER TABLE `travel_companion_reply` ADD `parent_type` TINYINT( 2 ) DEFAULT '0' NOT NULL AFTER `parent_id` ;
+
+#2009-11-07
+INSERT INTO `configuration` ( `configuration_id` , `configuration_title` , `configuration_key` , `configuration_value` , `configuration_description` , `configuration_group_id` , `sort_order` , `last_modified` , `date_added` , `use_function` , `set_function` )
+VALUES (
+'', '置顶结伴同游帖需多少积分/天', 'USE_POINTS_EVDAY_FOR_TOP_TRAVEL_COMPANION', '50', '置顶结伴同游帖需多少积分/天', '902', '100', '2009-11-07 22:40:25', '2009-11-07 22:40:25', NULL , NULL
+);
+ALTER TABLE `customers_points_pending` ADD `t_companion_id` INT DEFAULT '0' NOT NULL AFTER `v_s_id` ;
+
+#2009-11-08
+ALTER TABLE `travel_companion` ADD `admin_id` INT DEFAULT '0' NOT NULL ;
+ALTER TABLE `travel_companion` ADD `remark` TINYTEXT NOT NULL ;
+
+#2009-11-12
+ALTER TABLE `categories` ADD `tc_bbs_total` INT DEFAULT '0' NOT NULL ;
+
+ALTER TABLE `categories` ADD INDEX ( `tc_bbs_total` ) ;
+ALTER TABLE `categories` ADD `categories_status_for_tc_bbs` TINYINT( 1 ) DEFAULT '1' NOT NULL AFTER `categories_status` ;
+
+ALTER TABLE `categories` ADD `categories_status_for_tc_bbs_display` TINYINT( 1 ) DEFAULT '1' NOT NULL AFTER `categories_status_for_tc_bbs` ;
+
+#2009-11-19 要添加而未添加的表
+#
+# 表的结构 `destination_guide_categories`
+#
+
+CREATE TABLE destination_guide_categories (
+  dg_categories_id int(11) unsigned NOT NULL auto_increment,
+  dg_categories_name varchar(200) NOT NULL,
+  dg_categories_name_en varchar(50) NOT NULL,
+  dg_categories_state tinyint(2) NOT NULL,
+  parent_id int(11) NOT NULL default '0',
+  map_image text,
+  hot_dg_categories_ids varchar(200) default NULL,
+  recommend_products_ids varchar(200) NOT NULL,
+  sort_order int(11) NOT NULL,
+  PRIMARY KEY  (dg_categories_id),
+  KEY sort_order (sort_order),
+  KEY dg_categories_name_en (dg_categories_name_en)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+# --------------------------------------------------------
+
+#
+# 表的结构 `destination_guide_categories_description`
+#
+
+CREATE TABLE destination_guide_categories_description (
+  dg_categories_id int(10) unsigned NOT NULL,
+  overview_info text NOT NULL,
+  lodging_info text NOT NULL,
+  traffic_info text NOT NULL,
+  shopping_info text NOT NULL,
+  food_info text NOT NULL,
+  local_features text NOT NULL,
+  meta_title varchar(200) NOT NULL,
+  meta_keywords varchar(200) NOT NULL,
+  meta_description tinytext NOT NULL,
+  overview_meta_title varchar(200) default NULL,
+  overview_meta_keywords varchar(200) default NULL,
+  overview_meta_description tinytext,
+  lodging_meta_title varchar(200) NOT NULL,
+  lodging_meta_keywords varchar(200) NOT NULL,
+  lodging_meta_description tinytext,
+  traffic_meta_title varchar(200) NOT NULL,
+  traffic_meta_keywords varchar(200) NOT NULL,
+  traffic_meta_description tinytext,
+  shopping_meta_title varchar(200) NOT NULL,
+  shopping_meta_keywords varchar(200) NOT NULL,
+  shopping_meta_description tinytext,
+  food_meta_title varchar(200) NOT NULL,
+  food_meta_keywords varchar(200) NOT NULL,
+  food_meta_description tinytext,
+  features_meta_title varchar(200) NOT NULL,
+  features_meta_keywords varchar(200) NOT NULL,
+  features_meta_description tinytext,
+  weather tinytext NOT NULL,
+  PRIMARY KEY  (dg_categories_id)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+# --------------------------------------------------------
+
+#
+# 表的结构 `destination_guide_categories_images`
+#
+
+CREATE TABLE destination_guide_categories_images (
+  images_id int(11) unsigned NOT NULL auto_increment,
+  images_name varchar(200) NOT NULL,
+  dg_categories_id int(11) NOT NULL,
+  images_sort_order int(11) NOT NULL,
+  PRIMARY KEY  (images_id),
+  KEY dg_categories_id (dg_categories_id),
+  KEY images_sort_order (images_sort_order)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+# --------------------------------------------------------
+
+#
+# 表的结构 `tours_experience_to_guide_categories`
+#
+
+CREATE TABLE tours_experience_to_guide_categories (
+  tours_experience_id int(11) NOT NULL,
+  dg_categories_id int(11) NOT NULL,
+  PRIMARY KEY  (tours_experience_id,dg_categories_id)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+
+#2009-11-23
+ALTER TABLE `tours_experience` ADD `sort_order` INT NOT NULL ;
+ALTER TABLE `tours_experience` ADD INDEX ( `sort_order` ) ;
+
+#2009-11-26
+CREATE TABLE `keyword_thesaurus` (
+`thesaurus_id` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
+`hesaurus_text` VARCHAR( 50 ) NOT NULL ,
+PRIMARY KEY ( `thesaurus_id` )
+) CHARACTER SET = latin1;
+
+ALTER TABLE `keyword_thesaurus` ADD UNIQUE (
+`hesaurus_text`
+);
+ALTER TABLE `keyword_thesaurus` ADD `thesaurus_state` TINYINT( 1 ) DEFAULT '1' NOT NULL ;
+ALTER TABLE `keyword_thesaurus` ADD `use_search` TINYINT( 1 ) DEFAULT '1' NOT NULL ,
+ADD `use_inner_link` TINYINT( 1 ) DEFAULT '1' NOT NULL ;
+ALTER TABLE `keyword_thesaurus` CHANGE `hesaurus_text` `thesaurus_text` VARCHAR( 50 ) DEFAULT NULL ;
+
+ALTER TABLE `keyword_thesaurus` ADD `thesaurus_text_length` INT NOT NULL AFTER `thesaurus_text` ;
+ALTER TABLE `keyword_thesaurus` ADD INDEX ( `thesaurus_text_length` ) ;
+
+#2009-11-27
+ALTER TABLE `tours_experience` ADD `thesaurus_ids` VARCHAR( 200 ) NOT NULL ;
+
+#2009-12-01
+ALTER TABLE `tour_question` ADD `first_answer_date` DATETIME NOT NULL AFTER `date` ;
+ALTER TABLE `tour_question` ADD INDEX ( `first_answer_date` ) ;
+
+ALTER TABLE `tour_question` ADD INDEX ( `date` );
+ALTER TABLE `tour_question` ADD INDEX ( `que_sort_order` );
+ALTER TABLE `tour_question` CHANGE `first_answer_date` `first_answer_date` DATETIME DEFAULT '0000-00-00 00:00:00' NOT NULL ;
+
+ALTER TABLE `orders_products_attributes` CHANGE `products_options_values` `products_options_values` VARCHAR( 220 ) ;
+
+#2009-12-02
+ALTER TABLE `keyword_thesaurus` ADD `thesaurus_text_en` VARCHAR( 50 ) NOT NULL AFTER `thesaurus_text` ;
+
+#2009-12-04
+CREATE TABLE `old_customer_testimonials` (
+`old_customer_email_address` VARCHAR( 100 ) NOT NULL ,
+`new_customer_email_address` VARCHAR( 100 ) NOT NULL ,
+PRIMARY KEY ( `old_customer_email_address` , `new_customer_email_address` )
+) CHARACTER SET = latin1;
+
+ALTER TABLE `old_customer_testimonials` ADD `add_date` DATETIME DEFAULT '0000-00-00 00:00:00' NOT NULL ;
+ALTER TABLE `old_customer_testimonials` ADD INDEX ( `add_date` ) ;
+ALTER TABLE `old_customer_testimonials` ADD UNIQUE (
+`new_customer_email_address`
+)
+ALTER TABLE `old_customer_testimonials` ADD `orders_added_points` TINYINT DEFAULT '0' NOT NULL ;
+
+ALTER TABLE `old_customer_testimonials` CHANGE `orders_added_points` `orders_id` INT DEFAULT '0' NOT NULL 
+
+#2009-12-14
+CREATE TABLE `categories_to_today_recommended_products` (
+`categories_id` INT NOT NULL ,
+`products_id` INT NOT NULL ,
+PRIMARY KEY ( `categories_id` , `products_id` )
+) CHARACTER SET = latin1;
+ALTER TABLE `categories_to_today_recommended_products` ADD `sort_order` TINYINT( 2 ) NOT NULL ;
+
+ALTER TABLE `categories_to_today_recommended_products` ADD `products_small_name` VARCHAR( 200 ) NOT NULL ,
+ADD `products_small_description` VARCHAR( 200 ) NOT NULL ,
+ADD `products_small_image` VARCHAR( 200 ) NOT NULL ;
+
+#2009-12-18
+ALTER TABLE `products` ADD `products_stock_status` TINYINT( 1 ) DEFAULT '1' NOT NULL AFTER `products_status` ;
+
+#2009-12-29
+ALTER TABLE `reviews` ADD `rating_0` TINYINT( 3 ) DEFAULT '20' NOT NULL ,
+ADD `rating_1` TINYINT( 3 ) DEFAULT '20' NOT NULL ,
+ADD `rating_2` TINYINT( 3 ) DEFAULT '15' NOT NULL ,
+ADD `rating_3` TINYINT( 3 ) DEFAULT '15' NOT NULL ,
+ADD `rating_4` TINYINT( 3 ) DEFAULT '15' NOT NULL ,
+ADD `rating_5` TINYINT( 3 ) DEFAULT '15' NOT NULL ;
+
+ALTER TABLE `reviews` ADD `rating_total` TINYINT( 3 ) NOT NULL ;
+
+UPDATE `reviews` SET `rating_total` = '30' WHERE  reviews_rating='1';
+UPDATE `reviews` SET `rating_total` = '50' WHERE  reviews_rating='2';
+UPDATE `reviews` SET `rating_total` = '70' WHERE  reviews_rating='3';
+UPDATE `reviews` SET `rating_total` = '90' WHERE  reviews_rating='4';
+UPDATE `reviews` SET `rating_total` = '100' WHERE  reviews_rating='5';
+
+ALTER TABLE `products_description` ADD `products_notes` TEXT NOT NULL ;
+
+#2010-01-04
+ALTER TABLE `tour_question` ADD `set_hit` TINYINT( 1 ) DEFAULT '0' NOT NULL ;
+
+#2010-01-13
+ALTER TABLE `orders_products` ADD `group_buy_discount` DECIMAL( 8, 2 ) DEFAULT '0' NOT NULL AFTER `products_price` ;
+
+#2010-01-27
+ALTER TABLE `tour_question` ADD `accept_newsletter` TINYINT( 1 ) DEFAULT '0' NOT NULL ;
+ALTER TABLE `traveler_photos` ADD `is_display_homepage` TINYINT( 1 ) DEFAULT '0' NOT NULL ;
+
+#2010-01-28
+ALTER TABLE `products` ADD `products_single_pu` DOUBLE( 8, 2 ) DEFAULT '0.00' NOT NULL AFTER `products_single` ;
+ALTER TABLE `products` ADD `products_single_pu_cost` DOUBLE( 8, 2 ) DEFAULT '0.00' NOT NULL AFTER `products_single_cost` ;
+
+#2010-01-29
+ALTER TABLE `customers_basket` ADD `agree_single_occupancy_pair_up` TINYINT( 1 ) DEFAULT '0' NOT NULL ;
+
+#2010-02-02
+ALTER TABLE `products_reg_irreg_date` ADD `spe_single_pu` DOUBLE( 10, 2 ) DEFAULT '0.00' NOT NULL AFTER `spe_single` ;
+ALTER TABLE `products_reg_irreg_date` ADD `spe_single_pu_cost` DOUBLE( 10, 2 ) DEFAULT '0.00' NOT NULL AFTER `spe_single_cost` ;
+
+#2010-02-10
+ALTER TABLE `products` ADD `products_model_sub` VARCHAR( 200 ) NOT NULL AFTER `products_model` ;
+ALTER TABLE `products` ADD `provider_tour_code_sub` VARCHAR( 200 ) NOT NULL AFTER `provider_tour_code` ;
+
+#2010-02-20
+ALTER TABLE `banners` ADD `categories_ids` VARCHAR( 200 ) NOT NULL ;
+ALTER TABLE `products` ADD `products_model_sub_notes` VARCHAR( 200 ) NOT NULL AFTER `products_model_sub` ;
+ALTER TABLE `banners` ADD `banners_type` VARCHAR( 100 ) NOT NULL AFTER `banners_image` ;
+
+#2010-02-23
+INSERT INTO `configuration` ( `configuration_id` , `configuration_title` , `configuration_key` , `configuration_value` , `configuration_description` , `configuration_group_id` , `sort_order` , `last_modified` , `date_added` , `use_function` , `set_function` )
+VALUES (
+'', '图片是否打水印', 'USE_WATER_LOGO', 'true', '图片是否打水印', '4', '10', NULL , '0000-00-00 00:00:00', '', 'tep_cfg_select_option(array(\'true\', \'false\'),'
+);
+
+#2010-02-24
+ALTER TABLE `customers_ref_type` ADD `sort_num` INT DEFAULT '0' NOT NULL ;
+UPDATE `customers_ref_type` SET `sort_num` = customers_ref_type_id;
+
+ALTER TABLE `configuration` ADD UNIQUE (`configuration_key`);
+
+#2010-03-02
+ALTER TABLE `orders_product_flight` ADD `show_warning_on_admin` TINYINT( 1 ) DEFAULT '0' NOT NULL ;
+
+#2010-03-24 为产品添加显示模板字段，如果值为空则用原来的默认模板
+ALTER TABLE `products` ADD `products_info_tpl` VARCHAR( 50 ) NOT NULL ;
+
+#2010-03-24	Show与酒店对应关系
+CREATE TABLE `products_show` (
+`products_id` INT NOT NULL ,
+`products_hotel_id` INT NOT NULL ,
+`min_watch_age` TINYINT( 2 ) NOT NULL ,
+PRIMARY KEY ( `products_id` , `products_hotel_id` )
+) CHARACTER SET = latin1;
+
+ALTER TABLE `products_show` DROP PRIMARY KEY ,
+ADD PRIMARY KEY ( `products_id` ) ;
+
+
+#2010-03-30
+ALTER TABLE `tour_travel_agency` CHANGE `fax` `fax` VARCHAR( 210 ) 
+
+#2010-04-01
+CREATE TABLE `tour_question_tab` (
+`question_tab_id` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
+`question_tab_name` VARCHAR( 100 ) NOT NULL ,
+`sort_order` INT NOT NULL ,
+`parent_id` INT DEFAULT '0' NOT NULL ,
+PRIMARY KEY ( `question_tab_id` )
+) CHARACTER SET = latin1;
+
+CREATE TABLE `tour_question_to_tab` (
+`tour_question_tab_id` INT NOT NULL ,
+`que_id` INT NOT NULL ,
+PRIMARY KEY ( `tour_question_tab_id` , `que_id` )
+) CHARACTER SET = latin1;
+
+CREATE TABLE `tour_question_keywords` (
+`key_id` INT UNSIGNED NOT NULL ,
+`key_name` VARCHAR( 200 ) NOT NULL ,
+`add_date` DATETIME NOT NULL ,
+PRIMARY KEY ( `key_id` )
+) CHARACTER SET = latin1;
+ALTER TABLE `tour_question_keywords` CHANGE `key_id` `key_id` INT( 10 ) UNSIGNED NOT NULL AUTO_INCREMENT ;
+ALTER TABLE `tour_question_keywords` ADD INDEX ( `key_name` ) ;
+
+ALTER TABLE `tour_question_tab` ADD INDEX ( `sort_order` ) ;
+
+ALTER TABLE `tour_travel_agency` ADD `agency_name1` VARCHAR( 200 ) NOT NULL AFTER `agency_name` ;
+
+ALTER TABLE `tour_question_tab` ADD `categories_id` INT DEFAULT '0' NOT NULL ;
+
+#2010-04-07
+ALTER TABLE `customers_basket` ADD `bed_option_info` VARCHAR( 255 ) NOT NULL AFTER `total_room_adult_child_info`  ;
+
+#2010-04-08
+CREATE TABLE `categories_meta_tags` (
+`categories_id` INT UNSIGNED NOT NULL ,
+`tab_tag` VARCHAR( 50 ) NOT NULL ,
+`meta_title` TEXT NOT NULL ,
+`meta_keywords` TEXT NOT NULL ,
+`meta_description` TEXT NOT NULL ,
+PRIMARY KEY ( `categories_id` , `tab_tag` )
+) CHARACTER SET = latin1;
+
+#2010-04-09
+CREATE TABLE `error_log` (
+`error_log_id` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
+`content` TEXT NOT NULL ,
+`add_date` DATETIME NOT NULL ,
+PRIMARY KEY ( `error_log_id` )
+) CHARACTER SET = latin1;
+
+
+#2010-04-12
+INSERT INTO `configuration` ( `configuration_id` , `configuration_title` , `configuration_key` , `configuration_value` , `configuration_description`  , `configuration_group_id`  , `sort_order` , `last_modified` , `date_added` , `use_function` , `set_function` )
+VALUES (
+'', 'N倍积分开关', 'N_MULTIPLE_POINTS_SWITCH', 'true', 'N倍积分开关', '902', '900', '2010-04-12 16:26:00', '2010-04-12 16:26:00', NULL , 'tep_cfg_select_option(array("true", "false"),');
+
+INSERT INTO `configuration` ( `configuration_id` , `configuration_title` , `configuration_key` , `configuration_value` , `configuration_description`  , `configuration_group_id`  , `sort_order` , `last_modified` , `date_added` , `use_function` , `set_function` )
+VALUES (
+'', 'N倍积分倍数', 'N_MULTIPLE_POINTS_NVALUE', '3', 'N倍积分倍数', '902', '901', '2010-04-12 16:26:00', '2010-04-12 16:26:00', NULL , NULL
+);
+
+INSERT INTO `configuration` ( `configuration_id` , `configuration_title` , `configuration_key` , `configuration_value` , `configuration_description`  , `configuration_group_id`  , `sort_order` , `last_modified` , `date_added` , `use_function` , `set_function` )
+VALUES (
+'', '支持N倍积分的目录', 'N_MULTIPLE_POINTS_CATEGORIES', '35', '支持N倍积分的目录，多个目录用英文的逗号“,”隔开', '902', '903', '2010-04-12 16:26:00', '2010-04-12 16:26:00', NULL , NULL
+);
+
+INSERT INTO `configuration` ( `configuration_id` , `configuration_title` , `configuration_key` , `configuration_value` , `configuration_description`  , `configuration_group_id`  , `sort_order` , `last_modified` , `date_added` , `use_function` , `set_function` )
+VALUES (
+'', '支持N倍积分的团', 'N_MULTIPLE_POINTS_PRODUCTS', '0', '支持N倍积分的团，多个团用英文的逗号“,”隔开', '902', '904', '2010-04-12 16:26:00', '2010-04-12 16:26:00', NULL , NULL
+);
+
+INSERT INTO `configuration` ( `configuration_id` , `configuration_title` , `configuration_key` , `configuration_value` , `configuration_description`  , `configuration_group_id`  , `sort_order` , `last_modified` , `date_added` , `use_function` , `set_function` )
+VALUES (
+'', 'N倍积分开始日期', 'N_MULTIPLE_POINTS_START_DATE', '2010-04-10', 'N倍积分开始日期', '902', '905', '2010-04-12 16:26:00', '2010-04-12 16:26:00', NULL , NULL
+);
+
+INSERT INTO `configuration` ( `configuration_id` , `configuration_title` , `configuration_key` , `configuration_value` , `configuration_description`  , `configuration_group_id`  , `sort_order` , `last_modified` , `date_added` , `use_function` , `set_function` )
+VALUES (
+'', 'N倍积分结束日期', 'N_MULTIPLE_POINTS_END_DATE', '2010-06-30', 'N倍积分结束日期', '902', '906', '2010-04-12 16:26:00', '2010-04-12 16:26:00', NULL , NULL
+);
+
+INSERT INTO `configuration` ( `configuration_id` , `configuration_title` , `configuration_key` , `configuration_value` , `configuration_description`  , `configuration_group_id`  , `sort_order` , `last_modified` , `date_added` , `use_function` , `set_function` )
+VALUES (
+'', 'N倍积分是否包括评论积分', 'N_MULTIPLE_POINTS_INCLUDE_REVIEW', 'true', '', '902', '910', '2010-04-12 16:26:00', '2010-04-12 16:26:00', NULL , 'tep_cfg_select_option(array(\'true\', \'false\'),'
+);
+
+INSERT INTO `configuration` ( `configuration_id` , `configuration_title` , `configuration_key` , `configuration_value` , `configuration_description`  , `configuration_group_id`  , `sort_order` , `last_modified` , `date_added` , `use_function` , `set_function` )
+VALUES (
+'', 'N倍积分是否包括发表相片积分', 'N_MULTIPLE_POINTS_INCLUDE_PHOTO', 'true', '', '902', '911', '2010-04-12 16:26:00', '2010-04-12 16:26:00', NULL , 'tep_cfg_select_option(array(\'true\', \'false\'),'
+);
+
+INSERT INTO `configuration` ( `configuration_id` , `configuration_title` , `configuration_key` , `configuration_value` , `configuration_description`  , `configuration_group_id`  , `sort_order` , `last_modified` , `date_added` , `use_function` , `set_function` )
+VALUES (
+'', 'N倍积分订单邮件提示文字', 'N_MULTIPLE_POINTS_NOTES', '您参加了黄石公园积分活动，预订和评论均可获得三倍积分，此次获得的积分请查看您账户中的积分明细。谢谢！', 'N倍积分订单邮件提示文字', '902', '912', '2010-04-12 16:26:00', '2010-04-12 16:26:00', NULL , NULL
+);
+
+#2010-04-22
+CREATE TABLE `travel_companion_seo_tags` (
+`tags_id` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
+`categories_id` INT NOT NULL ,
+`meta_title` TEXT NOT NULL ,
+`meta_keywords` TEXT NOT NULL ,
+`meta_description` TEXT NOT NULL ,
+PRIMARY KEY ( `tags_id` )
+) CHARACTER SET = latin1;
+
+#2010-04-28 添加显示产品标签的字段
+ALTER TABLE `products` ADD `tour_type_icon` VARCHAR( 200 ) NOT NULL ;
+
+#2010-05-05 添加cpunc短信账户平台
+
+INSERT INTO `configuration` ( `configuration_id` , `configuration_title` , `configuration_key` , `configuration_value` , `configuration_description`  , `configuration_group_id`  , `sort_order` , `last_modified` , `date_added` , `use_function` , `set_function` )
+VALUES (
+'', 'cpunc短信账户名称', 'CPUNC_ID', 'test', 'cpunc短信账户名称,网站 http://www.cpunc.com/', '903', NULL , NULL , '0000-00-00 00:00:00', NULL , NULL
+);
+
+INSERT INTO `configuration` ( `configuration_id` , `configuration_title` , `configuration_key` , `configuration_value` , `configuration_description`  , `configuration_group_id`  , `sort_order` , `last_modified` , `date_added` , `use_function` , `set_function` )
+VALUES (
+'', 'cpunc短信账户密码', 'CPUNC_PWD', '123456', 'cpunc短信账户密码', '903', '1', NULL , '0000-00-00 00:00:00', NULL , NULL
+);
+
+INSERT INTO `configuration_group` ( `configuration_group_id`  , `configuration_group_title`  , `configuration_group_description`  , `sort_order` , `visible` )
+VALUES (
+'903', 'cpunc短信平台', 'cpunc短信平台，可发全国手机', '903', '1'
+);
+
+#2010-05-09 记录短信发送记录
+CREATE TABLE `cpunc_sms_history` (
+`cpunc_sms_history_id` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
+`to_phone` TEXT NOT NULL ,
+`to_content` TEXT NOT NULL ,
+`to_type` VARCHAR( 20 ) NOT NULL ,
+`add_date` DATETIME NOT NULL ,
+PRIMARY KEY ( `cpunc_sms_history_id` )
+) CHARACTER SET = latin1;
+
+ALTER TABLE `cpunc_sms_history` ADD `return_code` VARCHAR( 100 ) NOT NULL AFTER `to_type` ;
+
+#2010-05-10 在订单产品价格更新记录添加最终参考价格的记录
+ALTER TABLE `orders_product_update_history` ADD `final_price_reference`  DECIMAL( 15, 2 ) NOT NULL AFTER `retail` ;
+
+#2010-05-12 在城市表中添加字段用于在结伴同游中的显示时的排序。
+ALTER TABLE `tour_city` ADD `travel_comp_sort` INT( 4 ) DEFAULT '9999' NOT NULL ;
+ALTER TABLE `tour_city` ADD INDEX ( `travel_comp_sort` ) ;
+
+
+#2010-05-17
+ALTER TABLE `travel_companion` ADD `now_people_man` TINYINT( 2 ) NOT NULL ,
+ADD `now_people_woman` TINYINT( 2 ) NOT NULL ,
+ADD `now_people_child` TINYINT( 2 ) NOT NULL ,
+ADD `hope_people_man` TINYINT( 2 ) NOT NULL ,
+ADD `hope_people_woman` TINYINT( 2 ) NOT NULL ,
+ADD `hope_people_child` TINYINT( 2 ) NOT NULL ,
+ADD `payment` TINYINT( 1 ) NOT NULL ,
+ADD `personal_introduction` VARCHAR( 220 ) NOT NULL ;
+ALTER TABLE `travel_companion` ADD `open_ended` TINYINT( 1 ) NOT NULL ;
+ALTER TABLE `travel_companion` CHANGE `payment` `who_payment` TINYINT( 1 ) DEFAULT NULL ;
+
+
+#2010-05-20
+ALTER TABLE `coupons` CHANGE `restrict_to_products` `restrict_to_products`  TEXT DEFAULT NULL ,
+CHANGE `restrict_to_categories` `restrict_to_categories` TEXT DEFAULT NULL
+
+#2010-05-24 添加字段存放没有指定产品的结伴同游的推荐的产品id
+ALTER TABLE `travel_companion` ADD `recommend_products_ids` VARCHAR( 100 ) NOT NULL ;
+
+#2010-05-26
+#travel_companion_application 结伴同游申请记录
+#中文名姓名
+#英文名
+#性别
+#邮箱
+#电话
+#人数
+#留言
+#验证状态(1为同意状态)
+#申请人ID
+CREATE TABLE `travel_companion_application` (
+`tca_id` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
+`t_companion_id` INT NOT NULL ,
+`tca_cn_name` VARCHAR( 50 ) NOT NULL ,
+`tca_en_name` VARCHAR( 50 ) NOT NULL ,
+`tca_gender` ENUM( '0', '1', '2' ) NOT NULL ,
+`tca_email_address` VARCHAR( 50 ) NOT NULL ,
+`tca_phone` VARCHAR( 50 ) NOT NULL ,
+`tca_people_num` TINYINT( 3 ) DEFAULT '0' NOT NULL ,
+`tca_content` TEXT NOT NULL ,
+`tca_verify_status` ENUM( '0', '1', '2' ) NOT NULL ,
+`customers_id` INT NOT NULL ,
+PRIMARY KEY ( `tca_id` )
+) CHARACTER SET = latin1;
+
+
+#travel_companion_application_list	结伴同游申请记录的参与人资料
+#结伴同游申请记录的ID
+#中文名
+#英文名
+#性别
+#出生日期
+
+CREATE TABLE `travel_companion_application_list` (
+`tcal_id` INT NOT NULL ,
+`tca_id` INT NOT NULL ,
+`tcal_cn_name` VARCHAR( 50 ) NOT NULL ,
+`tcal_en_name` VARCHAR( 50 ) NOT NULL ,
+`tcal_gender` ENUM( '0', '1', '2' ) NOT NULL ,
+`tcal_birth_date` DATE NOT NULL
+) CHARACTER SET = latin1;
+
+ALTER TABLE `travel_companion_application` ADD `date_time` DATETIME NOT NULL ;
+
+#2010-05-28 结伴同游访客记录
+#travel_companion_guest_history
+#tcgh_id
+#guest_customes_id	访客的用户id
+#customes_id 主人的id
+#add_date
+
+CREATE TABLE `travel_companion_guest_history` (
+`tcgh_id` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
+`guest_customes_id` INT NOT NULL ,
+`customes_id` INT NOT NULL ,
+`add_date` DATETIME NOT NULL ,
+PRIMARY KEY ( `tcgh_id` )
+) CHARACTER SET = latin1;
+
+# 设置过期字段，如果has_expired=1将不能再申请结伴。
+ALTER TABLE `travel_companion` ADD `has_expired` ENUM( '0', '1' ) NOT NULL ;
+
+# 添加存放内站短信的表
+CREATE TABLE `site_inner_sms` (
+`sis_id` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
+`type_name` VARCHAR( 50 ) NOT NULL ,
+`key_id` INT NOT NULL ,
+`to_customers_id` INT NOT NULL ,
+`customers_id` INT NOT NULL ,
+`sms_content` TEXT NOT NULL ,
+`add_date` DATETIME NOT NULL ,
+PRIMARY KEY ( `sis_id` )
+) CHARACTER SET = latin1;
+
+ALTER TABLE `site_inner_sms` ADD `owner_id` INT NOT NULL ;
+ALTER TABLE `site_inner_sms` ADD `has_read` ENUM( '0', '1' ) DEFAULT '0' NOT NULL AFTER `owner_id` ;
+
+#2010-06-06
+ALTER TABLE `customers` ADD `customers_remark` TINYTEXT NOT NULL ;
+
+#2010-06-08
+ALTER TABLE `photo` ADD `products_id` INT NOT NULL ;
+
+ALTER TABLE `photo` ADD INDEX ( `products_id` ) ;
+
+#2010-06-09
+ALTER TABLE `customers` ADD `customers_face` VARCHAR( 200 ) NOT NULL ;
+
+#2010-06-10
+ALTER TABLE `photo` ADD `photo_title` VARCHAR( 200 ) NOT NULL AFTER `photo_id` ;
+ALTER TABLE `photo` ADD `photo_content` TEXT NOT NULL AFTER `photo_title` ;
+
+#2010-06-11
+CREATE TABLE `travel_notes` (
+`travel_notes_id` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
+`travel_notes_title` VARCHAR( 230 ) NOT NULL ,
+`products_id` INT NOT NULL ,
+`photo_id` INT NOT NULL ,
+PRIMARY KEY ( `travel_notes_id` ) ,
+INDEX ( `products_id` , `photo_id` )
+) CHARACTER SET = latin1;
+ALTER TABLE `travel_notes` CHANGE `photo_id` `photo_ids` VARCHAR( 230 ) ;
+ALTER TABLE `travel_notes` DROP INDEX `products_id` ,
+ADD INDEX `products_id` ( `products_id` ) ;
+
+ALTER TABLE `travel_notes` ADD `customers_id` INT NOT NULL ,
+ADD `added_time` DATETIME NOT NULL ;
+
+ALTER TABLE `travel_notes` ADD INDEX ( `customers_id` ) ;
+ALTER TABLE `travel_notes` ADD `comment_num` INT NOT NULL ;
+
+CREATE TABLE `travel_notes_comments` (
+`travel_notes_comments_id` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
+`travel_notes_id` INT NOT NULL ,
+`customers_id` INT NOT NULL ,
+`added_time` DATETIME NOT NULL ,
+`comments` TEXT NOT NULL ,
+PRIMARY KEY ( `travel_notes_comments_id` ) ,
+INDEX ( `travel_notes_id` )
+) CHARACTER SET = latin1;
+
+#2010-06-12
+CREATE TABLE `photo_comments` (
+`photo_comments_id` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
+`photo_comments_content` TEXT NOT NULL ,
+`photo_id` INT NOT NULL ,
+`added_time` DATETIME NOT NULL ,
+`customers_id` INT NOT NULL ,
+PRIMARY KEY ( `photo_comments_id` )
+) CHARACTER SET = latin1;
+ALTER TABLE `photo_comments` ADD INDEX ( `photo_id` ) ;
+
+#2010-06-24
+ALTER TABLE `travel_companion` ADD `hope_departure_date_end`  DATE NOT NULL AFTER `hope_departure_date` ;
+#2010-06-25 添加sms_type，如果sms_type=100则是系统发的消息
+ALTER TABLE `site_inner_sms` ADD `sms_type` TINYINT( 3 ) DEFAULT '0' NOT NULL ;
+
+#2010-07-02
+ALTER TABLE `customers` ADD `dob_secret` TINYINT DEFAULT '0' NOT NULL AFTER `customers_dob` ;
+ALTER TABLE `customers` ADD `email_secret` TINYINT( 1 ) DEFAULT '0' NOT NULL AFTER `customers_email_address` ;
+ALTER TABLE `customers` ADD `telephone_secret` TINYINT( 1 ) DEFAULT '0' NOT NULL AFTER `customers_telephone` ;
+
+#2010-07-05
+ALTER TABLE `photo_comments` ADD `has_remove` TINYINT( 1 ) DEFAULT '0' NOT NULL ;
+
+#2010-07-06
+ALTER TABLE `photo_books` ADD `books_hot` INT DEFAULT '0' NOT NULL ;
+
+ALTER TABLE `photo_books` ADD INDEX ( `books_hot` ) ;
+
+#2010-07-14
+ALTER TABLE `travel_companion_application` ADD `verify_status_sms` TINYTEXT NOT NULL AFTER `tca_verify_status` ;
+
+#2010-07-25
+INSERT INTO `configuration` ( `configuration_id` , `configuration_title` , `configuration_key` , `configuration_value` , `configuration_description` , `configuration_group_id` , `sort_order` , `last_modified` , `date_added` , `use_function` , `set_function` )
+VALUES (
+'', '设置搜索框默认值', 'DEFAULT_KEYWORDS', '日本,中国, 美国, 欧洲 , 台湾', '设置搜索框默认值，多个默认值用","号隔开。', '1', NULL , '2010-07-25 09:31:04', '', NULL , NULL
+);
+
+#2010-07-29
+ALTER TABLE `products` ADD `book_limit_days_number` TINYINT( 2 ) NOT NULL ;
+ALTER TABLE `tour_travel_agency` ADD `book_limit_days` TINYINT( 2 ) DEFAULT '0' NOT NULL ;
+
+#2010-08-03
+CREATE TABLE `zhh_system_dir` (
+`dir_id` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
+`dir_name` VARCHAR( 100 ) NOT NULL ,
+`parent_id` INT NOT NULL COMMENT '上级目录ID' ,
+`sort_num` INT NOT NULL ,
+PRIMARY KEY ( `dir_id` )
+) CHARACTER SET = latin1 COMMENT = '新系统后台目录';
+ALTER TABLE `zhh_system_dir` ADD INDEX ( `sort_num` );
+
+CREATE TABLE `zhh_system_words` (
+`words_id` INT NOT NULL ,
+`words_title` VARCHAR( 200 ) NOT NULL ,
+`words_content` LONGTEXT NOT NULL ,
+`admin_id` INT NOT NULL ,
+`added_time` DATETIME NOT NULL ,
+`updated_time` DATETIME NOT NULL
+) CHARACTER SET = latin1 COMMENT = '培训系统文章';
+
+CREATE TABLE `zhh_words_to_dir` (
+`dir_id` INT UNSIGNED NOT NULL ,
+`words_id` INT UNSIGNED NOT NULL ,
+PRIMARY KEY ( `dir_id` , `words_id` )
+) CHARACTER SET = latin1 COMMENT = '文章与目录对应表';
+
+CREATE TABLE `zhh_system_words_annex` (
+`annex_id` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
+`words_id` INT NOT NULL ,
+`annex_file_name` VARCHAR( 200 ) NOT NULL ,
+PRIMARY KEY ( `annex_id` )
+) CHARACTER SET = latin1 COMMENT = '文章附件';
+
+CREATE TABLE `zhh_system_dir_description` (
+`dir_id` INT UNSIGNED NOT NULL ,
+`dir_description` LONGTEXT NOT NULL ,
+PRIMARY KEY ( `dir_id` )
+) CHARACTER SET = latin1 COMMENT = '目录说明表';
+
+CREATE TABLE `sql_query_logs` (
+`query_id` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
+`admin_id` INT NOT NULL ,
+`query_sql` TEXT NOT NULL ,
+`query_time` DATETIME NOT NULL ,
+PRIMARY KEY ( `query_id` ) ,
+INDEX ( `admin_id` )
+) CHARACTER SET = latin1 COMMENT = '后台Sql日志';
+
+ALTER TABLE `sql_query_logs` ADD `url_file_name` VARCHAR( 100 ) NOT NULL ;
+ALTER TABLE `sql_query_logs` ADD `query_type` CHAR( 6 ) NOT NULL ;
+ALTER TABLE `sql_query_logs` ADD INDEX ( `query_type` ) ;
+
+ALTER TABLE `zhh_system_dir` ADD `dir_groups_id` VARCHAR( 200 ) NOT NULL ;
+ALTER TABLE `zhh_system_dir` ADD INDEX ( `dir_groups_id` ) ;
+
+
+ALTER TABLE `zhh_system_words` ADD `r_groups_id` TEXT NOT NULL ,
+ADD `rw_groups_id` TEXT NOT NULL ,
+ADD `rwd_groups_id` TEXT NOT NULL ;
+ALTER TABLE `zhh_system_dir` CHANGE `dir_groups_id` `r_groups_id` VARCHAR( 200 ) DEFAULT NULL ;
+ALTER TABLE `zhh_system_words` CHANGE `r_groups_id` `r_groups_id` VARCHAR( 250 ) DEFAULT NULL ,
+CHANGE `rw_groups_id` `rw_groups_id` VARCHAR( 250 ) DEFAULT NULL ,
+CHANGE `rwd_groups_id` `rwd_groups_id` VARCHAR( 250 ) DEFAULT NULL ;
+ALTER TABLE `zhh_system_dir` CHANGE `r_groups_id` `r_groups_id` VARCHAR( 250 ) DEFAULT NULL ;
+ALTER TABLE `zhh_system_dir` ADD `rw_groups_id` VARCHAR( 250 ) NOT NULL ,
+ADD `rwd_groups_id` VARCHAR( 250 ) NOT NULL ;
+
+DROP TABLE IF EXISTS `zhh_system_words`;
+CREATE TABLE `zhh_system_words` (
+  `words_id` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
+  `words_title` varchar(200) NOT NULL,
+  `words_content` longtext NOT NULL,
+  `admin_id` int(11) NOT NULL,
+  `added_time` datetime NOT NULL,
+  `updated_time` datetime NOT NULL,
+  `r_groups_id` varchar(250) default NULL,
+  `rw_groups_id` varchar(250) default NULL,
+  `rwd_groups_id` varchar(250) default NULL,
+PRIMARY KEY ( `words_id` )
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='培训系统文章';
+
+ALTER TABLE `zhh_system_words` ADD `last_admin_id` INT NOT NULL AFTER `admin_id` ;
+
+ALTER TABLE `zhh_system_words_annex` ADD INDEX ( `annex_file_name` );
+ALTER TABLE `zhh_words_to_dir` ADD `is_main` TINYINT( 1 ) DEFAULT '0' NOT NULL ;
+
+ALTER TABLE `orders` ADD `emergency_order` TINYINT( 1 ) DEFAULT '0' NOT NULL ;
+
+#2010-09-16
+ALTER TABLE `orders_products` ADD `admin_and_provider_confirmed` TINYINT( 1 ) DEFAULT '0' NOT NULL ;
+
+#2010-09-26
+ALTER TABLE `coupons_description` ADD `use_range` VARCHAR( 200 ) NOT NULL ;
+ALTER TABLE `coupons` ADD `need_customers_active` TINYINT( 1 ) DEFAULT '0' NOT NULL AFTER `restrict_to_categories` ;
+INSERT INTO `cron` ( `cron_id` , `cron_code` , `cron_name` , `cron_start_date` , `cron_interval_day_num` , `cron_latest_send_date` , `cron_ation_state` , `cron_state` )
+VALUES (
+'', 'CouponExpireNotes', '优惠券到期提醒邮件', '2010-09-01', '0', '0000-00-00', '0', 'true'
+);
+
+#2010-09-28
+ALTER TABLE `products` ADD `agency_name` VARCHAR( 200 ) NOT NULL ,
+ADD `agency_phone` VARCHAR( 100 ) NOT NULL ,
+ADD `agency_emerency_contactperson` VARCHAR( 100 ) NOT NULL ,
+ADD `agency_emerency_phone_number` VARCHAR( 100 ) NOT NULL ;
+
+#2010-10-13
+INSERT INTO `configuration` ( `configuration_id` , `configuration_title` , `configuration_key` , `configuration_value` , `configuration_description` , `configuration_group_id` , `sort_order` , `last_modified` , `date_added` , `use_function` , `set_function` )
+VALUES (
+'', '女性也可拼房的产品', 'SEXES_ROOM_PROD_IDS', '1633,1631,485,1634,1635,1630,1636,1632', '女性也可拼房的产品，用,号隔开id。如果没有请设置为空', '8', '0', NULL , '0000-00-00 00:00:00', NULL , NULL
+);
+
+ALTER TABLE `orders` ADD `us_to_cny_rate` DECIMAL( 14, 6 ) NOT NULL AFTER `currency_value` ;
+
+#2010-10-21
+ALTER TABLE `tour_travel_agency` ADD `book_limit_days_type` enum( 'hours', 'days' ) DEFAULT 'hours' NOT NULL AFTER `book_limit_days` ;
+UPDATE `tour_travel_agency` SET `book_limit_days` = '48' WHERE `book_limit_days` ='2';
+
+
+#2010-10-25
+INSERT INTO `configuration` ( `configuration_id` , `configuration_title` , `configuration_key` , `configuration_value` , `configuration_description` , `configuration_group_id` , `sort_order` , `last_modified` , `date_added` , `use_function` , `set_function` )
+VALUES (
+'', '承诺低价保证的产品', 'LOW_PRICE_GUARANTEE_PRODUCTS', '', '承诺低价保证的产品，用,号隔开id。如果没有请设置为空', '8', '100', NULL , '0000-00-00 00:00:00', NULL , NULL
+);
+
+#2010-10-26
+ALTER TABLE `products` ADD `with_air_transfer` ENUM( "0", "1" ) DEFAULT '0' NOT NULL ;
+#以下两句在更新生产站时再添加到生产站(已经添加)
+ALTER TABLE `tour_travel_agency` ADD `book_limit_days_air` TINYINT( 2 ) NOT NULL AFTER `book_limit_days_type` ,
+ADD `book_limit_days_type_air` ENUM( "hours", "days" ) NOT NULL AFTER `book_limit_days_air` ;
+
+#2010-10-27
+ALTER TABLE `tour_question_answer` ADD `has_checked` ENUM( '0', '1' ) DEFAULT '0' NOT NULL ;
+ALTER TABLE `tour_question` ADD `replay_has_checked` ENUM( "0", "1" ) DEFAULT '0' NOT NULL AFTER `replay` ;
+ALTER TABLE `tour_travel_agency` ADD `time_difference_from_china` VARCHAR( 10 ) NOT NULL ;
+
+#2010-11-04
+CREATE TABLE `customers_favorites` (
+`customers_favorites_id` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
+`products_id` INT NOT NULL ,
+`customers_id` INT NOT NULL ,
+`added_time` DATETIME NOT NULL ,
+`updated_time` DATETIME NOT NULL ,
+PRIMARY KEY ( `customers_favorites_id` ) ,
+INDEX ( `customers_id` )
+) CHARACTER SET = latin1;
+ALTER TABLE `customers_favorites` ADD INDEX ( `products_id` ) ;
+
+#2010-11-08
+ALTER TABLE  `products_travel` CHANGE  `travel_hotel`  `travel_hotel` TINYTEXT DEFAULT NULL;
+ALTER TABLE  `products_travel` CHANGE  `products_id`  `products_id` INT NOT NULL;
+ALTER TABLE  `hotel` ADD INDEX (  `hotel_name` );
+
+UPDATE  `configuration` SET `configuration_value` =  '<p>1.在您提交预订后会立即通过电子邮件收到一份预订收据。</p>
+<p>2.在您提交预订的1－2个工作日内您会收到我们发出的确认邮件。</p>
+<p>3.一旦您的预订详情得到确认或者我们确认收到您的相关个人信息，您就会通过邮箱收到您的电子票。在您的电子票上我们会逐条详尽说明您所定购旅行团的信息。还会提供地方旅游机构的联系方式，以方便您在出行或者要求再次确认信息时使用。</p>
+<p>4.您只需要打印出您的电子票，并在出团当天附上您带有照片的有效身份证，出示给导游便可以了。请记住，电子票是您的购买凭证。</p>' WHERE  `configuration_key` =  'TOURS_DEFAULT_RESERVATION_PROCCESS_ETICKET' LIMIT 1 ;
+
+UPDATE  `configuration` SET  `configuration_value` =  '<p>- 订购必须经过一定的购买流程。我们会在1－2个工作日内通过电子邮件与您进行确认。</p>
+<p>- 请您尽快预订，因位价格可能在不同时间会有所不同。例如，在公众假期价格会有涨幅。</p>
+<p>- 请在预订前仔细阅读 <a href="cancellation-and-refund-policy.php"  target="_blank" class="sp3">取消和退款条例</a> 。</p>
+<p>- 请在预订前仔细阅读 <a href="customer-agreement.php" target="_blank" class="sp3">客户协议</a> 。</p>
+<p>- 为了确保您的安全及旅途愉快，当地旅行团供应商会保留对行程安排进行更改的权利。</p>' WHERE  `configuration_key` =  'TOURS_DEFAULT_TERMS_AND_CONDITIONS' LIMIT 1 ;
+
+ALTER TABLE `reviews` ADD `parent_reviews_id` INT NOT NULL AFTER `reviews_id` ;
+ALTER TABLE `reviews` ADD INDEX ( `parent_reviews_id` ) ;
+
+ALTER TABLE `reviews` ADD `booking_rating` INT NOT NULL ,
+ADD `travel_rating` INT NOT NULL ;
+
+ALTER TABLE `reviews` ADD `good_comment_num` INT DEFAULT '0' NOT NULL AFTER `travel_rating` ,
+ADD `bad_comment_num` INT DEFAULT '0' NOT NULL AFTER `good_comment_num` ;
+
+ALTER TABLE `reviews` ADD INDEX ( `products_id` ) ;
+ALTER TABLE `reviews` ADD `is_essence` TINYINT( 1 ) DEFAULT '0' NOT NULL ,
+ADD `is_top` TINYINT( 1 ) DEFAULT '0' NOT NULL ;
+ALTER TABLE `reviews` ADD `admin_id` INT NOT NULL ;
+
+#2010-11-26
+ALTER TABLE `customers` ADD `recommend_customer_id` INT DEFAULT '0' NOT NULL AFTER `customers_id` ;
+
+
+#2010-12-15
+ALTER TABLE `reviews` ADD `has_purchased` ENUM( "0", "1", "2" ) DEFAULT '2' NOT NULL ;
+
+#2010-12-16
+ALTER TABLE `customers` ADD `space_public` ENUM( "0", "1" ) DEFAULT '1' NOT NULL ;
+
+#2010-12-24
+CREATE TABLE `experts_question` (
+  `q_id` int(10) unsigned NOT NULL auto_increment COMMENT '问题id',
+  `uid` int(11) NOT NULL COMMENT '专家的用户id',
+  `q_content` text NOT NULL COMMENT '问题内容',
+  `q_add_time` datetime NOT NULL COMMENT '提问时间',
+  `q_modified_time` datetime NOT NULL COMMENT '最后修改时间',
+  `customers_id` int(11) NOT NULL COMMENT '提问人的用户ID',
+  `q_answered` ENUM( "0", "1" ) DEFAULT '0' NOT NULL COMMENT '是否已经回答，1为已回答，0为未回答。',
+  PRIMARY KEY  (`q_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='专家问题咨询表' AUTO_INCREMENT=1 ;
+ALTER TABLE `experts_question` ADD INDEX ( `uid` );
+
+CREATE TABLE `experts_answers` (
+  `a_id` int(10) unsigned NOT NULL auto_increment COMMENT '答案id',
+  `q_id` int(11) NOT NULL COMMENT '问题id',
+  `a_content` text NOT NULL COMMENT '回答内容',
+  `a_add_time` datetime NOT NULL COMMENT '回答时间',
+  `a_modified_time` datetime NOT NULL COMMENT '最后修改时间',
+  `uid` int(11) NOT NULL COMMENT '专家用户ID',
+  `a_useful` int(11) NOT NULL COMMENT '（投票）有用数',
+  `a_useless` int(11) NOT NULL COMMENT '（投票）无用数',
+  PRIMARY KEY  (`a_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='专家回答表' AUTO_INCREMENT=1 ;
+ALTER TABLE `experts_answers` ADD INDEX ( `uid` );
+ALTER TABLE `experts_answers` ADD INDEX ( `q_id` );
+
+#2010-12-30
+ALTER TABLE `tour_travel_agency` ADD `res_notes` TEXT NOT NULL ;
+ALTER TABLE `tour_travel_agency` ADD `formula` VARCHAR( 200 ) NOT NULL AFTER `time_difference_from_china` ;
+ALTER TABLE `orders_product_eticket` ADD `sent_administrator_info` VARCHAR( 4000 ) NOT NULL ;
+
+
+#2011-01-09
+#OrderOtherService start
+#orders_other_service_status
+CREATE TABLE `orders_other_service_status` (
+`os_status_id` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
+`os_sort` INT NOT NULL COMMENT '排序',
+`os_status_name` varchar(50) default NULL COMMENT '状态名称',
+PRIMARY KEY ( `os_status_id` ) 
+) CHARACTER SET = latin1 COMMENT = '订单产品的其它服务项目的状态表';
+
+INSERT INTO orders_other_service_status VALUES (1, 1, '和客户确认(等待付款)'),
+(2, 2, '已收款(等待Provider确认)'),
+(3, 3, '已和Provider确认'),
+(4, 4, '客户取消(未付款)'),
+(5, 5, '客户取消(已退款)'),
+(6, 6, '已发送E-Ticket');
+
+
+#订单产品酒店延住表
+CREATE TABLE `orders_products_extended_hotel` (
+`eh_id` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
+`orders_id` INT NOT NULL ,
+`orders_products_id` INT NOT NULL ,
+`eh_type` ENUM( "before", "after" ) NOT NULL COMMENT '延住模式',
+`hotel_id` INT NOT NULL COMMENT '酒店id，与hotel表对应',
+`hotel_name` varchar(50) default NULL COMMENT '酒店名称',
+`hotel_price` DECIMAL( 15, 2 ) NOT NULL COMMENT '酒店价格', 
+`people_number` INT NOT NULL COMMENT '入住人数',
+`hotel_final_price` DECIMAL( 15, 2 ) NOT NULL COMMENT '产生费用，美元', 
+`hotel_room_info` varchar(200) NOT NULL COMMENT '房间信息分别为:房间1人数,房间2人数,房间3人数……房间数=(逗号总数+1)',
+`start_date` date NOT NULL COMMENT '入住日期',
+`end_date` date NOT NULL COMMENT '离店日期',
+`customer_name` varchar(50) default NULL COMMENT '预定人名，这个姓名与customers表没有任何关系',
+`customer_mobile` varchar(50) default NULL COMMENT '预定手机',
+`status_id` INT NOT NULL COMMENT '酒店延住状态id，与orders_other_service_status表对应',
+`modified_by` INT NOT NULL COMMENT '由谁最后修改，与admin表的用户id对应',
+`modified` datetime NOT NULL COMMENT '最后修改时间',
+`pay_method` varchar(50) default NULL COMMENT '付款方式',
+`provider_code` varchar(50) default NULL COMMENT '供应商代码，此代码与数据库的其它供应商代码没有任何关联',
+PRIMARY KEY ( `eh_id` ) ,
+INDEX ( `orders_id` , `orders_products_id`, `status_id`)
+) CHARACTER SET = latin1 COMMENT = '酒店延住表';
+
+ALTER TABLE `orders_products_extended_hotel` DROP `eh_id`;
+ALTER TABLE `orders_products_extended_hotel` ADD PRIMARY KEY(`orders_products_id`);
+ALTER TABLE `orders_products_extended_hotel` ADD `remarks` TEXT NOT NULL ;
+
+#订单产品酒店延住表更新历史
+CREATE TABLE `orders_products_extended_hotel_history` (
+  `history_id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `orders_products_id` int(11) NOT NULL,
+  `eh_type` enum('before','after') NOT NULL COMMENT '延住模式',
+  `hotel_id` int(11) NOT NULL COMMENT '酒店id，与hotel表对应',
+  `hotel_name` varchar(50) default NULL COMMENT '酒店名称',
+  `hotel_price` decimal(15,2) NOT NULL COMMENT '酒店价格',
+  `people_number` int(11) NOT NULL COMMENT '入住人数',
+  `hotel_final_price` decimal(15,2) NOT NULL COMMENT '产生费用，美元',
+  `hotel_room_info` varchar(200) NOT NULL COMMENT '房间信息分别为:房间1人数,房间2人数,房间3人数……房间数=(逗号总数+1)',
+  `start_date` date NOT NULL COMMENT '入住日期',
+  `end_date` date NOT NULL COMMENT '离店日期',
+  `customer_name` varchar(50) default NULL COMMENT '预定人名，这个姓名与customers表没有任何关系',
+  `customer_mobile` varchar(50) default NULL COMMENT '预定手机',
+  `status_id` int(11) NOT NULL COMMENT '酒店延住状态id，与orders_other_service_status表对应',
+  `modified_by` int(11) NOT NULL COMMENT '由谁最后修改，与admin表的用户id对应',
+  `modified` datetime NOT NULL COMMENT '最后修改时间',
+  `pay_method` varchar(50) NOT NULL,
+  `provider_code` varchar(50) NOT NULL,
+  `remarks` text NOT NULL,
+  `action_map` varchar(30) NOT NULL,
+  PRIMARY KEY  (`history_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='订单产品酒店延住表更新历史';
+
+
+#机场接/送服务表
+CREATE TABLE `orders_products_airport_transfer` (
+`orders_products_id` INT NOT NULL ,
+`orders_id` INT NOT NULL ,
+`flight_number` varchar(50) default NULL COMMENT '航班号',
+`arrival_airport` varchar(50) default NULL COMMENT '抵达机场',
+`arrival_time` varchar(50) default NULL COMMENT '抵达时间',
+`final_price` DECIMAL( 15, 2 ) NOT NULL COMMENT '服务费用，美元', 
+`customer_name` varchar(50) default NULL COMMENT '接/送联系人，这个姓名与customers表没有任何关系',
+`customer_mobile` varchar(50) default NULL COMMENT '接/送联系电话',
+`modified_by` INT NOT NULL COMMENT '由谁最后修改，与admin表的用户id对应',
+`modified` datetime NOT NULL COMMENT '最后修改时间',
+`pay_method` varchar(50) default NULL COMMENT '付款方式',
+`status_id` INT NOT NULL COMMENT '状态id，与orders_other_service_status表对应',
+`provider_code` varchar(50) default NULL COMMENT '供应商代码，此代码与数据库的其它供应商代码没有任何关联',
+`remarks` TEXT NOT NULL COMMENT '备注',
+
+PRIMARY KEY ( `orders_products_id` ) ,
+INDEX ( `orders_id` , `status_id`)
+) CHARACTER SET = latin1 COMMENT = '机场接/送服务表';
+
+#机场接/送服务表历史记录
+CREATE TABLE `orders_products_airport_transfer_history` (
+`history_id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+`orders_products_id` INT NOT NULL ,
+`flight_number` varchar(50) default NULL COMMENT '航班号',
+`arrival_airport` varchar(50) default NULL COMMENT '抵达机场',
+`arrival_time` varchar(50) default NULL COMMENT '抵达时间',
+`final_price` DECIMAL( 15, 2 ) NOT NULL COMMENT '服务费用，美元', 
+`customer_name` varchar(50) default NULL COMMENT '接/送联系人，这个姓名与customers表没有任何关系',
+`customer_mobile` varchar(50) default NULL COMMENT '接/送联系电话',
+`modified_by` INT NOT NULL COMMENT '由谁最后修改，与admin表的用户id对应',
+`modified` datetime NOT NULL COMMENT '最后修改时间',
+`pay_method` varchar(50) default NULL COMMENT '付款方式',
+`status_id` INT NOT NULL COMMENT '状态id，与orders_other_service_status表对应',
+`provider_code` varchar(50) default NULL COMMENT '供应商代码，此代码与数据库的其它供应商代码没有任何关联',
+`remarks` TEXT NOT NULL COMMENT '备注',
+`action_map` varchar(30) NOT NULL,
+  PRIMARY KEY  (`history_id`) ,
+ INDEX ( `status_id`)
+) CHARACTER SET = latin1 COMMENT = '机场接/送服务表历史记录';
+
+#指定地址接/送服务表
+CREATE TABLE `orders_products_address_transfer` (
+`orders_products_id` INT NOT NULL ,
+`orders_id` INT NOT NULL ,
+`final_price` DECIMAL( 15, 2 ) NOT NULL COMMENT '服务费用，美元', 
+`customer_name` varchar(50) default NULL COMMENT '接/送联系人，这个姓名与customers表没有任何关系',
+`customer_mobile` varchar(50) default NULL COMMENT '接/送联系电话',
+`transfer_time` varchar(50) default NULL COMMENT '接送时间',
+`transfer_address` varchar(200) default NULL COMMENT '接/送地点',
+`modified_by` INT NOT NULL COMMENT '由谁最后修改，与admin表的用户id对应',
+`modified` datetime NOT NULL COMMENT '最后修改时间',
+`pay_method` varchar(50) default NULL COMMENT '付款方式',
+`status_id` INT NOT NULL COMMENT '状态id，与orders_other_service_status表对应',
+`provider_code` varchar(50) default NULL COMMENT '供应商代码，此代码与数据库的其它供应商代码没有任何关联',
+`remarks` TEXT NOT NULL COMMENT '备注',
+
+PRIMARY KEY ( `orders_products_id` ) ,
+INDEX ( `orders_id` , `status_id`)
+) CHARACTER SET = latin1 COMMENT = '指定地址接/送服务表';
+
+#指定地址接/送服务表历史记录
+CREATE TABLE `orders_products_address_transfer_history` (
+`history_id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+`orders_products_id` INT NOT NULL ,
+`final_price` DECIMAL( 15, 2 ) NOT NULL COMMENT '服务费用，美元', 
+`customer_name` varchar(50) default NULL COMMENT '接/送联系人，这个姓名与customers表没有任何关系',
+`customer_mobile` varchar(50) default NULL COMMENT '接/送联系电话',
+`transfer_time` varchar(50) default NULL COMMENT '接送时间',
+`transfer_address` varchar(200) default NULL COMMENT '接/送地点',
+`modified_by` INT NOT NULL COMMENT '由谁最后修改，与admin表的用户id对应',
+`modified` datetime NOT NULL COMMENT '最后修改时间',
+`pay_method` varchar(50) default NULL COMMENT '付款方式',
+`status_id` INT NOT NULL COMMENT '状态id，与orders_other_service_status表对应',
+`provider_code` varchar(50) default NULL COMMENT '供应商代码，此代码与数据库的其它供应商代码没有任何关联',
+`remarks` TEXT NOT NULL COMMENT '备注',
+`action_map` varchar(30) NOT NULL,
+
+PRIMARY KEY ( `history_id` ) ,
+INDEX ( `status_id`)
+) CHARACTER SET = latin1 COMMENT = '指定地址接/送服务表历史记录';
+
+
+#订单更新服务表
+CREATE TABLE `orders_products_orders_change` (
+`orders_products_id` INT NOT NULL ,
+`orders_id` INT NOT NULL ,
+`final_price` DECIMAL( 15, 2 ) NOT NULL COMMENT '服务费用，美元', 
+`modified_by` INT NOT NULL COMMENT '由谁最后修改，与admin表的用户id对应',
+`modified` datetime NOT NULL COMMENT '最后修改时间',
+`pay_method` varchar(50) default NULL COMMENT '付款方式',
+`status_id` INT NOT NULL COMMENT '状态id，与orders_other_service_status表对应',
+`provider_code` varchar(50) default NULL COMMENT '供应商代码，此代码与数据库的其它供应商代码没有任何关联',
+`remarks` TEXT NOT NULL COMMENT '备注',
+
+PRIMARY KEY ( `orders_products_id` ) ,
+INDEX ( `orders_id` , `status_id`)
+) CHARACTER SET = latin1 COMMENT = '指定地址接/送服务表';
+
+#订单更新服务表历史记录
+CREATE TABLE `orders_products_orders_change_history` (
+`history_id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+`orders_products_id` INT NOT NULL ,
+`final_price` DECIMAL( 15, 2 ) NOT NULL COMMENT '服务费用，美元', 
+`modified_by` INT NOT NULL COMMENT '由谁最后修改，与admin表的用户id对应',
+`modified` datetime NOT NULL COMMENT '最后修改时间',
+`pay_method` varchar(50) default NULL COMMENT '付款方式',
+`status_id` INT NOT NULL COMMENT '状态id，与orders_other_service_status表对应',
+`provider_code` varchar(50) default NULL COMMENT '供应商代码，此代码与数据库的其它供应商代码没有任何关联',
+`remarks` TEXT NOT NULL COMMENT '备注',
+`action_map` varchar(30) NOT NULL,
+
+PRIMARY KEY ( `history_id` ) ,
+INDEX ( `status_id`)
+) CHARACTER SET = latin1 COMMENT = '订单更新服务表历史记录';
+
+
+#OrderOtherService end
+
+#2011-1-25
+CREATE TABLE `orders_products_orders_change_reason` (
+`reason_id` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
+`reason_text` VARCHAR( 100 ) NOT NULL ,
+PRIMARY KEY ( `reason_id` )
+) CHARACTER SET = latin1 COMMENT = '订单更新服务费用产生原因';
+
+ALTER TABLE `orders_products_orders_change` ADD `reason` INT DEFAULT '0' NOT NULL ;
+ALTER TABLE `orders_products_orders_change_history` ADD `reason` INT DEFAULT '0' NOT NULL AFTER `remarks` ;
+
+ALTER TABLE `orders_products_extended_hotel_history` ADD `orders_id` INT NOT NULL AFTER `history_id` ;
+ALTER TABLE `orders_products_address_transfer_history` ADD `orders_id` INT NOT NULL AFTER `history_id` ;
+ALTER TABLE `orders_products_orders_change_history` ADD `orders_id` INT NOT NULL AFTER `history_id` ;
+ALTER TABLE `orders_products_airport_transfer_history` ADD `orders_id` INT NOT NULL AFTER `history_id` ;
+#以上均已经添加到所有数据库
+
+
+
+#2011-01-26
+ALTER TABLE `orders_products` ADD `admin_confirm` ENUM( "Y", "N" ) DEFAULT 'N' NOT NULL ,
+ADD `admin_confirm_final_price_cost` DECIMAL( 15, 2 ) NOT NULL ,
+ADD `admin_confirm_customer_invoice_no` VARCHAR( 64 ) NOT NULL ,
+ADD `admin_confirm_customer_invoice_total` DOUBLE NOT NULL ,
+ADD `admin_confirm_date` DATETIME NOT NULL ,
+ADD `admin_confirm_admin_id` INT NOT NULL ;
+
+
+ALTER TABLE `orders_products_address_transfer` ADD `transfer_to_address` VARCHAR( 200 ) NOT NULL AFTER `transfer_address` ,
+ADD `service_type` ENUM( "0", "1" ) DEFAULT '0' NOT NULL AFTER `transfer_to_address` ,
+ADD `transfer_time1` VARCHAR( 50 ) NOT NULL AFTER `service_type` ,
+ADD `transfer_address1` VARCHAR( 200 ) NOT NULL AFTER `transfer_time1` ,
+ADD `transfer_to_address1` VARCHAR( 200 ) NOT NULL AFTER `transfer_address1` ;
+
+ALTER TABLE `orders_products_address_transfer_history` ADD `transfer_to_address` VARCHAR( 200 ) NOT NULL AFTER `transfer_address` ,
+ADD `service_type` ENUM( "0", "1" ) DEFAULT '0' NOT NULL AFTER `transfer_to_address` ,
+ADD `transfer_time1` VARCHAR( 50 ) NOT NULL AFTER `service_type` ,
+ADD `transfer_address1` VARCHAR( 200 ) NOT NULL AFTER `transfer_time1` ,
+ADD `transfer_to_address1` VARCHAR( 200 ) NOT NULL AFTER `transfer_address1` ;
+
+ALTER TABLE `orders_products_airport_transfer` ADD `service_type` ENUM( "0", "1" ) DEFAULT '0' NOT NULL ,
+ADD `drop_off` VARCHAR( 200 ) NOT NULL ,
+ADD `pick_up` VARCHAR( 200 ) NOT NULL ;
+
+ALTER TABLE `orders_products_airport_transfer_history` ADD `service_type` ENUM( "0", "1" ) DEFAULT '0' NOT NULL ,
+ADD `drop_off` VARCHAR( 200 ) NOT NULL ,
+ADD `pick_up` VARCHAR( 200 ) NOT NULL ;
+
+ALTER TABLE `orders_products_extended_hotel` DROP PRIMARY KEY;
+ALTER TABLE `orders_products_extended_hotel` ADD `extended_hotel_id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY FIRST ;
+ALTER TABLE `orders_products_extended_hotel_history` ADD `extended_hotel_id` INT NOT NULL AFTER `history_id` ;
+
+ALTER TABLE `orders_products` ADD `is_diy_tours_book` TINYINT( 1 ) NOT NULL AFTER `is_adjustments_needed` ;
+
+#2011-03-29
+#添加新文件
+INSERT INTO `admin_files` ( `admin_files_id` , `admin_files_name` , `admin_files_is_boxes` , `admin_files_to_boxes` , `admin_groups_id` ) VALUES (NULL , 'offers_sms_notification.php', '0', '5', '1,5,7');
+
+# 添加活动通知字段
+ALTER TABLE `customers` ADD `customers_notice` INT( 1 ) NOT NULL DEFAULT '0' COMMENT '活动通知';
+# 添加酒店延住的确认号码
+ALTER TABLE `orders_products_extended_hotel` ADD `hotel_confirm_number` VARCHAR( 100 ) NULL COMMENT '酒店确认号码' AFTER `provider_code`;
+ALTER TABLE `orders_products_extended_hotel_history` ADD `hotel_confirm_number` VARCHAR( 100 ) NULL COMMENT '酒店确认号码' AFTER `provider_code`;
+
+# cron 添加短信发送一些开关
+INSERT INTO `cron` (`cron_code`, `cron_name`, `cron_start_date`, `cron_interval_day_num`, `cron_latest_send_date`, `cron_ation_state`, `cron_state`) VALUES 
+('WeatherForecastRemind', 'weather forecast remind', '2011-08-01', 0, '0000-00-00', 0, 'true'),
+('PreparatoryWorkRemind', 'preparatory work remind', '2011-08-01', 0, '0000-00-00', 0, 'true'),
+('ShoppingSMS', 'Shopping SMS', '2011-08-01', 0, '0000-00-00', 0, 'true'),
+('ShoppingNotClosing', 'Shopping Not Closing', '2011-08-01', 0, '0000-00-00', 0, 'true'),
+('NotLoggedInvitedSix', 'Not Logged Invited Six', '2011-08-01', 0, '0000-00-00', 0, 'true'),
+('EndGreetingMessageRemind', 'travel end greeting message remind', '2011-08-01', 0, '0000-00-00', 0, 'true');
+
+# 修改字段类型
+ALTER TABLE `configuration` CHANGE `set_function` `set_function` VARCHAR(1000) DEFAULT NULL;
+
+# 设置值，打开短信发送开关
+UPDATE `configuration` SET 
+`configuration_value` = '[下单成功], [电子票通知], [收款确认通知], [航班信息填写提醒], [度假行程确认完毕], [酒店延住提醒], [行程结束问候], [当前订单旅客发送短信]', 
+`set_function` = 'tep_cfg_select_multioption(array(\'[下单成功]\',\'[电子票通知]\',\'[找回密码]\',\'[收款确认通知]\',\'[旅游保险提醒]\',\'[航班信息填写提醒]\',\'[取消订单通知]\',\'[度假行程确认完毕]\',\'[当前订单旅客发送短信]\',\'[天气预报提醒]\',\'[预祝出行愉快]\',\'[准备工作提醒]\',\'[未下订单提醒]\',\'[未结账提醒]\',\'[未登录提醒]\',\'[行程结束问候]\',\'[酒店延住提醒]\'),'
+WHERE `configuration_key` = 'CPUNC_USE_RANGE';
+
+#2011-04-01 Howard added
+#订单状态组 start
+#
+# 表的结构 `orders_status_groups`
+#
+# 创建时间: 2011 年 04 月 01 日 11:46
+# 最后更新时间: 2011 年 04 月 01 日 11:48
+# 最后检查时间: 2011 年 04 月 01 日 11:48
+#
+
+CREATE TABLE `orders_status_groups` (
+  `os_groups_id` int(10) unsigned NOT NULL auto_increment,
+  `os_groups_name` varchar(100) NOT NULL,
+  `sort_id` int(11) NOT NULL,
+  PRIMARY KEY  (`os_groups_id`),
+  KEY `sort_id` (`sort_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1 COMMENT='订单状态组' AUTO_INCREMENT=11 ;
+
+#
+# 导出表中的数据 `orders_status_groups`
+#
+
+INSERT INTO `orders_status_groups` VALUES (1, 'Pending', 1),
+(2, 'Step 1', 2),
+(3, 'Step 2', 3),
+(4, 'Step 3 Flight Information', 4),
+(5, 'Step 4 Ticket Issue', 5),
+(6, 'Important Notice', 6),
+(7, 'General Notice', 7),
+(8, 'Cancellation', 8),
+(9, 'Payment (CSR)', 9),
+(10, 'Payment (Accounting)', 10);
+
+ALTER TABLE `orders_status` ADD `os_groups_id` INT NOT NULL ;
+ALTER TABLE `orders_status` ADD INDEX ( `os_groups_id` ) ;
+ALTER TABLE `orders_status` ADD `sort_id` INT NOT NULL AFTER `os_groups_id` ;
+ALTER TABLE `orders_status` ADD INDEX ( `sort_id` ) ;
+
+#订单状态组 end
+
+#会员积分卡表 BEGIN
+CREATE TABLE `member_pointcards` (
+  `pointcards_id` int(11) NOT NULL default '0',
+  `password` varchar(10) collate latin1_general_ci default NULL,
+  `expire_date` datetime default NULL,
+  `active_date` datetime default NULL,
+  PRIMARY KEY  (`pointcards_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 ;
+
+CREATE TABLE `member_pointcards_to_customer` (
+  `customers_id` int(11) NOT NULL auto_increment,
+  `pointcards_id` int(11) default NULL,
+  PRIMARY KEY  (`customers_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+#会员积分卡表 END
+
+#在订单表中添加一个索取acb信息的邮件标识用以判断是否给信用卡有问题的客户发送了索取ACB的邮件
+ALTER TABLE `orders` ADD `sent_acb_mail` TINYINT( 1 ) DEFAULT '0' NOT NULL ;
+
+#会员积分卡后台 BEGIN
+#新加入2个php文件到权限控制控制中
+INSERT INTO `admin_files` ( `admin_files_id` , `admin_files_name` , `admin_files_is_boxes` , `admin_files_to_boxes` , `admin_groups_id` )
+VALUES (
+'', 'orders_pointcards.php', '0', '0', '1'
+);
+
+INSERT INTO `admin_files` ( `admin_files_id` , `admin_files_name` , `admin_files_is_boxes` , `admin_files_to_boxes` , `admin_groups_id` )
+VALUES (
+'', 'frame.php', '0', '0', '1'
+);
+#会员积分卡后台 END
+
+#添加是否发送过航班信息确认给供应商的判断字段
+ALTER TABLE `orders_product_flight` ADD `sent_confirm_email_to_provider` TINYINT( 1 ) DEFAULT '0' NOT NULL ;
+
+#从英文站复制的表用于customer waitlist
+CREATE TABLE IF NOT EXISTS `customer_waitlist` (
+`waitlist_id` int(10) NOT NULL AUTO_INCREMENT,
+`customer_name` varchar(60) NOT NULL,
+`cutomer_email` varchar(60) NOT NULL,
+`cutomer_travel_date` datetime NOT NULL,
+`customer_request_date` datetime NOT NULL,
+`cutomer_phone` varchar(20) NOT NULL,
+`products_id` int(10) NOT NULL,
+`tour_code` varchar(20) NOT NULL,
+`contacted` enum('0','1') NOT NULL DEFAULT '0',
+`reply_date` datetime NOT NULL,
+`cron_run_date` date NOT NULL,
+`phone_call_time` varchar(255) NOT NULL,
+`contact_status` varchar(200) NOT NULL,
+PRIMARY KEY (`waitlist_id`)
+);
+
+#从英文站复制的表用于 油轮团
+CREATE TABLE IF NOT EXISTS `products_cruise_pricing` (
+  `products_cruise_pricing_id` int(11) NOT NULL AUTO_INCREMENT,
+  `products_single_cruise1` double(8,2) NOT NULL,
+  `products_double_cruise1` double(8,2) NOT NULL,
+  `products_triple_cruise1` double(8,2) NOT NULL,
+  `products_quadr_cruise1` double(8,2) NOT NULL,
+  `products_kids_cruise1` double(8,2) NOT NULL,
+  `products_single_cruise1_cost` double(8,2) NOT NULL,
+  `products_double_cruise1_cost` double(8,2) NOT NULL,
+  `products_triple_cruise1_cost` double(8,2) NOT NULL,
+  `products_quadr_cruise1_cost` double(8,2) NOT NULL,
+  `products_kids_cruise1_cost` double(8,2) NOT NULL,
+  `products_single_cruise2` double(8,2) NOT NULL,
+  `products_double_cruise2` double(8,2) NOT NULL,
+  `products_triple_cruise2` double(8,2) NOT NULL,
+  `products_quadr_cruise2` double(8,2) NOT NULL,
+  `products_kids_cruise2` double(8,2) NOT NULL,
+  `products_single_cruise2_cost` double(8,2) NOT NULL,
+  `products_double_cruise2_cost` double(8,2) NOT NULL,
+  `products_triple_cruise2_cost` double(8,2) NOT NULL,
+  `products_quadr_cruise2_cost` double(8,2) NOT NULL,
+  `products_kids_cruise2_cost` double(8,2) NOT NULL,
+  `products_price_cruise1` double(8,2) NOT NULL,
+  `products_price_cruise2` double(8,2) NOT NULL,
+  `products_id` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`products_cruise_pricing_id`)
+);
+ALTER TABLE `products_cruise_pricing` ADD INDEX ( `products_id` );
+ALTER TABLE `customers_basket` ADD `tour_cruise_type` TINYINT( 1 ) NOT NULL DEFAULT '0';
+ALTER TABLE `orders_products` ADD `tour_cruise_type` INT NOT NULL DEFAULT '0';
+
+INSERT INTO `configuration` (
+`configuration_id` ,
+`configuration_title` ,
+`configuration_key` ,
+`configuration_value` ,
+`configuration_description` ,
+`configuration_group_id` ,
+`sort_order` ,
+`last_modified` ,
+`date_added` ,
+`use_function` ,
+`set_function`
+)
+VALUES (
+NULL , '油轮团目录ID ', 'CRUISE_CATEGORY_ID', '267', ' CRUISE_CATEGORY_ID ', '8', NULL , NULL , '0000-00-00 00:00:00', NULL , NULL
+);
+#添加客服QA 保持第一个回复客服的回应内容 供email发送时调用
+ALTER TABLE `tour_question_answer` ADD `ans_orig` TEXT NULL COMMENT '保存第一个回答问题的客服的回答内容';
+
+ALTER TABLE `orders` ADD `provider_cancellation_penalty` DECIMAL( 15, 2 ) NOT NULL COMMENT '供应商取消罚金' AFTER `provider_cancellation_fee`  ;
+ALTER TABLE `orders` ADD `provider_cancellation_fee_1` DECIMAL( 15, 2 ) NOT NULL COMMENT '当provider_cancellation_fee的值大于0时把该值也记录到此字段' AFTER `provider_cancellation_fee` ;
+ALTER TABLE `orders` ADD `payment_methods` VARCHAR( 110 ) NOT NULL COMMENT 'payment_method的补充，如果一个订单有多个付款方式会用到此字段' AFTER `payment_method` ;
+ALTER TABLE `orders` ADD `provider_cancellation_penalty_history` TEXT NOT NULL COMMENT '记录供应商取消罚金的更新历史，该值是由客服输入的' AFTER `provider_cancellation_penalty` ;
+
+ALTER TABLE `orders` ADD `refund_total` DECIMAL( 15, 2 ) NOT NULL COMMENT '订单状态100097的退款金额';
+
+#团购相关 {
+ALTER TABLE `specials` ADD `specials_new_products_single` DOUBLE( 8, 2 ) NOT NULL COMMENT '单人特价价格' AFTER `specials_new_products_price` ,
+ADD `specials_new_products_single_pu` DOUBLE( 8, 2 ) NOT NULL COMMENT '单人配房特价价格' AFTER `specials_new_products_single` ,
+ADD `specials_new_products_double` DOUBLE( 8, 2 ) NOT NULL  COMMENT '双人特价价格' AFTER `specials_new_products_single_pu` ,
+ADD `specials_new_products_triple` DOUBLE( 8, 2 ) NOT NULL  COMMENT '三人特价价格' AFTER `specials_new_products_double` ,
+ADD `specials_new_products_quadr` DOUBLE( 8, 2 ) NOT NULL  COMMENT '四人特价价格' AFTER `specials_new_products_triple` ,
+ADD `specials_new_products_kids` DOUBLE( 8, 2 ) NOT NULL  COMMENT '儿童特价价格'  AFTER `specials_new_products_quadr` ;
+ALTER TABLE `specials` ADD `start_date` DATETIME NOT NULL COMMENT '特价开始日期，目前用于团购' AFTER `specials_last_modified` ;
+ALTER TABLE `specials` ADD `specials_type` TINYINT( 1 ) DEFAULT '0' NOT NULL COMMENT '产品团购类型：0为普通特价，1为倒数团，2为限时团购';
+ALTER TABLE `specials` ADD INDEX ( `specials_type` ) ;
+ALTER TABLE `specials` ADD `specials_max_buy_num` INT NOT NULL DEFAULT '0' COMMENT '每个团购阶段最多可以订购的人数，用于倒数团';
+ALTER TABLE `orders_products` ADD `is_new_group_buy` TINYINT( 1 ) DEFAULT '0' NOT NULL COMMENT '判断该订单行程是否是新团购的团';
+ALTER TABLE `customers_basket` ADD `is_new_group_buy` TINYINT( 1 ) DEFAULT '0' NOT NULL COMMENT '购物车新团购判断字段';
+ALTER TABLE `customers_basket` ADD `no_sel_date_for_group_buy` TINYINT( 1 ) NOT NULL COMMENT '限量团没选择出发日期的标记';
+ALTER TABLE `orders_products` ADD `no_sel_date_for_group_buy` TINYINT( 1 ) NOT NULL COMMENT '订单中限量团没选择出发日期的标记';
+ALTER TABLE `specials` ADD `invite_info` VARCHAR( 300 ) NOT NULL COMMENT '团购页面按钮上方的提示文字';
+ALTER TABLE `orders_products` ADD `new_group_buy_type` TINYINT( 1 ) NOT NULL COMMENT '订单产品团购类型' AFTER `is_new_group_buy` ;
+
+CREATE TABLE `specials_group_buy_history` (
+`specials_group_buy_history_id` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
+`specials_id` INT NOT NULL COMMENT '对应specials表ID，这个在后台设置期数时需要',
+`products_id` INT NOT NULL COMMENT '产品ID',
+`start_date` DATE NOT NULL COMMENT '团购的开始日期',
+`expires_date` DATE NOT NULL COMMENT '团购的结束日期',
+`issue_num` INT NOT NULL COMMENT '第N期',
+PRIMARY KEY ( `specials_group_buy_history_id` )
+) CHARACTER SET = latin1 COMMENT = '团购期号历史';
+
+ALTER TABLE `specials_group_buy_history` ADD `added_date` DATETIME NOT NULL COMMENT '记录添加的日期',
+ADD `admin_id` INT NOT NULL COMMENT '操作人的账号ID', ADD `specials_type` INT NOT NULL COMMENT '本次记录的团购类型';
+
+ALTER TABLE `specials` ADD `related_product_id` INT NOT NULL COMMENT '与本次团购产品相关的团ID，即原来是从哪个团生成这个团购团的' AFTER `products_id` ;
+ALTER TABLE `specials` ADD `remaining_num` VARCHAR(3) DEFAULT "" COMMENT '剩余人数。只显示在前台，不参加程序计算' AFTER `specials_max_buy_num`;
+#团购相关 }
+
+#页面计数器
+CREATE TABLE `statistics_pageview_history` (
+  `history_id` int(11) NOT NULL auto_increment COMMENT '序号',
+  `url` varchar(120)  default '' COMMENT 'URL地址',
+  `refer_url` varchar(120)  COMMENT '参考URL',
+  `created` datetime default NULL COMMENT '访问时间',
+  `ip` varchar(16)  NULL COMMENT 'IP地址',
+  `extra_msg` varchar(120) default NULL COMMENT '参数',
+  PRIMARY KEY  (`history_id`)
+)  COMMENT='页面访问历史记录';
+
+CREATE TABLE `statistics_pageview_counter` (
+  `counter_id` int(11) NOT NULL auto_increment COMMENT '序号',
+  `url` varchar(120) default NULL COMMENT '页面URL',
+  `total` int(11) default NULL COMMENT 'PV总数',
+  `last_time` datetime default NULL COMMENT '最后更新时间',
+  PRIMARY KEY  (`counter_id`),
+  UNIQUE KEY `index_url` (`url`)
+)  COMMENT='页面访问计数';
+
+#记录Q&A操作历史,用于客服工作量统计功能 2011.6.3 vincent
+CREATE TABLE `statistics_qa_history` (
+  `history_id` int(11) NOT NULL auto_increment COMMENT '序号',
+  `que_id` int(11) default NULL COMMENT '问题编号',
+  `ans_id` int(11) default NULL,
+  `operate_type` int(11) default NULL COMMENT '操作类型 1回复 2 修改回复 3修改问题',
+  `add_time` datetime default NULL COMMENT '操作时间',
+  `operator_id` int(11) default NULL COMMENT '操作员ID',
+  PRIMARY KEY  (`history_id`),
+  KEY `idx_add_time` (`add_time`),
+  KEY `idx_operator_id` (`operator_id`)
+)  COMMENT='记录Q&A操作历史';
+
+#搜索优化相关 {
+CREATE TABLE `fault_tolerant_keywords` (
+`key_id` INT( 10 ) UNSIGNED NOT NULL AUTO_INCREMENT ,
+`key_words0` VARCHAR( 50 ) NOT NULL ,
+`key_words1` VARCHAR( 50 ) NOT NULL ,
+PRIMARY KEY ( `key_id` ) ,
+INDEX ( `key_words0` , `key_words1` )
+) CHARACTER SET = latin1 COMMENT = '容错关键词表';
+
+ALTER TABLE `tour_city` ADD `corresponding_destination_ids` VARCHAR( 500 ) NOT NULL COMMENT '对应的目的地id，用逗号分隔';
+
+CREATE TABLE `departure_city_to_destinations_attractions` (
+`start_city_id` INT NOT NULL ,
+`end_city_id` INT NOT NULL ,
+PRIMARY KEY ( `start_city_id` , `end_city_id` )
+) CHARACTER SET = latin1 COMMENT = '出发城市结束城市对应表';
+
+CREATE TABLE `products_departure_dates_for_search` (
+`products_id` INT NOT NULL ,
+`departure_date` DATE NOT NULL ,
+PRIMARY KEY ( `products_id` , `departure_date` )
+) CHARACTER SET = latin1 COMMENT = '产品出发日期，用于高级搜索';
+
+#搜索优化相关 }
+
+#20110608_订单避免重复更新管理优化
+ALTER TABLE  `orders` ADD  `followup_team_type` TINYINT NOT NULL DEFAULT  '0' COMMENT  '设置跟踪该订单的团队ID 0 Notset 1 US follow up 2 China follow up 3 China Night Shift Follow Up';
+
+ALTER TABLE `admin` ADD `admin_source` ENUM( '0', '1' ) NOT NULL COMMENT '管理员来源0是美国，1是中国';
+
+#20110617记录注册用户IP地址
+ALTER TABLE `customers_info` ADD `customers_info_register_ip` VARCHAR( 45 ) NOT NULL DEFAULT '0.0.0.0' COMMENT '用户注册时的IP地址';
+
+
+ALTER TABLE `email_track` ADD `newsletters_id` INT DEFAULT '0' NOT NULL COMMENT '添加newsletters_id电子邮件跟踪的ID';
+ALTER TABLE `email_track` ADD INDEX ( `newsletters_id` ) ;
+
+ALTER TABLE `email_track` ADD `key_field` VARCHAR( 20 ) NOT NULL , ADD `key_id` INT NOT NULL ;
+ALTER TABLE `email_track` ADD INDEX ( `key_field` , `key_id` ) ;
+UPDATE `email_track`  SET  `key_id`=`orders_id`; 
+UPDATE `email_track`  SET  `key_field`="orders_id" WHERE orders_id > "0" ; 
+UPDATE `email_track`  SET  `key_id`=`newsletters_id`; 
+UPDATE `email_track`  SET  `key_field`="newsletters_id" WHERE newsletters_id > "0" ; 
+
+#ALTER TABLE `email_track` DROP `orders_id`;
+#ALTER TABLE `email_track` DROP `newsletters_id`;
+
+# 酷讯API {
+ALTER TABLE `affiliate_affiliate` ADD `api_categories_id` INT NOT NULL COMMENT '此字段存放合作伙伴能读取的产品目录，相当于是他专用的产品目录';
+# 酷讯API }
+#酒店延住相关{
+ALTER TABLE `products` ADD `is_hotel` INT NOT NULL DEFAULT '0' COMMENT '产品是否为酒店产品';
+ALTER TABLE `products` ADD `hotels_for_early_arrival`  VARCHAR(255) DEFAULT '' COMMENT '提前到达可选酒店产品ID用逗号分隔';
+ALTER TABLE `products` ADD `hotels_for_late_departure` VARCHAR(255) DEFAULT '' COMMENT '延后离开可选酒店产品ID用逗号分隔';
+ALTER TABLE `products_description` ADD `products_hotel_nearby_attractions` TEXT NOT NULL COMMENT '增加酒店附近资料';
+ALTER TABLE `orders_products` ADD `is_hotel` INT NOT NULL DEFAULT '0' COMMENT '产品是否为酒店产品';
+ALTER TABLE `orders_products` ADD `sort_order` INT NOT NULL DEFAULT '0' COMMENT '产品在订单中的排列顺序';
+ALTER TABLE `orders_products` ADD `hotel_extension_info`  VARCHAR(255) NOT NULL COMMENT '酒店延住信息';
+ALTER TABLE `orders_product_eticket` ADD `orders_products_id` INT NOT NULL COMMENT '产品快照ID';
+ALTER TABLE `orders_product_eticket` ADD INDEX ( `orders_products_id` ) ;
+ALTER TABLE `orders_product_flight` ADD `orders_products_id` INT NOT NULL COMMENT '产品快照ID' ;
+ALTER TABLE `orders_product_flight` ADD INDEX ( `orders_products_id` ) ;
+
+#dev-runed
+CREATE TABLE IF NOT EXISTS `products_reg_irreg_standard_price` (
+  `products_reg_irreg_standard_price_id` int(11) NOT NULL auto_increment,
+  `products_id` int(11) NOT NULL default '0',
+  `operate_start_date` varchar(64) NOT NULL default '',
+  `operate_end_date` varchar(64) NOT NULL default '',
+  `products_single` double(8,2) NOT NULL default '0.00',
+  `products_double` double(8,2) NOT NULL default '0.00',
+  `products_triple` double(8,2) NOT NULL default '0.00',
+  `products_quadr` double(8,2) NOT NULL default '0.00',
+  `products_kids` double(8,2) NOT NULL default '0.00',
+  `products_single_cost` double(8,2) NOT NULL default '0.00',
+  `products_double_cost` double(8,2) NOT NULL default '0.00',
+  `products_triple_cost` double(8,2) NOT NULL default '0.00',
+  `products_quadr_cost` double(8,2) NOT NULL default '0.00',
+  `products_kids_cost` double(8,2) NOT NULL default '0.00',
+  PRIMARY KEY  (`products_reg_irreg_standard_price_id`),
+  KEY `products_id` (`products_id`),
+  KEY `operate_start_date` (`operate_start_date`),
+  KEY `operate_end_date` (`operate_end_date`)
+) ;
+ALTER TABLE `orders_products` ADD `is_early` INT(11) NOT NULL DEFAULT '0' COMMENT '是否为提前延住';
+ALTER TABLE `orders_products` ADD `hotel_checkout_date` DATETIME NOT NULL COMMENT '离店日期';
+
+ALTER TABLE `customers_basket` ADD `hotel_extension_info`  VARCHAR(255) NOT NULL COMMENT '酒店延住信息';
+ALTER TABLE `customers_basket` ADD `is_diy_tours_book` INT(11) NOT NULL COMMENT 'DIY行程';
+#2011-7-13
+ALTER TABLE  `hotel` ADD  `products_id` INT NOT NULL DEFAULT '0' COMMENT  '对应的酒店产品ID';
+ALTER TABLE  `hotel` ADD INDEX (  `products_id` ) ;
+#酒店延住相关}
+
+# 八八八达人大赛 {
+
+CREATE TABLE `daren_works` (
+  `works_id` int(11) NOT NULL auto_increment,
+  `works_title` varchar(200) NOT NULL COMMENT '作品的标题',
+  `works_frontcover` varchar(200) default NULL,
+  `works_frontcover_thumb` varchar(200) default NULL,
+  `works_url` varchar(50) NOT NULL COMMENT '作品URL',
+  `works_addtime` datetime NOT NULL COMMENT '添加时间',
+  `works_readnum` int(11) NOT NULL COMMENT '浏览数',
+  `works_commnum` int(11) NOT NULL COMMENT '评论数',
+  `works_votes` int(11) NOT NULL COMMENT '得票数',
+  `works_content` mediumtext NOT NULL COMMENT '作品详细内容',
+  `works_is_view` tinyint(1) NOT NULL default '0' COMMENT '审核状态',
+  `works_author` varchar(50) NOT NULL COMMENT '发布者名称',
+  `customers_id` int(11) NOT NULL COMMENT '发布者ID',
+  `works_edit_num` int(11) NOT NULL default '0',
+  `works_is_edit` tinyint(1) NOT NULL default '0',
+  PRIMARY KEY  (`works_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1;
+
+CREATE TABLE `daren_works_comment` (
+  `works_comment_id` int(11) NOT NULL auto_increment,
+  `works_id` int(11) NOT NULL COMMENT '对应的作品ID',
+  `works_comment_addtime` datetime NOT NULL COMMENT '评论时间',
+  `works_comment_author` varchar(50) NOT NULL COMMENT '评论网友',
+  `works_comment_author_id` int(11) NOT NULL COMMENT '评论者ID',
+  `works_comment_content` tinytext NOT NULL COMMENT '评论内容',
+  `works_comment_ip` char(15) NOT NULL COMMENT '评论者的IP',
+  `works_comment_is_view` tinyint(1) default '0',
+  PRIMARY KEY  (`works_comment_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 ;
+
+CREATE TABLE `daren_votes` (
+  `works_id` int(11) NOT NULL COMMENT '对应的作品ID',
+  `votes_ip` char(15) NOT NULL COMMENT '投票的IP',
+  `votetime` datetime NOT NULL COMMENT '投票时间',
+  KEY `works_id` (`works_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+CREATE TABLE `daren_user_info` (
+  `customers_id` int(11) NOT NULL COMMENT '发布者ID',
+  `blog_url` varchar(50) NOT NULL COMMENT '博客URL',
+  `user_job` varchar(50) NOT NULL COMMENT '职业',
+  `rem_trip` varchar(50) NOT NULL COMMENT '记忆最深的旅行地',
+  `most_to` varchar(50) NOT NULL COMMENT '最想去的旅行地',
+  KEY `customers_id` (`customers_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+#八八八达人大赛 }
+
+
+#{客服工作量统计V2
+CREATE TABLE `statistics_workload` (
+  `workload_id` int(11) NOT NULL auto_increment,
+  `admin_id` int(11) default NULL COMMENT '数据所属人员',
+  `workload_date` int(11) NOT NULL default '0' COMMENT '数据所属日期',
+  `email_answer` int(11) default '0' COMMENT 'EmailAnswer数量',
+  `phone_callin` int(11) default '0' COMMENT 'IP电话接听',
+  `phone_callout` int(11) default '0' COMMENT 'IP电话呼出',
+  `qtb_callin` int(11) default '0' COMMENT '启通宝电话接听',
+  `qtb_callout` int(11) default '0' COMMENT '启通宝电话呼出',
+  `created_date` datetime default '0000-00-00 00:00:00' COMMENT '记录创建时间',
+  `crearted_user` int(11) default NULL COMMENT '记录创建人员ID',
+  `last_modified_user` int(11) default NULL  COMMENT '最后修改人员ID',
+  `last_modified_date` datetime default '0000-00-00 00:00:00'  COMMENT '最后修改时间',
+  PRIMARY KEY  (`workload_id`),
+  KEY `idx_admin_id` (`admin_id`),
+  KEY `idx_workload_date` (`workload_date`)
+) CHARACTER SET = latin1 COMMENT='客户工作量数据录入表';
+
+CREATE TABLE `statistics_accountant_history` (
+  `history_id` int(11) NOT NULL auto_increment COMMENT '序号',
+  `admin_id` int(11) default NULL COMMENT '人员ID',
+  `operate_type` int(11) default NULL COMMENT '操作类型 1Payment Report--Charge Capture Report  2 Payment Report-- Uncharged Report 3 Accounting Report--Payment History Report (current)' ,
+  `add_time` datetime default NULL COMMENT '操作发生的时间',
+  PRIMARY KEY  (`history_id`),
+  KEY `idx_admin_id` (`admin_id`),
+  KEY `idx_add_time` (`add_time`)
+) CHARACTER SET = latin1 COMMENT = '会计人员操作历史记录表';
+#客服工作量统计V2}
+
+#网站联盟20110809 {
+ALTER TABLE `affiliate_affiliate` ADD `verified` TINYINT( 1 ) DEFAULT '0' NOT NULL COMMENT  '会员是否已经通过网站联盟验证，1为已经验证';
+ALTER TABLE `affiliate_affiliate` ADD `affiliate_mobile` VARCHAR( 50 ) NOT NULL  COMMENT  '手机' AFTER `affiliate_telephone` ;
+ALTER TABLE `affiliate_affiliate` ADD `affiliate_homepage_name` VARCHAR( 50 ) NOT NULL  COMMENT  '会员的网站名称' AFTER `affiliate_password` ;
+ALTER TABLE `affiliate_affiliate` ADD `affiliate_site_type_id` TINYINT( 2 ) NOT NULL default '0' COMMENT  '会员的网站类型' AFTER `affiliate_homepage_name` ;
+ALTER TABLE `affiliate_affiliate` ADD `affiliate_site_profile` TEXT  COMMENT  '会员的网站简介' AFTER `affiliate_homepage_name` ;
+
+ALTER TABLE `affiliate_affiliate` ADD `affiliate_qq` VARCHAR( 50 ) NOT NULL  COMMENT  '会员的QQ号' AFTER `affiliate_mobile` ;
+ALTER TABLE `affiliate_affiliate` ADD `affiliate_msn` VARCHAR( 50 ) NOT NULL  COMMENT  '会员的MSN号' AFTER `affiliate_qq` ;
+
+CREATE TABLE `affiliate_site_type` (
+`affiliate_site_type_id` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
+`affiliate_site_type_name` VARCHAR( 50 ) NOT NULL ,
+PRIMARY KEY ( `affiliate_site_type_id` )
+) CHARACTER SET = latin1 COMMENT = '网站联盟会员的网站类型';
+
+INSERT INTO affiliate_site_type (affiliate_site_type_id, affiliate_site_type_name) VALUES (1, '旅游咨询');
+INSERT INTO affiliate_site_type (affiliate_site_type_id, affiliate_site_type_name) VALUES (2, '酒店机票');
+INSERT INTO affiliate_site_type (affiliate_site_type_id, affiliate_site_type_name) VALUES (3, '自助户外');
+INSERT INTO affiliate_site_type (affiliate_site_type_id, affiliate_site_type_name) VALUES (4, '旅行社区');
+INSERT INTO affiliate_site_type (affiliate_site_type_id, affiliate_site_type_name) VALUES (5, '论坛');
+INSERT INTO affiliate_site_type (affiliate_site_type_id, affiliate_site_type_name) VALUES (6, '博客');
+INSERT INTO affiliate_site_type (affiliate_site_type_id, affiliate_site_type_name) VALUES (7, '其它');
+
+ALTER TABLE `affiliate_affiliate` ADD `affiliate_email_address_verified` TINYINT( 1 ) DEFAULT '0' NOT NULL COMMENT  '邮箱是否已经验证' AFTER `affiliate_email_address` ;
+ALTER TABLE `affiliate_affiliate` ADD `affiliate_email_address_verifi_code` VARCHAR( 10 ) NOT NULL COMMENT  '验证码' AFTER `affiliate_email_address_verified` ;
+
+ALTER TABLE `affiliate_affiliate` ADD `affiliate_default_payment_method` ENUM( 'PaypalAlipay', 'Bank' ) NOT NULL COMMENT  '默认的佣金接收方式' AFTER `affiliate_commission_percent` ;
+#网站联盟20110809 }
+
+#接驳车服务20110816{
+CREATE TABLE `orders_products_transfer` (
+  `orders_products_transfer_id` int(11) NOT NULL auto_increment COMMENT '序号',
+  `orders_products_id` int(11) NOT NULL COMMENT '产品快照编号',
+  `orders_id` int(11) NOT NULL COMMENT '所属订单',
+  `flight_number` varchar(40)  default NULL COMMENT '航班号',
+  `flight_departure` varchar(80)  default NULL COMMENT '航班出发地',
+  `flight_arrival_time` datetime default NULL COMMENT '航班抵达时间',
+  `pickup_id` int(11) default NULL COMMENT '起点ID',
+  `pickup_address` varchar(100)  default NULL COMMENT '起点地址',
+  `pickup_zipcode` varchar(20)  default NULL COMMENT '起点邮编',
+  `dropoff_id` int(11) default NULL COMMENT '终点ID',
+  `dropoff_address` varchar(100)  default NULL COMMENT '终点地址',
+  `dropoff_zipcode` varchar(20)  default NULL COMMENT '终点邮编',
+  `guest_total` tinyint(3) unsigned default '0' COMMENT '接送人数',
+  `baggage_total` tinyint(3) unsigned default '0' COMMENT '行李数',
+  `comment` varchar(200)  default NULL COMMENT '备注',
+  `created_date` datetime default NULL COMMENT '该记录创建时间',
+  PRIMARY KEY  (`orders_products_transfer_id`),
+  KEY `idx_order_products_id` (`orders_products_id`),
+  KEY `idx_order_id` (`orders_id`),
+  KEY `idx_flight_arrival_time` (`flight_arrival_time`),
+  KEY `idx_created_date` (`created_date`)
+)  CHARSET=latin1 COMMENT='接送路线及信息';
+
+CREATE TABLE `products_transfer_location` (
+  `products_transfer_location_id` int(11) NOT NULL auto_increment COMMENT '序号',
+  `products_id` int(11) default NULL COMMENT '所属产品ID',
+  `short_address` varchar(60)  default NULL COMMENT '短地址',
+  `detail_address` varchar(120)  default NULL COMMENT '详细地址',
+  `zipcode` varchar(12)  default NULL COMMENT '地址邮编',
+  `type` enum('0','1')  default NULL COMMENT '地址类型 0 机场 1 其他地址',
+  PRIMARY KEY  (`products_transfer_location_id`),
+  KEY `idx_products_id` (`products_id`),
+  KEY `idx_type` (`type`)
+) CHARSET=latin1 COMMENT='接送服务产品 接送地点表';
+
+CREATE TABLE `products_transfer_route` (
+  `products_transfer_route_id` int(11) NOT NULL auto_increment COMMENT '序号',
+  `products_id` int(11) default NULL COMMENT '产品编号',
+  `pickup_location_id` int(11) default NULL COMMENT '起点',
+  `dropoff_location_id` int(11) default NULL COMMENT '终点',
+  `price_base` double default NULL COMMENT '基础价格',
+  `price1` double default NULL COMMENT '1-3人价格',
+  `price1_cost` double default NULL DEFAULT '0'  COMMENT '1-3人成本价格',
+  `price2` double default NULL COMMENT '4-6人价格',
+  `price2_cost` double default NULL  DEFAULT '0'  COMMENT '4-6人成本价格',
+  `price_extra` double default NULL,
+  PRIMARY KEY  (`products_transfer_route_id`),
+  KEY `idx_products_id` (`products_id`)
+) CHARSET=latin1 COMMENT='接送路线价格定义';
+#ALTER TABLE `products_transfer_route` ADD `price1_cost` DOUBLE NOT NULL DEFAULT '0' AFTER `price1` ;
+#ALTER TABLE `products_transfer_route` ADD `price2_cost` DOUBLE NOT NULL DEFAULT '0' AFTER `price2` ;
+
+CREATE TABLE `customers_service_request` (
+  `customers_transfer_request_id` int(11) NOT NULL auto_increment,
+  `customers_id` int(11) default NULL COMMENT '客户ID',
+  `name` varchar(45) default NULL COMMENT '姓名',
+  `mobile_phone` varchar(45)  default NULL COMMENT '手机',
+  `email` varchar(60)  default NULL COMMENT '电子邮件',
+  `comment` text collate latin1_general_ci COMMENT '留言',
+  `from_url` VARCHAR( 200 ) NULL COMMENT '来源URL' ,
+  `created_time` datetime default NULL COMMENT '创建时间',
+  `last_modify` datetime default NULL COMMENT '最后修改时间',
+  `last_modify_user` int(11) default NULL COMMENT '最后修改人员',
+  PRIMARY KEY  (`customers_transfer_request_id`)
+) CHARSET=latin1 COMMENT='客户自定义服务';
+
+ALTER TABLE `products` ADD `is_transfer` TINYINT(3) DEFAULT '0' NOT NULL COMMENT  '产品是否为接驳车服务';
+ALTER TABLE `products` ADD `transfer_type` TINYINT(3) DEFAULT '0' NOT NULL COMMENT  '接驳车计费方式0洛杉矶固定价格1纽约线路价格';
+ALTER TABLE `products` ADD `recommend_transfer_id` INT NOT NULL DEFAULT '0' COMMENT '产品可组合预订的接送服务ID';
+ALTER TABLE `orders_products` ADD `is_transfer` TINYINT(3) DEFAULT '0' NOT NULL COMMENT  '产品是否为接驳车服务';
+ALTER TABLE  `customers_basket` ADD   `transfer_info` VARCHAR( 1200 )  NULL DEFAULT NULL COMMENT  '接送服务信息';
+#ALTER TABLE `orders_products_transfer` CHANGE `orders_product_id` `orders_products_id` INT( 11 ) NOT NULL COMMENT '产品快照编号';
+#接驳车服务20110816}
+
+
+#Customers/Orders下面添加短信联系客户2011-08-23{
+
+INSERT INTO `admin_files` ( `admin_files_id` , `admin_files_name` , `admin_files_is_boxes` , `admin_files_to_boxes` , `admin_groups_id` ) VALUES (NULL , 'offers_sms_contact_guest.php', '0', '5', '1,5,7');
+
+# 设置值，打开短信发送开关
+UPDATE `configuration` SET 
+`configuration_value` = '[短信联系客户], [下单成功], [电子票通知], [收款确认通知], [航班信息填写提醒], [度假行程确认完毕], [酒店延住提醒], [行程结束问候], [当前订单旅客发送短信]', 
+`set_function` = 'tep_cfg_select_multioption(array(\'[短信联系客户]\',\'[下单成功]\',\'[电子票通知]\',\'[找回密码]\',\'[收款确认通知]\',\'[旅游保险提醒]\',\'[航班信息填写提醒]\',\'[取消订单通知]\',\'[度假行程确认完毕]\',\'[当前订单旅客发送短信]\',\'[天气预报提醒]\',\'[预祝出行愉快]\',\'[准备工作提醒]\',\'[未下订单提醒]\',\'[未结账提醒]\',\'[未登录提醒]\',\'[行程结束问候]\',\'[酒店延住提醒]\'),'
+WHERE `configuration_key` = 'CPUNC_USE_RANGE';
+
+#Customers/Orders下面添加短信联系客户2011-08-23}
+
+#邮件退订优化 增加agree_newsletter字段，标记是否订阅用户{
+ALTER TABLE `newsletters_email` ADD `agree_newsletter` TINYINT( 1 ) NOT NULL DEFAULT '1' AFTER `newsletter_sent` ;
+#邮件退订优化20110828}
+
+
+#酒店优化2011-09-22{
+ALTER TABLE `hotel` ADD `meals_id` TINYINT( 2 ) DEFAULT '9' NOT NULL COMMENT  '餐食id',
+ADD `internet_id` TINYINT( 2 ) DEFAULT '9' NOT NULL COMMENT  '上网服务id',
+ADD `approximate_location_id` TINYINT( 2 ) DEFAULT '1' NOT NULL COMMENT  '酒店位置地段ID' ;
+
+ALTER TABLE `hotel` ADD INDEX ( `meals_id` , `internet_id` , `approximate_location_id` ) ;
+#酒店优化2011-09-22}
+
+#我的八八八优化{
+ALTER TABLE `zones_city` ADD `city_tel_code` VARCHAR( 8 ) NULL COMMENT '城市区号';
+ALTER TABLE `zones_city` ADD `city_name_py` VARCHAR( 100 ) NULL COMMENT '城市名称拼音';
+UPDATE `configuration` SET `set_function` = 'tep_cfg_select_multioption(array(\'[短信联系客户]\',\'[下单成功]\',\'[电子票通知]\',\'[找回密码]\',\'[收款确认通知]\',\'[旅游保险提醒]\',\'[航班信息填写提醒]\',\'[取消订单通知]\',\'[度假行程确认完毕]\',\'[当前订单旅客发送短信]\',\'[天气预报提醒]\',\'[预祝出行愉快]\',\'[准备工作提醒]\',\'[未下订单提醒]\',\'[未结账提醒]\',\'[未登录提醒]\',\'[行程结束问候]\',\'[酒店延住提醒]\',\'[手机绑定]\'),' WHERE `configuration_key` = 'CPUNC_USE_RANGE';
+ALTER TABLE `newsletters_email` ADD `content_id` INT NOT NULL DEFAULT '0' COMMENT '电子报内容ID' AFTER `newsletter_sent` ;
+ALTER TABLE `newsletters_email` ADD INDEX `idx_newsletters_email_address` ( `newsletters_email_address` ) ;
+ALTER TABLE `newsletters` ADD `content_id` INT NOT NULL DEFAULT '0' COMMENT '电子报内容ID';
+ALTER TABLE `customers` CHANGE `customers_fax` `customers_fax` VARCHAR( 128 ) DEFAULT NULL ;
+#//}
+
+#添加单人配房标记字段2011-10-09
+ALTER TABLE `orders_product_eticket` ADD `agree_single_occupancy_pair_up` TINYINT( 1 ) DEFAULT '0' NOT NULL ;
+
+#邮轮团相关表2011-10-09{
+#
+# 表的结构 `cruises_content_attribute`
+#
+
+CREATE TABLE `cruises_content_attribute` (
+  `attribute_id` int(11) NOT NULL auto_increment,
+  `attribute_name` varchar(100) NOT NULL,
+  PRIMARY KEY  (`attribute_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=latin1 COMMENT='邮轮的属性表集' AUTO_INCREMENT=23 ;
+
+#
+# 导出表中的数据 `cruises_content_attribute`
+#
+
+INSERT INTO `cruises_content_attribute` (`attribute_id`, `attribute_name`) VALUES (1, '载客数');
+INSERT INTO `cruises_content_attribute` (`attribute_id`, `attribute_name`) VALUES (2, '载客数');
+INSERT INTO `cruises_content_attribute` (`attribute_id`, `attribute_name`) VALUES (3, '吨数');
+INSERT INTO `cruises_content_attribute` (`attribute_id`, `attribute_name`) VALUES (4, '承造厂');
+INSERT INTO `cruises_content_attribute` (`attribute_id`, `attribute_name`) VALUES (5, '首航');
+INSERT INTO `cruises_content_attribute` (`attribute_id`, `attribute_name`) VALUES (6, '长度');
+INSERT INTO `cruises_content_attribute` (`attribute_id`, `attribute_name`) VALUES (7, '高度');
+INSERT INTO `cruises_content_attribute` (`attribute_id`, `attribute_name`) VALUES (8, '船宽');
+INSERT INTO `cruises_content_attribute` (`attribute_id`, `attribute_name`) VALUES (9, '吃水深度');
+INSERT INTO `cruises_content_attribute` (`attribute_id`, `attribute_name`) VALUES (10, '甲板楼层');
+INSERT INTO `cruises_content_attribute` (`attribute_id`, `attribute_name`) VALUES (11, '客舱');
+INSERT INTO `cruises_content_attribute` (`attribute_id`, `attribute_name`) VALUES (12, '私人阳台舱房');
+INSERT INTO `cruises_content_attribute` (`attribute_id`, `attribute_name`) VALUES (13, '游泳池');
+INSERT INTO `cruises_content_attribute` (`attribute_id`, `attribute_name`) VALUES (14, '漩涡水疗池');
+INSERT INTO `cruises_content_attribute` (`attribute_id`, `attribute_name`) VALUES (15, '户外甲板面积');
+INSERT INTO `cruises_content_attribute` (`attribute_id`, `attribute_name`) VALUES (16, '船员国籍');
+INSERT INTO `cruises_content_attribute` (`attribute_id`, `attribute_name`) VALUES (17, '世界各国');
+INSERT INTO `cruises_content_attribute` (`attribute_id`, `attribute_name`) VALUES (18, '餐饮点心');
+INSERT INTO `cruises_content_attribute` (`attribute_id`, `attribute_name`) VALUES (19, '表演厅');
+INSERT INTO `cruises_content_attribute` (`attribute_id`, `attribute_name`) VALUES (20, '乘客服务');
+INSERT INTO `cruises_content_attribute` (`attribute_id`, `attribute_name`) VALUES (21, '最高速度');
+INSERT INTO `cruises_content_attribute` (`attribute_id`, `attribute_name`) VALUES (22, '救生艇');
+
+#
+# 表的结构 `cruises`
+#
+
+DROP TABLE IF EXISTS `cruises`;
+CREATE TABLE `cruises` (
+  `cruises_id` int(11) unsigned NOT NULL auto_increment,
+  `cruises_name` varchar(200) NOT NULL,
+  `cruises_content` text NOT NULL,
+  `agency_id` int(11) NOT NULL,
+  `add_date` datetime NOT NULL,
+  `up_date` datetime NOT NULL,
+  `tax_content` text NOT NULL,
+  `tax` varchar(10) NOT NULL default '0',
+  PRIMARY KEY  (`cruises_id`),
+  UNIQUE KEY `cruises_name` (`cruises_name`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='邮轮团主表' AUTO_INCREMENT=7 ;
+
+# --------------------------------------------------------
+
+#
+# 表的结构 `cruises_cabin`
+#
+
+DROP TABLE IF EXISTS `cruises_cabin`;
+CREATE TABLE `cruises_cabin` (
+  `products_options_id` int(11) NOT NULL,
+  `cruises_id` int(11) NOT NULL,
+  `cruises_cabin_name` varchar(200) NOT NULL,
+  `cruises_cabin_img` varchar(400) NOT NULL,
+  `cruises_cabin_content` text NOT NULL,
+  `sort_id` int(11) NOT NULL,
+  PRIMARY KEY  (`products_options_id`),
+  KEY `sort_id` (`sort_id`),
+  KEY `cruises_id` (`cruises_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='邮轮客舱资料表';
+
+# --------------------------------------------------------
+
+#
+# 表的结构 `cruises_cabin_deck`
+#
+
+DROP TABLE IF EXISTS `cruises_cabin_deck`;
+CREATE TABLE `cruises_cabin_deck` (
+  `products_options_values_id` int(10) unsigned NOT NULL,
+  `products_options_id` int(11) default NULL,
+  `cruises_cabin_deck_name` varchar(200) NOT NULL,
+  `cruises_cabin_deck_content` text NOT NULL,
+  `sort_id` int(11) NOT NULL,
+  PRIMARY KEY  (`products_options_values_id`),
+  KEY `cruises_cabin_id` (`products_options_id`),
+  KEY `sort_id` (`sort_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='甲板数据表';
+
+# --------------------------------------------------------
+
+#
+# 表的结构 `cruises_content_attribute_value`
+#
+
+DROP TABLE IF EXISTS `cruises_content_attribute_value`;
+CREATE TABLE `cruises_content_attribute_value` (
+  `attribute_id` int(11) NOT NULL,
+  `cruises_id` int(11) NOT NULL,
+  `sort_id` int(11) NOT NULL,
+  `value_content` text NOT NULL,
+  PRIMARY KEY  (`attribute_id`,`cruises_id`),
+  KEY `sort_id` (`sort_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='邮轮团介绍属性详细表';
+
+# --------------------------------------------------------
+
+#
+# 表的结构 `cruises_images`
+#
+
+DROP TABLE IF EXISTS `cruises_images`;
+CREATE TABLE `cruises_images` (
+  `images_id` int(10) unsigned NOT NULL auto_increment,
+  `images_title` varchar(200) NOT NULL,
+  `images_content` text NOT NULL,
+  `images_url` varchar(400) NOT NULL,
+  `images_url_thumb` varchar(400) default NULL,
+  `images_url_thumb_min` varchar(400) default NULL,
+  `images_type` set('cruises','cabin','deck') NOT NULL,
+  `images_link_id` int(11) NOT NULL,
+  `sort_id` int(11) NOT NULL,
+  PRIMARY KEY  (`images_id`),
+  KEY `images_type` (`images_type`),
+  KEY `images_link_id` (`images_link_id`),
+  KEY `sort_id` (`sort_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='邮轮的图片库' AUTO_INCREMENT=77 ;
+
+ALTER TABLE `products` ADD `is_cruises` enum('0', '1') DEFAULT '0' NOT NULL ;
+
+CREATE TABLE products_to_cruises (
+  products_id int(11) NOT NULL default '0',
+  cruises_id int(11) NOT NULL,
+  PRIMARY KEY  (products_id,cruises_id)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='产品与邮轮对应表';
+
+ALTER TABLE `cruises_cabin_deck` ADD `max_per_of_guest` TINYINT( 3 ) NOT NULL DEFAULT '1' COMMENT '最多入住人数';
+ALTER TABLE `cruises_cabin_deck` ADD `min_num_guest` TINYINT( 3 ) NOT NULL DEFAULT '1' COMMENT '最多少住人数';
+ALTER TABLE `tour_travel_agency` ADD `is_birth_info` TINYINT( 1 ) NOT NULL COMMENT '是否需要客人的出生日期信息' AFTER `max_auto_cap_amount_package` ;
+ALTER TABLE `cruises` ADD `tax_products_options_id` INT DEFAULT '0' NOT NULL COMMENT '邮轮对应的产品属性中的税ID号' AFTER `up_date` ;
+
+ALTER TABLE `cruises_cabin` DROP PRIMARY KEY;
+ALTER TABLE `cruises_cabin` ADD PRIMARY KEY (`products_options_id`,`cruises_id`);
+ALTER TABLE `cruises_cabin_deck` DROP INDEX `cruises_cabin_id` ;
+ALTER TABLE `cruises_cabin_deck` ADD `cruises_id` INT NOT NULL AFTER `products_options_id` ;
+ALTER TABLE `cruises_cabin_deck` ADD INDEX ( `cruises_id` ) ;
+ALTER TABLE `cruises_cabin_deck` DROP PRIMARY KEY;
+ALTER TABLE `cruises_cabin_deck` ADD PRIMARY KEY (`products_options_values_id`,`cruises_id`);
+
+ALTER TABLE `cruises_images` ADD `cruises_id` INT NOT NULL AFTER `images_id` ;
+ALTER TABLE `cruises_images` ADD INDEX ( `cruises_id` ) ;
+#邮轮团相关表2011-10-09}
+
+
+#  Everyone to read功能 2011-10-14 {
+ALTER TABLE `zhh_system_words` ADD `is_adjective` TINYINT( 1 ) NOT NULL DEFAULT '0' AFTER `rwd_groups_id` ,
+ADD `provider` VARCHAR( 200 ) NOT NULL AFTER `is_adjective` ;
+
+ALTER TABLE `zhh_system_words` ADD `r_everyone_group_ids` VARCHAR( 250 ) NOT NULL AFTER `rwd_groups_id` ;
+ALTER TABLE `everyone_to_read_remind` ADD `is_expiration` TINYINT( 1 ) NOT NULL DEFAULT '0' AFTER `expiration_time` ;
+DROP TABLE IF EXISTS `everyone_to_read_remind`;
+CREATE TABLE `everyone_to_read_remind` (
+  `id` int(11) NOT NULL auto_increment,
+  `admin_id` int(11) NOT NULL,
+  `words_id` int(11) NOT NULL,
+  `is_read` tinyint(1) NOT NULL default '0',
+  `login_num` int(11) NOT NULL,
+  `added_time` datetime NOT NULL,
+  `expiration_time` datetime NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+# INSERT INTO `admin_files` VALUES (NULL, 'zhh_system_every_list.php', 0, 273, '1,2,3,4,5,6,7,8,9,10,11,12,13');
+# Everyone to read功能 2011-10-14 }
+
+#{111012-1_后台provider updates优化
+ALTER TABLE `orders` ADD `is_blinking_date` DATETIME NOT NULL DEFAULT '1970-1-1 0:0:0' COMMENT 'blinking设置的时间';
+#}
+
+# 友情鏈接及關鍵字 产品目录和链接表{
+#CREATE TABLE `categories_to_links` (
+#  `categories_id` int(11) NOT NULL,
+#  `categories_links_id` text,
+#  PRIMARY KEY  (`categories_id`)
+#)
+DROP TABLE IF EXISTS `categories_to_links`;
+CREATE TABLE `categories_to_links` (
+  `categories_id` int(11) NOT NULL COMMENT '产品目录ID',
+  `links_id` int(11) NOT NULL COMMENT '链接地址ID',
+  PRIMARY KEY  (`categories_id`,`links_id`)
+)
+#}
+#{111031-4_接驳车项目优化
+ALTER TABLE orders_products_transfer ADD flight_pick_time DATETIME DEFAULT NULL COMMENT  '期望的接应时间'
+#}

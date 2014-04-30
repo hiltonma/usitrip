@@ -1,0 +1,391 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>走四方网欢迎您！</title>
+<link href="css/style_usitrip.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="http://tw.usitrip.com/includes/javascript/validation-2008-02-23-min.js"></script>
+<script type="text/javascript" src="http://tw.usitrip.com/big5_gb.js"></script>
+<script type="text/javascript">
+var ajax = false;
+if(window.XMLHttpRequest) {
+	 ajax = new XMLHttpRequest();
+}
+else if (window.ActiveXObject) {
+	try {
+			ajax = new ActiveXObject("Msxml2.XMLHTTP");
+		} catch (e) {
+	try {
+			ajax = new ActiveXObject("Microsoft.XMLHTTP");
+		} catch (e) {}
+	}
+}
+if (!ajax) {
+	window.alert("不能创建XMLHttpRequest对象实例.");
+}
+</script>
+
+</head>
+<body>
+<div id="all">
+<div id="top"><div class="logo"><a href="http://tw.usitrip.com/?ref=563&affiliate_banner_id=1&referer_url=yododo"><img src="img/usitrip_logo.gif" /></a></div>
+              <div class="phone"><span class="phone_number"><em>1-626-898-7800 (美)</em></span><br />
+                                 <span class="phone_number2"><em>4006-333-926 (中)</em></span></div>
+</div>
+<div id="center">
+<p><a href="http://tw.usitrip.com/?ref=563&affiliate_banner_id=1&referer_url=yododo"><img src="img/top_banner.jpg" class="top_banner" /></a></p>
+    <div class="left_side">
+      <div class="title_list">
+           <h1>现在注册即可享有（仅供游多多注册用户）</h1>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                         <tr>
+                              <td width="3%" height="20">&nbsp;</td>
+                              <td width="5%"><span class="big_word">1、</span></td>
+                              <td width="92%"><span class="big_word">选择旅游套餐即可享有5%的折扣！</span></td>
+                    </tr>
+                         <tr>
+                            <td height="20">&nbsp;</td>
+                           <td><span class="big_word">2、</span></td>
+                           <td><span class="big_word">有机会获得游多多精心为您准备的精美礼品一份，超炫美国行！</span></td>
+                         </tr>
+                         <tr>
+                           <td height="20">&nbsp;</td>
+                           <td><span class="big_word">3、</span></td>
+                           <td><span class="big_word">获得行程预订、积分省钱机会、住宿、机票签证等全方位服务！</span></td>
+                          </tr>
+                   </table>
+          </div>
+          <div class="sign_in">
+               <div class="top_title"><h2>现在就注册</h2></div>
+               <div class="sign_in_content"><form name="create_account" action="http://tw.usitrip.com/create_account.php" method="post" id="create_account"><table width="100%" align="center" border="0" cellpadding="3" cellspacing="0">
+       <tbody>
+      <tr>
+        <td><img src="img/pixel_trans.gif" alt="" width="100%" border="0" height="5"></td>
+      </tr>
+      <tr>
+        <td><table width="100%" border="0" cellpadding="2" cellspacing="0">
+          <tbody><tr>
+            <td class="main"><b>个人资料</b></td>
+           <td class="inputRequirement" align="right">* 表示该栏位必须填写</td>
+          </tr>
+        </tbody></table></td>
+      </tr>
+      <tr>
+        <td><table class="infoBox" width="100%" border="0" cellpadding="2" cellspacing="1">
+          <tbody><tr class="infoBoxContents">
+            <td><table border="0" cellpadding="2" cellspacing="2">
+              <tbody><tr>
+                <td class="main">中文姓名:</td>
+                <td class="main"><input onblur="this.value = simplized(this.value)" name="firstname" id="firstname" class="required validate-length-firstname" title="中文姓名:少于 2 个字" type="text">&nbsp;<span class="inputRequirement">*</span></td>
+              </tr>
+              <tr>
+                <td class="main">护照英文名字:</td>
+                <td class="main"><input onblur="this.value = simplized(this.value)" name="lastname" id="lastname" class="required validate-length-lastname" title="护照英文名字:少于 2 个字" type="text">&nbsp;<span class="inputRequirement">*</span></td>
+              </tr>
+              <tr>
+                <td class="main">电子邮件:</td>
+                <td class="main">				<input name="email_address" autocomplete="off" id="create_email_address" class="required validate-email" title="电子邮件地址格式错误!" onblur="check_account(this.value)" type="text"><div style="opacity: 0.999999; display: none;" id="advice-validate-email-create_email_address_EEE" class="validation-advice">sdfsdfsdf</div>&nbsp;<span class="inputRequirement">*</span></td>
+              </tr>
+
+<script type="text/javascript">
+function check_account(email_address){
+	if(document.getElementById("advice-validate-email-create_email_address_EEE")){
+		document.getElementById("advice-validate-email-create_email_address_EEE").innerHTML="";
+		document.getElementById("advice-validate-email-create_email_address_EEE").style.display ="none";
+	}
+	
+	if(email_address!="" && email_address.search(/\w{1,}[@][\w\-]{1,}([.]([\w\-]{1,})){1,3}$/)!=-1){
+		var url = "check_new_account_ajax.php?email_address=" + email_address;
+		ajax.open('GET', url, true);  
+		ajax.send(null);
+		
+		ajax.onreadystatechange = function() { 
+			if (ajax.readyState == 4 && ajax.status == 200 ) { 
+				if(ajax.responseText.search(/2/)!=-1){
+					var error_msn = "这个电子邮件已经注册过!请确认或换一个电子邮件";
+					if(document.getElementById("advice-validate-email-create_email_address_EEE")){
+						document.getElementById("advice-validate-email-create_email_address_EEE").innerHTML=error_msn;
+						document.getElementById("advice-validate-email-create_email_address_EEE").style.display ="";
+					}else{
+						alert(email_address + error_msn);
+					}
+					if(document.getElementById("greenok-create_email_address")){
+						document.getElementById("greenok-create_email_address").innerHTML ="";
+					}
+					
+				}
+			}
+			
+		}
+
+	}
+}
+</script>
+
+  
+     		  <tr>
+                <td class="main">再次确认邮件:</td>
+                <td class="main"><input onblur="this.value = simplized(this.value)" name="c_email_address" id="c_email_address" class="required validate-email-confirm" autocomplete="off" onpaste="return false" title="再次确认邮件必须和邮箱地址匹配" type="text">&nbsp;<span class="inputRequirement">*</span></td>
+              </tr>
+  
+
+
+            </tbody></table></td>
+          </tr>
+        </tbody></table></td>
+      </tr>
+      <tr>
+        <td><img src="img/pixel_trans.gif" alt="" width="100%" border="0" height="10"></td>
+      </tr>
+      <tr>
+        <td class="main"><b>地址</b></td>
+      </tr>
+      <tr>
+        <td><table class="infoBox" width="100%" border="0" cellpadding="2" cellspacing="1">
+          <tbody><tr class="infoBoxContents">
+            <td><table border="0" cellpadding="2" cellspacing="2">
+              
+			  <tbody><tr>
+                <td class="main">国家/地区:</td>
+                <td class="main">
+				<select name="country" id="country" class="validate-selection-blank" onchange="return get_state(this.value,create_account,'state');"><option value="223">United States</option><option value="1">Afghanistan</option><option value="2">Albania</option><option value="3">Algeria</option><option value="4">American Samoa</option><option value="5">Andorra</option><option value="6">Angola</option><option value="7">Anguilla</option><option value="8">Antarctica</option><option value="9">Antigua and Barbuda</option><option value="10">Argentina</option><option value="11">Armenia</option><option value="12">Aruba</option><option value="13">Australia</option><option value="14">Austria</option><option value="15">Azerbaijan</option><option value="16">Bahamas</option><option value="17">Bahrain</option><option value="18">Bangladesh</option><option value="19">Barbados</option><option value="20">Belarus</option><option value="21">Belgium</option><option value="22">Belize</option><option value="23">Benin</option><option value="24">Bermuda</option><option value="25">Bhutan</option><option value="26">Bolivia</option><option value="27">Bosnia and Herzegowina</option><option value="28">Botswana</option><option value="29">Bouvet Island</option><option value="30">Brazil</option><option value="31">British Indian Ocean Territory</option><option value="32">Brunei Darussalam</option><option value="33">Bulgaria</option><option value="34">Burkina Faso</option><option value="35">Burundi</option><option value="36">Cambodia</option><option value="37">Cameroon</option><option value="38">Canada</option><option value="39">Cape Verde</option><option value="40">Cayman Islands</option><option value="41">Central African Republic</option><option value="42">Chad</option><option value="43">Chile</option><option value="44" selected="selected">China</option><option value="45">Christmas Island</option><option value="46">Cocos (Keeling) Islands</option><option value="47">Colombia</option><option value="48">Comoros</option><option value="49">Congo</option><option value="50">Cook Islands</option><option value="51">Costa Rica</option><option value="52">Cote D'Ivoire</option><option value="53">Croatia</option><option value="54">Cuba</option><option value="55">Cyprus</option><option value="56">Czech Republic</option><option value="57">Denmark</option><option value="58">Djibouti</option><option value="59">Dominica</option><option value="60">Dominican Republic</option><option value="61">East Timor</option><option value="62">Ecuador</option><option value="63">Egypt</option><option value="64">El Salvador</option><option value="65">Equatorial Guinea</option><option value="66">Eritrea</option><option value="67">Estonia</option><option value="68">Ethiopia</option><option value="69">Falkland Islands (Malvinas)</option><option value="70">Faroe Islands</option><option value="71">Fiji</option><option value="72">Finland</option><option value="73">France</option><option value="74">France, Metropolitan</option><option value="75">French Guiana</option><option value="76">French Polynesia</option><option value="77">French Southern Territories</option><option value="78">Gabon</option><option value="79">Gambia</option><option value="80">Georgia</option><option value="81">Germany</option><option value="82">Ghana</option><option value="83">Gibraltar</option><option value="84">Greece</option><option value="85">Greenland</option><option value="86">Grenada</option><option value="87">Guadeloupe</option><option value="88">Guam</option><option value="89">Guatemala</option><option value="90">Guinea</option><option value="91">Guinea-bissau</option><option value="92">Guyana</option><option value="93">Haiti</option><option value="94">Heard and Mc Donald Islands</option><option value="95">Honduras</option><option value="96">Hong Kong</option><option value="97">Hungary</option><option value="98">Iceland</option><option value="99">India</option><option value="100">Indonesia</option><option value="101">Iran (Islamic Republic of)</option><option value="102">Iraq</option><option value="103">Ireland</option><option value="104">Israel</option><option value="105">Italy</option><option value="106">Jamaica</option><option value="107">Japan</option><option value="108">Jordan</option><option value="109">Kazakhstan</option><option value="110">Kenya</option><option value="111">Kiribati</option><option value="112">Korea, Democratic People's Republic of</option><option value="113">Korea, Republic of</option><option value="114">Kuwait</option><option value="115">Kyrgyzstan</option><option value="116">Lao People's Democratic Republic</option><option value="117">Latvia</option><option value="118">Lebanon</option><option value="119">Lesotho</option><option value="120">Liberia</option><option value="121">Libyan Arab Jamahiriya</option><option value="122">Liechtenstein</option><option value="123">Lithuania</option><option value="124">Luxembourg</option><option value="125">Macau</option><option value="126">Macedonia, The Former Yugoslav Republic of</option><option value="127">Madagascar</option><option value="128">Malawi</option><option value="129">Malaysia</option><option value="130">Maldives</option><option value="131">Mali</option><option value="132">Malta</option><option value="133">Marshall Islands</option><option value="134">Martinique</option><option value="135">Mauritania</option><option value="136">Mauritius</option><option value="137">Mayotte</option><option value="138">Mexico</option><option value="139">Micronesia, Federated States of</option><option value="140">Moldova, Republic of</option><option value="141">Monaco</option><option value="142">Mongolia</option><option value="143">Montserrat</option><option value="144">Morocco</option><option value="145">Mozambique</option><option value="146">Myanmar</option><option value="147">Namibia</option><option value="148">Nauru</option><option value="149">Nepal</option><option value="150">Netherlands</option><option value="151">Netherlands Antilles</option><option value="152">New Caledonia</option><option value="153">New Zealand</option><option value="154">Nicaragua</option><option value="155">Niger</option><option value="156">Nigeria</option><option value="157">Niue</option><option value="158">Norfolk Island</option><option value="159">Northern Mariana Islands</option><option value="160">Norway</option><option value="161">Oman</option><option value="162">Pakistan</option><option value="163">Palau</option><option value="164">Panama</option><option value="165">Papua New Guinea</option><option value="166">Paraguay</option><option value="167">Peru</option><option value="168">Philippines</option><option value="169">Pitcairn</option><option value="170">Poland</option><option value="171">Portugal</option><option value="172">Puerto Rico</option><option value="173">Qatar</option><option value="174">Reunion</option><option value="175">Romania</option><option value="176">Russian Federation</option><option value="177">Rwanda</option><option value="178">Saint Kitts and Nevis</option><option value="179">Saint Lucia</option><option value="180">Saint Vincent and the Grenadines</option><option value="181">Samoa</option><option value="182">San Marino</option><option value="183">Sao Tome and Principe</option><option value="184">Saudi Arabia</option><option value="185">Senegal</option><option value="186">Seychelles</option><option value="187">Sierra Leone</option><option value="188">Singapore</option><option value="189">Slovakia (Slovak Republic)</option><option value="190">Slovenia</option><option value="191">Solomon Islands</option><option value="192">Somalia</option><option value="193">South Africa</option><option value="194">South Georgia and the South Sandwich Islands</option><option value="195">Spain</option><option value="196">Sri Lanka</option><option value="197">St. Helena</option><option value="198">St. Pierre and Miquelon</option><option value="199">Sudan</option><option value="200">Suriname</option><option value="201">Svalbard and Jan Mayen Islands</option><option value="202">Swaziland</option><option value="203">Sweden</option><option value="204">Switzerland</option><option value="205">Syrian Arab Republic</option><option value="206">Taiwan</option><option value="207">Tajikistan</option><option value="208">Tanzania, United Republic of</option><option value="209">Thailand</option><option value="210">Togo</option><option value="211">Tokelau</option><option value="212">Tonga</option><option value="213">Trinidad and Tobago</option><option value="214">Tunisia</option><option value="215">Turkey</option><option value="216">Turkmenistan</option><option value="217">Turks and Caicos Islands</option><option value="218">Tuvalu</option><option value="219">Uganda</option><option value="220">Ukraine</option><option value="221">United Arab Emirates</option><option value="222">United Kingdom</option><option value="224">United States Minor Outlying Islands</option><option value="225">Uruguay</option><option value="226">Uzbekistan</option><option value="227">Vanuatu</option><option value="228">Vatican City State (Holy See)</option><option value="229">Venezuela</option><option value="230">Viet Nam</option><option value="231">Virgin Islands (British)</option><option value="232">Virgin Islands (U.S.)</option><option value="233">Wallis and Futuna Islands</option><option value="234">Western Sahara</option><option value="235">Yemen</option><option value="236">Yugoslavia</option><option value="237">Zaire</option><option value="238">Zambia</option><option value="239">Zimbabwe</option></select>&nbsp;<span class="inputRequirement">*</span>				</td>
+              </tr>
+
+             
+              <tr>
+                <td class="main">州/省:</td>
+                <td class="main" id="state_td"><select name="state" onchange="return get_city(this.value,create_account,'city');"><option value="s">请选择</option><option value="安徽">安徽</option><option value="澳门">澳门</option><option value="北京">北京</option><option value="重庆">重庆</option><option value="福建">福建</option><option value="广东">广东</option><option value="甘肃">甘肃</option><option value="广西">广西</option><option value="贵州">贵州</option><option value="海南">海南</option><option value="河北">河北</option><option value="黑龙江">黑龙江</option><option value="河南">河南</option><option value="湖北">湖北</option><option value="湖南">湖南</option><option value="吉林">吉林</option><option value="江苏">江苏</option><option value="江西">江西</option><option value="辽宁">辽宁</option><option value="内蒙古">内蒙古</option><option value="宁夏">宁夏</option><option value="青海">青海</option><option value="四川">四川</option><option value="山东">山东</option><option value="上海">上海</option><option value="陕西">陕西</option><option value="山西">山西</option><option value="天津">天津</option><option value="台湾">台湾</option><option value="香港">香港</option><option value="新疆">新疆</option><option value="西藏">西藏</option><option value="云南">云南</option><option value="浙江">浙江</option></select></td>
+              </tr>
+              <tr>
+                <td class="main">城市:</td>
+                <td class="main" id="city_td"><input onblur="this.value = simplized(this.value)" name="city" type="text">&nbsp;<span class="inputRequirement">*</span></td>
+              </tr>
+
+			  <tr>
+                <td class="main">详细地址:</td>
+                <td class="main"><input onblur="this.value = simplized(this.value)" name="street_address" id="street_address" class="required validate-length-street" title="详细地址:少于 1 个字" type="text">&nbsp;<span class="inputRequirement">*</span></td>
+              </tr>
+
+               <tr>
+                <td class="main">邮政编码:</td>
+                <td class="main"><input onblur="this.value = simplized(this.value)" name="postcode" id="postcode" class="required validate-length-postcode" title=" 邮政编码 少于 4 个字" type="text">&nbsp;<span class="inputRequirement">*</span></td>
+              </tr>
+            </tbody></table></td>
+          </tr>
+        </tbody></table></td>
+      </tr>
+      <tr>
+        <td><img src="img/pixel_trans.gif" alt="" width="100%" border="0" height="10"></td>
+      </tr>
+      <tr>
+        <td class="main"><b>您的联系信息</b></td>
+      </tr>
+      <tr>
+        <td><table class="infoBox" width="100%" border="0" cellpadding="2" cellspacing="1">
+          <tbody><tr class="infoBoxContents">
+            <td><table border="0" cellpadding="2" cellspacing="2">
+              <tbody><tr>
+                <td class="main">电话号码:</td>
+                <td class="main">			
+				国家代码 <input onblur="this.value = simplized(this.value)" name="telephone_cc" value="086" size="4" type="text"> - <input onblur="this.value = simplized(this.value)" name="telephone" id="telephone" class="required validate-number validate-length-telephone" title="电话号码不得少于 7 个字" type="text">&nbsp;<span class="inputRequirement">*</span></td>
+              </tr>
+			  <!--
+				 <tr>
+                <td class="main">（请提供必要时的以备紧急联系之用的号码）∶</td>
+                <td class="main"><input onBlur="this.value = simplized(this.value)" type="text" name="cellphone" /></td>
+              </tr>
+			  -->
+              <tr>
+                <td class="main">移动电话:</td>
+                <td class="main"><input onblur="this.value = simplized(this.value)" name="fax" type="text">&nbsp;</td>
+              </tr>
+            </tbody></table></td>
+          </tr>
+        </tbody></table></td>
+      </tr>
+      <tr>
+        <td><img src="img/pixel_trans.gif" alt="" width="100%" border="0" height="10"></td>
+      </tr>
+      <tr>
+        <td class="main"><b>选项</b></td>
+      </tr>
+      <tr>
+        <td><table class="infoBox" width="100%" border="0" cellpadding="2" cellspacing="1">
+          <tbody><tr class="infoBoxContents">
+            <td><table border="0" cellpadding="2" cellspacing="2">
+              <tbody><tr>
+                <td class="main">订阅电子报:</td>
+                <td class="main"><input name="newsletter" value="1" checked="checked" type="checkbox">&nbsp;</td>
+              </tr>
+            </tbody></table></td>
+          </tr>
+        </tbody></table></td>
+      </tr>
+      <tr>
+        <td><img src="img/pixel_trans.gif" alt="" width="100%" border="0" height="10"></td>
+      </tr>
+      <tr>
+        <td class="main"><b>密码</b></td>
+      </tr>
+      <tr>
+        <td><table class="infoBox" width="100%" border="0" cellpadding="2" cellspacing="1">
+          <tbody><tr class="infoBoxContents">
+            <td><table border="0" cellpadding="2" cellspacing="2">
+              <tbody><tr>
+                <td class="main">密码:</td>
+                <td class="main"><input onblur="this.value = simplized(this.value)" name="password" id="create_password" class="required validate-password" title="密码不得少于5 个字" type="password">&nbsp;<span class="inputRequirement">*</span></td>
+              </tr>
+              <tr>
+                <td class="main">确认密码:</td>
+                <td class="main"><input onblur="this.value = simplized(this.value)" name="confirmation" id="confirmation" class="required validate-password-confirm" title="密码不符" type="password">&nbsp;<span class="inputRequirement">*</span></td>
+              </tr>
+            </tbody></table>
+			<input type="hidden" name="referer_url" value="yododo" />
+<input type="hidden" name="ref" value="563" />
+<input type="hidden" name="affiliate_banner_id" value="1" />
+<input name="action" value="process" type="hidden">
+</td>
+          </tr>
+        </tbody></table></td>
+      </tr>
+      <tr>
+        <td><img src="img/pixel_trans.gif" alt="" width="100%" border="0" height="10"></td>
+      </tr>
+      <tr>
+        <td><table class="infoBox" width="100%" border="0" cellpadding="2" cellspacing="1">
+          <tbody><tr class="infoBoxContents">
+            <td><table width="100%" border="0" cellpadding="2" cellspacing="0">
+              <tbody><tr>
+                <td width="10"><img src="img/pixel_trans.gif" alt="" width="10" border="0" height="1"></td>
+                <td><input src="img/go_on.gif" style="border: 0px none ;" alt="继续" title=" 继续 " type="image">&nbsp;<span id="submit_msn" style="color: rgb(255, 102, 0); display: none;">正在提交您的注册数据...</span></td>
+                <td width="10"><img src="img/pixel_trans.gif" alt="" width="10" border="0" height="1"></td>
+              </tr>
+            </tbody></table></td>
+          </tr>
+        </tbody></table></td>
+      </tr>
+    </tbody></table></form>
+               <script type="text/javascript">
+						function formCallback(result, form) {
+							window.status = "valiation callback for form '" + form.id + "': result = " + result;
+						}
+						
+						var valid = new Validation('create_account', {immediate : true,useTitles:true, onFormValidate : formCallback});
+						Validation.addAllThese([
+							['validate-length-firstname', '', {
+								minLength : 2							}],
+							['validate-length-lastname', '', {
+								minLength : 2							}],
+							['validate-length-street', '', {
+								minLength : 1							}],
+							['validate-length-postcode', '', {
+								minLength : 4							}],						
+							['validate-length-city', '', {
+								minLength : 2							}],
+							['validate-length-state', '', {
+								minLength : 2							}],
+							['validate-length-telephone', '', {
+								minLength : 7							}],
+							['validate-email-confirm', '再次确认邮件必须和邮箱地址匹配', {
+								equalToField : 'create_email_address'
+							}],
+							
+							['validate-password', '', {
+								minLength : 5,
+								notOneOf : ['password','PASSWORD','1234567','0123456'],
+								notEqualToField : 'firstname',
+								notEqualToField : 'lastname'
+							}],
+							['validate-password-confirm', '密码不符', {
+								equalToField : 'create_password'
+							}]
+						]);
+					</script>
+
+<script type="text/javascript">
+function get_state(country_id,form_name,state_obj_name){
+	var form = form_name;
+	var state = form.elements[state_obj_name];
+	var country_id = parseInt(country_id);
+	if(country_id<1){
+		alert('国家/地区:请从下拉式选单中选取');
+		return false;
+	}
+	var url = "http://tw.usitrip.com/get_state_list_ajax.php?country_id=" +country_id+"";
+	ajax.open('GET', url, true);  
+	ajax.send(null);
+	ajax.onreadystatechange = function() { 
+		if (ajax.readyState == 4 && ajax.status == 200 ) { 
+			document.getElementById('state_td').innerHTML = ajax.responseText;
+			document.getElementById('city_td').innerHTML ='<input onBlur="this.value = simplized(this.value)" type="text" name="city" />&nbsp;<span class="inputRequirement">*</span>';
+		}
+	}
+
+	
+}
+function get_city(state_name,form_name,city_obj_name){
+	var form = form_name;
+	var city = form.elements[city_obj_name];
+	var state_name = state_name;
+	var url = "http://tw.usitrip.com/get_state_list_ajax.php";
+			var aparams=new Array(); 
+			for(i=0; i<form.length; i++){
+				var sparam=encodeURIComponent(form.elements[i].name);
+				sparam+="=";
+				sparam+=encodeURIComponent(form.elements[i].value);
+				aparams.push(sparam);
+			}
+			var post_str=aparams.join("&");	
+			ajax.open("POST", url, true); 
+			ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded"); 
+			ajax.send(post_str);
+			ajax.onreadystatechange = function() { 
+		if (ajax.readyState == 4 && ajax.status == 200 ) { 
+			document.getElementById('city_td').innerHTML =ajax.responseText;
+		}
+	}
+}
+
+
+get_state(44,document.getElementById('create_account'),"state");
+</script>			  </div>
+          
+          </div>
+        </div>
+        <div class="right_side">
+            <div class="small_ad"><img src="img/5_off.gif" />
+                                  <img src="img/giving.gif" style="padding-top:3px" />
+            </div>
+            <div class="right_content"><div class="contert_box">
+              <h2><a href="http://tw.usitrip.com/las-vegas-tours/?ref=563&affiliate_banner_id=1&referer_url=yododo" class="ff_a">四月，go to USA！</a></h2>
+                                            <p><span class="blue_word">游拉斯维加斯，享娱乐之都的乐趣！</span></p>
+                                            <p><a href="http://tw.usitrip.com/las-vegas-tours/?ref=563&affiliate_banner_id=1&referer_url=yododo"><img src="img/las_vegas.gif" style="margin:4px 0px 4px 0px" /></a></p>
+                                            <p>“Las Vegas”源自西班牙语，意思为“肥沃
+                                                的青草地”，每年来拉斯维加斯旅游的3890万
+                                                旅客中，来购物、娱乐和享受美食的占了大多
+                                                数，拉斯维加斯堪称沙漠中的奇迹之城。</p>
+                                       </div>
+                                       <div class="contert_box">
+                                            <h2><a href="http://tw.usitrip.com/yellowstone-tours/?ref=563&affiliate_banner_id=1&referer_url=yododo" class="ff_a">五月，go to USA！</a></h2>
+                                            <p><span class="blue_word">体验黄石公园，世界第一国家公园的风情！</span></p>
+                                            <p><a href="http://tw.usitrip.com/yellowstone-tours/?ref=563&affiliate_banner_id=1&referer_url=yododo"><img src="img/yellowstone.jpg" style="margin:4px 0px 4px 0px" /></a></p>
+                                            <p>1872年，美国总统格兰特签字同意在怀俄明州
+                                               开辟黄石国家公园，是美国也是全世界第一个
+                                               国家公园，它那由水与火锤炼而成的大地原始
+                                               景观被人们称为“地球表面上最精彩、最壮观
+                                               的美景”。</p>
+                                        </div>
+                                        <div class="contert_box" style="margin-top:10px; background:url(img/toursfoefun_logo_bg.jpg); background-position:bottom right; background-repeat:no-repeat; background-color:#FFFFFF;">
+              <h2><span class="blue_word" style="margin-bottom:8px;">关于走四方网！</span></h2>
+                                            <p>走四方网，一家新锐网上旅行社，提供优秀专
+                                               业的美国境内外旅游项目，用户可在线进行
+                                               产品选择，咨询，预订等服务，并曾多次被
+                                               美国大报如华盛顿邮报等推荐介绍！</p>
+                                       </div>
+            </div>
+        </div>
+</div>
+</div>
+</body>
+</html>

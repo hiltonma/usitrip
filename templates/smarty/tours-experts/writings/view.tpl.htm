@@ -1,0 +1,69 @@
+<div class="expertArticleDetail">
+      <h1>
+      {:db_to_html text=$writings.title:}
+      {:if $writings.is_draft == '1':}
+      <font style="color:#F60;">{:db_to_html text='(草稿)':}</font>
+      {:/if:}
+      </h1>
+      <div class="exInfo">
+        <span class="date">{:$writings.time:} {:db_to_html text='发布':}</span>
+        <span class="sort">{:db_to_html text='类别：':}<a href="{:gethref page=$baseUrl mod='writings' uid=$writings.uid tid=$writings.tid:}" id="writingstype_{:$writings.tid:}">{:db_to_html text=$writings.typename:}</a></span>
+        <span class="operate">{:if $isExpertsSelf:}| <a href="{:gethref page=$baseUrl mod='writings' action='edit' uid=$writings.uid aid=$writings.aid:}">{:db_to_html text='编辑':}</a> | <a href="{:gethref page=$baseUrl mod='edit' action='delwritings' tmod='info' aid=$writings.aid:}" rel="expert_ajax" onclick="return false;">{:db_to_html text='删除':}</a> {:/if:}| {:db_to_html text='浏览':}({:$writings.hits:})</span>
+        {:if $writings.allow_share:}
+        <!-- JiaThis Button BEGIN -->
+        <div id="ckepop">
+	        <a href="http://www.jiathis.com/share/" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank">{:db_to_html text='分享':}</a>
+	        <span class="jiathis_separator">|</span>
+	        <a class="jiathis_button_tsina" title="{:db_to_html text='分享到新浪微博':}"></a>
+	        <a class="jiathis_button_qzone" title="{:db_to_html text='分享到QQ空间':}"></a>
+	        <a class="jiathis_button_kaixin001" title="{:db_to_html text='分享到开心网':}"></a>
+	        <a class="jiathis_button_renren" title="{:db_to_html text='分享到人人网':}"></a>
+        </div>
+        <script type="text/javascript" src="http://v2.jiathis.com/code/jia.js" charset="utf-8"></script>
+        <!-- JiaThis Button END -->
+        {:/if:}
+      </div>
+     <div class="exCon" id="writings_contentPanel">
+     {:db_to_html text=$writings.content:}
+     </div>
+<script type="text/javascript" src="jquery-1.3.2/jquery.resizeimg.js"></script>
+<script type="text/javascript">
+jQuery(function() {
+	jQuery('#writings_contentPanel img').resizeImage({width : 870});
+});
+</script>
+      <div class="postNav">
+        <span class="pre">{:db_to_html text='上一篇：':}
+        {:if $writings.prev:}
+        <a href="{:gethref page=$baseUrl mod='writings' action='view' uid=$writings.prev.uid aid=$writings.prev.aid:}" title="{:db_to_html text=$writings.prev.title:}">{:db_to_html text=$writings.prev.title|cut:45:}</a>
+        {:else:}
+        {:db_to_html text='没有了！':}
+        {:/if:}
+        </span>
+        <span class="next">{:db_to_html text='下一篇：':}
+        {:if $writings.next:}
+        <a href="{:gethref page=$baseUrl mod='writings' action='view' uid=$writings.next.uid aid=$writings.next.aid:}" title="{:db_to_html text=$writings.next.title:}">{:db_to_html text=$writings.next.title|cut:45:}</a>
+        {:else:}
+        {:db_to_html text='没有了！':}
+        {:/if:}
+        </span>
+      </div>
+    </div>
+    <div class="expertRouteShow">
+      <div class="title titleSmall">
+        <b></b><span></span>
+        <h3>{:db_to_html text='喜欢':} {:db_to_html text=$writings.typename:} {:db_to_html text='？看看下面有适合您的行程吗？':}</h3>
+        {:if $isExpertsSelf:}
+        <a href="{:gethref page=$baseUrl mod='writings' action='mproducts' uid=$writings.uid aid=$writings.aid:}">{:db_to_html text='管理文章推荐行程':}</a>
+        {:/if:}
+      </div>
+      <div class="expertRoute">
+        <ul>
+{:foreach from=$wProducts item=products name=wProducts:}
+          <li><p><a href="{:gethref page=$baseUrl mod='writings' action='affiliate' uid=$products.uid products_id=$products.products_id aid=$products.aid:}">{:db_to_html text=$products.products_name:}[{:db_to_html text=$products.products_model:}]</a></p><span class="price">{:$products.final_price:}</span><span class="view">{:db_to_html text='浏览':}({:$products.hits:})</span><span class="order">{:db_to_html text='下单':}({:$products.ordernum:})</span></li>
+{:foreachelse:}
+	<li><span class="price" style="width:100%;">{:db_to_html text='还没有推荐行程！':}</span></li>
+{:/foreach:}
+        </ul>
+      </div>
+    </div>

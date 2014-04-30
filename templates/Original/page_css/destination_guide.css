@@ -1,0 +1,19 @@
+/* zhenghua_html\templates\Original\mudidi.css */
+#mudidi .mudidi-gl ul li{ background:none;background:url(/image/bg.gif) no-repeat -570px -106px; padding-left:12px;}
+#mudidi .left-side-title{margin-top:5px;}
+#mudidi .chufa-city ul li{ width:100%;}
+.map-usa{ float:left; border:4px solid #D7EFFF; margin:10px 0px 0px 80px;}
+.mudidi-list-us{ float:left; border:1px solid #52B9F4; width:746px; background:#D7EFFF url(/image/mudidi-us-bg.jpg) center top  no-repeat; margin:10px 0px 0px 85px;}
+.mudidi-list-us div{float:left; width:46%; padding-top:10px; padding-bottom:10px;}
+.mudidi-list-us h2{ margin-bottom:5px; float:left; width:100%;}
+.mudidi-list-us ul{ float:left;} .mudidi-list-us ul li{ line-height:22px;}
+.illustrations{ width:329px; float:left; padding-right:25px; line-height:24px;}
+.mudidi-doc li{ background:url(/image/xuxian-dot.gif) repeat-x left bottom; padding-bottom:1px; }
+.mudidi-doc{ width:90%;}
+.mudidi-content{ width:100%; margin-top:10px; float:left; border:1px solid #D4D4D4;}
+.mudidi-content h2{ text-indent:10px; background:#E7F6FF; border-bottom:1px solid #d4d4d4; padding:5px 0px 5px 0px;}
+.mudidi-content ul{ width:44%; margin:10px 0px 10px 12px; float:left;}
+.mudidi-content ul li{ padding-bottom:4px; padding-top:3px; float:left; width:100%; background:url(/image/xuxian-dot.gif) repeat-x left bottom; }
+.mudidi-content ul li a{ float:left; width:80%; white-space:nowrap; overflow:hidden;}
+.mudidi-content ul li span{ float:right;}
+.mudidi-content ul.mdd-produvt-list-r{ float:right; margin-right:10px;}

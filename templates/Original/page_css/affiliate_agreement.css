@@ -1,0 +1,9 @@
+@charset "gb2312";
+
+.xy_cntwrap{width:auto;overflow:hidden;border:1px solid #e4e4e4;margin:10px;}
+.xy_cntlist{padding:15px 30px;}
+.xy_cntlist li{border-bottom:1px dashed #e4e4e4;padding:20px 0;font-family:tahoma;}
+.xy_cntlist li.nobd{border:none;}
+.xy_cntlist li h3{font-size:14px;font-weight:bold;color:#0c5eb9;line-height:30px;}
+.xy_cntlist li p{line-height:20px;color:#666666;font-size:12px;}
+

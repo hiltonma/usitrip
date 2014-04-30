@@ -1,0 +1,121 @@
+<link href="{{$smarty.const.DIR_WS_IMG}}skin.css" rel="stylesheet" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<style type="text/css">
+<!--
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-color: #EEF2FB;
+}
+.oprate a {
+	margin-right: 30px;
+	color: #036;
+}
+.oprate a:hover {
+	color: #f30;
+	text-decoration: underline;
+}
+.s_font td {
+	font-size: 12px;
+	padding: 5px;
+}
+.s_font td.padd a {
+	color: #f30;
+	margin: 0 5px;
+}
+.s_font td.padd a:hover {
+	text-decoration: underline;
+}
+a.red, .red {
+	color: #f30;
+}
+a.lanse {
+	color: #0070c0;
+}
+-->
+</style>
+<script type="text/javascript" src="{{$smarty.const.DIR_WS_JS}}jquery.js" charset="utf-8"></script>
+<body>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="17" valign="top" background="{{$smarty.const.DIR_WS_IMG}}mail_leftbg.gif"><img src="{{$smarty.const.DIR_WS_IMG}}left-top-right.gif" width="17" height="29" /></td>
+    <td valign="top" background="{{$smarty.const.DIR_WS_IMG}}content-bg.gif"><table width="100%" height="31" border="0" cellpadding="0" cellspacing="0" class="left_topbg" id="table2">
+        <tr>
+          <td height="31"><div class="titlebt">游记管理</div></td>
+        </tr>
+      </table></td>
+    <td width="16" valign="top" background="{{$smarty.const.DIR_WS_IMG}}mail_rightbg.gif"><img src="{{$smarty.const.DIR_WS_IMG}}nav-right-bg.gif" width="16" height="29" /></td>
+  </tr>
+  <tr>
+    <td valign="middle" background="{{$smarty.const.DIR_WS_IMG}}mail_leftbg.gif">&nbsp;</td>
+    <td valign="top" bgcolor="#F7F8F9">
+    <form action="{{$form_action}}" method="post">
+    <table width="100%" style="margin:20px 0;" border="0" cellpadding="0" cellspacing="1" bgcolor="#ccc">
+        <colgroup>
+        <col width="10%">
+        <col width="5%">
+        <col width="5%">
+        <col width="55%">
+        <col width="20%">
+
+        </colgroup>
+        <tr class="s_font">
+        <td align="center" height="30" bgcolor="#efefef">置顶</td>
+          <td align="center" height="30" bgcolor="#efefef">查看</td>
+          <td align="center" height="30" bgcolor="#efefef">ID</td>
+          <td align="center" height="30" bgcolor="#efefef">游记标题</td>
+          <td align="center" bgcolor="#efefef">审核</td>
+        </tr>
+        {{section name=key loop=$travel_list}}
+        <tr class="s_font">
+        <td align="center" bgcolor="#efefef"><input type="radio" {{if $travel_list[key].is_top == 1}} checked {{/if}} name="is_top[{{$travel_list[key].travel_notes_id}}]" id="chkbox_{{$travel_list[key].travel_notes_id}}" value="1"/><label for="chkbox_{{$travel_list[key].travel_notes_id}}"{{if $travel_list[key].is_top == 1}} class="red" {{/if}}>已置顶</label><input type="radio" {{if $travel_list[key].is_top == 0}} checked {{/if}} name="is_top[{{$travel_list[key].travel_notes_id}}]" id="chkbox_0_{{$travel_list[key].travel_notes_id}}" value="0"/><label for="chkbox_0_{{$travel_list[key].travel_notes_id}}">未置顶</label></td>
+        <td align="center" bgcolor="#efefef"><a href="{{$travel_list[key].href}}" target="_blank">查看/删除</a></td>
+          <td align="center" bgcolor="#efefef">{{$travel_list[key].travel_notes_id}}</td>
+          <td align="left" bgcolor="#efefef"><p>{{if $travel_list[key].is_top == 1}}<span class="red">[置顶]</span>&nbsp;&nbsp;{{/if}}<strong><a href="{{$travel_list[key].href}}" target="_blank" class="lanse">{{$travel_list[key].travel_notes_title}}</a></strong><br>
+              编辑时间：{{$travel_list[key].edit_time}}<br>
+              分享人：<a href="{{$travel_list[key].customers_href}}" class="lanse">{{$travel_list[key].customers_name}}</a>&nbsp;&nbsp;分享时间：{{$travel_list[key].add_time}}（{{$travel_list[key].day_num}}天 {{$travel_list[key].image_number}}张）<br/>分享线路：<a href="{{$travel_list[key].line_href}}" class="lanse">{{$travel_list[key].travel_name}}</a><br/> 目的地：{{section name=k loop=$travel_list[key].city_name}}<a href="{{$travel_list[key].city_name[k].href}}" class="lanse">{{$travel_list[key].city_name[k].city}}</a>&nbsp;{{if $travel_list[key].city_name[k].is_top == true}}<span class="red">[已添加到标签]</span>{{else}}<span onclick="add_top('{{$travel_list[key].city_name[k].city_id}}')" style="cursor:pointer">[添加到标签]</span>{{/if}} {{/section}}</p>
+            喜欢（{{$travel_list[key].like_number}}）评论（{{$travel_list[key].replay_number}}）</u>浏览（{{$travel_list[key].read_number}}）</td>
+          <td align="left" bgcolor="#efefef"><input type="radio" value="0" name="verify[{{$travel_list[key].travel_notes_id}}]" id="radio_0_{{$travel_list[key].travel_notes_id}}" {{if $travel_list[key].verify == 0}} checked="checked" {{/if}} /><label for="radio_0_{{$travel_list[key].travel_notes_id}}" {{if $travel_list[key].verify == 0}} class="red"{{/if}}>[未审核]</label><input type="radio" value="1" name="verify[{{$travel_list[key].travel_notes_id}}]" id="radio_1_{{$travel_list[key].travel_notes_id}}" {{if $travel_list[key].verify==1}} checked="checked" {{/if}}/><label for="radio_1_{{$travel_list[key].travel_notes_id}}">[审核通过]</label><input type="radio" value="2" name="verify[{{$travel_list[key].travel_notes_id}}]" id="radio_2_{{$travel_list[key].travel_notes_id}}" {{if $travel_list[key].verify==2}} checked="checked" {{/if}}/><label for="radio_2_{{$travel_list[key].travel_notes_id}}" {{if $travel_list[key].verify == 2}} class="red"{{/if}}>[审核未通过]</label>
+</td>
+          
+        </tr>
+        {{/section}}
+        <tr class="s_font">
+        	<td align="center" bgcolor="#efefef" colspan="5"> <input type="submit" value="保存改变"/> <input type="reset" value="重置"/></td></tr>
+        <tr class="s_font">
+          <td align="center" bgcolor="#efefef" colspan="5">{{if $page.first.href}}<a href="{{$page.first.href}}">首页</a>{{/if}}
+                {{if $page.previous_x.href}}<a href="{{$page.previous_x.href}}" title="上五页">...</a>{{/if}}
+                {{if $page.previous.href}}<a href="{{$page.previous.href}}">上一页</a>{{/if}}
+                {{section name=key loop=$page.pages_list}}
+                <a href="{{$page.pages_list[key].href}}">{{$page.pages_list[key].text}}</a>
+                {{/section}}
+                {{if $page.next.href}}<a href="{{$page.next.href}}">下一页</a>{{/if}}
+                {{if $page.next_x.href}}<a href="{{$page.next_x.href}}" title="下五页">...</a>{{/if}}
+                {{if $page.last.href}}<a href="{{$page.last.href}}">末页</a>{{/if}}</td>
+        </tr>
+      </table>
+    </form> 
+      <!-- 图片管理 end --></td>
+    <td background="{{$smarty.const.DIR_WS_IMG}}mail_rightbg.gif">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="bottom" background="{{$smarty.const.DIR_WS_IMG}}mail_leftbg.gif"><img src="{{$smarty.const.DIR_WS_IMG}}buttom_left2.gif" width="17" height="17" /></td>
+    <td background="{{$smarty.const.DIR_WS_IMG}}buttom_bgs.gif"><img src="{{$smarty.const.DIR_WS_IMG}}buttom_bgs.gif" width="17" height="17"></td>
+    <td valign="bottom" background="{{$smarty.const.DIR_WS_IMG}}mail_rightbg.gif"><img src="{{$smarty.const.DIR_WS_IMG}}buttom_right2.gif" width="16" height="17" /></td>
+  </tr>
+</table>
+<script type="text/javascript">
+function add_top(id) {
+	jQuery.post('{{$add_city_top}}',{'id':id},function(r){
+		if (r.status == 1) {
+			alert('置顶成功!');
+			window.location.reload();
+		} else {
+			alert('置顶失败！');
+		}
+	},'json');
+}
+</script>
+</body>

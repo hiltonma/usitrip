@@ -1,0 +1,17 @@
+@charset "gb2312";
+/* CSS Document */
+.contentLandingpage{ width:950px; margin:auto;  background:#ffffff; margin-top:5px; }
+.dhan_banner{ width:950px;  height:129px;}
+.dhan_banner1{ width:950px; height:100px;}
+.dhan_bannerlast{ width:950px; float:left; height:20px;}
+.contentLandingpageC{ width:942px; padding-left:8px; float:left; background:url(/image/style1_bg.jpg) repeat-y top left;}
+.contentTxt{width:912px; padding-left:30px; float:left; background:url(/image/style1_04.jpg) no-repeat right top; margin-top:15px; height:210px;}
+.contentBt{ font-size:14px; font-weight:bold; margin:0; margin-top:8px; }
+.contentBtCont{font-size:14px; display:block; width:450px; margin:0; margin-top:8px; line-height:24px;}
+.contentBtTab{ font-size:12px; width:350px; color:#01408e; margin-top:8px; line-height:15px;}
+.contentAbstract{ width:880px; margin-left:16px; margin-right:21px; float:left; display:inline; background:#f3faff; padding:10px;}
+.contentAbstractBt{ font-size:12px; color:#01408e; margin:0; font-weight:bold; line-height:24px; padding-top:20px;}
+.contentAbstractBt1{ font-size:12px; color:#01408e; margin:0; font-weight:bold; line-height:24px; }
+.contentAbstractTxt{ font-size:12px; margin:0; color:#5d5d5d; line-height:18px;}
+.contentRMore{ width:922px; padding-left:20px; float:left; padding-bottom:20px; padding-top:10px;}
+.contentRMore p{ color:#F1740E; font-size:14px; margin:0;}

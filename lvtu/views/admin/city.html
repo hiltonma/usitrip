@@ -1,0 +1,90 @@
+<link href="{{$smarty.const.DIR_WS_IMG}}skin.css" rel="stylesheet" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" /><style type="text/css">
+<!--
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-color: #EEF2FB;
+}
+.oprate a{ margin-right:30px; color:#036;}
+.oprate a:hover{ color:#f30; text-decoration:underline;}
+.s_font td{ font-size:12px; padding:5px;}
+.s_font td.padd a{ color:#f30; margin:0 5px;}
+.s_font td.padd a:hover{ text-decoration:underline;}
+-->
+</style>
+<body>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="17" valign="top" background="{{$smarty.const.DIR_WS_IMG}}mail_leftbg.gif"><img src="{{$smarty.const.DIR_WS_IMG}}left-top-right.gif" width="17" height="29" /></td>
+    <td valign="top" background="{{$smarty.const.DIR_WS_IMG}}content-bg.gif"><table width="100%" height="31" border="0" cellpadding="0" cellspacing="0" class="left_topbg" id="table2">
+      <tr>
+        <td height="31"><div class="titlebt">置顶景点</div></td>
+      </tr>
+    </table></td>
+    <td width="16" valign="top" background="{{$smarty.const.DIR_WS_IMG}}mail_rightbg.gif"><img src="{{$smarty.const.DIR_WS_IMG}}nav-right-bg.gif" width="16" height="29" /></td>
+  </tr>
+  <tr>
+    <td valign="middle" background="{{$smarty.const.DIR_WS_IMG}}mail_leftbg.gif">&nbsp;</td>
+    <td valign="top" bgcolor="#F7F8F9">
+			<form action="{{$form_action}}" method="post">
+            <table width="100%" style="margin:20px 0;" border="0" cellpadding="0" cellspacing="1" bgcolor="#ccc">
+              <colgroup>
+              <col width="30%">
+              <col width="5%"><col width="30%">
+              <col width="5%">
+              
+              <col width="30%">
+              
+              </colgroup>
+              <tr class="s_font"><td align="center" height="30" bgcolor="#efefef">景点名称</td>
+              <td align="center" height="30" bgcolor="#efefef">景点ID</td>
+              	
+                <td align="center" bgcolor="#efefef">排序</td><td align="center" headers="30" bgcolor="#efefef">删除</td>
+                <td align="center" height="30" bgcolor="#efefef">ID</td>
+                
+
+                
+              </tr>
+              {{section name=key loop=$city_list}}
+              <tr class="s_font"><td align="center" bgcolor="#efefef">{{$city_list[key].city_name}}</td>
+              <td align="center" bgcolor="#efefef">{{$city_list[key].city_id}}</td>
+              	
+                <td class="oprate" align="center" bgcolor="#efefef"><input name="order[{{$city_list[key].id}}]" style="width:50px" value="{{$city_list[key].sort_id}}"/></td><td align="center" bgcolor="#efefef"><input type="checkbox" name="del[]" value="{{$city_list[key].id}}" /></td>
+                <td align="center" bgcolor="#efefef">{{$city_list[key].id}}</td>
+                
+               
+                
+              </tr>
+              {{/section}}
+              <tr class="s_font">
+              	<td colspan="5" align="center" bgcolor="#efefef"><input type="submit" value="保存改变" /></td>
+              </tr>
+              <tr class="s_font">
+              	<td align="center" colspan="5"  bgcolor="#efefef">
+                {{if $page.first.href}}<a href="{{$page.first.href}}">首页</a>{{/if}}
+                {{if $page.previous_x.href}}<a href="{{$page.previous_x.href}}" title="上五页">...</a>{{/if}}
+                {{if $page.previous.href}}<a href="{{$page.previous.href}}">上一页</a>{{/if}}
+                {{section name=key loop=$page.pages_list}}
+                <a href="{{$page.pages_list[key].href}}">{{$page.pages_list[key].text}}</a>
+                {{/section}}
+                {{if $page.next.href}}<a href="{{$page.next.href}}">下一页</a>{{/if}}
+                {{if $page.next_x.href}}<a href="{{$page.next_x.href}}" title="下五页">...</a>{{/if}}
+                {{if $page.last.href}}<a href="{{$page.last.href}}">末页</a>{{/if}}
+                </td>
+              </tr>
+            </table>
+            </form>
+            <!-- 图片管理 end -->
+	</td>
+    <td background="{{$smarty.const.DIR_WS_IMG}}mail_rightbg.gif">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="bottom" background="{{$smarty.const.DIR_WS_IMG}}mail_leftbg.gif"><img src="{{$smarty.const.DIR_WS_IMG}}buttom_left2.gif" width="17" height="17" /></td>
+    <td background="{{$smarty.const.DIR_WS_IMG}}buttom_bgs.gif"><img src="{{$smarty.const.DIR_WS_IMG}}buttom_bgs.gif" width="17" height="17"></td>
+    <td valign="bottom" background="{{$smarty.const.DIR_WS_IMG}}mail_rightbg.gif"><img src="{{$smarty.const.DIR_WS_IMG}}buttom_right2.gif" width="16" height="17" /></td>
+  </tr>
+</table>
+</body>

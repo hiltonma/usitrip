@@ -1,0 +1,8 @@
+2012-04-20 18:45:45--------------/var/www/html/888trip/admin/crons_servers.php
+(1) Successfully deleted products_soldout_dates 0 rows, products_remaining_seats 0 rows. (Used 0.002s)
+(2) Write apache logs to system_logs, log_date 20120419. (Used 0s)
+(3) update departure_city_to_destinations_attractions (Used 0.508s)
+(4) Get Products Departure Date (Used 189.211s)
+HTTP/1.1
+Total time: 189.72
+

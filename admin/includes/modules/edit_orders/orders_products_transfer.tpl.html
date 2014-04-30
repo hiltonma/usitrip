@@ -1,0 +1,49 @@
+<table border="0" cellspacing="5"  width="100%" cellpadding="0" class="transferRoute">
+	<caption>接驳车服务线路信息</caption>
+	<tr>
+		<th align="left" scope="col">接送人数</th>
+		<th align="left" scope="col">航班号</th>
+		<th align="left" scope="col">送达/接应准确地点</th>
+		<th align="left" scope="col">航班抵达时间</th>
+		<th align="left" scope="col">期待接应时间</th>
+		<th align="left" scope="col">起点</th>
+		<th align="left" scope="col">起点地址</th>
+		<th align="left" scope="col">终点</th>
+		<th align="left" scope="col">终点地址</th>
+		<th align="left" scope="col">行李数</th>
+		<th align="left" scope="col">备注</th>
+	</tr>
+{循环}	
+	<tr>
+		<td>{隐藏域}{接送人数}</td>
+		<td>{航班号}</td>
+		<td>{送达/接应准确地点}</td>
+		<td>{航班抵达时间}</td>
+		<td>{期待接应时间}</td>
+		<td>{起点}</td>
+		<td>{起点地址}</td>
+		<td>{终点}</td>
+		<td>{终点地址}</td>
+		<td>{行李数}</td>
+		<td>{备注}</td>
+	</tr>
+{/循环}	
+</table>
+
+<script type="text/javascript">
+/* 更新接驳车服务价格 */
+function transfer_calculation_price(products_id){
+	var url = url_ssl("edit_orders.php?action=update_transfer_calculation_price");
+	url += "&products_id="+products_id;
+	var form_id = 'edit_order';
+	ajax_post_submit(url,form_id);
+}
+
+/* 更新接驳车服务地址信息 */
+function transfer_address_update(selectObj, inputBoxName){
+	var inputBox = document.getElementById("edit_order").elements[inputBoxName];
+	var text = selectObj.options[selectObj.options.selectedIndex].text;
+	text = text.replace(/\(\d+\)$/,'');
+	inputBox.value = text;
+}
+</script>

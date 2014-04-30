@@ -1,0 +1,79 @@
+<link href="{{$smarty.const.DIR_WS_IMG}}skin.css" rel="stylesheet" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<style type="text/css">
+<!--
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-color: #EEF2FB;
+}
+.oprate a{ margin-right:30px; color:#036;}
+.oprate a:hover{ color:#f30; text-decoration:underline;}
+.s_font td{ font-size:12px; padding:5px;}
+.s_font td.padd a{ color:#f30; margin:0 5px;}
+.s_font td.padd a:hover{ text-decoration:underline;}
+#body_table td{padding:3px;font-size:12px;}
+-->
+</style>
+<script type="text/javascript" src="{{$smarty.const.DIR_WS_JS}}jquery.js" charset="utf-8"></script>
+<body>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="17" valign="top" background="{{$smarty.const.DIR_WS_IMG}}mail_leftbg.gif"><img src="{{$smarty.const.DIR_WS_IMG}}left-top-right.gif" width="17" height="29" /></td>
+    <td valign="top" background="{{$smarty.const.DIR_WS_IMG}}content-bg.gif"><table width="100%" height="31" border="0" cellpadding="0" cellspacing="0" class="left_topbg" id="table2">
+      <tr>
+        <td height="31"><div class="titlebt">基本设置</div></td>
+      </tr>
+    </table></td>
+    <td width="16" valign="top" background="{{$smarty.const.DIR_WS_IMG}}mail_rightbg.gif"><img src="{{$smarty.const.DIR_WS_IMG}}nav-right-bg.gif" width="16" height="29" /></td>
+  </tr>
+  <tr>
+    <td valign="middle" background="{{$smarty.const.DIR_WS_IMG}}mail_leftbg.gif">&nbsp;</td>
+    <td valign="top" bgcolor="#F7F8F9">
+	{{if $update_msg}}<div id="msg_div" style="padding:5px;background:{{if $update_msg.status==success}}#0C6{{else}}#F36{{/if}}">{{$update_msg.msg}}</div>
+    <script type="text/javascript">setTimeout(function(){
+		jQuery('#msg_div').hide();
+	},4000)</script>{{/if}}
+		<!-- 基本设置 --><form name="form1" method="POST" action="{{$right_form_action}}">
+		<table width="100%" border="0" cellspacing="1" cellpadding="0" bgcolor="#efefef" id="body_table">
+			
+            {{section name=key loop=$config_list}}
+              <tr>
+                <td width="20%" height="30" align="right" bgcolor="#F7F8F9" class="left_txt2">{{$config_list[key].configuration_title}}：</td>
+                <td width="24%" height="30" bgcolor="#F7F8F9">
+                {{if $config_list[key].configuration_key == 'SYS_THEME'}}
+                <select name="theme[{{$config_list[key].configuration_id}}]">
+                {{section name=k loop=$config_list[key].theme_list}}
+                <option value="{{$config_list[key].theme_list[k].sys_theme_id}}" {{if $config_list[key].theme_list[k].selected }} selected="selected"{{/if}}>{{$config_list[key].theme_list[k].sys_theme_name}}</option>
+                {{/section}}
+                </select>
+                {{/if}}
+                {{if $config_list[key].configuration_key == 'SYS_IS_AUDIT'}}
+                <input type="radio" name="config[{{$config_list[key].configuration_id}}]" value="true" {{if $config_list[key].configuration_value == 'true'}} checked="checked" {{/if}}/>开启审核<input type="radio" name="config[{{$config_list[key].configuration_id}}]" value="false"  {{if $config_list[key].configuration_value == 'false'}} checked="checked" {{/if}}/>关闭审核
+                {{/if}}
+                </td>
+                <td width="53%" height="30" bgcolor="#F7F8F9" class="left_txt">{{$config_list[key].configuration_description}}</td>
+              </tr>
+              {{/section}}
+              <tr>
+                <td height="17" colspan="4" align="right" bgcolor="#F7F8F9" >&nbsp;</td>
+              </tr>
+			  <tr>
+			  	  <td colspan="2" bgcolor="#F7F8F9"></td>
+				  <td height="30" colspan="2" align="left" bgcolor="#F7F8F9"><input type="submit" value="完成以上修改" />&nbsp;<input type="reset" value="取消设置"  /></td>
+              </tr>
+            </table>
+            </form>
+			<!-- 基本设置 end -->
+	</td>
+    <td background="{{$smarty.const.DIR_WS_IMG}}mail_rightbg.gif">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="bottom" background="{{$smarty.const.DIR_WS_IMG}}mail_leftbg.gif"><img src="{{$smarty.const.DIR_WS_IMG}}buttom_left2.gif" width="17" height="17" /></td>
+    <td background="{{$smarty.const.DIR_WS_IMG}}buttom_bgs.gif"><img src="{{$smarty.const.DIR_WS_IMG}}buttom_bgs.gif" width="17" height="17"></td>
+    <td valign="bottom" background="{{$smarty.const.DIR_WS_IMG}}mail_rightbg.gif"><img src="{{$smarty.const.DIR_WS_IMG}}buttom_right2.gif" width="16" height="17" /></td>
+  </tr>
+</table>
+</body>

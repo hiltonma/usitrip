@@ -1,0 +1,139 @@
+@charset "utf-8";
+body{
+	
+}
+a{
+	text-decoration:none;
+	color:#000;
+	font-weight:bold;
+}
+
+.warp{
+	width:980px;
+	margin:0 auto;
+}
+.header{
+	width:980px;
+	margin:0;
+}
+.head{ width:100%; height:62px; background:url(../images/headbg.gif) repeat-x;}
+.head_box{ width:980px; margin:0 auto;}
+.fg{ padding:0 8px; color:#badcfe;}
+a.menua{ font-size:14px;}
+.top_menu{ float:left; padding-top:13px; }
+.phone{ text-align:right;}
+.footer{ background:#FFF; width:100%; text-align:center; line-height:35px; color:#999; margin-top:20px;}
+ 
+
+.nav{
+	width:100%;
+	height:43px;
+	background:url(../images/nav_bg.jpg) repeat-x;
+}
+.content{
+	width:980px;
+	height:auto;
+	margin:0 auto;
+	margin-top:8px;
+	background:url(../images/bg.jpg);
+	
+}
+.ad{
+	width:451px;
+	height:402px;
+	background:url(../images/ad_bg.jpg) center center no-repeat;
+	float:left;
+	line-height:10px;
+	text-align: center;
+	margin-top: 0;
+	margin-right: 10px;
+	margin-bottom: 8px;
+	margin-left: 5px;
+	padding-top: 16px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	
+	
+}
+.ad h3{
+	color:#F65A1D;
+	text-align:center;
+	
+}
+.ad h2{
+	color:#FE0002;
+	text-align:center;
+	font-size:20px;
+	
+}
+
+.ad1{
+	width:451px;
+	height:402px;
+	background:url(../images/ad_bg.jpg) center center no-repeat;
+	float:left;
+	line-height:10px;
+	text-align: center;
+	margin-top: 0;
+	margin-right: 5px;
+	margin-bottom: 8px;
+	margin-left: 45px;
+	padding-top: 16px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	
+	
+}
+.ad1 h3{
+	color:#F65A1D;
+	text-align:center;
+	
+}
+.ad1 h2{
+	color:#FE0002;
+	text-align:center;
+	font-size:20px;
+	
+}
+.pic{
+
+}
+.buy{
+	text-align:center;
+	margin-left:20px;
+	margin-top:20px;
+}
+.buy img{
+	border:none;
+}
+.more{
+	text-align:right;
+	padding-top:20px;
+	padding-right:50px;
+	font-size:14px;
+}
+.style{
+	width:100%;
+	height:auto;
+	
+}
+.style ul{
+	list-style:none;
+}
+.style ul li{
+	float:left;
+	/*
+	
+	padding-top:0;
+	padding-bottom:0;*/
+	margin-left:0px;
+	padding-right:25px;
+	padding-left:5px;
+}
+.style ul li img {
+	border: #CCC 1px solid;
+	width:200px;
+	height:105px;
+}

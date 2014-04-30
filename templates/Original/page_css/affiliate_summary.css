@@ -1,0 +1,28 @@
+@charset "gb2312";
+.f-mytours-msgwrap{margin-top:5px;border:1px solid #cbe5fe;font-size:12px;*display:block;*zoom:1;}
+.f-mytours-msgwrap:after,.f-myunion-wrap:after{display:block;clear:both;height:0;font-size:0;visibility:hidden;content:"";}
+.f-mytours-msghead{padding:16px 18px;background:#f3f7fa;border-bottom:1px solid #cbe5fe;line-height:22px;color:#0065b9;}
+.f-mytours-msghead p{padding-left:20px;background:url(/image/affiliate/f-mytours-msghead-icons.png) no-repeat 0 5px;line-height:22px;}
+.f-mytours-msginfo{background:#FFFFFF;}
+.f-mytours-msginfo .f-mytours-msgtext{height:92px;padding:25px 30px 10px 30px;}
+.f-mytours-msginfo .f-mytours-msgtext h3{line-height:26px;color:#0164b7;font-size:12px;font-weight:700;}
+.f-mytours-msginfo .f-mytours-msgtext p{line-height:22px;}
+.f-mytours-msginfo .f-pullback-wrap{height:25px;zoom:1;}
+.f-pullback{position:relative;bottom:-4px;left:50%;display:block;width:101px;height:22px;margin-left:-50px;background:url(/image/affiliate/f-mytours-msgtext-pullback.png) no-repeat;line-height:22px;text-align:center;color:#ff6c02;cursor:pointer;letter-spacing:3px;_zoom:1;}
+
+.f-myunion-wrap{margin-top:15px;*display:block;*zoom:1;}
+.f-myunion-account{padding:10px 30px;background:#fffee9;border:1px solid #f6e8a7;line-height:22px;font-size:14px;}
+.f-myunion-account span{margin-right:20px;}
+.f-myunion-account strong{color:#ff6c02;}
+.f-myunion-info{margin-top:10px;}
+.f-myunion-info h3{line-height:24px;font-size:14px;}
+.f-myunion-info h3 a{float:right;background:url(/image/icons/detail_info.gif) no-repeat 0 6px;padding-left:16px;color:#00388A;font-weight:normal;font-size:12px;}
+.f-myunion-total{margin-top:10px;border:1px solid #C5E6F9;padding:15px;overflow:hidden;*display:block;*zoom:1;}
+.f-myunion-list li{float:left;width:50%;height:30px;line-height:30px;border-bottom:1px dashed #DBDBDB;}
+.f-myunion-list li.last{border-bottom:none;}
+
+.f-myunion-poplist li{height:30px;line-height:30px;}
+.f-myunion-poplist li.even{background:#F5F5F5;}
+.f-myunion-poplist li b{padding:0;text-indent:0;background:none;font-weight:500;color:#4782ce;}
+.f-myunion-poplist li.hover{background:#5e98e1;color:#FFF;cursor:pointer;}
+.f-myunion-poplist li.hover b{color:#FFF;}

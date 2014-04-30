@@ -1,0 +1,61 @@
+/* CSS Document */
+body{ background:url(../images/b_bg.jpg)  #c2dfea center top no-repeat;  }
+
+.banner{ background:url(../images/bannerbg.jpg) center 110px no-repeat; height:589px;}
+#warp{ width:960px; height:1140px; background:#d1eef9; margin:0 auto; position:relative;}
+.topnav{ width:960px; height:289px; background:url(../images/topnav_bg.png)  center 0 no-repeat; position:absolute; top:-589px; left:0;}
+.logo{ width:254px; height:289px; position:absolute; left:0px; top:0px;*top:-1px!important;*top:-1px;}
+
+
+
+
+.topnav ul {}
+.topnav li{ float:left; margin-top:70px; color:#fffcd1; width:56px; height:24px;}
+.topnav li a{ color: #fffcd1;}
+.topnav li a:hover{ color: #fff9a3;}
+
+.content h2{ background:url(../images/h_bg.jpg) no-repeat left ; width:524px; height:64px;}
+.list{ width:960px;z-index:5; position:absolute; padding-left:20px;}
+.content i{ font-style:normal;}
+.content dl{width:286px; height:350px; background:#ffffff; border:1px solid #ff9835; position:relative;line-height:22px; float:left; margin-right:28px; margin-top:10px;  }
+.content dl dt{ width:286px; position:relative;}
+.content dl dt strong{ display:block; width:276px; background:#000000; height:26px; color:#fffcd1; font-weight:normal;}
+.content dl dt strong span{ margin-left:60px;}
+.content dt h3{ width:281px; padding-left:5px;}
+.content dt p{ padding-left:5px;}
+.content dd{ width:286px;}
+.content dd strong{ display:block; width:286px; height:36px; line-height:36px;background:#ff9835; color:#ffffff; font-weight:normal; position:relative; margin-top:10px;}
+.content dd a.btn{ display:inline-block; background:url(../images/btn.jpg) no-repeat; width:128px; height:33px; position:absolute; right:0px; top:2px;}
+
+.content dl.special{ width:918px; height:314px;background:#ffffff; border:1px solid #ff9835; position:relative; }
+.content dl.special dt{ width:486px;}
+.content dl.special dt strong{ display:block; width:486px; background:#000000; height:38px; text-align:center; line-height:40px; color:#fffcd1;}
+.content dl.special dt strong a{ color:#fffcd1;}
+.content dl.special dt strong a:hover{ color:#fff9a3;}
+.content dl.special dd{ width:400px;padding-top:20px; padding-left:20px; line-height:24px; color:#666666;}
+.content dl.special dd h3{}
+.content dl.special dd h3 span{ position:absolute; top:5px; right:5px; font-weight:normal; }
+.content dl.special dd strong{ display:block; width:433px; height:36px; line-height:36px;background:#ff9835;  text-align:center; color:#ffffff; position:absolute; left:486px;  bottom:0px; font-weight:normal;}
+.content dl.special dd strong a.btn{ display:inline-block; background:url(../images/btn.jpg) no-repeat; width:128px; height:33px; position:absolute; left:270px; top:2px;}
+.content dl.special dt b {
+    background:url(../images/bto.png) no-repeat;
+    cursor: pointer;
+    display: block;
+    height: 100px;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100px;
+    z-index: 100;
+}
+.content dl dt b {
+    background:url(../images/bto2.png) no-repeat;
+    cursor: pointer;
+    display: block;
+    height: 100px;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100px;
+    z-index: 100;
+}

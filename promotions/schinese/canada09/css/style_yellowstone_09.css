@@ -1,0 +1,92 @@
+*{ margin:0px; padding:0px;}
+body {
+	font-family: "§ºÊ^";
+	font-size: 12px;
+	line-height: 18px;
+	color: #223D6A;
+	background-color: #223D6A;
+}
+img{ border:0px;}
+.all {
+	width: 815px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+.top {
+	background-image:url(../img/top_bg.gif);
+	background-repeat: repeat-x;
+	height: 87px;
+	width: 100%;
+}
+.logo {
+	float: left;
+	margin-top: 15px;
+	margin-left: 25px;
+}
+.phone {
+	float: right;
+	margin-top:40px;
+	margin-right:10px;
+}
+.center {
+	background-color: #FFFFFF;
+	float: left;
+	width: 815px;
+	padding-left:0px;
+}
+.leftside {
+	float: left;
+	width: 551px;
+}
+.contentext{ padding:4px 4px 7px 17px; line-height:18px; background:#FFF3EF; }
+.contentext2{ padding:4px 4px 7px 15px; line-height:22px;  }
+.contentext3{ padding:4px 4px 7px 15px; line-height:18px;  }
+.tourslist {
+	float: left;
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-bottom:6px;
+	font-size:12px;
+	width:96%;
+	border-bottom:1px solid #A5CFFF;
+}
+
+.rightside {
+	float: right;
+	width: 264px;
+}
+.yuanjia{ text-decoration:line-through; color:#6f6f6f;}
+.xianjia{ font-size:14px; color:#F7860F; font-weight:bold;}
+
+.tour-title:link { font-size:14px;color:#F7860F; text-decoration:none;}
+.tour-title:visited { font-size:14px; color:#F7860F; text-decoration:none;}
+.tour-title:hover { font-size:14px; color:#F7860F; text-decoration:underline;}
+.tour-title:active {  font-size:14px;color:#F7860F; text-decoration:none;}
+
+.lianjie:link {
+	color: #F7831C;
+}
+.lianjie:visited {
+	color: #F7831C;
+}
+.lianjie:hover {
+	color: #F7831C;
+}
+.lianjie:active {
+	color: #003366;
+}
+.bottom {
+	background-color: #E2EFFF;
+	float: left;
+	width:100%;
+	padding:8px 0px 8px 0px;
+	color:#3F3F3F;
+}
+.bottom p{ margin-left:20px; float:left;}
+.mi{ float:right; margin-right:5px;}
+.bottom_txt:link{color:#3F3F3F; text-decoration:none;}
+.bottom_txt:visited{color:#3F3F3F; text-decoration:none;}
+.bottom_txt:hover{color:#3F3F3F; text-decoration:none;}
+.bottom_txt:active{color:#F7831C; text-decoration:none;}

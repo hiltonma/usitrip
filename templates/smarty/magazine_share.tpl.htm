@@ -1,0 +1,68 @@
+<style type="text/css">
+.message{ margin:0 auto; padding:20px 0; width:930px; }
+.message h1{ margin:10px 10px 10px 0; height:30px; font-size:14px; line-height:30px; border-bottom:1px dashed #C6C6C6; }
+.message h1 span{ margin-left:15px; font-weight:normal; font-size:12px; color:#F7860F;}
+.message h2{ width:920px; padding-bottom:5px; font-size:12px; font-weight:normal; }
+.message h2 s{color:#777;}
+.message h2 b{ padding-left:20px; color:#F7860F; font-family:Tahoma; }
+.message .con{ margin:0 auto; padding-bottom:10px; width:800px; overflow:hidden;}
+.message li{ float:left; width:100%; padding:5px 0; line-height:22px; color:#F7860F;}
+.message li input{ float:left;}
+.message li label{ float:left; width:65px; color:#777;}
+.message li .username{ width:120px;}
+.message li .email{ width:200px;}
+.message li textarea{ float:left; width:550px; height:45px;}
+.message li.info{ height:22px;}
+.message li.info label{ width:auto;}
+.message li.info input{ float:left; margin:2px; *margin:0 2px; display:inline;}
+.message li.info span{ float:left; margin-right:6px; display:inline; color:#111;}
+.message .submit{ float:left; margin-left:285px; display:inline; padding-top:15px; width:220px; height:27px; line-height:27px;}
+.btn{ display:block; float:left;  height:23px;  white-space:nowrap; overflow:hidden; line-height:23px; *line-height:25px; }
+.btn button{ float:left; padding:0 15px; width:auto; background:none; border:0; height:22px; font-size:12px; cursor:pointer; text-align:center; overflow:visible; }
+*:lang(zh) .btn button{ padding:0 12px !important;}
+.btn:hover{ background:url(/image/button_bg.gif) 0px -23px; text-decoration:none; border:1px solid #f8b709;}
+/*橙色button*/
+.btnOrange{ background:url(/image/button_bg.gif); font-weight:bold; border:1px solid #f8b709; }
+.btnOrange button{ font-weight:bold;}
+</style>
+
+{:$form_head:}
+<div class="message">
+
+  <div class="con">
+  <h1>{:db_to_html text="分享资讯给好友":}<span>{:$shows.all_need_input:}</span></h1>
+    <ul>
+{:$shows.message:}
+{:if $send == "true":}
+  {:db_to_html text="电子邮件发送成功！":}
+{:else if:}
+      <li><label>{:db_to_html text="您的姓名":}</label>{:$input_fields.customers_name:}</li>
+      <li><label>{:db_to_html text="您的邮箱":}</label>{:$input_fields.customers_email:}</li>
+      <li><label>{:db_to_html text="您朋友邮箱":}</label>{:$input_fields.friends_email:}</li>
+      <li><label>{:db_to_html text="分享的Url":}</label>{:$textarea_fields.url_address:}<input type="hidden" name="cPath" value="{:$cPath:}"><input type="hidden" name="products_id" value="{:$smarty.get.products_id:}"></li>
+      
+	  <li><label>{:$RandomCodeText:}</label>{:$input_fields.visual_verify_code:}{:$RandomImg:}</li>
+{:/if:}
+    </ul>
+    <div class="submit">{:$submit_button:}</div>
+  </div>
+</div>
+{:$form_bottom:}
+
+<script type="text/javascript">
+		function formCallback(result, form) {
+			window.status = "valiation callback for form '" + form.id + "': result = " + result;
+			if(result==true){
+				var btton = "button[type='submit']";
+				jQuery(btton).html("{:db_to_html text='电子邮件发送中……':}");
+				jQuery(btton).attr("disabled",true);
+				//alert(jQuery(btton).attr("disabled"));
+			}
+		}
+		
+		var valid = new Validation('frm_magazine_share', {immediate : true,useTitles:true, onFormValidate : formCallback});
+			
+		Validation.add('validate-email-confirm-que', 'Your confirmation email does not match your first email, please try again.', function(v){
+				return (v == $F('customers_email'));
+			});
+</script>

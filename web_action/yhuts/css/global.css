@@ -1,0 +1,17 @@
+@charset "utf-8";
+/* CSS Document */
+/*=======================================================公共样式======================================================*/
+body,div,form,img,ul,ol,li,dl,dt,dd,p,tr,td,input,em,a,ol{margin: 0; padding: 0; border: 0;}
+h1,h2,h3,h4,h5,h6,p{ margin:0; padding:0;  }
+input{ color:#999999; font:12px/1.5 tahoma,arial,宋体;  }
+
+body{ font:12px/1.5 tahoma,arial,宋体; color:#333;line-height:22px; position:relative; background:#ffeabd;}
+img{ border:0px; font-size:0px; display:block;}
+ul,li,ol{ list-style:none; }
+em{ font-style:normal;}
+a{text-decoration:none; color:#333; outline:none;}
+a:hover{ text-decoration:underline; outline:none;}
+
+.clearfix{display:block;zoom:1;}
+.clearfix:after{display:block;clear:both;height:0;font-size:0;visibility:hidden;content:"";}
+i{ font-style:normal;}

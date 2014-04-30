@@ -1,0 +1,9 @@
+@charset "gb2312";
+/* CSS Document */
+.category_desc{height:30px;line-height:30px;}
+.titleSmall{background:url(/image/nav/user_bg10.gif) repeat-x;border:0;border-bottom:0;color:#fff;}
+.titleSmall h3{color:#fff;}
+.moduleRow{background-color:#fff;}
+.moduleRowOver {background-color:#fffee9;}
+#dataTable td{border:0;}
+

@@ -1,0 +1,547 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>2014春节旧金山旅游_春节旧金山旅游线路_春节旧金山旅游报价_Usitrip走四方旅游网</title>
+<meta content="走四方美国华人旅行社独家推出2014春节旧金山旅游线路,带您畅游渔人码头,九曲花街,金门大桥;闲游美景胜地,享受无拘无束的人生." name="Description">
+<meta content="2014旧金山旅游,春节旧金山旅游,春节旧金山购物,春节旧金山旅游多少钱" name="Keywords">
+<link href="css/main.css"  rel="stylesheet" type="text/css" />
+<link href="css/css.css"  rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" language="javascript" src="/web_action/js/getParameter.js"></script>
+<script type="text/javascript">
+function $(id){
+	return typeof id === "string" ? document.getElementById(id) : id;
+}
+function $$(oParent, elem){
+	return (oParent || document).getElementsByTagName(elem);
+}
+function $$$(oParent, sClass){
+	var aElem = $$(oParent, '*');
+	var aClass = [];
+	var i = 0;
+	for(i=0;i<aElem.length;i++)if(aElem[i].className == sClass)aClass.push(aElem[i]);
+	return aClass;
+}
+function Alert(){
+	this.initialize.apply(this, arguments);
+}
+Object.extend = function(destination, source){
+    for (var property in source) {
+        destination[property] = source[property];
+    }
+    return destination;
+};
+Alert.prototype = {
+	initialize : function(obj, frame, onEnd){
+		if($(obj)){
+			var _this = this;
+			this.obj = $(obj);
+			this.frame = frame;
+			this.oEve(onEnd);
+			this.oTitle = this.onEnd.title;
+			this.oContent = this.onEnd.content;
+			this.iWidth = this.onEnd.width;
+			this.iHeight = this.onEnd.height;
+			this.iTop = this.onEnd.top;
+			this.iLeft = this.onEnd.left;
+			this.iFixed = this.onEnd.fixed;
+			this.iClose = this.onEnd.close;
+			this.obj.onclick = function(){_this.create(),_this.backg();};
+			window.onresize = function(){_this.backg();};
+		}
+	},
+	create : function(){
+		this.oDiv = document.createElement('div');
+		this.oAlert_backg = document.createElement('div');
+		this.oAlert_frame = document.createElement('div');
+		this.oTop_l = document.createElement('div');
+		this.oTop_c = document.createElement('div');
+		this.oTop_r = document.createElement('div');
+		this.oCon = document.createElement('div');
+		this.oCon_l = document.createElement('div');
+		this.oCon_c = document.createElement('div');
+		this.oCon_r = document.createElement('div');
+		this.oBot_l = document.createElement('div');
+		this.oBot_c = document.createElement('div');
+		this.oBot_r = document.createElement('div');
+		this.oDiv.id = this.frame;
+		this.oAlert_backg.className = 'alert_backg';
+		this.oAlert_frame.className = 'alert_frame';
+		this.oTop_l.className = 'top_l';
+		this.oTop_c.className = 'top_c';
+		this.oTop_r.className = 'top_r';
+		this.oCon.className = 'con';
+		this.oCon_l.className = 'con_l';
+		this.oCon_c.className = 'con_c';
+		this.oCon_r.className = 'con_r';
+		this.oBot_l.className = 'bot_l';
+		this.oBot_c.className = 'bot_c';
+		this.oBot_r.className = 'bot_r';
+		document.body.appendChild(this.oDiv);
+		this.box = $(this.frame);
+		this.box.appendChild(this.oAlert_backg);
+		this.box.appendChild(this.oAlert_frame);
+		this.oFra = $$$(this.box, 'alert_frame')[0];
+		this.oFra.appendChild(this.oTop_l);
+		this.oFra.appendChild(this.oTop_c);
+		this.oFra.appendChild(this.oTop_r);
+		this.oFra.appendChild(this.oCon);
+		this.oFra.appendChild(this.oBot_l);
+		this.oFra.appendChild(this.oBot_c);
+		this.oFra.appendChild(this.oBot_r);
+		this.oCone = $$$(this.box, 'con')[0];
+		this.oCone.appendChild(this.oCon_l);
+		this.oCone.appendChild(this.oCon_c);
+		this.oCone.appendChild(this.oCon_r);
+		this.tit = $(this.frame);
+		this.con = $$$(this.tit, 'con_c')[0];
+		this.oAlert_tit = document.createElement('div');
+		this.oAlert_con = document.createElement('div');
+		this.oH2 = document.createElement('h2');
+		this.oAlert_tit.className = 'alert_tit';
+		this.oAlert_con.className = 'alert_con';
+		if(this.oTitle != ""){
+			this.con.appendChild(this.oAlert_tit);
+			this.con.appendChild(this.oAlert_con);
+			this.oAlert_tit = $$$(this.tit, 'alert_tit')[0];
+			this.oH2.innerHTML = this.oTitle;
+			this.oAlert_tit.appendChild(this.oH2);
+		}
+		this.content();
+		this.width();
+		this.height();
+		this.top();
+		this.left();
+		this.fixed();
+		this.close();
+		this.Top = this.oFra.offsetTop;
+		this.oFra.style.top = (this.Top - 40) +'px';
+		this.oFra.style.marginTop = 0;
+		this.sMove(this.oFra, {top:this.Top, opacity:100});
+		this.sMove(this.oBackg, {opacity:50});
+	},
+	oEve: function(onEnd){
+        this.onEnd = {};
+        Object.extend(this.onEnd, onEnd || {});
+    },
+	content : function(){
+		this.conent = $$$(this.tit, 'alert_con')[0];
+		this.conent == undefined ? this.con.innerHTML = this.oContent : this.conent.innerHTML = this.oContent;
+		this.oButton = $$(this.tit, 'button');
+		var i = 0;
+		var _this = this;
+		for(i=0;i<this.oButton.length;i++)this.oButton[i].onclick = function(){_this.em.onclick()};
+	},
+	width : function(){
+		this.oBackg = $$$(this.tit, 'alert_backg')[0];
+		this.oFrame = $$$(this.tit, 'alert_frame')[0];
+		this.oCon = $$$(this.oFrame, 'con')[0];
+		this.oTop_c = $$$(this.oFrame, 'top_c')[0];
+		this.oCon_c = $$$(this.oFrame, 'con_c')[0];
+		this.oBot_c = $$$(this.oFrame, 'bot_c')[0];
+		this.oAlert_tit = $$$(this.oFrame, 'alert_tit')[0];
+		this.oAlert_con = $$$(this.oFrame, 'alert_con')[0];
+		if(this.iWidth != ""){
+			this.oFrame.style.width = parseInt(this.iWidth) +'px';
+			this.oFrame.style.marginLeft = -parseInt(this.iWidth) / 2 +'px';
+			this.oTop_c.style.width = parseInt(this.iWidth) - 10 +'px';
+			this.oCon_c.style.width = parseInt(this.iWidth) - 10 +'px';
+			this.oBot_c.style.width = parseInt(this.iWidth) - 10 +'px';
+			this.oAlert_tit.style.width = parseInt(this.iWidth) - 12 +'px';
+			this.oAlert_con.style.width = parseInt(this.iWidth) - 10 +'px';
+		}
+	},
+	height : function(){
+		if(this.iHeight != ""){
+			this.oFrame.style.height = parseInt(this.iHeight) +'px';
+			this.oFrame.style.marginTop = -parseInt(this.iHeight) / 2 +'px';
+			this.oCon.style.height = parseInt(this.iHeight) - 10 +'px';
+			this.oAlert_con.style.height = parseInt(this.iHeight) - 40 +'px';
+		}
+	},
+	top : function(){
+		if(this.iTop != "")this.oFrame.style.top = parseInt(this.iTop) +'px',this.oFrame.style.marginTop = 0;
+	},
+	left : function(){
+		if(this.iLeft != "")this.oFrame.style.left = parseInt(this.iLeft) +'px',this.oFrame.style.marginLeft = 0;
+	},
+	backg : function(){
+		this.oScrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+		this.oScrollWidth = document.documentElement.scrollWidth || document.body.scrollWidth;
+		this.oBackg.style.width = document.documentElement.clientWidth + (this.oScrollWidth - document.documentElement.clientWidth) +'px'
+		this.oBackg.style.height = document.documentElement.clientHeight + (this.oScrollHeight - document.documentElement.clientHeight) +'px'
+	},
+	fixed : function(){
+		if(this.iFixed == "fixed"){
+			var _this = this;
+			this.oFrame.style.position = 'fixed';
+			this.oAlert_tit.style.cursor = 'move';
+			this.oAlert_tit.onmousedown = function(e){
+				var _thisE = this;
+				this.oEvent = e || event;
+				this.X = this.oEvent.clientX - _this.oFrame.offsetLeft;
+				this.Y = this.oEvent.clientY - _this.oFrame.offsetTop;
+				document.onmousemove = function(e){
+					this.oEvent = e || event;
+					this.L = this.oEvent.clientX - _thisE.X;
+					this.T = this.oEvent.clientY - _thisE.Y;
+					if(this.L < 0){
+						this.L = 0;
+					}else if(this.L > document.documentElement.clientWidth - _this.oFrame.offsetWidth){
+						this.L = document.documentElement.clientWidth - _this.oFrame.offsetWidth
+					}
+					if(this.T < 0){
+						this.T = 0;
+					}else if(this.T > document.documentElement.clientHeight - _this.oFrame.offsetHeight){
+						this.T = document.documentElement.clientHeight - _this.oFrame.offsetHeight;
+					}
+					_this.oFrame.style.left = this.L + 'px';
+					_this.oFrame.style.top = this.T + 'px';
+					_this.oFrame.style.margin = 0;
+					return false;
+				}
+				document.onmouseup = function(){
+					document.onmouseup = null;
+					document.onmousemove = null;
+				};
+				return false;
+				
+			};
+			if(this.oFrame){
+				if(!-[1,] && !window.XMLHttpRequest){
+					document.documentElement.style.textOverflow = "ellipsis";
+					this.oFrame.style.position = "absolute";
+					this.oFrame.style.setExpression("top", "eval(documentElement.scrollTop + " + this.oFrame.offsetTop + ') + "px"');
+				}
+			}
+		}
+	},
+	close : function(){
+		if(this.iClose == "close" && this.oTitle != ""){
+			var _this = this;
+			this.clos = $$$(this.tit, 'alert_tit')[0];
+			var oEm = document.createElement('em');
+			this.clos.appendChild(oEm);
+			this.em = $$(this.tit, 'em')[0];
+			this.em.onmouseover = function(){_this.em.className = 'hove';};
+			this.em.onmouseout = function(){_this.em.className = '';};
+			this.em.onclick = function(){
+				_this.sMove(_this.oFra, {top:(_this.Top - 40), opacity:0},function(){
+					document.body.removeChild(_this.em.parentNode.parentNode.parentNode.parentNode.parentNode);
+				});
+				_this.sMove(_this.oBackg, {opacity:0});
+			}
+		}
+	},
+	getStyle : function(obj, attr)
+	{
+		return obj.currentStyle?obj.currentStyle[attr]:getComputedStyle(obj, false)[attr];
+	},
+	sMove : function(obj, json, onEnd){
+		var _this = this;
+		clearInterval(obj.timer);
+		obj.timer = setInterval(function(){
+			_this.dMove(obj, json, onEnd);
+		},30);
+	},
+	dMove : function(obj, json, onEnd){
+		this.attr = '';
+		this.bStop = true;
+		
+		for(this.attr in json){
+			this.iCur = 0;			
+			this.attr == 'opacity' ? this.iCur = parseInt(parseFloat(this.getStyle(obj, this.attr))*100) : this.iCur = parseInt(this.getStyle(obj, this.attr));
+			this.iSpeed = (json[this.attr] - this.iCur) / 7;
+			this.iSpeed = this.iSpeed > 0 ? Math.ceil(this.iSpeed) : Math.floor(this.iSpeed);			
+			if(json[this.attr] != this.iCur)this.bStop = false;
+			if(this.attr == 'opacity'){
+				obj.style.filter = 'alpha(opacity:' + (this.iCur + this.iSpeed) +')';
+				obj.style.opacity = (this.iCur + this.iSpeed ) / 100;
+			}else{
+				obj.style[this.attr] = this.iCur + this.iSpeed + 'px';
+			}
+		}
+		if(this.bStop){
+			clearInterval(obj.timer);			
+			if(onEnd)onEnd();
+		}
+	}
+};
+window.onload = function(){
+	new Alert('but', 'box', {
+		title : '活动详情',
+		content : '<div class="size">1.活动时间：2013年12月9日-2014年1月31日<br>2.20% OFF：最低折扣为20%是团号为LA235-3157的线路，其它线路优惠情况如具体线路显示。<br>3.免费旅游：部分线路享有买2送1或买2送2的免费旅游名额，具体见线路详细说明。<br>4.早订优惠：在指定日期之前预订并付款，行程金额满1000美元即可享受每笔订单的折扣优惠。<br>&nbsp;&nbsp;&nbsp;&nbsp;2013年12月20日24点之前预订并付款，享受 $58 优惠，优惠码：CJ58；<br>&nbsp;&nbsp;&nbsp;&nbsp;2014年1月5日24点之前预订并付款，享受 $38 优惠，优惠码：CJ38；<br>&nbsp;&nbsp;&nbsp;&nbsp;2014年1月20日24点之前预订并付款，享受 $28 优惠，优惠码：CJ28；<br>5.早订优惠订单中不包含20%OFF（即团号为LA235-3157）的线路。<br>6.此优惠活动不与其它优惠同享。<br>7.活动时间及优惠时间均以洛杉矶时间为准。<br>8.最终解释权归走四方旅游网站所有。</div><div class="but"></div>',
+		width : '',
+		height : '',
+		top : '',
+		left : '',
+		fixed : '',
+		close : 'close'
+	});
+};
+</script>
+</head>
+
+<body >
+<div id="header_bg" >
+  <div id="header">
+    <h1><a href="http://www.usitrip.com/" target="_blank"><img src="images/logo.gif" /></a></h1>
+    <dl>
+      <dt>美加免费：1-888-887-2816   中国：4006-333-926</dt>
+      <dd>
+        <ul>
+          <li><a href="http://www.usitrip.com/ " target="_blank">首页</a></li>
+          <li><a href="http://www.usitrip.com/meidonglvyou/packages/" target="_blank">美东</a></li>
+          <li><a href="http://www.usitrip.com/meixilvyou/packages/" target="_blank">美西</a></li>
+          <li><a href="http://www.usitrip.com/xiaweiyilvyou/packages/" target="_blank">夏威夷</a></li>
+          <li><a href="http://www.usitrip.com/jianadalvyou/packages/" target="_blank">加拿大</a></li>
+          <li><a href="http://www.usitrip.com/ouzhoulvyou/packages/" target="_blank">欧洲</a></li>
+          <li><a href="http://www.usitrip.com/qianzheng/" target="_blank">签证</a></li>
+          <li><a href="http://www.usitrip.com/jiudianyuding/" target="_blank">酒店</a></li>
+          <li style="padding-right:0; background-image:none;"><a href="http://www.usitrip.com/jiebantongyou/" >结伴同游</a></li>
+        </ul>
+      </dd>
+    </dl>
+  </div>
+</div>
+
+  <div id="warp">   
+        <div class="content">
+        	<div class="nav" id="San_Francisco" name="San_Francisco">
+            <img src="images/nav.jpg" border="0" usemap="#Map2" />
+            <map name="Map2" id="Map2">
+              <area shape="rect" coords="20,10,131,188" href="index.html#Los_Angeles" />
+              <area shape="rect" coords="134,7,280,186" href="new_york.html#New_York" />
+              <area shape="rect" coords="286,6,420,185" href="san_francisco.html#San_Francisco" />
+              <area shape="rect" coords="433,10,578,180" href="las_vegas.html#Las_Vegas" />
+              <area shape="rect" coords="582,12,706,178" href="washington.html#Washington" />
+              <area shape="rect" coords="726,11,854,179" href="boston.html#Boston" />
+              <area shape="rect" coords="870,6,996,176" href="hawaii.html#Hawaii" />
+            </map>
+        </div>
+        	<h1 >旧金山旅游 <span>活动时间：2013.12.9-2014.1.31<a href="javascript:;" id="but" class="xiangqing">活动详情>></a></span></h1>
+            <div class="introduce">
+            	<img class="fl" src="images/in_03.jpg" width="192px" height="112px" />
+                <p>
+                	<span>旧金山春节旅游</span><br />
+	春节到旧金山旅游，畅游渔人码头、九曲花街、金门大桥、斯坦佛大学、硅谷科技、艺术博物馆、中国城；作为美国境内第二大中国城的旧金山唐人街，有很多中国特色的店铺，每年都会有庆祝中国新年的盛会；春节去旧金山，带上一颗好玩的心，享受无拘无束的人生。
+                </p>
+            </div>
+                <dl class="special clear">
+                    <dt class="fl">
+                     <b></b>
+                        <a href="http://www.usitrip.com/jiujinshan-youshengmeidi-luoshanji-lasi-daxiagu-9d-lvyou.html" target="_blank"><img src="images/pic01_02.jpg" alt="旧金山,优胜美地,洛杉矶,拉斯维加斯,大峡谷/西峡谷,环球影城九日浪漫游(洛杉矶酒店免费升级)"></a>
+                        <strong class="f14" title="旧金山,优胜美地,洛杉矶,拉斯维加斯,大峡谷/西峡谷,环球影城九日浪漫游(洛杉矶酒店免费升级)
+"><a href="http://www.usitrip.com/jiujinshan-youshengmeidi-luoshanji-lasi-daxiagu-9d-lvyou.html" target="_blank">旧金山,优胜美地,洛杉矶拉斯维加斯,大峡谷/西峡谷,环球影城九日浪漫游</a></strong>
+      </dt>
+                    <dd class="fl">
+                        <h3 class="f16 gray3 "><a href="http://www.usitrip.com/jiujinshan-youshengmeidi-luoshanji-lasi-daxiagu-9d-lvyou.html" target="_blank">旧金山,优胜美地,洛杉矶<br />
+拉斯维加斯,大峡谷/西峡谷,环球影城九日浪漫游……</a><span class="f12 gray6">旅游团号：<i id="model_3105">GZ217-3199</i></span></h3>
+                        <p> <span class="bold">出团时间∶</span> 2013年4月1日 - 2014年3月31日  周日/周四/周六</p>
+                        <p> <span class="bold">城市景点：</span>体验特色叮当车，饱览美西怡人风景 (洛杉矶酒店免费升级)</p>
+                        <p>
+                         <span class="bold">行程特色：</span><br />
+    旧金山国际机场接机，洛杉矶国际机场送机。独家深度体验搭乘叮当车欣赏旧金山宜人景色。三晚拉斯维加斯，尽享拉斯维加斯不夜城的魅力，充裕时间让您小试手气或是驻足于绚丽的拉斯维加斯大道上。独家免费登上108层塔顶...
+                        </p>
+                        <strong class="f20">
+                          <p ><i id="">$536.00</i>起<span class="f12"> 起</span></p>
+                          <a href="http://www.usitrip.com/jiujinshan-youshengmeidi-luoshanji-lasi-daxiagu-9d-lvyou.html" class="btn" target="_blank"></a>
+                       </strong>
+                    </dd>
+             </dl>
+            <div class="list clear">
+            	<h2>都市风光</h2>
+                 <img src="images/pic02.jpg"  width="218px" height="135px"/>
+                 <ul>
+                 	<li>
+                    <a target="_blank" href="http://www.usitrip.com/jiujinshan-youshengmeidi-luoshanji-lasi-daxiagu-xixiagu-huanqiuyingcheng-haiyangshijie-dishinileyuan-11d-lvyou.html" id="title_3100">旧金山,拉斯维加斯,硅谷,西峡谷,棕榈泉八日精华游</a>
+                     <span class="price">【买二送一】<i id="new_price_3100">$401.00</i>起</span>
+                     </li>
+                     <li>
+                    <a target="_blank" href="http://www.usitrip.com/jiujinshan-youshengmeidi-luoshanji-lasi-daxiagu-9d-lvyou.html
+" id="title_3105">旧金山,拉斯维加斯,硅谷,西峡谷,棕榈泉八日精华游</a>
+                     <span class="price">【买二送一】<i id="new_price_3105">$401.00</i>起</span>
+                     </li>
+                     <li>
+                    <a target="_blank" href="http://www.usitrip.com/jiujinshan-daxiagu-youshengmeidi-huanqiuyingcheng-7d-lvyou.html
+" id="title_2339">旧金山,拉斯维加斯,硅谷,西峡谷,棕榈泉八日精华游</a>
+                     <span class="price">【买二送一】<i id="new_price_2339">$401.00</i>起</span>
+                     </li>
+                     <li style=" border:none;">
+                    <a target="_blank" href="http://www.usitrip.com/jiujinshan-daxiagu-youshengmeidi-shiquyou-7d-lvyou.html
+" id="title_2341">旧金山,拉斯维加斯,硅谷,西峡谷,棕榈泉八日精华游</a>
+                     <span class="price">【买二送一】<i id="new_price_2341">$401.00</i>起</span>
+                     </li>
+                 </ul>
+            </div>
+            <div class="list clear">
+            	<h2>自然风光</h2>
+                 <img src="images/pic03.jpg"  width="218px" height="135px"/>
+                 <ul>
+                 	<li>
+                    <a target="_blank" href="http://www.usitrip.com/jiujinshan-youshengmeidi-luoshanji-lasi-daxiaguxixiagu-7d-lvyou.html
+" id="title_3048">旧金山,拉斯维加斯,硅谷,西峡谷,棕榈泉八日精华游</a>
+                     <span class="price">【买二送一】<i id="new_price_3048">$401.00</i>起</span>
+                     </li>
+                     <li>
+                    <a target="_blank" href="http://www.usitrip.com/jiujinshan-xixiagu-youshengmeidi-huanqiuyingcheng-7d-lvyou.html
+" id="title_2344">旧金山,拉斯维加斯,硅谷,西峡谷,棕榈泉八日精华游</a>
+                     <span class="price">【买二送一】<i id="new_price_2344">$401.00</i>起</span>
+                     </li>
+                     <li>
+                    <a target="_blank" href="http://www.usitrip.com/lasiweijiasi-jiujinshan-daxiagu-dishini-9d-lvyou.html
+" id="title_653">旧金山,拉斯维加斯,硅谷,西峡谷,棕榈泉八日精华游</a>
+                     <span class="price">【买二送一】<i id="new_price_653">$401.00</i>起</span>
+                     </li>
+                     <li style=" border:none;">
+                    <a target="_blank" href="http://www.usitrip.com/jiujinshan-lasiweijiasi-daxiagu-dishini-9d-lvyou.html
+" id="title_656">旧金山,拉斯维加斯,硅谷,西峡谷,棕榈泉八日精华游</a>
+                     <span class="price">【买二送一】<i id="new_price_656">$401.00</i>起</span>
+                     </li>
+                 </ul>
+            </div>
+         	<div class="list clear">
+            	<h2>文化之旅</h2>
+                 <img src="images/pic04.jpg"  width="218px" height="135px"/>
+                 <ul>
+                 	<li>
+                    <a target="_blank" href="http://www.usitrip.com/jiujinshan-youshengmeidi-luoshanji-lasi-daxiaguxixiagu-6d-lvyou.html
+" id="title_3046">旧金山,拉斯维加斯,硅谷,西峡谷,棕榈泉八日精华游</a>
+                     <span class="price">【买二送一】<i id="new_price_3046">$401.00</i>起</span>
+                     </li>
+                     <li>
+                    <a target="_blank" href="http://www.usitrip.com/jiujinshan-sitanfudaxue-youshengmeidi-luoshanji-huanqiuyingcheng--5d-lvyou.html
+" id="title_3090">旧金山,拉斯维加斯,硅谷,西峡谷,棕榈泉八日精华游</a>
+                     <span class="price">【买二送一】<i id="new_price_3090">$401.00</i>起</span>
+                     </li>
+                     <li>
+                    <a target="_blank" href="http://www.usitrip.com/jiujinshan-lasiweijiasi-sitanfu-daxiagu-6d-lvyou.html
+" id="title_646">旧金山,拉斯维加斯,硅谷,西峡谷,棕榈泉八日精华游</a>
+                     <span class="price">【买二送一】<i id="new_price_646">$401.00</i>起</span>
+                     </li>
+                     <li style=" border:none;">
+                    <a target="_blank" href="http://www.usitrip.com/jiujinshan-xixiagu-youshengmeidi-dishini-9d-lvyou.html
+" id="title_2357">旧金山,拉斯维加斯,硅谷,西峡谷,棕榈泉八日精华游</a>
+                     <span class="price">【买二送一】<i id="new_price_2357">$401.00</i>起</span>
+                     </li>
+                 </ul>
+            </div>
+            <div class="list clear">
+            	<h2>摄影之旅</h2>
+                 <img src="images/pic05.jpg"  width="218px" height="135px"/>
+                 <ul>
+                 	<li>
+                    <a target="_blank" href="http://www.usitrip.com/jiujinshan-sitanfu-youshengmeidi-luoshanji-huanqiuyingcheng-lasi-daxiagu-xixiagu-8d-lvyou.html
+" id="title_3094">旧金山,拉斯维加斯,硅谷,西峡谷,棕榈泉八日精华游</a>
+                     <span class="price">【买二送一】<i id="new_price_3094">$401.00</i>起</span>
+                     </li>
+                     <li>
+                    <a target="_blank" href="http://www.usitrip.com/jiujinshan-lasiweijiasi-sitanfu-xixiagu-6d-lvyou.html
+" id="title_2338">旧金山,拉斯维加斯,硅谷,西峡谷,棕榈泉八日精华游</a>
+                     <span class="price">【买二送一】<i id="new_price_2338">$401.00</i>起</span>
+                     </li>
+                     <li>
+                    <a target="_blank" href="http://www.usitrip.com/lasiweijiasi-jiujinshan-daxiagu-dishini-8d-lvyou.html
+" id="title_652">旧金山,拉斯维加斯,硅谷,西峡谷,棕榈泉八日精华游</a>
+                     <span class="price">【买二送一】<i id="new_price_652">$401.00</i>起</span>
+                     </li>
+                     <li style=" border:none;">
+                    <a target="_blank" href="http://www.usitrip.com/jiujinshan-lasiweijiasi-daxiagu-youshengmeidi-7d-lvyou.html
+" id="title_654">旧金山,拉斯维加斯,硅谷,西峡谷,棕榈泉八日精华游</a>
+                     <span class="price">【买二送一】<i id="new_price_654">$401.00</i>起</span>
+                     </li>
+                 </ul>
+            </div>
+       <!-- <div class="list clear">
+            	<h2>都市海角</h2>
+                 <img src="images/pic06.jpg"  width="218px" height="135px"/>
+                 <ul>
+                 	<li>
+                    <a target="_blank" href="http://www.usitrip.com/jiujinshan-lasiweijiasi-guigu-zonglvquan-8d-lvyou.html" id="title_283">旧金山,拉斯维加斯,硅谷,西峡谷,棕榈泉八日精华游</a>
+                     <span class="price">【买二送一】<i id="new_price_2124">$401.00</i>起</span>
+                     </li>
+                     <li>
+                    <a target="_blank" href="http://www.usitrip.com/jiujinshan-lasiweijiasi-guigu-zonglvquan-8d-lvyou.html" id="title_283">旧金山,拉斯维加斯,硅谷,西峡谷,棕榈泉八日精华游</a>
+                     <span class="price">【买二送一】<i id="new_price_2124">$401.00</i>起</span>
+                     </li>
+                     <li>
+                    <a target="_blank" href="http://www.usitrip.com/jiujinshan-lasiweijiasi-guigu-zonglvquan-8d-lvyou.html" id="title_283">旧金山,拉斯维加斯,硅谷,西峡谷,棕榈泉八日精华游</a>
+                     <span class="price">【买二送一】<i id="new_price_2124">$401.00</i>起</span>
+                     </li>
+                     <li style=" border:none;">
+                    <a target="_blank" href="http://www.usitrip.com/jiujinshan-lasiweijiasi-guigu-zonglvquan-8d-lvyou.html" id="title_283">旧金山,拉斯维加斯,硅谷,西峡谷,棕榈泉八日精华游</a>
+                     <span class="price">【买二送一】<i id="new_price_2124">$401.00</i>起</span>
+                     </li>
+                 </ul>
+            </div>-->    
+            <div class="list clear">
+            	<h2>名品购物</h2>
+                 <img src="images/pic07.jpg"  width="218px" height="135px"/>
+                 <ul>
+                 	<li>
+                    <a target="_blank" href="http://www.usitrip.com/jiujinshan-youshengmeidi-luoshanji-lasi-daxiagu-xixiagu-huanqiuyingcheng-haiyangshijie-10d-lvyou.html
+" id="title_3099">旧金山,拉斯维加斯,硅谷,西峡谷,棕榈泉八日精华游</a>
+                     <span class="price">【特惠】<i id="new_price_3099">$401.00</i>起</span>
+                     </li>
+                     <li>
+                    <a target="_blank" href="http://www.usitrip.com/jiujinshan-xixiagu-youshengmeidi-zonglvquan-9d-lvyou.html
+" id="title_2359">旧金山,拉斯维加斯,硅谷,西峡谷,棕榈泉八日精华游</a>
+                     <span class="price">【买二送一】<i id="new_price_2359">$401.00</i>起</span>
+                     </li>
+                     <li style=" border:none;">
+                    <a target="_blank" href="http://www.usitrip.com/jiujinshan-daxiagu-youshengmeidi-zonglvquan-7d-lvyou.html
+" id="title_2342">旧金山,拉斯维加斯,硅谷,西峡谷,棕榈泉八日精华游</a>
+                     <span class="price">【买二送一】<i id="new_price_2342">$401.00</i>起</span>
+                     </li>
+                     
+                 </ul>
+            </div>
+            <div class="list clear">
+            	<h2>亲子旅游</h2>
+                 <img src="images/pic08.jpg"  width="218px" height="135px"/>
+                 <ul>
+                 	<li>
+                    <a target="_blank" href="http://www.usitrip.com/jiujinshan-sitanfu-youshengmeidi-luoshanji-zhutigongyuan-lasi-daxiagu-xixiagu-7d-lvyou.html
+" id="title_3093">旧金山,拉斯维加斯,硅谷,西峡谷,棕榈泉八日精华游</a>
+                     <span class="price">【买二送一】<i id="new_price_3093">$401.00</i>起</span>
+                     </li>
+                     <li>
+                    <a target="_blank" href="http://www.usitrip.com/lasiweijiasi-jiujinshan-daxiagu-dishini-7d-lvyou.html
+" id="title_651">旧金山,拉斯维加斯,硅谷,西峡谷,棕榈泉八日精华游</a>
+                     <span class="price">【买二送一】<i id="new_price_651">$401.00</i>起</span>
+                     </li>
+                     <li>
+                    <a target="_blank" href="http://www.usitrip.com/jiujinshan-xixiagu-youshengmeidi-dishini-8d-lvyou.html
+" id="title_2351">旧金山,拉斯维加斯,硅谷,西峡谷,棕榈泉八日精华游</a>
+                     <span class="price">【买二送一】<i id="new_price_2351">$401.00</i>起</span>
+                     </li>
+                     <li style=" border:none;">
+                    <a target="_blank" href="http://www.usitrip.com/jiujinshan-luoshanji-haiyangshijie-huanqiuyingcheng-6d-lvyou.html
+" id="title_2337">旧金山,拉斯维加斯,硅谷,西峡谷,棕榈泉八日精华游</a>
+                     <span class="price">【买二送一】<i id="new_price_2337">$401.00</i>起</span>
+                     </li>
+                 </ul>
+            </div>
+           
+        </div>
+	</div>	
+    <div class="footer">
+    <img src="images/footer_pic.jpg" border="0" usemap="#Map" />
+    <map name="Map" id="Map">
+      <area shape="rect" coords="49,18,261,204" href="http://weibo.com/usitrip2013" target="_blank" />
+    </map><br />
+<br />
+
+     <a href="http://www.usitrip.com/" target="_blank">首页</a>　|　<a href="http://www.usitrip.com/about/about.html" target="_blank">关于我们</a>　|　<a href="http://www.usitrip.com/change_plan.php" target="_blank">变更取消和退款条例</a>　|　<a href="http://www.usitrip.com/faq_question.php" target="_blank">常见问题</a>　|　<a href="http://www.usitrip.com/payment.php" target="_blank">付款方法</a>　|　<a href="http://www.usitrip.com/about/contact.html" target="_blank">联系我们</a>　|　<a href="http://www.usitrip.com/privacy-policy.php" target="_blank">隐私条例</a>　|　<a href="http://www.usitrip.com/affiliate.php" target="_blank">网站联盟 </a> <br>
+      Copyright@ 2008-2013, Usitrip.com. All rights reserved. 
+</div>	
+<script type="text/javascript" src="/web_action/topicprice.js"></script>
+<div style="display:none;"> 
+  <script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F481c83edbcfea1442dc1221c1996da04' type='text/javascript'%3E%3C/script%3E"));
+</script> 
+</body>
+</html>

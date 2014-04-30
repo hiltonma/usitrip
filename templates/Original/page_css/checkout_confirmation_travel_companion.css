@@ -1,0 +1,17 @@
+@charset "gb2312";
+
+
+TD.infoBoxHeading{border-left:1px solid #a2cbf4;border-right:1px solid #a2cbf4;padding-left:25px;background:url(/image/nav/carts.gif) repeat-x left -173px;height:36px;line-height:36px;border-top:1px solid #a2cbf4;}
+TD.blue{border-top:3px solid #2686ff;height:32px;line-height:32px;background:url(/image/nav/tab_button_20130723.gif) repeat-x left -115px;}
+TD.infoBoxHeading .heading_bg{font-size:14px;color:#134da3;border:none;background:none;margin:0;padding:0;}
+TD.infoBoxHeading .head_note{margin-top:0;padding-right:15px;}
+.infoBox_outer{border-left:1px solid #a2cbf4;border-right:1px solid #a2cbf4;}
+.infoBox_new{border:none;}
+
+a.btn{display:block;height:29px;line-height:29px;width:66px;padding-left:30px;background:url(/image/nav/carts.gif) no-repeat left -30px;color:#4d4d4d;}
+a.btn span{display:block;float:right;background:url(/image/nav/carts.gif) no-repeat right -30px;height:29px;width:10px;}
+
+.subbtn input{border:none;width:99px;height:40px;line-height:40px;background:url(/image/nav/carts.gif) no-repeat left -59px;text-align:left;padding-left:17px;font-family:microsoft YaHei;font-weight:bold;font-size:16px;color:#fff;text-shadow:0 1px 1px #111;border-radius:4px;cursor:pointer;}
+
+.validation-advice { width:430px;}
+

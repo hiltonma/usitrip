@@ -1,0 +1,75 @@
+#######网站上线步骤##################################################
+#
+#第一步： 先设置老站不能下订单
+#第二步： 把老站数据导到新站这边来
+#第三步： 设置老站的域名重定向
+#	1 打开 internet 管理器：运行 inetrngr ，选中网站
+#        2 点击IIS分组下的HTTP Redirect，进入重定向设置
+#        3 设置好之后，重起一下IIS，即可生效
+#
+#在上线操作文档中添加以下两点：
+#1.删除旧订单，将新订单号设置为60001开始，订单数据删除方法如下：
+
+TRUNCATE TABLE `orders`;
+ALTER TABLE `orders` AUTO_INCREMENT=60001;
+
+TRUNCATE TABLE `orders_eticket_log`;
+ALTER TABLE `orders_eticket_log` AUTO_INCREMENT=1001;
+
+TRUNCATE TABLE `orders_message`;
+ALTER TABLE `orders_message` AUTO_INCREMENT=1001;
+
+DELETE FROM `orders_other_service_status`;
+
+DELETE FROM `orders_owner_detail`;
+DELETE FROM `orders_payment_account_remark_history`;
+DELETE FROM `orders_payment_history`;
+DELETE FROM `orders_problems_track_history`;
+DELETE FROM `orders_products`;
+DELETE FROM `orders_products_address_transfer`;
+DELETE FROM `orders_products_address_transfer_history`;
+DELETE FROM `orders_products_airport_transfer`;
+DELETE FROM `orders_products_airport_transfer_history`;
+DELETE FROM `orders_products_attributes`;
+DELETE FROM `orders_products_departure_location_history`;
+DELETE FROM `orders_products_download`;
+DELETE FROM `orders_products_extended_hotel`;
+DELETE FROM `orders_products_extended_hotel_history`;
+DELETE FROM `orders_products_orders_change`;
+DELETE FROM `orders_products_orders_change_history`;
+DELETE FROM `orders_products_orders_change_reason`;
+DELETE FROM `orders_products_payment_commnets`;
+DELETE FROM `orders_products_payment_history`;
+DELETE FROM `orders_products_transfer`;
+DELETE FROM `orders_product_eticket`;
+DELETE FROM `orders_product_flight`;
+DELETE FROM `orders_product_flight_history`;
+DELETE FROM `orders_product_update_history`;
+DELETE FROM `orders_remark`;
+DELETE FROM `orders_remove_log`;
+DELETE FROM `orders_return_visit`;
+DELETE FROM `orders_session_info`;
+DELETE FROM `orders_settlement_batch_info`;
+DELETE FROM `orders_settlement_information`;
+DELETE FROM `orders_settlement_update_history`;
+DELETE FROM `orders_status_history`;
+DELETE FROM `orders_total`;
+DELETE FROM `orders_travel_companion`;
+DELETE FROM `order_products_departure_guest_histoty`;
+
+DELETE FROM `ad_source_clicks_stores`;
+DELETE FROM `affiliate_sales`;
+DELETE FROM `affiliate_clickthroughs`;
+
+
+#2.上线后要及时处理赠老客户积分。在products_input.php?action=old_customers_handsel_points
+积分赠送：19482067
+
+#3.自动更新一次老客户的Coupon Code.(在销售联盟的)生成代码中的优惠码页面；
+#4.解除第一道门的密码。
+#5.通知Sofia去修改各个供应商后台的登录账号！
+#6.给供应商后台还原密码审查机制。providers_login.php line 20
+#7.分别下单测试支付宝、网银在线和信用卡功能。注：下单后把金额改成0.01美元去测试即可！
+
+
+

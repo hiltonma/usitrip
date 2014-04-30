@@ -1,0 +1,26 @@
+@charset "utf-8";
+/* 专题样式 */
+
+#main { width:100%; height:auto; background:url(../images/banner_bg.gif) repeat-x #fef8e6; }
+.banner ,.menu ,.content ,.copyright { margin:0 auto; width:977px; }
+.banner{ width:977px; height:281px;}
+.red{  color:#ff8a00; font-size:14px; font-weight:bold; }
+#miaodian1{ width:975px; margin-top:8px; }
+#miaodian1 .title{ background:url(../images/title1.gif) no-repeat ; width:373px; height:35px;  margin-left:22px;}
+.title2{background:url(../images/title2.gif) no-repeat ; width:373px; height:35px;  margin-left:22px;}
+.title3{background:url(../images/title3.gif) no-repeat ; width:603px; height:35px;  margin-left:22px;}
+.cont{width:975px; border: solid 1px #e5d4b2; height: auto;  background:#fff; }
+.cont .txt1{ width:407px; height:28px; background:#0077c2; color:#fff; line-height:28px; font-size:14px ; font-weight:bold; margin:12px 0 8px 30px; }
+.cont .txt4{ width:830px; height:28px; background:#0077c2; color:#fff; line-height:28px; font-size:14px ; font-weight:bold; margin:12px 0 8px 30px; }
+.cont .txt4 img{ float:left;}
+.txt5{width:830px; height:52px; background:#0077c2; color:#fff;   margin:12px 0 8px 30px;   }
+.txt5 span{ line-height:25px; font-size:14px ; font-weight:bold;}
+
+
+.cont .txt5 img{ background:url(../images/jt3.gif) no-repeat; float:left; height:52px; width:29px;}
+.txt1 img{ float:left; }
+
+.cont .txt2{margin:8px 0 8px 30px; line-height:22px;}
+.cont h1{margin:8px 0 8px 30px; font-size:14px;line-height:22px; }
+.cont a img{ margin:8px 0 8px 30px;}
+#fixed-top{ position:fixed; right:-1px; top:0; _position:absolute; _top:expression(eval(document.documentElement.scrollTop)); z-index:1;}

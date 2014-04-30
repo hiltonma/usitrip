@@ -1,0 +1,211 @@
+{:include file="tours-talent-contest/header.tpl.htm":}
+
+<div id="wrap">
+
+    <div class="daren">
+
+        <div class="darenTop"><img src="image/daren/daren_top_1.jpg" alt="{:db_to_html text=旅游体验师大赛:}" usemap="#Map" /><map name="Map" id="Map"><area shape="rect" coords="27,6,231,57" href="{:$severname:}" alt="" /></map></div>
+        <div class="darenTop"><img src="image/daren/daren_top_2.jpg" alt="{:db_to_html text=旅游体验师大赛:}" /></div>
+        <div class="darenTop"><img src="image/daren/daren_top_3.jpg" alt="{:db_to_html text=旅游体验师大赛:}" usemap="#Map2" /><map name="Map2" id="Map2"><area shape="rect" coords="401,50,517,93" href="trip_player.php?mod=apply" alt="" /></map></div>
+        
+        <div class="darenNav">
+            <div class="darenNavLeft"></div>
+            <ul>
+                <li><a href="trip_player.php">{:db_to_html text=活动首页:}</a></li>
+                <li class="on"><a href="trip_player.php?mod=list">{:db_to_html text=所有作品:}</a></li>
+                <li><a href="trip_player.php?mod=prize">{:db_to_html text=奖项设置:}</a></li>                
+                {:if $customer_id > 0:}
+                <li><a href="trip_player.php?mod=homepage&id={:$customer_id:}">{:db_to_html text=个人主页:}</a></li>
+                {:/if:}
+                <li><a href="trip_player.php?mod=finalists"><span>{:db_to_html text=获奖名单:}</span></a></li>
+            </ul>
+            
+            <div class="darenNavRight"></div>
+        </div>
+        
+        <div class="backAllArticle"><a href="trip_player.php?mod=homepage&id={:$back_user_list_url:}"><<{:db_to_html text=返回所有作品:}</a></div>
+        
+        <div class="darenUserLeft">
+            <div class="userPhoto"><a href="trip_player.php?mod=homepage&id={:$data.account.customers_id:}">{:if $data.account.customers_face != '':}<img src="images/face/{:$data.account.customers_face:}" width="114"  height="114"/>{:else:}<img src="image/touxiang_no-sex.gif" />{:/if:}</a></div>
+            <p><a href="trip_player.php?mod=homepage&id={:$data.account.customers_id:}" title="{:db_to_html text=$data.account.customers_firstname:}">{:db_to_html text=$data.account.customers_firstname|truncate:10:}</a></p>
+        </div>
+        
+        <div class="darenArticle">
+            <h1>{:db_to_html text=$data.works.works_title:}</h1>
+            <div class="articleInfo">
+                <div class="left">
+                    {:db_to_html text=发布时间：:}<span>{:$data.works.works_addtime|date_format:'%Y-%m-%d':}</span>{:db_to_html text=浏览量：:}<span>{:$data.works.works_readnum:}</span>{:db_to_html text=评论：:}<span>{:$data.works.works_commnum:}</span>
+                </div>
+                <div class="right">
+                    <span class="vote" id="votes_{:$data.works.works_id:}"><label>{:db_to_html text=当前票数:}</label>{:$data.works.works_votes:}</span></div>
+            </div>
+            
+            <div class="share">
+                
+                <div class="bshare-custom">
+                    {:db_to_html text=分享到：:}
+                    <a title="{:db_to_html text=分享到新浪微博:}" class="bshare-sinaminiblog">{:db_to_html text=新浪微博:}</a>
+                    <a title="{:db_to_html text=分享到开心网:}" class="bshare-kaixin001">{:db_to_html text=开心网:}</a>
+                    <a title="{:db_to_html text=分享到人人网:}" class="bshare-renren">{:db_to_html text=人人网:}</a>
+                    <a title="{:db_to_html text=分享到facebook:}" class="bshare-facebook">{:db_to_html text=facebook:}</a>
+                    <a title="{:db_to_html text=分享到twitter:}" class="bshare-twitter">{:db_to_html text=twitter:}</a>                   
+                    <a title="{:db_to_html text=分享到qq空间:}" class="bshare-qzone">{:db_to_html text=qq空间:}</a>
+                    <a title="{:db_to_html text=更多平台:}" class="bshare-more">{:db_to_html text=更多:}>></a>
+                </div>
+               
+            </div>
+            
+            <div class="mainCon">
+               <!--<p class="center">{:if $works_frontcover != '':}<img src="{:$works_frontcover:}" style="max-width:600px"/>{:/if:}</p>-->
+              {:db_to_html text=$data.works.works_content:}
+            </div>
+            
+            <div class="btnCenter articleBot">
+                
+            </div>
+            
+            <div class="pageNav">
+                {:if $prev_works.works_id:}
+                <a href="trip_player.php?mod=view&id={:$prev_works.works_id:}" class="pagePre">{:db_to_html text=上一篇：:}{:db_to_html text=$prev_works.works_title|truncate:20:"...":}</a>				
+                {:else:}
+                <a href="javascript:" class="pagePre">{:db_to_html text=上一篇：没有了:}</a>
+                {:/if:}
+                {:if $next_works.works_id:}
+                <a href="trip_player.php?mod=view&id={:$next_works.works_id:}" class="pageNext">{:db_to_html text=下一篇：:}{:db_to_html text=$next_works.works_title:}</a>
+                {:else:}
+                <a href="javascript:" class="pageNext">{:db_to_html text=下一篇：没有了:}</a>
+                {:/if:}
+            </div>
+            
+        </div>
+        
+        <div class="articleComment">
+            <h2>{:db_to_html text=网友评论:} <span>({:$comment_total:}{:db_to_html text=条:})</span></h2>
+            
+            <div class="list">
+                <ul>
+                {:section name=i loop=$comment:}
+                    <li class="first">
+                        <p class="info">{:$comment[i].flows:}{:db_to_html text=楼:}<span>{:$comment[i].works_comment_addtime:} {:db_to_html text=评论:}</span>{:db_to_html text=网友:} {:if $comment[i].works_comment_author_id:}<a href="trip_player.php?mod=homepage&id={:$comment[i].works_comment_author_id:}">{:db_to_html text=$comment[i].works_comment_author:}</a>{:else:}{:db_to_html text=游客:}{:/if:}</p>
+                        <p>{:db_to_html text=$comment[i].works_comment_content:}</p>
+                    </li>
+                    
+                {:/section:}        
+                </ul>
+                <ul>
+                    {:$pages:}
+                </ul>
+            </div>
+            
+            <div class="add">
+            <form action="" method="post" id="addcomment" name="addcomment" onsubmit="return validateFormData()">
+                <div class="top"><b>{:db_to_html text=评论:}</b><span>{:db_to_html text=网友:} {:$customer_id_links:}&nbsp;&nbsp;</span></div>
+                
+                <textarea class="textarea" name="comment" id="comment" {:if $charset eq 'gb2312':}onblur="this.value = simplized(this.value);"{:/if:} {:if $charset eq 'big5':}onblur="this.value = traditionalized(this.value);"{:/if:}></textarea>
+                <div class="verif">
+                
+                    <input type="text" name="visual_verify_code" id="vvcInput" class="text" />     
+                    <img src="{:$RandomImg:}"  onclick="updateVVC()" align="absmiddle" id="vvc" width="75" height="25"  alt="{:db_to_html text=看不清?点击换一张图。:}" title="{:db_to_html text=看不清?点击换一张图:}。"/> <a href="javascript:;" onclick="updateVVC()">{:db_to_html text=看不清?点击换一张图。:}</a>
+                </div>
+
+                <div class="btnCenter">
+                    <a href="javascript:" class="btn btnOrange"><button type="submit">{:db_to_html text=评论:}</button></a>
+                </div>
+                <input type="hidden" name="action" value="addcomment" />
+                <input type="hidden" name="action" value="addcomment" />
+            </form>
+            </div>
+        
+        
+        </div>
+        
+        
+        <div class="darenBot"></div>
+        
+    </div>
+                
+</div>
+<!-- bshare 相关js -->
+<script language="javascript" type="text/javascript" src="http://www.bshare.cn/button.js#uuid=97319&amp;style=-1"></script>
+<script language="javascript" type="text/javascript" src="http://www.bshare.cn/bshareC1.js"></script> 
+
+<script type="text/javascript">
+jQuery(function(){
+if(typeof(bShare)!='undefined'){
+bShare.addEntry({
+title: "{:db_to_html text=#走四方旅游体验师大赛#:}",
+ summary:"{:db_to_html text=正在火热举行中，@走四方网:} {:db_to_html text=微博即可参与，IPAD2大奖等你拿，更有机会免费畅游美国，:}"
+})
+}
+});
+function updateVVC(){
+        var url = "<?php echo $_SERVER["REQUEST_URI"] ?>";
+        jQuery.get(url,{"action":"updateVVC",'random':Math.random()},function(data){
+                    jQuery("#vvc").attr('src', data); 
+           });
+}
+function validateFormData(){
+    if (jQuery("#comment").val() == ''){
+        alert('{:db_to_html text=请填写您的评论内容!:}');
+        jQuery("#comment").focus();
+        return false;
+    }
+    if (jQuery("#vvcInput").val() == ''){
+        alert('{:db_to_html text=请填写您验证码!:}');
+        jQuery("#vvcInput").focus();
+        return false;
+    }
+}
+
+</script>
+<div class="popup" id="PopupLoading">
+<table width="100%" cellpadding="0" cellspacing="0" border="0" class="popupTable">
+<tr><td class="topLeft"></td><td class="side"></td><td class="topRight"></td></tr><tr><td class="side"></td><td class="con">
+ 
+  <div class="popupCon" id="PopupLoadingCon" style="width:400px;">
+    <div class="success">
+        <div class="promptImg"><img src="image/ajax-loading.gif"  style="20px 0 0 20px" ></div>
+        <div class="prompt">{:db_to_html text=投票中...:}</div>
+        <div class="btnCenter"><a class="" href="javascript:;" id="PopupLoadingClose"></a></div>
+    </div>
+</div>
+</td><td class="side"></td></tr><tr><td class="botLeft"></td><td class="side"></td><td class="botRight"></td></tr>
+</table>
+</div>
+
+<div class="popup" id="PopupSuccess">
+<table width="100%" cellpadding="0" cellspacing="0" border="0" class="popupTable">
+<tr><td class="topLeft"></td><td class="side"></td><td class="topRight"></td></tr><tr><td class="side"></td><td class="con">
+ 
+  <div class="popupCon" id="PopupSuccessCon"  style=" width:400px">
+     <div class="success">
+        <div class="promptImg"><img src="image/success.jpg" /></div>
+        <div class="prompt">{:db_to_html text=投票成功！:}</div>
+        <div class="btnCenter"><a class="btn btnGrey" href="javascript:;" id="PopupSuccessClose"><button type="submit">{:db_to_html text=关闭:}</button></a></div>
+    </div>
+  
+    
+  </div>
+  
+</td><td class="side"></td></tr><tr><td class="botLeft"></td><td class="side"></td><td class="botRight"></td></tr>
+</table>
+</div>
+ <div class="popup" id="PopupError">
+<table width="100%" cellpadding="0" cellspacing="0" border="0" class="popupTable">
+<tr><td class="topLeft"></td><td class="side"></td><td class="topRight"></td></tr><tr><td class="side"></td><td class="con">
+ 
+  <div class="popupCon" id="PopupErrorCon"  style=" width:400px">
+    <div class="success">
+        <div class="promptImg"><img src="image/popup_alert.jpg" /></div>
+        <div class="prompt">{:db_to_html text=投票失败！:}<br />{:db_to_html text=您今天已经超过投票限制。:}</div>
+        <div class="btnCenter"><a class="btn btnGrey" href="javascript:;" id="PopupErrorClose"><button type="submit">{:db_to_html text=关闭:}</button></a></div>
+    </div>
+    
+  </div>
+  
+</td><td class="side"></td></tr><tr><td class="botLeft"></td><td class="side"></td><td class="botRight"></td></tr>
+</table>
+</div>
+
+</body>
+</html>

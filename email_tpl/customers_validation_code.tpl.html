@@ -1,0 +1,62 @@
+<!--<table cellspacing="0" cellpadding="0" border="0" width="650" align="center" style="border:2px solid #4164d8;font-size:12px;font-family:Arial,SimSun;color:#333333;">
+	<tr>
+		<td style="padding:10px 10px 20px;">
+		<p style="padding-left:5px; padding-top:10px; font-size:14px;">
+	您的走四方验证码是：
+	<b>
+		{VCode}
+	</b>
+	<br />
+	您现在只需要点击下面的连接，激活您的账号，就可以畅享快乐行程。
+	<br />
+	<a href="{ValidationUrl}" style="color:#108BCD; font-size:12px; font-family:Arial, Helvetica, sans-serif; text-decoration:none"
+	target="_blank">
+		{ValidationUrl}
+	</a>
+</p>
+		
+		<p>&nbsp;</p></td>
+	</tr>
+	<tr>
+		<td style="padding:10px 10px 20px;">
+			<div style="margin:0;padding:0;line-height:20px;font-size:14px;font-family:'SimSun'">
+				<p style="margin:0;padding:0;">{CONFORMATION_EMAIL_FOOTER}</p>
+			</div>
+		</td>
+	</tr>
+</table>-->
+<table cellpadding="0" cellspacing="0" width="668" align="center" style="border-left:1px solid #c1d6e2;border-right:1px solid #c1d6e2;">
+	<tbody>
+    	<tr>
+        	<td>
+                <table width="634" cellspacing="0" cellpadding="0" border="0" align="center">
+                    <tbody>
+                        <tr>
+                          <td align="right" style="font-size:12px; padding-top:8px; color:#d5d5d5;"><a style="padding:0 10px;color:#848484; text-decoration:none;" href="{HTTP_SERVER}/login.php">登录</a>|<a style="padding:0 10px;color:#848484; text-decoration:none;" href="{HTTP_SERVER}/faq_question.php">帮助中心</a></td>
+                        </tr>
+                        <tr>
+                          <td><p style="font-size:14px; margin:0; padding:10px 0 30px 0; color:#2a2a2a;"><strong>亲爱的会员：<span>{CustomerName}</span>您好！</strong></p>
+                                    
+                            <p style="font-size:14px;margin:0; color:#4d4d4d; line-height:26px; padding-bottom:30px;">您已在<a style="color:#1974dc; text-decoration:underline;" target="_blank" href="{HTTP_SERVER}">走四方旅游网</a>申请注册！<br>
+                              为了确认您能收到旅游邀请函、行程确认信、参团凭证等重要邮件，请即刻激活您的账户！</p>
+                                    
+                                    <p style="font-size:14px;margin:0; color:#4d4d4d; line-height:26px; padding-bottom:30px;">您的走四方验证码是：<strong style="color:#ff6600; font-weight:bold; font-size:16px;">{VCode}</strong>（注意区分大小写）<br>
+                                    </p>
+                                    
+                                  <p style="color:#808080; padding-bottom:30px;margin:0; font-size:12px; line-height:22px;">您也可点击下面的链接，直接激活账户，开启属于您的快乐之旅！<br>
+                                    （若链接无法直接点击，也可将其复制到浏览器中访问激活）<br>
+                                  <a style="color:#1974dc; text-decoration:underline; line-height:18px;" href="{ValidationUrl}">{ValidationUrl}</a></p>
+                              <p style="color:#808080; padding-bottom:30px;margin:0; font-size:12px; line-height:22px; border-top:1px dotted #cdcdcd; padding-top:20px;">激活邮箱还能帮您更安全地保护帐户。<br>如有任何疑问，请点击<a style="color:#1974dc; text-decoration:underline;" href="{HTTP_SERVER}/contact_us.php">这里</a>，或直接拨打24小时全球热线电话与我们联系，谢谢!</p>
+                                  </td>
+                        </tr>
+                        <tr>
+                         <td><a style="width:85px; height:23px; display:block;" href="{HTTP_SERVER}/faq_question.php"><img width="85" height="23" border="0" alt="更多帮助" src="{images}/morehelp.gif"></a>           <p style="color:#666666; font-size:12px; padding:12px 0; margin:0;">注：此为系统邮件，请勿回复！
+                        
+                  </p></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,584 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link rel="stylesheet" type="text/css" href="css/global.css" />
+<link rel="stylesheet" type="text/css" href="css/daren.css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/global.js"></script>
+<script language="JavaScript" type="text/javascript" src="includes/big5_gb-min.js"></script>
+
+<title>index</title>
+</head>
+
+<body >
+<div class="main">
+    <div class="searchBox">
+        <h2 class="conSwitchH">搜索条件</h2>
+        <div class="searchCon conSwitchCon">
+            <table width="700" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td width="65">文章标题：</td><td><input type="text" class="textAll" style="width:300px;" /></td><td width="65">作者姓名：</td><td><input type="text" class="textAll" /></td>
+                </tr>
+                <tr>
+                    <td>发表时间：</td><td><input type="text" class="textTime" /> 至 <input type="text" class="textTime" /></td><td>审核：</td><td><select><option>通过</option><option>未通过</option></select></td><td></td>
+                </tr>
+                <tr>
+                    <td colspan="6" class="btnCenter">
+                        <button class="btn btnOrange">搜 索</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div>
+        <h2 class="conSwitchH">作品列表</h2>
+
+        <div class="minCon conSwitchCon">
+
+            <div>
+
+                  
+<table class="listTable" id="ListTable" border="0" cellpadding="0" cellspacing="0">
+<tbody>
+    <tr>
+        <th width="40">选择</th><th>文章标题</th><th>作者</th><th>发表时间</th><th>浏览量</th><th>评论数</th><th>得票</th><th>审核</th><th style="padding-left:40px;">操作</th>
+    </tr>
+    <tr id="Basic_1">
+        <td><input type="checkbox" /></td><td>土耳其进行曲－卡里耶博物馆</td><td>wangxiaoqiang</td><td>2011-02-10 09:00:10</td><td>152</td><td>5</td><td>10</td><td class="pass">通过</td><td><a href="#" class="showMore">查看详细</a></td>
+    </tr>
+    
+    
+    <tr class="trDetail" id="Detail_1">
+        <td colspan="9" class="TabselectBg">
+
+        <div class="darenInfo">
+            <h2 class="conSwitchH">基本信息</h2>
+            <div class="con conSwitchCon">
+                <p><label>中文姓名：</label><input type="text" class="textAll" value="王小强"/><label>手机：</label><input type="text" class="textAll" value="15108202022"/></p>
+                <p><label>国家/地区：</label><select><option>中国</option></select> <select><option>四川</option></select> <select><option>成都</option></select></p>
+                <p><label>详细地址：</label><input type="text" class="textAll textLong" value="一环路南四段208号" size="50" /></p>
+                <p><label>博客地址：</label><input type="text" class="textAll textLong" value="http://labellog.sina.com.cn/rodfa" size="50"/></p>
+                <p><label>职业：&nbsp;</label><input type="text" class="textAll" value="医生"/></p>
+                <p><label style="width:150px;">记忆中最深刻的旅行地：</label><input type="text" class="textAll" value="夏威夷"/></p>
+                <p><label style="width:150px;">最想要去的旅行地：</label><input type="text" class="textAll" value="加利福尼亚"/></p>
+                <div class="allArticle">
+                    <div class="leftTitle">作品列表：</div>
+                    <div class="rightCon">
+                        <table cellspacing="0" cellpadding="0" border="0" class="detailTable">
+                            <tr>
+                                <th>标题</th><th>发表时间</th><th>当前票数</th><th>浏览量</th>
+                            </tr>
+                        
+                            <tr>
+                                <td><a href="">六日旧金山,玻璃桥,世界赌城两晚住大道,绝妙组合超值经济游</a></td>
+                                <td>2011-06-21 16:44</td>
+                                <td>10</td>
+                                <td>25</td>
+                            </tr>
+                            
+                            <tr>
+                                <td><a href="">玻璃桥,世界赌城两晚住大道,绝妙组合超值经济游</a></td>
+                                <td>2011-06-21 16:44</td>
+                                <td>25</td>
+                                <td>20</td>
+                            </tr>
+                            
+                            <tr>
+                                <td><a href="">世界赌城两晚住大道,绝妙组合超值经济游</a></td>
+                                <td>2011-06-21 16:44</td>
+                                <td>10</td>
+                                <td>25</td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="6" align="right">
+                                    <div class="page">
+                                        <a class="go first" href=""></a>
+                                        <a class="go pre" href="">上一页</a>
+                                        <span>&nbsp;|<a href="">1</a>|<b>2</b>|<a href="">3</a>|<a href=""> ... </a>|<a href="">10</a>|</span>
+                                        <a class="go next" href="">下一页</a>
+                                        <a class="go last" href=""></a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            <h2 class="conSwitchH">作品信息</h2>
+            <div class="con conSwitchCon">
+                <p>
+                    <label>作品标题：</label><input type="text" class="textAll textLong" value="土耳其进行曲－卡里耶博物馆" />
+                </p>
+                <div>
+                    <label>作品封面：</label>
+                    <dl class="uploadImg">
+                        <dt><img src="images/daren_1.jpg" /></dt>
+                        <dd><a href="">重新上传</a></dd>
+                    </dl>
+                </div>
+                <div class="allArticle">
+                    <div class="leftTitle">内容：</div>
+                    <div class="rightCon">
+                        <img src="images/editor.jpg" />
+                    </div>
+                </div>
+
+            </div>
+            
+            <h2 class="conSwitchH">作品评论</h2>
+            <div class="con conSwitchCon">
+                <table cellspacing="0" cellpadding="0" border="0" class="detailTable" style="width:800px;">
+                    <tr>
+                        <th width="500">评论内容</th><th>发表时间</th><th>评论人</th><th>操作</th>
+                    </tr>
+                
+                    <tr>
+                        <td>非常好的一篇文章，对我非常有帮助，希望有更多的好文章发布。</td>
+                        <td>2011-06-21 16:44</td>
+                        <td>上网的鱼</td>
+                        <td><a href="">删除</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>这个网站不错，继续发好文章。</td>
+                        <td>2011-06-21 16:44</td>
+                        <td>天天想上网</td>
+                        <td><a href="">删除</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>非常好的一篇文章，对我非常有帮助，希望有更多的好文章发布。</td>
+                        <td>2011-06-21 16:44</td>
+                        <td>上网的鱼</td>
+                        <td><a href="">删除</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>这个网站不错，继续发好文章。</td>
+                        <td>2011-06-21 16:44</td>
+                        <td>天天想上网</td>
+                        <td><a href="">删除</a></td>
+                    </tr>
+                    <tr>
+                        <td>非常好的一篇文章，对我非常有帮助，希望有更多的好文章发布。非常好的一篇文章，对我非常有帮助，希望有更多的好文章发布。非常好的一篇文章，对我非常有帮助，希望有更多的好文章发布。非常好的一篇文章，对我非常有帮助，希望有更多的好文章发布。非常好的一篇文章，对我非常有帮助，希望有更多的好文章发布。非常好的一篇文章，对我非常有帮助，希望有更多的好文章发布。</td>
+                        <td>2011-06-21 16:44</td>
+                        <td>上网的鱼</td>
+                        <td><a href="">删除</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>这个网站不错，继续发好文章。</td>
+                        <td>2011-06-21 16:44</td>
+                        <td>天天想上网</td>
+                        <td><a href="">删除</a></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="4" align="right">
+                            <div class="page">
+                                <a class="go first" href=""></a>
+                                <a class="go pre" href="">上一页</a>
+                                <span>&nbsp;|<a href="">1</a>|<b>2</b>|<a href="">3</a>|<a href=""> ... </a>|<a href="">10</a>|</span>
+                                <a class="go next" href="">下一页</a>
+                                <a class="go last" href=""></a>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            
+            
+            <div class="btnCenter"><button class="btn btnOrange">审核通过</button><button class="btn btnOrange">更新内容</button><button class="btn btnGrey">关 闭</button></div>
+        </div>
+        
+        </td>
+    </tr>
+
+<tr id="Basic_2">
+<td><input type="checkbox" /></td><td>土耳其进行曲－卡里耶博物馆</td><td>wangxiaoqiang</td><td>2011-02-10 09:00:10</td><td>152</td><td>5</td><td>10</td><td class="noPass">未通过</td><td><a href="#" class="showMore">查看详细</a></td>
+</tr>
+<tr class="trDetail" id="Detail_2">
+<td colspan="9" class="TabselectBg">
+
+        <div class="darenInfo">
+            <h2 class="conSwitchH">基本信息</h2>
+            <div class="con conSwitchCon">
+                <p><label>中文姓名：</label><input type="text" class="textAll" value="王小强"/><label>手机：</label><input type="text" class="textAll" value="15108202022"/></p>
+                <p><label>国家/地区：</label><select><option>中国</option></select> <select><option>四川</option></select> <select><option>成都</option></select></p>
+                <p><label>详细地址：</label><input type="text" class="textAll textLong" value="一环路南四段208号" size="50" /></p>
+                <p><label>博客地址：</label><input type="text" class="textAll textLong" value="http://labellog.sina.com.cn/rodfa" size="50"/></p>
+                <p><label>职业：&nbsp;</label><input type="text" class="textAll" value="医生"/></p>
+                <p><label style="width:150px;">记忆中最深刻的旅行地：</label><input type="text" class="textAll" value="夏威夷"/></p>
+                <p><label style="width:150px;">最想要去的旅行地：</label><input type="text" class="textAll" value="加利福尼亚"/></p>
+                <div class="allArticle">
+                    <div class="leftTitle">作品列表：</div>
+                    <div class="rightCon">
+                        <table cellspacing="0" cellpadding="0" border="0" class="detailTable">
+                            <tr>
+                                <th>标题</th><th>发表时间</th><th>当前票数</th><th>浏览量</th>
+                            </tr>
+                        
+                            <tr>
+                                <td><a href="">六日旧金山,玻璃桥,世界赌城两晚住大道,绝妙组合超值经济游</a></td>
+                                <td>2011-06-21 16:44</td>
+                                <td>10</td>
+                                <td>25</td>
+                            </tr>
+                            
+                            <tr>
+                                <td><a href="">玻璃桥,世界赌城两晚住大道,绝妙组合超值经济游</a></td>
+                                <td>2011-06-21 16:44</td>
+                                <td>25</td>
+                                <td>20</td>
+                            </tr>
+                            
+                            <tr>
+                                <td><a href="">世界赌城两晚住大道,绝妙组合超值经济游</a></td>
+                                <td>2011-06-21 16:44</td>
+                                <td>10</td>
+                                <td>25</td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="6" align="right">
+                                    <div class="page">
+                                        <a class="go first" href=""></a>
+                                        <a class="go pre" href="">上一页</a>
+                                        <span>&nbsp;|<a href="">1</a>|<b>2</b>|<a href="">3</a>|<a href=""> ... </a>|<a href="">10</a>|</span>
+                                        <a class="go next" href="">下一页</a>
+                                        <a class="go last" href=""></a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            <h2 class="conSwitchH">作品信息</h2>
+            <div class="con conSwitchCon">
+                <p>
+                    <label>作品标题：</label><input type="text" class="textAll textLong" value="土耳其进行曲－卡里耶博物馆" />
+                </p>
+                <div class="allArticle">
+                    <div class="leftTitle">作品列表：</div>
+                    <div class="rightCon">
+                        <img src="images/editor.jpg" />
+                    </div>
+                </div>
+            </div>
+            <div class="btnCenter"><button class="btn btnOrange">更 新</button><button class="btn btnGrey">关 闭</button></div>
+        </div>
+        
+        </td>
+</tr>
+
+<tr id="Basic_3">
+<td><input type="checkbox" /></td><td>土耳其进行曲－卡里耶博物馆</td><td>wangxiaoqiang</td><td>2011-02-10 09:00:10</td><td>152</td><td>5</td><td>10</td><td class="pass">通过</td><td><a href="#" class="showMore">查看详细</a></td>
+</tr>
+<tr class="trDetail" id="Detail_3">
+<td colspan="9" class="TabselectBg">
+
+        <div class="darenInfo">
+            <h2 class="conSwitchH">基本信息</h2>
+            <div class="con conSwitchCon">
+                <p><label>中文姓名：</label><input type="text" class="textAll" value="王小强"/><label>手机：</label><input type="text" class="textAll" value="15108202022"/></p>
+                <p><label>国家/地区：</label><select><option>中国</option></select> <select><option>四川</option></select> <select><option>成都</option></select></p>
+                <p><label>详细地址：</label><input type="text" class="textAll textLong" value="一环路南四段208号" size="50" /></p>
+                <p><label>博客地址：</label><input type="text" class="textAll textLong" value="http://labellog.sina.com.cn/rodfa" size="50"/></p>
+                <p><label>职业：&nbsp;</label><input type="text" class="textAll" value="医生"/></p>
+                <p><label style="width:150px;">记忆中最深刻的旅行地：</label><input type="text" class="textAll" value="夏威夷"/></p>
+                <p><label style="width:150px;">最想要去的旅行地：</label><input type="text" class="textAll" value="加利福尼亚"/></p>
+                <div class="allArticle">
+                    <div class="leftTitle">作品列表：</div>
+                    <div class="rightCon">
+                        <table cellspacing="0" cellpadding="0" border="0" class="detailTable">
+                            <tr>
+                                <th>标题</th><th>发表时间</th><th>当前票数</th><th>浏览量</th>
+                            </tr>
+                        
+                            <tr>
+                                <td><a href="">六日旧金山,玻璃桥,世界赌城两晚住大道,绝妙组合超值经济游</a></td>
+                                <td>2011-06-21 16:44</td>
+                                <td>10</td>
+                                <td>25</td>
+                            </tr>
+                            
+                            <tr>
+                                <td><a href="">玻璃桥,世界赌城两晚住大道,绝妙组合超值经济游</a></td>
+                                <td>2011-06-21 16:44</td>
+                                <td>25</td>
+                                <td>20</td>
+                            </tr>
+                            
+                            <tr>
+                                <td><a href="">世界赌城两晚住大道,绝妙组合超值经济游</a></td>
+                                <td>2011-06-21 16:44</td>
+                                <td>10</td>
+                                <td>25</td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="6" align="right">
+                                    <div class="page">
+                                        <a class="go first" href=""></a>
+                                        <a class="go pre" href="">上一页</a>
+                                        <span>&nbsp;|<a href="">1</a>|<b>2</b>|<a href="">3</a>|<a href=""> ... </a>|<a href="">10</a>|</span>
+                                        <a class="go next" href="">下一页</a>
+                                        <a class="go last" href=""></a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            <h2 class="conSwitchH">作品信息</h2>
+            <div class="con conSwitchCon">
+                <p>
+                    <label>作品标题：</label><input type="text" class="textAll textLong" value="土耳其进行曲－卡里耶博物馆" />
+                </p>
+                <div class="allArticle">
+                    <div class="leftTitle">作品列表：</div>
+                    <div class="rightCon">
+                        <img src="images/editor.jpg" />
+                    </div>
+                </div>
+            </div>
+            <div class="btnCenter"><button class="btn btnOrange">更 新</button><button class="btn btnGrey">关 闭</button></div>
+        </div>
+        
+        </td>
+</tr>
+
+<tr id="Basic_4">
+<td><input type="checkbox" /></td><td>土耳其进行曲－卡里耶博物馆</td><td>wangxiaoqiang</td><td>2011-02-10 09:00:10</td><td>152</td><td>5</td><td>10</td><td class="pass">通过</td><td><a href="#" class="showMore">查看详细</a></td>
+</tr>
+<tr class="trDetail" id="Detail_4">
+<td colspan="9" class="TabselectBg">
+
+        <div class="darenInfo">
+            <h2 class="conSwitchH">基本信息</h2>
+            <div class="con conSwitchCon">
+                <p><label>中文姓名：</label><input type="text" class="textAll" value="王小强"/><label>手机：</label><input type="text" class="textAll" value="15108202022"/></p>
+                <p><label>国家/地区：</label><select><option>中国</option></select> <select><option>四川</option></select> <select><option>成都</option></select></p>
+                <p><label>详细地址：</label><input type="text" class="textAll textLong" value="一环路南四段208号" size="50" /></p>
+                <p><label>博客地址：</label><input type="text" class="textAll textLong" value="http://labellog.sina.com.cn/rodfa" size="50"/></p>
+                <p><label>职业：&nbsp;</label><input type="text" class="textAll" value="医生"/></p>
+                <p><label style="width:150px;">记忆中最深刻的旅行地：</label><input type="text" class="textAll" value="夏威夷"/></p>
+                <p><label style="width:150px;">最想要去的旅行地：</label><input type="text" class="textAll" value="加利福尼亚"/></p>
+                <div class="allArticle">
+                    <div class="leftTitle">作品列表：</div>
+                    <div class="rightCon">
+                        <table cellspacing="0" cellpadding="0" border="0" class="detailTable">
+                            <tr>
+                                <th>标题</th><th>发表时间</th><th>当前票数</th><th>浏览量</th>
+                            </tr>
+                        
+                            <tr>
+                                <td><a href="">六日旧金山,玻璃桥,世界赌城两晚住大道,绝妙组合超值经济游</a></td>
+                                <td>2011-06-21 16:44</td>
+                                <td>10</td>
+                                <td>25</td>
+                            </tr>
+                            
+                            <tr>
+                                <td><a href="">玻璃桥,世界赌城两晚住大道,绝妙组合超值经济游</a></td>
+                                <td>2011-06-21 16:44</td>
+                                <td>25</td>
+                                <td>20</td>
+                            </tr>
+                            
+                            <tr>
+                                <td><a href="">世界赌城两晚住大道,绝妙组合超值经济游</a></td>
+                                <td>2011-06-21 16:44</td>
+                                <td>10</td>
+                                <td>25</td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="6" align="right">
+                                    <div class="page">
+                                        <a class="go first" href=""></a>
+                                        <a class="go pre" href="">上一页</a>
+                                        <span>&nbsp;|<a href="">1</a>|<b>2</b>|<a href="">3</a>|<a href=""> ... </a>|<a href="">10</a>|</span>
+                                        <a class="go next" href="">下一页</a>
+                                        <a class="go last" href=""></a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            <h2 class="conSwitchH">作品信息</h2>
+            <div class="con conSwitchCon">
+                <p>
+                    <label>作品标题：</label><input type="text" class="textAll textLong" value="土耳其进行曲－卡里耶博物馆" />
+                </p>
+                <div class="allArticle">
+                    <div class="leftTitle">作品列表：</div>
+                    <div class="rightCon">
+                        <img src="images/editor.jpg" />
+                    </div>
+                </div>
+            </div>
+            <div class="btnCenter"><button class="btn btnOrange">更 新</button><button class="btn btnGrey">关 闭</button></div>
+        </div>
+        
+        </td>
+</tr>
+
+<tr id="Basic_5">
+<td><input type="checkbox" /></td><td>土耳其进行曲－卡里耶博物馆</td><td>wangxiaoqiang</td><td>2011-02-10 09:00:10</td><td>152</td><td>5</td><td>10</td><td class="pass">通过</td><td><a href="#" class="showMore">查看详细</a></td>
+</tr>
+<tr class="trDetail" id="Detail_5">
+<td colspan="9" class="TabselectBg">
+
+        <div class="darenInfo">
+            <h2 class="conSwitchH">基本信息</h2>
+            <div class="con conSwitchCon">
+                <p><label>中文姓名：</label><input type="text" class="textAll" value="王小强"/><label>手机：</label><input type="text" class="textAll" value="15108202022"/></p>
+                <p><label>国家/地区：</label><select><option>中国</option></select> <select><option>四川</option></select> <select><option>成都</option></select></p>
+                <p><label>详细地址：</label><input type="text" class="textAll textLong" value="一环路南四段208号" size="50" /></p>
+                <p><label>博客地址：</label><input type="text" class="textAll textLong" value="http://labellog.sina.com.cn/rodfa" size="50"/></p>
+                <p><label>职业：&nbsp;</label><input type="text" class="textAll" value="医生"/></p>
+                <p><label style="width:150px;">记忆中最深刻的旅行地：</label><input type="text" class="textAll" value="夏威夷"/></p>
+                <p><label style="width:150px;">最想要去的旅行地：</label><input type="text" class="textAll" value="加利福尼亚"/></p>
+                <div class="allArticle">
+                    <div class="leftTitle">作品列表：</div>
+                    <div class="rightCon">
+                        <table cellspacing="0" cellpadding="0" border="0" class="detailTable">
+                            <tr>
+                                <th>标题</th><th>发表时间</th><th>当前票数</th><th>浏览量</th>
+                            </tr>
+                        
+                            <tr>
+                                <td><a href="">六日旧金山,玻璃桥,世界赌城两晚住大道,绝妙组合超值经济游</a></td>
+                                <td>2011-06-21 16:44</td>
+                                <td>10</td>
+                                <td>25</td>
+                            </tr>
+                            
+                            <tr>
+                                <td><a href="">玻璃桥,世界赌城两晚住大道,绝妙组合超值经济游</a></td>
+                                <td>2011-06-21 16:44</td>
+                                <td>25</td>
+                                <td>20</td>
+                            </tr>
+                            
+                            <tr>
+                                <td><a href="">世界赌城两晚住大道,绝妙组合超值经济游</a></td>
+                                <td>2011-06-21 16:44</td>
+                                <td>10</td>
+                                <td>25</td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="6" align="right">
+                                    <div class="page">
+                                        <a class="go first" href=""></a>
+                                        <a class="go pre" href="">上一页</a>
+                                        <span>&nbsp;|<a href="">1</a>|<b>2</b>|<a href="">3</a>|<a href=""> ... </a>|<a href="">10</a>|</span>
+                                        <a class="go next" href="">下一页</a>
+                                        <a class="go last" href=""></a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            <h2 class="conSwitchH">作品信息</h2>
+            <div class="con conSwitchCon">
+                <p>
+                    <label>作品标题：</label><input type="text" class="textAll textLong" value="土耳其进行曲－卡里耶博物馆" />
+                </p>
+                <div class="allArticle">
+                    <div class="leftTitle">作品列表：</div>
+                    <div class="rightCon">
+                        <img src="images/editor.jpg" />
+                    </div>
+                </div>
+            </div>
+            <div class="btnCenter"><button class="btn btnOrange">更 新</button><button class="btn btnGrey">关 闭</button></div>
+        </div>
+        
+        </td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+    <td colspan="9" bgcolor="#f5f5f5">
+        <div class="pageNum"><input type="checkbox" />全选&nbsp;&nbsp;&nbsp;
+        操作<select><option>通过</option><option>删除</option></select></div> 
+        <div class="pageNum">每页显示<select><option>20条</option><option>40条</option><option>60条</option></select></div>
+        <div class="page">
+            <a class="go first" href=""></a>
+            <a class="go pre" href="">上一页</a>
+            <span>&nbsp;|<a href="">1</a>|<b>2</b>|<a href="">3</a>|<a href=""> ... </a>|<a href="">10</a>|</span>
+            <a class="go next" href="">下一页</a>
+            <a class="go last" href=""></a>
+        </div>
+    </td>
+</tr>
+</tfoot>
+</table>
+                  
+                  
+
+          </div>
+
+
+
+<script type="text/javascript">
+$(function(){
+    $("#ListTable>tbody>tr:odd").mouseover(function(){$(this).addClass("trHover");}).mouseout(function(){$(this).removeClass("trHover");});
+    $("#ListTable>tbody>tr").each(function(index) {
+        if((index+1)%4 == 0 ){
+            $(this).addClass("trEven");
+        }
+    });
+
+    $("#ListTable>tbody>tr:odd").click(function(){
+        $("tr[id^='Detail_']").hide();
+        
+        
+        var idName = $(this).attr("id");
+        var tempName = idName.substr(idName.indexOf("_"));
+        
+        if($(this).hasClass("trClick")){
+            $("#ListTable>tbody>tr:odd").removeClass("trClick");
+            $("#ListTable>tbody>tr:odd").removeClass("trOut");
+
+            $(this).addClass("trOut");
+            $("#Detail"+tempName).hide();
+        }else{
+            $("#ListTable>tbody>tr:odd").removeClass("trOut");
+            $("#ListTable>tbody>tr:odd").removeClass("trClick");
+            $(this).addClass("trClick");
+            
+            $("#Detail"+tempName).show();
+        }
+        
+        
+    });
+
+});
+ 
+
+
+</script>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

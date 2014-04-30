@@ -1,0 +1,98 @@
+{{include file="head.html"}}
+<div id="body">
+	<div class="crumbs">{{*首页 > 最新发现*}}</div>
+	<h1><a href="javascript:void(0)" class="J-publish publish"></a><a href="{{$nav_index}}" class="myhome myfind"></a><a href="{{$nav_index}}" class="a_all"><span class="title"><i></i>全部游记</span></a></h1>
+	<p class="place uifix"> 
+	{{section name=key loop=$list}}
+	<a href="{{$list[key].href}}">{{$list[key].name}}</a>
+	{{/section}}{{* <a href="#">黄石公园</a> <a href="#">拉斯维加斯</a> <a href="#">洛杉矶</a> <a href="#">纽约</a> <a href="#">华盛顿</a> <a href="#">旧金山</a> <a href="#">主题乐园</a> <a href="#">波士顿</a> <a href="#">自由女神</a> <a href="#">黄石公园</a> <a href="#">拉斯维加斯</a> <a href="#">洛杉矶</a> <a href="#">纽约</a> <a href="#">主题乐园</a> <a href="#">纽约</a> <a href="#">华盛顿</a> <a href="#">旧金山</a> <a href="#">主题乐园</a> <a href="#">波士顿</a> <a href="#">华盛顿</a> <a href="#">旧金山</a> <a href="#">主题乐园</a> <a href="#">波士顿</a> <a href="#">华盛顿</a> <a href="#">旧金山</a> <a href="#">主题乐园</a> <a href="#">波士顿</a> *}}</p>
+	<ul class="piclist uifix">
+		{{section name=key loop=$travel_list}}
+		<li class="J-npc"> <a href="{{$travel_list[key].href}}"> <span class="white f14 font-yahei abs npc_bgt">{{$travel_list[key].travel_notes_title}}</span> <span class="npc_bg hide abs">
+			<p>分享人：{{$travel_list[key].customer_name}}</p>
+			<p>分享时间：{{$travel_list[key].add_time}}[{{$travel_list[key].day_num}}天 {{$travel_list[key].image_number}}张]</p>
+			<p>分享线路：{{$travel_list[key].products_name}}</p>
+			<p>浏览：{{$travel_list[key].read_number}} 喜欢：{{$travel_list[key].like_number}} {{*分享：新浪微博*}}</p>
+			</span> </a> <a href="{{$travel_list[key].href}}"> <img src="{{$travel_list[key].cover_image}}" width="{{$travel_list[key].image_width}}" height="{{$travel_list[key].image_height}}" onerror="this.src='{{$smarty.const.DIR_WS_IMG}}erroimg.jpg'" /> </a> </li>
+		{{/section}}
+	</ul>
+	{{*<div class="pagebar"> <a href="" class="tool">首页</a> <a href="" class="tool">上一页</a> <a href="">1</a> <a href="">2</a> <a href="">3</a> <a href="">4</a> <a href="">5</a> <a href="">6</a> <a href="">7</a> <a href="">8</a> <a href="">9</a> <a href="" class="tool">下一页</a> <a href="" class="tool">末页</a> </div>*}}
+</div>
+<div>
+<input id="currIndex" value="1" type="hidden" />
+<!-- 页面导航 -->
+<input id="pageNo" value="{{$page}}" type="hidden" />
+<input id="totalAlbumNum" value="{{$totalAlbumNum}}" type="hidden" />
+<input id="pageSize" value="{{$pagesize}}" type="hidden"/>
+<input id="userId" value="" type="hidden"/>
+<input id="newHandler" value="" type="hidden"/>
+<div class="lvtu_lineBetween fn-bc mt20 mb20 png24"></div>
+<div id="pagination" class="pagination darkgray"></div>
+</div>
+{{include file="foot.html"}}
+<script src="{{$smarty.const.DIR_WS_JS}}index.js" type="text/javascript"></script> 
+<script type="text/javascript">	
+var pathUpload = "{{$nav_index}}";
+</script> 
+
+
+<script src="{{$smarty.const.DIR_WS_JS}}index-201301041651.js"></script> 
+<script type="text/javascript">
+$(function(){
+	/* 新手引导 */
+	/*var newHandler = $("#newHandler").val();
+	$(".guide_close").click(function(){
+		$(".guide_bg,.guide_cot").hide();
+		var userid =$("#userId").val();
+		var random = new Date().getTime();
+    	var params = {
+    			staus : "1000",
+    			newHandler:newHandler,
+    			userid :userid,
+				random : random
+    	};
+    	
+		$.getJSON("web/updateHandlerStatus.htm", params, function(info) {
+    		 
+	      });
+	});
+	*/
+    var pageNo = $("#pageNo").val();
+    var totalAlbumNum = $("#totalAlbumNum").val();
+    var pageSize = $("#pageSize").val();
+    var lastItemTimeMs = $("#lastItemTimeMs").val();
+    <!-- 初始化分页控件-->
+	$("#pagination").paging(totalAlbumNum, {
+		format : '[<nnnncnnnn>]',
+		perpage : pageSize,
+		page : pageNo ,
+		onSelect : function(page) {
+			<!-- 单击页码操作方法-->
+			if(page == pageNo ){
+				return;
+			}else{
+				var _page = lwkai.getUrlParam('page');
+				var temp = window.location.href.split('page--' + _page),url='';
+				if (temp.length > 1) {
+					url = temp[0] + 'page--' + page + temp[1];
+				} else {
+					var a = temp[0].replace('.html','');
+					a = a.indexOf('index/index/') != -1 ? a : a + 'index/index/';
+					if (a.indexOf('--') != -1) {
+						a += '--page--' + page + '.html';
+					} else {
+						a += 'page--' + page + '.html';
+					}
+					url = a;
+				}
+				window.location.href = url;//pathUpload + "index/index/page--" + page + '.html';
+			}
+			
+		} 
+	});
+	
+	/**最后显示页脚*/
+	$(".qn_footer").css("visibility","visible");
+});
+  </script> 
+</body></html>

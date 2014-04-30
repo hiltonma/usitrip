@@ -1,0 +1,363 @@
+/* usitrip.com 
+ * 2011-07-08
+ * 包含了旅游达人大赛的css */
+
+.daren { width:960px; margin:0 auto 30px; background:url(/image/daren/daren_bg.jpg); overflow:hidden; }
+.darenTop img { display:block; overflow:hidden; }
+.darenBot { clear:both; height:30px; background:url(/image/daren/daren_bot.jpg) 0 bottom no-repeat; }
+.darenNav { height:39px; background:url(/image/daren/daren_nav_bg.jpg) 0 -39px; }
+.darenNavLeft { float:left; width:10px; height:39px; background:url(/image/daren/daren_nav_bg.jpg); }
+.darenNavRight { float:right; width:10px; height:39px; background:url(/image/daren/daren_nav_bg.jpg) 0 -78px; }
+
+/*20111111入围*/
+.darenNav ul{ float:left; width:640px; overflow:hidden;}
+.darenNav li{ float:left; width:114px; height:35px; margin:0 2px; display:inline; padding-top:4px; line-height:35px; font-size:16px; font-weight:bold; text-align:center;}
+.darenNav li a span { color: #cc0000; }
+.darenNav li span:hover { background:none; color: #cc0000;}
+
+/*20111111入围*/	
+
+/*.darenNav li a { float:left; width:114px; height:35px; _height:34px; display:inline; padding-top:4px; line-height:35px; font-size:16px; font-weight:bold; text-align:center; color:#fff; text-decoration: none; }*/
+.darenNav li a { -moz-text-blink: none; -moz-text-decoration-color: -moz-use-text-color; -moz-text-decoration-line: none; -moz-text-decoration-style: solid; color: #FFFFFF; display: inline; float: left; font-size: 16px; font-weight: bold; height: 35px; line-height: 35px; padding-top: 0px; text-align: center; width: 114px; }
+.darenNav li.on { background:url(/image/daren/daren_nav_on.jpg); }
+/*.darenNav li :hover { color:#3774d3; background:url(/image/daren/daren_nav_on.jpg); _text-decoration: none; }*/
+.darenNav li *:hover { background-attachment: scroll; background-clip: border-box; background-color: transparent; background-image: url("/image/daren/daren_nav_on.jpg"); background-origin: padding-box; background-position: 0px -4px; background-repeat: repeat; background-size: auto auto; color: #3774D3; }
+
+.darenNav li.on a { color:#3774d3; }
+.darenNav .share { float:left; width:295px; height:35px; display:inline; padding-top:4px; line-height:35px; font-size:14px; color:#fff; font-weight:bold; }
+.darenNav .bshare-custom { float:right; width:219px; height:27px; margin-top:5px; padding-left:10px; background:url(/image/daren/daren_share_bg.jpg); line-height:27px; font-weight:normal; }
+.darenNav .bshare-custom a { margin-right:2px; *margin-right:9px;
+color:#fff; line-height:27px; _margin-top:5px; }
+.darenNav .bshare-custom .bshare-more { line-height:14px; _line-height:27px; *line-height:18px;
+}
+/*
+.darenInfo{ margin:20px;}
+.darenInfo .left{ float:left; width:520px; margin-left:10px; display:inline; line-height:14px; font-size:12px;}
+.darenInfo .left h1{ font-size:16px; line-height:30px;} 
+.darenInfo .left p{ text-indent:2em; line-height:18px;}
+
+
+.darenInfo .loginForm{ height:200px; margin-left:613px; _margin-left:600px;}
+.darenInfo .loginForm .loginC{ margin:-5px 6px 0 0; _margin:0 16px 0 0; border-left: 1px #abb0d0 solid; border-right:1px #abb0d0 solid; padding:5px 0 10px 0; background: #FFF;}
+.darenInfo .loginForm .loginB{ height:5px; background:url(/image/daren/daren_login_buttom.jpg) no-repeat; _background:url(/image/daren/daren_login_buttom.jpg) no-repeat; _background-position: 2px; _margin-top:-5px; }
+.darenInfo .loginSuccess{ height:150px; margin-left:629px; _margin-left:626px; padding-top:30px; line-height:24px;}
+.darenInfo .loginSuccess .submitWorks P a { padding:0 5px;}
+.darenInfo h2{ padding-left:15px; line-height:29px;font-size:14px; color:#313d7c; background:url(/image/daren/daren_login_bg.jpg) no-repeat;}
+*/
+
+.darenInfo { margin:20px 20px 20px 10px; height:190px; }
+.darenInfo .left { float:left; width:580px; margin-left:10px; display:inline; line-height:16px; font-size:12px; }
+.darenInfo .left h1 { font-size:14px; line-height:30px; line-height:26px; color:#0874ed; background:url(/image/daren/daren_title_02.jpg) no-repeat top left; padding-left:15px; }
+.darenInfo .left p { line-height:16px; font-size:14px; padding-bottom:8px; }
+.darenInfo .left a { text-align:right; width:85px; height:24px; display:block; background:url(/image/daren/daren_title_m.jpg) no-repeat top right; line-height:24px; text-align:center; float:right; margin-right:30px; }
+.darenbtnCenter { width:100%; text-align:center; }
+.darenInfo .loginForm { height:200px; float:left; }
+.darenInfo .loginForm .loginC { margin:-5px 6px 0 0; _margin:0 16px 0 0; border-left: 1px #abb0d0 solid; border-right:1px #abb0d0 solid; padding:5px 0 10px 0; background: #FFF; width: 319px; }
+.darenInfo .loginForm .loginB { height:5px; background:url(/image/daren/daren_login_buttom.jpg) no-repeat; _background:url(/image/daren/daren_login_buttom.jpg) no-repeat; _background-position: 0px; _margin-top:-5px; width:321px; }
+.darenInfo .loginSuccess {height:150px; margin-left:629px; _margin-left:626px; padding-top:30px; line-height:24px; }
+.darenInfo .loginSuccess .submitWorks P a { padding:0 5px; }
+.darenInfo h2 { padding-left:15px; line-height:29px; font-size:14px; color:#313d7c; background:url(/image/daren/daren_login_bg.jpg) no-repeat; width: 321px; }
+.userLogin { margin-top:10px; }
+.userLogin li { float:left; position:relative; width:100%; height:32px; line-height:32px; }
+.userLogin li span { color:#bbb; }
+/*  自动完成部分  */
+.userLogin .suggest { display:none; position:absolute; left:70px; top:32px; width:220px; background:#fff; border:1px #D2D2D2 solid; border-top:0; overflow:hidden; font-family:Tahoma; }
+.userLogin .suggest ul { width:220px; margin:0; }
+.userLogin .suggest li { width:220px; height:22px; line-height:22px; }
+.userLogin .suggest li a { display:block; width:212px; height:22px; padding:0 0 0 8px; color:#111; }
+.userLogin .suggest li a:hover, .userLogin .suggest li.on a { background:#3684C6; text-decoration:none; color:#fff; }
+/*  偶数行  */
+.userLogin .even { height:24px; padding-bottom:4px; line-height:24px; }
+.userLogin .even span { color:#777; }
+.userLogin .even .errorTip { padding-left:15px; background:url(/image/icons/tip_error.gif) no-repeat 0 center; }
+.userLogin .even .alertTip { padding-left:15px; background:url(/image/icons/tip_alert.gif) no-repeat 0 center; }
+.userLogin .even .successTip { padding-left:15px; background:url(/image/icons/tip_right.gif) no-repeat 0 center; }
+.userLogin .even .normalTip { padding-left:15px; background:url(/image/icons/tip_normal.gif) no-repeat 0 center; }
+.userLogin .even .rightTip { padding-left:15px; background:url(/image/icons/tip_right.gif) no-repeat 0 center; }
+.userLogin .even span img { float:left; margin:7px 4px 0; width:12px; height:12px; }
+.userLogin .even b { padding:4px 5px 1px; width:23px; height:17px; background:#E0E0E0; line-height:16px; color:#111; font-weight:normal; }
+.userLogin .even b.on { background:#FFE187; }
+.userLogin label { float:left; width:60px; padding-right:10px; font-size:14px; color:#777; text-align:right; }
+.userLogin li div.inputWrap { float:left; margin:1px 6px 0 1px; display:inline; width:218px; height:28px; border:1px solid #D2D2D2; }
+.userLogin li div.on { margin:0 5px 0 0; border:2px solid #FED519; }
+.userLogin .regA { display:inline-block; *display:inline;
+*zoom:1;
+vertical-align:top; line-height:30px; }
+.textLogin { float:left; padding:4px 0 5px 3px; width:214px; height:18px; border:0; border-left:1px solid #7C7C7C; border-top:1px solid #7C7C7C; line-height:18px; font-size:14px; font-family:tahoma; }
+.textMid { font-size:12px; }
+.textSmall { font-size:11px; }
+.checkboxLogin { margin:-1px 3px 0 0; width:13px; height:13px; vertical-align: middle; }
+.darenTitle { height:34px; line-height:34px; }
+.darenTitle h1 { float:left; width:247px; height:34px; margin-right:30px; background:url(/image/daren_bg.png); text-indent:-9999px; overflow:hidden; }
+.darenTitle b { font-size:14px; font-family:Tahoma; color:#f39502; }
+/* 首页微博直播 */
+.weiboLive { float:left; width:240px; margin-left:15px; display:inline; overflow:hidden; }
+.weiboLive p { line-height:30px; }
+/* 首页列表 */
+.darenListIndex { float:left; width:670px; margin-left:20px; }
+.darenList { padding-bottom:10px; }
+.darenList h2 { height:28px; padding-left:12px; line-height:28px; font-size:14px; }
+.darenListNew h2 { background:url(/image/daren/daren_title_bg.jpg); color:#fff; }
+.darenListHot h2 { background:url(/image/daren/daren_title_bg.jpg) 0 -28px; color:#313d7c; }
+.darenList h2 a { color:#111; }
+.darenList .more { position:relative; float:right; width:50px; margin-top:-20px; }
+.darenList .more a { color:#fff; }
+.darenList .con { padding:9px; overflow:hidden; }
+.darenListNew .con { border:2px solid #4599EF; border-top:0; }
+.darenListHot .con { border:2px solid #A3B1D8; border-top:0; }
+.darenList ul { position:relative; width:647px; overflow:hidden; }
+.darenListHot ul { }
+.darenList li { position:relative; float:left; width:215px; margin:-1px 0 0 -1px; border-top:1px solid #f4f4f4; border-left:1px solid #f4f4f4; }
+.darenList li:hover { background:#f9f9f9; }
+.darenListHot li { height:305px; }
+.darenList .pic { margin:12px auto 5px; width:160px; height:120px; }
+.darenList .pic img { max-width:160px; max-height:120px; }
+.darenList li a { color:#111; }
+.darenList li a.blue { color:#00388A; }
+.darenList p { padding:0 15px; line-height:18px; }
+.darenList p.name { text-align:center; font-weight:bold; padding: 5px; height:18px; }
+.darenList p.intro { padding:0 15px; line-height: 16px; height:40px; word-wrap:break-word;word-break:break-all;}
+.darenList p label { display:inline-block; *display:inline;
+*zoom:1;
+width:40px; color:#777; }
+.darenList p b { font-family:Tahoma; font-size:18px; color:#f7860f; }
+.darenList p.votes { padding:3px 0; color:#525EB0; font-size:18px; font-family:Tahoma; }
+.darenList p.votes label { display:inline-block; *display:inline;
+*zoom:1;
+vertical-align:top; background:#525EB0; height:18px; width:39px; margin:0 5px 0 10px; padding-left:5px; *padding-top:2px;
+line-height:18px; color:#fff; font-size:12px; font-family:"宋体" }
+.darenList p.btnCenter { margin:10px 0 20px 0; }
+.darenList p.btnCenter button { width:80px; }
+.darenTab { height:34px; margin:20px 15px 0; padding-left:15px; background:#f4f4f4; line-height:34px; }
+.darenTab li { float:left; padding:0 5px; font-size:14px; font-weight:bold; color:#a9a9a9; }
+.darenTab li a { color:#3774D1; }
+.darenTab li.selected a { color:#535FB3; font-size:16px; }
+.darenListAll { margin:0 15px; border:1px solid #f4f4f4; }
+.darenListAll ul { width:908px; }
+.darenListAll li { width:226px; }
+.darenListAll .page { display:block; float:none; }
+.darenListAllHot ul { height:652px; }
+.darenListAllHot ul li { height:330px; }
+.success { padding:20px; }
+.success .btnCenter { margin-top:20px; }
+.success .btnCenter a { color:#000; font-weight:normal; }
+.success .btnCenter a button, .darenWrap .btnCenter a button, .uploadImg dd a button, { font-weight: normal; color:#000; height:10px; line-height:24px; *height:24px;*line-height:24px;*padding-left:10px;*width:70px;;margin:0; }
+.success .btnCenter a button { *padding-left:0px;}
+.success .prompt { margin-left:90px; height:48px; line-height:24px; }
+.success .promptImg { margin-left:10px; float:left; }
+/* 警告提示 */
+.popupAlertCon .alert { padding:30px 20px 20px 30px; height:51px; line-height:51px; }
+.popupAlertCon .alert .icon { float:left; width:57px; height:51px; margin-right:20px; display:inline; }
+.popupAlertCon .btnCenter { padding-bottom:20px; }
+.btnOrange { width:80px }
+.btnGrey { width:80px }
+.darenDetail { height:280px; background:#FAFAFA; border:1px solid #eee; }
+.darenDetail .pic { float:left; width:320px; height:280px; background:#fff; }
+.darenDetail .info { margin-left:320px; padding:20px 15px 0 55px; }
+.darenDetail .info h1 { line-height:24px; font-size:16px; }
+.darenDetail .info h2 { font-weight:normal; color:#319114; }
+.darenDetail .info ul { margin:15px 0; line-height:20px; }
+.darenDetail .info ul b { font-size:18px; font-family:Tahoma; color:#F7860F; }
+.darenDetail .info label { color:#777; }
+.darenDetail .info .score { height:30px; margin:10px 0 18px; line-height:30px; }
+.darenDetail .info .score b { font-family:Tahoma; font-size:14px; color:#F7860F; }
+.darenDetail .info .exchange .btnLong button { width:100px; }
+.darenItem .address { padding:10px 30px 15px; color:#777; }
+.darenItem .address li { padding:7px 0; line-height:22px; }
+.darenItem .address li label { display:inline-block; width:135px; color:#777; vertical-align:top; }
+.darenItem .address li label.long { width:135px; }
+.darenItem .address .text { width:140px; }
+.darenItem .address .addressDetail { width:210px; }
+.darenItem .address .postCode { width:82px; }
+.darenItem .address .surName { width:64px; }
+.darenItem .address .givenName { width:106px; }
+.darenItem .address select { height:22px; line-height:22px; border:1px solid #D5D5D5; margin-right:5px; }
+.darenItem .address span.fixed { display:inline-block; *display:inline;
+*zoom:1;
+color:#111; }
+.darenItem .address .textarea { display:inline-block; width:455px; height:50px; }
+.darenItem .address span.need { color:Red; }
+.darenItem .address span.gender { display:inline-block; *display:inline;
+*zoom:1;
+height:20px; width:20px; cursor:pointer; border:1px solid #ddd; line-height:20px; text-align:center; }
+.darenItem .address span.genderOn { height:18px; width:18px; background:url(/image/a_sex_s.gif) right bottom no-repeat; border:2px solid #7ACD01; line-height:18px; }
+.darenItem .addressAll li { padding:3px 0; }
+/* 个人中心 */
+.darenUserLeft { float:left; width:118px; margin:20px 0 0 15px; display:inline; }
+.darenUserLeft .userPhoto { width:114px; height:114px; padding:1px; border:1px solid #ddd; }
+.darenUserLeft .userPhoto img { width:114px; height:114px; }
+.darenUserLeft p { text-align:center; line-height:24px; padding-top: 10px; }
+.darenUserLeft p a { font-family:Tahoma, Arial, Helvetica, sans-serif, "宋体", SimSun; }
+.darenUserRight { float:left; width:790px; margin:20px 0 0 20px; display:inline; }
+.darenUserRight .darenDes { margin:0; padding-top:10px; }
+.darenUserRight .article li { padding:20px 15px; border-bottom:1px dashed #ddd; }
+.darenUserRight .article li.even { background:#f8f8f8; }
+.darenUserRight .article li.noBorder { border:0; }
+.darenUserRight .article li .left, .darenUserRight .article li .mid, .darenUserRight .article li .right { display:inline-block; *display:inline;
+*zoom:1;
+vertical-align:top; }
+.darenUserRight .article li .left, .darenUserRight .article li .left img { width:160px; height:120px; }
+.darenUserRight .article li .mid { width:460px; margin-left:15px; line-height:18px; }
+.darenUserRight .article li .mid h3 { margin-bottom:10px; font-size:14px; }
+.darenUserRight .article li .mid .info { margin-top:15px; color:#777; }
+.darenUserRight .article li .mid .info b { font-weight:normal; font-size:14px; color:#111; }
+.darenUserRight .article li .mid .info span { margin-right:15px; }
+.darenUserRight .article li .right { width:120px; margin-top:20px; font-size:14px; text-align:center; line-height:40px; color:#F7860F; }
+.darenUserRight .article li .right p { height:40px; }
+.darenUserRight .article li .right p.votes { line-height:18px; color:#525EB0; font-size:18px; font-family:Tahoma; }
+.darenUserRight .article li .right p.votes label { display:inline-block; *display:inline;
+*zoom:1;
+vertical-align:top; background:#525EB0; height:18px; width:39px; margin-right:5px; padding-left:3px; line-height:16px; color:#fff; font-size:12px; font-family:Tahoma, Arial, "宋体", SimSun, Helvetica, sans-serif; }
+.darenUserRight .article li .right p.pass { font-size:14px; font-weight:bold; color:#319114; }
+.darenUserRight .article li .right p.passNo { font-size:14px; font-weight:bold; color:#F7860F; }
+.darenUserRight .article .page { float:none; display:block; margin:10px 0 0 500px; padding-bottom:10px; }
+.darenUserRight .newArticleBtn { float:right; }
+.darenUserRight .newArticleBtn button, .darenUserRight .newArticleBtn a { width:95px; }
+.darenItem { margin-bottom:20px; }
+.darenItem h2 { height:30px; line-height:30px; font-size:14px; }
+.darenItem h2 span { display:inline-block; *display:inline;*zoom:1;height:30px; padding:0 20px; background:#A3CFFE; color:#3774D1; }
+.darenItem h2 span a { margin-left:5px; font-size:12px; font-weight:normal; }
+.darenItem .darenItemCon { border:2px solid #A3CFFE; }
+.darenItem2 h2 span { background:#AEB7FC; color:#535EAE; }
+.darenItem2 .darenItemCon { border:2px solid #AEB7FC; }
+.darenProcess { width:664px; height:54px; margin:50px auto; background:url(/image/daren/daren_process.jpg) 0 -54px; line-height:54px; font-size:18px; font-weight:bold; }
+.darenProcess3 { background:url(/image/daren/daren_process.jpg); }
+.darenProcess .step1 { float:left; width:100px; margin-left:68px; display:inline; }
+.darenProcess .step2 { float:left; width:170px; margin-left:110px; display:inline; color:#fff; }
+.darenProcess .step3 { float:left; width:90px; margin-left:120px; display:inline; }
+.darenProcess3 .step2 { color:#111; }
+.darenProcess3 .step3 { color:#fff; }
+.darenWrap { margin:20px 15px; }
+.darenWrap .btnCenter { padding:10px 0 20px; }
+.darenWrap .btnCenterLong button { width:100px; }
+.newArticle { padding:20px 20px 0 20px; }
+.newArticle li { padding:5px 0; line-height:22px; }
+.newArticle li label { display:inline-block; *display:inline;*zoom:1;width:65px; vertical-align:top; color:#777; }
+.newArticle li .textLong { width:400px; }
+/* 上传图片 */
+.uploadImg { display:inline-block; *display:inline;*zoom:1;width:600px; }
+.uploadImg dt { float:left; width:115px; }
+.uploadImg dd { margin: 5px 0 5px 130px; line-height:24px; color:#777; }
+.uploadImg dd .uploadFrontcover, .uploadImg .mytoursFileUpload { height:22px; line-height:22px; *width:278px;border:1px solid #d5d5d5; background:#FFF; }
+.uploadImg dd .btn { width:80px; *border:1px solid #f8b709;
+}
+.uploadImg dd .btnGrey { *border:1px solid #E4E4E4;
+}
+/* 文章详细页 */
+.darenArticle { margin:20px 15px 0 150px; border:1px solid #f3f3f3; }
+.darenArticle h1 { font-size:14px; line-height:20px; text-align:center; padding: 15px 10px; overflow: hidden; word-break:break-all; }
+.darenArticle .articleInfo { height:30px; padding:0 10px; line-height:30px; background:#ebebeb; overflow:hidden; }
+.darenArticle .articleInfo .left { float:left; width:320px; color:#777; }
+.darenArticle .articleInfo .left span { margin-right:10px; font-family: Tahoma; font-size:12px; color:#000; }
+.darenArticle .articleInfo .right { float:right; width:200px; }
+.darenArticle .articleInfo .right .vote { display:inline-block; *display:inline;*zoom:1;vertical-align:top; margin-right:10px; color:#525EB0; font-size:18px; font-family:Tahoma; line-height:30px; }
+.darenArticle .articleInfo .right .vote label { display:inline-block; *display:inline;*zoom:1;vertical-align:top; background:#525EB0; height:18px; margin-right:5px; margin-top:4px; *margin-top:3px;padding:2px 5px; *padding:2px 3px 0 3px;line-height:18px; color:#fff; font-size:12px; font-family:"宋体" }
+.darenArticle .articleInfo .right .btn { margin-top:2px; }
+.darenArticle .share .bshare-custom { padding:10px; }
+.darenArticle .share .bshare-custom a { color: #2E3192; cursor: pointer; display: inline-block; height:18px; line-height:18px; opacity: 1; padding-left: 16px; text-decoration: none; vertical-align: middle; }
+.darenArticle .btnCenter { padding:15px 0; }
+.darenArticle .mainCon { line-height:24px; padding:20px; font-size:14px; }
+.darenArticle .mainCon .center { border-bottom:1px dashed #ccc; }
+.darenArticle .pageNav { padding:0 20px; line-height:30px; overflow:hidden; }
+.darenArticle .pageNav .pagePre { float:left; width:300px; }
+.darenArticle .pageNav .pageNext { float:right; width:300px; text-align:right; }
+/* 文章评论 */
+.articleComment { margin:0 15px 0 150px; }
+.articleComment h2 { padding:10px 0 0 5px; line-height:30px; font-size:16px; }
+.articleComment h2 span { font-size:12px; font-weight:normal; }
+.articleComment .list { padding:0 10px; border:1px solid #f3f3f3; overflow:hidden; }
+.articleComment .list li { padding:10px 0; border-top:1px dashed #e9e9e9; }
+.articleComment .list li.first { border:0; }
+.articleComment .list p { padding:5px; line-height:18px; white-space:normal; }
+.articleComment .list p span { margin:0 10px; }
+.articleComment .list .info { color:#777; }
+.articleComment .list .info a { color:#1C77BE; }
+.articleComment .add { padding:15px; background:#f7f7f7; }
+.articleComment .add .top { line-height:24px; color:#777; }
+.articleComment .add .top b { font-size:16px; color:#111; }
+.articleComment .add .top span { margin:0 15px; }
+.articleComment .add .verif { height:25px; line-height:25px; }
+.articleComment .add .verif input.text { border: 1px solid #D5D5D5; font-size: 12px; width: 80px; height: 16px; line-height: 16px; padding: 2px 3px; float:left; *margin-left:-150px;
+}
+.articleComment .add .verif img { float:left; padding:0 5px; *margin-left:-60px;
+}
+.articleComment .add .verif a { float:left; line-height:26px; }
+.articleComment .add .textarea { width:750px; height:90px; margin:10px 0; }
+.articleComment .add .btnCenter { clear:both; padding:15px 0 10px; }
+.backAllArticle { padding:10px 0 0 20px; margin-bottom: -10px; }
+/*dar协议*/
+.darenxy { width:831px; height:869px; background:url(/image/daren/daren_xy_bg.jpg) no-repeat top left; margin:50px; }
+.darenxy h3 { font-size:18px; text-align:center; padding-top:100px; }
+.darenxy p { width:500px; padding:30px 120px 30px 210px; line-height:18px; }
+.darenxy span { text-align:right; width:500px; display:block }
+/*dar介绍*/
+.darenJx { width:920px; background:#f5f5f5; margin:20px; padding-top:10px; padding-bottom:20px; }
+.darenJx p { width:920px; margin:0 auto; padding-top:10px; line-height:18px; }
+.darenJx img { width:920px; margin:0 auto; display:block }
+/*dar奖项*/
+.darenJxSz { width:920px; background:#ebf4fe; margin:20px; padding-top:10px; padding-bottom:20px; }
+.darenJxSz p { width:840px; margin:0 auto; padding-top:10px; line-height:18px; }
+.darenJxSz img { width:920px; margin:0 auto; display:block }
+.darenJxSm { color:#777777; text-align:right; }
+/* 去除a标签虚线框 */
+a {
+blr:expression(this.onFocus=this.blur()); word-wrap: break-word } /* IE */
+a:focus { outline:none; }/* FF */
+/* 图片压缩上传相关 */
+.photoUploading .selected { background: url("/image/icons/clear.gif") repeat scroll 0 0 transparent; }
+.photoUploading ul { max-height: 200px; overflow-x: hidden; overflow-y: auto; }
+.photoUploading li { border-bottom: 1px dashed #DBDBDB; float: left; height: 28px; line-height: 28px; overflow: hidden; padding: 1px 0; position: relative; width: 490px; }
+.photoUploading .succeed { background: url("/image/icons/upload_succeed.gif") repeat scroll 0 0 transparent; cursor: pointer; display: inline; height: 15px; left: 430px; margin: 6px 0 0 25px; position: absolute; top: 1px; width: 15px; }
+.photoUploading .del { background: url("/image/icons/icon_del_red.gif") no-repeat scroll center center transparent; cursor: pointer; display: inline; height: 15px; left: 430px; margin: 7px 0 0 25px; position: absolute; top: 1px; width: 15px; }
+.photoUploading .name { left: 0; padding-left: 10px; position: absolute; top: 1px; width: 340px; }
+.photoUploading .name a { color: #327EF6; margin-left: 15px; }
+.photoUploading .size { left: 340px; position: absolute; text-align: right; top: 1px; width: 90px; }
+.photoUploading .status { background-repeat: no-repeat !important; cursor: pointer; display: inline; float: left; height: 15px; left: 430px; line-height: 18px; margin: 6px 0 0 25px; padding-top: 8px; position: absolute; top: 1px; width: 15px; }
+.photoUploading .selected { background: url("/image/icons/clear.gif") repeat scroll 0 0 transparent; }
+.photoUploading .loading { background: url("/image/icons/loading.gif") repeat scroll 0 0 transparent; }
+.photoUploading .uploaded { background: url("/image/icons/upload_succeed.gif") repeat scroll 0 0 transparent; }
+.photoUploading .notUpload { background: url("/image/icons/icon_del_red.gif") repeat scroll 0 0 transparent; }
+.photoUploading .count { background: none repeat scroll 0 0 #EDEDED; border: 0 none; margin-top: -1px; }
+.photoUploading .process { background: none repeat scroll 0 0 #F5FAE4; border-right: 4px solid #B1D54D; height: 28px; }
+.photoUploading .allstatus { float: left; line-height: 18px; padding-top: 8px; width: 490px; }
+.photoUploading .processBar { border: 1px solid #D6D6D6; display: inline; float: left; height: 18px; margin-right: 3px; width: 460px; }
+.photoUploading .barCon { background: none repeat scroll 0 0 #9ABE36; height: 18px; }
+.photoUploading .wait { background: url("/image/icons/loading.gif") no-repeat scroll 160px center transparent; float: left; font-weight: bold; line-height: 20px; margin-top: 12px; text-align: center; width: 490px; }
+.photoUploading .suc { background: url("/image/icons/upload_succeed.gif") no-repeat scroll 96px center transparent; clear: both; font-weight: bold; line-height: 30px; text-align: center; }
+.photoUploading .suc a { color: #327EF6; font-size: 14px; margin-left: 12px; }
+.photoUploading .btnCenter { padding: 12px 0; }
+.photoUpload { margin-bottom: 10px; overflow: hidden; width: 743px; }
+.photoUpload li { float: left; overflow: hidden; padding: 20px 0; width: 370px; }
+.photoUpload li .pic { background: none repeat scroll 0 0 #FCFCFC; border: 1px solid #F0F0F0; height: 188px; margin: 0 auto; width: 250px; }
+.photoUpload li .pic a { display: table-cell; height: 188px; text-align: center; vertical-align: middle; width: 250px; }
+.photoUpload li .pic img { max-height: 188px; max-width: 250px; vertical-align: middle; }
+
+/*20111111入围*/
+.darenrw{ width:660px; margin:30px 145px; }
+.darenrw .darenRwBt{ margin-left:179px; height:67px;}
+.darenrw table{ border:1px solid #f1f1f1; line-height:24px;}
+.darenrw table td{ padding:5px 0px;}
+.darenrw table .tableHead td{ background:#f8f8f8; text-align:center;}
+.darenrw table .tdAcen{ text-align:center; width:60px;}
+.darenrw table .tdL{ border-left:1px solid #f1f1f1;}
+.darenrw table .tdBT{ padding-left:20px; width:477px;}
+.darenrw table .tdName{ text-align:center; color:#990000}
+.tdBbottom td{ border-bottom:1px solid #f1f1f1;}
+.darenWxts{ padding:10px 5px; line-height:18px; color:#777;}
+.darenWxts span{ color:#993300}
+/*20111111入围*/
+
+/*20111208获奖名单*/
+.darenHjmd { background:url("/image/daren/daren_hjmd.jpg") top left no-repeat; height: 1543px; margin-left: 10px; margin-right: 10px; margin-top:20px; width: 933px; padding-top:130px; }
+.darenHjmdTb{ width: 663px; background:url("/image/daren/daren_hjmd_m.jpg") top left repeat-y; padding-top:5px; padding-bottom:5px;}
+.darenHjmdTb table { border:solid 1px #F1F1F1; width:643 line-height: 24px; margin-left:10px; }
+.darenHjmdTb table td { padding-bottom: 5px; padding-left: 0; padding-right: 0; padding-top: 5px; }
+.darenHjmdTb table .tableHead td { background-attachment: scroll; background-clip: border-box; background-color: #F8F8F8; background-image: none; background-origin: padding-box; background-position: 0 0; background-repeat: repeat; background-size: auto auto; text-align: center; }
+.darenHjmdTb table .tdAcen { text-align: center; width: 120px; color:#F00; font-weight:bold; }
+.darenHjmdTb table .tdL { border-left: solid 1px #F1F1F1;}
+.darenHjmdTb table .tdBT { padding-left: 20px; width: 400px; }
+.darenHjmdTb table .tdName { color: #990000; text-align: center; }
+.darenHjmdJx{ width:663px; padding-top:20px; margin-left:124px; }
+.darenHjmdJxImg{ width:663px; height:97px;}
+.darenHjmdJxBot{ width:663px; height:13px;}
+/*20111208获奖名单结束*/

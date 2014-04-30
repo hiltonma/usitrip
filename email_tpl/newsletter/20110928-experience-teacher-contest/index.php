@@ -1,0 +1,18 @@
+<?php
+header("Content-type: text/html; charset=gb2312");
+?>
+
+<title>走四方旅游体验师大赛推广newsletter</title>
+<table border="0" cellspacing="0" cellpadding="0" background="{HTTP_SERVER}/email_tpl/newsletter/20110928-experience-teacher-contest/{_IMAGES_}/pic_bg.jpg" style="margin: 0px; padding:0px; background-color:#fff; font-family:'微软雅黑',Tahoma,SimSun,Arial,Helvetica,sans-serif;font-size:12px; color:#000; line-height:16px; width:658px;" align="center">
+    <tr><td background="{HTTP_SERVER}/email_tpl/newsletter/20110928-experience-teacher-contest/{_IMAGES_}/nl_01.jpg" width="658" height="75" valign="top" align="left" title="走四方网"><a href="{HTTP_SERVER}/trip_player.php" style="width:652px; height:75px; display:block" title="走四方网"></a></td></tr>
+	<tr><td background="{HTTP_SERVER}/email_tpl/newsletter/20110928-experience-teacher-contest/{_IMAGES_}/nl_02.jpg" width="658" height="402" valign="top" align="left" title="走四方网，走四方旅游体验师大赛，Ipad2大奖等你拿，更有机会赢取$1000美国之旅！"><a href="{HTTP_SERVER}/trip_player.php" style="width:652px; height:402px; display:block"  title="走四方网，走四方旅游体验师大赛，Ipad2大奖等你拿，更有机会赢取$1000美国之旅！"></a></td></tr>
+	<tr><td background="{HTTP_SERVER}/email_tpl/newsletter/20110928-experience-teacher-contest/{_IMAGES_}/nl_03.jpg" width="658" height="109" valign="top" align="left">
+	<p style="padding-left:30px; padding-top:10px; font-size:14px; color:#3a3a3a; line-height:20px;"><span style="color:#FF6600">活动时间：2011年10月12日--2011年11月22日。</span><br />
+<span style=" font-size:18px; line-height:26px;">www.usitrip.com<br />
+快乐旅行，从走四方开始</span></p>
+	</td></tr>
+    <tr><td background="{HTTP_SERVER}/email_tpl/newsletter/20110928-experience-teacher-contest/{_IMAGES_}/nl_04.jpg" width="658" height="76" valign="top" align="left">
+	<p style=" padding-top:5px; padding-left:40px; line-height:20px;"><span style=" padding-top:10px; padding-left:40px; font-size:12px;">电话[美国]: 001-626-898-7800 001-888-887-2816(周一-周日8:00am -8:00pm太平洋时间)</span><br />
+<span style=" padding-top:10px; padding-left:40px; font-size:12px;">电话[中国]: 0086-4006-333-926(周一-周日9:00am -6:00pm北京时间)</span></p>
+	</td></tr>
+</table>

@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 liansitional//EN" "http://www.w3.org/li/xhtml1/DTD/xhtml1-liansitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="IE=7" http-equiv="X-UA-Compatible"/>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>{:db_to_html text=邮件退订:}</title>
+<meta content="{:db_to_html text=走四方|走四方网|走四方旅游|旅游走四方|美东|美西|夏威夷|特色美国游|加拿大|拉丁美洲|欧洲|日本|酒店预订|目的地指南|结伴同游:}" name="keywords"/>
+<meta content="{:db_to_html text=走四方网为您提供美国旅游与加拿大旅游套餐，绝对超值，游遍全美国与加拿大。我们的顾客可以享受种类繁多，内容丰富，度身为您定制的旅游套餐，以及我们优质的服务。:}" name="description"/>
+<link href="templates/Original/newsletterfrom.css" rel="stylesheet" type="text/css" />
+<script src="big5_gb-min.js"  type="text/javascript"></script>
+<script src="jquery-1.3.2/jquery-1.4.2.min.js"  type="text/javascript"></script>
+</head>
+<body>
+<div class="newsletterfromAll">
+  <div class="newsletterfromTop">
+    <div class="newsletterfromLogo"><a href="#"><img src="image/newsletterfrom/mail_top.jpg" /></a></div>
+    <?php if(!tep_session_is_registered('customer_id') ){ ?>
+	<div class="newsletterfromHre"><a href="index.php">{:db_to_html text=首页:}</a><a href="login.php">{:db_to_html text=登录:}</a><a href="create_account.php">{:db_to_html text=注册:}</a><a href="contact_us.php">{:db_to_html text=联系我们:}</a></div>
+	<?php }else{?>
+		<div class="newsletterfromHre"><a href="index.php">{:db_to_html text=首页:}</a><a href="<?php echo tep_href_link(FILENAME_ACCOUNT,"", "SSL") ?>"><?php echo db_to_html($_SESSION['customer_first_name']); ?><?php  /*if(tep_not_null($pointcards_id_string)) echo "(".$pointcards_id_string.")"*/?></a><a href="contact_us.php">{:db_to_html text=联系我们:}</a></div>
+	<?php } ?>
+  </div>
+  
+  
+  <!--
+  <div class="newsletterfromCon">
+    <h3>{:db_to_html text=退订原因：:}</h3>
+    <div class="newsletterfromConTab">
+	<form action="" method="post">
+      <table width="370" border="0" cellpadding="0" cellspacing="0">
+	  {:foreach from=$votes_items item=items:}
+	  	<tr>
+          <td class="mailfrom"><input type="radio" name="mailfrom" value="其他"  /></td>
+          <td>{:db_to_html text=$items.v_s_i_title:}</td>
+        </tr>
+	  	{:foreach from=$items.options_item item=option:}
+			
+        <tr>
+          <td class="mailfrom"><input type="radio" name="mailfrom" value="邮件太频繁，造成了打扰"  /></td>
+          <td>{:db_to_html text=$option.v_s_i_o_title:}</td>
+        </tr>
+		{:/foreach:}
+		
+        <tr>
+          <td class="mailfrom"></td>
+          <td><textarea class="mailfromanother">{:db_to_html text=请提供您宝贵的建议和意见以便改进我们的服务，谢谢！:}</textarea></td>
+        </tr>
+	  {:/foreach:}
+        
+        
+		
+        <tr>
+          <td colspan="2" align="center"><a class="btn btnOrange">
+            <button>{:db_to_html text=确认退订:}</button>
+            </a><a class="btn btnOrange">
+            <button>{:db_to_html text=取消退订:}</button>
+            </a></td>
+        </tr>
+      </table>
+	  </form>	  
+    </div>
+  </div>
+  -->
+  {:$unsubscribeHtml:}
+  
+
+</div>
+<script type="text/javascript">
+function checkOption(){
+	 var valradio = jQuery('input:checked').length;
+//	 alert(valradio);
+	 
+	 var text = jQuery('textarea').val();	
+	 
+	 if (text == '' && valradio == 0){
+	 
+	 	alert('{:db_to_html text=请至少选择一个退订原因!:}');
+		return false;
+	 }else if (text == '{:db_to_html text=请提供您宝贵的建议和意见以便改进我们的服务，谢谢！:}'){
+	 	alert('{:db_to_html text=请至少选择一个退订原因!:}');
+		return false;
+	 }
+}
+
+jQuery(document).ready(function(){
+	 var valradio = jQuery('input').click(function(){
+	 	jQuery('textarea').val('');
+	 });
+	
+});
+</script>
+</body>
+</html>

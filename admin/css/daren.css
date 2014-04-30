@@ -1,0 +1,66 @@
+@charset "gb2312";
+/*  
+ * @usitrip.com 
+ * @daren  
+ * @Build By Rocky
+ * @Version 2011-05-11   
+ * -------------------------------------------------- */
+
+/* index */
+a.blue{ color:#0078FF;}
+.nav{ padding:10px 0 15px 10px; overflow:hidden;}
+.nav li{ display:inline-block; *display:inline; zoom:1; margin-right:25px; color:#0078FF; font-size:12px;}
+.nav li a{ display:block; padding:2px 5px; color:#327EF6;}
+.nav li.selected a { background:#556aae; color:#fff; font-size:14px; font-weight:bold; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px;}
+
+.listTable{ width:100%; border:1px solid #CEE3FA;}
+.listTable th{ background:url(../images/th_bg.jpg) repeat-x; color:#1D4D79; font-size:14px; height:31px; line-height:31px; text-align:left; padding-left:15px;}
+		
+.listTable td{ padding:0; text-align:left; height:31px; line-height:31px; padding-left:15px;}
+.listTable td.pass{ color:#319114;}
+
+
+.listTable .trDetail{ display:none; background:#FAFDF2; }
+.listTable .trDetail td{ border-bottom:1px solid #787878;}
+.trEven{ background:#f5f5f5;}
+.trHover,.trOut{ background:url(../images/tabhover_bg.jpg); cursor:pointer;}
+.trClick{ background:url(../images/tabon_bg.jpg);}
+.listTable .showMore{ width:62px; font-size:12px; color:#0078FF; display:block; cursor:pointer; padding-left:27px; }
+.trClick .showMore{ background:url(../images/CkXx_select.jpg) no-repeat; background-position:0px 1px;}
+
+
+.darenInfo{ padding:10px 0; line-height:24px;}
+.darenInfo h2{ padding:5px 0 8px 0; height:20px; line-height:20px; font-size:14px;}
+.darenInfo p{ padding:3px 0;}
+.darenInfo label{ display:inline-block; width:70px; padding-right:5px; color:#777; text-align:right; vertical-align:top;}
+.darenInfo .con{ padding:5px 20px 15px;}
+.darenInfo li input{ vertical-align:middle;}
+.darenInfo .address{ width:300px;}
+.darenInfo .email{ width:180px;}
+.darenInfo .textarea{ width:600px; height:50px;}
+.darenInfo p span{ margin-right:50px; font-weight:bold; color:#F7860F;}
+.darenInfo .textLong{ width:300px;}
+
+.darenInfo .btnCenter{ padding:10px 0 20px;}
+
+.listTable .basicTable{ width:900px; margin:0 0 10px 20px; }
+.listTable .basicTable td{ height:24px; padding:0 20px 0 0; border:0; line-height:24px;}
+
+.listTable .detailTable{ width:700px; margin:10px 0 20px 20px; border:solid #D8DDD2; border-width:1px 1px 0 1px; background:#fff; }
+.listTable .detailTable th{ background:#DFEDCC; color:#335504; font-size:12px; font-weight:normal; padding:0px 10px; height:24px; line-height:24px; }
+.listTable .detailTable td{ border:solid #D8DDD2; border-width:0 0 1px 0;  padding:5px 10px; height:22px; line-height:22px; }
+.listTable .detailTable td.cancel{ background:#f8f8f8;}
+
+
+.allArticle .leftTitle{ display:inline-block; *display:inline; *zoom:1; vertical-align:top; width:70px; line-height:60px; color:#777;}
+.allArticle .rightCon{ display:inline-block; *display:inline; *zoom:1; width:720px;}
+.allArticle .rightCon .detailTable{ margin:20px 0 0 0;}
+
+/* 上传图片 */
+.uploadImg{ display:inline-block; *display:inline; *zoom:1; width:600px;}
+.uploadImg dt{ float:left; width:130px;}
+.uploadImg dd{ margin: 5px 0 5px 140px; line-height:24px; color:#777;}
+
+/* 作品统计 */
+.sum{padding-left: 15px;line-height:30px; font-size:12px;}
+.sum b{ font-size:12px; color:#F7860F;}

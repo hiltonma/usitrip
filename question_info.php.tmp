@@ -1,0 +1,285 @@
+<?php
+require_once("includes/application_top.php");
+require(DIR_WS_INCLUDES . 'ajax_encoding_control.php');
+require_once(DIR_WS_LANGUAGES . $language . '/' . FILENAME_QUESTION_WRITE);
+require_once(DIR_WS_LANGUAGES . $language . '/' . FILENAME_PRODUCT_REVIEWS_WRITE);
+require_once(DIR_WS_LANGUAGES . $language . '/' . FILENAME_PRODUCT_INFO);
+//$mnu ='qanda';
+
+?>
+
+<a name="faqtop"> </a>
+ <div class="pr_b">
+ 				<div class="pr_b_t sp10 sp6" style="white-space:nowrap;"><?php echo QUE_AND_ANSWER_TAB_TOP_NOTES;?>  
+ 				<span style="vertical-align:middle"><A style="CURSOR: pointer" onclick="javascript:toggel_div('ask_question_form_id');" class="sp3" title="Click here to Ask Your Question"><img style="cursor: pointer; cursor: hand; " src="image/buttons/<?php echo $language;?>/button_add_question.gif" border="0" alt="Ask Question"></a></span>
+					</div>
+</div>
+			
+					<div id="question_result" style="width: 720px;float: left; margin-left:10px; display:inline;"></div>
+					<div class="pr_b_form" id="ask_question_form_id" style="DISPLAY: none">
+					
+				    <div class="pr_b_form_1">
+					 <?php 
+					 // $content = CONTENT_TOUR_QUESTION_WRITE;
+					  //$javascript = $content.'.js';
+					 // if (isset($javascript) && file_exists(DIR_WS_JAVASCRIPT . basename($javascript))) { require(DIR_WS_JAVASCRIPT . basename($javascript)); } 
+					 
+					// echo tep_draw_form('product_queston_write', tep_href_link(FILENAME_QUESTION_WRITE, 'action=process&cPath='.$cPath.'&mnu='.$mnu.'&products_id=' . $HTTP_GET_VARS['products_id']), 'post', 'onSubmit="return checkForm();"'); 
+					  echo tep_draw_form('product_queston_write','','','id=product_queston_write');
+					 ?>
+					 
+					  <table border="0" width="80%" align="left" class="automarginclass"  cellspacing="1" cellpadding="2" >
+						<tr>
+							<td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+							  <tr>
+								<td class="main"><b><?php //echo HEADING_TITLE; ?></b></td>
+							   <td class="inputRequirement" align="right"><?php echo FORM_REQUIRED_INFORMATION; ?></td>
+							  </tr>
+							</table></td>
+						  </tr>
+						<tr>
+							<td>
+							  <table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox">
+							  <tr class="infoBoxContents">
+							  <td>
+							
+							
+									   <table  cellspacing="2" cellpadding="2">
+									   <tr>
+									   		<td class="sp10 sp6"><?php echo TEXT_YOUR_NAME; ?></td>
+									  		<td><?php echo tep_draw_input_field('customers_name',ucfirst($customer_first_name) . ' ' . ucfirst($customer_last_name),' class="pr_b_text" style="width: 50%;"'); ?><span class="sp1">*</span></td>
+										</tr>
+									  <tr>
+									  		<td class="sp10 sp6"><?php echo TEXT_YOUR_EMAIL;?></td>
+									 		<td nowrap><?php echo tep_draw_input_field('customers_email',tep_get_customers_email($customer_id),' class="pr_b_text" style="width: 50%;"'); ?> <span class="sp1" style="white-space:nowrap;">* <?php echo TEXT_REQUERED_NOT_DISPLAYED;?></span></td>
+									  </tr>
+									  <tr>
+									  		<td class="sp10 sp6"><?php echo TEXT_YOUR_EMAIL_CONFIRM;?> </td>
+									 		<td><?php echo tep_draw_input_field('c_customers_email','',' class="pr_b_text"  style="width: 50%;"'); ?><span class="sp1">*</span></td>
+									  </tr>
+									 
+									  <tr>
+									  		<td class="sp10 sp6"><?php echo TEXT_YOUR_QUESTION;?> </td>
+									 		<td><?php echo tep_draw_textarea_field('questions', 'soft', '', '','',' class="pr_b_text_1"'); ?><span class="sp1">*</span></td>
+									 </tr>
+									  <tr>
+									  <td></td>
+									  <td ><span class="sp1"><?php echo TEXT_NO_HTML; ?></span></td>
+									  </tr>
+										</table>
+					   
+					     </td>
+							  </tr>
+							</table>
+							</td>
+						</tr>
+						<tr>
+							<td height="15"></td>
+						</tr>
+						
+						<tr>
+						<td>
+							
+								<table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox">
+								  <tr class="infoBoxContents">
+									<td><table border="0" width="100%" cellspacing="0" cellpadding="2">
+									   <tr>
+									   <td width="10"><?php echo tep_draw_separator('pixel_trans.gif', '10', '1'); ?></td>
+									   <td ><input type="hidden" name="ajxsub_send_questin" value="true">
+									  <?php //echo tep_template_image_submit('button_write_question.gif', IMAGE_BUTTON_CONTINUE); ?>
+										  <img  style="cursor: pointer; cursor: hand;" src="image/buttons/<?php echo $language;?>/button_write_question.gif" border="0" alt="Ask Question" onclick="sendFormData('product_queston_write','<?php echo tep_href_link(FILENAME_QUESTION_WRITE, 'action=process&cPath='.$cPath.'&mnu='.$mnu.'&products_id=' . $HTTP_GET_VARS['products_id']);?>','question_result','true');"  title=" Ask Question ">							  
+										  </td>
+										  <td class="main" align="right">
+											 <img style="cursor: pointer; cursor: hand; " src="image/buttons/<?php echo $language;?>/button_cancel.gif" border="0" alt="<?php echo 'Cancel'; ?>" onclick="javascript:toggel_div('ask_question_form_id');"  title=" <?php echo 'Cancel'; ?> ">
+											</td>				
+									  <td width="10"><?php echo tep_draw_separator('pixel_trans.gif', '10', '1'); ?></td>
+									  </tr>
+								  
+									</table></td>
+								  </tr>
+								</table>
+							
+						</td>
+						</tr>
+			</table>
+					   
+					   
+					  </form>
+					</div>
+					
+				</div>			
+				
+				
+				  
+                    <?php 
+
+ $question_query_raw = "select * from " . TABLE_QUESTION ." where products_id = '" . (int)$HTTP_GET_VARS['products_id'] . "' and question != '' and languages_id = '" . (int)$languages_id . "' order by que_id desc";
+// $question_query_raw = "select * from " . TABLE_QUESTION ." where products_id = '" . (int)$HTTP_GET_VARS['products_id'] . "' order by que_sort_order desc, que_id desc";
+
+  $question_split = new splitPageResults($question_query_raw, MAX_DISPLAY_NEW_REVIEWS);
+
+
+
+  if ($question_split->number_of_rows > 0) {
+   
+	?>			
+				<div class="tab1_2_2">
+				<span  class="sp10 sp6" style="white-space:nowrap;">
+				<?php  //echo tep_draw_form('frm_slippage_ajax_product_qas', '' ,"",'id=frm_slippage_ajax_product_qas');	?>
+				<?php 
+				$extra_qa_query_send ='';				
+				if(isset($HTTP_GET_VARS['mnu']) && $HTTP_GET_VARS['mnu'] == 'qanda'){	
+					$extra_qa_query_send = 'mnu=qanda&';
+				}elseif(isset($HTTP_GET_VARS['mnu']) && $HTTP_GET_VARS['mnu'] == 'reviews'){
+					$extra_qa_query_send = 'mnu=reviews&';
+				}else{
+					$extra_qa_query_send = 'mnu=qanda&';
+				}
+				//echo TEXT_RESULT_PAGE . ' ' . $question_split->display_links_ajax(MAX_DISPLAY_PAGE_LINKS, $extra_qa_query_send.tep_get_all_get_params(array('mnu','rn','page','info')),'question_info.php','frm_slippage_ajax_product_qas','c_tech'); 
+				?>
+				<?php
+				//echo '<input type="hidden" name="selfpagename_top" value="products_qa_top">';
+				//echo '<input type="hidden" name="ajxsub_send_qa_req" value="true">';
+				//echo '</form>';				
+				echo TEXT_RESULT_PAGE . ' ' . $question_split->display_links_quesion(MAX_DISPLAY_PAGE_LINKS, $extra_qa_query_send.tep_get_all_get_params(array('page','rn','mnu','info')));
+				
+				?>
+				</span>
+				</div>
+				
+	<?php
+	
+	//echo '<div class="b_b_1" style="margin-top:5px;"></div>';
+	echo  '<div id="question_new_added"></div>';	
+	$question_query = tep_db_query($question_split->sql_query);
+	while ($question = tep_db_fetch_array($question_query)) {	
+
+?>
+
+									
+					<div class="pr_q2">					
+					<div class="pr_q2_q_t sp11 sp14blue">				
+						<TABLE WIDTH="100%" align="center" BORDER=0 CELLPADDING=0 CELLSPACING=0>
+						<TR>
+							<TD WIDTH=9 HEIGHT=8>
+								<IMG SRC="image/que_ask_cornner_01.gif" WIDTH=9 HEIGHT=8 ALT=""></TD>
+							<TD style="background-image: url(image/que_ask_cornner_02.gif);background-repeat: repeat-x">
+								</TD>
+							<TD WIDTH=11 HEIGHT=8>
+								<IMG SRC="image/que_ask_cornner_04.gif" WIDTH=11 HEIGHT=8 ALT=""></TD>
+						</TR>
+						<TR>
+							<TD style="background-image: url(image/que_ask_cornner_05.gif);background-repeat: repeat-y" WIDTH=9 >
+								</TD>
+							<TD bgcolor="#E1F3FD" valign="top" width="100%">
+									<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+									  <tr>
+									  <td  nowrap class="pr_q2_q sp14blue" valign="top"><b>Q:&nbsp;</b></td>
+										<td class="main" valign="top" width="100%">
+										<a class="sp14blue" style="CURSOR: pointer" onclick="javascript:toggel_div('div_question_<?php echo $question['que_id'];?>')"><?php echo tep_db_prepare_input(db_to_html($question['question']));?></a> 
+										<?php echo tep_draw_separator('pixel_trans.gif', '15', '1'); ?>|<?php echo tep_draw_separator('pixel_trans.gif', '15', '1'); ?><img src="image/queby_icon.gif"><?php echo tep_draw_separator('pixel_trans.gif', '5', '1'); ?><?php echo ucfirst(db_to_html($question['customers_name'])); ?><?php echo tep_draw_separator('pixel_trans.gif', '25', '1'); ?><img src="image/clock_icon.gif"><?php echo tep_draw_separator('pixel_trans.gif', '5', '1'); ?><?php echo sprintf(tep_date_long_review($question['date']));?>
+										</td>
+										<td></td>
+									  </tr>
+									</table>			
+							</TD>
+							<TD  style="background-image: url(image/que_ask_cornner_07.gif);background-repeat: repeat-y" WIDTH=11>
+							</TD>
+						</TR>
+						<TR>
+							<TD WIDTH=9 HEIGHT=10>
+								<IMG SRC="image/que_ask_cornner_10.gif" WIDTH=9 HEIGHT=10 ALT=""></TD>
+							<TD style="background-image: url(image/que_ask_cornner_11.gif);background-repeat: repeat-x"  WIDTH=7 HEIGHT=10>
+								</TD>		
+							<TD WIDTH=11 HEIGHT=10>
+								<IMG SRC="image/que_ask_cornner_13.gif" WIDTH=11 HEIGHT=10 ALT=""></TD>
+						</TR>
+					</TABLE>
+
+					</div>
+					</div>
+					
+					
+					
+					<div id="div_question_<?php echo $question['que_id'];?>" style="DISPLAY: none">
+					<div class="pr_q2">
+					 	<span style="float:right">
+						<?php //echo '<a href="' . tep_href_link(FILENAME_QUESTION_ANSWER_WRITE, "que_id=".$question['que_id']."&products_id=$products_id&cPath=$cPath") . '">' . tep_image_button('button_answer.gif', 'Write Your Answer') . '</a>'; ?>
+						 <form name="frm_question_answer_write_ajax_<?php echo $question['que_id'];?>" id="frm_question_answer_write_ajax_<?php echo $question['que_id'];?>">
+						 <img style="cursor: pointer; cursor: hand; " src="image/buttons/<?php echo $language;?>/button_answer.gif" border="0" alt="Write Your Answer" onclick="toggel_div_show('div_question_answer_form_<?php echo $question['que_id'];?>'); sendFormData('frm_question_answer_write_ajax_<?php echo $question['que_id'];?>','<?php echo tep_href_link('tour_question_answer_write_ajax.php', 'que_id='.$question['que_id'].'&cPath='.$cPath.'&products_id=' . $products_id);?>','div_question_answer_form_<?php echo $question['que_id'];?>','true');"  title=" Write Your Answer ">
+						 <input type="hidden" name="action" value="create_form">
+						 <input type="hidden" name="qacall" value="true">
+						 </form>													
+						</span>
+									
+					</div>
+					<div style="float: left;" id="div_question_answer_form_<?php echo $question['que_id'];?>" > </div>
+					  <!--  check for answer of the question BOF--->
+					  <?php 
+					    $question_query_answer_raw = tep_db_query("select * from " . TABLE_QUESTION_ANSWER ." where que_id = '" . (int)$question['que_id'] . "' order by date desc");
+						$answer_coust = 1;
+						while ($question_ans = tep_db_fetch_array($question_query_answer_raw)) {
+						
+						?>
+					
+					<div class="pr_b_a">
+					<div class="pr_b_a_1 sp10 sp6">
+					    <table  border="0" cellpadding="0" cellspacing="0">
+					      <tr height="25" ><td width="25" ><div class="pr_q2_q sp1">A:</div></td>
+						  <td nowrap width="90%">
+						  <span class="sp1"><?php echo db_to_html(ucfirst($question_ans['replay_name']));?></span><?php echo tep_draw_separator('pixel_trans.gif', '10', '1'); ?><font color="#B7E3FB">|</font><?php echo tep_draw_separator('pixel_trans.gif', '10', '1'); ?><?php echo sprintf(tep_date_long_review($question_ans['date']));?></td>					     
+						  <td valign="top">
+						  <?php /* if($answer_coust == 1){ ?>
+						  <img src="image/pr_s.gif" />
+						  <?php  } */ ?>
+						  <?php echo tep_draw_separator('pixel_trans.gif', '80', '1'); ?></td>
+				      </tr></table>
+					</div>
+					<div class="pr_b_t_a sp10 sp6" ><?php echo tep_db_prepare_input(db_to_html($question_ans['ans'])); ?></div>
+					</div>	
+                 			
+					<?
+					$answer_coust++;
+					  	}  
+					 ?>
+					  </div> 				 
+  					  <!--  check for answer of the question EOF--->
+<?php
+	}  //end of while loop
+?>
+
+				
+				<div class="tab1_2_2">
+				<span class="sp10 sp6" style="white-space:nowrap;">
+				<?php
+				 // echo tep_draw_form('frm_slippage_ajax_product_qas_bottom', '' ,"",'id=frm_slippage_ajax_product_qas_bottom');	?>
+				<?php 
+				//echo TEXT_RESULT_PAGE . ' ' . $question_split->display_links_ajax(MAX_DISPLAY_PAGE_LINKS, $extra_qa_query_send.tep_get_all_get_params(array('mnu','rn','page','info')),'question_info.php','frm_slippage_ajax_product_qas_bottom','c_tech'); 
+				?>
+				<?php
+				//echo '<input type="hidden" name="selfpagename_bottom" value="products_qa_bottom">';
+				//echo '<input type="hidden" name="ajxsub_send_qa_bottom_req" value="true">';
+				//echo '</form>';
+				echo TEXT_RESULT_PAGE . ' ' . $question_split->display_links_quesion(MAX_DISPLAY_PAGE_LINKS, $extra_qa_query_send.tep_get_all_get_params(array('page','rn','mnu','info')));
+				?>
+				</span>
+				</div>
+
+<?php
+}else{
+echo '<div id="question_new_added"></div>';						
+?>
+
+  				<div id="noquestion_id_div" class="pr_b_q">
+					   <div class="pr_b_q_1 sp10 sp6">
+					   <table width="683">
+						  <tr><td>
+					   <?php echo TEXT_NO_QUESTION_FOUND; ?>
+					   </td></tr>					  
+					   </table>
+						</div>
+				</div>  
+				<?php
+}
+?>
+

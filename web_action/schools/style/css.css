@@ -1,0 +1,45 @@
+
+.header{
+	width:980px;
+	margin:0 auto;
+	
+}
+.warp{
+	width:980px;
+	height:auto;
+	margin:0 auto;
+	background:#a9d027;
+}
+.pmain{
+	width:960px;
+	height:auto;
+	
+	
+	
+}
+.pleft{
+	width:700px;
+	float:left;
+}
+.city{
+	width:700px;
+	background:#e5f3ae;
+}
+.city img{
+	width:201px;
+	height:180px;
+	
+}
+.pright{
+	width:240px;
+	float:right;
+
+}
+.more1{
+	width:240px;
+	height:213px;
+	background:url(../images/left1.jpg) right top no-repeat;
+	float:right;
+	margin:0;
+	
+}

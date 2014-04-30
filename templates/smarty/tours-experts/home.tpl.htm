@@ -1,0 +1,210 @@
+{:include file=$user_public_tpl:}
+
+{:if $recomProducts:}
+<div class="expertTitle">
+<h3>{:db_to_html text='专家推荐':}
+{:if $isExpertsSelf:}
+<a href="{:gethref page=$baseUrl mod='writings' action='mproducts' uid=$uid:}">{:db_to_html text='管理主页推荐行程':}</a>
+{:/if:}
+</h3>
+</div>
+
+<div class="expertIndex expertIndexTop5">  
+  <div class="proListCon" id="proListCon_{:$recomProducts.products_id:}">
+    <h2><a href="{:gethref page=$smarty.const.FILENAME_PRODUCT_INFO products_id=$recomProducts.products_id ref=$uid affiliate_banner_id='1':}">{:db_to_html text=$recomProducts.products_name:}</a></h2>
+    <h3>{:db_to_html text=$recomProducts.products_name1:}</h3>
+    <div class="left">
+        <div class="pic">
+        	{:if $recomProducts.gift.num:}
+            <div class="gift" {:if $recomProducts.gift.num<=1:} style="padding-top:1px;"{:/if:}>
+            <b>{:$recomProducts.gift.item[$recomProducts.gift.num].name:}</b>
+            {:if $recomProducts.gift.num>1:}<br>{:db_to_html text='更多优惠':}{:/if:}
+            </div>
+            {:/if:}
+            <a href="{:gethref page=$smarty.const.FILENAME_PRODUCT_INFO products_id=$recomProducts.products_id ref=$uid affiliate_banner_id='1':}"><img src="{:$smarty.const.DIR_WS_IMAGES:}{:$recomProducts.products_image:}" alt="{:db_to_html text=$recomProducts.products_name:} {:db_to_html text=$recomProducts.products_name1:}" title="{:db_to_html text=$recomProducts.products_name:} {:db_to_html text=$recomProducts.products_name1:}" width="{:$smarty.const.SMALL_IMAGE_WIDTH:}" height="{:$smarty.const.SMALL_IMAGE_HEIGHT:}"></a>
+        </div>
+        <ul>
+            <li><a href="{:gethref page=$smarty.const.FILENAME_PRODUCT_INFO products_id=$recomProducts.products_id ref=$uid affiliate_banner_id='1':}">{:$smarty.const.TEXT_TRAVEL_COMPANION_POSTS:}({:$recomProducts.companion:})</a></li>
+            <li><a href="{:gethref page=$smarty.const.FILENAME_PRODUCT_INFO mnu='qanda' products_id=$recomProducts.products_id ref=$uid affiliate_banner_id='1':}">{:$smarty.const.TEXT_QANDA:}({:$recomProducts.question:})</a></li>
+            <li><a href="{:gethref page=$smarty.const.FILENAME_PRODUCT_INFO mnu='photos' products_id=$recomProducts.products_id ref=$uid affiliate_banner_id='1':}">{:$smarty.const.TEXT_PHOTOS:}({:$recomProducts.photos:})</a></li>
+            <li><a href="{:gethref page=$smarty.const.FILENAME_PRODUCT_INFO mnu='reviews' products_id=$recomProducts.products_id ref=$uid affiliate_banner_id='1':}">{:$smarty.const.TEXT_REVIEW:}({:$recomProducts.reviews:})</a></li>
+        </ul>
+    </div>
+    <ul class="mid">
+        <li>
+            <h4>{:db_to_html text='产品编号：':}</h4>
+            <p><b>{:$recomProducts.products_model:}</b></p>
+        </li>
+        <li>
+            <h4>{:db_to_html text='出发地点∶':}</h4>
+            <p>{:join array=$recomProducts.s_city expt=", ":}</p>
+        </li>
+        <li>
+            <h4>{:db_to_html text='结束地点：':}</h4>
+            <p>{:join array=$recomProducts.e_city expt=", ":}</p>
+        </li>
+        <li>
+            <h4>{:db_to_html text='出团日期∶':}</h4>
+            <p>{:join array=$recomProducts.operate expt="<br />" dbtohtml='false':}</p>
+        </li>
+        <li>
+            <h4>{:db_to_html text='持续时间：':}</h4>
+            <p>{:$recomProducts.products_durations:} {:$recomProducts.products_durations_type:}</p>
+        </li>
+        {:if $smarty.const.USE_POINTS_SYSTEM == 'true' && $smarty.const.DISPLAY_POINTS_INFO == 'true':}
+        {:if $smarty.const.USE_POINTS_FOR_SPECIALS == 'true' || $recomProducts.points_newprice == false:}
+        <li>
+            <h4>{:db_to_html text='积分信息：':}</h4>
+            <p>{:$recomProducts.points_info:}</p>
+        </li>
+        {:/if:}{:/if:}
+        
+        {:if $recomProducts.is_visa_passport > 0:}
+        {:if $recomProducts.is_visa_passport == 1:}
+		<li class="NotReqVisa">{:$smarty.const.TEXT_VISA_PASS_NOTREQ:}</li>
+		{:elseif $recomProducts.is_visa_passport == 2:} 
+		<li class="NotReqVisa">{:$smarty.const.TEXT_VISA_PASS_YREQ:}</li>
+		{:/if:}{:/if:}
+    </ul>
+    <div class="right">
+        <del>{:if $recomProducts.old_price:}{:$recomProducts.old_price:}{:/if:}</del>
+        <b>{:$recomProducts.final_price:}</b>
+        <a id="add_cart_a_link_{:$recomProducts.products_id:}" href="javascript:;" class="btn btnOrange btnAddCar" onclick="jQueryAddCart('{:$recomProducts.products_id:}','{:$recomProducts.display_room_option:}','{:$recomProducts.min_num_guest:}');"><button type="button">{:db_to_html text='放入购物车':}</button></a>
+        <a id="add_favorites_a_link_{:$recomProducts.products_id:}" href="javascript:;" class="btn btnGrey btnAddCollect" onclick="jQueryAddFavorites('{:$recomProducts.products_id:}');"><button type="button">{:db_to_html text='放入收藏夹':}</button></a>
+    </div>
+  </div>
+</div>
+{:/if:}
+
+<div class="expertLast">
+  <div class="expertTitle"><h2>{:db_to_html text='专家最新发布':}</h2></div>
+  <div class="left">
+    <div class="expertArticle">
+    <dl id="writingsList">
+{:assign var="lasttype" value="":}
+{:assign var="i" value=0:}
+{:foreach from=$expertsWritings item=writings name=expertsWritings:}
+    {:if $i < $maxWritings:}
+        {:if $lasttype != $writings.name && !$tid:}
+        {:assign var="i" value=$i+1:}
+              <dt id="tn_{:$writings.tid:}" {:if $lasttype!='':} style="margin-top:8px;"{:/if:}>{:db_to_html text=$writings.name:}</dt>
+              {:assign var="lasttype" value=$writings.name:}
+        {:/if:}
+        
+        {:assign var="class" value="":}
+        {:assign var="i" value=$i+1:}
+        
+        {:if $writings.is_pic == '1':}
+        {:assign var="class" value=" class='pic'":}
+        {:/if:}
+              <dd id="wn_{:$writings.tid:}_{:$writings.aid:}">
+              <p>{:db_to_html text='·':}<a {:$class:} href="{:gethref page=$baseUrl mod='writings' action='view' uid=$writings.uid aid=$writings.aid:}" title="{:db_to_html text=$writings.title:}">{:db_to_html text=$writings.title|cut:50:" ...":}</a></p>
+              <span>{:$writings.time:}</span>
+              </dd>
+	{:/if:}
+{:/foreach:}
+    </dl>
+    </div>
+    <div class="more"><a href="{:gethref page=$baseUrl mod='writings' uid=$uid:}">{:db_to_html text='查看所有文章':}&gt;&gt;</a></div>
+  </div>
+</div>
+
+
+
+<div class="expertLast">
+  <div class="expertTitle"><h2>{:db_to_html text='旅客最新咨询':}</h2></div>
+  <div class="right">
+    <div class="expertFaq">
+{:foreach from=$FaqData item=faq name=FaqData:}
+    <dl>
+      <dt>{:db_to_html text='问：':}</dt>
+      <dd><p class="limittext_faqq">{:db_to_html text=$faq.q_content|escape:"html":}</p></dd>
+      <dd>
+          <span>
+          {:if $faq.customers_name!='':}
+          	<a href="{:gethref page='individual_space.php' customers_id=$faq.customers_id:}">{:db_to_html text=$faq.customers_name|escape:"html":}</a>
+          {:else:}
+          	{:db_to_html text="走四方网友"|escape:"html" :}
+          {:/if:}
+          </span>
+          <span>{:$faq.q_modified_time:}</span>
+      </dd>
+    </dl>
+    <dl class="reply">
+      <dt>{:db_to_html text='答：':}</dt>
+      <dd>
+        <p class="limittext_faqa">{:db_to_html text=$faq.a_content:}</p>
+      </dd>
+      <dd>
+          <span>{:$faq.a_modified_time:}</span>
+          <span><a href="{:gethref page=$baseUrl mod='home' uid=$expertsInfo.uid:}">{:db_to_html text=$expertsInfo.name|escape:"html" :}</a></span>
+          <span class="tip" id="faq_a_{:$faq.a_id:}"><font>{:db_to_html text='此回复对我':}</font></span>
+          <span><a href="javascript:void(0);" onclick="SetUseful({:$faq.a_id:})">{:db_to_html text="有用":}(<font id="useful_{:$faq.a_id:}">{:$faq.a_useful:}</font>)</a></span>
+          <span><a href="javascript:void(0);" onclick="SetUseless({:$faq.a_id:})">{:db_to_html text="没用":}(<font id="useless_{:$faq.a_id:}">{:$faq.a_useless:}</font>)</a></span>
+      </dd>
+    </dl>
+{:/foreach:}
+    </div>
+    <div class="more"><a href="{:gethref page=$baseUrl mod='faq' uid=$uid:}">{:db_to_html text='查看所有咨询':}&gt;&gt;</a></div>
+  </div>
+</div>
+<script type="text/javascript">
+function SetUseful(a_id){
+	SetUsefulOrUseless(a_id, 'useful');
+}
+function SetUseless(a_id){
+	SetUsefulOrUseless(a_id, 'useless');
+}
+function SetUsefulOrUseless(a_id, set_val){
+	if(a_id>0 && (set_val=="useful" || set_val=="useless")){
+		var url = url_ssl("{:gethref page=$baseUrl mod='faq' uid=$expertsInfo.uid:}")+"&ajax=true&a_id="+a_id+"&atcion=set_useful_or_useless&val="+set_val;
+		ajax_get_submit(url);
+	}
+}
+</script>
+<script language="javascript">
+	jQuery(".limittext_faqq").limittext({"limit":100,"fill":" ... ","morefn":{"status":true,"moretext":"{:db_to_html text='更多&gt;&gt;':}","lesstext":"{:db_to_html text='&lt;&lt;隐藏':}"}});	
+	jQuery(".limittext_faqa").limittext({"limit":120,"fill":" ... ","morefn":{"status":true,"moretext":"{:db_to_html text='更多&gt;&gt;':}","lesstext":"{:db_to_html text='&lt;&lt;隐藏':}"}});	
+</script>
+
+<div class="popup" id="addToCart">
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" class="popupTable">
+    <tr>
+      <td class="topLeft"></td><td class="side"></td><td class="topRight"></td></tr><tr><td class="side"></td>
+        <td class="con">
+          <div class="popupCon addSuccess" id="addToCartPanel" style="width:400px; ">
+          	<div class="successTip">
+                <div class="img"><img src="image/success.jpg"></div>
+				<div class="words">
+				<p>{:db_to_html text='行程“':}<a href="" id="Cart_Pname"></a>{:db_to_html text='”已经放入购物车。':}</p>
+				<p>{:db_to_html text='购物车中已有':}<font id='Cart_Sum'></font>{:db_to_html text='个行程 共计：':}<span><b id='CartTotal'></b></span></p>
+				</div>
+            </div>
+            <div class="errorTip"></div>
+            <div class="popupBtn"><a href="{:gethref page='shopping_cart.php':}" class="btn btnOrange" target="mycart"><button type="button" onclick="window.location.href='{:gethref page='shopping_cart.php':}'">{:db_to_html text='进入购物车':}</button></a><a href="javascript:void(0);" class="btn btnGrey" onclick="closePopup('addToCart');"><button type="button">{:db_to_html text='继续购物':}</button></a></div>
+
+          </div>
+      </td><td class="side"></td></tr><tr><td class="botLeft"></td><td class="side"></td><td class="botRight"></td></tr>
+  </table>
+</div>
+
+<div class="popup" id="addToFavorites">
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" class="popupTable">
+    <tr>
+      <td class="topLeft"></td><td class="side"></td><td class="topRight"></td></tr><tr><td class="side"></td>
+        <td class="con">
+          <div class="popupCon addSuccess" id="addToFavoritesPanel" style="width:400px; ">
+            <div class="successTip">
+            	<div class="img"><img src="image/success.jpg"></div>
+				<div class="words">
+					<p>{:db_to_html text='行程“':}<a href="" id="Favorites_Pname"></a>{:db_to_html text='”已经放入收藏夹。':}</p>
+					<div id="Favorites_Content"></div>
+				</div>
+            </div>
+			<div class="popupBtn">
+				<a href="{:gethref page='my_favorites.php':}" class="btn btnOrange"><button type="button" onclick="window.location.href='{:gethref page='my_favorites.php':}'">{:db_to_html text='进入收藏夹':}</button></a><a href="javascript:void(0);" class="btn btnGrey" onclick="closePopup('addToFavorites');"><button type="button">{:db_to_html text='继续购物':}</button></a>
+			</div>
+          </div>
+      </td><td class="side"></td></tr><tr><td class="botLeft"></td><td class="side"></td><td class="botRight"></td></tr>
+  </table>
+</div>

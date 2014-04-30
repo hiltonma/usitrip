@@ -1,0 +1,25 @@
+@charset "gb2312";
+/** 重置表格元素 **/
+table { border-collapse: collapse; border-spacing: 0; } 
+.ui-collect-tb{width:745px;border:1px solid #ddd;}
+.ui-collect-tb th{height:31px;background:#f5f5f5 url(/image/nav/collect-thead.gif) repeat-x;font-weight:normal;}
+.ui-collect-tb td{height:69px;padding:16px 0;border-top:1px solid #ddd;}
+.ui-collect-tb tr.even td{background:#f8f7f7;}
+.ui-collect-tb td.ui-price,.ui-collect-tb td.ui-handle{text-align:center;}
+
+.ui-collect-short-pic{float:left;width:99px;margin:0 20px;_display:inline;}
+.ui-collect-short-pic a{display:block;padding:1px;box-shadow:3px 3px 0 #eee;border:1px solid #ccc;border-radius:2px;}
+.ui-collect-short-pic a:hover{border-color:#f60;}
+.ui-collect-short-pic a img{display:block;border-radius:2px;}
+
+.ui-line-info{vertical-align:text-top;line-height:20px;}
+.ui-line-info p{color:#999;}
+.ui-line-info h2{font-style:normal;font-weight:normal;font-size:12px;}
+.ui-line-info a{color:#2d4e9d;}
+.ui-line-info a:hover{color:#f60;}
+
+.ui-start-price{font-size:14px;font-weight:700;color:#ff6f00;}
+
+.ui-buy{display:inline-block;*display:inline;zoom:1;width:96px;height:27px;margin-bottom:3px;background:#ffc url(/image/nav/ui-yellow-btn.gif) no-repeat;line-height:27px;text-align:center;color:#ff6f00;}
+.ui-delete{color:#999;text-decoration:underline;}
+

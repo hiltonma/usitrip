@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS `orders_message` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '自动编号',
+  `orders_id` int(11) NOT NULL COMMENT '订单ID号',
+  `message` text NOT NULL COMMENT '留言内容',
+  `addtime` datetime NOT NULL COMMENT '留言日期',
+  `customers_id` int(11) NOT NULL COMMENT '提交留言时登录的用户ID',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COMMENT '订单详情留言表' ;

@@ -1,0 +1,20 @@
+/* CSS Document */
+.tedian{ border:2px #FDD01B solid;  background: url(tedian_jb.gif); background-repeat:repeat-x; padding:4px 0px 4px 0px; }
+.tedian_yangshi{font-size:12px; color:#1A2D51; line-height:18px; }
+.tedian_biaoti{ font-size:14px; font-weight:bold; color:#108BCD; }
+.tedian_biaoti2{ font-size:14px; font-weight:bold; color:#1A2D51; }
+.duanluo_jg{ float:left; width:98%; margin-top:10px; line-height:16px; }
+.duanluo_jg p{ margin-top:3px;}
+.jiage_3{ width:97%; float:left; border:2px #CBEBFC solid; padding:8px 3px 4px 3px; margin-top:5px; }
+.text_jiage{ font-weight:bold; color:#FB6200;}
+.text_jiage2{ color:#FB6200;}
+.jiage_biaoge{ float:left; width:99%;  border:1px #108BCD solid; margin-top:10px;}
+.yingwen{ font-family:Arial, Helvetica, sans-serif;}
+.duanluo_jg2{  margin-top:10px; line-height:16px;  }
+.jiage_biankuang{ border:1px #108BCD solid;width:100%;}
+.zifei_bg{width:100%;  margin-top:4px; }
+.hengxian{ border-bottom: 2px #CBEBFC solid; height:15px;}
+.float_left_bai{ float:left; width:99%; }
+.duanluo_jg2 ul { list-style: disc; padding-left:20px;}
+.duanluo_jg2 ul li{ margin-top:3px; }
+

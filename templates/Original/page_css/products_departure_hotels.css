@@ -1,0 +1,8 @@
+@charset "gb2312";
+/*CSS Document*/
+
+#body .left_menu_n{padding-bottom:5px; padding-left:10px; }
+#body .left_menu_s{padding-bottom:5px; color:#353535; padding-left:10px;}
+#body .left_menu_s a{color:#353535; }
+#body .left_menu_border{ padding-bottom:5px; border-bottom:1px solid #D4D4D4; padding-top:5px; }
+#body div.tab_prod li.s a{color:#353535; }

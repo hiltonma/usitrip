@@ -1,0 +1,56 @@
+{:include file="header.tpl.html" :}
+<table width="100%"  border="0" height="100%" cellpadding="0" cellspacing="0" class="centerTab">
+    <tr id="Header">
+        <td colspan="3" height="55">
+            <div class="centerTopFrame">
+                <div class="head">
+                    <p class="logo"><img src="images/orderlogo.jpg" class="logoimg" /><span>{:$title:}</span></p>
+                    
+                    
+                    <div class="changeSys" id="ChangeSys">
+                        <div class="changeSysTitle">切换系统</div>
+                        <div class="changeSysCon" id="ChangeSysCon">
+                            <ul>
+                                <li><a href="domestic_orders.php">转帐支付管理系统</a></li>
+                  <li><a href="orders.php">后台订单</a></li>
+                  <li><a href="categories.php">产品管理</a></li>
+                  <li><a href="banner_manager.php">广告管理</a></li>
+                  <li><a href="question_answers.php">QA管理</a></li>
+				  <li><a href="daren_system.php">走四方旅游体验师大赛管理</a></li>
+                            </ul>
+                        </div>
+                     </div>  
+                       
+                </div>
+
+                
+                
+                <div class="welcome">
+				{:$login_name:} 欢迎您登录，<a href="logoff.php" class="DChu">退出</a>
+	   {:if $login_groups_id=="1":}
+	   <a href="configuration.php" class="SZhi">系统设置</a>
+	   {:/if:}
+				</div>
+            </div>
+        </td>
+    </tr>
+    
+    <tr>
+        <td colspan="3" height="7" valign="top" align="center" bgcolor="#EBEFF2">
+            <div class="topSwitch" id="HeaderSwitch"></div>
+        </td>
+    </tr>
+  
+    <tr>
+        <td class="centerLeftFrame " width="200" id="Left"><iframe name="I2" height="100%"  width="200px" src="{:$lift_frame_src:}" border="0" frameborder="0" scrolling="no"  > 浏览器不支持嵌入式框架，或被配置为不显示嵌入式框架。</iframe></td>
+
+        <td class="leftSwitchBg " width="20" height="100%" ><div class="leftSwitch"  id="LeftSwitch" ></div></td>
+
+        <td class="rightIframe" height="100%;" valign="top"><iframe width="100%" height="100%" name="main" id="main" src="{:$right_frame_src:}" border="0" frameborder="0" scrolling="">浏览器不支持嵌入式框架，或被配置为不显示嵌入式框架。</iframe>   </td>
+    </tr>
+
+    <tr>
+        <td colspan="3" height="35"><div class="footer">版权 <span>&copy;</span>2006-2011 usitrip.com</div></td>
+    </tr>
+</table>
+{:include file="footer.tpl.html" :}

@@ -1,0 +1,87 @@
+{:include file="tours-talent-contest/header.tpl.htm":}
+<div id="wrap">
+
+  <div class="daren">
+    
+         <div class="darenTop"><img src="image/daren/daren_top_1.jpg" alt="{:db_to_html text=旅游体验师大赛:}" usemap="#Map" /><map name="Map" id="Map"><area shape="rect" coords="27,6,231,57" href="{:$severname:}" alt="" /></map></div>
+        <div class="darenTop"><img src="image/daren/daren_top_2.jpg" alt="{:db_to_html text=旅游体验师大赛:}" /></div>
+        <div class="darenTop"><img src="image/daren/daren_top_3.jpg" alt="{:db_to_html text=旅游体验师大赛:}" usemap="#Map2" />
+		<map name="Map2" id="Map2"><area shape="rect" coords="401,50,517,93" href="trip_player.php?mod=apply" alt="" /></map>
+		</div>
+        
+<div class="darenNav">
+            <div class="darenNavLeft"></div>
+            <ul>
+                <li><a href="trip_player.php">{:db_to_html text=活动首页:}</a></li>
+                <li ><a href="trip_player.php?mod=list">{:db_to_html text=所有作品:}</a></li>
+                <li><a href="trip_player.php?mod=prize">{:db_to_html text=奖项设置:}</a></li>
+                 {:if $customer_id > 0:}
+				<li><a href="trip_player.php?mod=homepage&id={:$customer_id:}">{:db_to_html text=个人主页:}</a></li>
+				{:/if:}
+				<li><a href="trip_player.php?mod=finalists"><span>{:db_to_html text=获奖名单:}</span></a></li>
+            </ul>
+            <div class="share">
+                <div class="bshare-custom">
+                    <a title="{:db_to_html text=分享到新浪微博:}" class="bshare-sinaminiblog"></a>
+                    <a title="{:db_to_html text=分享到开心网:}" class="bshare-kaixin001"></a>
+                    <a title="{:db_to_html text=分享到人人网:}" class="bshare-renren"></a>
+                    <a title="{:db_to_html text=分享到facebook:}" class="bshare-facebook"></a>
+                    <a title="{:db_to_html text=分享到twitter:}" class="bshare-twitter"></a>
+                    <a title="{:db_to_html text=分享到qq空间:}" class="bshare-qzone"></a>
+                    <a title="{:db_to_html text=更多平台:}" class="bshare-more">{:db_to_html text=更多:}>></a>
+                </div>
+                <script language="javascript" type="text/javascript" src="http://www.bshare.cn/button.js#uuid=97319&amp;style=-1"></script>
+                <script language="javascript" type="text/javascript" src="http://www.bshare.cn/bshareC1.js"></script> 
+                {:db_to_html text=分享到：:}
+            </div>
+            
+        
+        </div>
+         <div class="darenxy">
+		 <h3>{:db_to_html text=走四方网旅游体验师大赛参赛协议:}</h3>
+		 <p>{:db_to_html text=甲方：成都走四方科技有限公司:}<br /><br />
+
+{:db_to_html text=乙方：参赛个人:}<br /><br />
+
+    {:db_to_html text=经甲乙双方友好协商，就乙方参加“走四方网旅游达人大赛”（以下简称“本次大赛”）达成以下协议：:}<br /> 
+    {:db_to_html text=1、参赛作品主题内容必须健康、合法，没有任何不良信息以及商业宣传行为。:}<br />
+    {:db_to_html text=2、乙方在本次大赛过程中提供的所有个人信息只用于赛事评选、颁奖，甲方将对其中所有涉及个人隐私的内容予以保密。:}<br />
+    {:db_to_html text=3、乙方参加本次大赛，向甲方提供的参赛作品必须是原创、真实的，如果甲办方发现其提供参赛作品抄袭剽窃，甲方有权利取消乙方的比赛权利和名次。由于乙方提供虚假信息所产生的任何纠纷，由乙方自行承担，甲方不承担任何法律责任。:}<br />
+{:db_to_html text=4、乙方享有作品的署名权、修改权和保护作品完整权。:}<br />
+{:db_to_html text=5、乙方应许可甲方根据需要，行使对参赛作品的复制权、网络传播权等权利，甲方在宣传、推广等有关活动上，有权使用乙方的个人信息。:}<br />
+{:db_to_html text=6、甲方拥有对本大赛的最终解释权并可随时修订参赛条款及赛制，而毋需事先通知及解释。:}<br />
+{:db_to_html text=7、甲方承诺评选活动本着公平、公正、公开的原则进行，乙方应依照甲方的统一安排参加评选。:}<br />
+{:db_to_html text=8、乙方有权依据评选结果，获得相应的奖项和奖品。:}<br />
+{:db_to_html text=9、甲方员工及家属都不得参加本次比赛。:}<br />
+{:db_to_html text=10、对于本协议书未涉及的其他相关事宜，双方应本着公平、合理的原则协商解决。:}<br />
+    {:db_to_html text=请您认真阅读以上条款，提交参赛作品即视为同意并遵守以上条款。:}<br /><br />
+	
+    {:db_to_html text=出现以下情况将自动免除乙方的参赛资格：:}<br />
+    {:db_to_html text=提交的参赛作品内容不完整，或提供任何虚假信息；:}<br />
+    {:db_to_html text= 违背相关法律、法规；:}<br />
+    {:db_to_html text=涉嫌作弊行为，侵犯他人知识产权；:}<br />
+    {:db_to_html text=提交的内容不健康、淫秽、色情或毁谤任何第三方；:}<br />
+    {:db_to_html text=提交其他甲方认为不适当的内容。:}<br />
+	    
+                                                                                                        
+                                                                          <span>{:db_to_html text=成都走四方科技有限公司:}</span>
+                                                                               <span>2011{:db_to_html text=年10月:}</span></p>
+		 
+		 </div>
+		 <div class="darenBot"></div>
+    </div>
+        
+</div>
+<script type="text/javascript"> 
+jQuery(function(){
+if(typeof(bShare)!='undefined'){
+bShare.addEntry({
+title: "{:db_to_html text=#走四方旅游体验师大赛#:}",
+ summary:"{:db_to_html text=正在火热举行中，@走四方网:} {:db_to_html text=微博即可参与，IPAD2大奖等你拿，更有机会免费畅游美国，:}"
+})
+}
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+@charset "utf-8";
+/*公共样式表*/
+
+ul,li,a,h1,h2,h3,h4,h5,h6{text-decoration: none; font-size:12px;list-style:none;margin:0;padding:0;color:#5d5d5e;word-wrap:break-word;}
+i{ font-style:normal;}
+body,div,form,img,ul,ol,li,dl,dt,dd,p,tr,td,input,em,a,ol{margin: 0; padding: 0; border: 0;font-size:12px; font-family:Verdana, Geneva, sans-serif; }
+body{ background-color:#F1F1F1; }
+.fr{ float:right;}
+.fl{ float:left;}
+.fonts{ font-family:Verdana, Arial, Helvetica, sans-serif;}
+.gray{ color:#c2c2c2;}
+em{ font-style:normal;}
+a:hover{text-decoration:underline;}
+a:active {color: #0862DA;text-decoration: none;}
+img{border:0; display:block;}
+.clearfix:after ,.area:after {content:".";display:block;height:0;clear:both;visibility:hidden;}
+.clearfix , .area{_zoom:1;}
+
+
+/* 头部样式 */
+#header_bg{ background:url(../images/header_bg.gif) repeat-x; height:80px;}
+#header{ width:980px; height:80px; margin:0 auto;}
+#header h1{ width:162px; height:80px; display:block; float:left;}
+#header dl{ float:right; width:800px; padding-top:15px;}
+#header dl dt{ height:19px; background: url(../images/header_phone.gif) no-repeat right center; text-indent:-999em; padding-bottom:6px; }
+#header dl dd{ text-align:right; overflow:hidden; _zoom:1;}
+#header dl dd ul{ float:right; font-size:0; padding-top:5px;}
+#header dl dd li{ padding:0 16px; background:url(../images/header_fgx.gif) no-repeat right center; display:inline-block; font-size:0; display:inline-block; *display:inline; _zoom:1; }
+#header dl dd li a{ color:#4b4b4b; font-size:14px;}
+#header dl dd li a:hover{ color:#e40808;}
+
+
+/* 底部样式 */
+#copyright{ padding-bottom:15px;line-height:22px; text-align:center; color:#6d6c6c; padding-top:15px;}
+#copyright a{ color:#6d6c6c; padding:0 15px;}
+#copyright a:hover{ color:#f46a00;text-decoration:underline;}

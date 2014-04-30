@@ -1,0 +1,41 @@
+@charset "utf-8";
+/* 专题样式 */
+
+.banner{width:100%; height:377px; margin:auto; background:#1d1538 url(../images/index_02.jpg) no-repeat center;}
+#main{width:100%;  background:#e6d6e7; margin:auto;}
+.centop{width:972px; height:57px; background:url(../images/centop.png) no-repeat; text-align:right; font-family:"微软雅黑"; font-size:16px; line-height:45px; color:#FFF; margin:auto;}
+.centop a{text-align:right; font-family:"微软雅黑"; font-size:16px; line-height:45px; color:#FFF; margin:auto;}
+.center{width:954px; background: #FFF; border-bottom:#c2b6c3 1px solid; border-left:#c2b6c3 1px solid; border-right:#c2b6c3 1px solid;margin:auto;}
+.center .box{ width:920px; height:56px; margin:auto; border-bottom:1px dotted #dadada;}
+.center .box .txt{width:123px; text-align:center; font-family:Arial, Helvetica, sans-serif; font-size:18px; color:#057286; float:left; line-height:40px; }
+.center .box .tit{width:624px; text-align: left;font-size:14px; color:#057286; float:left; line-height:20px; margin-left:15px; font-weight:bold; }
+.center .box .tit a{width:624px; text-align:left;font-size:14px; color:#057286; line-height:20px;font-weight:bold; }
+.center .box .tit span{width:624px; text-align:left;font-size:12px; color:#666666;line-height:20px; font-weight:100;  }
+.center .box .tit_1{width:143px; text-align:center;margin-left:15px;font-size:14px;color:#8a4a8f;float:left;line-height:40px;}
+.center .box .tit_1 span{ font-family:Arial, Helvetica, sans-serif; font-size:22px; color:#8a4a8f;line-height:40px;}
+
+
+
+
+
+/*fudong */
+
+#fixed-top{ position:fixed; right:-1px; top:0; _position:absolute; _top:expression(eval(document.documentElement.scrollTop)); z-index:1;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

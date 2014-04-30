@@ -1,0 +1,304 @@
+@charset "gb2312";
+/* CSS Document */
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+input,select{ font-family:Tahoma; border:1px solid #d5d5d5}
+
+body{
+	background:#EBEFF2;
+	font-size: 12px; /* font-size: 0.625em;  */
+	font-family: ÀŒÃÂ, Tahoma, Arial, Verdana, Helvetica, sans-serif;
+	color:#000;
+	}
+table {
+	border-collapse: collapse;
+}
+a {
+	color: #000;
+	text-decoration: none;
+}
+a:hover {
+	color: #000;
+	text-decoration: underline;
+}
+em {
+	font-style: normal;
+}
+ins {
+	text-decoration: none;
+}
+img {
+	border: 0;
+}
+.clear{ clear:both;}
+/*top*/
+.head{ width:100%; height:55px; background:url(../image/headbg.jpg) repeat-x;}
+.head .logo{ float:left;}
+.head .logo .logoimg{ padding-top:5px; float:left;}
+.head .logo p{ color:#CFE1F8; font-weight:bold; font-size:14px; float:left; line-height:55px;}
+.head .changeXt{ float:left; line-height:55px; background:url(../image/icons/dun.gif) no-repeat; background-position:83px 23px; display:block; cursor:pointer; padding-right:25px; padding-left:30px; color:#98B8E1;}
+.head .changeXtSelect{ float:left; line-height:55px; background:url(../image/icons/up.gif) no-repeat; background-position:83px 23px; display:block; cursor:pointer; padding-right:25px; padding-left:30px; color:#98B8E1;}
+.head .Welcome{ float:right; line-height:55px; color:#93B5E0}
+.head .Welcome .DChu{ color:#D8E6F9; text-decoration:none;}
+.head .Welcome .DChu:hover{ color:#D8E6F9; text-decoration:underline;}
+.head .Welcome .SZhi{ color:#93B5E0; text-decoration:none; padding-left:30px; padding-right:30px;}
+.head .Welcome .SZhi:hover{ color:#93B5E0; text-decoration:underline;}
+/*index*/
+.main{  margin:0 auto; padding:10px 0; background:#fff;}
+.main span{ color:#777777;}
+.smallText { font-family: Verdana, Arial, sans-serif; font-size:12px; }
+.textAll{ float:left; padding:2px 3px; width:155px; height:18px; border:1px solid #D5D5D5; color:#000; font-size:14px; line-height:18px;}
+.textAll_table{ width:140px; height:22px; line-height:22px; border:1px solid #ccc; color:#000; padding-left:3px; font-size:12px;}
+.DdTextarea{ width:750px; height:82px; line-height:22px; border:1px solid #ccc; color:#000; padding-left:5px; font-size:12px;}
+.ItemsTj{ margin-bottom:20px;}
+.ItemsH1{ font-size:16px; 
+		  font-weight:bold;
+		  background:url(../image/icons/Sotf.gif) no-repeat;
+		  background-position:95px 4px;
+		  display:block;
+		  cursor:pointer;
+		  padding-left:15px;
+		  width:200px;		  
+		  }
+.ItemsH1Select{ font-size:16px; 
+				  font-weight:bold;
+				  background:url(../image/icons/Sot.gif) no-repeat;
+				  background-position:95px 4px;
+				  display:block;
+				  cursor:pointer;		  
+				  }      
+.ItemsTjContent{ padding:20px 15px;}
+
+.ItemsTjContent table td{ padding:5px 0; color:#777;font-size:12px; }
+.ItemsLb{ width:100%; background:#ffffff;}
+.ItemsLbContent{ padding:20px 0px 20px 15px; }
+
+/*tab*/
+.TabPanel_myjb {
+	width: 100%; /* IE Hack to force proper layout when preceded by a paragraph. (hasLayout Bug)*/
+}
+.TabPanelGroup_myjb {
+	margin: 0px;
+	padding: 2px 0px 0px 0;
+	height:30px;
+	/*background: url(jc-jindian-bg1.gif) repeat-x;*/
+	width:98%;
+	border-bottom:#CDEAFC solid 1px;
+}
+.TabPanelGroup_myjb i{ float:right; font-style:normal; display:block; padding:6px 5px 0px 0px;}
+.Tab_1_myjb {
+	position: relative;
+	float: left;
+	padding: 0 0 0 17px;
+	height:30px;
+	font-size: 14px;
+	color:#000;
+	list-style: none;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	cursor: pointer;
+	
+	margin-right:2px;
+        background:url(../image/4_tab_h1.gif) no-repeat left top;
+	border-bottom-style: none;
+	font-weight:bold;
+	color:#353535;
+	height:32px;
+}
+.Tab_1_myjb span{ background:url(../image/4_tab_h22.gif) no-repeat right top;
+height:22px;
+padding-top:10px;
+float:left;
+display:block;
+padding-right:17px;font-weight:bold;}
+/*tab2—˘ Ω*/
+.Tab_2_myjb {
+	position: relative;
+	float: left;
+	padding: 0 0 0 17px;
+	height:30px;
+	font-size: 14px;
+	color:#000;
+	list-style: none;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	cursor: pointer;
+	background:url(../image/all_tab_h1.jpg) no-repeat left top;
+	margin-right:2px;
+
+}
+
+.Tab_2_myjb span{ height:20px;
+padding-top:10px;
+float:left;
+display:block;
+padding-right:17px; background:url(../image/all_tab_h22.jpg) no-repeat right top;}
+.TabbedPanelsTabHover_myjb {
+	background-color: #93CFF5;
+}
+/*tom added*/
+Tab_2_myjb span a :hover{
+    text-decoration: none;
+}
+.TabbedPanelsTabSelected_myjb {
+    background:url(../image/4_tab_h1.gif) no-repeat left top;
+	border-bottom-style: none;
+	font-weight:bold;
+	color:#353535;
+	height:32px;
+}
+.TabbedPanelsTabSelected_myjb span a
+{ background:url(../image/4_tab_h22.gif) no-repeat right top;
+height:22px;
+padding-top:10px;
+float:left;
+display:block;
+padding-right:17px;}
+
+.Tab_1_myjb a {
+    text-align:center;
+	color: #223D6A;
+	text-decoration: none;
+}
+
+.Tab_Content11_myjb {  padding:0px; width:100%; padding-top:20px;}
+
+.TabbedPanelsContentVisible_myjb {
+}
+
+.VTabbedPanels_myjb {
+	width: 25%;
+	height: 28px;
+	background-color: #FFF;
+	position: relative;
+}
+
+.VTabbedPanels_myjb .Tab_1_myjb {
+	float: none;
+	margin: 0px;
+	border: 0px;
+}
+
+.VTabbedPanels_myjb .TabbedPanelsTabSelected_myjb {
+	background-color: #fff;
+	border-bottom: solid 1px #999;
+}
+
+.VTabbedPanels_myjb .Tab_Content_myjb {
+	clear: none;
+	width: 100%;
+}
+/*tabÁªìÊùü*/
+.DdZt{ float:left; padding-bottom:20px;}
+.DdZt li{ float:left; margin-right:25px; line-height:20px; }
+.Dd{ color:#0078FF; font-size:12px;}
+.Dd:hover{ color:#0078FF; font-size:12px;text-decoration:underline;}
+.DdSelect{ background:none repeat scroll 0 0 #148ED9; color:#FFFFFF;float:left; padding:1px 5px; font-size:14px; line-height:
+			font-weight:bold;
+			text-decoration:none}
+.DdSelect:hover{text-decoration:none; color:#FFFFFF;}
+.DdTab{ float:left; width:99%; border:1px solid #CEE3FA;}
+.DdTab th{ background:url(../image/th_bg.jpg) repeat-x; color:#1D4D79; font-size:14px; height:31px; line-height:31px; text-align:left; padding-left:10px;}		
+.DdTab td{ padding:0; text-align:left; height:32px; line-height:32px; padding-left:15px; font-size:12px;}
+.DdXc{ color:#035db1; text-decoration:none;}
+.DdXc:hover{ color:#035db1; text-decoration:underline;}
+/*#tab {border-collapse:collapse;border:solid #999;border-width:1px 0 0 1px;}
+#tab td {border:solid #999;border-width:0 1px 1px 0;}
+#tab tr.t1 td {background-color:#fff;}/* Á¨¨‰∏ÄË°åÁöÑËÉåÊôØËâ?*/
+/*#tab tr.t2 td {background-color:#eee;}/* Á¨¨‰∫åË°åÁöÑËÉåÊôØËâ?*/
+/*#tab tr.t3 td {background-color:#ccc;}/* Èº†Ê†áÁªèËøáÊó∂ÁöÑËÉåÊôØËâ?**/
+.Tabselect{ }
+.TabselectBg{ background:#F9FEF2; border-bottom:1px solid #787878;}
+.DdXxContent .DdTabXx{ margin-left:10px;}
+.DdXxContent .DdTabXx td{ padding:0;}
+
+.DdXxContent .DdTabXx b{ font-style:normal; color:#000; font-weight:normal;}
+
+.DdXxContent .DdTabXx .ColHui{ color:#777;}
+.DdXxContent .DdTabXx .DdTabXxCaozuo{border:solid #D8DDD2; border-width:1px 1px 0 1px; background:#fff; margin:10px 0;}
+.DdXxContent .DdTabXx .DdTabXxCaozuo th{ background:#DFEDCC; color:#335504; font-size:12px; font-weight:normal; padding:0px 10px; }
+.DdXxContent .DdTabXx .DdTabXxCaozuo td{border:solid #D8DDD2; border-width:0 0 1px 0;  padding:0px 10px;}
+.DdXxContent .DdTabXx .TabFg{ border-bottom:1px dashed #777;}
+.Radiozf{ margin-left:15px; margin-right:5px;}
+.checkDd{ margin-left:10px; margin-right:5px;}
+.ItemsTjContent .ButtonAligh{ text-align:center; padding:25px 0 0;}
+.DdTabXx td.ButtonAligh{ text-align:center; padding:0 0 15px;}
+.DdTabXx .ButtonAligh .Allbutton{ margin-right:30px;}
+
+.Xiangxi{ background:url(../image/CkXx.jpg) no-repeat;
+          font-size:12px; color:#0078FF;
+		  background-position:10px 8px;
+		  display:block;
+		  cursor:pointer; padding-left:27px; }
+.Xiangxi:hover{color:#0078FF;}
+.XiangxiSelect{ background:url(../image/CkXx_select.jpg) no-repeat;
+          font-size:12px; color:#0078FF;
+		  background-position:0px 1px;
+		  display:block;
+		  cursor:pointer; padding-left:27px; }
+.XiangxiSelect:hover{color:#0078FF;}
+.DdShoukuan{ float:left; width:100%; border: solid #D8DDD2; border-width:1px 1px 0 1px; margin-top:10px;}
+.DdShoukuan th{ background:#D7F0FA; color:#622C00; font-weight:normal; line-height:24px; height:24px; text-align:left; padding-left:15px;font-size: 12px;}
+.DdShoukuan td{padding-left:15px; line-height:24px; border: solid #D8DDD2; border-width:0 0 1px 0;font-size: 12px;}
+.DdShoukuan .fLeft{ text-align:right;}
+.DdShoukuan .fCenter{ text-align:center;}
+.Colbold{ font-weight:bold;}
+.ColOrange{ color:#F37800; font-weight:bold; }
+.selectText{width:155px; height:24px; *height:24px; _height:24px; line-height:24px; padding:3px 3px; border:1px solid #ccc; color:#000; font-size:12px;}
+.textTime{width:90px; height:22px; line-height:22px; border:1px solid #ccc; color:#000; padding-left:5px; font-size:12px; margin-right:2px; margin-left:2px; background:url(../image/icons/Calendar.gif) no-repeat #ffffff 77px 3px;}
+.Allbutton{ border:1px solid #406083; background: #406083 url(/admin/images/buttonblue.jpg) repeat-x top left; padding-left:25px; padding-right:25px; color:#fff; line-height:22px; height:27px; cursor:pointer; overflow:visible; *border:1px solid #fff;  *line-height:26px; *height:29px; _line-height:25px; _height:25px; font-size:14px;}
+.Allbutton:hover{ background:#F48A00 url(/admin/images/buttonorange.jpg) repeat-x; border:1px solid #F48A00;  *border:1px solid #fff; }
+.AllbuttonHui{ background:#c7c7c7 url(/admin/images/buttonhui.jpg) repeat-x; padding-left:25px; padding-right:25px; border:1px solid #c7c7c7; color:#000; line-height:25px; height:27px; cursor:pointer;  overflow:visible; *border:1px solid #fff;  *line-height:26px; *height:29px; _line-height:25px; _height:25px; font-size:14px;}
+.AllbuttonHui:hover{ background:#F48A00 url(/admin/images/buttonorange.jpg) repeat-x; border:1px solid #F48A00; color:#fff;  *border:1px solid #fff; }
+
+.ButtonAlighright{ text-align:right; padding-top:20px; padding-bottom:20px;}
+/*left*/
+.CenterLeft{ width:200px; height:100%; background:#fff;}
+		.box1{background:url(../image/lefttopbg.jpg) repeat-x;position:relative;width:200px;  border:none; height:30px; }
+		.box1 .cc{height:30px; }
+		.box1 .cc h3{color:#EBF3FE; font-weight:bold; font-size:12px; line-height:30px; padding-left:15px;}
+		.box1 .tl {left:0;top:0; background:url(../image/lefttopbg_l.jpg) no-repeat; width:6px; height:30px; position:absolute;}
+		.box1 .tr {right:0; _right:-1px; top:0; background:url(../image/lefttopbg_r.jpg) no-repeat; width:6px; height:30px; position:absolute;}
+.CenterLeft .LeftContentBox{ border:solid #ddd; border-width:0 1px 1px 1px; width:190px; padding:4px; }
+.CenterLeft .LeftContentBox .LeftContent{ border: 1px solid #ddd; width:188px;}	 
+/*center*/
+.centerTab{ width:100%; height:100% }
+.centerTab .centerTopFrame{ height:55px; }
+.centerTab .centerLeftFrame{ width:200px; }
+.TopShowBg{ height:7px; background:url(../image/topcontentstyle.jpg) repeat-x; position:relative}
+.TopShowselect{ width:49px; height:7px; background:url(../image/topcontentnone.jpg) no-repeat; position:absolute; left:50%; margin-left:-25px; margin-top:-4px; _margin-top:0; cursor:pointer}
+.LeftShowBg{ background:#EBEFF2; width:10px; position:relative;}
+.LeftShow{ width:10px; height:47px; background:url(../image/leftcontentshow.jpg) no-repeat; position:absolute; margin-top:30px; *margin-top:60px; cursor:pointer; display:}
+.LeftShowselect{ width:10px; height:47px; background:url(../image/leftcontentnone.jpg) no-repeat; position:absolute; margin-top:30px; *margin-top:60px; cursor:pointer}
+/*bottom*/
+.bottomTxt{ color:#777; font-size:12px; text-align:center; line-height:45px; width:100%}
+.dataTableContent { padding-left:5px; font-family: Verdana, Arial, sans-serif; font-size:12px; color: #000000; }
+
+/*ÃÌº”—˘ Ω*/
+.smallText { font-family: Verdana, Arial, sans-serif; font-size:14px; height:25px; line-height:25px;}
+.main { font-family: Tahoma, Verdana, Arial, sans-serif; font-size:12px; overflow:hidden}
+
+.ButtonAlighright{ text-align:right; padding-top:20px; padding-bottom:20px;}
+.AllbuttonHui{ background:#c7c7c7 url(../image/buttonhui.jpg) repeat-x; padding-left:25px; padding-right:25px; border:1px solid #c7c7c7; color:#000; line-height:25px; height:27px; cursor:pointer;  overflow:visible; *border:1px solid #fff;  *line-height:29px; *height:29px; _line-height:24px; _height:27px;}
+.AllbuttonHui:hover{ background:#F48A00 url(../image/buttonorange.jpg) repeat-x; padding-left:25px; padding-right:25px; border:1px solid #F48A00; color:#fff; line-height:25px; height:27px; cursor:pointer; overflow:visible; *border:1px solid #fff;  *line-height:29px; *height:29px; _line-height:24px; _height:27px; }
+.selectText_cc1{width:140px; height:24px; *height:24px; _height:24px; line-height:24px; padding:3px 3px; border:1px solid #ccc; color:#000; font-size:12px;}
+.selectText_cc2{width:65px; height:24px; *height:24px; _height:24px; line-height:24px; padding:3px 3px; border:1px solid #ccc; color:#000; font-size:12px;}
+.status-advice {width:auto;
+	filter:alpha(opacity=85);
+	-moz-opacity:0.85;
+	color : #F17511;
+	font-size: 12px;
+	border: 1px solid #F17511;
+	background-color: #FEF4ED;
+	margin:0px 0px 0px 5px;
+	padding:1px ;
+}
+.send-email-notcic{
+    color:#319113;
+}
+
+.pageBot{ float:right; margin:10px 0 0 20px; height:30px; line-height:30px; font-size:13px;}
+

@@ -1,0 +1,2361 @@
+date:2013-05-08 21:47:13
+order_id:67200
+Array
+(
+    [TIMESTAMP] => 2013-05-09T04:47:14Z
+    [CORRELATIONID] => c02d25c17953e
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 5908853
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 136.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => Y
+    [CVV2MATCH] => M
+)
+
+date:2013-05-08 21:48:26
+order_id:67200
+Array
+(
+    [TIMESTAMP] => 2013-05-09T04:48:27Z
+    [CORRELATIONID] => 9c55cb00f2edf
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 5908853
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 136.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => Y
+    [CVV2MATCH] => M
+)
+
+date:2013-05-08 22:33:28
+order_id:67203
+Array
+(
+    [TIMESTAMP] => 2013-05-09T05:33:29Z
+    [CORRELATIONID] => 7469606c6c9e9
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 5908853
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 1760.08
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => M
+)
+
+date:2013-05-08 22:34:32
+order_id:67199
+Array
+(
+    [TIMESTAMP] => 2013-05-09T05:34:33Z
+    [CORRELATIONID] => 104fd4881e5fb
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 5908853
+    [L_ERRORCODE0] => 10527
+    [L_ERRORCODE1] => 10508
+    [L_SHORTMESSAGE0] => Invalid Data
+    [L_SHORTMESSAGE1] => Invalid Data
+    [L_LONGMESSAGE0] => This transaction cannot be processed. Please enter a valid credit card number and type.
+    [L_LONGMESSAGE1] => This transaction cannot be processed. Please enter a valid credit card expiration date.
+    [L_SEVERITYCODE0] => Error
+    [L_SEVERITYCODE1] => Error
+    [AMT] => 538.00
+    [CURRENCYCODE] => USD
+)
+
+date:2013-05-08 22:34:43
+order_id:67203
+Array
+(
+    [TIMESTAMP] => 2013-05-09T05:34:43Z
+    [CORRELATIONID] => 41095d494d499
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 5908853
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 1760.08
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => M
+)
+
+date:2013-05-08 22:35:50
+order_id:67203
+Array
+(
+    [TIMESTAMP] => 2013-05-09T05:35:51Z
+    [CORRELATIONID] => 13678909671f3
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 5908853
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 1760.08
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => M
+)
+
+date:2013-05-08 22:36:15
+order_id:67199
+Array
+(
+    [TIMESTAMP] => 2013-05-09T05:36:16Z
+    [CORRELATIONID] => a36f5965d103
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 5908853
+    [L_ERRORCODE0] => 10527
+    [L_ERRORCODE1] => 10508
+    [L_SHORTMESSAGE0] => Invalid Data
+    [L_SHORTMESSAGE1] => Invalid Data
+    [L_LONGMESSAGE0] => This transaction cannot be processed. Please enter a valid credit card number and type.
+    [L_LONGMESSAGE1] => This transaction cannot be processed. Please enter a valid credit card expiration date.
+    [L_SEVERITYCODE0] => Error
+    [L_SEVERITYCODE1] => Error
+    [AMT] => 538.00
+    [CURRENCYCODE] => USD
+)
+
+date:2013-05-08 22:37:26
+order_id:67203
+Array
+(
+    [TIMESTAMP] => 2013-05-09T05:37:27Z
+    [CORRELATIONID] => 17dc2d3777d4
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 5908853
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 1760.08
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => M
+)
+
+date:2013-05-09 02:59:09
+order_id:67193
+Array
+(
+    [TIMESTAMP] => 2013-05-09T09:59:09Z
+    [CORRELATIONID] => 402483541a57f
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 5908853
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 3288.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => S
+    [CVV2MATCH] => M
+)
+
+date:2013-05-09 13:13:20
+order_id:67246
+Array
+(
+    [TIMESTAMP] => 2013-05-09T20:13:20Z
+    [CORRELATIONID] => ea81b3bd8c161
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 5908853
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 1274.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => M
+)
+
+date:2013-05-09 13:34:08
+order_id:67169
+Array
+(
+    [TIMESTAMP] => 2013-05-09T20:34:08Z
+    [CORRELATIONID] => 711e5511b16d6
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 5908853
+    [L_ERRORCODE0] => 10527
+    [L_SHORTMESSAGE0] => Invalid Data
+    [L_LONGMESSAGE0] => This transaction cannot be processed. Please enter a valid credit card number and type.
+    [L_SEVERITYCODE0] => Error
+    [AMT] => 1530.00
+    [CURRENCYCODE] => USD
+)
+
+date:2013-05-09 13:37:54
+order_id:67169
+Array
+(
+    [TIMESTAMP] => 2013-05-09T20:37:54Z
+    [CORRELATIONID] => 4b558d3488de6
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 5908853
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 1530.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => Y
+    [CVV2MATCH] => M
+)
+
+date:2013-05-09 15:27:22
+order_id:67252
+Array
+(
+    [TIMESTAMP] => 2013-05-09T22:27:22Z
+    [CORRELATIONID] => 637ff2e2df905
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 5908853
+    [L_ERRORCODE0] => 10527
+    [L_SHORTMESSAGE0] => Invalid Data
+    [L_LONGMESSAGE0] => This transaction cannot be processed. Please enter a valid credit card number and type.
+    [L_SEVERITYCODE0] => Error
+    [AMT] => 660.00
+    [CURRENCYCODE] => USD
+)
+
+date:2013-05-09 17:48:04
+order_id:67264
+Array
+(
+    [TIMESTAMP] => 2013-05-10T00:48:04Z
+    [CORRELATIONID] => 17b985e6b2206
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 5908853
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 384.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => S
+    [CVV2MATCH] => M
+)
+
+date:2013-05-09 22:40:17
+order_id:66139
+Array
+(
+    [TIMESTAMP] => 2013-05-10T05:40:18Z
+    [CORRELATIONID] => 8b8fafab17653
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 5908853
+    [L_ERRORCODE0] => 10508
+    [L_SHORTMESSAGE0] => Invalid Data
+    [L_LONGMESSAGE0] => This transaction cannot be processed. Please enter a valid credit card expiration date.
+    [L_SEVERITYCODE0] => Error
+    [AMT] => 279.00
+    [CURRENCYCODE] => USD
+)
+
+date:2013-05-09 23:29:51
+order_id:67239
+Array
+(
+    [TIMESTAMP] => 2013-05-10T06:29:50Z
+    [CORRELATIONID] => 7833236c92a7
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 5908853
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 3453.52
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => M
+)
+
+date:2013-05-10 00:36:45
+order_id:67245
+Array
+(
+    [TIMESTAMP] => 2013-05-10T07:36:44Z
+    [CORRELATIONID] => a9e94398175f4
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 5908853
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 1274.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => S
+    [CVV2MATCH] => M
+)
+
+date:2013-05-10 01:30:29
+order_id:67270
+Array
+(
+    [TIMESTAMP] => 2013-05-10T08:30:29Z
+    [CORRELATIONID] => 7dc8078a73b59
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 5908853
+    [L_ERRORCODE0] => 10527
+    [L_SHORTMESSAGE0] => Invalid Data
+    [L_LONGMESSAGE0] => This transaction cannot be processed. Please enter a valid credit card number and type.
+    [L_SEVERITYCODE0] => Error
+    [AMT] => 1353.00
+    [CURRENCYCODE] => USD
+)
+
+date:2013-05-10 01:48:07
+order_id:67270
+Array
+(
+    [TIMESTAMP] => 2013-05-10T08:48:07Z
+    [CORRELATIONID] => 34107f0d81d5
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 5908853
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0057
+    [AMT] => 1353.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => I
+)
+
+date:2013-05-10 04:16:14
+order_id:67286
+Array
+(
+    [TIMESTAMP] => 2013-05-10T11:16:14Z
+    [CORRELATIONID] => c8e049198be3c
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 5908853
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 1002.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => N
+)
+
+date:2013-05-10 04:17:25
+order_id:67286
+Array
+(
+    [TIMESTAMP] => 2013-05-10T11:17:25Z
+    [CORRELATIONID] => 1491a289a9f30
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 5908853
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 1002.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => M
+)
+
+date:2013-05-10 05:35:21
+order_id:67239
+Array
+(
+    [TIMESTAMP] => 2013-05-10T12:35:21Z
+    [CORRELATIONID] => baaeab7062e2f
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 5908853
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 3453.52
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => M
+)
+
+date:2013-05-10 11:00:52
+order_id:67296
+Array
+(
+    [TIMESTAMP] => 2013-05-10T18:00:52Z
+    [CORRELATIONID] => 75c5855de5514
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 5908853
+    [L_ERRORCODE0] => 10527
+    [L_SHORTMESSAGE0] => Invalid Data
+    [L_LONGMESSAGE0] => This transaction cannot be processed. Please enter a valid credit card number and type.
+    [L_SEVERITYCODE0] => Error
+    [AMT] => 798.00
+    [CURRENCYCODE] => USD
+)
+
+date:2013-05-10 11:29:50
+order_id:67298
+Array
+(
+    [TIMESTAMP] => 2013-05-10T18:29:50Z
+    [CORRELATIONID] => 6713700e24c1d
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 5908853
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 936.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => U
+    [CVV2MATCH] => M
+)
+
+date:2013-05-10 11:33:54
+order_id:67298
+Array
+(
+    [TIMESTAMP] => 2013-05-10T18:33:54Z
+    [CORRELATIONID] => 8f1e15a239a1
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 5908853
+    [L_ERRORCODE0] => 10527
+    [L_SHORTMESSAGE0] => Invalid Data
+    [L_LONGMESSAGE0] => This transaction cannot be processed. Please enter a valid credit card number and type.
+    [L_SEVERITYCODE0] => Error
+    [AMT] => 936.00
+    [CURRENCYCODE] => USD
+)
+
+date:2013-05-10 12:08:10
+order_id:67300
+Array
+(
+    [TIMESTAMP] => 2013-05-10T19:08:10Z
+    [CORRELATIONID] => 47af41a5d427d
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 5908853
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 1146.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => Y
+    [CVV2MATCH] => M
+)
+
+date:2013-05-10 12:09:24
+order_id:67300
+Array
+(
+    [TIMESTAMP] => 2013-05-10T19:09:24Z
+    [CORRELATIONID] => 77b136fcc3ccd
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 5908853
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 1146.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => Y
+    [CVV2MATCH] => M
+)
+
+date:2013-05-10 12:11:45
+order_id:67300
+Array
+(
+    [TIMESTAMP] => 2013-05-10T19:11:45Z
+    [CORRELATIONID] => f0dfd3aca80a
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 5908853
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 1146.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => Y
+    [CVV2MATCH] => M
+)
+
+date:2013-05-10 12:13:33
+order_id:67300
+Array
+(
+    [TIMESTAMP] => 2013-05-10T19:13:33Z
+    [CORRELATIONID] => 78602adeb741
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 5908853
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 1146.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => M
+)
+
+date:2013-05-10 15:32:17
+order_id:67305
+Array
+(
+    [TIMESTAMP] => 2013-05-10T22:32:17Z
+    [CORRELATIONID] => 2835eb46e99b
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 5908853
+    [L_ERRORCODE0] => 10502
+    [L_SHORTMESSAGE0] => Invalid Data
+    [L_LONGMESSAGE0] => This transaction cannot be processed. Please use a valid credit card.
+    [L_SEVERITYCODE0] => Error
+    [AMT] => 993.00
+    [CURRENCYCODE] => USD
+)
+
+date:2013-05-10 18:08:26
+order_id:67310
+Array
+(
+    [TIMESTAMP] => 2013-05-11T01:08:26Z
+    [CORRELATIONID] => f038286d62436
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 5908853
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 2254.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => M
+)
+
+date:2013-05-10 18:09:34
+order_id:67310
+Array
+(
+    [TIMESTAMP] => 2013-05-11T01:09:34Z
+    [CORRELATIONID] => 8f00dad9b4a9f
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 5908853
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 2254.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => M
+)
+
+date:2013-05-10 18:23:45
+order_id:67239
+Array
+(
+    [TIMESTAMP] => 2013-05-11T01:23:45Z
+    [CORRELATIONID] => fdbd96cadc26b
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 5908853
+    [L_ERRORCODE0] => 10508
+    [L_SHORTMESSAGE0] => Invalid Data
+    [L_LONGMESSAGE0] => This transaction cannot be processed. Please enter a valid credit card expiration date.
+    [L_SEVERITYCODE0] => Error
+    [AMT] => 3453.52
+    [CURRENCYCODE] => USD
+)
+
+date:2013-05-10 19:07:33
+order_id:67318
+Array
+(
+    [TIMESTAMP] => 2013-05-11T02:07:33Z
+    [CORRELATIONID] => c9d4900df021f
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 5908853
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 976.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => M
+)
+
+date:2013-05-10 19:10:44
+order_id:67318
+Array
+(
+    [TIMESTAMP] => 2013-05-11T02:10:44Z
+    [CORRELATIONID] => 284661394c9a7
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 5908853
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 976.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => M
+)
+
+date:2013-05-10 19:23:04
+order_id:67318
+Array
+(
+    [TIMESTAMP] => 2013-05-11T02:23:04Z
+    [CORRELATIONID] => ffa62b861f6f
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 5908853
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 976.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => M
+)
+
+date:2013-05-10 23:53:10
+order_id:67336
+Array
+(
+    [TIMESTAMP] => 2013-05-11T06:53:10Z
+    [CORRELATIONID] => 91d7e2c16bec0
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 5908853
+    [L_ERRORCODE0] => 10001
+    [L_SHORTMESSAGE0] => Internal Error
+    [L_LONGMESSAGE0] => Internal Error
+    [L_SEVERITYCODE0] => Error
+    [AMT] => 619.00
+    [CURRENCYCODE] => USD
+)
+
+date:2013-05-11 00:07:28
+order_id:67336
+Array
+(
+    [TIMESTAMP] => 2013-05-11T07:07:27Z
+    [CORRELATIONID] => 30adb332a2f25
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 5908853
+    [L_ERRORCODE0] => 10001
+    [L_SHORTMESSAGE0] => Internal Error
+    [L_LONGMESSAGE0] => Internal Error
+    [L_SEVERITYCODE0] => Error
+    [AMT] => 619.00
+    [CURRENCYCODE] => USD
+)
+
+date:2013-12-27 01:00:53
+order_id:81397
+Array
+(
+    [TIMESTAMP] => 2013-12-27T09:00:53Z
+    [CORRELATIONID] => 8e1866e6b373e
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 10527
+    [L_SHORTMESSAGE0] => Invalid Data
+    [L_LONGMESSAGE0] => This transaction cannot be processed. Please enter a valid credit card number and type.
+    [L_SEVERITYCODE0] => Error
+    [AMT] => 65.00
+    [CURRENCYCODE] => USD
+)
+
+date:2013-12-27 11:16:52
+order_id:81409
+Array
+(
+    [TIMESTAMP] => 2013-12-27T19:16:52Z
+    [CORRELATIONID] => d5f3de7266225
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0057
+    [AMT] => 882.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => S
+    [CVV2MATCH] => M
+)
+
+date:2013-12-27 20:39:52
+order_id:81392
+Array
+(
+    [TIMESTAMP] => 2013-12-28T04:39:52Z
+    [CORRELATIONID] => 1a88fad985c66
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 1472.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => N
+    [CVV2MATCH] => M
+)
+
+date:2013-12-27 21:42:24
+order_id:81439
+Array
+(
+    [TIMESTAMP] => 2013-12-28T05:42:24Z
+    [CORRELATIONID] => dc77a2e4f88e
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 420.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => Y
+    [CVV2MATCH] => M
+)
+
+date:2013-12-28 09:55:40
+order_id:81385
+Array
+(
+    [TIMESTAMP] => 2013-12-28T17:55:41Z
+    [CORRELATIONID] => be3ad76d4db17
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0057
+    [AMT] => 988.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => S
+    [CVV2MATCH] => M
+)
+
+date:2013-12-29 09:37:56
+order_id:81482
+Array
+(
+    [TIMESTAMP] => 2013-12-29T17:37:56Z
+    [CORRELATIONID] => 2dfaedd0237d5
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 296.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => S
+    [CVV2MATCH] => P
+)
+
+date:2013-12-29 16:27:56
+order_id:81491
+Array
+(
+    [TIMESTAMP] => 2013-12-30T00:27:56Z
+    [CORRELATIONID] => ca92a9743cf38
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 660.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => M
+)
+
+date:2013-12-29 16:30:07
+order_id:81491
+Array
+(
+    [TIMESTAMP] => 2013-12-30T00:30:08Z
+    [CORRELATIONID] => 8aed695e33a42
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 660.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => M
+)
+
+date:2013-12-29 17:01:57
+order_id:81491
+Array
+(
+    [TIMESTAMP] => 2013-12-30T01:01:57Z
+    [CORRELATIONID] => b3ca9a95d83fd
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 10527
+    [L_ERRORCODE1] => 10508
+    [L_SHORTMESSAGE0] => Invalid Data
+    [L_SHORTMESSAGE1] => Invalid Data
+    [L_LONGMESSAGE0] => This transaction cannot be processed. Please enter a valid credit card number and type.
+    [L_LONGMESSAGE1] => This transaction cannot be processed. Please enter a valid credit card expiration date.
+    [L_SEVERITYCODE0] => Error
+    [L_SEVERITYCODE1] => Error
+    [AMT] => 280.00
+    [CURRENCYCODE] => USD
+)
+
+date:2013-12-29 17:02:39
+order_id:81491
+Array
+(
+    [TIMESTAMP] => 2013-12-30T01:02:40Z
+    [CORRELATIONID] => 22aabb7a29738
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 10508
+    [L_SHORTMESSAGE0] => Invalid Data
+    [L_LONGMESSAGE0] => This transaction cannot be processed. Please enter a valid credit card expiration date.
+    [L_SEVERITYCODE0] => Error
+    [AMT] => 280.00
+    [CURRENCYCODE] => USD
+)
+
+date:2013-12-29 17:03:21
+order_id:81491
+Array
+(
+    [TIMESTAMP] => 2013-12-30T01:03:21Z
+    [CORRELATIONID] => 683f93adbb17f
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 280.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => M
+)
+
+date:2013-12-29 17:04:35
+order_id:81491
+Array
+(
+    [TIMESTAMP] => 2013-12-30T01:04:35Z
+    [CORRELATIONID] => 22a376c6170fb
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 280.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => M
+)
+
+date:2013-12-29 17:06:11
+order_id:81491
+Array
+(
+    [TIMESTAMP] => 2013-12-30T01:06:11Z
+    [CORRELATIONID] => b24cbc0acaaff
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 280.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => M
+)
+
+date:2013-12-29 17:09:08
+order_id:81491
+Array
+(
+    [TIMESTAMP] => 2013-12-30T01:09:09Z
+    [CORRELATIONID] => e204620fccd02
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 280.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => M
+)
+
+date:2013-12-29 17:11:04
+order_id:81491
+Array
+(
+    [TIMESTAMP] => 2013-12-30T01:11:04Z
+    [CORRELATIONID] => d0314d5d2b863
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 280.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => M
+)
+
+date:2013-12-29 19:45:00
+order_id:81499
+Array
+(
+    [TIMESTAMP] => 2013-12-30T03:45:00Z
+    [CORRELATIONID] => 1cd1655a351c5
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 705.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => S
+    [CVV2MATCH] => M
+)
+
+date:2013-12-29 20:08:57
+order_id:81499
+Array
+(
+    [TIMESTAMP] => 2013-12-30T04:08:58Z
+    [CORRELATIONID] => 1ed9d69e101f
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 705.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => S
+    [CVV2MATCH] => M
+)
+
+date:2013-12-29 20:25:16
+order_id:81500
+Array
+(
+    [TIMESTAMP] => 2013-12-30T04:25:17Z
+    [CORRELATIONID] => 7de3026fd8e43
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0057
+    [AMT] => 177.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => M
+)
+
+date:2013-12-29 20:26:19
+order_id:81500
+Array
+(
+    [TIMESTAMP] => 2013-12-30T04:26:20Z
+    [CORRELATIONID] => 1139abe36b8d3
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15007
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed. Please use a valid credit card.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0054
+    [AMT] => 177.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => N
+)
+
+date:2013-12-30 01:09:18
+order_id:81518
+Array
+(
+    [TIMESTAMP] => 2013-12-30T09:09:18Z
+    [CORRELATIONID] => e8a7a2f635ac8
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 680.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => M
+)
+
+date:2013-12-30 01:10:47
+order_id:81518
+Array
+(
+    [TIMESTAMP] => 2013-12-30T09:10:47Z
+    [CORRELATIONID] => 23f5ff73415e
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 680.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => M
+)
+
+date:2013-12-30 03:59:58
+order_id:81524
+Array
+(
+    [TIMESTAMP] => 2013-12-30T11:59:58Z
+    [CORRELATIONID] => 3414336766063
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 10527
+    [L_SHORTMESSAGE0] => Invalid Data
+    [L_LONGMESSAGE0] => This transaction cannot be processed. Please enter a valid credit card number and type.
+    [L_SEVERITYCODE0] => Error
+    [AMT] => 1020.00
+    [CURRENCYCODE] => USD
+)
+
+date:2013-12-30 05:28:11
+order_id:80216
+Array
+(
+    [TIMESTAMP] => 2013-12-30T13:28:11Z
+    [CORRELATIONID] => dfef207518819
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 1338.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => M
+)
+
+date:2013-12-30 05:30:07
+order_id:80216
+Array
+(
+    [TIMESTAMP] => 2013-12-30T13:30:07Z
+    [CORRELATIONID] => aeddf9b3a7e57
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 1338.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => M
+)
+
+date:2013-12-30 14:21:39
+order_id:81539
+Array
+(
+    [TIMESTAMP] => 2013-12-30T22:21:39Z
+    [CORRELATIONID] => d3637748a4e68
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 365.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => N
+    [CVV2MATCH] => M
+)
+
+date:2013-12-30 14:23:36
+order_id:81539
+Array
+(
+    [TIMESTAMP] => 2013-12-30T22:23:37Z
+    [CORRELATIONID] => 146741d274518
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 365.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => N
+    [CVV2MATCH] => M
+)
+
+date:2013-12-30 14:26:25
+order_id:81539
+Array
+(
+    [TIMESTAMP] => 2013-12-30T22:26:25Z
+    [CORRELATIONID] => 27571bfdef506
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 365.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => N
+    [CVV2MATCH] => M
+)
+
+date:2013-12-30 19:45:08
+order_id:81550
+Array
+(
+    [TIMESTAMP] => 2013-12-31T03:45:09Z
+    [CORRELATIONID] => c23d2783659c0
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 1176.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => M
+)
+
+date:2013-12-30 19:47:46
+order_id:81550
+Array
+(
+    [TIMESTAMP] => 2013-12-31T03:47:46Z
+    [CORRELATIONID] => 12bdb36c1d9fb
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 1176.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => M
+)
+
+date:2013-12-30 19:50:25
+order_id:81550
+Array
+(
+    [TIMESTAMP] => 2013-12-31T03:50:26Z
+    [CORRELATIONID] => 97e5acbd77891
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 1176.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => M
+)
+
+date:2013-12-30 20:43:31
+order_id:81552
+Array
+(
+    [TIMESTAMP] => 2013-12-31T04:43:32Z
+    [CORRELATIONID] => fa8d462578b
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 10527
+    [L_ERRORCODE1] => 10508
+    [L_SHORTMESSAGE0] => Invalid Data
+    [L_SHORTMESSAGE1] => Invalid Data
+    [L_LONGMESSAGE0] => This transaction cannot be processed. Please enter a valid credit card number and type.
+    [L_LONGMESSAGE1] => This transaction cannot be processed. Please enter a valid credit card expiration date.
+    [L_SEVERITYCODE0] => Error
+    [L_SEVERITYCODE1] => Error
+    [AMT] => 600.00
+    [CURRENCYCODE] => USD
+)
+
+date:2013-12-30 20:43:44
+order_id:81474
+Array
+(
+    [TIMESTAMP] => 2013-12-31T04:43:45Z
+    [CORRELATIONID] => 6f12b4af8054e
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 640.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => M
+)
+
+date:2013-12-30 20:47:53
+order_id:81474
+Array
+(
+    [TIMESTAMP] => 2013-12-31T04:47:54Z
+    [CORRELATIONID] => dcea4db252052
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 640.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => M
+)
+
+date:2013-12-30 20:50:40
+order_id:81474
+Array
+(
+    [TIMESTAMP] => 2013-12-31T04:50:40Z
+    [CORRELATIONID] => a8459733305f3
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 640.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => M
+)
+
+date:2013-12-30 21:21:12
+order_id:81474
+Array
+(
+    [TIMESTAMP] => 2013-12-31T05:21:12Z
+    [CORRELATIONID] => 27e87671d2cd3
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 640.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => M
+)
+
+date:2013-12-30 22:51:09
+order_id:81557
+Array
+(
+    [TIMESTAMP] => 2013-12-31T06:51:10Z
+    [CORRELATIONID] => 344dd0004d340
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 10527
+    [L_SHORTMESSAGE0] => Invalid Data
+    [L_LONGMESSAGE0] => This transaction cannot be processed. Please enter a valid credit card number and type.
+    [L_SEVERITYCODE0] => Error
+    [AMT] => 218.00
+    [CURRENCYCODE] => USD
+)
+
+date:2013-12-31 06:55:24
+order_id:81567
+Array
+(
+    [TIMESTAMP] => 2013-12-31T14:55:24Z
+    [CORRELATIONID] => 7408d56281113
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 2148.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => M
+)
+
+date:2013-12-31 06:56:58
+order_id:81567
+Array
+(
+    [TIMESTAMP] => 2013-12-31T14:56:58Z
+    [CORRELATIONID] => faa7ea1d5e0d2
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 2148.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => M
+)
+
+date:2013-12-31 18:11:51
+order_id:81542
+Array
+(
+    [TIMESTAMP] => 2014-01-01T02:11:51Z
+    [CORRELATIONID] => 9cd3e77bc923d
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 910.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => A
+    [CVV2MATCH] => M
+)
+
+date:2013-12-31 19:46:41
+order_id:81596
+Array
+(
+    [TIMESTAMP] => 2014-01-01T03:46:41Z
+    [CORRELATIONID] => 389270d24c2e5
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 495.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => S
+    [CVV2MATCH] => M
+)
+
+date:2013-12-31 19:47:52
+order_id:81596
+Array
+(
+    [TIMESTAMP] => 2014-01-01T03:47:52Z
+    [CORRELATIONID] => 89c42097672a6
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 495.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => S
+    [CVV2MATCH] => M
+)
+
+date:2013-12-31 19:53:54
+order_id:81596
+Array
+(
+    [TIMESTAMP] => 2014-01-01T03:53:55Z
+    [CORRELATIONID] => 24d84b6470ae1
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 10508
+    [L_SHORTMESSAGE0] => Invalid Data
+    [L_LONGMESSAGE0] => This transaction cannot be processed. Please enter a valid credit card expiration date.
+    [L_SEVERITYCODE0] => Error
+    [AMT] => 495.00
+    [CURRENCYCODE] => USD
+)
+
+date:2013-12-31 22:38:20
+order_id:81601
+Array
+(
+    [TIMESTAMP] => 2014-01-01T06:38:21Z
+    [CORRELATIONID] => ec134b21e09f6
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 10527
+    [L_ERRORCODE1] => 10508
+    [L_SHORTMESSAGE0] => Invalid Data
+    [L_SHORTMESSAGE1] => Invalid Data
+    [L_LONGMESSAGE0] => This transaction cannot be processed. Please enter a valid credit card number and type.
+    [L_LONGMESSAGE1] => This transaction cannot be processed. Please enter a valid credit card expiration date.
+    [L_SEVERITYCODE0] => Error
+    [L_SEVERITYCODE1] => Error
+    [AMT] => 1498.00
+    [CURRENCYCODE] => USD
+)
+
+date:2014-01-01 12:39:33
+order_id:81615
+Array
+(
+    [TIMESTAMP] => 2014-01-01T20:39:33Z
+    [CORRELATIONID] => 93bbc9b5b8d6e
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 10527
+    [L_SHORTMESSAGE0] => Invalid Data
+    [L_LONGMESSAGE0] => This transaction cannot be processed. Please enter a valid credit card number and type.
+    [L_SEVERITYCODE0] => Error
+    [AMT] => 1190.00
+    [CURRENCYCODE] => USD
+)
+
+date:2014-01-01 16:24:05
+order_id:81624
+Array
+(
+    [TIMESTAMP] => 2014-01-02T00:24:06Z
+    [CORRELATIONID] => 1f52e0e7e6a62
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 210.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => N
+)
+
+date:2014-01-01 16:25:21
+order_id:81624
+Array
+(
+    [TIMESTAMP] => 2014-01-02T00:25:22Z
+    [CORRELATIONID] => d0e8533f9b56f
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 210.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => M
+)
+
+date:2014-01-01 16:27:25
+order_id:81624
+Array
+(
+    [TIMESTAMP] => 2014-01-02T00:27:26Z
+    [CORRELATIONID] => 4216cd037bfb7
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 210.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => M
+)
+
+date:2014-01-01 21:36:44
+order_id:81640
+Array
+(
+    [TIMESTAMP] => 2014-01-02T05:36:45Z
+    [CORRELATIONID] => 39b492675d079
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 10527
+    [L_SHORTMESSAGE0] => Invalid Data
+    [L_LONGMESSAGE0] => This transaction cannot be processed. Please enter a valid credit card number and type.
+    [L_SEVERITYCODE0] => Error
+    [AMT] => 218.00
+    [CURRENCYCODE] => USD
+)
+
+date:2014-01-01 21:37:41
+order_id:81640
+Array
+(
+    [TIMESTAMP] => 2014-01-02T05:37:42Z
+    [CORRELATIONID] => 1a2ba2fd73efe
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 10527
+    [L_SHORTMESSAGE0] => Invalid Data
+    [L_LONGMESSAGE0] => This transaction cannot be processed. Please enter a valid credit card number and type.
+    [L_SEVERITYCODE0] => Error
+    [AMT] => 218.00
+    [CURRENCYCODE] => USD
+)
+
+date:2014-01-02 03:43:59
+order_id:81601
+Array
+(
+    [TIMESTAMP] => 2014-01-02T11:43:59Z
+    [CORRELATIONID] => c2419822dfa4
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15007
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed. Please use a valid credit card.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0054
+    [AMT] => 1450.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => M
+)
+
+date:2014-01-02 04:09:53
+order_id:81610
+Array
+(
+    [TIMESTAMP] => 2014-01-02T12:09:53Z
+    [CORRELATIONID] => 697342e57286a
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0057
+    [AMT] => 4603.32
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => M
+)
+
+date:2014-01-02 04:14:52
+order_id:81610
+Array
+(
+    [TIMESTAMP] => 2014-01-02T12:14:52Z
+    [CORRELATIONID] => 8e20b54150a43
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0057
+    [AMT] => 2603.32
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => M
+)
+
+date:2014-01-02 06:20:20
+order_id:80970
+Array
+(
+    [TIMESTAMP] => 2014-01-02T14:20:20Z
+    [CORRELATIONID] => 2ef260c2c0f20
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0057
+    [AMT] => 2374.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => M
+)
+
+date:2014-01-02 07:14:28
+order_id:81654
+Array
+(
+    [TIMESTAMP] => 2014-01-02T15:14:28Z
+    [CORRELATIONID] => 2395c3a9d4e21
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 1265.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => M
+)
+
+date:2014-01-02 07:15:44
+order_id:81654
+Array
+(
+    [TIMESTAMP] => 2014-01-02T15:15:44Z
+    [CORRELATIONID] => 6331f8b45b9
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 1265.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => M
+)
+
+date:2014-01-02 07:58:38
+order_id:80916
+Array
+(
+    [TIMESTAMP] => 2014-01-02T15:58:38Z
+    [CORRELATIONID] => 4be8c11f4ff4b
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 10527
+    [L_SHORTMESSAGE0] => Invalid Data
+    [L_LONGMESSAGE0] => This transaction cannot be processed. Please enter a valid credit card number and type.
+    [L_SEVERITYCODE0] => Error
+    [AMT] => 1256.00
+    [CURRENCYCODE] => USD
+)
+
+date:2014-01-02 09:55:04
+order_id:81660
+Array
+(
+    [TIMESTAMP] => 2014-01-02T17:55:04Z
+    [CORRELATIONID] => da3a6bed7f551
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 27.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => Y
+    [CVV2MATCH] => M
+)
+
+date:2014-01-02 09:57:23
+order_id:81660
+Array
+(
+    [TIMESTAMP] => 2014-01-02T17:57:24Z
+    [CORRELATIONID] => 2eccf6c95d471
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 27.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => Y
+    [CVV2MATCH] => M
+)
+
+date:2014-01-02 10:05:37
+order_id:81661
+Array
+(
+    [TIMESTAMP] => 2014-01-02T18:05:37Z
+    [CORRELATIONID] => f167db79502b1
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 27.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => M
+)
+
+date:2014-01-03 00:43:54
+order_id:81715
+Array
+(
+    [TIMESTAMP] => 2014-01-03T08:43:54Z
+    [CORRELATIONID] => 700497b38321d
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 10527
+    [L_SHORTMESSAGE0] => Invalid Data
+    [L_LONGMESSAGE0] => This transaction cannot be processed. Please enter a valid credit card number and type.
+    [L_SEVERITYCODE0] => Error
+    [AMT] => 891.00
+    [CURRENCYCODE] => USD
+)
+
+date:2014-01-03 08:50:14
+order_id:81727
+Array
+(
+    [TIMESTAMP] => 2014-01-03T16:50:14Z
+    [CORRELATIONID] => 3e22f5d7c2a69
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 2334.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => M
+)
+
+date:2014-01-03 10:56:53
+order_id:81730
+Array
+(
+    [TIMESTAMP] => 2014-01-03T18:56:54Z
+    [CORRELATIONID] => 64cd8bbe12c03
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 1509.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => Y
+    [CVV2MATCH] => M
+)
+
+date:2014-01-03 10:59:56
+order_id:81730
+Array
+(
+    [TIMESTAMP] => 2014-01-03T18:59:57Z
+    [CORRELATIONID] => ff95f19f671f8
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 1509.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => Y
+    [CVV2MATCH] => M
+)
+
+date:2014-01-03 17:08:02
+order_id:81741
+Array
+(
+    [TIMESTAMP] => 2014-01-04T01:08:03Z
+    [CORRELATIONID] => 446403ab3dcb3
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0057
+    [AMT] => 218.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => U
+)
+
+date:2014-01-03 17:10:59
+order_id:81741
+Array
+(
+    [TIMESTAMP] => 2014-01-04T01:11:00Z
+    [CORRELATIONID] => 1b0095fb2385e
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0057
+    [AMT] => 218.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => U
+)
+
+date:2014-01-03 17:14:51
+order_id:81741
+Array
+(
+    [TIMESTAMP] => 2014-01-04T01:14:52Z
+    [CORRELATIONID] => 4b07097c3d995
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0057
+    [AMT] => 218.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => U
+)
+
+date:2014-01-03 19:23:16
+order_id:81757
+Array
+(
+    [TIMESTAMP] => 2014-01-04T03:23:16Z
+    [CORRELATIONID] => e5cc72f9c0aba
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 10527
+    [L_SHORTMESSAGE0] => Invalid Data
+    [L_LONGMESSAGE0] => This transaction cannot be processed. Please enter a valid credit card number and type.
+    [L_SEVERITYCODE0] => Error
+    [AMT] => 218.00
+    [CURRENCYCODE] => USD
+)
+
+date:2014-01-03 19:24:07
+order_id:81757
+Array
+(
+    [TIMESTAMP] => 2014-01-04T03:24:08Z
+    [CORRELATIONID] => 5ade7de516f95
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 10527
+    [L_SHORTMESSAGE0] => Invalid Data
+    [L_LONGMESSAGE0] => This transaction cannot be processed. Please enter a valid credit card number and type.
+    [L_SEVERITYCODE0] => Error
+    [AMT] => 218.00
+    [CURRENCYCODE] => USD
+)
+
+date:2014-01-03 21:09:41
+order_id:81233
+Array
+(
+    [TIMESTAMP] => 2014-01-04T05:09:42Z
+    [CORRELATIONID] => 2bf02d51f3559
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 1230.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => M
+)
+
+date:2014-01-03 21:40:44
+order_id:81762
+Array
+(
+    [TIMESTAMP] => 2014-01-04T05:40:45Z
+    [CORRELATIONID] => 11dd4647ab329
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 1680.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => M
+)
+
+date:2014-01-03 21:51:12
+order_id:81765
+Array
+(
+    [TIMESTAMP] => 2014-01-04T05:51:13Z
+    [CORRELATIONID] => 4f338bd86d809
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 10527
+    [L_SHORTMESSAGE0] => Invalid Data
+    [L_LONGMESSAGE0] => This transaction cannot be processed. Please enter a valid credit card number and type.
+    [L_SEVERITYCODE0] => Error
+    [AMT] => 1176.00
+    [CURRENCYCODE] => USD
+)
+
+date:2014-01-04 02:39:01
+order_id:81768
+Array
+(
+    [TIMESTAMP] => 2014-01-04T10:39:01Z
+    [CORRELATIONID] => f992ecb9508a7
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 1902.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => M
+)
+
+date:2014-01-04 02:41:23
+order_id:81768
+Array
+(
+    [TIMESTAMP] => 2014-01-04T10:41:23Z
+    [CORRELATIONID] => ddb54d93149f5
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 1902.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => M
+)
+
+date:2014-01-04 02:43:21
+order_id:81768
+Array
+(
+    [TIMESTAMP] => 2014-01-04T10:43:21Z
+    [CORRELATIONID] => fa6b1baea555e
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 1902.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => M
+)
+
+date:2014-01-04 11:22:51
+order_id:81774
+Array
+(
+    [TIMESTAMP] => 2014-01-04T19:22:51Z
+    [CORRELATIONID] => deed1ebd2131d
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 2655.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => S
+    [CVV2MATCH] => P
+)
+
+date:2014-01-04 11:25:30
+order_id:81774
+Array
+(
+    [TIMESTAMP] => 2014-01-04T19:25:30Z
+    [CORRELATIONID] => 788042587d0a0
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 2655.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => S
+    [CVV2MATCH] => P
+)
+
+date:2014-01-04 20:15:11
+order_id:81791
+Array
+(
+    [TIMESTAMP] => 2014-01-05T04:15:12Z
+    [CORRELATIONID] => 89a7d1e5c16c0
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0057
+    [AMT] => 1600.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => G
+    [CVV2MATCH] => U
+)
+
+date:2014-01-05 15:52:18
+order_id:81825
+Array
+(
+    [TIMESTAMP] => 2014-01-05T23:52:18Z
+    [CORRELATIONID] => cacd16a821142
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 10527
+    [L_SHORTMESSAGE0] => Invalid Data
+    [L_LONGMESSAGE0] => This transaction cannot be processed. Please enter a valid credit card number and type.
+    [L_SEVERITYCODE0] => Error
+    [AMT] => 393.00
+    [CURRENCYCODE] => USD
+)
+
+date:2014-01-06 06:46:11
+order_id:81790
+Array
+(
+    [TIMESTAMP] => 2014-01-06T14:46:11Z
+    [CORRELATIONID] => 5a90b4e9f0b01
+    [ACK] => Failure
+    [VERSION] => 65.1
+    [BUILD] => 8943548
+    [L_ERRORCODE0] => 15005
+    [L_SHORTMESSAGE0] => Processor Decline
+    [L_LONGMESSAGE0] => This transaction cannot be processed.
+    [L_SEVERITYCODE0] => Error
+    [L_ERRORPARAMID0] => ProcessorResponse
+    [L_ERRORPARAMVALUE0] => 0051
+    [AMT] => 1234.00
+    [CURRENCYCODE] => USD
+    [AVSCODE] => N
+    [CVV2MATCH] => M
+)
+

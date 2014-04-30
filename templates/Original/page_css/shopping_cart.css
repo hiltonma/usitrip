@@ -1,0 +1,57 @@
+.infoBox_outer{  border-top:3px solid #2686ff;  border-right:none; border-bottom:none;}
+.productListing-heading {  font-size: 12px;  background: url(/image/nav/carts.gif) repeat-x left top;	/*  font-weight: 700;*/  height:31px;  line-height:31px;  border-bottom:1px solid #d2e3f6;  border-right:1px solid #d2e3f6; font-weight:normal; color:#333333; }
+TD.productListing-data {
+  font-size: 12px;
+  padding:4px 2px 2px; 
+  background: #fffff;
+  border-bottom:1px solid #d2e3f6;
+  border-right:1px solid #d2e3f6;
+}
+TD.productListing-data .cimg{width:160px;}
+TD.productListing-data .cimg img{width:160px;min-height:100px;}
+.LRB{border-left:1px solid #bad9ff;border-right:1px solid #bad9ff;border-bottom:1px solid #bad9ff;height:55px;}
+TR.accountHistory-odd, TR.addressBook-odd, TR.alsoPurchased-odd, TR.payment-odd, TR.productListing-odd, TR.productReviews-odd, TR.upcomingProducts-odd, TR.shippingOptions-odd {
+  background: #f8fbff;/*#FFF3E3;*/
+}
+.infoBoxContents {
+  font-size: 12px;
+  background: none;
+  height:55px;
+}
+
+
+
+
+.infoBox {  
+  border: none;
+}
+a.btn{display:block;height:29px;line-height:29px;width:82px;padding-left:30px;background:url(/image/nav/carts.gif) no-repeat left -30px;}
+a.btn span{display:block;float:right;background:url(/image/nav/carts.gif) no-repeat right -30px;height:29px;width:10px;}
+a.checkout{background-position:left -59px;height:40px;line-height:40px;width:163px;padding-left:10px; font-family:"microsoft YaHei";font-weight:bold;font-size:16px;color:#fff;/*text-shadow:0 1px 1px #111;*/}
+a.checkout:hover{color:#fff;}
+a.checkout span{background-position:right -59px;height:40px;width:20px;}
+a.a2{color:#f00;}
+
+.cart_progress .cart_left{float:left;height:80px;width:200px; line-height:80px;}
+.cart_progress .cart_left .cart_icon{display:block;background:url(/image/nav/carts.gif) no-repeat left -99px;width:47px;height:45px;margin-top:13px;margin-left:10px;float:left;}
+.cart_progress .cart_left h3{color:#4c4c4c;font-size:24px; font-family:microsoft YaHei;}
+.cart_progress .cart_right{float:right;width:666px;height:80px;padding-top:18px;}
+.cart_progress .cart_right ul{float:right;}
+.cart_progress .cart_right li{float:left;background:#ffedca;width:161px;line-height:29px;font-size:12px;text-align:center}
+.cart_progress .cart_right li span{background:url(/image/nav/carts.gif) no-repeat -5px -144px;width:19px;height:29px;float:left;display:block;}
+.cart_progress .cart_right li.first span{background:url(/image/nav/carts.gif) no-repeat left -144px;width:5px;height:29px;display:block;float:left;}
+.cart_progress .cart_right li.cur{background:#ff6600;color:#fff;font-weight:bold;font-size:14px;}
+.cart_progress .cart_right li.cur span{ background-position:-24px -144px;}
+.cart_progress .cart_right li span.cur{background-position:-43px -144px;}
+.cart_progress .cart_right li.last{width:5px;}
+.cart_progress .cart_right li.last span{background-position:-62px -144px;width:5px;height:29px;}
+.cart_progress .cart_right li.last span.cur{background-position:-67px -144px;width:5px;height:29px;}
+
+
+/*
+ *Add by _Afei
+ *Description ±“÷÷—°‘Ò
+ */
+.ui-paytype{vertical:middle;}
+.ui-paytype a:hover{text-decoration:none;}
+.ui-paytype label.ui-pay-label{padding-left:3px;font-size:18px;font-weight:700;font-family:"Microsoft Yahei";color:#f60;}

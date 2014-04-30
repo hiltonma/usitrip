@@ -1,0 +1,169 @@
+{:include file="header.tpl.html" :}
+
+<script type="text/javascript">
+function del_words(words_id,botton_obj){
+    var obj = botton_obj;
+    if(confirm('确认要删除这个文章？')){
+        //alert('OK');
+        var urladdress = "{:$js_urladdress:}";
+        urladdress+= "&words_id="+words_id;
+        $.ajax({
+               type: "GET",
+               url: urladdress,
+               success: function(){
+                   //obj.parentNode.parentNode.parentNode.removeChild(obj.parentNode.parentNode);
+                   $("#tr_"+words_id).slideUp(500);
+                }
+        });
+    }
+}
+
+</script>
+<div class="main">
+{:if $have_everyone :}
+    <div class="prompt">
+        <span class="unread">未读信息<b>{:$unread:}</b>条</span>
+        <span class="red"><a href="?dir_id={:$dir_id:}&adjective=1&read=0">紧急信息<b>{:$adjective:}</b>条</a></span>
+        <span class="orange"><a href="?dir_id={:$dir_id:}&adjective=0&read=0">非紧急信息<b>{:$unadjective:}</b>条</a></span>
+        <span class="green"><a target="_blank" href="orders.php">紧急订单处理</a></span>
+    </div>
+{:/if:}
+  <form action="" method="get" id="form_search" target="_self" name="form_search">
+    <div class="ItemsTj">
+        <h1 class="ItemsH1"  id="tit" onclick="showHideLyer(this,'CI_content','ItemsH1Select')">搜索条件</h1>
+        <div class="ItemsTjContent" id="CI_content">
+            <table border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td>关键字：</td><td>{:$input_field_keyword:}</td>
+                    <td><label style="float:left"><input type="checkbox" name="is_serch_content" checked="checked" value="1"/>同时搜索文章内容</label></td>
+                    {:if $have_everyone:}
+                    <td align="right" nowrap="nowrap">&nbsp;&nbsp;provider：</td><td nowrap="nowrap">{:$input_field_provider:}<input type="hidden" name="dir_id" id="dir_id" value="{:$dir_id:}" /></td>
+                    {:else:}
+                    <td align="right" nowrap="nowrap">&nbsp;&nbsp;所属目录：</td><td nowrap="nowrap">{:$pull_down_menu_dir_id:}</td>					
+                    {:/if:}
+                </tr>
+                <tr>
+                    
+                    <td nowrap="nowrap">发布日期：</td>
+                    <td colspan="2" nowrap="nowrap">					
+            <input type="text" class="textTime" name="added_start_date" value="{:$added_start_date:}" onclick="GeCalendar.SetUnlimited(1); GeCalendar.SetDate(this);" style="ime-mode: disabled;" />至<input type="text" class="textTime" name="added_end_date" value="{:$added_end_date:}" style="ime-mode: disabled;" onclick="GeCalendar.SetUnlimited(1); GeCalendar.SetDate(this);" />					
+            </td>
+            {:if $have_everyone:}
+            <td align="right" nowrap="nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;发布人员：</td>
+            <td nowrap="nowrap">{:$input_field_serch_admin_name:}</td>
+            {:else:}
+            <td align="right" nowrap="nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;更新日期：</td>
+            <td nowrap="nowrap">
+            <input type="text" class="textTime" name="updated_start_date" value="{:$updated_start_date:}" onclick="GeCalendar.SetUnlimited(1); GeCalendar.SetDate(this);" style="ime-mode: disabled;" />至<input type="text" class="textTime" name="updated_end_date" value="{:$updated_end_date:}" style="ime-mode: disabled;" onclick="GeCalendar.SetUnlimited(1); GeCalendar.SetDate(this);" />					
+              </td>
+            {:/if:}  
+              </tr>
+                <tr><td colspan="9" class="ButtonAligh">
+                    <button type="submit" class="Allbutton">搜索</button> <button class="AllbuttonHui" type="button" onclick="javascript: location='{:$href_link_zhh_system_words_list:}'">清除搜索数据</button>
+                    </td></tr>
+          </table>
+      </div>
+    </div>
+  </form>
+
+ <div class="ItemsLb">
+   <h1 class="ItemsH1"  id="Lb" onclick="showHideLyer(this,'Lb_content','ItemsH1Select')">搜索结果</h1>
+   <div class="ItemsLbContent" id="Lb_content">
+  <form action="" method="get">
+  <div align="left" style="width:100%; padding-top:10px; padding-bottom:10px;">
+    {:if $href_link_create_words!="":}
+    <a href="{:$href_link_create_words:}" class="dosome">新增文章</a>
+    {:/if:}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    {:if $href_link_admin_dir!="":}
+    <a href="{:$href_link_admin_dir:}" class="nyroModal dosome" target="_blank">管理目录</a>
+    {:/if:}
+    </div>
+<table class="indexDdanyjXx">
+    <!--省略标题
+    <tr class="dataTableHeadingRow">
+        <td class="dataTableHeadingContent" nowrap="nowrap">ID</td>
+        <td class="dataTableHeadingContent" nowrap="nowrap">标题</td>
+        <td class="dataTableHeadingContent" nowrap="nowrap">发布人</td>
+        <td class="dataTableHeadingContent" nowrap="nowrap">发布日期</td>
+        <td class="dataTableHeadingContent" nowrap="nowrap">最后更新</td>
+        <td class="dataTableHeadingContent" nowrap="nowrap">更新日期</td>
+        <td class="dataTableHeadingContent" nowrap="nowrap">所属目录</td>
+        <td class="dataTableHeadingContent" nowrap="nowrap">附件</td>
+        <td class="dataTableHeadingContent" nowrap="nowrap">操作</td>
+        </tr>
+    -->
+    {:section name=i loop=$datas:}
+        
+        <tr id="tr_{:$datas[i].words_id:}" class="indexDdanyjXxBorb">
+        <!--<td>{:$datas[i].words_id:}</td>-->
+        <td class="urgent">       
+        {:if $have_everyone:}      
+               
+                    {:if $datas[i].is_read eq 1  || $datas[i].is_my_work == 1:}
+                    【已读】
+                    {:else:}
+                    【未读】
+                    {:/if:}
+               
+                      
+        {:/if:}
+        {:if $have_everyone:}
+            {:if $datas[i].is_read eq 1:}
+                {:$datas[i].words_title:}
+                {:if $datas[i].is_adjective eq 1:}
+                    <span class="urgentIcon">&nbsp;</span>
+                {:/if:}
+            {:else:}
+                {:if $datas[i].is_my_work == 1:}
+                    {:$datas[i].words_title:}
+                {:else:}
+                    <b>{:$datas[i].words_title:}</b>
+                {:/if:}
+                
+                {:if $datas[i].is_adjective eq 1:}
+                    <span class="urgentIcon">&nbsp;</span>
+                {:/if:}
+            {:/if:}
+        {:else:}
+            {:$datas[i].words_title:}
+        {:/if:}
+        </td>
+        <td class="spanContentp">{:$datas[i].sent_name:}</td>
+        <td class="spanContent">{:$datas[i].added_time:}</td>
+        <!--<td>{:$datas[i].up_per_name:}</td>
+        <td>{:$datas[i].updated_time:}</td>
+        <td>{:$datas[i].this_dirs_string:}</td>
+        <td>{:$datas[i].annexs:}</td>-->
+        <td class="caozuoContent">
+            <!--{:$datas[i].view_button:}-->
+            {:$datas[i].edit_button:}
+            </td>
+            <td class="caozuoContent">
+            {:$datas[i].del_button:}
+            </td>
+        </tr>
+        
+    {:/section:}
+    
+</table>
+    </form>
+  
+  
+  <div style="margin-top:10px;">
+    <!--分页-->
+    <table width="98%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td align="right">
+            <div class="pageBot">{:$split_right_content:}</div>
+            <div class="pageBot">{:$split_left_content:}</div>
+            </td>
+          </tr>
+        </table>
+    
+    </div>
+
+ </div>
+</div>
+
+</div>
+{:include file="footer.tpl.html" :}

@@ -1,0 +1,30 @@
+@charset "utf-8";
+/* CSS Document */
+*{ margin:0; padding:0}
+body{ font-family:"宋体", Tahoma,Arial, Verdana, Helvetica, sans-serif; font-size:12px; background:#98ccf1 url(bg.jpg) repeat-x; color:#353535}
+img{ border:none}
+h1,h2,h3,h4,h5,h6{ font-family:"宋体", Arial, Verdana, Helvetica, sans-serif}
+h1,h2,h3,h4,h5,h6,p,ul,li,dl,dt,dd{ margin:0; padding:0}
+p{ line-height:180%}
+ul,li{ list-style:none}
+a{ text-decoration:none}
+a:hover{ text-decoration:underline}
+.txt01{ color:#f7860f}
+.txt02{ text-decoration:line-through;}
+.padl60{ padding-left:70px}
+.clearfloat {clear:both;height:0;font-size: 1px;line-height: 0px;}
+
+.header,.banner,.itmebox,.footer{ width:786px; height:auto; margin:0 auto}
+.banner .bannertxt{ background:url(banner_bg.gif) repeat-y; color:#fff; padding:0 45px}
+.banner .bannertxt p,.itmebox .itmecon p{ padding-bottom:10px}
+.itmebox{ background:#fff; width:778px; padding:4px; overflow:hidden}
+.itmebox h3{ height:27px; line-height:27px; padding-left:10px; margin-bottom:10px; font-size:12px; color:#fff; background:url(itmetit.gif) repeat-x}
+.itmebox h3 a{ color:#f8ff32}
+.itmebox .itmepic{ width:170px; text-align:right; float:left}
+.itmebox .itmepic a img{ padding:1px; border:1px solid #fff}
+.itmebox .itmepic a:hover img{ border-color:#124178}
+.itmebox .itmecon{ width:560px; padding-right:30px; position:relative; float:right}
+.itmebox .itmecon .sale{ position: absolute; top:0; right:0}
+
+.footer{ height:90px; line-height:90px; font-size:16px; color:#fff; font-weight:700; background:url(page_b_06.jpg) no-repeat; text-align:center;}
+.footer img{ padding-top:10px;}

@@ -1,0 +1,84 @@
+@charset "gb2312";
+.color_orange, .color_orange a, a.color_orange {
+    color: #FF6600;
+}
+
+#abouts .column .cont li a{height:35px; display:block; padding-left:60px;}
+/*关于我们*/
+#abouts{ padding-left:20px;}
+.abouts_left{ width:263px; float:left; margin-right:12px;}
+.abouts_left .left_func{ border:1px solid #cae4ff; border-top:0; }
+#abouts .func_list{}
+#abouts .func_list h2{ border:1px solid #417cce; border-bottom:0; height:33px; line-height:33px; background:url(/image/nav/abouts_bg1.gif) repeat-x; font-size:14px; color:#fff; font-weight:bold; padding-left:30px;}
+.left_func .func_list h2 a{ color:#fff; height:33px; display:block; background:url(/image/nav/func_list_arr01.jpg) 150px top no-repeat;}
+.left_func .func_list h2 a.click{ background:url(/image/nav/func_list_arr02.jpg) 150px top no-repeat;}
+.left_func .func_list h2 a:hover{ text-decoration:none;}
+.left_func .func_list ul li{ height:35px; line-height:33px;}
+.left_func .func_list ul li a{height:35px; padding:0 50px; display:block; position:relative; color:#333;}
+.left_func .func_list ul li a.click{ color:#f60; background:#ffe9d6;}
+.left_func .func_list ul li a.click b{ color:#f60;}
+.left_func .func_list ul li a:hover{ color:#f60; background:#ffe9d6; text-decoration:none;}
+.left_func .func_list ul li a b{ position:absolute; right:50px; top:0; height:35px; display:block; font-family:"新宋体"; font-weight:bold; color:#b5b5b5;}
+.left_func .func_list ul li a:hover b{ color:#f60;}
+.abouts_left .lastest_action{ margin-top:10px;}
+.abouts_left .lastest_action h2{ font-size:14px;}
+.abouts_left .lastest_action ul li{ border:solid 1px #ccc; height:71px; margin-top:5px;}
+.abouts_left .lastest_action ul li a img{ width:255px; height:65px; margin:3px;}
+
+
+.abouts_right{ width:670px; float:left; }
+.aboutsTit{height:30px; background:url(/image/nav/user_bg7.gif) repeat-x bottom; }
+.aboutsTit li{float:left;  height:26px; line-height:26px; border-bottom:none; padding:0 25px;
+background:url(/image/nav/user_bg8.gif) repeat-x; color:#fff; font-weight:bold; font-size:14px; border:1px solid #ff5500; border-bottom:none;}
+.aboutsCont{ border:1px solid #cae4ff; margin-top:2px; padding:15px; }
+.aboutsCont .func_cont_list ul{  padding-bottom:10px; margin-bottom:10px;}
+.aboutsCont .func_cont_list ul li{ color:#666; position:relative; height:30px; line-height:30px;}
+.aboutsCont .func_cont_list ul li.x{border-bottom:dashed 1px #ccc;padding-bottom:10px;}
+.aboutsCont .func_cont_list ul li a{color:#666; font-size:14px; background:url(/image/nav/func_dot.gif) left no-repeat; padding-left:10px;}
+.aboutsCont .func_cont_list ul li label{ position:absolute; right:0; font-size:12px;}
+.aboutsCont .func_cont_list ul li a:hover{ color:#f60;}
+
+/*热销排行榜*/
+.arrange_warp{height:185px; margin-top:10px; border:solid 1px #c9dff1;}
+.arrange_warp .title_1{ height:34px; background:url(/image/nav/func_hot_bg.png) repeat-x; color:#f60; padding-left: 18px; line-height:30px; border-bottom:solid 1px #c9dff1;}
+.arrange_warp .title_1 h2 {font-size:14px;}
+.arrange_warp .cont{ padding:12px 8px;}
+.arrange_warp li{ height:26px; line-height:26px; padding-left:18px; background:url(/image/nav/bg_main_box2.gif) no-repeat;}
+.arrange_warp li.s_1{ background-position:-272px -76px;}
+.arrange_warp li a{display:block;width:180px;height:26px;overflow:hidden;}
+.arrange_warp li a:hover{ color:#f60;}
+.arrange_warp li.s_2{ background-position:-272px -102px;}
+.arrange_warp li.s_3{ background-position:-272px -128px;}
+.arrange_warp li.s_4{ background-position:-272px -154px;}
+.arrange_warp li.s_5{ background-position:-272px -180px;}
+
+/* 浮动和清除浮动 */
+.cfix { zoom:1; }
+.cfix:before,.cfix:after { content:""; display:table; }
+.cfix:after { clear:both; } 
+.fl{ float:left;}
+.fr{ float:right;}
+
+
+/* 2013-11-01  xiaoming  攻略文章详情页 */
+.func_cont_list .gl_title{ font-size:18px; width:100%; text-align:center; font-family:"微软雅黑"; font-weight:normal; padding:10px 0;}
+.func_cont_list .gl_from{ width:100%; text-align:center;}
+.func_cont_list .gl_from span{ display:inline-block; color:#999;}
+.func_cont_list .gl_from span.blank{ width:40px;}
+.func_cont_list .article_cont{ padding:20px; overflow:hidden;}
+.func_cont_list .article_about{ margin:20px 0;}
+.func_cont_list .article_about a{ margin-right:5px; display:inline-block; }
+.func_cont_list .article_about a:hover{ color:#f60;}
+.func_cont_list .article_about .art_search{ padding:0 15px;}
+.func_cont_list .article_about .art_pn{ padding:15px; background:#e9f1fc; border-width:1px 0; border-style:dashed; border-color:#d6d6d6; margin:10px 0;}
+.func_cont_list .article_about .art_pn .art_prev{ float:left;}
+.func_cont_list .article_about .art_pn .art_next{ float:right;}
+.func_cont_list .share_title{ float:left; display:block; padding-top:5px; font-weight:bold; padding-left:15px;}
+
+.recom_box{ padding:20px 0;}
+.recom_box .recom_title{ font-size:13px; color:#0040a2; background:#e9f1fc; padding:5px 20px;}
+.recom_box ul{ padding:10px 0;}
+.recom_box ul li{ border-bottom:dashed 1px #d6d6d6; line-height:24px; height:24px; width:285px; padding-left:15px; margin-right:15px;}
+.recom_box ul li em{ font-weight:bold; font-size:14px; color:#003FA0; vertical-align:-3px; *vertical-align:-6px;}
+.recom_box ul li a{ font-size:12px; font-weight:normal; margin-left:5px; vertical-align:top; height:24px; width:270px; display:inline-block; overflow:hidden;}
+.recom_box ul li a:hover{ color:#f60;}

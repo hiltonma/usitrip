@@ -1,0 +1,15 @@
+user
+user_score_history
+
+tours_loving
+tours_loving_to_user
+
+blog
+blog_comments
+blog_footprints
+privacy_settings
+
+friends_list
+
+photo_books
+photo

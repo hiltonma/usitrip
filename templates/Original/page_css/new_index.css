@@ -1,0 +1,35 @@
+@charset "gb2312";
+/*6.28修改*/
+.jb_right_button{ position: relative; float:left;}
+.jb_right_button_but{ float:right}
+/*6.29修改*/
+/*普通button*/
+.jb_fb{ border:none; background:none; cursor:pointer; font-size:12px; height:23px; overflow: visible; width: auto; }
+.botton_nei{ border:1px solid #f8b709 ; margin:0; padding:0;}
+.botton_nei span{ display:block; cursor:pointer; padding:5px 10px 4px 10px; color:#000; background:url(/image/jb_bt_bg.jpg) repeat-x; }
+.jb_fb:hover .botton_nei span{ background:url(/image/jb_bt_bg_h.jpg) repeat-x; display:block;}
+
+/*小号灰色button*/
+.jb_fb_sh{  border:none; background:none; cursor:pointer; font-size:12px; height:24px;  overflow: visible; width: auto;}
+.botton_nei_sh{ border:#e4e4e4 solid 1px; margin:0}
+.botton_nei_sh span{ display:block; padding:4px 10px 4px 10px;  color:#000; background:url(/image/jb_bt_shbg.jpg) repeat-x;}
+/*oo修改*/
+.note-jb-fb{ width:335px; position:absolute; right:0; top:-85px; _top:-90px}
+.note-jb-fb_1{ background:#fffdf0; border:#fede77 solid 1px; padding:10px 15px; color:#000000;}
+.note-jb-fb_2{ background:url(/image/note_jb_fb.gif) no-repeat left top; right:65px; top:78px;_top:80px; width:13px; height:10px; position:absolute;}
+@media all and (min-width:0px){.note-jb-fb{top:-80px;} .note-jb-fb_2{ top:72px;}} /*Opera*/ 
+@media screen and (-webkit-min-device-pixel-ratio:0) {.note-jb-fb_2{ top:76px;}} /*Chrome和Safari等Webkit核心浏览器*/
+@-moz-document url-prefix() {.note-jb-fb{top:-90px;} .note-jb-fb_2{ top:85px;}} /*Firefox*/ 
+/*oo修改*/
+.note-jb-why{ width:568px; position:absolute; padding-left:50%; left:-95px; top:180px;}
+.note-jb-fb_22{ background:url(/image/note_jb_fb1.gif) no-repeat left top; right:10px; top:-6px; width:13px; height:10px; position:absolute;}
+
+/*10.26-dleno修改*/
+.jb_fb1{ border:none; background:none; cursor:pointer; font-size:12px;overflow: visible; width: auto; margin-top:5px;}
+.botton_nei1{ border:0px; margin:0; padding:0;}
+.botton_nei1 span{ display:block; width:60px; height:20px; line-height:16px; *line-height:20px; _line-height:17px; padding-left:4px; color:#fff; background:url(/image/button_blue_bg.gif) no-repeat; }
+.jb_right_button a.jb_fb1:hover {text-decoration: none; }
+
+.note-jb-fb1{ width:250px; position:absolute; right:0; top:-85px; _top:-85px;}
+.note-jb-fb_11{ background:#fffdf0; border:#fede77 solid 1px; padding:10px 15px; color:#000000;text-align:left;}
+.note-jb-fb_21{ background:url(/image/note_jb_fb.gif) no-repeat left top; right:60px; top:76px; width:13px; height:10px; position:absolute;}

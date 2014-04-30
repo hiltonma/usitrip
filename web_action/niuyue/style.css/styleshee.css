@@ -1,0 +1,60 @@
+@charset "gb2312";
+/* CSS Document */
+body{_background:url(about:blank) fixed;}
+.menu{ background:url(../images/menu_bj.gif) repeat-x bottom; width:100%; height:46px;}
+.menu ul{ width:1000px; margin:0 auto; padding-top:2px;}
+.menu ul li{ float:left;padding:0px 25px 0 25px; }
+.menu ul li a{  font-family:"Î¢ÈíÑÅºÚ"; font-size:19px; font-weight:600; color:#fff; text-decoration:none; width:168px; height:43px; text-align:center; line-height:40px; display:inline-block;  }
+.menu ul li a:hover{  background:url(../images/menu_hover.gif) no-repeat;    font-family:"Î¢ÈíÑÅºÚ"; font-size:19px; font-weight:600; color:#fff; text-decoration:none;width:168px; height:43px;  text-align:center; line-height:40px; 
+}
+.menu ul li #onehover{background:url(../images/menu_hover.gif) no-repeat;    font-family:"Î¢ÈíÑÅºÚ"; font-size:20px; font-weight:600; color:#fff; text-decoration:none;width:168px; height:43px;  text-align:center; line-height:40px; }
+
+#bannerss{ width:100%; height:350px; background:#ECFEFE; position:relative; }
+.banner{ width:100%;background:url(../images/banner1.png) repeat-x 0 0;height:350px; }
+.City{ float:left;   padding-top:23px; display:block; }
+.tree{ position:absolute; background:url(../images/txt.png) no-repeat center 0; height:175px; top:73px; width:100%; z-index:999;}
+.tree div{width:550px;height:173px; position:relative;}
+.tree div a{display:block;	width:65px;	height:20px;	position:absolute;	top:78px;	left:390px;}
+.Car_box{ width:100%; background:url(../images/menu_bj.gif) repeat-x; height:19px; position:absolute; z-index:2; bottom:0;}
+.car{position: absolute; background:url(../images/Car.png) no-repeat center; width:100%; margin:0 auto; height:42px; z-index:3; bottom:0;}
+
+
+.main{ margin:0 auto; width:1026px;}
+.main .news{ margin:0 auto; width:1026px; height:209px;  background:#f3f3f1; margin-top:5px; }
+
+.main .news .bigimg{float:left;border:solid 4px #feb04f; }
+.main .news .right{ margin-left:455px;}
+.main .news .right h1{background:url(../images/map.gif) no-repeat 16px center;height:31px;line-height:22px;padding-left:50px; padding-top:8px; }
+.main .news .right p{ text-indent:25px; line-height:20px;padding: 8px;color:#4f4f4f;}
+.main .news .float{position:fixed; top:447px;_position:absolute; _top:expression(eval(document.documentElement.scrollTop + 447));width:29px; height:150px; }
+.main .news .right h1 a{ font-family:"Î¢ÈíÑÅºÚ"; font-size:18px; font-weight:600; color:#0055aa; text-decoration:none;  }
+
+.Mostheat{ width:1026px;padding-top:5px; float:left;}
+.Mostheat_title{ background:url(../images/line_right.gif) no-repeat right; height:48px; width:1026px; float:left;}
+.Mostheat_title ul{ width:280px; padding-left:20px; float:left;  }
+.Mostheat_title ul li{ float:left; padding-top:15px; padding-left:10px;}
+.Mostheat_title p{ float:left; width:193px; } 
+.Mostheat_title p img{ float:left; width:99px; height:48px;}
+.Mostheat_title p a{font-family:"Î¢ÈíÑÅºÚ"; font-size:18px; font-weight:600; color:#fff; text-align:left; line-height:48px; position:absolute; text-decoration:none;   }
+.Mostheat_main{ width:1024px;border:solid 1px #c9ddec; border-top:none; float:left; }
+.Mostheat_main ul{ padding-top:10px;}
+.Mostheat_main li{ float:left; margin:3px  12px 13px 11px; background:#f3f3f1; width:233px; height:257px; display:inline;  }
+.Mostheat_main ul li .txt111{ width:200px; margin:0 auto; padding-top:8px; line-height:22px; }
+.Mostheat_title span{ float:right; width:105px; margin-right:10px;  }
+.Mostheat_title .fl{ background:url(../images/line_more.gif) no-repeat scroll right  transparent;}
+.Mostheat_title .fl a{ line-height:48px; height:48px;  color:#fff; text-decoration:none; padding-right:3px; }
+.Mostheat_main ul li .Price{ width:200px; margin:0 auto; padding-top:10px; line-height:22px; }
+ .Mostheat_main ul li .Price  .put2013{ background:url(../images/Submit_bj.gif) no-repeat; height:17px; width:63px; border:0px; color:#fff; line-height:17px; float:left;}
+  .Mostheat_main ul li .Price a{ float:right; padding-top:3px; text-decoration:none; }
+.red2{font-family:"Î¢ÈíÑÅºÚ"; font-size:18px; font-weight:600; color:#f38217; float:right; } 
+
+
+
+
+
+
+
+
+
+
+#fixed-top{ width:131px; height:131px; position:fixed; right:-1px; top:0; _position:absolute; _top:expression(eval(document.documentElement.scrollTop)); z-index:10;}

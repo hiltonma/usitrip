@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link type="text/css" rel="stylesheet" href="reset.css" />
+<link type="text/css" rel="stylesheet" href="demo.css" />
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="pop.js"></script>
+<title>弹窗</title>
+
+<style type="text/css">
+body{font-size:12px;font-family:tahoma;color:#555;height:2000px;}
+.fix{*display:block;*zoom:1;}
+.fix:after{display:block;clear:both;height:0;font-size:0;visibility:hidden;content:"";}
+.wrap{width:900px;margin:10px auto;border:1px solid #D4D8EB;border-radius:2px;padding:10px;background:#F0F1F8;}
+
+.header {line-height:32px;background:#fff;border-bottom:1px dashed #ccc;font-size:26px;font-weight:bold;text-align:center;padding:5px 0;font-family:"Microsoft Yahei";}
+.title{line-height:28px;font-size:16px;font-weight:700;margin:5px 0;}
+pre{padding:10px;border:1px solid #ddd;background:#FFF;font-family:tahoma;}
+.demo a,.demo button,.demo .iptbtn,.demo span,.demo .divbtn{float:left;display:inline-block;*display:inline;*zoom:1;height:28px;line-height:26px;border:1px solid #aac0fa;background:#e8edfc;margin:10px;padding:0 10px;background:-moz-linear-gradient(top,#e8edfc 0,#becef7 100%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#e8edfc),color-stop(100%,#becef7));border-radius:3px;color:#333;outline:0;cursor:pointer;text-decoration:none;}
+
+.cntest p{line-height:24px;}
+.cntest select{padding:3px;border:1px solid #09f;border-radius:2px;}
+
+.ui_popfoot{text-align:center;}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#pop1").dialog({
+		 pTitle:"Ajax模拟",
+		 ajaxURL:"ajaxcontent.html",
+		 width:600,
+		 height:350,
+		 pMax:true
+	});
+
+	$("#pop2").dialog({
+		pTitle:"默认弹窗",
+		pMain:"不可缩放",
+		resizeable:false,
+        pMin:false
+	});
+
+	$("#pop3").dialog({
+		pTitle:"不可拖拽",
+		pMain:"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+		//draggable: false,
+		width:400,
+        height:200
+	});
+
+	$("#pop4").dialog({
+		 pTitle:"加载外部frame",
+		 pMain: "<iframe width='600px' height='400px' src='http://www.baidu.com/'>",
+		 windowType: "iframe",
+		 width:600,height:400
+	});
+
+	$("#pop5").dialog({
+		 pTitle:"加载优酷视频",
+		 pMain: $("#video1").html(),//先把视频隐藏在页面中了
+		 windowType: "video",
+		 width:425,height:344,
+         pFoot:true
+	});
+
+});
+</script>
+</head>
+
+<body>
+<div class="wrap fix">
+    <h1 class="header">弹窗组件</h1>
+    <div class="demo fix">
+        <h2 class="title">弹窗demo</h2>
+        <pre>
+使用方法：
+$(selector).dialog({//config});</pre>
+       <a href="#" id="pop1">链接</a>
+        <button type="button" id="pop2">butoon按钮</button>
+        <input type="button" id="pop3" class="iptbtn" value="input按钮" />
+        <span id="pop4">span按钮</span>
+        <div id="pop5" class="divbtn">div按钮</div>
+    </div>
+    <div class="cntest" style="margin-top:10px;">
+        <p>弹窗内容测试弹窗<select><option value="1">A</option><option value="2">B</option><option value="3">C</option></select>内容测试弹窗内容测试弹窗内容测试弹窗内容测试弹窗内容测试弹窗内容测试弹窗内容测试弹窗内容测试弹窗内容测试弹窗内容测试</p>
+        <p>弹窗内容测试弹窗内容测试弹窗内容测试弹窗内容测试弹窗内容测试弹窗内容测试弹窗内容测试弹窗内容测试弹窗内容测试弹窗内容测试弹窗内容测试</p>
+    </div>
+</div>
+<div id="video1" style="display:none;">
+<object width="425" height="344">
+<param name="movie" value=""></param>
+<param name="allowFullScreen" value="true"></param>
+<param name="allowscriptaccess" value="always"></param>
+<param name="wmode" value="transparent"></param>
+<embed src="http://player.youku.com/player.php/sid/XNDEzNjIyODUy/v.swf" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
+</object>
+</div>
+
+</div>
+</body>
+</html>

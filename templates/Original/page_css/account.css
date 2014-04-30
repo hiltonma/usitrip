@@ -1,0 +1,22 @@
+@charset "gb2312";
+.showRoute{ margin:38px 0 20px;}
+.titleBig{background:url(/image/nav/users.gif) repeat-x left -80px;color:#fff;border:0px;}
+.mytoursLeft .titleBig h3{color:#fff;}
+.mytoursLeft .item{clear:both;}
+.mytoursLeft .item h4{background:url(/image/nav/users.gif) repeat-x left -112px;height:30px;line-height:30px;color:#1d689c;}
+.mytoursLeft .item em{ font-style:normal;background-image:url(/image/nav/users.gif); background-repeat: no-repeat;float:left;}
+.mytoursLeft .item li em{background-position: -65px top;width:14px;height:14px;margin:5px 0;}
+.mytoursLeft .item h4 em{background-position:-80px top;width:11px;height:11px;margin:10px 5px 10px 0;}
+.mytoursLeft .item h4.off{ background-image:url(/image/nav/users.gif);}
+.mytoursLeft .item h4.off em{background-position:-92px top;} 
+.mytoursRight .indexTip{border:1px solid #ffc75f; background-image:#fffee9;}
+.mytoursRight .indexTip em{ font-style:normal;background-image:url(/image/nav/users.gif); background-repeat: no-repeat;float:left;}
+.mytoursRight .indexTip .top .topLeft{padding:0; background-image:none;}
+.mytoursRight .indexTip .top .topLeft em{ background-position:-30px top;width:15px;height:15px;}
+.mytoursRight .indexTip dl dd h3 {    color: #ff6f00;}
+.mytoursRight .indexTip dl dt{height:49px;}
+.mytoursRight .indexTip dl dt a{display:block; background:url(/image/nav/users.gif) no-repeat left -142px;width:248px;height:49px;line-height:46px;color:#fff; text-decoration:none;font-size:23px; font-family:microsoft YaHei; text-indent:20px;text-shadow:1px 1px 1px #666;}
+.mytoursRight .indexTip dl dt a:hover{color:#fff; text-decoration:none;}
+.mytoursRight .indexTip dl dt a span{float:right;background:url(/image/nav/users.gif) no-repeat right -142px;width:20px;height:49px;}
+.mytoursRight .showRoute .tab a{background:url(/image/nav/user_bg9.gif) repeat-x; border:1px solid #E4E4E4;border-bottom:1px solid #FF5500;}
+.mytoursRight .showRoute .tab a.sel{background:url(/image/nav/user_bg8.gif) repeat-x;border:1px solid #FF5500;}

@@ -1,0 +1,5 @@
+@charset "gb2312";
+/* CSS Document */
+a.btn{display:block;height:29px;line-height:29px;width:82px;padding-left:30px;background:url(/image/nav/carts.gif) no-repeat left -30px;}
+a.btn span{display:block;float:right;background:url(/image/nav/carts.gif) no-repeat right -30px;height:29px;width:10px;}
+

@@ -1,0 +1,351 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link rel="stylesheet" type="text/css" href="css/global.css" />
+<link rel="stylesheet" type="text/css" href="css/expert.css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/global.js"></script>
+<title>index</title>
+</head>
+
+<body >
+<div class="main">
+    <div class="searchBox">
+        <h2 class="conSwitch" id="ConSwitchH_1">搜索条件</h2>
+        <div class="searchCon" id="ConSwitchCon_1">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td width="65">用户姓名：</td><td><input type="text" class="textAll" /></td><td width="65">用户邮箱：</td><td><input type="text" class="textAll" /></td><td width="65">手机号码：</td><td><input type="text" class="textAll" /></td></td>
+                </tr>
+                <tr>
+                    <td>注册时间：</td><td colspan="3"><input type="text" class="textTime" /> 至 <input type="text" class="textTime" /></td><td>用户角色：</td><td>
+                    <select  name="" size="1" class="selectText"><option>请选择用户角色</option><option>普通注册用户</option><option>走四方普通专家</option><option>走四方高级专家</option><option>网站联盟用户</option></select></td></td>
+                </tr>
+                <tr>
+                    <td colspan="8" class="btnCenter">
+                        <button class="btn btnOrange">搜 索</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+ 
+ 
+ 
+    <div>
+        <h2 class="conSwitch" id="ConSwitchH_2">搜索结果</h2>
+
+        <div class="minCon" id="ConSwitchCon_2">
+
+            <div>
+                <ul class="nav">
+                    <li class="selected"><a href="#">所有用户</a></li>
+                    <li><a href="#">已邀请成为专家的用户</a></li>
+                    <li><a href="#">未邀请成为专家的用户</a></li>
+                </ul>
+                  
+                  
+<table class="expertTable" id="ExpertTable"  border="0" cellpadding="0" cellspacing="0">
+ <tbody>
+ <tr>
+        <th>姓名</th><th>邮箱</th><th>手机</th><th>注册时间</th><th>用户角色</th><th>邀请状态</th><th style="padding-left:40px;">操作</th>
+    </tr>
+    <tr id="Basic_1">
+        <td>王小强</td><td>wangxiaoqiang@163.com</td><td>13985854562</td><td>2011-02-05 09:20:00</td><td>普通注册用户</td><td></td><td><a href="#" class="showMore">查看详细</a></td>
+    </tr>
+    <tr class="trDetail" id="Detail_1">
+        <td colspan="7" class="TabselectBg">
+        
+            <div class="expertInfo">
+                <h2>基本信息</h2>
+                <ul class="baseInfo">
+                   <li><label>中文姓名：</label><input type="text" class="textAll" value="王小强" /></li> 
+                   <li><label>英文名：</label><input type="text" class="textAll" value="xiaoqiang.wang" /></li> 
+                   <li><label>邮箱：</label><input type="text" class="textAll" value="wangxiaoqiang@gmail.com" /></li> 
+                   <li><label>手机：</label><input type="text" class="textAll" value="18985847852"/></li> 
+                   <li><label>其他电话：</label><input type="text" class="textAll" value="+86-028-85854525"/></li> 
+                </ul>
+                
+                <h2>走四方专家信息</h2>
+                <ul class="detail">
+                   <li><label>申请级别：</label><select><option>普通专家</option><option>高级专家</option><option>注册用户</option></select><span>佣金比例：</span><input type="text" class="textAll" value="5%" /></li> 
+                   <li>
+                        <label>擅长领域：</label>
+                        <div class="options">
+                            <span><input type="checkbox" checked="checked" />旅游景点介绍</span>
+                            <span><input type="checkbox" checked="checked" />美国人文历史</span>
+                            <span><input type="checkbox" />洛杉矶美食</span>
+                            <span><input type="checkbox" />美国人生活习惯</span>
+                        </div>
+                   </li> 
+                   <li>
+                        <label>擅长区域：</label>
+                        <div class="options">
+                            <span><input type="checkbox" />洛杉矶</span>
+                            <span><input type="checkbox" checked="checked" />拉斯维加斯</span>
+                            <span><input type="checkbox" />旧金山</span>
+                            <span><input type="checkbox" checked="checked" />迪斯尼</span>
+                        </div>
+                   </li> 
+                   <li><label>我的简历：</label><textarea class="textarea"></textarea>
+                   </li>
+                </ul>
+                <div class="btnCenter"><button class="btn btnOrange">更新</button><button class="btn btnGrey">关闭</button></div>
+            </div>
+            
+        </td>
+    </tr>
+    
+    <tr id="Basic_2">
+        <td>雷晓平</td><td>wangxiaoqiang@163.com</td><td>13985854562</td><td>2011-02-05 09:20:00</td><td>网站联盟用户</td><td></td><td><a href="#" class="showMore">查看详细</a></td>
+    </tr>
+    <tr class="trDetail" id="Detail_2">
+        <td colspan="7" class="TabselectBg">
+            
+            <div class="expertInfo">
+                <h2>基本信息</h2>
+                <ul class="baseInfo">
+                   <li><label>中文姓名：</label><input type="text" class="textAll" value="王小强" /></li> 
+                   <li><label>英文名：</label><input type="text" class="textAll" value="xiaoqiang.wang" /></li> 
+                   <li><label>邮箱：</label><input type="text" class="textAll" value="wangxiaoqiang@gmail.com" /></li> 
+                   <li><label>手机：</label><input type="text" class="textAll" value="18985847852"/></li> 
+                   <li><label>其他电话：</label><input type="text" class="textAll" value="+86-028-85854525"/></li> 
+                </ul>
+                
+                <h2>走四方专家信息</h2>
+                <ul class="detail">
+                   <li><label>申请级别：</label><select><option>普通专家</option><option>高级专家</option><option>注册用户</option></select><span>佣金比例：</span><input type="text" class="textAll" value="5%" /></li> 
+                   <li>
+                        <label>擅长领域：</label>
+                        <div class="options">
+                            <span><input type="checkbox" checked="checked" />旅游景点介绍</span>
+                            <span><input type="checkbox" checked="checked" />美国人文历史</span>
+                            <span><input type="checkbox" />洛杉矶美食</span>
+                            <span><input type="checkbox" />美国人生活习惯</span>
+                        </div>
+                   </li> 
+                   <li>
+                        <label>擅长区域：</label>
+                        <div class="options">
+                            <span><input type="checkbox" />洛杉矶</span>
+                            <span><input type="checkbox" checked="checked" />拉斯维加斯</span>
+                            <span><input type="checkbox" />旧金山</span>
+                            <span><input type="checkbox" checked="checked" />迪斯尼</span>
+                        </div>
+                   </li> 
+                   <li><label>我的简历：</label><textarea class="textarea"></textarea>
+                   </li>
+                </ul>
+                <div class="btnCenter"><button class="btn btnOrange">更新</button><button class="btn btnGrey">关闭</button></div>
+            </div>
+            
+        </td>
+    </tr>
+    
+    <tr id="Basic_3">
+        <td>李晓青</td><td>wangxiaoqiang@163.com</td><td>13985854562</td><td>2011-02-05 09:20:00</td><td>普通注册用户</td><td></td><td><a href="#" class="showMore">查看详细</a></td>
+    </tr>
+    <tr class="trDetail" id="Detail_3">
+        <td colspan="7" class="TabselectBg">
+            
+            <div class="expertInfo">
+                <h2>基本信息</h2>
+                <ul class="baseInfo">
+                   <li><label>中文姓名：</label><input type="text" class="textAll" /></li> 
+                   <li><label>英文名：</label><input type="text" class="textAll" /></li> 
+                   <li><label>邮箱：</label><input type="text" class="textAll" /></li> 
+                   <li><label>手机：</label><input type="text" class="textAll" /></li> 
+                   <li><label>其他电话：</label><input type="text" class="textAll" /></li> 
+                </ul>
+                
+                <h2>走四方专家信息</h2>
+                <ul class="detail">
+                   <li><label>申请级别：</label><select><option>普通专家</option><option>高级专家</option><option>注册用户</option></select><span>佣金比例：</span><input type="text" class="textAll" /></li> 
+                   <li>
+                        <label>擅长领域：</label>
+                        <div class="options">
+                            <span><input type="checkbox" />旅游景点介绍</span>
+                            <span><input type="checkbox" />美国人文历史</span>
+                            <span><input type="checkbox" />洛杉矶美食</span>
+                            <span><input type="checkbox" />美国人生活习惯</span>
+                        </div>
+                   </li> 
+                   <li>
+                        <label>擅长区域：</label>
+                        <div class="options">
+                            <span><input type="checkbox" />洛杉矶</span>
+                            <span><input type="checkbox" />拉斯维加斯</span>
+                            <span><input type="checkbox" />旧金山</span>
+                            <span><input type="checkbox" />迪斯尼</span>
+                        </div>
+                   </li> 
+                   <li><label>我的简历：</label><textarea class="textarea"></textarea>
+                   </li>
+                </ul>
+                <div class="btnCenter"><button class="btn btnOrange">更新</button><button class="btn btnGrey">关闭</button></div>
+            </div>
+        
+        </td>
+    </tr>
+    
+    <tr id="Basic_4">
+        <td>张飞</td><td>wangxiaoqiang@163.com</td><td>13985854562</td><td>2011-02-05 09:20:00</td><td>走四方普通专家</td><td>已邀请</td><td><a href="#" class="showMore">查看详细</a></td>
+    </tr>
+    <tr class="trDetail" id="Detail_4">
+        <td colspan="7" class="TabselectBg">
+           
+           <div class="expertInfo">
+                <h2>基本信息</h2>
+                <ul class="baseInfo">
+                   <li><label>中文姓名：</label><input type="text" class="textAll" /></li> 
+                   <li><label>英文名：</label><input type="text" class="textAll" /></li> 
+                   <li><label>邮箱：</label><input type="text" class="textAll" /></li> 
+                   <li><label>手机：</label><input type="text" class="textAll" /></li> 
+                   <li><label>其他电话：</label><input type="text" class="textAll" /></li> 
+                </ul>
+                
+                <h2>走四方专家信息</h2>
+                <ul class="detail">
+                   <li><label>申请级别：</label><select><option>普通专家</option><option>高级专家</option><option>注册用户</option></select><span>佣金比例：</span><input type="text" class="textAll" /></li> 
+                   <li>
+                        <label>擅长领域：</label>
+                        <div class="options">
+                            <span><input type="checkbox" />旅游景点介绍</span>
+                            <span><input type="checkbox" />美国人文历史</span>
+                            <span><input type="checkbox" />洛杉矶美食</span>
+                            <span><input type="checkbox" />美国人生活习惯</span>
+                        </div>
+                   </li> 
+                   <li>
+                        <label>擅长区域：</label>
+                        <div class="options">
+                            <span><input type="checkbox" />洛杉矶</span>
+                            <span><input type="checkbox" />拉斯维加斯</span>
+                            <span><input type="checkbox" />旧金山</span>
+                            <span><input type="checkbox" />迪斯尼</span>
+                        </div>
+                   </li> 
+                   <li><label>我的简历：</label><textarea class="textarea"></textarea>
+                   </li>
+                </ul>
+                <div class="btnCenter"><button class="btn btnOrange">更新</button><button class="btn btnGrey">关闭</button></div>
+            </div>
+        
+        
+        </td>
+    </tr>
+    
+    <tr id="Basic_5">
+        <td>孙丽风</td><td>wangxiaoqiang@163.com</td><td>13985854562</td><td>2011-02-05 09:20:00</td><td>走四方高级专家</td><td>已邀请</td><td><a href="#" class="showMore">查看详细</a></td>
+    </tr>
+    <tr class="trDetail" id="Detail_5">
+        <td colspan="7" class="TabselectBg">
+           
+           <div class="expertInfo">
+                <h2>基本信息</h2>
+                <ul class="baseInfo">
+                   <li><label>中文姓名：</label><input type="text" class="textAll" /></li> 
+                   <li><label>英文 名：</label><input type="text" class="textAll" /></li> 
+                   <li><label>邮 箱 ：</label><input type="text" class="textAll" /></li> 
+                   <li><label>手 机 ：</label><input type="text" class="textAll" /></li> 
+                   <li><label>其他电话：</label><input type="text" class="textAll" /></li> 
+                </ul>
+                
+                <h2>走四方专家信息</h2>
+                <ul class="detail">
+                   <li><label>申请级别：</label><select><option>普通专家</option><option>高级专家</option><option>注册用户</option></select><span>佣金比例：</span><input type="text" class="textAll" /></li> 
+                   <li>
+                        <label>擅长领域：</label>
+                        <div class="options">
+                            <span><input type="checkbox" />旅游景点介绍</span>
+                            <span><input type="checkbox" />美国人文历史</span>
+                            <span><input type="checkbox" />洛杉矶美食</span>
+                            <span><input type="checkbox" />美国人生活习惯</span>
+                        </div>
+                   </li> 
+                   <li>
+                        <label>擅长区域：</label>
+                        <div class="options">
+                            <span><input type="checkbox" />洛杉矶</span>
+                            <span><input type="checkbox" />拉斯维加斯</span>
+                            <span><input type="checkbox" />旧金山</span>
+                            <span><input type="checkbox" />迪斯尼</span>
+                        </div>
+                   </li> 
+                   <li><label>我的简历：</label><textarea class="textarea"></textarea>
+                   </li>
+                </ul>
+                <div class="btnCenter"><button class="btn btnOrange">更新</button><button class="btn btnGrey">关闭</button></div>
+            </div>
+        
+        
+        </td>
+    </tr>
+</tbody>
+<tfoot>
+<tr>
+    <td colspan="7" bgcolor="#f5f5f5">
+        <div class="pageNum">每页显示<select><option>20条</option><option>40条</option><option>60条</option></select></div>
+        <div class="page">
+            <a class="go first" href=""></a>
+            <a class="go pre" href="">上一页</a>
+            <span>&nbsp;|<a href="">1</a>|<b>2</b>|<a href="">3</a>|<a href=""> ... </a>|<a href="">10</a>|</span>
+            <a class="go next" href="">下一页</a>
+            <a class="go last" href=""></a>
+        </div>
+    </td>
+</tr>
+</tfoot>
+</table>
+                  
+                  
+
+          </div>
+
+
+
+        <script type="text/javascript">
+        $(function(){
+        $("#ExpertTable>tbody>tr:odd").mouseover(function(){$(this).addClass("trHover");}).mouseout(function(){$(this).removeClass("trHover");});
+        $("#ExpertTable>tbody>tr").each(function(index) {
+            if((index+1)%4 == 0 ){
+                $(this).addClass("trEven");
+            }
+        });
+
+        $("#ExpertTable>tbody>tr:odd").click(function(){
+            $("tr[id^='Detail_']").hide();
+            
+            
+            var idName = $(this).attr("id");
+            var tempName = idName.substr(idName.indexOf("_"));
+            
+            if($(this).hasClass("trClick")){
+                $("#ExpertTable>tbody>tr:odd").removeClass("trClick");
+                $("#ExpertTable>tbody>tr:odd").removeClass("trOut");
+
+                $(this).addClass("trOut");
+                $("#Detail"+tempName).hide();
+            }else{
+                $("#ExpertTable>tbody>tr:odd").removeClass("trOut");
+                $("#ExpertTable>tbody>tr:odd").removeClass("trClick");
+                $(this).addClass("trClick");
+                
+                $("#Detail"+tempName).show();
+            }
+            
+            
+        });
+
+        });
+         
+
+
+        </script>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

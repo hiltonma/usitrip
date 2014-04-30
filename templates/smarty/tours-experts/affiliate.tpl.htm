@@ -1,0 +1,56 @@
+	<div class="expertSuccessOrderTop">
+        <h2>{:db_to_html text='由我推荐而成行的订单':}</h2>
+        <div>
+        <form action="" method="get">
+            <input type="text" class="time" name="sd" value="{:$sd:}" onclick="GeCalendar.SetUnlimited(1); GeCalendar.SetDate(this);" readonly="readonly"> <span>{:db_to_html text='至':}</span> <input type="text" class="time" name="ed" value="{:$ed:}" onclick="GeCalendar.SetUnlimited(1); GeCalendar.SetDate(this);" readonly="readonly">
+            {:if $smarty.get.language!='':}
+            <input type="hidden" name="language" value="{:if $language == 'schinese':}sc{:else:}tw{:/if:}">
+            {:/if:}
+            {:if $smarty.get.osCsid!='':}
+            <input type="hidden" name="osCsid" value="{:$osCsid:}">
+            {:/if:} &nbsp;&nbsp;
+            <a href="javascript:;" class="btn btnOrange" style="float:inherit;display:inline; padding:4px 0px;"><button type="submit" style="float:inherit;">{:db_to_html text='搜索':}</button></a>
+            <label>{:db_to_html text='行程总数：':}</label><b>{:$total:}</b>
+            <label>{:db_to_html text='佣金总额：':}</label><strong>{:$affiliatePayment:}</strong>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <label>({:db_to_html text='交易成功的订单才会计算在佣金内!':})</label>
+        </form>
+        </div>
+    </div>
+    
+    <div class="expertSuccessOrderCon">
+      <div class="title titleSmall">
+        <b></b><span></span>
+        <ul>
+            <li class="col1">{:db_to_html text='订单号':}</li>
+            <li class="col2">{:db_to_html text='下单时间':}</li>
+            <li class="col4">{:db_to_html text='行程':}</li>
+            <li class="col5">{:db_to_html text='金额':}</li>
+            <li class="col3">{:db_to_html text='佣金比例':}</li>
+            <li class="col6">{:db_to_html text='获得佣金':}</li>
+            <li class="col7">{:db_to_html text='订单状态':}</li>
+        </ul>
+      </div>
+      <div class="list">
+{:foreach from=$affiliateData item=affiliate name=affiliateData:}
+            <ul>
+              <li class="col1">{:$affiliate.affiliate_orders_id:}</li>
+                <li class="col2">{:$affiliate.affiliate_date:}</li>
+                <li class="col4">{:$affiliate.affiliate_products:}</li>
+                <li class="col5">{:$affiliate.affiliate_value:}</li>
+                <li class="col3">{:$affiliate.affiliate_percent:}%</li>
+                <li class="col6">{:$affiliate.affiliate_payment:}</li>
+                <li class="col7{:if !in_array($affiliate.orders_status_id,$affiliateStatusAllow):} red{:/if:}">{:db_to_html text=$affiliate.orders_status:}</li>
+            </ul>
+{:/foreach:}
+        </div>
+       
+        
+    </div>
+    
+    {:if trim($pages)!='':}
+    <div class="page">
+    {:$pages:}
+    </div>
+    {:/if:}
+    <div class="goTop"><a href="javascript:scroll(0,0);" target="_self"></a></div>

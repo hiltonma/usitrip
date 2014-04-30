@@ -1,0 +1,341 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<base href="{{$head_base_href}}" />
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>{{$page_title}}</title>
+<meta name="Robots" content="index,follow,NOODP" />
+<meta name="keywords" content="{{*旅行,拍照,图片,游记,滤镜,分享,旅途,旅图,攻略,自助游,去哪儿网,去那儿,*}}" />
+<meta name="description" content="{{*简单的操作与精致的滤镜，帮助您随时记录旅途中精彩的片段，并制作成游记与好友分享。探索旅途中的热点，尽情享受您的旅途！*}}" />
+<meta http-equiv="cache-control" content="no-cache" />
+<link href="{{$smarty.const.DIR_WS_CSS}}{{$current_css_file}}" rel="stylesheet" type="text/css" />
+<link href="{{$smarty.const.DIR_WS_CSS}}picNDetail-201302261150.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="{{$smarty.const.DIR_WS_JS}}jquery.js" charset="utf-8"></script>
+<script type="text/javascript" src="{{$smarty.const.DIR_WS_JS}}lwk.js" charset="utf-8"></script>
+<script src="{{$smarty.const.DIR_WS_JS}}public.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+{{if $smarty.const.ENABLE_SSL}}
+var is_ssl = true;
+{{else}}
+var is_ssl = false;
+{{/if}}
+var base_url = '{{$head_base_href}}';
+if (!lwkai) {
+    var lwkai = {};
+};
+/**
+ * 登录地址 
+ * @var string
+ */
+lwkai.loginUrl = '{{$js_login}}';
+lwkai.logoutUrl = '{{$js_logout}}';
+lwkai.imageUrl = '{{$smarty.const.DIR_WS_IMG}}';
+</script>
+</head>
+<body style="position:relative;">
+<div class="lvtu_content"> 
+{{*
+	<!--页头开始-->
+	<div class="lvtu_header">
+		<div class="q_header q_header_lvtu">
+			<div class="qn_nav">
+				<div class="qn_header wrapper">
+					<div class="inner">
+						<div class="qn_nav_indexNav darkgray666 pl15 png24">
+							<ul>
+							{{section name=i loop=$navlist}}
+				<li {{if $smarty.section.i.last}}class="last"{{/if}}><a href="{{$navlist[i].href}}" target="_blank" hidefocus="on"><span>{{$navlist[i].text}}</span></a></li>
+	 			{{/section}}
+							</ul>
+						</div>
+						<div class="q_header_tnav">
+							<ul>
+								<li id="__loginInfo_u__" class="q_header_username"><a href="http://user.qunar.com/passport/login.jsp" hidefocus="on">登录</a></li>
+								<li id="__loginInfo_r__"><a href="http://user.qunar.com/passport/register.jsp" hidefocus="on">注册</a></li>
+								<li><a href="http://help.qunar.com/" target="_top">联系客服</a></li>
+								<li class="last"><a href="http://lvtu.qunar.com/" target="_self" hidefocus="on" onclick="try{if(document.all) {window.external.addFavorite('http://lvtu.qunar.com/','去哪儿旅图');} else {window.sidebar.addPanel('去哪儿旅图','http://lvtu.qunar.com/','');}}catch(e){};return false;" title="去哪儿旅图">收藏</a></li>
+							</ul>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--页头结束-->
+	*}}
+	<div class="lvtu_pic_details">
+		<div class="lvtu_pic_image_bg crumbNshow fn-pr">
+
+			<!--图片数字 3/15-->
+			<div class="lvtu_pic_image_num white fn-tc pt10 fn-pa"><a href="{{$goback}}{{*web/album.htm?albumId=20307*}}" class="png24">&lt;&lt;返回游记详情</a></div>
+			<!-- 小点模式导航 -->
+			<div class="crumbN">
+				<div class="crumbN_visible"> <a class="carousel_previous" href="javascript:void(0);"><span class="icon arrow_left png24"></span></a>
+					<div class="viewport">
+						<div id="crumbN_inner_id" class="crumbN_inner fn-pr fn-bc">
+							<ul>
+							{{section name=key loop=$picPreList}}
+								<li did="{{$picPreList[key].image_id}}" class="dotLink{{if $picPreList[key].class == true}} active{{/if}}"> <a href="{{$picPreList[key].href}}">
+									<div class="title fn-none fn-tc">{{$picPreList[key].day}}</div>
+									<div class="thumb fn-none fn-tc "><img class="lazy" src="{{$smarty.const.DIR_WS_IMG}}lvtu_bg_2.jpg" data-original="{{$picPreList[key].preview_src}}{{*http://img1.qunarzz.com/wugc/p151/201302/26/307f56d39183bb1893835fbb.jpg_90x60x90_0718cf9d.jpg*}}" width="90" height="60" /></div>
+									</a> </li>
+							{{/section}}
+							</ul>
+						</div>
+					</div>
+					<a class="carousel_next" href="javascript:void(0);"><span class="icon arrow_right png24"></span></a> </div>
+			</div>
+			<!-- 小点模式导航结束 --> 
+			
+			<!--右侧功能-->
+			<div class="lvtu_pic_shop fn-pa">
+				<ul id="olist">
+					<!-- <li id="fedit" class="J-edit edit fn-none" >编辑</li> -->
+					{{ if $current.visitorId == $current.newuserId }}
+					<li id="fcover" class="J-cover cover fn-none fn-pr" > <span class="describe fn-pa white pl10 fn-none png24">设为游记封面</span> </li>
+					<li id="fdel" class="J-delete delete fn-none fn-pr"> <span class="describe fn-pa white pl10 fn-none png24">删除此图片</span> </li>
+					{{/if}}
+					<li class="fn-pr"><a class="J-big big fn-block" href="{{$current.source_img}}" title="查看原图" target="_blank"></a> <span class="describe fn-pa white pl10 fn-none png24">查看原图</span> </li>
+					<!-- 赞 -->
+					
+					<li id="praiseAction" class="praise fn-pr"><span id="fspraiseNums" class="describe fn-pa white pl10 fn-none png24">喜欢数：{{$current.like_number}}</span></li>
+					
+					<!-- 评论 -->
+					<li class="J-comt comment fn-pr"> <span id="fcommentNums" class="describe fn-pa white pl10 fn-none png24">评论数：{{$current.replay_number}}</span> </li>
+					<!-- 浏览数 -->
+					<li class="J-browse browse fn-pr"> <span id="fbrowserNums" class="describe fn-pa white pl10 fn-none png24">浏览数：{{$current.read_number}}</span> </li>
+					
+					<!-- 图片信息 -->
+					<li class="J-message message fn-pr">
+						<div class="describet fn-pa white pl10 pt10 fn-none png24">
+							<p >相机：<span id="cameraModel">{{$exif.exif_camera|default:"未知"}}</span></p>
+							<p >拍摄时间：<span id="cameraTime">{{$exif.exif_time|default:"未知"}}</span></p>
+							<p >ISO：<span id="cameraIso">{{$exif.exif_iso|default:"未知"}}</span></p>
+							<p >光圈：<span id="fnumber">{{$exif.exif_aperture|default:"未知"}}</span></p>
+							<p >快门速度：<span id="exposureTime">{{$exif.exif_shutter_speed|default:"未知"}}</span></p>
+							<p >曝光补偿：<span id="exposureBias">{{$exif.exif_exposure_eompensation|default:"未知"}}</span></p>
+							<p >焦距：<span id="focalLength">{{$exif.exif_focal_length|default:"未知"}}</span></p>
+						</div>
+					</li>
+					
+					<!-- 分享 -->
+					<!--li class="J-share share fn-pr">
+						<div id="fbrowserNums" class="describe_share fn-pa white fn-none png24">
+							<ul>
+								<li class="share_title white f12">分享</li>
+								<li><a id="share_sinas" class="share_sina png24" onclick ="sharePic(2);return false;" href="#"></a></li>
+								<li><a id="share_qqlgs" class="share_qqlg png24" onclick ="sharePic(3);return false;" href="#"></a></li>
+								<li><a id="share_qzones" class="share_qzone png24" onclick ="sharePic(7);return false;" href="#"></a></li>
+								<li><a id="share_renrens" class="share_renren png24" onclick ="sharePic(9);return false;" href="#"></a></li>
+								<li><a id="share_doubans" class="share_douban png24" onclick ="sharePic(6);return false;" href="#"></a></li>
+							</ul>
+						</div>
+					</li-->
+				</ul>
+			</div>
+			
+			<!--前后张 重新-->
+			<div class="lvtu_pic_image_prve  fn-pa red f20 png24"></div>
+			<div class="lvtu_pic_image_next  fn-pa red f20 png24"></div>
+			<div class="lvtu_pic_image_again  fn-pa red f20 fn-none png24"></div>
+			<div class="lvtu_pic_image fn-pa">
+				<div class="lvtu_pic_image_bigpic fn-pr">
+					<div class="lvtu_pic_image_load fn-tc"> <img id="pic" class="qpic" src="{{$current.image}}" original="{{$current.image}}" alt="{{$current.albumPicAddressName}}" /></div>
+					<!--评论框-->
+					<div class="ui-comment-boxt white lh180 fn-pa">
+						<div class="J-input ui-comment-buttom fn-pa fn-none">
+							<input  id="feditConcel" class="J-cancel ui-comment-cancel mr5 png24" name="" type="button" value="">
+							<input id="feditConfirm" class="J-confirm ui-comment-confirm png24" name="" type="button" value="">
+						</div>
+						<!-- 编辑 -->
+						<div id="fedit" class="J-edit edit fn-pa" ></div>
+						<div class="picAlbum_wp fn-pr">
+							<h1 class="J-picAlbum-name f16 fb fn-enter"><a href="{{$goback}}">{{$current.albumName}}</a></h1>
+							<span class="J-picAlbum-fips picAlbum_fips fn-pa fn-none png24"></span>
+							<ul id="albumList" class="J-picAlbum-list fn-pa fn-none">
+							</ul>
+						</div>
+						<span class="J-picAlbum-describe picAlbum_describe f12 fn-pa fn-none">修改所属游记</span>
+						<h2 id="fuserNames" class="J-user mt15 mb15"> by:<a class="ml15 mr15" href="{{$current.userInfoUrl}}" title="{{$current.username}}"> {{$current.username}} </a></h2>
+						<div class="comment_main fn-pr">
+							<div id="fdesc" class="J-textarea mt10 mb15 fn-enter">{{$current.image_desc|default:"您啥都没有写，写点吧亲"}}</div>
+							<span class="J-textarea-error textarea_error darkgray666 fn-pa fn-none">（<em class='orange'>145</em>字/140字，您已超过 <em class='orange'>5</em> 字）</span> </div>
+						<div class="fn-pr w400">
+						<div id="faddressName" class="lvtu_pic_comment_place fn-pa png24"><span class="span1  png24">拍摄地：</span><span class="J-place span2 "><a href="{{$current.alibumPicAddressNameHref}}" title="{{$current.albumPicAddressName}}" target="_blank">{{$current.albumPicAddressName}}</a></span></div>
+							<div class="picRoute png24">旅游线路：<a href="{{$current.product_href}}" target="_blank">{{$current.product_name}}</a></div>
+							
+						</div>
+					</div>
+					<div class="ui-comment-bg fn-none fn-pa"></div>
+					<!--评论结束--> 
+				</div>
+				<div class="lvtu_pic_image_detail"></div>
+			</div>
+			<!--lvtu_pic_image end--> 
+		</div>
+		<input id="metaDesc" value="去哪儿网旅图用户123---123，上传的大同图片" type="hidden" />
+		<input id="picwidth" value="{{$current.width}}" type="hidden" />
+		<input id="picheight" value="{{$current.height}}" type="hidden" />
+		<!-- 当前用户ID -->
+		<input id="visitorId" type="hidden" value="{{$current.visitorId}}"/>
+		<!-- 当前图片是否已赞 -->
+		<input id="currIsPraised" type="hidden" value="{{$current.currIsPraised}}"/>
+		<!-- 当前图片ID -->
+		<input id="currPicId" type="hidden" value="{{$current.image_id}}"/>
+		
+		<input id="imgindex" type="hidden" value="{{$current.imgindex}}"/>
+		<!-- 图片用户ID -->
+		<input id="picUserId" type="hidden" value=""/>
+		<input id="newuserId" type="hidden" value="{{$current.newuserId}}"/>
+		<!-- 游记ID -->
+		<input id="albumId" type="hidden" value="{{$current.travel_id}}"/>
+		<!-- 游记标题 -->
+		<input id="albumName" type="hidden" value="{{$current.albumName}}"/>
+		<!-- 拍摄地点ID -->
+		<input id="albumPicAddressId" type="hidden" value="{{$current.albumPicAddressId}}"/>
+		<!-- 拍摄地点名称 -->
+		<input id="albumPicAddressName" type="hidden" value="{{$current.albumPicAddressName}}"/>
+		<input id="albumIdNew" type="hidden" value="{{$current.travel_id}}"/>
+		<input id="currPicCategoryId" type="hidden" value="1"/>
+		<input id="currentDay" type="hidden" value="{{$current.currentDay}}"/>
+		<!-- 大图 -->
+		<input id="currentPicUrl" type="hidden" value="{{$current.image}}"/>
+		<input id="contentSinaN" type="hidden" value=""/>
+		<input id="contentQqWeiboN" type="hidden" value=""/>
+		<input id="contentQzoneN" type="hidden" value=""/>
+		<input id="renrenN" type="hidden" value=""/>
+		<input id="doubanN" type="hidden" value=""/>
+		<input id="picUrlInfo" type="hidden" value=""/>
+		<input type="hidden" value="11110" id="newhandler" />
+		<input type="hidden" value="" id="sinaBind" />
+		<input id="hasMap" type="hidden" value="true"/>
+		<input id="1" type="hidden" value="行摄"/>
+		<input id="2" type="hidden" value="美食"/>
+		<input id="3" type="hidden" value="购物"/>
+		<input id="4" type="hidden" value="娱乐"/>
+		<input id="5" type="hidden" value="其他"/>
+		
+		<!--lvtu_pic_comment 评论列表 end--> 
+		
+	</div>
+	
+	<!-- 隐藏预加载的图片 list  -->
+	<div id="scorollimg" style="display:none">
+		<ul id="picPreList">
+		{{section name=key loop=$picPreList}}
+			<li title="{{$picPreList[key].image_id}}"> 
+				<a href="{{$picPreList[key].image_src}}{{*http://img1.qunarzz.com/wugc/p151/201302/26/307f56d39183bb1893835fbb.jpg_r_1728x1080x90_5c3fafb6.jpg*}}"></a> 
+				<span id="miniUrl"></span><!-- 图片小图url --> 
+				<span id="praiseNum">{{$picPreList[key].like_number}}</span><!-- 赞数 --> 
+				<span id="commentNum">{{$picPreList[key].replay_number}}</span><!-- 评论数 --> 
+				<span id="browserNum">{{$picPreList[key].read_number}}</span><!-- 浏览数 --> 
+				<span id="createTime">{{$picPreList[key].time_taken}}</span><!-- 创建时间 --> 
+				<span id="desc">{{$picPreList[key].image_desc}}</span><!-- 图片描述 --> 
+				<span id="index">{{$smarty.section.key.index}}</span><!-- 索引值 --> 
+				<span id="activityId"></span><!-- 活动id --> 
+				<span id="picWidth">{{$picPreList[key].width}}</span><!-- 图片宽度 --> 
+				<span id="picLength">{{$picPreList[key].height}}</span><!-- 图片高度 --> 
+				<span id="nickName">{{$picPreList[key].nickName}}</span><!-- 昵称 --> 
+				<span id="picUserIds">{{$picPreList[key].picUserIds}}</span><!-- 用户Id --> 
+				<span id="activityName">123</span><!-- 活动名称 --> 
+				<span id="picId">{{$picPreList[key].image_id}}</span><!-- 图片ID --> 
+				<span id="isPraised">2</span><!-- 图片是否已赞 --> 
+				<span id="picUrl">{{$picPreList[key].source_src}}{{*http://img1.qunarzz.com/wugc/p151/201302/26/307f56d39183bb1893835fbb.jpg*}}</span><!-- 图片大图 这里应该是图片原始图片 --> 
+				<span id="catagoryId">1</span><!-- 图片类别信息 --> 
+				
+				<span id="picUrlInfoById"></span><!-- 图片链接信息 --> 
+				
+				<span id="contentSina"></span><!-- 图片类别信息 --> 
+				<span id="contentQqWeibo"></span><!-- 图片类别信息 --> 
+				<span id="contentQzone"></span><!-- 图片类别信息 --> 
+				<span id="contentRenRen"></span><!-- 图片类别信息 --> 
+				<span id="contentDou"></span><!-- 图片类别信息 --> 
+				
+				<span id="cameraModelL">{{$picPreList[key].exif.exif_camera|default:"未知"}}</span><!-- 图片类别信息 --> 
+				<span id="cameraTimeL">{{$picPreList[key].exif.exif_time|default:"未知"}}</span><!-- 图片类别信息 --> 
+				<span id="fnumberL">{{$picPreList[key].exif.exif_aperture|default:"未知"}}</span><!-- 图片类别信息 --> 
+				<span id="cameraIsoL">{{$picPreList[key].exif.exif_iso|default:"未知"}}</span><!-- 图片类别信息 --> 
+				<span id="exposureTimeL">{{$picPreList[key].exif.exif_shutter_speed|default:"未知"}}</span><!-- 图片类别信息 --> 
+				<span id="exposureBiasL">{{$picPreList[key].exif.exif_exposure_eompensation|default:"未知"}}</span><!-- 图片类别信息 --> 
+				<span id="focalLengthL">{{$picPreList[key].exif.exif_focal_length|default:"未知"}}</span><!-- 图片类别信息 --> 
+				
+				<span id="opentype"></span><!-- 图片地址开放类型--> 
+				
+				<span id="addressName">{{$picPreList[key].addressName}}</span><!-- 图片地点 --> 
+				<span id="addressId">{{$picPreList[key].location_id}}</span><!-- 图片地点Id --> 
+				<span id="addressHref">{{$picPreList[key].alibumPicAddressNameHref}}</span><!-- 地点连接 -->
+				
+			</li>
+		{{/section}}
+		</ul>
+	</div>
+	
+	<!--弹出层和 背景图 mask--> 
+	
+</div>
+
+<!--图片详情/专辑JS --> 
+<!--弹出评论框-->
+<div class="bg_mask"></div>
+<div class="pop_status">
+	<div class="close fn-pa png24"></div>
+	<div class="content">
+		<div class="travels_comment_list darkgray fn-bc">
+			<ul id="feedback">
+			</ul>
+		</div>
+		<!-- 评论模块 翻页 -->
+		<div id="pagination" class="pagination darkgray mt10"></div>
+		<!--     翻页
+    <div id="pagination" class="pagination darkgray mt10 mb10 fn-tc"><a href="#1" class="first png24">首页</a><a href="#1" class="prev png24">前一页</a><span class="current">1</span><a href="#1" class="next png24">下一页</a><a href="#1" class="last png24">末页</a></div>
+  --> 
+		<!--评论框-->
+		<div class="travels_comment_box fn-bc mt10">
+			<div class="fn-fl">
+				<textarea name="textarea" id="textlimit" cols="45" rows="1" title="图片很美，说点神马吧" style="background-color: rgb(255, 255, 255); background-position: initial initial; background-repeat: no-repeat no-repeat; " class="focus"></textarea>
+			</div>
+			<div class="ml5 fn-tr fn-fr "> <span id="prompt" class="travels_comment_restrict mb10 f12 darkgray">还可以输入<em class="deongaree">140</em>个字</span> <span class="J-comment-btn confirm fn-block" onclick="javascript:comment();"></span> </div>
+		</div>
+	</div>
+</div>
+<input id="currIndex" value="1" type="hidden" />
+<!-- 页面导航 --> 
+
+<script type="text/javascript">
+var visitorId = $("#visitorId").val();
+var newuserId = $("#newuserId").val();
+if(visitorId!=undefined){
+	//已登录状态
+	if(visitorId!=null && newuserId!=null && visitorId == newuserId){
+		$("#fedit").removeClass("fn-none");
+		$("#fcover").removeClass("fn-none");
+		$("#fdel").removeClass("fn-none");
+	}else{
+		$("#fedit").addClass("fn-none");
+		$("#fcover").addClass("fn-none");
+		$("#fdel").addClass("fn-none");
+	}
+}else{
+	$("#fedit").addClass("fn-none");
+	$("#fcover").addClass("fn-none");
+	$("#fdel").addClass("fn-none");
+}
+;
+jQuery(document).ready(function(e) {
+
+$("img.lazy").lazyload({event: "scrollstop",effect:"fadeIn", threshold : 300});
+});
+
+</script> 
+
+<script src="{{$smarty.const.DIR_WS_JS}}picNDetail-201202261153.js" type="text/javascript"></script> 
+<script type="text/javascript">
+var pathUpload = "{{$nav_index}}";
+var url = document.URL;
+url = encodeURIComponent(url);
+
+</script>
+</body>
+</html>

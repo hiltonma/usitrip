@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<base href="{{$head_base_href}}" />
+<meta http-equiv="Content-Type" content="text/html; charset={{$head_charset}}" />
+<title>旅图，图说你的旅行故事!-去哪儿网Qunar.com</title>
+<meta name="Robots" content="index,follow,NOODP" />
+<meta name="keywords" content="旅行,拍照,图片,游记,滤镜,分享,旅途,旅图,攻略,自助游,去哪儿网,去那儿," />
+<meta name="description" content="简单的操作与精致的滤镜，帮助您随时记录旅途中精彩的片段，并制作成游记与好友分享。探索旅途中的热点，尽情享受您的旅途！" />
+<meta http-equiv="cache-control" content="no-cache" />
+<link href="{{$smarty.const.DIR_WS_CSS}}{{$current_css_file}}" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+{{if $smarty.const.ENABLE_SSL}}
+var is_ssl = true;
+{{else}}
+var is_ssl = false;
+{{/if}}
+var base_url = '{{$head_base_href}}';
+</script>
+<script src="{{$smarty.const.DIR_WS_JS}}base-201301041558.js" type="text/javascript"></script>
+</head>
+<body class="fn-pr">
+	<!-- 新手引导 -->
+<div class="add_guide_bg fn-pa fn-none"></div>
+<!-- 新手引导1 -->
+
+	<div class="lvtu_container" >
+	<!--页头开始-->
+		<div class="lvtu_header">
+		<div class="qn_nav">
+		<div class="qn_header wrapper">
+			<div class="inner">
+					<div class="qn_nav_indexNav darkgray666 png24">
+	 <ul>
+	 {{section name=i loop=$navlist}}
+		<li><a href="{{$navlist[i].href}}" target="_blank" hidefocus="on">{{$navlist[i].text}}<span class="i"></span></a></li>
+	 {{/section}}
+	 </ul>
+	</div>
+	<script>
+		var QNHEAD = {};
+		QNHEAD.track = function ( param ) {
+			var _url = [ 'http://www.qunar.com/track.htm?action=', param ,'&t=' , new Date().getTime() ].join( '' );
+			new Image().src = _url;
+		}
+		if ( typeof ( QNR ) === 'undefined' ) {
+			var QNR = {};
+		}
+		QNR.UserStatusConfig = {
+			id : 'loginLine'
+		};
+	</script>
+
+		<div class="qn_nav_login darkgray666 fn-pa"><span id="loginLine"><!-- <a href="http://user.qunar.com/login.jsp?ret=http%3A%2F%2Flvtu.qunar.com%2F">登录</a> | <a href="http://user.qunar.com/reg.jsp?ret=http%3A%2F%2Flvtu.qunar.com%2F">注册</a> --></span> | <a href="{{$head_base_href}}" target="_self" hidefocus="on" onclick="try{if(document.all) {window.external.addFavorite('{{$head_base_href}}','走四方旅图');} else {window.sidebar.addPanel('走四方旅图','{{$head_base_href}}','');}}catch(e){};QNHEAD.track('favorite|lt');return false;" title="走四方旅图">收藏</a></div>
+		<!--script type="text/javascript">
+			var __quLoginScript = document.createElement("script");
+			__quLoginScript.setAttribute("src","{{$smarty.const.DIR_WS_ROOT}}script/userstatus-0.1.min.js");
+			__quLoginScript.setAttribute("type","text/javascript");
+			document.getElementsByTagName("head")[0].appendChild(__quLoginScript);
+		</script-->
+		<script type="text/javascript" src="{{$smarty.const.DIR_WS_ROOT}}script/userstatus-0.1.min.js"></script>
+			</div>
+		</div> 
+		</div>
+		<!--LOGO && 导航-->
+		
+
+
+<div class="lvtu_nav_bg">
+<div class="lvtu_nav fn-pr wrapper">
+   
+
+
+<div class="lvtu_logo fn-fl"><a href="{{$nav_index}}" ><img src="{{$smarty.const.DIR_WS_IMG}}lvtu_logo.gif" height="61" alt="旅图首页" /></a></div>
+<div class="lvtu_nav_list fn-pa">
+        <div id="webwidget_menu_glide2" class="lvtu_home_nav whitef4 fb webwidget_menu_glide">
+            <div class="webwidget_menu_glide_sprite"></div>
+            <ul>
+                <li id ="index" class="fn-tc"><a href="{{$smarty.const.DIR_WS_ROOT}}index.htm">最新发现</a>
+				<img src="{{$smarty.const.DIR_WS_IMG}}lvtu_line_2_2_2.gif" class="fn-abs-right"/>
+				</li>
+
+<!--                 <li id="activity" class="fn-tc "><a href="/mobile_ugc/web/activitylist.htm">活动</a>
+                <img src="http://source.qunar.com/site/images/wap/lvtu/lvtu_line_2_2_2.gif" class="fn-abs-right"/>
+                </li> -->
+                
+                <li id="daren" class="fn-tc"><a href="/mobile_ugc/web/daren.htm">发现精彩</a>
+                <img src="{{$smarty.const.DIR_WS_IMG}}lvtu_line_2_2_2.gif" class="fn-abs-right"/></li>
+                <!-- <li id="iphone" class="fn-tc">
+                <a href="/mobile_ugc/web/download_ios.htm"></a>
+                <a href="/mobile_ugc/web/download_ios.htm" class="lvtu_ad fn-pa png24"></a>
+                <img src="http://source.qunar.com/site/images/wap/lvtu/lvtu_line_2_2_2.gif" class="fn-abs-right"/>
+                </li> -->
+				<li class="person" class="fn-tc">
+				<a id="persons" href="javascript:void(0);">我的旅图</a>
+				<span class="J-arrows down_arrows fn-pa png24"></span>
+				<div class="person_list pt5 pb5 fn-pa fn-none fn-clearfix">
+				<p class="myhome">我的主页</p>
+				<p class="addtravels">发表游记</p>
+				{{*
+				<p class="myfriend">我的好友</p>
+				<p class="commentandmessage">评论通知</p>
+				<p class="accountset">账号设置</p>
+				*}}
+				</div>
+				
+				</li>
+            </ul>
+            <div style="clear: both"></div>
+
+        </div>
+        </div>
+<!--旅图其他信息-->
+
+<div class="J-publish lvtu_addtravels fn-fr"><a href="http://www.baidu.com"></a></div>
+<input type="hidden"  id="userid" value="{{$customer_id}}"/>
+</div>
+</div>
+<div class="lvtu_top_line_b"></div>
+
+
+		</div>
+	<!--页头结束-->

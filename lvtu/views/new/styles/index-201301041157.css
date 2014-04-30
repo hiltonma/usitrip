@@ -1,0 +1,32 @@
+.crumbs{height:12px;line-height:12px;padding-left:12px;}
+#body h1 .a_all{background:none;display:inline;float:none;width:auto;}
+#body h1 .title{font-size:25px;display:inline-block;padding-left:12px; font-family:'Î¢ÈíÑÅºÚ', 'YaHei', 'ºÚÌå', tahoma, arial, SimSun, sans-serif, \5b8b\4f53;color:#1a7ceb;}
+#body h1 .title i{background:url(../image/icons1.png) no-repeat;_background-image:url(../image/icons1.gif);_background-position:0 10px;width:18px;height:16px;display:inline-block; vertical-align:middle;}
+#body h1 a{display:inline-block;float:right;width:105px;height:27px;background:url(../image/icons1.png) no-repeat;margin-left:1px;}
+#body h1 a.myfind{ background-position:-110px -50px;}
+#body h1 a.publish{ background-position:-220px -50px;}
+#body p.place{border:1px solid #cae7fd;background:#e8f5ff;margin-bottom:14px;}
+#body p.place a{float:left;padding:0 10px;height:38px;line-height:38px;font-size:14px;color:#306bbb;display:inline-block;}
+
+#body ul.piclist{/*padding-top:14px;*/} 
+#body ul.piclist li{float:left;width:327px;height:218px;margin-top:2px;_margin-top:1px;margin-left:2px;_display:inline;position:relative;}
+#body ul.piclist li a{text-decoration:none;}
+
+.npc_bgt{background-color:rgba(0,0,0,0.6);left:0;padding:5px 10px;top:23px;z-index:2;background:#000\9;filter:alpha(opacity=60);_background-color:#000;_filter:alpha(opacity=60);zoom:1;z-index:2;}
+.npc_bg{cursor:pointer;left:0;padding:75px 10px 0;top:0;height:143px;width:307px;background:#000;filter:alpha(opacity=0);opacity:0;z-index:1;zoom:1;}
+.npc_bg p{color:#d4d4d4;}
+
+.pagebar{text-align:center;margin-top:20px;}
+.pagebar a{display:inline-block;padding:5px 10px;background:#128dda;color:#ffffff; text-decoration:none;}
+.pagebar a.tool,.pagination .first,.pagination .prev, .pagination .next,.pagination .last{border:1px solid #dbdbdb;background:none;color:#6e6c6c;padding:4px 10px;}
+.pagination .png24{margin-right:5px;}
+.pagination em{display:inline-block;padding:3px 10px;background:#128dda;color:#ffffff; text-decoration:none;margin-right:5px;}
+.pagination em a{color:#fff;}
+.pagination .current{display:inline-block;padding:3px 10px;background:#f60;margin-right:5px;color:#ffd800;}
+.pagination span a{color:#fff;}
+
+
+.pagination {text-align:center;margin-top:20px;}
+
+
+

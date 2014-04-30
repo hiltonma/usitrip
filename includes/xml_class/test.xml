@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="gb2312"?>
+<object id="TabPanel1">
+	<cPath id="24_35">
+		<title name="name_黄山">黄石</title>
+		<images>image/brige_jingmen.jpg</images>
+		<concern>35</concern>
+		<h1Id>808</h1Id>
+		<p> [免费送玻璃桥] [限时2个月内] [7月8日前已没有座位]</p>
+		<LiIds>
+		449,191,809,720,194,808,807
+		</LiIds>
+		<more>全部黄石旅游</more>
+	</cPath>
+	<cPath id="24_29">
+		<title name="name_黄山">洛杉矶</title>
+		<images>image/hawaii_small.jpg</images>
+		<concern>29</concern>
+		<h1Id>1001</h1Id>
+		<p> [免费送洛杉矶一日] [限时3天]</p>
+		<LiIds>
+		1012,1009,1010,1011,1007,1008
+		</LiIds>
+		<more>全部洛杉矶旅游</more>
+	</cPath>
+	<cPath id="25_52">
+		<title name="name_黄山">华盛顿</title>
+		<images>image/east_coast_small.jpg</images>
+		<concern>52</concern>
+		<h1Id>1012</h1Id>
+		<p> [免费送华盛顿一日] [限时3天]</p>
+		<LiIds>
+		361,532,758,455,842,922
+		</LiIds>
+		<more>全部华盛顿旅游</more>
+	</cPath>
+	<cPath id="25_55">
+		<title name="name_黄山">纽约</title>
+		<images>image/east_coast_small.jpg</images>
+		<concern>55</concern>
+		<h1Id>379</h1Id>
+		<p> [免费送纽约一日] [限时3纽约]</p>
+		<LiIds>
+		827,832,819,829,350,925
+		</LiIds>
+		<more>全部纽约旅游</more>
+	</cPath>
+	<cPath id="24_142">
+		<title name="name_黄山">大峡谷</title>
+		<images>image/east_coast_small.jpg</images>
+		<concern>142</concern>
+		<h1Id>675</h1Id>
+		<p> [免费送大峡谷一日] [限时3纽约]</p>
+		<LiIds>
+		371,773,370,695,696,441
+		</LiIds>
+		<more>全部大峡谷旅游</more>
+	</cPath>
+	<cPath id="25_57">
+		<title name="name_黄山">大瀑布</title>
+		<images>image/east_coast_small.jpg</images>
+		<concern>57</concern>
+		<h1Id>839</h1Id>
+		<p> [大瀑布] [限时3大瀑布]</p>
+		<LiIds>
+		688,357,769,489,527,821,713
+		</LiIds>
+		<more>全部大峡谷旅游</more>
+	</cPath>
+</object>

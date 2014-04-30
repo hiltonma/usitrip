@@ -1,0 +1,220 @@
+/*
+  $Id: stylesheet.css,v 1.1.1.1 2004/03/04 23:39:43 ccwjr Exp $
+
+  osCommerce, Open Source E-Commerce Solutions
+  http://www.oscommerce.com
+
+  Copyright (c) 2002 osCommerce
+
+  Released under the GNU General Public License
+*/
+@import url("menu.css");
+/* links */
+a:link { font-family: Verdana, Arial, sans-serif; font-size:12px; color: #000000; font-weight: normal; text-decoration: none; }
+
+a:visited { font-family: Verdana, Arial, sans-serif; font-size:12px; color: #000000; font-weight: normal; text-decoration: none; }
+a:active { font-family: Verdana, Arial, sans-serif; font-size:12px; color: #000000; font-weight: normal; text-decoration: none; }
+a:hover { font-family: Verdana, Arial, sans-serif; font-size:12px; color: #000000; font-weight: normal; text-decoration: underline; }
+
+a:link.headerLink { font-family: Verdana, Arial, sans-serif; font-size: 8px; color: #8F020E; font-weight: bold; text-decoration: none; }
+a:visited.headerLink { font-family: Verdana, Arial, sans-serif; font-size: 8px; color: #8F020E; font-weight: bold; text-decoration: none }
+a:active.headerLink { font-family: Verdana, Arial, sans-serif; font-size: 8px; color: #8F020E; font-weight: bold; text-decoration: none; }
+a:hover.headerLink { font-family: Verdana, Arial, sans-serif; font-size: 8px; color: #8F020E; font-weight: bold; text-decoration: underline; }
+
+a:link.menuBoxHeadingLink { font-size:12px; color: #616060; font-weight: bold; text-decoration: none; }
+a:visited.menuBoxHeadingLink { font-size:12px; color: #616060; font-weight: bold; text-decoration: none; }
+a:active.menuBoxHeadingLink { font-size:12px; color: #616060; font-weight: bold; text-decoration: none; }
+a:hover.menuBoxHeadingLink { font-size:12px; color: #616060; font-weight: bold; text-decoration: none; }
+
+a:link.menuBoxContentLink { font-family: Verdana, Arial, sans-serif; font-size:12px; color: #616060; font-weight: normal; text-decoration: none; }
+a:visited.menuBoxContentLink { font-family: Verdana, Arial, sans-serif; font-size:12px; color: #616060; font-weight: normal; text-decoration: none; }
+a:active.menuBoxContentLink { font-family: Verdana, Arial, sans-serif; font-size:12px; color: #616060; font-weight: normal; text-decoration: none; }
+a:hover.menuBoxContentLink { font-family: Verdana, Arial, sans-serif; font-size:12px; color: #616060; font-weight: normal; text-decoration: underline; }
+
+a:link.splitPageLink { font-family: Verdana, Arial, sans-serif; font-size:12px; color: #0000FF; font-weight: normal; text-decoration: none; }
+a:visited.splitPageLink { font-family: Verdana, Arial, sans-serif; font-size:12px; color: #0000FF; font-weight: normal; text-decoration: none; }
+a:active.splitPageLink { font-family: Verdana, Arial, sans-serif; font-size:12px; color: #0000FF; font-weight: normal; text-decoration: none; }
+a:hover.splitPageLink { font-family: Verdana, Arial, sans-serif; font-size:12px; color: #0000FF; font-weight: normal; text-decoration: underline; background-color: #FFFF33; }
+
+/* menu box */
+.menuBoxHeading { font-family: Verdana, Arial, sans-serif; font-size:12px; color: #616060; background-color: #ffffff; }
+.menuBoxContent { font-family: Verdana, Arial, sans-serif; font-size:12px; color: #616060; }
+
+/* page */
+body { background-color: #ffffff; color: #000000; margin: 0px; }
+.headerBar { background-color: #B3BAC5; }
+.headerBarContent { font-family: Verdana, Arial, sans-serif; font-size: 8px; color: #000080; font-weight: bold; padding: 2px }
+.columnLeft { background-color: #F0F1F1; border-color: #999999; border-width: 1px; border-style: solid; padding: 2px; }
+.pageHeading { font-family: Verdana, Arial, sans-serif; font-size: 18px; color: #727272; font-weight: bold; }
+.pageHeadingSmall { font-family: Verdana, Arial, sans-serif; font-size: 14px; color: #727272; font-weight: bold; }
+
+/* data table */
+.dataTableHeadingRow { background-color: #C9C9C9; }
+.dataTableHeadingContent { font-family: Verdana, Arial, sans-serif; font-size:12px; color: #ffffff; font-weight: bold; }
+.dataTableRow { background-color: #F0F1F1; }
+.dataTableRowSelected { background-color: #DEE4E8; }
+.dataTableRowSelectedPink { background-color: #F8E0F3; }
+.dataTableRowOver { background-color: #FFFFFF; cursor: pointer; cursor: hand; }
+.dataTableContent { padding-left:5px; font-family: Verdana, Arial, sans-serif; font-size:12px; color: #000000; }
+
+/* info box */
+.infoBoxHeading { font-family: Verdana, Arial, sans-serif; font-size:12px; color: #ffffff; background-color: #B3BAC5; }
+.infoBoxContent { font-family: Verdana, Arial, sans-serif; font-size:12px; color: #000000; background-color: #DEE4E8; }
+
+/* message box */
+
+.messageBox { font-family: Verdana, Arial, sans-serif; font-size:12px; }
+.messageStackError, .messageStackWarning { font-family: Verdana, Arial, sans-serif; font-size:12px; background-color: #ffb3b5; }
+.messageStackSuccess { font-family: Verdana, Arial, sans-serif; font-size:12px; background-color: #99ff00; }
+
+/* forms */
+CHECKBOX, INPUT, RADIO, SELECT, TEXTAREA, FILE { font-family: Verdana, Arial, sans-serif; font-size:12px; }
+FORM { display: inline; }
+
+/* account */
+.formArea { background-color: #f1f9fe; border-color: #7b9ebd; border-style: solid; border-width: 1px; }
+.formAreaTitle { font-family: Tahoma, Verdana, Arial, sans-serif; font-size:12px; font-weight: bold; }
+
+/* attributes */
+.attributes-odd { background-color: #f4f7fd; }
+.attributes-even { background-color: #ffffff; }
+
+/* miscellaneous */
+.specialPrice { color: #ff0000; }
+.oldPrice { text-decoration: line-through; }
+.fieldRequired { font-family: Verdana, Arial, sans-serif; font-size:12px; color: #ff0000; }
+.smallText { font-family: Verdana, Arial, sans-serif; font-size:12px; }
+.main { font-family: Verdana, Arial, sans-serif; font-size:12px; }
+.errorText { font-family: Verdana, Arial, sans-serif; font-size:12px; color: #ff0000; }
+
+/* WebMakers.com Added: Editing Attributes */
+.attributeBoxContent { font-family: Verdana, Arial, sans-serif; font-size:12px; color: #000000; background-color: #808080; }
+.TR.attributeBoxContent { font-family: Verdana, Arial, sans-serif; font-size:12px; color: #000000; background-color: #808080; }
+.TD.attributeBoxContent { font-family: Verdana, Arial, sans-serif; font-size:12px; color: #000000; background-color: #C0C0C0; }
+
+/* Lango Infobox Admin */
+.infoboxAdmin { font-family: Verdana, Arial, sans-serif; font-size:12px; color: #000000; }
+.infobox-listing-odd {   background: #f8f8f9; }
+.infobox-listing-even {   background: ##F0F1F1; }
+
+
+ fieldset { border: 1px solid rgb(204, 204, 204);
+    padding: 5px;
+    margin-bottom: 10px;
+    text-align: left;
+    }
+    fieldset1 { border: 1px solid rgb(204, 204, 204);
+    padding: 5px;
+    margin-bottom: 10px;
+    text-align: left;
+    width:800px;
+    }
+
+  fieldset p { margin: 10px 0px;
+    }
+
+  legend { border: 1px solid rgb(204, 204, 204);
+    padding: 2px;
+    color: #000063;
+    font-size: 12px;
+    font-weight: bold;
+    background-color: rgb(247, 247, 247);
+    text-align: center;
+    }
+
+	/* ######### CSS for Shade Tabs. Remove if not using ######### */
+
+.shadetabs{
+padding: 3px 0;
+margin-left: 0;
+margin-top: 1px;
+margin-bottom: 0;
+font: bold 12px Verdana;
+list-style-type: none;
+text-align: left; /*set to left, center, or right to align the menu as desired*/
+}
+
+.shadetabs li{
+display: inline;
+margin: 0;
+}
+
+.shadetabs li a{
+text-decoration: none;
+position: relative;
+z-index: 1;
+padding: 3px 7px;
+margin-right: 3px;
+border: 1px solid #778;
+color: #2d2b2b;
+background: white url(../images/shade.gif) top left repeat-x;
+}
+
+.shadetabs li a:visited{
+color: #2d2b2b;
+}
+
+.shadetabs li a:hover{
+text-decoration: underline;
+color: #2d2b2b;
+}
+
+.shadetabs li a.selected{ /*selected main tab style */
+position: relative;
+top: 1px;
+}
+
+.shadetabs li a.selected{ /*selected main tab style */
+background-image: url(../images/shadeactive.gif);
+border-bottom-color: white;
+}
+
+.shadetabs li a.selected:hover{ /*selected main tab style */
+text-decoration: none;
+}
+
+/* end of selection tab*/
+.dataTableRowSelectedRedTotal { background-color: #FCA4AC; }
+.highlight_word{
+    background-color: pink;
+}
+.border_bot1 { border-bottom:1px solid; }
+
+/* howard added 20100410*/
+.dataTableRowSelectedYellow { background-color:#FFFFCC; }
+.GreenBorder {
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-left-style: solid;
+	border-top-color: #009900;
+	border-right-color: #009900;
+	border-left-color: #009900;
+}
+.RedBorder {
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-left-style: solid;
+	border-top-color: #FFF;
+	border-right-color: #FFF;
+	border-left-color: #FFF;
+}
+.selected-items{border-bottom:1px solid #ffc44c;overflow:hidden;width:760px;overflow:hidden;background:#fff7e6; margin-bottom:10px;}.selected-items .inner{border:1px solid #fff;padding:2px 9px}.selected-items dl{float:left;padding-left:54px;margin:0;clear:none;white-space:nowrap}.selected-items dt{margin-left:-54px;float:left;display:inline;line-height:20px}.selected-items dd{float:left;margin:2px 0 2px 5px;display:inline;background:#fff;width:auto;padding:0;height:auto}.selected-items dd a,.selected-items dd span.item{border:1px solid #f50;color:#ff8040;line-height:12px;height:12px;float:left;padding:1px 17px 2px 5px;position:relative;-moz-border-radius:2px;-webkit-border-radius:2px;*padding:3px 17px 0 5px;_padding:2px 17px 1px 5px}.selected-items dd span.item{padding-right:5px; }.selected-items dd a .close-icon{background-position:-6px -242px;position:absolute;right:0;top:1px;width:14px;height:13px;background:transparent url(../images/icons/search-icons-v2.png) no-repeat scroll -9999px -9999px;}.selected-items dd a:hover{text-decoration:none;color:#f50}.selected-items dd a:hover .close-icon{background-position:-6px -223px; }@media screen and (-webkit-min-device-pixel-ratio:0){.selected-items dl{padding-left:0}.selected-items dt{margin-left:0}}
+.border_bot1 { border-bottom:1px solid; }
+.conf_detail_texts	{ color:#223C6A; font-size:12px; font-weight:bold;	}
+
+.thumbnail{ position: relative; z-index: 0; outline:none; }
+.thumbnail:hover { background-color: transparent; z-index: 50; text-decoration:none; }
+.thumbnail span { /*CSS for enlarged image*/
+		position:absolute; background-color: lightyellow; padding: 5px;
+		left: -100px; border:1px dashed gray; border-style:dotted ;
+		visibility: hidden; color: black; text-decoration: none;
+		opacity:.95; filter:alpha(opacity=95);
+}
+.thumbnail span img { /*CSS for enlarged image*/ border-width: 0; padding: 2px; }
+.thumbnail:hover span { /*CSS for enlarged image on hover*/ visibility: visible; top:12px; left:0px !important; left:0px; }

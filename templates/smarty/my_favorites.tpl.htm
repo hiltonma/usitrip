@@ -1,0 +1,184 @@
+<table class="ui-collect-tb">
+        <thead>
+            <tr>
+                <th width="70%;">{:$shows.title.name:}</th>
+                <th>{:$shows.title.price:}</th>
+                <th>{:$shows.title.action:}</th>
+            </tr>
+        </thead>
+        <tbody>
+        {:section name=i loop=$FavoritesRows:}
+            <tr id="FavObj_{:$FavoritesRows[i].id:}">
+                <td>
+                    <div class="ui-collect-short-pic">
+                        <a href="{:$FavoritesRows[i].href:}"><img src="/images/{:$FavoritesRows[i].p_image:}" width="{:$FavoritesRows[i].img_w:}" height="{:$FavoritesRows[i].img_h:}" /></a>
+                    </div>
+                    <div class="ui-line-info" id="proListCon_{:$FavoritesRows[i].p_id:}">
+                        <h2><a href="{:$FavoritesRows[i].href:}">{:$FavoritesRows[i].p_name:}</a></h2>
+                        <p><span style="display:none">收藏人气：18050</span>&nbsp;&nbsp;<span>{:$shows.reviews:}{:$FavoritesRows[i].satisfaction:}({:$FavoritesRows[i].reviews:}{:$shows.comment:})</span></p>
+                    </div>
+                </td>
+                <td class="ui-price">
+                    <em class="ui-start-price">{:$FavoritesRows[i].p_price:}</em>
+                </td>
+                <td class="ui-handle">
+                {:if $FavoritesRows[i].p_is_transfer eq "1" || $FavoritesRows[i].p_is_cruises eq "1":}
+                	<p></p>
+                {:else:}
+                    <p><a id="add_cart_a_link_{:$FavoritesRows[i].p_id:}" onclick="jQueryAddCart('{:$FavoritesRows[i].p_id:}','{:$FavoritesRows[i].have_room:}', '{:$FavoritesRows[i].guest_num:}');" class="ui-buy" href="javascript:void(0);">{:$shows.add_to_cart:}</a></p>
+                {:/if:}
+                    <p><a href="javascript:void(0)" class="ui-delete" onclick="RemoveFavorites({:$FavoritesRows[i].id:})">{:$shows.del:}</a></p>
+                </td>
+            </tr>
+        {:/section:}     
+            <!--<tr class="even">
+                <td>
+                    <div class="ui-collect-short-pic">
+                        <a href="#"><img src="9565.jpg" width="95" height="65" /></a>
+                    </div>
+                    <div class="ui-line-info">
+                        <p><a href="#">独家黄石公园-大峡谷-拉斯-旧金山-布莱斯峡谷10日豪华游</a></p>
+                        <p><span>收藏人气：18050</span>&nbsp;&nbsp;<span>满意度：98%(58条评论)</span></p>
+                    </div>
+                </td>
+                <td class="ui-price">
+                    <em class="ui-start-price">$380起</em>
+                </td>
+                <td class="ui-handle">
+                    <p><a href="#" class="ui-buy">立即购买</a></p>
+                    <p><a href="#" class="ui-delete">删 除</a></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="ui-collect-short-pic">
+                        <a href="#"><img src="9565.jpg" width="95" height="65" /></a>
+                    </div>
+                    <div class="ui-line-info">
+                        <p><a href="#">独家黄石公园-大峡谷-拉斯-旧金山-布莱斯峡谷10日豪华游</a></p>
+                        <p><span>收藏人气：18050</span>&nbsp;&nbsp;<span>满意度：98%(58条评论)</span></p>
+                    </div>
+                </td>
+                <td class="ui-price">
+                    <em class="ui-start-price">$380起</em>
+                </td>
+                <td class="ui-handle">
+                    <p><a href="#" class="ui-buy">立即购买</a></p>
+                    <p><a href="#" class="ui-delete">删 除</a></p>
+                </td>
+            </tr>
+            <tr class="even">
+                <td>
+                    <div class="ui-collect-short-pic">
+                        <a href="#"><img src="9565.jpg" width="95" height="65" /></a>
+                    </div>
+                    <div class="ui-line-info">
+                        <p><a href="#">独家黄石公园-大峡谷-拉斯-旧金山-布莱斯峡谷10日豪华游</a></p>
+                        <p><span>收藏人气：18050</span>&nbsp;&nbsp;<span>满意度：98%(58条评论)</span></p>
+                    </div>
+                </td>
+                <td class="ui-price">
+                    <em class="ui-start-price">$380起</em>
+                </td>
+                <td class="ui-handle">
+                    <p><a href="#" class="ui-buy">立即购买</a></p>
+                    <p><a href="#" class="ui-delete">删 除</a></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="ui-collect-short-pic">
+                        <a href="#"><img src="9565.jpg" width="95" height="65" /></a>
+                    </div>
+                    <div class="ui-line-info">
+                        <p><a href="#">独家黄石公园-大峡谷-拉斯-旧金山-布莱斯峡谷10日豪华游</a></p>
+                        <p><span>收藏人气：18050</span>&nbsp;&nbsp;<span>满意度：98%(58条评论)</span></p>
+                    </div>
+                </td>
+                <td class="ui-price">
+                    <em class="ui-start-price">$380起</em>
+                </td>
+                <td class="ui-handle">
+                    <p><a href="#" class="ui-buy">立即购买</a></p>
+                    <p><a href="#" class="ui-delete">删 除</a></p>
+                </td>
+            </tr>
+            <tr class="even">
+                <td>
+                    <div class="ui-collect-short-pic">
+                        <a href="#"><img src="9565.jpg" width="95" height="65" /></a>
+                    </div>
+                    <div class="ui-line-info">
+                        <p><a href="#">独家黄石公园-大峡谷-拉斯-旧金山-布莱斯峡谷10日豪华游</a></p>
+                        <p><span>收藏人气：18050</span>&nbsp;&nbsp;<span>满意度：98%(58条评论)</span></p>
+                    </div>
+                </td>
+                <td class="ui-price">
+                    <em class="ui-start-price">$380起</em>
+                </td>
+                <td class="ui-handle">
+                    <p><a href="#" class="ui-buy">立即购买</a></p>
+                    <p><a href="#" class="ui-delete">删 除</a></p>
+                </td>
+            </tr>-->
+        </tbody>
+    </table>
+    
+
+<!--<div class="routeFav">
+  <div class="title titleSmall">
+    <b></b><span></span>
+    <h3>{:$shows.heading:}</h3>
+  </div>
+  <div class="routeFavCon">
+    <div class="routeFavTop">
+      <div class="row1">{:$shows.title.name:}</div>
+      <div class="row2">{:$shows.title.price:}</div>
+      <div class="row3">{:$shows.title.action:}</div>
+    </div>
+    <table cellpadding="0" cellspacing="0" class="routeFavList">
+{:section name=i loop=$FavoritesRows:} 
+      <tr id="FavObj_{:$FavoritesRows[i].id:}">
+        <td id="proListCon_{:$FavoritesRows[i].p_id:}" class="left">
+          <h2><a href="{:$FavoritesRows[i].href:}" target="_blank">{:$FavoritesRows[i].p_name:}</a></h2>
+        </td>
+        <td>{:$FavoritesRows[i].p_price:}</td>
+        <td class="right" style="display:table-cell; vertical-align:middle; ">
+          {:if $FavoritesRows[i].p_is_transfer eq "1" || $FavoritesRows[i].p_is_cruises eq "1":}
+          <div style="width:90px;float:left">&nbsp;</div>
+          {:else:}
+          <a id="add_cart_a_link_{:$FavoritesRows[i].p_id:}" onclick="jQueryAddCart('{:$FavoritesRows[i].p_id:}','{:$FavoritesRows[i].have_room:}', '{:$FavoritesRows[i].guest_num:}');" class="btn btnOrange" href="javascript:;"><button type="button">{:$shows.add_to_cart:}</button></a>
+          {:/if:}
+          <a href="javascript:;" class="btn btnGrey" onclick="RemoveFavorites({:$FavoritesRows[i].id:})"><button type="button">{:$shows.del:}</button></a>
+        </td>
+      </tr>
+{:/section:} 
+<tr>
+<td colspan="3" style="text-align:right;">{:$shows.pages_num:}&nbsp;&nbsp;{:$shows.page_links:}</td>
+</tr>
+    </table>
+  </div>
+</div>-->
+
+
+<div class="popup" id="addToCart">
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" class="popupTable">
+    <tr>
+      <td class="topLeft"></td><td class="side"></td><td class="topRight"></td></tr><tr><td class="side"></td>
+        <td class="con">
+          <div class="popupCon addSuccess" id="addToCartPanel" style="width:400px; ">
+          	<div class="successTip" style="background-image:none;">
+				<div class="img favorite_dialog"><img src="image/success.jpg"></div>
+				<div class="words">
+                <p>{:$shows.cart_0:}<a href="" id="Cart_Pname"></a>{:$shows.cart_1:}</p>
+                <p>{:$shows.cart_2:}<font id='Cart_Sum'></font>{:$shows.cart_3:}<span><b id='CartTotal'></b></span></p>
+				</div>
+            </div>
+            <div class="errorTip"></div>
+            <div class="popupBtn"><a href="{:$shows.cart_4:}" class="btn btnOrange" target="mycart" style="color:#FFFFFF;">{:$shows.cart_5:}</a>
+			<a href="javascript:void(0);" class="btn btnGrey" onclick="closePopup('addToCart');"><button type="button">{:$shows.cart_6:}</button></a>
+			</div>
+          </div>
+      </td><td class="side"></td></tr><tr><td class="botLeft"></td><td class="side"></td><td class="botRight"></td></tr>
+  </table>
+</div>

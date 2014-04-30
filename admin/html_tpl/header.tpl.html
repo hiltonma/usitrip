@@ -1,0 +1,46 @@
+{:$DOCTYPE:}
+<html {:$smarty.const.HTML_PARAMS:}>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<meta http-equiv="Content-Type" content="text/html; charset={:$smarty.const.CHARSET:}">
+<title>{:$title:}</title>
+<!--Load Files for Css-->
+{:section name=n loop=$CssArray:}
+<link rel="stylesheet" type="text/css" href="{:$CssArray[n]:}">
+{:/section:}
+
+<!--Load Files for JS-->
+{:section name=i loop=$JavaScriptSrc:}
+<script language="JavaScript" type="text/javascript" src="{:$JavaScriptSrc[i]:}"></script>
+{:/section:}
+
+{:if $open_dir_id!="":}
+<script type="text/javascript">
+//var I2_iframe = parent.document.getElementById("I2");
+var I2_iframe = window.parent.frames['I2'];
+if(I2_iframe!=null){
+	try {  
+		if(typeof(eval("I2_iframe.auto_open_to_target_ul"))=="function"){
+			I2_iframe.auto_open_to_target_ul({:$open_dir_id:},"show");
+		}else{
+			//alert("not function: auto_open_to_target_ul"); 
+		}
+	}catch(e){
+	}  
+}
+</script> 
+{:/if:}
+</head>
+
+<body {:$body_style:} oncontextmenu="return false;" onselectstart="return false;" oncopy="return false;" oncut="return false;" ondragstart="return false;">
+<div id="notice_div"></div>
+{:if $Bread!="":}
+<div class="Bread">
+{:$Bread:}
+</div>
+{:/if:}
+
+<!--
+</body>
+</html>
+-->

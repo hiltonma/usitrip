@@ -1,0 +1,70 @@
+@charset "gb2312";
+#safety_warp{ width:970px; margin:5px auto; overflow:hidden; _zoom:1;}
+#left_wrap{ width:692px; float:left;}
+.insurance1{ background:#f4fdff; border:1px solid #c1edf8; padding:10px 20px;}
+.insurance1 .tit{ height:44px; line-height:44px; border-bottom:1px dotted #c2c8c9;}
+.insurance1 .tit h2{  font-family:"Î¢ÈíÑÅºÚ"; font-size:24px; color:#005dbd;}
+.insurance1 .tit p{ color:#f84500; float:right;}
+.insurance1 .box1{ background:url(/image/insurance/box_bg1.gif) no-repeat right center; padding:35px 0;}
+.insurance1 .box1 h3{ font-weight:bold; font-size:14px; color:#016cb9; padding-bottom:10px;}
+.insurance1 .box1 li{ height:26px; line-height:26px;}
+.insurance1 .box1 li a{ color:#4d4d4d;}
+.insurance1 .box2{ overflow:hidden; _zoom:1; background:#fff; border:1px solid #d6e9ed; padding:20px;}
+.insurance1 .box2 dt{ width:148px; height:111px; float:left;}
+.insurance1 .box2 dd{ width:435px; float:left; line-height:22px; padding-left:25px;}
+.insurance1 .box2 dd h3{ font-weight:bold; font-size:14px; color:#016cb9; padding-bottom:8px;}
+.insurance1 .box3{ background:url(/image/insurance/box_bg3.gif) no-repeat right bottom; padding:35px 0} 
+.insurance1 .box3 h3{ font-weight:bold; font-size:14px; color:#016cb9; padding-bottom:8px; }
+.insurance1 .box3 li{ height:26px; line-height:26px;}
+.insurance2 .box{margin-bottom:1px;}
+.insurance2 .box .tit{ background:url(/image/insurance/dot_3.gif) repeat-x; height:36px; line-height:36px; padding: 0 20px;}
+.insurance2 .box .tit h3{ background:url(/image/insurance/dot_4.gif) no-repeat 0 center; font-weight:bold; color:#1756a4; font-size:14px; padding-left:16px;}
+.insurance2 .box .tit a{ float:right; background:url(/image/insurance/dot_2.gif) no-repeat; width:78px; margin-top:8px; height:22px; line-height:22px; text-align:center; display:block; color:#fff;}
+.insurance2 .box .cont1,.insurance2 .box .cont2{ border:1px solid #c0ddea; background:#fff; padding:35px 20px;}
+.insurance2 .box .cont1 li p{ padding-bottom:18px;}
+.medicare{ overflow:hidden; _zoom:1; padding-top:15px;}
+.medicare .s1,.medicare .s2,.medicare .s3{ width:178px; float:left;_display:inline; height:285px; border-right:1px solid #fff; background:red; padding:18px;}
+.medicare .s1{ background:#e0e8ef;}
+.medicare .s2{ background:#f4f4f4;}
+.medicare .s3{ background:#faedda;}
+.medicare h4{ text-align:center; font-weight: bold; padding-bottom:12px; color:#559d00; font-size:14px;}
+.medicare dl{ overflow:hidden; _zoom:1; padding-bottom:10px;}
+.medicare dl dt{ width:49%; line-height:18px; float:left; text-align:center;}
+.medicare dl dt strong{ display:block;}
+.medicare ul{ line-height:22px; color:#666666; text-align:center;}
+.medicare li.last{ padding-top:8px;}
+.medicare li.last a{ background:url(/image/insurance/dot_5.gif) no-repeat 0 2px; color:#f84600; text-decoration:underline; padding-left:22px; font-weight:bold;}
+
+#right_wrap{ width:270px; float:right; }
+.module .tit{ background: url(/image/insurance/title_bg.gif) repeat-x; height:34px; line-height:34px; padding:0 18px; color:#fff; font-weight:bold; font-size:14px;}
+.module .cont{ background:#f4fdff; border:1px solid #c1edf8; padding:15px;}
+.module { margin-bottom:7px; }
+.hands .cont p{ border-bottom:1px dotted #cfd6d8; padding-bottom:10px; margin-bottom:15px;}
+.hands .cont dl{ text-align:center;}
+.hands .cont dd{ height:26px; line-height:26px; }
+.hands .cont dt img{ display:block;width:235px; height:64px; margin:0 auto;}
+.contacts .cont li{ padding-bottom:14px; line-height:18px;}
+.contacts .cont li.s1{ color:#016cb9; border-bottom:1px dotted #cfd6d8; line-height:20px; margin-bottom:12px;}
+.flow .cont li{ background:url(/image/insurance/dot_1.gif) no-repeat; width:232px; height:30px; line-height:30px; color:#8c8c8c; margin-bottom:10px;}
+.flow .cont li em{ width: 34px; height:30px; padding-right:10px; display: block; float:left; text-align:center; line-height:30px; color:#fff; font-family:Verdana, Geneva, sans-serif; font-size:14px; font-weight:bold;}
+.flow .cont li  h6{ float:left; font-weight:bold; font-size:16px; font-family:"Î¢ÈíÑÅºÚ"; padding-right:10px; color:#444} 
+
+
+#safety_Delat{ background:#f4fdff; border:1px solid #c1edf8; width:910px; margin:0 auto; margin-bottom:12px; padding:30px;}
+.safety_del_tit{ border-bottom:3px solid #9ad300; padding:0 0 15px 0}
+.safety_del_tit h2{ font-size:24px; color:#135bb5; font-weight:bold; font-family:"Î¢ÈíÑÅºÚ"}
+.safety_del_tit p{ font-weight:; padding-top:6px; font-size:12px;}
+.safety_del_tit dl{ overflow:hidden; _zoom:1;}
+.safety_del_tit dt{ width:720px; float:left;}
+.safety_del_tit dd{ width:173px; float:right;}
+.safety_del_tit dd a{ display:block; background:url(/image/insurance/dot_6.gif) no-repeat; width:113px; height:44px; line-height:40px; font-size:20px; font-family:"Î¢ÈíÑÅºÚ"; color:#fff; padding-left:60px;}
+
+.font_14{ font-size:14px; color:#1056ae}
+.font_12{ font-size:12px; color:#1056ae}
+
+.insurance{ width:910px; margin:0 auto;}
+.inTable{ margin:10px 0 0 0; width:910px; line-height:20px;}
+.inTable td{ padding:10px 0;}
+.inTable .padding_left20{ padding-left:20px}
+.inTable table{ margin-bottom:10px;}
+.insurance .padding10{ padding:10px;}

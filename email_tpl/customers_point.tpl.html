@@ -1,0 +1,143 @@
+<!--<table cellspacing="0" cellpadding="0" border="0" width="668" align="center" style="border:2px solid #4164d8;font-size:12px;font-family:Arial,SimSun;color:#333333;">
+	<tr style="text-align:left;margin:0;padding:0;">
+		<td>
+        	<div style="padding:20px 10px 0 10px;line-height:20px;">
+            	<p style="margin:0;padding:0;">{CustomerName}您好！</p>
+                <div style="padding:5px 0;text-indent:20px;">
+                	<p style="margin:0;padding:0;">感谢您参加走四方网的积分抵用美元奖励活动！到{YYYY-MM-DD}为止，您的积分信息如下：</p>
+                    <p style="margin:0;padding:0;">{PointSumString}</p>
+                    <p style="margin:10px 0 0;padding:0;font-weight:bold;">以下是您最近5项积分的历史记录</p>
+                </div>
+            </div>        
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<table width="100%" border="0" cellpadding="3" cellspacing="0" style="font-size:12px;">
+            	<thead style="background:#B8E4FF;">
+                	<tr style="color:#223C6A">
+                    	<th height="25" nowrap="nowrap" style="">日期</th>
+                        <th nowrap="nowrap">&nbsp;</th>
+                        <th nowrap="nowrap">积分记录</th>
+                        <th nowrap="nowrap">积分状态</th>
+                        <th nowrap="nowrap">分值</th>
+                    </tr>
+                </thead>
+                <tbody>
+                	<tr>
+                    	<td colspan="5" style="padding:5px;">
+                        	{TableTrContent}
+                        </td>
+                    </tr>
+                </tbody>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" style="margin-top:8px;">
+			<p>
+				<a href="{HTTPS_SERVER}/points_actions_history.php">
+					<img src="{images}/look_point.jpg" style="border:0px;" />
+				</a>
+			</p>
+		</td>
+	</tr>
+    <tr>
+    	<td>
+        	<div style="padding:10px;line-height:20px;">
+            	<p style="margin:0;padding:0;">{TFF_POINTS_DESCRIPTION}</p>
+                <p style="margin:0;padding:0;">{TFF_POINTS_DESCRIPTION_CONTENT}</p>
+                <p style="margin:0;padding:0;">{TEXT_HOW_SAVE}</p>
+                <p style="margin:0;padding:0;">{TEXT_SAVINGS}</p>
+            </div>
+        </td>
+    </tr>
+	<tr>
+		<td>
+			<div style="padding:0 10px;font-size:12px;line-height:20px;">
+				<p style="margin:0;padding:0;">如果您对我们的产品或服务有任何疑问,请随时与我们联系。</p>
+                <p style="margin:0;padding:0;">客服邮箱：<a href="mailto:service@usitrip.com" style="color:#108BCD">service@usitrip.com</a></p>
+                <p style="margin:0;padding:0;">客服电话：1-626-898-7800 1-888-887-2816（美）</p>
+                <p style="margin:0;padding:0;">0086-4006-333-926（中）</p>
+				<p style="margin:10px 0 0;padding:0;">我们再次感谢您让走四方伴您快乐旅行!</p>
+				<div style=" float:left; border-top:#7ECBF5 1px solid; width:600px; margin-top:8px;">
+					<p style="font-size:12px;color:#223C6A;">
+						<span style="font-weight:700;">
+							附注:
+						</span>
+						如果您不需要走四方网的相关旅游谘询，请
+						<a href="{HTTP_SERVER}/confirmation_newslleter_email.php?confirmation=false"
+						style="color:#108BCD; text-decoration:none">
+							点击这里
+						</a>
+						进行退订。
+						<span style="color:#CCC">
+							{HTTP_SERVER_IP}
+						</span>
+					</p>
+				</div>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td style="padding:10px 10px 20px;">
+			<div style="margin:0;padding:0;line-height:20px;font-size:14px;font-family:'SimSun'">
+				<p style="margin:0;padding:0;">
+					{CONFORMATION_EMAIL_FOOTER}
+				</p>
+			</div>
+		</td>
+	</tr>
+</table>-->
+<table cellspacing="0" cellpadding="0" border="0" width="668" align="center" style="border-left:1px solid #cedee8;border-right:1px solid #cedee8;font-size:12px;font-family:tahoma;color:#4d4d4d;">
+    <tbody>
+        <tr>
+        	<td style="padding:15px 20px;">
+            	<h3 style="margin:0;padding:0;font-size:16px;">亲爱的会员：<strong>{CustomerName}</strong>您好！</h3>
+                <p style="margin:10px 0 0;padding:0;line-height:20px;">感谢您参加<a href="{HTTP_SERVER}" style="color:#1974dc;">走四方旅游网</a>积分抵扣美元的优惠活动！<br />
+				赚足您的积分，可畅享100%优惠哦！<a href="{POINTS_TERMS_LINKS}" style="color:#FF6600;">查看积分规则&gt;&gt;</a><br />
+				</p>
+				<p>
+				截止到{YYYY-MM-DD}，您的积分信息如下：</p>
+                <p style="margin:0;padding:0;line-height:20px;">{PointSumString}</p>
+                <h4 style="margin:10px 0 0;padding:0;line-height:26px;font-size:12px;color:#076abd;">以下是您最近5项目积分的历史记录</h4>
+                <table width="100%" cellpadding="0" cellspacing="0" border="0" style="font-size:12px;font-family:tahoma,SimSun;text-align:center;">
+                	<thead>
+                    	<tr>
+                        	<th style="line-height:26px;background-color:#d7f3ff;color:#076abd;">日期</th>
+                            <th style="line-height:26px;background-color:#d7f3ff;color:#076abd;">&nbsp;</th>
+                            <th style="line-height:26px;background-color:#d7f3ff;color:#076abd;">积分记录</th>
+                            <th style="line-height:26px;background-color:#d7f3ff;color:#076abd;">积分状态</th>
+                            <th style="line-height:26px;background-color:#d7f3ff;color:#076abd;">分值</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    	<tr>
+                        	<td colspan="5" style="line-height:30px;border-bottom:1px dashed #bcc4d2;color:#223c6a;">{TableTrContent}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="text-align:center;"><a href="{HTTPS_SERVER}/points_actions_history.php" style="display:block;margin:0 auto;width:178px;height:37px;"><img src="{images}/view_btn.gif" alt="点击查看我的积分" style="border:none;" /></a></p>
+                <h4 style="margin:0;padding:0;color:#076abd;line-height:24px;font-size:12px;">走四方积分折扣比例说明</h4>
+                <p style="margin:0;padding:0;color:#223c6a;line-height:22px;">您在走四方旅游网进行消费时，完全享有通过积分抵扣对应美元现金的优惠服务。<br />
+				积分兑换无上限，有多少兑多少！<br />
+				积分越高现金折扣越高，甚至可以免费换取旅行团，完全享受到最高100%的优惠！
+				</p>
+                <h4 style="margin:0;padding-top:15px;color:#076abd;line-height:24px;font-size:12px;">走四方积分兑换方式说明</h4>
+				<p style="margin:0;padding:0;color:#223c6a;line-height:22px;">您在订购产品时，在付款结账页面会有对应的"兑换"的窗口，您可以看到您目前的积分总数、对应现金及本订单可使用的最高积分数等信息。点击"确定兑换"按钮后，系统自动为您计算出折扣金额，展示积分优惠后订单实付的总价，确认抵换"去支付"后，积分即兑换成现金并作相应扣除，您只需直接支付优惠折扣后的余额即可。</p>
+                <p style="margin:0;padding-top:15px;line-height:22px;">再次感谢您参加走四方积分优惠活动！</p>
+                <p style="margin:0;padding:0;line-height:22px;">快乐旅行，我们与你相伴走四方！</p></td>
+        </tr>
+    </tbody>
+</table>
+<table cellspacing="0" cellpadding="0" border="0" width="668" align="center" style="border-left:1px solid #cedee8;border-right:1px solid #cedee8;font-size:12px;font-family:tahoma;border-top:1px solid #daf4ff;">
+	<tbody>
+    	<tr>
+        	<td style="padding:5px 20px 10px 20px;">
+				<p style="margin:0;padding:0 0 25px;line-height:22px;color:#ababab;">如有任何疑问，请点击<a style="color:#1974dc; text-decoration:underline;" href="{HTTP_SERVER}/contact_us.php">这里</a>，或直接拨打24小时全球热线电话与我们联系，谢谢！</p>
+				<a style="width:85px; height:23px; display:block;" href="{HTTP_SERVER}/faq_question.php"><img width="85" height="23" border="0" alt="更多帮助" src="{images}/morehelp.gif"></a>
+                <p style="color:#666666; font-size:12px; padding:12px 0; margin:0;">注：此为系统邮件，请勿回复！</p>
+            </td>
+        </tr>
+    </tbody>
+</table>

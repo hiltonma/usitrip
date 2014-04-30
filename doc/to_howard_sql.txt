@@ -1,0 +1,179 @@
+#
+# 表的结构 `products_remaining_seats`
+#
+
+CREATE TABLE `products_remaining_seats` (
+  `products_remaining_seats_id` int(11) NOT NULL auto_increment,
+  `products_id` int(11) NOT NULL,
+  `departure_date` date NOT NULL,
+  `remaining_seats_num` tinyint(3) NOT NULL,
+  `update_date` datetime NOT NULL,
+  PRIMARY KEY  (`products_remaining_seats_id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+
+#
+#手机短信注册验证绑定
+#
+ALTER TABLE `customers` ADD `confirmphone` VARCHAR( 32 ) ;
+
+#
+#
+#order status 邮件内容更改 updated				
+#
+UPDATE `orders_status` SET `orders_status_default_comment` = '感谢您在八八八网预定您的行程，请注意在全额付款前您的座位未被保留。\r\n\r\n请您在发送电汇后立即通知我们, 以便我们确认以后在第一时间处理您的订单。\r\n请注意我们在收到您的全额款后才会进一步处理您的订单。\r\n\r\n请使用以下详情到银行电汇您的订单金额： \r\n银行名称：Bank of America\r\n帐户名：usi4trip \r\n帐号：0944332670\r\n银行号码：026009593\r\nSWIFT #: BOFAUS3N (国际电汇)\r\n公司地址:\r\n77 Las Tunas Dr., Suite 203\r\nArcadia, CA 91007\r\n电话: 1-626-389-8666\r\n传真: 1-626-552-3723\r\n\r\n请您在电汇的银行表格上注明您的订单号。<span style=color:#F00>请注意您将承担支付转账费用，转账时请您将转账费用首先付掉，确保我们可以收到的金额是$？？？。我们在收到您的全额款后才会进一步处理您的订单。</span>请您务必将汇款转入上面列出的银行账号中，确保填入的账号信息和我们提供的信息完全一致。如果您因故取消订单，我们将通过支票或PayPal处理相关退款。谢谢您的合作！\r\n\r\nThank you for reserving your travel with 888trip. Please note your seats are NOT confirmed before we receive Full payment.\r\n\r\nYou will be responsible for any transaction fee associated with wire transfer. 888trip needs to receive FULL payment in order to further process your reservation.\r\n\r\nPlease email to service@888trip.com as soon as you send funds to us. We would like to further process your reservation.\r\n\r\nPlease see below details for information needed for sending wire transfer.\r\n\r\n<span style=color:#F00>When wiring money, please include the wire transfer fee. We will NOT be able to process your reservation should there be any difference in the amount due. </span>\r\n\r\nAccount Name: usi4trip\r\nBank Name: Bank of America\r\nAccount #: 0944332670\r\nRouting #: 026009593\r\nSWIFT #: BOFAUS3N (For International Wire Transfer)\r\n\r\nAddress:\r\nusi4trip\r\n77 Las Tunas Dr., Suite 203\r\nArcadia, CA 91007\r\nPhone: 1-626-389-8666 \r\nFax: 1-626-552-3723\r\n\r\n*We DO NOT accept wire transfers into any other bank account. Please be certain that you send wire transfer payments ONLY to the account indicated above*\r\n\r\n**Note: Please reference your reservation number on the bank form when you send the wire transfer. Your reservation will NOT be confirmed until we receive complete payment. Should the reservation be cancelled by the customer for any reason, refund will be in the form of check or PayPal.' WHERE `orders_status_id` = '2' AND `language_id` =  '1'
+
+UPDATE  `orders_status`  SET  `orders_status_default_comment`  = '感谢您在八八八网预定您的行程，请注意在全额付款前您的座位未被保留。请您参看我们可接受的其他付款方式，请您将您选择的付款方式告诉我们，以便我们协助您完成预定。\r\n-----------------------------------------------------------------------------------\r\n\r\n现金存款支付 (享受2%折扣)\r\n请使用以下详情支付您的订单款额：\r\n银行名称：Bank of America\r\n帐户名：usi4trip \r\n帐号：0944332670\r\n        或者\r\n银行名称：Chase\r\n帐户名：888trip \r\n帐号：825225188\r\n公司地址：\r\n888trip\r\n77 Las Tunas Dr., Suite 203\r\nArcadia, CA 91007\r\n电话: 1-626-389-8666 \r\n传真: 1-626-552-3723\r\n请您在支付的时候在银行存款表格上注明您的订单号。请注意我们在收到您的全额款后才会进一步处理您的订单。如果您因故取消订单，我们将通过支票或PayPal处理相关退款。非常感谢您的配合。\r\n------------------------------------------------------------------------------------\r\n汇票/旅行支票/银行支票支付 ( 请注意我们不接收个人支票。) (享受2%折扣)\r\n请使用以下详情支付您的订单金额：\r\n公司地址：\r\n888trip\r\n77 Las Tunas Dr., Suite 203\r\nArcadia, CA 91007\r\n\r\n电话: 1-626-389-8666 \r\n传真: 1-626-552-3723\r\n注意： 请在汇票/旅行支票/银行支票上注明付款给 888trip， 并注明您的订单号。如果您因故取消订单，我们将通过支票或PayPal处理相关退款\r\n------------------------------------------------------------------------------------\r\n电汇支付\r\n请使用以下详情到银行电汇您的订单金额：\r\n银行名称：Bank of America\r\n帐户名：usi4trip \r\n帐号：0944332670\r\n银行号码：026009593\r\nSWIFT #: BOFAUS3N (国际电汇)\r\n公司地址\r\n77 Las Tunas Dr., Suite 203\r\nArcadia, CA 91007\r\n电话: 1-626-389-8666\r\n传真: 1-626-552-3723\r\n请您在电汇的银行表格上注明您的订单号。<span style=color:#F00>请注意您将承担支付转账费用，转账时请您将转账费用首先付掉，确保我们可以收到的金额是$？？？。我们在收到您的全额款后才会进一步处理您的订单。</span>请您务必将汇款转入上面列出的银行账号中，确保填入的账号信息和我们提供的信息完全一致。如果您因故取消订单，我们将通过支票或PayPal处理相关退款。谢谢您的合作！\r\n------------------------------------------------------------------------------------\r\n\r\nPayPal支付\r\n请将支付款随附您的订单号一同发送至paypal@888trip.com。\r\n请注意在付款前您的座位随时可能被取消。\r\n\r\n\r\nThank you for reserving your travel with 888trip.  Please note that your reservation is NOT confirmed before we receive your full payment.  Please see below for different payment options and details needed for making the payment for your reservation.  Please email to service@888trip.com and let us know which payment method you will decide to choose for your reservation.  \r\n------------------------------------------------------------------------------------\r\n\r\nCASH DEPOSIT: (2% discount for this payment method)\r\nBank Name: Bank of America\r\nAccount Name: usi4trip\r\nAccount #: 0944332670\r\nor\r\nBank Name:Chase\r\nAccount Name: 888trip \r\nAccount #: 825225188\r\n\r\nAddress:\r\n888trip\r\n77 Las Tunas Dr., Suite 203\r\nArcadia, CA 91007\r\nPhone: 1-626-389-8666\r\nFax: 1-626-552-3723\r\n\r\n*If you are not in the state of California making the Cash Deposit, please use the Out of State deposit slip when submitting your deposit payment. \r\n\r\nNote: Please reference your reservation number on deposit slip. Your reservation will NOT be confirmed until we receive payment. Should the reservation be cancelled by the customer for any reason, refund will be in the form of check or PayPal.\r\n------------------------------------------------------------------------------------\r\n\r\nMONEY ORDER / TRAVELER\'S CHECK / CASHIER\'S CHECK (2% discount for this payment method)\r\nmail to:\r\n888trip\r\n77 Las Tunas Dr., Suite 203\r\nArcadia, CA 91007\r\nPhone: 1-626-389-8666\r\n\r\nNote: Please make money order/traveler\'s check/cashier\'s check payable to 888trip. Please reference your reservation number when you send payment. Your reservation will NOT be confirmed until we receive payment. Should the reservation be cancelled by the customer for any reason, refund will be in the form of check or PayPal.\r\n------------------------------------------------------------------------------------\r\n\r\nWIRE TRANSFER:\r\n<span style=color:#F00>When wiring money, please include the wire transfer fee. We will NOT be able to process your reservation should there be any difference in the amount due.</span>\r\nAccount Name: usi4trip\r\nBank Name: Bank of America\r\nAccount #: 0944332670\r\nRouting #: 026009593\r\nSWIFT #: BOFAUS3N (For International Wire Transfer)\r\n\r\nAddress:\r\nusi4trip\r\n77 Las Tunas Dr., Suite 203\r\nArcadia, CA 91007\r\nPhone: 1-626-389-8666 \r\nFax: 1-626-552-3723\r\n\r\nNote: You will be responsible for any transaction fee associated with wire transfer.  888trip needs to receive FULL payment in order to further process your reservation. Please reference your reservation number on the bank form when you send the wire transfer. Your reservation will NOT be confirmed until we receive complete payment. Should the reservation be cancelled by the customer for any reason, refund will be in the form of check or PayPal.\r\n------------------------------------------------------------------------------------\r\n\r\nPAYPAL PAYMENT:\r\nPlease send your payment to paypal@888trip.com with reference of your reservation number.  \r\n\r\nNote: We will NOT further process your reservation until we receive payment.\r\n------------------------------------------------------------------------------------' WHERE  `orders_status_id`  =  '100056' AND  `language_id`  =  '1'
+
+#2010-07-08
+ALTER TABLE `travel_notes_comments` ADD `has_remove` TINYINT( 1 ) DEFAULT '0' NOT NULL ;
+
+
+##2010-08-03 国内订单
+#
+# 表的结构 `admin_domestic_orders_manage`
+#
+
+CREATE TABLE `admin_domestic_orders_manage` (
+  `admin_id` int(11) NOT NULL auto_increment,
+  `manager_group` int(11) default NULL,
+  `permit_status` enum('0','1') default NULL,
+  `manager_history` text,
+  PRIMARY KEY  (`admin_id`)
+);
+
+#
+# 表的结构 `domestic_orders`
+#
+
+CREATE TABLE `domestic_orders` (
+  `orders_id` int(11) NOT NULL default '0',
+  `customers_id` int(11) default NULL,
+  `customers_name` varchar(64) default NULL,
+  `products_name` varchar(255) default NULL,
+  `date_purchased` datetime default NULL,
+  `products_departure_date` datetime default NULL,
+  `bank` varchar(64) NOT NULL,
+  `orders_status` int(8) default '0',
+  `value` decimal(15,4) default NULL,
+  `admin_id` int(11) default NULL,
+  `notes` varchar(255) default NULL,
+  `real_charge` decimal(15,4) default NULL,
+  `update_time` datetime default NULL,
+  `dransfer_date` datetime default NULL,
+  `hotel_costs` decimal(15,4) default NULL,
+  `pickup_costs` decimal(15,4) default NULL,
+  `leave_costs` decimal(15,4) default NULL,
+  `tours_costs` decimal(15,4) default NULL,
+  `dransfer_total` decimal(15,4) default NULL,
+  `emergency_order` int(11) default '0',
+  `dransfer_name` varchar(255) default NULL,
+  PRIMARY KEY  (`orders_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+
+#
+# 表的结构 `domestic_orders_history`
+#
+
+CREATE TABLE `domestic_orders_history` (
+  `history_id` int(11) NOT NULL auto_increment,
+  `admin_id` int(11) default NULL,
+  `manager_history` varchar(32) default NULL,
+  `update_time` datetime default NULL,
+  `notes` varchar(255) default NULL,
+  `orders_id` int(11) default NULL,
+  PRIMARY KEY  (`history_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=latin1 AUTO_INCREMENT=23 ;
+
+
+####表结构修改
+ALTER TABLE `domestic_orders` CHANGE `dransfer_total` `dransfer_total` DECIMAL( 15, 4 ) DEFAULT '0.0000';
+ALTER TABLE `domestic_orders` ADD `RMB` DECIMAL( 15, 4 ) DEFAULT '0.0000';
+ALTER TABLE `domestic_orders_history` CHANGE `manager_history` `manager_history` VARCHAR( 500 ) DEFAULT NULL;
+
+##########添加管理员
+INSERT INTO `admin_domestic_orders_manage` ( `admin_id` , `manager_group` , `permit_status` , `manager_history` )
+VALUES (
+'55', '3', '1', NULL
+);
+############
+
+
+
+
+###################客服电话联系修改
+UPDATE `configuration` SET `configuration_value` = '美国总部
+888trip 77 Las Tunas Dr., Suite 203, Arcadia, CA 9100
+USA 电话(Phone): 1-626-389-8666 1-866-638-6888 
+传真(Fax): 1-626-552-3723 
+
+中国办事处
+八八八网中国区客服部
+成都市洗面桥街22号城市阳光大厦1802室
+电话(Phone): 0086-400-637-6888（周一-周日：9:00am-11:30pm北京时间）
+传真(Fax): 028-85598848 
+邮箱：service@888trip.com',
+`use_function` = NULL WHERE `configuration_key` = 'STORE_NAME_ADDRESS';
+
+####domestic_orders表结构的修改####
+
+DROP TABLE `domestic_orders`;
+CREATE TABLE `domestic_orders` (
+  `orders_id` int(11) NOT NULL default '0',
+  `customers_id` int(11) default NULL,
+  `customers_name` varchar(64) default NULL,
+  `products_name` varchar(255) default NULL,
+  `date_purchased` datetime default NULL,
+  `products_departure_date` datetime default NULL,
+  `bank` varchar(64) NOT NULL,
+  `orders_status` int(8) default '0',
+  `value` decimal(15,4) default NULL,
+  `admin_id` int(11) default NULL,
+  `notes` varchar(255) default NULL,
+  `real_charge` decimal(15,4) default NULL,
+  `update_time` datetime default NULL,
+  `dransfer_date` datetime default NULL,
+  `hotel_costs` decimal(15,4) default NULL,
+  `pickup_costs` decimal(15,4) default NULL,
+  `leave_costs` decimal(15,4) default NULL,
+  `tours_costs` decimal(15,4) default NULL,
+  `dransfer_total` decimal(15,4) default NULL,
+  `emergency_order` int(11) default '0',
+  `dransfer_name` varchar(255) default NULL,
+  `RMB` decimal(15,4) default NULL,
+  `charge_date` datetime default NULL,
+  `payer` varchar(100) default NULL,
+  `value_rmb` decimal(15,4) default NULL,
+  `money_type` varchar(32) default NULL,
+  PRIMARY KEY  (`orders_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+
+#######清空国内订单数据表############
+TRUNCATE TABLE `domestic_orders`;
+TRUNCATE TABLE `domestic_orders_history`;
+
+####################删除domestic_orders_history########
+DROP TABLE `domestic_orders_history`;
+CREATE TABLE `domestic_orders_history` (
+  `history_id` int(11) NOT NULL auto_increment,
+  `admin_id` int(11) default NULL,
+  `manager_history` varchar(500) default NULL,
+  `update_time` datetime default NULL,
+  `notes` varchar(255) default NULL,
+  `orders_id` int(11) default NULL,
+  `email_sented` int(4) default '0',
+  PRIMARY KEY  (`history_id`)
+);
+
+
+############系统邮件尾部中英文分开##########
+
+
+UPDATE `configuration` SET `configuration_value` = '真诚地，\\n<a></a>\\n<a href="http://www.888trip.com" target="_blank">八八八网</a> 客户服务部\\nSincerely,\\n<a></a>\\n888trip Customer Service Team\\n<a href="http://www.888trip.com" target="_blank">www.888trip.com</a>',
+`use_function` = NULL ,
+`set_function` = NULL WHERE `configuration_key` = 'CONFORMATION_EMAIL_FOOTER';
+
+#######2011.04.01
+ALTER TABLE `tour_travel_agency` ADD `is_gender_info` TINYINT( 1 ) NOT NULL DEFAULT '0' COMMENT '0=No, 1=Yes', ADD `is_hotel_pickup_info` TINYINT( 1 ) NOT NULL DEFAULT '0' COMMENT '0=No, 1=Yes'; ALTER TABLE `orders_products` ADD `hotel_pickup_info` TEXT NOT NULL; 

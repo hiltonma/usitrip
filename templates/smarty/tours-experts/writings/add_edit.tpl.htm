@@ -1,0 +1,104 @@
+<script type="text/javascript" src="/{:$smarty.const.DIR_WS_JAVASCRIPT:}ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="/{:$smarty.const.DIR_WS_JAVASCRIPT:}ckeditor/adapters/jquery.js"></script>
+<script type="text/javascript" src="/{:$smarty.const.DIR_WS_JAVASCRIPT:}ckeditor/ckfinder/ckfinder.js"></script>
+<form action="{:gethref page=$baseUrl uid=$uid mod='writings' action=$action seo='false':}" method="post" onsubmit="return submits();" id="writings_form"> 
+<div class="expertNewArticle">
+      <ul>
+        <li><label>{:db_to_html text='标题：':}</label>
+        {:html_input name='writings[title]' enterkey='true' value=$writings.title parameters=' class="text" size="60" id="writings_title"':}<font style="color:red; display:{:if !$is_draft:}none{:/if:};" id="is_draft_tip">{:db_to_html text='*草稿':}</font>
+        </li>
+        <li><label>{:db_to_html text='分类：':}</label>
+        <select name="writings[tid]" id="writings_type_{:$customer_id:}" style="width:300px;" class="writings">
+        <option value="">{:db_to_html text='--- 请选择 ---':}</option>
+{:foreach from=$expertsWritingsGroup item=WritingsGroup name=expertsWritingsGroup:}
+	{:if $writingsType[$WritingsGroup.id]:}
+      	<optgroup group_id="{:$WritingsGroup.id:}" label="{:formatwgroup groupid=$WritingsGroup.id sex=$expertsInfo.sex expertslef=$isExpertsSelf:}"></optgroup>
+      {:foreach from=$writingsType[$WritingsGroup.id] item=writings_type name=WritingsGroup_writings_type:}
+      		<option value="{:$writings_type.tid:}" group_id="{:$WritingsGroup.id:}"{:if $writings_type.tid==$writings.tid:} selected="selected"{:/if:}>-&nbsp;{:db_to_html text=$writings_type.name|escape:"html":}</option>
+      {:/foreach:}
+	{:/if:}
+{:/foreach:}
+        </select>
+        &nbsp;&nbsp;
+        <a href="{:gethref page=$baseUrl mod='edit' action='add_writings_type' tmod='addWritings' uid=$expertsInfo.uid:}" rel="expert_ajax" onclick="return false;">{:db_to_html text='新增类别':}</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="{:gethref page=$baseUrl mod='edit' action='edit_writings_type' uid=$expertsInfo.uid:}" rel="expert_ajax" onclick="return false;">{:db_to_html text='编辑选中类别' uid=$expertsInfo.uid:}</a>&nbsp;|&nbsp;<a href="{:gethref page=$baseUrl mod='edit' action='del_writings_type' uid=$expertsInfo.uid:}" rel="expert_ajax" onclick="return false;">{:db_to_html text='删除选中类别':}</a>
+        </li>
+        <li><label>{:db_to_html text='转载：':}</label>
+        <span><input type="radio" name="writings[allow_share]" value="1" {:$checked1:}/>{:db_to_html text='允许':}</span>
+        <span><input type="radio" name="writings[allow_share]" value="0" {:$checked0:}/>{:db_to_html text='禁止':}</span>
+        &nbsp;&nbsp;{:db_to_html text='您的文章下方会出现一些转载或分享的图标':}
+        </li>
+      </ul>
+      <div class="articleEdit">
+      {:html_textarea value=$writings.content id="ckeditor_writings_content" rows='30' class="textarea" style="width:100%;":}
+      {:html_textarea name='writings[content]' value=$writings.content id="writings_content" style="display:none;":}
+      </div>
+      <div class="submit">
+      
+      <a href="javascript:;" class="btn btnOrange"><button type="submit" onclick="return setPostType(1);">{:db_to_html text='发表文章':}</button></a>
+      <a href="javascript:;" class="btn btnGrey"><button type="submit" onclick="return setPostType(2);" id="saveDraftSubmit">{:db_to_html text='保存为草稿':}</button></a>
+      
+      </div>
+</div>
+<input type="hidden" name="isPost" value="1" id="isPost" />
+{:if $aid:}
+<input type="hidden" name="aid" value="{:$aid:}"/>
+{:/if:}
+</form>
+<script type="text/javascript">
+	jQuery(document).ready(function(){
+		var config = {
+			language : '{:$ckeditorLanguage:}',
+			width : '100%',
+			height :300,
+			toolbar : 'JianDan',
+			autoUpdateElement : true,
+			font_names : "{:db_to_html text='宋体;黑体;楷体;隶书;仿宋;Arial;Comic Sans MS;Courier New;Tahoma;Times New Roman;Verdana':}"
+		};
+		jQuery('#ckeditor_writings_content').ckeditor(config);
+	});
+	function setPostType(t){
+		jQuery('#isPost').val(t);
+		return true;
+	}
+	function submits(){
+		if(jQuery.trim(jQuery('#writings_title').val())==''){
+			alert("{:db_to_html text='请输入文章标题！':}");
+			jQuery('#writings_title').focus();
+			return false;
+		}
+		if(jQuery.trim(jQuery('#writings_type_{:$customer_id:}').val())==''){
+			alert("{:db_to_html text='请选择文章类型！':}");
+			jQuery('#writings_type_{:$customer_id:}').focus();
+			return false;
+		}
+		if(jQuery.trim(jQuery('#ckeditor_writings_content').val())==''){
+			alert("{:db_to_html text='请输入文章内容！':}");
+			return false;
+		}
+		var oEditor = CKEDITOR.instances.ckeditor_writings_content;
+		var val = oEditor.getData();
+		var language = '{:$ckeditorLanguage:}';
+		if(language == 'zh'){
+			val = traditionalized(val);
+		}else{
+			val = simplized(val);
+		}
+		jQuery('#writings_content').val(val);
+		if(jQuery('#isPost').val()=='2'){
+			jQuery_SendFormData('writings_form',function(data){writingSaveDraftSuccess(data);},function(formid){writingSaveDraftStart(formid);});
+			return false;
+		}
+		return true;
+	}
+	
+	function writingSaveDraftStart(formid){
+		jQuery('#saveDraftSubmit').attr("disabled",true);
+		jQuery('#saveDraftSubmit').html("{:db_to_html text='保存中...':}");
+	}
+	function writingSaveDraftSuccess(data){
+		eval(data);
+		jQuery('#is_draft_tip').css('display','');
+		jQuery('#saveDraftSubmit').attr("disabled",false);
+		jQuery('#saveDraftSubmit').html("{:db_to_html text='保存为草稿':}");
+	}
+</script>

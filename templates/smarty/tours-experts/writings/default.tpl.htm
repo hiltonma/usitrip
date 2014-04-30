@@ -1,0 +1,48 @@
+{:include file=$user_public_tpl:}
+<div class="expertTitle"><h2><a {:$class:} href="{:gethref page=$baseUrl mod='writings' uid=$uid:}">{:db_to_html text='专家发布的所有文章':}</a>{:if $tid && $thisTypeName!='':} &gt; {:db_to_html text=$thisTypeName:}{:/if:}</h2></div>
+<div class="expertIndex expertIndexTop5">
+    <div class="expertArticle">
+    <dl id="writingsList">
+{:assign var="lasttype" value="":}
+{:foreach from=$expertsWritings item=writings name=expertsWritings:}
+{:if $lasttype != $writings.name && !$tid:}
+      <dt id="tn_{:$writings.tid:}" {:if $lasttype!='':} style="margin-top:10px;"{:/if:}>{:db_to_html text=$writings.name:}</dt>
+      {:assign var="lasttype" value=$writings.name:}
+{:/if:}
+{:assign var="class" value="":}
+{:if $writings.is_pic == '1':}
+{:assign var="class" value=" class='pic'":}
+{:/if:}
+      <dd id="wn_{:$writings.tid:}_{:$writings.aid:}">
+      <p>
+      {:db_to_html text='·':}
+      <a {:$class:} href="{:gethref page=$baseUrl mod='writings' action='view' uid=$writings.uid aid=$writings.aid:}" title="{:db_to_html text=$writings.title:}">
+      {:if $writings.is_draft == '1':}
+      	{:db_to_html text=$writings.title|cut:50:" ...":}
+      {:else:}
+      	{:db_to_html text=$writings.title|cut:40:" ...":}
+      {:/if:}
+      </a>
+      {:if $writings.is_draft == '1':}
+      <font style="color:#F60;">{:db_to_html text='(草稿)':}</font>
+      {:/if:}
+      </p>
+      <span class="date">{:$writings.time:}</span>
+      <span class="viewed">{:db_to_html text='浏览':}({:$writings.hits:})</span>
+      {:if $isExpertsSelf:}
+      <span class="edit"><a href="{:gethref page=$baseUrl mod='writings' action='edit' uid=$writings.uid aid=$writings.aid:}">{:db_to_html text='编辑':}</a></span>
+      <span><a href="{:gethref page=$baseUrl mod='edit' action='delwritings' aid=$writings.aid:}" rel="expert_ajax" onclick="return false;">{:db_to_html text='删除':}</a></span>
+      {:/if:}
+      </dd>
+{:foreachelse:}
+	<dt>{:db_to_html text='<font style="color:red;">该专家还没有发布文章！</font>':}</dt>
+{:/foreach:}
+    </dl>
+    </div>
+    {:if trim($pages)!='':}
+    <div class="page">
+    {:$pages:}
+    </div>
+    {:/if:}
+    <div class="goTop"><a href="javascript:scroll(0,0);" target="_self"></a></div>
+</div>

@@ -1,0 +1,113 @@
+{{include file="head.html"}}
+<div id="body">
+<div class="crumbs">{{*首页 > 最新发现*}}</div>
+<h1><a href="javascript:void(0)" class="J-publish publish"></a><a href="{{$nav_index}}" class="myhome myfind"></a><a href="{{$nav_index}}" class="a_all"><span class="title"><i></i>全部游记</span></a></h1>
+<div class="lvtu_specialadd fn-bc mt5">
+	<div class="lvtu_specialadd_title f16 fb orange png24">已有游记添加照片</div>{{* darkgray 深灰色 *}}
+	<div class="lvtu_specialadd_content"> 
+		<!--content_add-->
+		<div class="lvtu_specialadd_content_add">
+			<div class="lvtu_special_title fn-clearfix">
+				<div class="l fn-fl fn-tr pr5 f14" >游记标题：</div>
+				<div style="line-height:32px;font-size:14px;" class="m fn-fl"> {{$travel_title}} </div>
+				<div class="r fn-fl"> </div>
+			</div>
+		</div>
+		<input class="border-ca" name="" type="hidden" id="albumId" value="{{$travel_id}}"/>
+		
+		<!--添加第一批照片按钮-->
+		<div id="batch0">
+			<div class="lvtu_specialadd_input fn-clearfix">
+				<div class="l fn-fl fn-tr pr5 f14"></div>
+				<div class="m fn-fl" id="uploadFlash">
+					<input type="button" id="id_upload" class="upload_botton" name="id_upload"/>
+					<span class="jk_upload_add_t fn-pa"></span> </div>
+				<div class="r fn-fl">
+					<p class="pictip f12 darkgray666">请按具体拍摄地分批添加，一次先选30张，多出的等会再选</p>
+					<p class="specialadd_talk_error f12 darkgray666 fn-none "> <span>请至少添加一张图片</span> </p>
+				</div>
+			</div>
+			<div class="lvtu_special_line pb20 "></div>
+			<div class="lvtu_special_shoot pb20 fn-clearfix fn-none">
+				<div class="l fn-fl fn-tr pr5 f14">拍摄地点：</div>
+				<div class="m fn-fl">
+					<input id="editAlbumF" class="border-ca" name="batchdes" type="text" value="" >
+				</div>
+				<div class="r fn-fl">
+					<p class="specialadd_talk_error f12 darkgray666 fn-none"> <span>请至少添加拍摄地点</span> </p>
+				</div>
+			</div>
+			<div class="lvtu_specialadd_content_pic fn-none">
+				<div  id="imageId"  class="lvtu_special_pic fn-oauto fn-pr">
+					<ul>
+					</ul>
+					<div id='query0' class='some_file_queue'></div>
+				</div>
+			</div>
+		</div>
+		<div id="nextPic"> </div>
+		<div style="display:none" id="uploadTemplate">
+			<div id="batch">
+				<div class="lvtu_specialadd_input fn-clearfix">
+					<div class="l fn-fl fn-tr pr5 f14"></div>
+					<div class="m fn-fl">
+						<input type="file"   id="id_upload" name="id_upload"/>
+						<span class="jk_upload_add_t fn-pa"></span> </div>
+					<div class="r fn-fl">
+						<p class="pictip f12 darkgray666">请按具体拍摄地分批添加，一次先选30张，多出的等会再选</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div style="display:none" id="PicTemplate">
+			<div class="lvtu_special_line pb20 "></div>
+			<div class="lvtu_special_shoot pb20 fn-clearfix fn-none">
+				<div class="l fn-fl fn-tr pr5 f14">拍摄地点：</div>
+				<div class="m fn-fl">
+					<input id="batchdes" class="border-ca" name="batchdes" type="text" value="" >
+				</div>
+				<div class="r fn-fl">
+					<p class="specialadd_talk_error f12 darkgray666 fn-none"> <span>请至少添加拍摄地点</span> </p>
+				</div>
+			</div>
+			<div class="lvtu_specialadd_content_pic fn-none">
+				<div   class="imageIdX lvtu_special_pic fn-pr fn-oauto">
+					<ul>
+					</ul>
+					<div id='query' class='some_file_queue'></div>
+				</div>
+			</div>
+		</div>
+		
+		<!--预览/创建-->
+		<div class="lvtu_special_button fn-tc">
+			<div class="special_input fn-fl w100">
+				<input id="addAlbum" type="button" class="J-specialk-btn specialk_btn png24" value="">
+				<span class="tc"></span></div>
+			<!-- 同步绑定分享 --> 
+			<!-- add_bind go -->
+			{{*<div class="add_bind fn-fl fn-tl ml20"> <span class="fn-fl f12 darkgray mr5">同步到</span>
+				<ul>
+					<li class="bind_sina_cancel fn-vm fn-cursor" id="bind_sina"></li>
+					<li class="bind_qqlg_cancel fn-vm fn-cursor" id="bind_qqlg"></li>
+					<li class="bind_qzone_cancel fn-vm fn-cursor" id="bind_qzone"></li>
+				</ul>
+			</div>*}}
+			<!-- add_bind end --> 
+		</div>
+	</div>
+</div>
+<!--lvtu_specialadd_content end-->
+</div>
+<!--lvtu_specialadd end-->
+{{include file="foot.html"}}
+<div id="category" style="display:none">{{* <span><a class='service_down' id="1">行摄</a></span> <span><a class='service_link' id="2">美食</a></span> <span><a class='service_link' id="3">购物</a></span> <span><a class='service_link' id="4">娱乐</a></span> <span><a class='service_link' id="5">其他</a></span> *}}</div>
+
+<input id="hasAlbumCover" value="true" type="hidden" />
+<input id="shareList" value="[]" type="hidden"/>
+<script type="text/javascript">
+var pathUpload = "{{$nav_index}}";
+</script>
+<script src="{{$smarty.const.DIR_WS_JS}}editalbum-201303261321.js" charset="utf-8"></script>
+</body>
+</html>

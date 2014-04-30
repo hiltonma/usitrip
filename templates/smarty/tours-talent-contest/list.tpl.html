@@ -1,0 +1,195 @@
+{:include file="tours-talent-contest/header.tpl.htm":}
+<div id="wrap">
+
+    <div class="daren">
+    
+        <div class="darenTop"><img src="image/daren/daren_top_1.jpg" alt="{:db_to_html text=旅游体验师大赛:}" usemap="#Map" /><map name="Map" id="Map"><area shape="rect" coords="27,6,231,57" href="{:$severname:}" alt="" /></map></div>
+        <div class="darenTop"><img src="image/daren/daren_top_2.jpg" alt="{:db_to_html text=旅游体验师大赛:}" /></div>
+        <div class="darenTop"><img src="image/daren/daren_top_3.jpg" alt="{:db_to_html text=旅游体验师大赛:}" usemap="#Map2" /><map name="Map2" id="Map2"><area shape="rect" coords="401,50,517,93" href="trip_player.php?mod=apply" alt="" /></map></div>
+        <div class="darenNav">
+            <div class="darenNavLeft"></div>
+            <ul>
+               <li><a href="trip_player.php">{:db_to_html text=活动首页:}</a></li>
+                <li class="on"><a href="trip_player.php?mod=list">{:db_to_html text=所有作品:}</a></li>
+                <li><a href="trip_player.php?mod=prize">{:db_to_html text=奖项设置:}</a></li>
+                 {:if $customer_id > 0:}
+                <li><a href="trip_player.php?mod=homepage&id={:$customer_id:}">{:db_to_html text=个人主页:}</a></li>
+                {:/if:}
+                <li><a href="trip_player.php?mod=finalists"><span>{:db_to_html text=获奖名单:}</span></a></li>
+            </ul>
+            <div class="share">
+                <div class="bshare-custom">
+                    <a title="{:db_to_html text=分享到新浪微博:}" class="bshare-sinaminiblog"></a>
+                    <a title="{:db_to_html text=分享到开心网:}" class="bshare-kaixin001"></a>
+                    <a title="{:db_to_html text=分享到人人网:}" class="bshare-renren"></a>
+                    <a title="{:db_to_html text=分享到facebook:}" class="bshare-facebook"></a>
+                    <a title="{:db_to_html text=分享到twitter:}" class="bshare-twitter"></a>
+                    <a title="{:db_to_html text=分享到qq空间:}" class="bshare-qzone"></a>
+                    <a title="{:db_to_html text=更多平台:}" class="bshare-more">{:db_to_html text=更多:}>></a>
+                </div>
+                {:db_to_html text=分享到：:}
+            </div>
+            <div class="darenNavRight"></div>
+        
+        </div>
+            
+        <ul class="darenTab">
+            <li class="selected"><a href="javascript:;" onclick="jQuery('#DarenNew').show(); jQuery('#DarenHot').hide(); jQuery('.darenTab li').removeClass('selected'); jQuery(this).parent().addClass('selected');">{:db_to_html text=最新发布:}</a><span></span></li>
+            <li>|</li>
+            <li><a href="javascript:;" onclick="jQuery('#DarenHot').show(); jQuery('#DarenNew').hide(); jQuery('.darenTab li').removeClass('selected'); jQuery(this).parent().addClass('selected');">{:db_to_html text=人气排行:}</a>
+            <script type="text/javascript">
+            jQuery(function (){
+                var pphot = '{:$pphotshow:}';
+                if (pphot == ''){
+                    pphot = 0;
+                }
+                if (pphot == 1){
+                    jQuery('#DarenHot').show(); 
+                    jQuery('#DarenNew').hide(); 
+                    jQuery('.darenTab li').removeClass('selected'); 
+                    jQuery(this).parent().addClass('selected');
+                }
+            });
+            </script>
+            <span></span></li>
+        </ul>
+        
+        <div class="darenList darenListAll" id="DarenNew">
+            <div class="con">
+                <ul>
+                
+                {:section name=i loop=$neworks:}
+                    <li>
+                        <!--<div class="pic"><a href="trip_player.php?mod=view&id={:$neworks[i].works_id:}"><img src="{:$neworks[i].works_frontcover_thumb:}" alt="{:db_to_html text=$neworks[i].works_title:}" title="{:db_to_html text=$neworks[i].works_title:}"/></a></div>-->
+                        <div class="pic"><a  {:if $neworks[i].works_frontcover eq '':} href="trip_player.php?mod=view&id={:$neworks[i].works_id:}" {:else:}href="{:$neworks[i].works_frontcover:}" rel="lightbox[]"{:/if:}  title="<a href='trip_player.php?mod=view&id={:$neworks[i].works_id:}'>{:db_to_html text=$neworks[i].works_title:}</a>"><img src="{:if $neworks[i].works_frontcover eq '':}image/daren_uploadphoto.gif{:else:}{:$neworks[i].works_frontcover_thumb:}{:/if:}" alt="{:db_to_html text=$neworks[i].works_title:}" title="{:db_to_html text=$neworks[i].works_title:}"/></a></div>
+                        
+                        <p class="name"><a href="trip_player.php?mod=view&id={:$neworks[i].works_id:}" title="{:db_to_html text=$neworks[i].works_title:}">{:db_to_html text=$neworks[i].works_title|truncate:12:}</a></p>
+                        <p class="intro">{:db_to_html text=$neworks[i].works_content|truncate:28:}<a href="trip_player.php?mod=view&id={:$neworks[i].works_id:}" class="blue">{:db_to_html text=详细:}</a></p>
+                        <p><label>{:db_to_html text=作者：:}</label><a href="trip_player.php?mod=homepage&id={:$neworks[i].customers_id:}" title="{:db_to_html text=$neworks[i].works_author:}">{:db_to_html text=$neworks[i].works_author|truncate:12:}</a></p>
+                        <p><label class="votes">{:db_to_html text=时间：:}</label>{:$neworks[i].works_addtime|date_format:'%Y-%m-%d':}</p>
+                        <p class="btnCenter"></p>
+                    </li>
+                {:/section:}    
+                </ul>
+            </div>
+            <div class="page _search_option_other after__search_load">
+            {:$pages:}
+            </div>
+        </div>
+        
+        <div class="darenList darenListAll darenListAllHot" id="DarenHot" style="display:none;">
+            <div class="con">
+                <ul>
+                {:section name=n loop=$votes:}
+                    <li>
+                        <!--<div class="pic"><a href="trip_player.php?mod=view&id={:$votes[n].works_id:}"><img src="{:$votes[n].works_frontcover_thumb:}" title="{:db_to_html text=$votes[n].works_title:}" alt="{:db_to_html text=$votes[n].works_title:}"/></a></div>-->
+                        <div class="pic"><a {:if $votes[n].works_frontcover eq '':} href="trip_player.php?mod=view&id={:$votes[n].works_id:}"  {:else:} href="{:$votes[n].works_frontcover:}"  rel="lightbox2[]"{:/if:} title="<a href='trip_player.php?mod=view&id={:$votes[n].works_id:}'>{:db_to_html text=$votes[n].works_title:}</a>"><img src="{:if $votes[n].works_frontcover eq '':}image/daren_uploadphoto.gif{:else:}{:$votes[n].works_frontcover_thumb:}{:/if:}" title="{:db_to_html text=$votes[n].works_title:}" alt="{:db_to_html text=$votes[n].works_title:}"/></a></div>
+                        
+                        <p class="name"><a href="trip_player.php?mod=view&id={:$votes[n].works_id:}" title="{:db_to_html text=$votes[n].works_title:}">{:db_to_html text=$votes[n].works_title|truncate:12:}</a></p>
+                        <p class="intro">{:db_to_html text=$votes[n].works_content|truncate:28:}<a href="trip_player.php?mod=view&id={:$votes[n].works_id:}" class="blue">{:db_to_html text=详细:}</a></p>
+                        <p><label>{:db_to_html text=作者：:}</label><a href="trip_player.php?mod=homepage&id={:$votes[n].customers_id:}" title="{:db_to_html text=$votes[n].works_author:}">{:db_to_html text=$votes[n].works_author|truncate:12:}</a></p>
+                        <p class="votes"  id="votes_{:$votes[n].works_id:}"><label>{:db_to_html text=票数：:}</label>{:$votes[n].works_votes:}</p>
+                        <p class="btnCenter"></p>
+                    </li>
+                {:/section:}   
+                </ul>
+            
+            </div>
+            
+            <div class="page _search_option_other after__search_load">
+            {:$pagehot:}
+            </div>
+           
+        </div>
+
+        <div class="darenBot"></div>
+
+    </div>
+
+    
+    
+                
+</div>
+<div class="popup" id="PopupLoading">
+<table width="100%" cellpadding="0" cellspacing="0" border="0" class="popupTable">
+<tr><td class="topLeft"></td><td class="side"></td><td class="topRight"></td></tr><tr><td class="side"></td><td class="con">
+ 
+  <div class="popupCon" id="PopupLoadingCon" style="width:400px;">
+    <div class="success">
+        <div class="promptImg"><img src="image/ajax-loading.gif"  style="padding:50px 0 0 50px" ></div>
+        <div class="prompt">{:db_to_html text=投票中...:}</div>
+        <div class="btnCenter"><a class="" href="javascript:;" id="PopupLoadingClose"></a></div>
+    </div>
+</div>
+</td><td class="side"></td></tr><tr><td class="botLeft"></td><td class="side"></td><td class="botRight"></td></tr>
+</table>
+</div>
+
+<div class="popup" id="PopupSuccess">
+<table width="100%" cellpadding="0" cellspacing="0" border="0" class="popupTable">
+<tr><td class="topLeft"></td><td class="side"></td><td class="topRight"></td></tr><tr><td class="side"></td><td class="con">
+ 
+  <div class="popupCon" id="PopupSuccessCon" style="width:400px;">
+    <div class="Success">
+        <div style="float:left; margin:15px 0 0 20px;"><img src="image/success.jpg" /></div>
+        <div style=" margin-left:100px; padding:30px 0; line-height:24px;">{:db_to_html text=投票成功！:}</div>
+        <div class="btnCenter"><a class="btn btnGrey" href="javascript:;" id="PopupSuccessClose"><button type="submit">{:db_to_html text=关闭:}</button></a></div>
+    </div>
+
+  
+    
+  </div>
+  
+</td><td class="side"></td></tr><tr><td class="botLeft"></td><td class="side"></td><td class="botRight"></td></tr>
+</table>
+</div>
+<div class="popup" id="PopupSuccess">
+<table width="100%" cellpadding="0" cellspacing="0" border="0" class="popupTable">
+<tr><td class="topLeft"></td><td class="side"></td><td class="topRight"></td></tr><tr><td class="side"></td><td class="con">
+ 
+  <div class="popupCon" id="PopupSuccessCon" style="width:400px;">
+     <div class="success">
+        <div class="promptImg"><img src="image/success.jpg" /></div>
+        <div class="prompt">{:db_to_html text=投票成功！:}</div>
+        <div class="btnCenter"><a class="btn btnGrey" href="javascript:;" id="PopupSuccessClose"><button type="submit">{:db_to_html text=关闭:}</button></a></div>
+    </div>
+  
+    
+  </div>
+  
+</td><td class="side"></td></tr><tr><td class="botLeft"></td><td class="side"></td><td class="botRight"></td></tr>
+</table>
+</div>
+ <div class="popup" id="PopupError">
+<table width="100%" cellpadding="0" cellspacing="0" border="0" class="popupTable">
+<tr><td class="topLeft"></td><td class="side"></td><td class="topRight"></td></tr><tr><td class="side"></td><td class="con">
+ 
+  <div class="popupCon" id="PopupErrorCon" style="width:400px;">
+    <div class="success">
+        <div class="promptImg"><img src="image/popup_alert.jpg" /></div>
+        <div class="prompt">{:db_to_html text=投票失败！:}<br />{:db_to_html text=您今天已经超过投票限制。:}</div>
+        <div class="btnCenter"><a class="btn btnGrey" href="javascript:;" id="PopupErrorClose"><button type="submit">{:db_to_html text=关闭:}</button></a></div>
+    </div>
+  
+    
+  </div>
+  
+</td><td class="side"></td></tr><tr><td class="botLeft"></td><td class="side"></td><td class="botRight"></td></tr>
+</table>
+</div>
+
+<!-- bshare 相关js -->
+<script language="javascript" type="text/javascript" src="http://www.bshare.cn/button.js#uuid=97319&amp;style=-1"></script>
+<script language="javascript" type="text/javascript" src="http://www.bshare.cn/bshareC1.js"></script> 
+<script type="text/javascript">
+jQuery(function(){
+if(typeof(bShare)!='undefined'){
+bShare.addEntry({
+title: "{:db_to_html text=#走四方旅游体验师大赛#:}",
+ summary:"{:db_to_html text=正在火热举行中，@走四方网:} {:db_to_html text=微博即可参与，IPAD2大奖等你拿，更有机会免费畅游美国，:}"
+})
+}
+});
+</script>
+</body>
+</html>

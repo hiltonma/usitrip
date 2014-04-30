@@ -1,0 +1,36 @@
+@charset "gb2312";
+
+/*  
+ * @usitrip.com   
+ * @邮件退订的css   
+ * @version 2011-08-18   
+ * -------------------------------------------------- */
+body,ul,ol,dl,dd,h1,h2,h3,h4,h5,h6,p,form,fieldset,legend,input,textarea,select,button,th,td{ margin:0; padding:0; background:#FFFFFF}
+img{border:0;}
+body{font-size:12px; font-family:"宋体",Tahoma,Arial,Helvetica,sans-serif; color:#111; _background-attachment:fixed;}
+#newsletterfromAll{ min-width:1003px; width:100%; overflow:hidden;}
+.newsletterfromTop{ width:100%; height:70px; background:#0F5DCB;}
+.newsletterfromTop .newsletterfromLogo{ float:left; width:211px; margin-top:16px; margin-left:10%;}
+.newsletterfromTop .newsletterfromHre{ float:right; width:200px;  margin-top:45px; margin-right:10%;}
+.newsletterfromTop .newsletterfromHre a{ color:#b9cefe; text-decoration:none; margin:0 5px;}
+.newsletterfromTop .newsletterfromHre a:hover{ text-decoration:underline}
+.newsletterfromCon{ width:485px; margin:50px auto auto auto;}
+.newsletterfromCon h3{ background:url(/image/newsletterfrom/mail_bt.jpg) top left no-repeat; width:465px; height:36px; line-height:36px; font-size:16px; padding-left:20px;}
+/*.newsletterfromCon .newsletterfromConTab{ width:483px; border:1px solid #efefef; padding-bottom:30px;}*/
+/*.newsletterfromCon .newsletterfromConTab{ width:485px; border:1px solid #efefef; padding-bottom:30px;}*/
+.newsletterfromCon .newsletterfromConTab{ width:485px; border:1px solid #efefef;}
+/*.newsletterfromCon .newsletterfromConTab table{ margin-top:30px; margin-left:55px;}*/
+
+/*.newsletterfromCon .newsletterfromConTab .mailfrom{ width:25px;}*/
+.newsletterfromCon .newsletterfromConTab td{line-height:25px;}
+/*.newsletterfromCon .newsletterfromConTab td .mailfromanother{ border:1px solid #7c7c7c; height:45px; line-height:24px; width:325px; padding:5px;  background:#FFFFFF; color:#999999; font-size:12px;}*/
+.newsletterfromCon .newsletterfromConTab td .mailfromanother{ border:1px solid #7c7c7c; height:35px; line-height:24px; width:430px; padding:5px;  background:#FFFFFF; color:#999999; font-size:12px;}
+.newsletterfromCon .newsletterfromConTab td a{ margin:10px;}
+/* button */
+.btn{ display:inline-block; height:23px; white-space:nowrap; overflow:hidden; line-height:23px; *line-height:25px; }
+.btn button{ width:80px; background:none; border:0; height:22px; font-size:12px; cursor:pointer; text-align:center; overflow:visible; }
+/**:lang(zh) .btn button{ padding:0 7px !important;} */
+.btn:hover{ background:url(/image/button_bg.gif) 0px -23px; text-decoration:none; border:1px solid #f8b709;}
+/*橙色button*/
+.btnOrange{ background:url(/image/button_bg.gif); font-weight:bold; border:1px solid #f8b709; }
+.btnOrange button{ font-weight:bold;}

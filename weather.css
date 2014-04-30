@@ -1,0 +1,419 @@
+
+#pri{
+	width:20em;
+	float:left;
+	font-family:Tahoma, Arial, Verdana;
+	font-size: 12px;
+}
+
+#pri li{
+	font-size:80%;
+	color:#FF3366;
+}
+
+#pri img{
+	width:18em;
+	display:block;
+	border:solid 1px #dfdfdf;
+	height:3em;
+	margin:1px 12px;
+	background:#f0f0f0;
+	font-family:Verdana;
+	font-size:70%;
+}
+
+#pri p{
+	font-family:Verdana;
+	font-size:70%;
+	
+}
+
+#sec{
+	margin:5em 0 0 0;
+	width: 16em;
+	float:left;
+
+}
+
+
+#weather {
+	/*border: solid 1px #AAA;*/
+	padding: 5px;	
+	font-family: Tahoma, Arial, Verdana;
+	font-size:12px;
+	
+}
+
+#weather .ft {
+	border-top: solid 1px #CDCDCD;
+	padding: 3px 0 0 0;
+	color: #666;
+	font-size: 78%;
+}
+
+#weather a {
+	color: #4261AD;
+}
+
+#weather h2 {
+	font-size: 100%;
+	margin: 0;
+}
+
+#weather .hd {
+	position: relative;
+	height: 1.5em;
+}
+
+#weather .weather-edit {
+	color: #666;
+	position: absolute;
+	right: -2px;
+	top: -2px;
+	font-size: 80%;
+	padding: 1px 6px;
+	border: Solid 1px #DEDEDE;
+	text-decoration: none;
+}
+
+#weather ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#weather li.weather-item {
+	zoom: 1;
+	background: #EFEFF7;
+	border: solid 1px #EFEFF7;
+	margin: 0 auto 6px auto;
+	padding: 2px;
+	position: relative;
+	z-index:1;
+}
+
+#weather input.on-query {
+	background: white url(http://mentalized.net/activity-indicators/indicators/snake_transparent.gif) 97% center no-repeat;
+}
+
+#weather li.on-query {
+	background: white url(http://mentalized.net/activity-indicators/indicators/circle-ball-dark-antialiased.gif) 3px center no-repeat;
+	color: #808080;
+	padding-left: 36px;
+}
+
+#weather li.invalid-query {
+	background: #FF6699;
+	border:solid 1px #FF0066;
+	color: white;
+	padding-left:3px;
+}
+
+#weather a.weather-delete {
+	display: none;
+	position: absolute;
+	right: 4px;
+	top: 3px;
+	padding: 1px 2px 2px 2px;
+	text-decoration: none;
+	background: white;
+	border: Solid 1px #AAA;
+	font: 50% Verdana;
+}
+
+#weather li.mouseover {
+	border: solid 1px #336;
+}
+
+#weather li.mouseover a.weather-delete {
+	display: block;
+}
+
+#weather li h5 {
+	font-size: 100%;
+	margin: 0 0 2px 0;
+}
+
+#weather .header {
+	clear: both;
+}
+
+#weather form {
+	display: none;
+	margin: 0 0 6px 0;
+	/*border: solid 1px #EFEFF7;*/
+	padding: 0 4px;
+	font-size: 90%;
+	color: #6B696B;
+}
+
+#weather form label {
+	font-family:Verdana;
+	font-size:12px;
+	color:#333333;
+	line-height:25px;
+	padding: 4px 0 0 0;
+}
+
+#weather form p {
+	margin: 3px 0;
+	color: #848284;
+	font-size: 70%;
+	padding: 0 0 4px 0;
+}
+
+#weather-query {
+	
+	width: 15em;
+	font-family: Arial;
+}
+
+#weather-query:focus{
+	border-color:#CCCC00;
+}
+
+#weather-submit {
+	width: 3em;
+	line-height:15px;
+	
+	border: Solid 1px #7B9EB5;
+	font-family: Arial;
+	background: #F0F0F0;
+	border-bottom-color: #336;
+	border-right-color: #336;
+	cursor: pointer;
+}
+
+#weather form .weather-suggest {
+	display: none;
+	position: relative;
+	clear: both;
+	z-index: 9999;
+	font-size: 1px;
+}
+
+#weather form .weather-suggest ul {
+	width: 14em;
+	filter: alpha(opacity=85) progid:DXImageTransform.Microsoft.dropshadow(OffX=5,OffY=5,Color='#cdcdcd',Positive='true');
+	opacity: 0.90;
+	font-size: medium;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border: Solid 2px #AAA;
+	background: white;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	-moz-border-radius:5px;
+}
+
+#weather form .weather-suggest h6 {
+	font-size: 70%;
+	color: #AAA;
+	margin: 0;
+	padding: 0.1em 0.5em;
+}
+
+#weather form .weather-suggest li.weather-suggest-item {
+	white-space: nowrap;
+	cursor: pointer;
+	margin: 0;
+	padding: 0.05em 0.5em;
+	font-size: 70%;
+}
+
+#weather form .weather-suggest li.weather-suggest-item em{
+	color:#FF3300;
+	margin:0 2px 0 0;
+	font-style:normal;
+}
+
+#weather form .weather-suggest li.weather-suggest-item-hover {
+	background: #CCFF33;
+}
+
+#weather form .weather-suggest li.selected {
+	color: white;
+	background: #336;
+}
+
+#weather form .has-more-suggest-data ul {
+	height: 13em;
+	overflow: auto;
+}
+
+#weather strong {
+	float: left;
+	color: #949A9C;
+	font-size: 1.2em;
+	width: 4em;
+}
+
+#weather strong em {
+	font-style: normal;
+	font-size: 1.8em;
+	color: #312C31;
+}
+
+#weather .body {
+	line-height: 1.2;
+	height: 3em;
+	
+}
+
+#weather .body[class] {
+	height: auto;
+	min-height: 30px;
+}
+
+#weather .body:after {
+	content: '';
+	height: 0px;
+	display: block;
+	clear: both;
+	width: 100%;
+	background: red;
+}
+
+#weather .body p.status {
+	margin: 0;
+	float: left;
+	width: 30px;
+	height: 30px;
+	background: url(image/32.gif) no-repeat;
+}
+
+#weather .body p.status span {
+	position: absolute;
+	top: -5000px;
+}
+
+#weather .body p.mc, #weather .body p.pc {
+	background-image: url(image/31.gif);
+}
+
+#weather .body p.su {
+	background-image: url(image/32.gif);
+}
+
+#weather .body p.fs {
+	background-image: url(image/33.gif); 
+}
+
+#weather .body div.temp {
+	float: right;
+	width: 9em;
+	color: #98999D;
+	position:relative;
+	z-index:1;
+}
+
+#weather .body span.h {
+	color: #FB973F;
+}
+
+#weather .body span.l {
+	color: #69AFD3;
+}
+
+#weather .weather-forecast {
+	display: block;
+	font-size: 90%;
+}
+
+#weather .weather-extent-forecast{
+	width:26em;
+	position:absolute !important;
+	border:Solid 1px #444444;
+	left:0;
+	top:2.3em;
+	background:white;
+	padding:3px;
+	filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2,OffY=2,Color='#cdcdcd',Positive='true');
+	opacity: 0.80;
+}
+
+#weather .weather-extent-forecast .fhd{
+	color:#DE8A52;
+	
+	position:relative;
+	zoom:1;
+}
+
+#weather .weather-extent-forecast .fhd a{
+	position:absolute;
+	right: 1px;
+	top: 1px;
+	padding: 1px 2px 2px 2px;
+	text-decoration: none;
+	background: white;
+	border: Solid 1px #AAA;
+	font: 50% Verdana;;
+
+}
+
+#weather .weather-extent-forecast .fbd ul{
+	margin: 3px 0 0 3px;
+	padding: 0;
+	width:25em;
+	height:5em;
+	list-style: none;
+	
+}
+
+#weather .weather-extent-forecast .fbd ul li{
+	margin: 0;
+	padding: 0;
+	float:left;
+
+}
+
+#weather .weather-extent-forecast .fbd ul li p.status{
+	width:4em;
+	display:block;
+	float:none;
+}
+
+#weather .weather-extent-forecast .fbd .day{
+	font-weight:bold;
+	color:#444444;
+}
+
+#weather .weather-extent-forecast .fbd .lo-temp, #weather .weather-extent-forecast .fbd .hi-temp{
+	display:block;
+	color:#918C91;
+	font-size:90%;
+}
+
+#weather .weather-extent-forecast .fbd li.more a{
+	text-decoration:none;
+	color:#aaaaaa;
+	display:block;
+	padding:22px 0 0 0;
+	font-size:90%;
+	width:4em;
+}
+
+
+#weather .weather-extent-forecast .fbd li.more a:hover{
+	text-decoration:underline;
+	
+}
+
+
+#weather .weather-extent-forecast .fft{
+	width:28em;
+	color:#454545;
+	font-size:90%;
+	text-align:right;
+	padding:12px 2px 0 0;
+	font-weight:bold;
+	clear:both;
+}
+
+#weather .on-query-forecast {
+	padding-right:32px;
+	width:auto;
+	background: white url(http://mentalized.net/activity-indicators/indicators/circle-ball-dark-antialiased.gif) 97% center no-repeat;
+}

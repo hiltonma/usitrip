@@ -1,0 +1,1 @@
+<?php require('maps/'.$aim.'.html'); ?>

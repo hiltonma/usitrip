@@ -1,0 +1,18 @@
+# CRELoaded Generated Robots.txt
+# Robot Exclusion File -- robots.txt
+# Author:  CRELoaded Team 
+# Last Updated : May 11th 2005
+
+User-Agent: *
+Disallow: /admin/
+Disallow: /download/
+Disallow: /includes/
+Disallow: /temp/
+Disallow: /templates/
+Disallow: /partners/
+Disallow: /api/
+
+Disallow: /partners_browse.php
+
+sitemap: http://tw.usitrip.com/sitemap.xml
+sitemap: http://www.usitrip.com/sitemap.xml

@@ -1,0 +1,16 @@
+<IfModule mod_setenvif.c>
+  <IfDefine SSL>
+    SetEnvIf User-Agent ".*MSIE.*" \
+             nokeepalive ssl-unclean-shutdown \
+             downgrade-1.0 force-response-1.0
+  </IfDefine>
+</IfModule>
+
+# 供应商系统中的php文件不可以缓存
+<ifModule mod_headers.c>
+    <FilesMatch "\.php">
+        Header set Expires "Thu, 19 Nov 1981 00:00:00 GMT"
+        Header set Pragma "no-cache"
+        Header set Cache-Control "no-cache, must-revalidate, max-age=0"
+    </FilesMatch>
+</ifModule>

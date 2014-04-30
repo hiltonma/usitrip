@@ -1,0 +1,42 @@
+
+<html {:$smarty.const.HTML_PARAMS:}>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset={:$smarty.const.CHARSET:}">
+<title>{:$smarty.const.TITLE:}</title>
+        <!--Load Files for Css-->
+        {:section name=n loop=$CssArray:}
+        <link rel="stylesheet" type="text/css" href="{:$CssArray[n]:}">
+        {:/section:}
+ 
+        <!--Load Files for JS-->
+        {:section name=i loop=$JavaScriptSrc:}
+        <script type="text/javascript" src="{:$JavaScriptSrc[i]:}"></script>
+        {:/section:}
+{:if $open_dir_id!="":}
+<script type="text/javascript"><!--
+jQuery(document).ready(function(){
+	auto_open_to_target_ul({:$open_dir_id:},"show");
+});
+//--></script>
+{:/if:}
+</head>
+<body>
+<div class="CenterLeft">
+ <div class="box1"><span class="tl"></span><span class="tr"></span>
+          <div class="cc">
+            <h3>系统导航</h3>
+          </div>
+        </div>
+        
+<div class="LeftContentBox">
+   <div class="LeftContent">
+    <div id="dir_menu_tree" class="LeftContentChild">
+	<ul class="ul_show"><li><div class='div_no_child'><a href='zhh_system_every_list.php'>每日必读过期未读详情</a></div></li></ul>
+    {:$dir_tree:}
+	
+    </div>
+   </div>
+</div>        
+</div>
+</body>
+</html>

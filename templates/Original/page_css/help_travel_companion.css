@@ -1,0 +1,58 @@
+#content {
+	width: 985px;
+	margin: 0 auto;
+	background: #FFF;
+}
+
+.helpTitle {
+	padding: 20px 0 0 10px;
+}
+.manner{
+	margin: 20px 0;
+}
+.manner img{
+	margin-left: 40px;
+}
+.subTitle{
+	padding-left: 20px;
+	margin: 20px 0;
+}
+.subTitleM {
+	padding-left: 25px;
+	margin-top: 20px;
+}
+.explain ul {
+	margin-top: 10px;
+	text-align: center;
+}
+.explain ul li {
+	margin-top: 10px;
+}
+.explain ul li h4 {
+	padding: 0 30px;
+	text-align: left;
+	font-size: 12px;
+	font-weight: normal;
+
+}
+.explain .top{
+	text-align: right;
+	padding: 30px;
+}
+#footpage {
+	margin: 0;
+	padding:0;
+}
+
+.ui-help-travel{margin:0 20px;}
+.ui-help-title{height:29px;margin:10px 0 15px 0;display:block;}
+.ui-help-step{display:block;zoom:1;height:54px;}
+.ui-help-title:after,.ui-help-step:after,.ui-step-header:after{display:block;clear:both;height:0;font-size:0;visibility:hidden;content:"";}
+.ui-help-step a{display:block;text-indent:-9999em;overflow:hidden;}
+.ui-help-step a.first-step{width:449px;height:54px;float:left;background:url(/image/help/ui-help1.gif) no-repeat;}
+.ui-help-step a.second-step{width:447px;height:52px;float:right;margin-top:1px;background:url(/image/help/ui-help2.gif) no-repeat;}
+#first-step,#second-step{margin-top:10px;display:block;zoom:1;}
+.ui-step-header{height:21px;display:block;}
+.ui-step-cnt{display:block;zoom:1;margin-top:20px;position:relative;text-align:center;}
+.ui-step-cnt p{line-height:28px;color:#3b3b3b;text-align:left;}
+.ui-step-cnt img{margin:0 auto;}

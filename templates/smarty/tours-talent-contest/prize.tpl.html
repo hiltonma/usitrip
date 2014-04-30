@@ -1,0 +1,60 @@
+{:include file="tours-talent-contest/header.tpl.htm":}
+<div id="wrap">
+  <div class="daren">
+    <div class="darenTop"><img src="image/daren/daren_top_1.jpg" alt="{:db_to_html text=旅游体验师大赛:}" usemap="#Map" />
+      <map name="Map" id="Map">
+        <area shape="rect" coords="27,6,231,57" href="{:$severname:}" alt="" />
+      </map>
+    </div>
+    <div class="darenTop"><img src="image/daren/daren_top_2.jpg" alt="{:db_to_html text=旅游体验师大赛:}" /></div>
+    <div class="darenTop"><img src="image/daren/daren_top_3.jpg" alt="{:db_to_html text=旅游体验师大赛:}" usemap="#Map2" />
+      <map name="Map2" id="Map2">
+        <area shape="rect" coords="401,50,517,93" href="trip_player.php?mod=apply" alt="" />
+      </map>
+    </div>
+    <div class="darenNav">
+      <div class="darenNavLeft"></div>
+      <ul>
+        <li><a href="trip_player.php">{:db_to_html text=活动首页:}</a></li>
+        <li ><a href="trip_player.php?mod=list">{:db_to_html text=所有作品:}</a></li>
+        <li class="on" ><a href="trip_player.php?mod=prize">{:db_to_html text=奖项设置:}</a></li>
+        {:if $customer_id > 0:}
+        <li><a href="trip_player.php?mod=homepage&id={:$customer_id:}">{:db_to_html text=个人主页:}</a></li>
+        {:/if:}
+		<li><a href="trip_player.php?mod=finalists"><span>{:db_to_html text=获奖名单:}</span></a></li>
+      </ul>
+      <div class="share">
+        <div class="bshare-custom"> <a title="{:db_to_html text=分享到新浪微博:}" class="bshare-sinaminiblog"></a> <a title="{:db_to_html text=分享到开心网:}" class="bshare-kaixin001"></a> <a title="{:db_to_html text=分享到人人网:}" class="bshare-renren"></a> <a title="{:db_to_html text=分享到facebook:}" class="bshare-facebook"></a> <a title="{:db_to_html text=分享到twitter:}" class="bshare-twitter"></a> <a title="{:db_to_html text=分享到qq空间:}" class="bshare-qzone"></a> <a title="{:db_to_html text=更多平台:}" class="bshare-more">{:db_to_html text=更多:}>></a> </div>
+        <script language="javascript" type="text/javascript" src="http://www.bshare.cn/button.js#uuid=97319&amp;style=-1"></script>
+        <script language="javascript" type="text/javascript" src="http://www.bshare.cn/bshareC1.js"></script>
+        {:db_to_html text=分享到：:} </div>
+    </div>
+    <div class="darenJxSz"> 
+	<img src="image/daren/daren_jx_01.jpg" title="{:db_to_html text=通过投票产生50名入围选手，其中票数前30名为获奖用户走四方旅游达人奖（10人）：:}" alt="{:db_to_html text={:db_to_html text=通过投票产生50名入围选手，其中票数前30名为获奖用户走四方旅游达人奖（10人）：:}" /> 
+
+<img src="image/daren/daren_jx_02.jpg" title="{:db_to_html text=得票数第1名，获得由走四方网提供的价值$625（约合￥4000）苹果:}iPad 2 
+(16G WIFI{:db_to_html text=版:})1{:db_to_html text=台:} + {:db_to_html text=价值$1000的美国境内旅游度假产品。:}" alt="{:db_to_html text=得票数第1名，获得由走四方网提供的价值$625（约合￥:}4000）{:db_to_html text=苹果:}iPad 2 16G WIFI{:db_to_html text=版）:}1{:db_to_html text=台:} + {:db_to_html text=价值$1000的美国境内旅游度假产品。:}" /> 
+
+<img src="image/daren/daren_jx_03.jpg" title="	{:db_to_html text=得票数第2、3名，各获得由走四方网提供的价值$280（约合￥1800）的佳能（Canon）:}IXUS 115 HS {:db_to_html text=数码相机1台:} + {:db_to_html text=$500的美国境内旅游度假产品。:}" alt="	{:db_to_html text=得票数第2、3名，各获得由走四方网提供的价值$280（约合￥1800）的佳能（Canon）:}IXUS 115 HS {:db_to_html text=数码相机1台:} + $500{:db_to_html text=的美国境内旅游度假产品。:}" /> 
+<img src="image/daren/daren_jx_04.jpg" title="	{:db_to_html text=得票数第4、5名，各获得由走四方网提供的价值$125（约合￥800）的富士拍立得mini25:} 1{:db_to_html text=台:} + $300{:db_to_html text=的美国境内旅游度假产品。:}" alt="	{:db_to_html text=得票数第4、5名，各获得由走四方网提供的价值$125（约合￥800）的富士拍立得mini25:} 1{:db_to_html text=台:} + $300{:db_to_html text=的美国境内旅游度假产品。:}" />
+ <img src="image/daren/daren_jx_05.jpg" title="	{:db_to_html text=得票数第6——10名，各获得由走四方网提供的价值$60（约合￥400）:} {:db_to_html text=苹果:}iPod shuffle MP3 1{:db_to_html text=个+价值$200的美国境内旅游度假产品。:}" alt="	{:db_to_html text=得票数第6——10名，各获得由走四方网提供的价值$60（约合￥400）:} {:db_to_html text=苹果:}iPod shuffle MP3 {:db_to_html text=1个+价值$200的美国境内旅游度假产品。:}" /> 
+ <img src="image/daren/daren_jx_06.jpg" title="{:db_to_html text=走四方网旅游参与奖（20人）：:}
+    {:db_to_html text=得票数第11——30名，各获得由走四方网提供的价值$30（约合￥200）的旅游用品:} + {:db_to_html text=价值$50走四方网旅游抵用券1张（满$300-$50）:}" alt="{:db_to_html text=走四方网旅游参与奖（20人）：:}
+    {:db_to_html text=得票数第11——30名，各获得由走四方网提供的价值$30（约合￥200）的旅游用品:} + {:db_to_html text=价值$50走四方网旅游抵用券1张（满$300-$50）:}" />
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;{:db_to_html text=以上奖项免费寄送仅限于中国大陆境内，如在中国大陆以外地区获奖用户获得的等值奖品将由亚马逊网站配送到所覆盖的区域。以上走四方网旅游抵用券在预订走四方网产品时，可以使用抵用券进行支付；一张抵用券可以多次使用；抵用券有效期截止为2012年6月30日。:}</p>
+      <p class="darenJxSm">{:db_to_html text=以上各项奖品以实物为准，最终解释权归走四方网所有:}</p>
+    </div>
+    <div class="darenBot"></div>
+  </div>
+</div>
+<script type="text/javascript"> 
+jQuery(function(){
+if(typeof(bShare)!='undefined'){
+bShare.addEntry({
+title: "{:db_to_html text=#走四方旅游体验师大赛#:}",
+ summary:"{:db_to_html text=正在火热举行中，@走四方网:} {:db_to_html text=微博即可参与，IPAD2大奖等你拿，更有机会免费畅游美国，:}"
+})
+}
+});
+</script>
+</body></html>

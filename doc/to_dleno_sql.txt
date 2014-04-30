@@ -1,0 +1,202 @@
+#2010-10-25
+ALTER TABLE `orders` ADD `cancelled_time` DATETIME NULL DEFAULT NULL AFTER `last_modified`;
+
+#2010-10-27
+ALTER TABLE `orders` ADD `invoice_issendmail` INT NULL DEFAULT '0',
+ADD `invoice_sendtime` DATETIME NULL DEFAULT NULL ,
+ADD `invoice_sendadmin` VARCHAR( 100 ) NULL DEFAULT NULL ;
+
+
+#2010-11-1
+CREATE TABLE IF NOT EXISTS `products_travel` (
+  `travel_index` int(4) NOT NULL,
+  `travel_name` varchar(300) NOT NULL,
+  `travel_img` varchar(500) NOT NULL,
+  `travel_content` text NOT NULL,
+  `travel_hotel` varchar(4000) NOT NULL,
+  `products_id` bigint(20) NOT NULL,
+  `langid` int(5) NOT NULL DEFAULT '1',
+  UNIQUE KEY `travel_index` (`travel_index`,`products_id`,`langid`)
+) DEFAULT CHARSET=latin1;
+
+
+
+#2010-11-24
+ALTER TABLE  `orders` ADD  `is_agret` ENUM(  '0',  '1' ) NOT NULL DEFAULT  '0',
+ADD  `is_ret` ENUM(  '0',  '1' ) NOT NULL DEFAULT  '0';
+
+CREATE TABLE  `888trip`.`orders_return_visit` (
+`orders_id` BIGINT( 12 ) NOT NULL ,
+`visit_start_date` DATE NOT NULL ,
+`visit_end_date` DATE NOT NULL ,
+`visit_time` VARCHAR( 100 ) NOT NULL ,
+`mark` TEXT NOT NULL
+);
+
+ALTER TABLE  `reviews` ADD  `orders_id` BIGINT( 12 ) NOT NULL DEFAULT  '0';
+ALTER TABLE  `reviews` ADD  `from_order_stauts` ENUM(  '0',  '1' ) NOT NULL DEFAULT  '1';
+ALTER TABLE  `orders_return_visit` ADD  `prodcuts_ids` VARCHAR( 500 ) NOT NULL;
+
+
+#2010-12-13
+
+ALTER TABLE  `customers` ADD  `group` INT( 2 ) NOT NULL DEFAULT  '0';
+
+#2010-12-14
+#products travels
+
+ALTER TABLE  `products_description` ADD  `travel_tips` TEXT NULL;
+ALTER TABLE  `products_travel` ADD  `travel_imgalt` VARCHAR( 500 ) NULL AFTER  `travel_name`;
+
+CREATE TABLE IF NOT EXISTS `experts_remarks` (
+  `uid` bigint(12) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `sex` varchar(20) NOT NULL,
+  `remarks` text,
+  `photo` varchar(255) DEFAULT NULL
+);
+
+ALTER TABLE  `customers` CHANGE  `group`  `customers_group` INT( 2 ) NOT NULL DEFAULT  '0';
+
+#2010-12-15
+
+CREATE TABLE  `experts_article` (
+`aid` BIGINT( 12 ) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`uid` BIGINT( 12 ) NOT NULL ,
+`article_title` VARCHAR( 500 ) NOT NULL ,
+`article_type` INT( 8 ) NOT NULL ,
+`allow_share` INT( 2 ) NOT NULL DEFAULT  '1',
+`article_content` TEXT NOT NULL ,
+`hits` INT( 8 ) NOT NULL DEFAULT  '0',
+`time` DATETIME NOT NULL ,
+`is_pic` INT( 2 ) NOT NULL DEFAULT  '0'
+);
+
+CREATE TABLE  `experts_article_type` (
+`tid` BIGINT( 12 ) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`uid` BIGINT( 12 ) NOT NULL ,
+`group_id` INT( 2 ) NOT NULL DEFAULT  '0',
+`name` VARCHAR( 500 ) NOT NULL
+);
+
+
+
+#2010-12-21
+
+ALTER TABLE  `experts_article` ADD  `is_draft` INT( 2 ) NOT NULL DEFAULT  '0';
+
+ALTER TABLE  `experts_article` CHANGE  `article_title`  `writings_title` VARCHAR( 500 ) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL ,
+CHANGE  `article_type`  `writings_type` INT( 8 ) NOT NULL ,
+CHANGE  `article_content`  `writings_content` TEXT CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL;
+
+RENAME TABLE  `experts_article` TO  `experts_writings` ;
+RENAME TABLE  `experts_article_type` TO  `experts_writings_type` ;
+
+
+ALTER TABLE  `experts_writings` CHANGE  `writings_title`  `title` VARCHAR( 500 ) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL ,
+CHANGE  `writings_type`  `tid` INT( 8 ) NOT NULL ,
+CHANGE  `writings_content`  `content` TEXT CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL;
+
+CREATE TABLE `experts_writings_products` (
+`aid` BIGINT( 12 ) NOT NULL ,
+`products_id` BIGINT( 12 ) NOT NULL ,
+`hits` INT( 8 ) NOT NULL
+);
+ALTER TABLE  `experts_remarks` ADD  `recom` VARCHAR( 500 ) NULL DEFAULT  '';
+
+
+
+ALTER TABLE  `products` ADD INDEX (  `departure_end_city_id` );
+ALTER TABLE  `travel_companion` ADD INDEX (  `status` );
+
+
+#2010-12-28
+UPDATE `configuration` SET `configuration_value` = '美国总部
+888trip 77 Las Tunas Dr., Suite 203, Arcadia, CA 91007
+USA 电话(Phone): 1-626-389-8666 1-866-638-6888 
+传真(Fax): 1-626-552-3723 
+
+中国办事处
+八八八网中国区客服部
+成都市洗面桥街22号城市阳光大厦1802室
+电话(Phone): 0086-400-637-6888（周一-周日：9:00am-11:30pm京时间）
+传真(Fax): 028-85530170 
+邮箱：service@888trip.com',
+`use_function` = NULL WHERE `configuration_key` = 'STORE_NAME_ADDRESS';
+
+
+
+#2010-12-30
+
+ALTER TABLE  `experts_writings_products` ADD  `uid` BIGINT( 12 ) NOT NULL AFTER  `aid`;
+
+ALTER TABLE  `experts_writings_products` ADD INDEX (  `aid` ,  `uid` ,  `products_id` ) ;
+#以上已经添加到服务器数据库2010-12-3129
+
+
+#2011-1-26
+ALTER TABLE  `traveler_photos` ADD  `customer_id` BIGINT( 12 ) NOT NULL DEFAULT  '0' AFTER  `products_id`;
+
+
+#2011-1-30
+ALTER TABLE  `orders_settlement_batch_info` ADD  `orders_settlement_date_short` DATE NOT NULL AFTER  `orders_settlement_date`;
+update `orders_settlement_batch_info` set `orders_settlement_date_short`=SUBSTRING(`orders_settlement_date`,1,10);
+ALTER TABLE  `orders_settlement_batch_info` ADD INDEX (  `orders_settlement_date_short` ) ;
+
+ALTER TABLE  `orders_settlement_information` ADD  `settlement_date_short` DATE NOT NULL;
+update `orders_settlement_information` set `settlement_date_short`=SUBSTRING(`settlement_date`,1,10);
+
+ALTER TABLE  `orders_settlement_information` ADD INDEX (  `settlement_date_short` ) ;
+
+
+ALTER TABLE  `orders_total` ADD INDEX (  `orders_id` ) ;
+ALTER TABLE  `orders_total` ADD INDEX (  `value` ) ;
+ALTER TABLE  `orders_total` ADD INDEX (  `class` ) ;
+
+
+#更新完生产站后需要单独执行一次
+update `orders_settlement_information` set `settlement_date_short`=SUBSTRING(`settlement_date`,1,10);
+update `orders_settlement_batch_info` set `orders_settlement_date_short`=SUBSTRING(`orders_settlement_date`,1,10);
+
+#2011-2-12
+CREATE TABLE  `products_soldout_email` (
+`products_id` BIGINT( 12 ) NOT NULL ,
+`email` VARCHAR( 300 ) NOT NULL
+);
+ALTER TABLE  `products_soldout_email` ADD INDEX (  `products_id` ) ;
+
+#2011-2-15
+ALTER TABLE  `products_soldout_email` ADD  `charset` VARCHAR( 20 ) NOT NULL DEFAULT  'big5';
+ALTER TABLE  `products_soldout_email` ADD INDEX (  `email` ) ;
+
+#2011-02-17 特殊团购
+CREATE TABLE IF NOT EXISTS `featured_deals` (
+  `featured_deals_id` int(11) NOT NULL AUTO_INCREMENT,
+  `products_id` int(11) NOT NULL DEFAULT '0',
+  `featured_deals_new_products_price` decimal(15,4) NOT NULL DEFAULT '0.0000',
+  `featured_deals_date_added` datetime DEFAULT NULL,
+  `featured_deals_last_modified` datetime DEFAULT NULL,
+  `expires_date` datetime DEFAULT NULL,
+  `date_status_change` datetime DEFAULT NULL,
+  `status` int(1) NOT NULL DEFAULT '1',
+  `featured_products` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0=No, 1=Yes',  
+  PRIMARY KEY (`featured_deals_id`),
+  KEY `products_id` (`products_id`),
+  KEY `featured_deals_new_products_price` (`featured_deals_new_products_price`),
+  KEY `expires_date` (`expires_date`),
+  KEY `status` (`status`),
+  KEY `featured_products` (`featured_products`)
+);
+
+ALTER TABLE `featured_deals` ADD `active_date` DATETIME NOT NULL ,
+ADD `departure_restriction_date` DATETIME NOT NULL;
+
+CREATE TABLE `featured_deals_group_discounts` (
+`featured_deals_group_discounts_id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`products_id` INT( 11 ) NOT NULL ,
+`peple_no` INT NOT NULL ,
+`discount_percent` DECIMAL( 4, 2 ) NOT NULL ,
+`adj_price` DECIMAL( 15, 4 ) NOT NULL
+);
+
+ALTER TABLE `featured_deals_group_discounts` ADD `discount_amt` DECIMAL( 10, 2 ) NOT NULL;

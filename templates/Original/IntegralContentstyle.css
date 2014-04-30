@@ -1,0 +1,24 @@
+@charset "gb2312";
+/* CSS Document */
+.IntegralContent{width:900px; margin:10px 15px; }
+.IntegralContentCon{ width:900px; float:left; background:url(/imgs/icontent_02bg.jpg) top left repeat-y; padding-top:20px;  font-family:"Î¢ÈíÑÅºÚ"; padding-bottom:15px;}
+.IContentConleftImg{ margin:0; padding:0; float:left}
+.IntegralContentConleft{ width:450px; float:left; padding-left:30px;}
+.IntegralContentConleft .mx{ width:90%; padding-left:10px; padding-top:20px;}
+.IntegralContentConleft .mx li{height:45px; font-size:14px; color:#484848 }
+.IntegralContentConleft .mx li .mxt1{ color:#4479ae; font-size:16px; font-weight:bold; padding-right:5px;}
+.IntegralContentConleft .mx li .mxt2{ color:#7246c3; font-size:18px; font-weight:bold; padding-right:5px;}
+.IContentConleftBt{ background:url(/imgs/icontent_04button.jpg) no-repeat top left; height:32px; width:184px; line-height:32px; color:#FFFFFF; font-family:"Î¢ÈíÑÅºÚ"; font-size:16px; text-align:center;}
+.IntegralContentConRight{ width:350px; float:left}
+.IntegralContentConRight .mx1{ width:90%; padding-left:10px; padding-top:10px; padding-bottom:15px;}
+.IntegralContentConRight .mx1 li{height:20px; font-size:12px; }
+.IntegralContentConRight .mx1 li .mx1t1{ font-weight:bold;}
+.IntegralContentConRight .mx1 li .mx1t2{ font-weight:bold; color:#4b24ab; font-size:18px; padding:3px;}
+.IntegralContentConRight .mx1 li .IContentConleftButton{ background:url(/imgs/icontent_05button.jpg) no-repeat top left; width:85px; height:24px; border:none; color:#FFFFFF; font-size:14px; cursor: pointer; text-align:center; vertical-align:middle;}
+.IContentConleftLogin{ width:350px; background:#f2f6ff;}
+.IntegralContentConRight .mx2{ width:90%; padding-left:10px; padding-top:5px; padding-bottom:10px;}
+.IntegralContentConRight .mx2 li{height:30px; font-size:12px; }
+.IntegralContentConRight .mx2 li .IContentConleftButton{ background:url(/imgs/icontent_05button.jpg) no-repeat top left; width:85px; height:24px; border:none; color:#FFFFFF; font-size:14px; cursor: pointer; text-align:center}
+
+
+

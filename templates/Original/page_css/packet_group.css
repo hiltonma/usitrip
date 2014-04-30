@@ -1,0 +1,55 @@
+@charset "gb2312";
+/* CSS Document */
+
+body,h1,h2,h3,h4,h5,h6,p,ul,li,th,td,fieldset,legend,form{margin:0;padding:0;}
+body{font:12px/1.5 tahoma, arial, simsun, sans-serif;color:#555;}
+ul{list-style:none;}
+a,a:hover{text-decoration:none;}
+a img{vertical-align:top;border:0 none;}
+table{border-collapse:collapse;border-spacing:0;}
+label,input{vertical-align:middle;font-family:tahoma;font-size:12px;}
+em{font-style:normal;}
+
+.ui-fix{display:block;zoom:1;}
+.ui-fix:after{display:block;clear:both;height:0;font-size:0;visibility:hidden;content:"";}
+
+.custom-wrap{width:980px;margin:0 auto;}
+.custom-banner{height:394px;overflow:hidden;width:975px;margin:0 auto;_width:970px;}
+.custom-banner a{display:block;height:394px;overflow:hidden;}
+.custom-step{height:127px;margin-top:10px;overflow:hidden;}
+.custom-step .stepic{margin-top:-404px;}
+.custom-cnt{position:relative;padding-top:42px;margin-top:10px;background:#fdfbf8;}
+.custom-cnt .custom-cnt-header{position:absolute;left:-8px;top:0;width:996px;height:42px;background:url(/image/custom-contact.png) no-repeat;text-indent:-9999em;overflow:hidden;}
+.custom-cnt .custom-cnt-header-t{position:absolute;left:-8px;top:0;width:996px;height:42px;background:url(/image/custom-contact-t.png) no-repeat;text-indent:-9999em;overflow:hidden;}
+.custom-form{border-bottom:1px solid #d8d8d8;display:block;zoom:1;}
+.custom-form:after{display:block;clear:both;height:0;font-size:0;visibility:hidden;content:"";}
+.custom-form li{padding:20px 0;border-bottom:1px solid #e8e6df;}
+.custom-form li.nobd{border:none;}
+.custom-form td{line-height:22px;vertical-align:middle;margin:3px 0;padding:5px 0;}
+.custom-form td h3{font-size:14px;text-align:right;font-weight:bold;}
+.custom-form td.explain-title{vertical-align:text-top;}
+.custom-form td input.iptext{height:18px;line-height:18px;background:#fff;width:235px;padding:4px 3px;border:1px solid #7f9db9;}
+.custom-form td input.iptvalidate{height:18px;line-height:18px;background:#fff;padding:4px 3px;border:1px solid #7f9db9;width:80px;}
+.custom-form td textarea.explain{resize:none;width:400px;height:120px;padding:5px;border:1px solid #7f9db9;overflow-y:hidden;}
+.custom-form td label{width:75px;display:block;float:left;text-align:right;}
+.custom-form td label.iptcheck{display:inline-block;*display:inline;zoom:1;width:auto;text-align:left;padding:0 8px;}
+.custom-form td span.iptips{display:inline-block;*display:inline;zoom:1;height:22px;line-height:22px;padding-left:10px;}
+.custom-form td span.checkage{display:inline-block;*display:inline;zoom:1;vertical-align:middle;}
+.custom-form td span.validate-code{width:80px;height:20px;display:inline-block;*display:inline;zoom:1;vertical-align:middle;_padding-top:4px;}
+.custom-form td span.check-validate-code{padding:0 10px;display:inline-block;height:30px;}
+.custom-form td span.check-validate-code a{text-decoration:underline;color:#3f71cf;}
+.custom-form td select{padding:2px;border:1px solid #7f9db9;margin-right:10px;}
+.custom-form td em.equired{color:#c00;padding:0 3px;}
+.custom-form td input.custom-submit{border:0 none;cursor:pointer;background:url(/image/custom-submit.png) no-repeat;text-indent:-9999em;overflow:hidden;width:150px;height:38px;display:block;}
+.custom-thk{padding:30px 0;background:#f3f3f3;line-height:22px;text-align:center;font-size:14px;}
+.custom-thk h3{font-weight:bold;color:#1367b0;}
+
+.custom-success-wrap{width:650px;padding:20px 0;margin:0 auto;}
+.custom-success-title{line-height:24px;font-size:14px;font-weight:bold;color:#1367b0;}
+.custom-success-title .user-name{color:#ff7b00;}
+.custom-success-list{margin:15px 0;border:1px solid #ebe9e4;background:#fff;padding:20px 30px;}
+.custom-success-list li{/*height:28px;*/line-height:28px;background:url(/image/custom-success-icon.gif) no-repeat 0 11px;padding-left:15px;}
+.custom-success-tips{text-align:right;font-size:16px;font-weight:bold;color:#C00;}
+.validation-advice{display:inline-block;}
+#verify_vvc{display:block;}
+#verify_vvc .errorTip {    background: url(/image/icons/tip_error.gif) no-repeat ;    padding-left: 15px;}

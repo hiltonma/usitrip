@@ -1,0 +1,156 @@
+{:include file=$user_public_tpl:}
+    
+    <div class="expertTitle"><h2>{:db_to_html text="旅客所有咨询" :}</h2></div>
+    
+    <div class="expertIndex expertIndexTop5 AllFaq">
+      <div id="expertFaqList" class="expertFaq">
+        
+        {:section name=i loop=$Question:}
+		<dl id="QuestionL_{:$Question[i].question.q_id:}">
+          <dt>{:db_to_html text="问：" :}</dt>
+          <dd><p class="limittext_faq_q">{:db_to_html text=$Question[i].question.q_content|escape:"html" :}</p>
+		  
+		  {:if $isExpertsSelf:}
+          <span class="reply"><a href="{:gethref page=$baseUrl uid=$uid mod='edit' action='delquestion' qid=$Question[i].question.q_id:}" rel="expert_ajax" onclick="return false;" >{:db_to_html text="删除" :}</a></span>
+		  <span class="reply"><a id="reply_{:$Question[i].question.q_id:}" href="{:gethref page=$baseUrl uid=$uid mod='edit' action='add_answer' q_id=$Question[i].question.q_id:}" rel="expert_ajax" onclick="return false;" >{:db_to_html text="回复" :}</a></span>
+		  {:/if:}
+		  
+		  {:if $Question[i].question.customers_name!="":}
+		  <span><a href="{: $Question[i].question.customers_space_links :}">{:db_to_html text=$Question[i].question.customers_name|escape:"html" :}</a></span>
+		  {:else:}
+		  <span>{:db_to_html text="走四方网友"|escape:"html" :}</span>
+		  {:/if:}
+		  
+		  <span>{: $Question[i].question.time :}</span>
+		  
+		  </dd>
+        </dl>
+        
+			{:if $Question[i].answers|@count > 0 :}
+				{:section name=n loop=$Question[i].answers:}
+				<dl class="reply QuestionLChild_{:$Question[i].question.q_id:}" id="AnswersL_{:$Question[i].answers[n].a_id:}">
+				  <dt>{:db_to_html text="答：" :}</dt>
+				  <dd class="limittext_faq_a">
+					{:db_to_html text=$Question[i].answers[n].a_content|nl2br:}
+				  </dd>
+				  <dd>
+                  <span>{:$Question[i].answers[n].time :}</span>
+                  <span><a href="{:gethref page=$baseUrl mod='home' uid=$expertsInfo.uid:}">{:db_to_html text=$expertsInfo.name|escape:"html" :}</a></span>
+                  <span class="tip" id="faq_a_{:$Question[i].answers[n].a_id:}"><font>{:db_to_html text='此回复对我':}</font></span>
+                  <span><a href="javascript:void(0);" onclick="SetUseful({:$Question[i].answers[n].a_id:})">{:db_to_html text="有用":}(<font id="useful_{:$Question[i].answers[n].a_id:}">{:$Question[i].answers[n].a_useful:}</font>)</a></span>
+                  <span><a href="javascript:void(0);" onclick="SetUseless({:$Question[i].answers[n].a_id:})">{:db_to_html text="没用":}(<font id="useless_{:$Question[i].answers[n].a_id:}">{:$Question[i].answers[n].a_useless:}</font>)</a></span>
+                  {:if $isExpertsSelf:}
+                  <span class="r"><a href="{:gethref page=$baseUrl uid=$uid mod='edit' action='delanswers' qid=$Question[i].question.q_id aid=$Question[i].answers[n].a_id:}" rel="expert_ajax" onclick="return false;" >{:db_to_html text="删除" :}</a></span>
+                  {:/if:}
+                  </dd>
+				</dl>
+				{:/section:}
+			{:/if:}
+		
+		{:/section:}
+        
+      </div>
+      
+    </div>
+    
+    
+    <div class="page">
+    {:if trim($pages)!='':}
+    {:$pages:}
+    {:/if:}
+    </div>
+    
+    
+	<div class="goTop"><a href="javascript:scroll(0,0);" target="_self"></a></div>
+{:if !$isExpertsSelf:}
+
+<?php
+////根据浏览器兼容ie8
+$div_jb_fb_tc='jb_fb_tc';
+if(strpos($_SERVER["HTTP_USER_AGENT"],"Firefox")||strpos($_SERVER["HTTP_USER_AGENT"],"Safari")||strpos($_SERVER["HTTP_USER_AGENT"],"Chrome")||strpos($_SERVER["HTTP_USER_AGENT"],"Opera")){
+      $div_jb_fb_tc = 'jb_fb_tcAddXx';
+  }
+?>
+<div class="<?=$div_jb_fb_tc?>" id="_Ajax_FastLogin" style="text-decoration:none; display:none">
+<?php 
+echo tep_pop_div_add_table('top');
+$replace_id = '_Ajax_FastLogin';
+$next_file = '_Ajax_FastLogin';
+include('ajax_fast_login.php');
+echo tep_pop_div_add_table('foot');
+?>
+</div>
+
+
+
+<div class="newAsk">
+      <h2>{:db_to_html text="咨询一下" :}</h2><a name="zixun"></a>
+      <form id="SubmitQuestionForm" name="SubmitQuestionForm" action="" method="post" onsubmit="return false;">
+	  <div>
+	  {:html_textarea name='q_content' value="请输入您的咨询内容！"|db_to_html parameters=' onFocus="checkQcontent(this,0);" onBlur="checkQcontent(this,1);" class="textarea textareatip" title="请输入您的咨询内容！" id="q_content"':}
+	  </div>
+      <div class="submit"><a class="btn btnOrange" href="javascript:;"><button id="SubmitQuestionButton" type="submit" onclick="submitForm('SubmitQuestionForm');">{:db_to_html text="提 交" :}</button>
+      	<input name="atcion" type="hidden" value="SubmitQuestion" />
+      </a></div>
+	  </form>
+<script type="text/javascript">
+<!--{:if $customer_id>0 :}-->
+var isLogin=true;
+<!--{:else:}-->
+var isLogin=false;
+<!--{:/if:}-->
+	function submitForm(formid) {
+		var q_content = jQuery('#q_content');
+		var defaultstr = jQuery.trim(q_content.attr('title'));
+		var val = jQuery.trim(q_content.val());
+		if(val==''||val==defaultstr){
+			alert(defaultstr);
+		}else{
+			jQuery("#SubmitQuestionButton").attr("disabled","disabled");
+			var url = url_ssl("{:gethref page=$baseUrl mod='faq' uid=$expertsInfo.uid seo='false':}");
+			ajax_post_submit(url,formid,'','', '');
+		}
+	}
+	function checkQcontent(obj,t){
+		var q_content = jQuery(obj);
+		var defaultstr = jQuery.trim(q_content.attr('title'));
+		var val = jQuery.trim(q_content.val());
+		if(t){
+			if(val==''||val==defaultstr){
+				q_content.addClass('textareatip');
+				q_content.val(defaultstr);
+			}
+		}else{
+			if(val==''||val==defaultstr){
+				q_content.val('');
+			}
+			q_content.removeClass('textareatip');
+			check_login("_Ajax_FastLogin");
+		}
+	}
+	function check_login(tips_objid){
+		if(isLogin==false){
+			showDiv(tips_objid);
+		}
+	}
+</script>
+    </div>
+{:/if:}
+<script type="text/javascript">
+function SetUseful(a_id){
+	SetUsefulOrUseless(a_id, 'useful');
+}
+function SetUseless(a_id){
+	SetUsefulOrUseless(a_id, 'useless');
+}
+function SetUsefulOrUseless(a_id, set_val){
+	if(a_id>0 && (set_val=="useful" || set_val=="useless")){
+		var url = url_ssl("{:gethref page=$baseUrl mod='faq' uid=$expertsInfo.uid:}")+"&ajax=true&a_id="+a_id+"&atcion=set_useful_or_useless&val="+set_val;
+		ajax_get_submit(url);
+	}
+}
+</script>
+<script language="javascript">
+	//jQuery(".limittext_faq_q").limittext({"limit":120,"fill":" ... ","morefn":{"status":true,"moretext":"{:db_to_html text='更多&gt;&gt;':}","lesstext":"{:db_to_html text='&lt;&lt;隐藏':}"}});	
+	//jQuery(".limittext_faq_a").limittext({"limit":280,"fill":" ... ","morefn":{"status":true,"moretext":"{:db_to_html text='更多&gt;&gt;':}","lesstext":"{:db_to_html text='&lt;&lt;隐藏':}"}});	
+</script>

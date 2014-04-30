@@ -1,0 +1,13 @@
+@charset "gb2312";
+/*积分规则 by _Afei 270842722@qq.com*/
+.ui_rules_wrap{border:1px solid #AED5FF;padding:5px 15px;}
+.ui_rules_wrap .ui_rules_listitle{line-height:26px;font-size:14px;color:#136cd1;}
+.ui_rules_wrap .ui_item{padding:20px 0;border-bottom:1px dotted #c3c3c3;overflow:hidden;}
+.ui_rules_wrap .ui_item p{line-height:22px;color:#4d4d4d;}
+.ui_rules_wrap .ui_item p.idt{text-indent:2em;}
+.ui_rules_wrap .ui_item p.ui_rules_notice{color:#ff6600;}
+.last_copyright{color:#ff6600;line-height:28px;padding-bottom:15px;}
+/*积分规则表格*/
+.ui_rules_table{border-collapse:collapse;border-spacing:0;border:1px solid #e0e0e0;width:100%;margin:10px 0;}
+.ui_rules_table th{height:35px;line-height:35px;text-align:center;background:#f4f4f4;border:1px solid #e0e0e0;border-bottom:none;}
+.ui_rules_table td{border:1px solid #e0e0e0;height:28px;height:28px;text-indent:10px;border-top:none;}

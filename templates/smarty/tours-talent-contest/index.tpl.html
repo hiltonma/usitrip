@@ -1,0 +1,454 @@
+{:include file="tours-talent-contest/header.tpl.htm":}
+
+<div id="wrap">
+    <div class="daren">
+
+        <div class="darenTop"><img src="image/daren/daren_top_1.jpg" alt="{:db_to_html text=旅游体验师大赛:}" usemap="#Map" /><map name="Map" id="Map"><area shape="rect" coords="27,6,231,57" href="{:$severname:}" alt="" /></map></div>
+        <div class="darenTop"><img src="image/daren/daren_top_2.jpg" alt="{:db_to_html text=旅游体验师大赛:}" /></div>
+        <div class="darenTop"><img src="image/daren/daren_top_3.jpg" alt="{:db_to_html text=旅游体验师大赛:}" usemap="#Map2" />
+        <map name="Map2" id="Map2"><area shape="rect" coords="401,50,517,93" href="trip_player.php?mod=apply" alt="" /></map>
+        </div>
+        
+        <div class="darenNav">
+            <div class="darenNavLeft"></div>
+            <ul>
+             
+                <li class="on"><a href="trip_player.php">{:db_to_html text=活动首页:}</a></li>
+                <li ><a href="trip_player.php?mod=list">{:db_to_html text=所有作品:}</a></li>
+                <li><a href="trip_player.php?mod=prize">{:db_to_html text=奖项设置:}</a></li>
+                 {:if $customer_id > 0:}
+                <li><a href="trip_player.php?mod=homepage&id={:$customer_id:}">{:db_to_html text=个人主页:}</a></li>
+                {:/if:}
+                <li><a href="trip_player.php?mod=finalists"><span>{:db_to_html text=获奖名单:}</span></a></li>
+            </ul>
+            <div class="share">
+                <div class="bshare-custom">
+                    <a title="{:db_to_html text=分享到新浪微博:}" class="bshare-sinaminiblog"></a>
+                    <a title="{:db_to_html text=分享到开心网:}" class="bshare-kaixin001"></a>
+                    <a title="{:db_to_html text=分享到人人网:}" class="bshare-renren"></a>
+                    <a title="{:db_to_html text=分享到facebook:}" class="bshare-facebook"></a>
+                    <a title="{:db_to_html text=分享到twitter:}" class="bshare-twitter"></a>
+                    <a title="{:db_to_html text=分享到qq空间:}" class="bshare-qzone"></a>
+                    <a title="{:db_to_html text=更多平台:}" class="bshare-more">{:db_to_html text=更多:}>></a>
+                </div>
+               {:db_to_html text=分享到：:}
+            </div>
+            <div class="darenNavRight"></div>
+        
+        </div>
+        
+        <div class="darenInfo">
+            <div class="left">                
+                <h1>{:db_to_html text=活动简介:}</h1>
+                <p>{:db_to_html text=上传发布游记攻略，赢取iPad2，更有机会签约走四方网旅游体验师，免费畅游美国！:}</p>
+                <h1>{:db_to_html text=报名条件:}</h1>
+                <p>
+                {:db_to_html text=1．走四方网注册用户:}<br />
+                {:db_to_html text=2．恋字癖，摄影控，乐于旅行分享的达人:}<br />
+                {:db_to_html text=3．拥有自己的博客(包括但不限于新浪博客、人人网主页、Facebook个人主页):}
+                </p>
+                <h1>{:db_to_html text=比赛进程:}</h1>
+                <p>{:db_to_html text=注册报名---上传发布游记攻略---投票获得入围资格——决赛投票---走四方网签约旅游作者:}</p>               
+                <p><span style="font-size:11px; font-family:'微软雅黑'; color:red;float:left">{:db_to_html text=温馨提示：如果您在参赛过程中遇到问题，请Email至:} marketing@usitrip.com</span>
+                <span style="float:right"><a href="trip_player.php?mod=descript">{:db_to_html text=查看详情:}&gt;&gt;</a></span></p>				
+            </div>
+            <?php if(!tep_session_is_registered('customer_id') ){ ?>
+            {:if $focus eq 'true':}
+            <script type="text/javascript">
+            jQuery(document).ready(function (){
+                jQuery("#email").focus();
+                jQuery("#email").val('');
+            });
+            
+            </script>
+            {:/if:}
+            <div class="loginForm" id="loginForm">
+                <h2>{:db_to_html text=会员登录:}</h2>
+                <div class="loginC">
+                <form name="logform"  action="trip_player.php?mod=index&action=process"  method="POST" enctype="application/x-www-form-urlencoded" target="hidden_frame">
+                <div class="userLogin">
+                    <ul>
+                        <li style="z-index:1;">
+                            <label>{:db_to_html text=帐号:}:</label>
+                            <div class="inputWrap">
+                            <input type="text" style="color: rgb(204, 204, 204);" id="email" autocomplete="off" class="textLogin" value="{:db_to_html text=请输入您的注册邮箱:}" name="email_address" ></div>
+                            <div id="suggest" class="suggest" style="display: none;"></div>
+                        </li>
+                        <li class="even">
+                            <label>&nbsp;</label><span></span><span style="display: none;" id="AccountErrorMessage"><span class="errorTip">{:db_to_html text=不存在的邮箱帐户！您需要先注册:}</span></span>
+                        </li>
+                        <li>
+                            <label>{:db_to_html text=密码:}:</label>
+                            <div class="inputWrap">
+                            <input type="password" class="textLogin" onkeydown="if(jQuery('#PasswordErrorMessage').css('display') != 'none') jQuery('#PasswordErrorMessage').hide();" name="password" onblur="this.value = simplized(this.value);"></div>
+                        </li>
+                        <li class="even">
+                            <label>&nbsp;</label><span><a href="password_forgotten.php">{:db_to_html text=忘记密码？:}</a></span><span style="display:none" id="PasswordErrorMessage"></span>
+                        </li>
+                    </ul>
+                    <div class="darenbtnCenter"><a class="btn btnOrange" href="javascript:;"><button onclick="validateFormData()" type="button">{:db_to_html text=登录:}</button></a> &nbsp;&nbsp;<a href="create_account.php?reg_method=tours-talent-contest" class="regA">{:db_to_html text=新用户注册:}</a></div>
+                </div>
+                <input type="hidden" name="login_method" value="tours_talent" />
+                </form>
+                <iframe name='hidden_frame' id="hidden_frame" style="display:none; width:0px; height:0px;" ></iframe>
+                </div>
+                <div class="loginB"></div>
+            </div>
+            <?php }else{ ?>
+             
+             <div class="loginSuccess">			 
+                <p>Hello, <span><a href="<?php echo tep_href_link(FILENAME_ACCOUNT,"", "SSL") ?>">{:db_to_html text=$customer_first_name:}<?php /*if(tep_not_null($pointcards_id_string)) echo "(".$pointcards_id_string.")"*/?></a></span>{:db_to_html text=欢迎您！:}</p>
+                <br />
+                <div class="submitWorks">
+                    <p>
+                    {:if $is_login && $tmp_info :}<a href="?mod=add">{:db_to_html text=提交作品:}</a>{:else:}<a href="?mod=talent_info">{:db_to_html text=填写基本资料:}</a>{:/if:}
+                    </p>
+                    
+                    <p>
+                    {:if $is_login :}<a href="?mod=homepage&id={:$customer_id:}">{:db_to_html text=我的个人主页:}</a>{:/if:} | 
+                    <a href="?mod=index&action=logoff"><?php echo HEADER_TITLE_LOGOFF ?></a>
+                    </p>
+                    
+                    
+                </div>
+            </div>
+            
+            <?php } ?>
+            <script type="text/javascript">			
+            jQuery("document").ready(function(){
+            jQuery(".textLogin").focus(function(){jQuery(this).parent().addClass("on"); jQuery(this).val("");});
+            jQuery(".textLogin").blur(function(){jQuery(this).parent().removeClass("on")});
+            });
+            </script>
+
+        </div>
+
+
+
+        <div class="weiboLive">
+            <iframe width="240" height="500"frameborder="0" scrolling="no" src="http://widget.weibo.com/livestream/listlive.php?width=240&height=500&uid=1684037597&skin=2&refer=1&pic=1&titlebar=1&border=1&publish=1&atalk=1&recomm=0&at=0&colordiy=1&atopic=%E9%80%94%E9%A3%8E%E7%BD%91%E6%97%85%E6%B8%B8%E4%BD%93%E9%AA%8C%E5%B8%88%E5%A4%A7%E8%B5%9B&ptopic=%E9%80%94%E9%A3%8E%E7%BD%91%E6%97%85%E6%B8%B8%E4%BD%93%E9%AA%8C%E5%B8%88%E5%A4%A7%E8%B5%9B&appkey=1495418171&color=87C2E3,B1DCFF,4d4d4d,5093d5,ffffff,f7fcff&listid=203548329"></iframe>
+            <div>&nbsp;</div>
+            <iframe width="240" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?width=240&height=550&fansRow=2&ptype=1&speed=300&skin=-1&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=1684037597&verifier=93317114&colors=B1DCFF,ffffff,666666,0082cb"></iframe>
+        </div>
+        
+        <div class="darenListIndex">
+        
+        <div class="darenList darenListNew">
+            <h2>{:db_to_html text=最新发布:}</h2>
+            <div class="more"><a href="trip_player.php?mod=list">{:db_to_html text=更多:}>></a></div>
+            <div class="con" id="neworks">
+                <ul>				
+                {:section name=i loop=$neworks:}
+                    <li class="noBorder">
+                        <!--<div class="pic"><a href="trip_player.php?mod=view&id={:$neworks[i].works_id:}" ><img src="{:$neworks[i].works_frontcover_thumb:}" alt="{:db_to_html text=$neworks[i].works_title:}"  title="{:db_to_html text=$neworks[i].works_title:}"/></a></div>-->
+                        <div class="pic">
+                        
+                        <a  {:if $neworks[i].works_frontcover eq '':} href="trip_player.php?mod=view&id={:$neworks[i].works_id:}" {:else:} href="{:$neworks[i].works_frontcover:}" rel="lightbox2[]" {:/if:} title="<a href='trip_player.php?mod=view&id={:$neworks[i].works_id:}'>{:db_to_html text=$neworks[i].works_title:}</a>">
+                        
+                        <img src="{:if $neworks[i].works_frontcover eq '':}image/daren_uploadphoto.gif{:else:}{:$neworks[i].works_frontcover_thumb:}{:/if:}" alt="{:db_to_html text=$neworks[i].works_title:}"  title="{:db_to_html text=$neworks[i].works_title:}"/></a></div>
+                        <p class="name"><a href="trip_player.php?mod=view&id={:$neworks[i].works_id:}" alt="{:db_to_html text=$neworks[i].works_title:}"  title="{:db_to_html text=$neworks[i].works_title:}">{:db_to_html text=$neworks[i].works_title|truncate:12:}</a></p>
+                        <p class="intro">{:db_to_html text=$neworks[i].works_content:}<a href="trip_player.php?mod=view&id={:$neworks[i].works_id:}" class="blue">{:db_to_html text=详细:}</a>
+                        </p>
+                        <p><label>{:db_to_html text=作者：:}</label><a href="trip_player.php?mod=homepage&id={:$neworks[i].customers_id:}" title="{:db_to_html text=$neworks[i].works_author:}">{:db_to_html text=$neworks[i].works_author|truncate:12:}</a></p>
+                        <p><label>{:db_to_html text=时间：:}</label>{:$neworks[i].works_addtime|date_format:'%Y-%m-%d':}</p>
+                        <p class="btnCenter"></p>
+                    </li>
+                {:/section:}
+                </ul>
+            </div>
+        
+        </div>
+        
+        <div class="darenList darenListHot"> 
+            <h2>{:db_to_html text=人气排行:}</h2>
+            <div class="more"><a href="trip_player.php?mod=list&pphot=1">{:db_to_html text=更多:}>></a></div>
+            <div class="con">
+                <ul>
+                {:section name=i loop=$votes:}
+                    <li>
+                        <!--<div class="pic"><a href="trip_player.php?mod=view&id={:$votes[i].works_id:}"><img src="{:$votes[i].works_frontcover_thumb:}" alt="{:db_to_html text=$votes[i].works_title:}"  title="{:db_to_html text=$votes[i].works_title:}" /></a></div>-->
+                        <div class="pic">
+                        
+                        <a  {:if $votes[i].works_frontcover eq '':} href="trip_player.php?mod=view&id={:$votes[i].works_id:}" {:else:}href="{:$votes[i].works_frontcover:}"  rel="lightbox[]"{:/if:} title="<a href='trip_player.php?mod=view&id={:$votes[i].works_id:}'>{:db_to_html text=$votes[i].works_title:}</a>">
+                        
+                        <img src="{:if $votes[i].works_frontcover eq '':}image/daren_uploadphoto.gif{:else:}{:$votes[i].works_frontcover_thumb:}{:/if:}" alt="{:db_to_html text=$votes[i].works_title:}"  title="{:db_to_html text=$votes[i].works_title:}" /></a></div>
+                        <p class="name"><a href="trip_player.php?mod=view&id={:$votes[i].works_id:}" alt="{:db_to_html text=$votes[i].works_title:}"  title="{:db_to_html text=$votes[i].works_title:}">{:db_to_html text=$votes[i].works_title|truncate:12:}</a></p>
+                        <p class="intro">{:db_to_html text=$votes[i].works_content:}<a href="trip_player.php?mod=view&id={:$votes[i].works_id:}" class="blue">详细</a></p>
+                        <p><label>{:db_to_html text=作者：:}</label><a href="trip_player.php?mod=homepage&id={:$votes[i].customers_id:}" title="{:db_to_html text=$votes[i].works_author:}">{:db_to_html text=$votes[i].works_author|truncate:12:}</a></p>
+                        <p class="votes" id="votes_{:$votes[i].works_id:}"><label>{:db_to_html text=票数：:}</label>{:$votes[i].works_votes:}</p>
+                        <p class="btnCenter"></p>
+                    </li>
+                 {:/section:}   
+                    
+                </ul>
+            </div>
+           
+        </div>
+        
+        </div>
+
+
+    
+        <div class="darenBot"></div>
+    </div>
+</div>
+<div class="popup" id="PopupLoading">
+<table width="100%" cellpadding="0" cellspacing="0" border="0" class="popupTable">
+<tr><td class="topLeft"></td><td class="side"></td><td class="topRight"></td></tr><tr><td class="side"></td><td class="con">
+ 
+  <div class="popupCon" id="PopupLoadingCon" style="width:400px;">
+    <div class="success">
+        <div class="promptImg"><img src="image/ajax-loading.gif"  style="padding:20px 0 0 20px" ></div>
+        <div class="prompt">{:db_to_html text=投票中...:}</div>
+        <div class="btnCenter"><a class="" href="javascript:;" id="PopupLoadingClose"></a></div>
+    </div>
+</div>
+</td><td class="side"></td></tr><tr><td class="botLeft"></td><td class="side"></td><td class="botRight"></td></tr>
+</table>
+</div>
+
+<div class="popup" id="PopupSuccess">
+<table width="100%" cellpadding="0" cellspacing="0" border="0" class="popupTable">
+<tr><td class="topLeft"></td><td class="side"></td><td class="topRight"></td></tr><tr><td class="side"></td><td class="con">
+ 
+  <div class="popupCon" id="PopupSuccessCon" style="width:400px;">
+    <div class="success">
+        <div class="promptImg"><img src="image/success.jpg" /></div>
+        <div class="prompt">{:db_to_html text=投票成功！:}</div>
+        <div class="btnCenter"><a class="btn btnGrey" href="javascript:;" id="PopupSuccessClose"><button type="submit">{:db_to_html text=关闭:}</button></a></div>
+    </div>
+</div>
+  
+</td><td class="side"></td></tr><tr><td class="botLeft"></td><td class="side"></td><td class="botRight"></td></tr>
+</table>
+</div>
+ <div class="popup" id="PopupError">
+<table width="100%" cellpadding="0" cellspacing="0" border="0" class="popupTable">
+<tr><td class="topLeft"></td><td class="side"></td><td class="topRight"></td></tr><tr><td class="side"></td><td class="con">
+ 
+  <div class="popupCon" id="PopupErrorCon" style="width:400px;">  
+    <div class="success">
+        <div class="promptImg"><img src="image/popup_alert.jpg" /></div>
+        <div class="prompt">{:db_to_html text=投票失败！:}<br />{:db_to_html text=您今天已经超过投票限制。:}</div>
+        <div class="btnCenter"><a class="btn btnGrey" href="javascript:;" id="PopupErrorClose"><button type="submit">{:db_to_html text=关闭:}</button></a></div>
+    </div>   
+  </div>
+  
+</td><td class="side"></td></tr><tr><td class="botLeft"></td><td class="side"></td><td class="botRight"></td></tr>
+</table>
+</div>
+ <!-- bshare 相关js -->
+<script language="javascript" type="text/javascript" src="http://www.bshare.cn/button.js#uuid=97319&amp;style=-1"></script>
+<script language="javascript" type="text/javascript" src="http://www.bshare.cn/bshareC1.js"></script> 
+
+<script type="text/javascript">
+
+jQuery(document).keydown(function(e){
+    if(e.keyCode==13){
+        validateFormData();
+    }
+});
+
+
+var dontSubmit = false;
+var suffixArr= ["@hotmail.com" , "@gmail.com","@163.com","@126.com","@yahoo.com.cn","@yahoo.com","@qq.com "];
+(function(){
+    jQuery.fn.autoComplete=function(options){
+        var defaults={
+            subBox:"#suggest",
+            subOp:"li",
+            id:"#email",
+            suffixArr:suffixArr,
+            hoverClass:"on",
+            _cur:-1
+        };
+        var option = jQuery.extend({}, defaults, options || {});
+
+        jQuery(option.id).keyup(function(e){
+            jQuery('#AccountErrorMessage').hide();
+            var _that=jQuery(this);
+            if(_that.val()!=""){
+                if(e.keyCode!=38 && e.keyCode!=40 && e.keyCode!=13 && e.keyCode!=27){
+                    var _inputVal=_that.val();
+                    jQuery.fn.autoComplete.tipFun(_inputVal,_that);
+                }
+                jQuery(this).removeClass("textMid"); 
+                jQuery(this).removeClass("textSmall"); 
+                if(jQuery(this).val().length>25){ 
+                    jQuery(this).removeClass("textSmall");
+                    jQuery(this).addClass("textMid");  
+                    if(jQuery(this).val().length>30){
+                        jQuery(this).addClass("textSmall");
+                    }
+                };
+            }else{
+                jQuery(option.subBox).hide();
+            }
+        });
+
+        jQuery(option.id).blur(function(){
+            if(jQuery.trim(jQuery(this).val())==''){
+                jQuery(this).removeClass("textMid"); 
+                jQuery(this).removeClass("textSmall");
+                jQuery(this).val('<?php echo $account_input_blankvalue ?>');
+                jQuery(this).css({'color':'#ccc'});
+            }
+        });
+
+        jQuery(option.id).focus(function(){        	
+            jQuery(this).css({'color':'#111'});
+            if(jQuery(this).val()=="<?php echo $account_input_blankvalue ?>"){
+                jQuery(this).val("");
+            }
+        });
+       
+        jQuery.fn.autoComplete.tipFun=function(_v,o){
+            option._cur=-1;
+            var _that=o;
+            jQuery(option.subBox).show();
+            var str="<ul>";
+            var e=_v.indexOf("@");
+            if(e==-1){
+                jQuery.each(option.suffixArr,function(s,m){
+                    str+='<li><a href="javascript:void(0)"  >' + _v + m + "</a></li>";							
+                });
+            }else{
+                var _sh=_v.substring(0,e)
+                var _se=_v.substring(e);
+                var ind = 0;
+                jQuery.each(option.suffixArr, function (s,m) {
+                    if(m.indexOf(_se)!=-1){
+                        str += '<li><a href="javascript:void(0)" >' + _sh + m + "</a></li>";
+                        ind = 1;
+                    }
+                });
+                if(ind==0){
+                    str += '<li><a class="cur_val" href="javascript:void(0)" >' + _v + "</a></li>";
+                }
+            }
+            str+="</ul>";
+            jQuery(option.subBox).html(str); 
+
+            jQuery(option.subBox).find(option.subOp).hover(function(){
+                var _that=jQuery(this);
+                _that.addClass(option.hoverClass);					   
+            },function(){
+                var _that=jQuery(this);
+                _that.removeClass(option.hoverClass)			
+            });
+
+            jQuery(option.subBox).find(option.subOp).each(function(){
+                jQuery(this).click(function(e){
+                        jQuery(option.id).val(jQuery(e.target).html());
+                        dontSubmit = true;
+                        jQuery(option.subBox).hide();
+                        e.stopPropagation();
+                });											  
+            })
+        };
+
+        jQuery(document).bind("click",function(e){
+            jQuery(option.subBox).hide();
+        });
+
+        jQuery.fn.autoComplete.itemFun=function(){
+            
+            var _tempArr=jQuery(option.subBox).find(option.subOp);
+            var _size=_tempArr.size();
+            for(var i=0;i<_size;i++){
+                _tempArr.eq(i).removeClass(option.hoverClass);
+            }
+            
+            if(_size>1){
+                if(option._cur>_size-1){
+                    option._cur=0;	
+                }
+                if(option._cur<0){
+                    option._cur=_size-1;	
+                }
+                _tempArr.eq(option._cur).addClass(option.hoverClass);
+            }else{
+                option._cur=-1;	
+            }
+        };
+        
+        jQuery(document).keydown(function(e){
+            switch(e.keyCode){
+                case 40:
+                    option._cur++;
+                    jQuery.fn.autoComplete.itemFun()
+                    break;
+                case 38:
+                    option._cur--;
+                    jQuery.fn.autoComplete.itemFun()
+                    break;
+                default:
+                   break;
+            }
+        })
+        jQuery(option.id).keydown(function(e){
+            var _temp=jQuery(option.subBox).find(option.subOp);
+            if(e.keyCode==13){
+                if(option._cur!=-1){
+                    jQuery(this).val(_temp.eq(option._cur).text());
+                    option._cur=-1;
+                }
+                jQuery(option.subBox).hide();
+                e.stopPropagation();
+            }							  
+        });
+        return this;	
+    }	  
+})(jQuery);
+
+jQuery("#Email").autoComplete();
+
+
+function showErrorMessage(msg,target){
+    if(typeof(msg) != 'undefined' && typeof(target) != 'undefined' ){
+        jQuery('#'+target).html('<span class="errorTip">'+msg+"</span>");
+        jQuery('#'+target).show();
+    }
+}
+
+
+
+function validateFormData(){	
+    $error = false ;
+    var accountText = jQuery.trim(document.logform.email_address.value) ;
+    if(accountText == "" || accountText=='<?php echo $account_input_blankvalue ?>'){
+        showErrorMessage("{:db_to_html text=请输入您的登录账号:}",'AccountErrorMessage');
+        $error = true;
+    }else if(jQuery.trim(document.logform.password.value) == ""){
+        showErrorMessage("{:db_to_html text=请输入您的登录密码:}",'PasswordErrorMessage');
+        $error=true;
+    }
+    if($error==false) 	{
+        document.logform.submit();
+    }
+}
+//input选中边缘黄色
+jQuery("document").ready(function(){
+    jQuery(".textLogin").focus(function(){jQuery(this).parent().addClass("on")});
+    jQuery(".textLogin").blur(function(){jQuery(this).parent().removeClass("on")});
+});
+
+//验证码有内容
+jQuery(".textVerify").focus(function(){jQuery(".btnVerify").html("{:db_to_html text=确定:}");}); 
+
+//指定无图片（首页）
+jQuery(function(){
+if(typeof(bShare)!='undefined'){
+bShare.addEntry({
+ title: "{:db_to_html text=#走四方旅游体验师大赛#:}",
+ summary:"{:db_to_html text=正在火热举行中，@走四方网:} {:db_to_html text=微博即可参与，IPAD2大奖等你拿，更有机会免费畅游美国，:}",
+ pic: "http://{:$cru_host:}/image/daren/tys_share.jpg"
+})
+}
+});
+
+
+
+</script>
+</body>
+</html>

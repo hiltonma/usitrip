@@ -1,0 +1,54 @@
+@charset "utf-8";
+/* CSS Document */
+/*=======================================================公共样式======================================================*/
+body,div,form,img,ul,ol,li,dl,dt,dd,p,tr,td,input,em,a,ol{margin: 0; padding: 0; border: 0;}
+h1,h2,h3,h4,h5,h6,p{ margin:0; padding:0; font-weight:normal; font-size:12px;}
+input{ color:#999999; font:12px/1.5 tahoma,arial,宋体; }
+
+body{ font:12px/1.5 tahoma,arial,宋体; line-height:22px; position:relative; }
+img{ border:0px; font-size:0px; display:block;}
+ul,li,ol{ list-style:none; }
+em{ font-style:normal;}
+a{text-decoration:none; color:#333; outline:none;}
+a:hover{ text-decoration:underline; color:#fe6a00; outline:none;}
+a,area{blr:expression(this.onFocus=this.blur())}
+.margin_b10{ margin-bottom:10px;}
+.none{ display:none;}
+
+/*-----------文字颜色and字体大小----------*/
+.font_size12{ font-size:12px;}
+.font_size14{ font-size:14px;}
+.font_size16{ font-size:16px;}
+.font_size18{ font-size:18px;}
+.font_size20{ font-size:20px;}
+.font_size28{ font-size:28px;}
+.font_size30{ font-size:30px;}
+.font_bold{ font-weight:bold;}
+.noBold{ font-weight:normal;}
+.fontW{ font-family:"微软雅黑"}
+
+.color_green, .color_green a, a.color_green{ color:#568e04;}/*绿色green*/
+.color_green a:hover, a.color_green:hover{color:#fe6a00;}
+
+
+.color_orange, .color_orange a ,a.color_orange{ color:#fe6a00;}/*橙色orange*/
+.color_orange a:hover, a.color_orange:hover{color:#fe6a00;}
+
+.color_b3b3b3, .color_b3b3b3 a ,a.color_b3b3b3{ color:#b3b3b3;}/*淡灰色*/
+.color_b3b3b3 a:hover, a.color_b3b3b3:hover{color:#fe6a00;}
+
+
+
+.color_family{ font-family:Verdana, Arial, Helvetica, sans-serif;}
+.underline{ text-decoration: underline;}
+
+
+/*-----------浮动and清除浮动----------*/
+.fl{ float:left;}
+.fr{ float:right;}
+.del_float{ clear:both;}
+.clearfix:after {content:".";display:block;height:0;clear:both;visibility:hidden;}
+.clearfix {_zoom:1;}
+.cl{ overflow:hidden; _zoom:1;}
+
+

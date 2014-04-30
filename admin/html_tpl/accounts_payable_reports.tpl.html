@@ -1,0 +1,222 @@
+{:include file="main_header.tpl.html" :}
+
+<script type="text/javascript">
+jQuery().ready(function() {
+	var Random=(Math.random()*10+1);
+	$("#RandomNumber").val(Random);
+	$("#form_search").find(':radio').click(function(){
+		$("#form_search").submit();
+	});
+});
+
+function DownloadCVS(){
+	var Random=(Math.random()*10+1);
+	$("#RandomNumber").val(Random);
+	$("#download").val("1");
+	$("#form_search").attr("target","_blank");
+	$("#form_search").submit();
+	$("#form_search").attr("target","_self");
+	$("#download").val("0");
+}
+
+/* 提交确认成本和invoice */
+function confirm_invoice_cost(FormObj){
+	var Form = FormObj;
+	jQuery("#"+Form.id).find("input[type='submit']").val('提交中……');
+	var url = "accounts_payable_reports.php?action=confirm";
+	var form_id = Form.id;
+	var success_msm = "";
+	var success_go_to = "";
+	ajax_post_submit(url,form_id,success_msm,success_go_to);
+	return false;
+}
+
+/* 提交备注信息 */
+function update_admin_comment(FormObj){
+	var Form = FormObj;
+	jQuery("#"+Form.id).find("input[type='submit']").val('提交中……');
+	var url = "accounts_payable_reports.php?action=update_admin_comment";
+	var form_id = Form.id;
+	ajax_post_submit(url,form_id);
+	return false;
+}
+
+/* 提交中国会计填写的成本和美国会计填写的成本或实收价 */
+function submit_cost_and_final_price_china_or_usa(inputBox, ordersProductsId, chinaOrUsa){
+	if(jQuery(inputBox).attr('oldvalue') != inputBox.value){
+		//alert(inputBox.value+':'+ordersProductsId+':'+chinaOrUsa);
+		if(inputBox.value !="" && inputBox.value.search(/[^0-9_\.]/g)!=-1 ){ alert("对不起，只接受数字格式输入！"); return false; }
+		var url = "accounts_payable_reports.php?action=submit_cost_and_final_price_china_or_usa";
+		url += "&orders_products_id=" + ordersProductsId;
+		if(chinaOrUsa=='china'){
+			url += "&china_bookkeeper_final_price_cost=" + inputBox.value;
+		}else if(chinaOrUsa=='usa'){
+			url += "&usa_bookkeeper_final_price_cost=" + inputBox.value;
+		}else if(chinaOrUsa=='usafinalprice'){
+			url += "&usa_bookkeeper_final_price=" + inputBox.value;
+		}else if(chinaOrUsa=='beforedeparturecost'){
+			url += "&before_departure_cost=" + inputBox.value;
+		}
+		ajax_get_submit(url);
+		jQuery(inputBox).attr('oldvalue', inputBox.value);
+	}
+}
+</script>
+<div class="main">
+  <form action="" method="get" id="form_search" target="_self" name="form_search">
+  	<div class="ItemsTj">
+  		<h1 class="ItemsH1"  id="tit" onclick="showHideLyer(this,'CI_content','ItemsH1Select')">{:$smarty.const.SEARCH_CRITERIA:}</h1>
+  		<div class="ItemsTjContent" id="CI_content" style="width:auto;">
+  			<table border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td nowrap="nowrap">{:$smarty.const.DEPARTURE_DATE:}：</td>
+					<td nowrap="nowrap">
+					
+  			<input type="text" class="textTime" name="S_start_date" value="{:$S_start_date:}" onclick="GeCalendar.SetUnlimited(1); GeCalendar.SetDate(this);" style="ime-mode: disabled;" />{:$smarty.const.SEARCH_DATE_TO:}<input type="text" class="textTime" name="S_end_date" value="{:$S_end_date:}" style="ime-mode: disabled;" onclick="GeCalendar.SetUnlimited(1); GeCalendar.SetDate(this);" />
+<span style="color:#FF0000">为了不占用太多系统资源请选择时间段搜索！</span>  					
+					</td>
+					<td align="right" nowrap="nowrap">{:$smarty.const.SEARCH_FILTER:}</td><td nowrap="nowrap"><label style="display:inline; margin:5px;">{:html_radios name='Filter' values='0' output=$smarty.const.ALL_DEAL_WITH selected=$Filter labels='':}</label>&nbsp;<label style="display:inline; margin:5px;">{:html_radios name='Filter' values='1' output=$smarty.const.THE_TAX_CURRENTLY_PAYABLE selected=$Filter labels='':}</label>&nbsp;<label style="display:inline; margin:5px;">{:html_radios name='Filter' values='2' output=$smarty.const.FUTURE_PAYMENT selected=$Filter labels='':}</label>&nbsp;<label style="display:inline; margin:5px;">{:html_radios name='Filter' values='3' output=$smarty.const.PURCHASED_DATE_PAYMENT selected=$Filter labels='':}</label>&nbsp;<label style="display:inline; margin:5px;">{:html_radios name='Filter' values='4' output=$smarty.const.COST_NOT_MATCH_AMOUNT selected=$Filter labels='':}</label>&nbsp;<label style="display:inline; margin:5px;">{:html_radios name='Filter' values='5' output=$smarty.const.COST_MATCH_AMOUNT selected=$Filter labels='':}</label>
+					<!--<label style="display:inline; margin:5px;">{:html_radios name='Filter' values='3' output='待确定支付' selected=$Filter labels='':}</label>-->
+					</td>
+  					</tr>
+				<tr>
+					<td>供应商：</td><td colspan="3">{:$S_ProviderSelectMenu:}&nbsp;&nbsp;  						<!--{:html_input name='S_Provider' enterkey='true' value=$S_Provider|escape:"html" parameters=' class="textAll" ':}-->
+						订单ID：{:html_input name='S_orders_id' enterkey='true' value=$S_orders_id|escape:"html" parameters=' class="textAll" ':}&nbsp;&nbsp;&nbsp;&nbsp;
+						工号：{:html_input name='S_orders_owners' enterkey='true' value=$S_orders_owners|escape:"html" parameters=' class="textAll" ':}&nbsp;&nbsp;&nbsp;&nbsp;
+						地接团号：{:html_input name='S_provider_tour_code' enterkey='true' value=$S_provider_tour_code|escape:"html" parameters=' class="textAll" ':}&nbsp;&nbsp;&nbsp;&nbsp;
+						发票号：{:html_input name='S_customer_invoice_no' enterkey='true' value=$S_customer_invoice_no|escape:"html" parameters=' class="textAll" ':}&nbsp;&nbsp;&nbsp;&nbsp;
+						订单下单类型： {:$S_is_other_ownerSelectMenu:}
+						 </td>
+				</tr>
+				<tr><td colspan="8" class="ButtonAligh">
+					<button type="submit" class="Allbutton">{:$smarty.const.SEARCH:}</button> <button class="AllbuttonHui" type="button" onclick="javascript: location='{:$href_accounts_payable_reports:}'">{:$smarty.const.CLEAR_SEARCH_DATA:}</button>
+					{:if $rows_total < 4000 && $rows_total > 0 :}
+					<button class="Allbutton" type="button" onclick="javascript: DownloadCVS();">{:$smarty.const.DOWNLOAD_DATA_TO_THE_LOCAL:}</button>
+					{:/if:}
+					<input id="download" name="download" type="hidden" value="0" />
+					<input name="sort_type" type="hidden" value="{:$sort_type:}" />
+					<input name="sort" type="hidden" value="{:$sort:}" />
+					<input id="RandomNumber" name="RandomNumber" type="hidden" value="" />
+					<table width="200" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td align="right">{:$smarty.const.INVOICE_NUMBER_SUM:}</td>
+							<td align="right">{:$invoice_total:}</td>
+							</tr>
+						<tr>
+							<td align="right">{:$smarty.const.COST_SUM:}</td>
+							<td align="right">{:$cost_total:}</td>
+							</tr>
+						<tr>
+							<td align="right">实收总计:</td>
+							<td align="right">{:$_final_price_total:}</td>
+							</tr>
+						</table>
+					
+				</td></tr>
+  				</table>
+  			</div>
+  		</div>
+  	</form>
+
+ <div class="ItemsLb">
+   <h1 class="ItemsH1"  id="Lb" onclick="showHideLyer(this,'Lb_content','ItemsH1Select')">{:$smarty.const.SEARCH_RESULTS:}</h1>
+   <div class="ItemsLbContent" id="Lb_content">
+<table class="DdTab">
+	<tr>
+		<th nowrap="nowrap" class="header">订单ID{:$orders_sort_up_link:}{:$orders_sort_down_link:}</th>
+		<th nowrap="nowrap">工号</th>
+		<th nowrap="nowrap" class="header">{:$smarty.const.PURCHASED_DATE:}{:$purchased_sort_up_link:}{:$purchased_sort_down_link:}</th>
+		<th nowrap="nowrap"class="header" title="不含退款日期">
+		客人付款时间
+		</th>
+		<th nowrap="nowrap"class="header">
+		{:$smarty.const.DEPARTURE_DATE:}{:$departure_sort_up_link:}{:$departure_sort_down_link:}</th>
+		<!--<th nowrap="nowrap">供应商</th>-->
+		<th nowrap="nowrap">地接团号</th>
+		<th nowrap="nowrap">参团人数</th>
+		<th nowrap="nowrap">是否已支付</th>
+		<th nowrap="nowrap" class="header">发票号{:$invoice_number_sort_up_link:}{:$invoice_number_sort_down_link:}</th>
+		<th nowrap="nowrap" class="header">发票金额{:$invoice_amount_sort_up_link:}{:$invoice_amount_sort_down_link:}</th>
+		<th nowrap="nowrap" class="header">底价{:$cost_sort_up_link:}{:$cost_sort_down_link:}</th>
+		<th nowrap="nowrap" class="header">出团前底价</th>
+		<th nowrap="nowrap" class="header">出团后底价</th>
+		<th nowrap="nowrap" class="header">USA财务底价</th>
+		<th nowrap="nowrap">实收价{:$sales_sort_up_link:}{:$sales_sort_down_link:}</th>
+		<th nowrap="nowrap">USA财务实收</th>
+		<th nowrap="nowrap">GP(%){:$gp_sort_up_link:}{:$gp_sort_down_link:}</th>
+		<th nowrap="nowrap">订单状态</th>
+		<th nowrap="nowrap">财务备注</th>
+		<th nowrap="nowrap">{:$smarty.const.HAS_CONFIRM:}</th>
+		</tr>
+	{:section name=i loop=$datas:}
+	<tr id="tr_{:$datas[i].orders_products_id:}" class="indexDdanyjXxBorb" style="background-color:{:$datas[i]._tr_background_color:}">
+		<td class="tab_line1"><a href="{:$datas[i].orders_links:}" target="_blank">{:$datas[i].orders_id:}</a></td>
+		<td class="tab_line1" nowrap="nowrap" style="line-height:15px; padding-top:5px; padding-bottom:5px;">{:if $datas[i].job_19:}<span style="color:#F00">{:$datas[i].job_19:}</span>, {:/if:} {:$datas[i].orders_owners:}</td>
+		<td class="tab_line1">{:$datas[i].date_purchased|date_format:"%Y-%m-%d" :}</td>
+		<td class="tab_line1">
+		{:$datas[i].date_paid :}
+		</td>
+		<td class="tab_line1">
+		{:$datas[i].products_departure_date|date_format:"%Y-%m-%d" :}</td>
+		<!--<td class="tab_line1" nowrap="nowrap" style="line-height:15px;">{:$datas[i].agency_name:}</td>-->
+		<td class="tab_line1" nowrap="nowrap" style="line-height:15px; padding-top:5px; padding-bottom:5px;"><a href="{:$datas[i].products_links:}" target="_blank" title="[{:$datas[i].products_model:}]{:$datas[i].products_name:}">{:$datas[i].provider_tour_code:}</a></td>
+		<td class="tab_line1">{:$datas[i].travelPeopleNumber:}</td>
+		<td class="tab_line1">{:$datas[i].paymentPaidStr:}</td>
+		<td class="tab_line1">{:$datas[i].customer_invoice_no:}</td>
+		<td class="tab_line1" align="right" style="{:$datas[i].cost_color:}">{:$datas[i]._customer_invoice_total:}</td>
+		<td class="tab_line1" align="right" style="{:$datas[i].cost_color:}">{:$datas[i]._final_price_cost:}</td>
+		<td class="tab_line1" align="right" nowrap="nowrap">$<input name="" class="none_border" type="text" value="{:$datas[i].before_departure_cost:}" size="8" oldvalue="{:$datas[i].before_departure_cost:}" onfocus="this.className='border';" onblur="submit_cost_and_final_price_china_or_usa(this, {:$datas[i].orders_products_id:}, 'beforedeparturecost'); this.className='none_border';" style="ime-mode: disabled; " /></td>
+		<td class="tab_line1" align="right" nowrap="nowrap">$<input name="" class="none_border" type="text" value="{:$datas[i].china_bookkeeper_final_price_cost:}" size="8" oldvalue="{:$datas[i].china_bookkeeper_final_price_cost:}" onfocus="this.className='border';" onblur="submit_cost_and_final_price_china_or_usa(this, {:$datas[i].orders_products_id:}, 'china'); this.className='none_border';" style="ime-mode: disabled; " /></td>
+		<td class="tab_line1" align="right" nowrap="nowrap">$<input name="" class="none_border" type="text" value="{:$datas[i].usa_bookkeeper_final_price_cost:}" size="8" oldvalue="{:$datas[i].usa_bookkeeper_final_price_cost:}" onfocus="this.className='border';" onblur="submit_cost_and_final_price_china_or_usa(this, {:$datas[i].orders_products_id:}, 'usa'); this.className='none_border';" style="ime-mode: disabled; " /></td>
+		<td class="tab_line1" >{:$datas[i]._final_price:}</td>
+		<td class="tab_line1" >
+		<input name="" class="none_border" type="text" value="{:$datas[i].usa_bookkeeper_final_price:}" size="8" oldvalue="{:$datas[i].usa_bookkeeper_final_price:}" onfocus="this.className='border';" onblur="submit_cost_and_final_price_china_or_usa(this, {:$datas[i].orders_products_id:}, 'usafinalprice'); this.className='none_border';" style="ime-mode: disabled; " />
+		</td>
+		<td class="tab_line1" >{:$datas[i].GrossProfit:}</td>
+		<td class="tab_line1" >{:$datas[i].orderStatus:}</td>
+		<td class="tab_line1" >
+		<form id="CommentForm_{:$datas[i].orders_products_id:}" name="CommentForm_{:$datas[i].orders_products_id:}" action="" method="post" enctype="multipart/form-data" onsubmit="update_admin_comment(this); return false;">
+		<textarea name="admin_comment" cols="30" rows="2" wrap="virtual" class="border">{:$datas[i].admin_comment:}</textarea><!--update_admin_comment(this.form);-->
+		<input name="orders_products_id" type="hidden" value="{:$datas[i].orders_products_id:}" />
+		<br />
+		<input type="submit" value="提交备注" />
+		<!--<input name="admin_comment_old" type="hidden" value="{:$datas[i].admin_comment:}" />
+		[<a href="{:$datas[i].orders_links:}#OrderStatusHistoryList" target="_blank">查看订单备注</a>]-->
+		</form>
+		</td>
+		<td id="confirm_td_{:$datas[i].orders_products_id:}" class="tab_line1" style="text-align:center" title="{:$datas[i].MatchMsn:}" >
+			{:if $datas[i].admin_confirm!="Y":}
+			<form id="ConfirmForm_{:$datas[i].orders_products_id:}" name="ConfirmForm_{:$datas[i].orders_products_id:}" action="" method="post" enctype="multipart/form-data" onsubmit="confirm_invoice_cost(this); return false;">
+			<input name="orders_products_id" type="hidden" value="{:$datas[i].orders_products_id:}" />
+			<input name="admin_confirm_final_price_cost" type="hidden" value="{:$datas[i].final_price_cost:}" />
+			<input name="admin_confirm_customer_invoice_no" type="hidden" value="{:$datas[i].customer_invoice_no:}" />
+			<input name="admin_confirm_customer_invoice_total" type="hidden" value="{:$datas[i].customer_invoice_total:}" />
+			<input title="如果发票金额与底价不符也能确认！" type="submit" name="button" {:$datas[i].disabled:} value="{:$smarty.const.CONFIRM_BUTTON:}" />
+			</form>
+			{:else:}
+				<font color="#00CC00" >match</font>
+			{:/if:}
+			</td>
+		</tr>
+	{:/section:}
+</table>
+  
+  
+  <div style="margin-top:10px; clear:both;">
+  	<!--分页-->
+  	<table width="98%" border="0" cellspacing="0" cellpadding="0">
+  		<tr>
+  			<td align="right">
+  			<div class="pageBot">{:$split_right_content:}</div>
+  			<div class="pageBot">{:$split_left_content:}</div>
+  				</td>
+  			</tr>
+  		</table>
+  	
+  	</div>
+
+ </div>
+</div>
+
+</div>
+{:include file="main_footer.tpl.html" :}

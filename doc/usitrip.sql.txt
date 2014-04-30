@@ -1,0 +1,1326 @@
+#以下写完整的SQL结构语句 
+
+#2012-03-29 Howard added
+ALTER TABLE `orders_products` ADD `customer_invoice_files` VARCHAR( 1000 ) NOT NULL COMMENT '供应商上传的发票文件，目录路径/var/www/html/888trip/admin/invoices';
+
+#2012-3-29 ABEN added================================================================
+alter table `orders` 
+add column `orders_owners` varchar(50) NULL COMMENT '订单归属(算业绩用)' after `orders_paid`;
+
+delimiter $$
+
+CREATE TABLE `orders_owner_detail` (
+  `orders_sales_id` int(11) NOT NULL AUTO_INCREMENT,
+  `orders_id` int(11) NOT NULL DEFAULT '0' COMMENT '订单号',
+  `owner_login_id` int(11) NOT NULL DEFAULT '0' COMMENT '客服登录号',
+  `add_date` datetime NOT NULL COMMENT '添加时间',
+  `is_deleted` varchar(1) DEFAULT '0' COMMENT '是否被删除',
+  PRIMARY KEY (`orders_sales_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=76 DEFAULT CHARSET=latin1 COMMENT='订单归属的明细表'
+$$
+
+delimiter $$
+
+CREATE TABLE `salestrack` (
+  `salestrack_id` int(10) NOT NULL AUTO_INCREMENT COMMENT '销售跟踪ID',
+  `is_important` tinyint(1) DEFAULT '0' COMMENT '紧急度:2-很紧急,1-紧急,0-一般',
+  `add_date` datetime DEFAULT NULL COMMENT '添加时间',
+  `customer_name` varchar(255) DEFAULT NULL COMMENT '客人姓名',
+  `customer_tel` varchar(255) DEFAULT NULL COMMENT '客人联系电话',
+  `customer_mobile` varchar(255) DEFAULT NULL COMMENT '客人手机',
+  `customer_email` varchar(255) DEFAULT NULL COMMENT '客人email',
+  `customer_qq` varchar(255) DEFAULT NULL COMMENT '客人QQ',
+  `customer_msn` varchar(255) DEFAULT NULL COMMENT '客人MSN',
+  `customer_skype` varchar(255) DEFAULT NULL COMMENT '客人skype',
+  `customer_plan_tdate` date DEFAULT NULL COMMENT '客人的计划参团时间',
+  `customer_info` text COMMENT '客人咨询信息',
+  `login_id` int(10) DEFAULT '0' COMMENT '后台登录id',
+  `orders_id` int(10) DEFAULT '0' COMMENT '订单号',
+  `next_condate` date DEFAULT NULL COMMENT '下次联系时间',
+  `modify_history` text COMMENT '修改的历史记录(已经不用,写到item_history中了)',
+  `code` varchar(200) DEFAULT NULL COMMENT '团号集合以string方式显示',
+  `email_last_update_date` datetime DEFAULT NULL COMMENT 'email最后修改时间',
+  `pay_status` tinyint(1) DEFAULT '0' COMMENT '付款状态:1-已付款,0-未付款',
+  PRIMARY KEY (`salestrack_id`),
+  KEY `login_id` (`login_id`),
+  KEY `customer_name` (`customer_name`),
+  KEY `customer_tel` (`customer_tel`),
+  KEY `customer_mobile` (`customer_mobile`),
+  KEY `customer_email` (`customer_email`)
+) ENGINE=MyISAM AUTO_INCREMENT=55 DEFAULT CHARSET=latin1
+$$
+
+delimiter $$
+
+CREATE TABLE `salestrack_code_history` (
+  `code_history_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '记录ID',
+  `salestrack_id` int(11) DEFAULT NULL COMMENT '销售跟踪ID',
+  `code` varchar(50) DEFAULT NULL COMMENT '团号',
+  `add_date` datetime DEFAULT NULL COMMENT '添加时间',
+  `login_id` int(11) DEFAULT '0' COMMENT '后台登录ID',
+  PRIMARY KEY (`code_history_id`),
+  KEY `salestrack_id` (`salestrack_id`),
+  KEY `code` (`code`)
+) ENGINE=MyISAM AUTO_INCREMENT=11182 DEFAULT CHARSET=latin1$$
+
+delimiter $$
+
+CREATE TABLE `salestrack_email_history` (
+  `email_history_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '记录ID',
+  `salestrack_id` int(11) DEFAULT NULL COMMENT '销售跟踪记录ID',
+  `email` varchar(50) DEFAULT NULL COMMENT 'email',
+  `add_date` datetime DEFAULT NULL COMMENT '添加时间',
+  `login_id` int(11) DEFAULT '0' COMMENT '后台登录id',
+  PRIMARY KEY (`email_history_id`),
+  KEY `salestrack_id` (`salestrack_id`),
+  KEY `email` (`email`)
+) ENGINE=MyISAM AUTO_INCREMENT=29 DEFAULT CHARSET=latin1$$
+
+delimiter $$
+
+CREATE TABLE `salestrack_item_history` (
+  `item_history_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '记录ID',
+  `salestrack_id` int(11) DEFAULT NULL COMMENT '销售跟踪ID',
+  `item_name` varchar(50) DEFAULT NULL COMMENT '项目名称',
+  `old_value` varchar(500) DEFAULT NULL COMMENT '修改前的值',
+  `new_value` varchar(500) DEFAULT NULL COMMENT '修改后的值',
+  `add_date` datetime DEFAULT NULL COMMENT '添加时间',
+  `login_id` int(11) DEFAULT '0' COMMENT '后台登录id',
+  PRIMARY KEY (`item_history_id`),
+  KEY `salestrack_id` (`salestrack_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=191 DEFAULT CHARSET=latin1$$
+
+
+
+# howard added 2012-04-05
+ALTER TABLE `products` ADD `note_to_agency` TEXT NOT NULL COMMENT '只给供应商看的关于此团要注意的信息' AFTER `products_special_note` ;
+
+#aben added 2012-4-6
+ALTER TABLE `customers` ADD COLUMN `visa_id` VARCHAR(50) NULL COMMENT '用户在visa系统中的ID'  AFTER `customers_notice` ;
+
+#aben added 2012-4-7
+CREATE TABLE `visa_orders_byadmin` (
+  `visa_orders_byadmin_id` int(11) NOT NULL AUTO_INCREMENT,
+  `orders_id` int(11) NOT NULL COMMENT '订单号',
+  `vis_tag_name` varchar(45) NOT NULL COMMENT '签证目的',
+  `orders_info` varchar(500) NOT NULL COMMENT '下visa订单时的信息',
+  `visa_orderid` varchar(20) NOT NULL COMMENT '返回的visa订单号',
+  `add_date` datetime NOT NULL COMMENT '添加时间',
+  `login_id` int(11) NOT NULL COMMENT '后台id',
+  `is_deleted` varchar(1) NOT NULL DEFAULT '0',
+  `is_deleted_by` int(11) NOT NULL,
+  `delete_date` datetime DEFAULT NULL,
+  PRIMARY KEY (`visa_orders_byadmin_id`),
+  KEY `ix_orders_id` (`orders_id`)
+) ENGINE=MyISAM
+
+#aben added 2012-4-9 用来定义VISA的一些变量,方便
+INSERT INTO `configuration`
+(
+`configuration_title`,
+`configuration_key`,
+`configuration_value`,
+`configuration_description`,
+`configuration_group_id`,
+`sort_order`,
+`date_added`
+)
+VALUES
+('visa_domain','VISA_DOMAIN','http://tech.samford.com.cn','visa page domain',5,100,now()),
+('visa_safeIP','VISA_SAFE_IP','173.201.36.168,173.201.36.169,173.201.36.69,127.0.0.1,192.168.1.15',
+'visa safe ip list for get user verify code from server-side',5,100,now()),
+('visa_lujia_userCheckUrl','VISA_LUJIA_USER_CHECK_URL','/OneWorld_Web/agents/valid.jsp?AG=usitrip&V=','get user verify code from server-side',5,100,now()),
+('visa_UserOrder_url','VISA_USER_ORDER_URL','/OneWorld_Web/agents/visa/visa_usa.jsp?AG=usitrip&USR_UNID=','customer order check url',5,100,now()),
+('visa_UserOrderList_url','VISA_USER_ORDER_LIST_URL','/OneWorld_Web/agents/visa/visa_order.jsp?AG=usitrip&USR_UNID=','customer view self visa order url',5,100,now()),
+('visa_adminOrder_url','VISA_ADMIN_ORDER_URL','/OneWorld_Web/agents/visa/order.jsp?AG=usitrip&USR_UNID=',
+'admin to checkout visa order when order is paid include visa fee',5,100,now())
+;
+
+
+#lwk added 20120413 新增订单留言表，用于用户在用户中心添加的订单留言
+CREATE TABLE IF NOT EXISTS `orders_message` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '自动编号',
+  `orders_id` int(11) NOT NULL COMMENT '订单ID号',
+  `message` text NOT NULL COMMENT '留言内容',
+  `addtime` datetime NOT NULL COMMENT '留言日期',
+  `customers_id` int(11) NOT NULL COMMENT '提交留言时登录的用户ID',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COMMENT '订单详情留言表' ;
+ALTER TABLE `orders_message` ADD INDEX ( `orders_id` );
+
+
+#Howard added 20120416 在订单留言表添加新字段
+ALTER TABLE `orders_message` ADD `has_read` tinyint(1) NOT NULL DEFAULT '0' COMMENT '我们的人员是否已经读取此条留言，1为已读';
+ALTER TABLE `orders_message` ADD `read_admin_id` INT( 11 ) NOT NULL DEFAULT '0' COMMENT '把留言设为已读的管理员ID';
+
+#Howard added 20120416 订单行程航班信息更新历史表
+CREATE TABLE `orders_product_flight_history` (
+  `history_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `orders_products_id` int(11) NOT NULL COMMENT '产品快照ID',
+  `airline_name` varchar(225) NOT NULL DEFAULT '',
+  `flight_no` varchar(64) NOT NULL DEFAULT '',
+  `airline_name_departure` varchar(225) NOT NULL DEFAULT '',
+  `flight_no_departure` varchar(64) NOT NULL DEFAULT '',
+  `airport_name` varchar(225) NOT NULL DEFAULT '',
+  `airport_name_departure` varchar(225) NOT NULL DEFAULT '',
+  `arrival_date` varchar(16) NOT NULL DEFAULT '',
+  `arrival_time` varchar(12) NOT NULL DEFAULT '',
+  `departure_date` varchar(16) NOT NULL DEFAULT '',
+  `departure_time` varchar(12) NOT NULL DEFAULT '',
+  `admin_id` int(11) NOT NULL DEFAULT 0  COMMENT '添加此记录的管理员ID',
+  `customers_id` int(11) NOT NULL DEFAULT 0  COMMENT '添加此记录的管理员ID',
+  PRIMARY KEY (`history_id`),
+  KEY `orders_products_id` (`orders_products_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COMMENT='订单行程航班信息更新历史';
+
+ALTER TABLE `orders_product_flight_history` ADD `add_date` DATETIME NOT NULL COMMENT '记录添加的时间';
+
+
+# Howard added 2012-04-21
+ALTER TABLE `orders_payment_history` ADD `has_checked` ENUM( "0", "1" ) NOT NULL DEFAULT "0" COMMENT '是否已经经过我们确认1为已经确认';
+ALTER TABLE `orders_payment_history` ADD `checked_admin_id` INT NOT NULL COMMENT '确认人的管理员ID',
+ADD `checked_time` DATETIME NOT NULL COMMENT '此款项的确认时间';
+ALTER TABLE `orders` ADD INDEX ( `orders_owners` ) ;
+ALTER TABLE `orders_products` ADD `parent_orders_products_id` INT NOT NULL DEFAULT '0' COMMENT '父订单行程，用于组合团子团的订单产品，客人不能看到此种订单行程。' AFTER `orders_products_id` ;
+ALTER TABLE `orders_products` ADD INDEX ( `parent_orders_products_id` ) ;
+
+
+# aben added 2012-4-24
+CREATE  TABLE `orders_problems_track_history` (
+  `orders_problem_track_id` INT NOT NULL AUTO_INCREMENT ,
+  `orders_id` INT NULL DEFAULT 0 COMMENT '订单号' ,
+  `orders_status_id` INT NULL DEFAULT 0 COMMENT '订单状态ID' ,
+  `login_id` INT NULL DEFAULT 0 COMMENT '后台ID' ,
+  `add_date` DATETIME NULL ,
+  `remark` VARCHAR(50) NULL DEFAULT '' COMMENT '备注' ,
+  `is_finished` VARCHAR(1) NULL DEFAULT '0' COMMENT '是否完成:1-完成,0-未完成' ,
+  PRIMARY KEY (`orders_problem_track_id`) ,
+  INDEX `ix_orders_vs_status` (`orders_id` ASC, `orders_status_id` ASC) )
+COMMENT = '订单问题持续跟踪表:根据特定的订单状态ID来记录问题处理的记录';
+
+ALTER TABLE `orders_products` CHANGE `final_price_cost` `final_price_cost` DECIMAL( 15, 2 ) NOT NULL DEFAULT '0.00' COMMENT '底价' ;
+ALTER TABLE `orders_products` ADD `china_bookkeeper_final_price_cost` DECIMAL( 15, 2 ) NOT NULL COMMENT '中国财务底价(手工输入不参与计算)' AFTER `final_price_cost` ,
+ADD `usa_bookkeeper_final_price_cost` DECIMAL( 15, 2 ) NOT NULL COMMENT '美国财务确认实收/底价(手工输入不参与计算)' AFTER `china_bookkeeper_final_price_cost` ;
+ALTER TABLE `orders_products` ADD `admin_comment` TEXT NOT NULL COMMENT '财务填写的备注信息' AFTER `admin_confirm_admin_id` ;
+
+#aben added 2012-4-25
+CREATE  TABLE `orders_payment_account_remark_history` (
+  `orders_payment_account_remark_history_id` INT NOT NULL AUTO_INCREMENT,
+  `orders_payment_history_id` INT NULL,
+  `remark` VARCHAR(100) NULL,
+  `login_id` INT NULL,
+  `add_date` DATETIME NULL,
+  PRIMARY KEY (`orders_payment_account_remark_history_id`),
+  INDEX `ix_orders_payment_history_id` (`orders_payment_history_id` ASC) )
+COMMENT = '付款记录之财务备注历史记录';
+
+ALTER TABLE `orders_products` ADD `usa_bookkeeper_final_price` DECIMAL( 15, 2 ) NOT NULL COMMENT '美国财务填写的实收价' AFTER `usa_bookkeeper_final_price_cost` ;
+
+#aben added 2012-4-27
+ALTER TABLE `orders_owner_detail` ADD COLUMN `add_login_id` INT NULL DEFAULT 0  AFTER `is_deleted`;
+UPDATE `orders_owner_detail` SET add_login_id=0 WHERE add_login_id IS NULL;
+
+#aben added 2012-4-28 为了早日实现三民主义,特添加备注
+ALTER TABLE `orders_owner_detail` 
+CHANGE COLUMN `add_login_id` `add_login_id` INT(11) NULL DEFAULT '0' COMMENT '添加人的后台ID,默认是0(系统自动添加)'  ;
+
+#aben added 2012-5-3 
+# DROP TABLE `visa_products_list`
+CREATE  TABLE `visa_products_list` (
+  `visa_products_id` INT NOT NULL AUTO_INCREMENT,
+  `visa_purpose` VARCHAR(50) NOT NULL COMMENT '访美目的' ,
+  `visa_vis_tag_name` VARCHAR(50) NOT NULL COMMENT '签证服务代码VIS_TAG_NAME' ,
+  `visa_srv_unid` VARCHAR(50) NOT NULL COMMENT '签证产品在路嘉网站上的ID' ,
+  `visa_product_price` INT NOT NULL DEFAULT 0 COMMENT '签证产品价格' ,
+  `visa_description` TEXT NOT NULL DEFAULT '' COMMENT '签证产品描述' ,
+  PRIMARY KEY (`visa_products_id`) 
+)COMMENT '签证产品列表';
+
+INSERT INTO `visa_products_list`(`visa_products_id`,`visa_purpose`,`visa_vis_tag_name`,`visa_srv_unid`,`visa_product_price`)
+VALUES(1,'探亲访友签证(B2)','(TP) 探亲访友(B2)','A7A1E8BF-E4B1-4134-A2BA-02ACDACF8C10',2688),
+(2,'参团旅游签证(B2)','(TP) 参团旅游(B2)','acdbe3ac-c548-4c77-a20f-fb2723ca488c',2688),
+(3,'个人旅游签证(B2)','(TP) 个人旅游(B2)','47efd231-e1f2-435e-9998-37616a97a370',2688),
+(4,'参加会议展览签证(B1/B2)','(TB) 参加会议展览(B1/B2)','d251a140-e339-4f68-8bbf-ab21b5389d52',2688),
+(5,'商务考察签证(B1/B2)','(TBP) 商务考察(B1/B2)','f36bcaa2-3bc2-4a05-88f8-49a68e3a51b7',2688),
+(6,'培训签证(B1/B2)','(S) 培训(B1/B2)','d5ff6e5c-4315-48ae-8464-eca417c7e2df',2688),
+(7,'体检看病签证(B2)','(TB) 体检看病(B2)','32614579-2d2a-48c4-be91-9f9d06f4d43c',2688),
+(8,'留学签证(F-1)','(S) 留学(F-1)','302c5af1-36a1-44f5-a633-001ca64a4908',3888),
+(9,'游学签证(B2)','(S) 游学(B2)','324c16b0-a4cf-43de-8a21-70893df7f9e1',2688),
+(10,'访问学者签证(J-1)','(S) 访问学者(J-1)','dce232d9-32ad-4d4f-9b0e-741d67394346',3888),
+(11,'实习签证(J-1)','(S) 实习(J-1)','22054ca2-37bf-4f92-89a9-43be943f052c',3888),
+(12,'工作签证(H-1)','(S) 工作(H-1)','d626cbb1-6fb0-41e8-94dd-3add531a4efd',2888);
+
+#Howard added 2012-05-07
+ALTER TABLE `orders` ADD `has_sent_pay_note` TINYINT( 1 ) NOT NULL DEFAULT '0' COMMENT '是否已经发送催款邮件1为已发';
+
+#aben added 2012-5-8 用来定义VISA的一些变量
+INSERT INTO `configuration`
+(
+`configuration_title`,
+`configuration_key`,
+`configuration_value`,
+`configuration_description`,
+`configuration_group_id`,
+`sort_order`,
+`date_added`
+)
+VALUES
+('visa_all_order_list_url_lujia','VISA_ALL_ORDER_LIST_URL_LUJIA','/OneWorld_Web/agents/visa/down_data.jsp?ag=usitrip&v={LAST_ID:1}','get all visa order from lujia',5,100,now());
+
+#aben added 2012-5-9 存储从路嘉抓取过来的VISA订单的3个表
+
+CREATE TABLE `visa_order_ordermain_from_lujia` (
+  `visa_order_ordermain_id` int(11) NOT NULL AUTO_INCREMENT,
+  `update_time_string` varchar(20) NOT NULL DEFAULT '0',
+  `ORD_ID` int(11) NOT NULL DEFAULT '0',
+  `SUP_ID` int(11) NOT NULL DEFAULT '0',
+  `USR_ID` int(11) NOT NULL DEFAULT '0',
+  `ORD_NAME` varchar(45) DEFAULT NULL,
+  `ORD_USR_STA_TAG` varchar(45) DEFAULT NULL,
+  `ORD_ADM_STA_TAG` varchar(45) DEFAULT NULL,
+  `ORD_PAY_TAG` varchar(45) DEFAULT NULL,
+  `SRV_TYP_TAG` varchar(45) DEFAULT NULL,
+  `ORD_PAY_STA_TAG` varchar(45) DEFAULT NULL,
+  `ORD_PRICE` decimal(15,4) DEFAULT '0.0000',
+  `ORD_PAY_MONEY` decimal(15,4) DEFAULT '0.0000',
+  `ORD_SPEC` varchar(45) DEFAULT NULL,
+  `ORD_INV_TITLE` varchar(45) DEFAULT NULL,
+  `ORD_USR_NAME` varchar(45) DEFAULT NULL,
+  `ORD_USR_PHONE` varchar(45) DEFAULT NULL,
+  `ORD_DATE` varchar(45) DEFAULT NULL,
+  `ORD_CDATE` varchar(45) DEFAULT NULL,
+  `ORD_MDATE` varchar(45) DEFAULT NULL,
+  `ORD_EXT0` varchar(45) DEFAULT NULL,
+  `ORD_EXT1` varchar(45) DEFAULT NULL,
+  `ORD_EXT2` varchar(45) DEFAULT NULL,
+  `ORD_EXT3` varchar(45) DEFAULT NULL,
+  `ORD_EXT9` varchar(45) DEFAULT NULL,
+  `ORD_MAIL_ADDR` varchar(45) DEFAULT NULL,
+  `ORD_MAIL_ZIP` varchar(45) DEFAULT NULL,
+  `ORD_INN_ADMID` int(11) DEFAULT NULL,
+  `SCM_PRJ_ID` int(11) DEFAULT NULL,
+  `ORD_UID` varchar(45) DEFAULT NULL,
+  `ORD_FROM_SUPID` int(11) DEFAULT NULL,
+  PRIMARY KEY (`visa_order_ordermain_id`)
+)  COMMENT='从路嘉网站获取的订单列表';
+
+
+CREATE TABLE `visa_order_ordermainlist_from_lujia` (
+  `visa_order_ordermainlist_id` int(11) NOT NULL AUTO_INCREMENT,
+  `update_time_string` varchar(45) NOT NULL,
+  `ORD_LST_ID` int(11) NOT NULL,
+  `ORD_ID` int(11) NOT NULL,
+  `SRV_ID` int(11) DEFAULT NULL,
+  `SUP_ID` int(11) DEFAULT NULL,
+  `ORD_LST_NAME` varchar(45) DEFAULT NULL,
+  `ORD_LST_MONEY` decimal(15,4) DEFAULT '0.0000',
+  `ORD_LST_NUM1` int(11) DEFAULT '0',
+  `ORD_LST_MONEY1` decimal(15,4) DEFAULT '0.0000',
+  `ORD_LST_IDX` int(11) DEFAULT '0',
+  PRIMARY KEY (`visa_order_ordermainlist_id`)
+) COMMENT='从路嘉获取的VISA订单表的list表';
+
+
+CREATE TABLE `visa_order_updatetimestring` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `update_time_string` varchar(20) NOT NULL,
+  `add_date` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `update_time_string_UNIQUE` (`update_time_string`)
+) COMMENT='记录从路嘉抓取数据的time string的值';
+
+#aben added 2012-5-10
+ALTER TABLE `articles` ADD COLUMN `article_type` ENUM('article','announce') NULL DEFAULT 'article'  AFTER `current_topic_id` , CHANGE COLUMN `articles_date_added` `articles_date_added` DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '添加时间'  , CHANGE COLUMN `articles_last_modified` `articles_last_modified` DATETIME NULL DEFAULT NULL COMMENT '最后修改时间'  , CHANGE COLUMN `articles_date_available` `articles_date_available` DATETIME NULL DEFAULT NULL COMMENT '计划上线时间'  , CHANGE COLUMN `articles_status` `articles_status` TINYINT(1) NOT NULL DEFAULT '0' COMMENT '[状态] 0:草稿,1:发布的'  , CHANGE COLUMN `authors_id` `authors_id` INT(11) NULL DEFAULT NULL COMMENT '作者,与authors表对应'  ;
+
+#lwkai added 2012-05-11 
+ALTER TABLE `orders_product_eticket` ADD `is_read` TINYINT( 1 ) DEFAULT '0' NOT NULL  COMMENT '是否已查看电子票' ;
+
+#aben added 2012-5-14
+CREATE  TABLE `orders_problemcontrol_statusid` (
+  `id_orders_problemcontrol_statusid` INT NOT NULL AUTO_INCREMENT ,
+  `orders_status_id` INT NOT NULL COMMENT '订单状态ID' ,
+  `date_add` DATETIME NULL COMMENT '添加时间' ,
+  `is_deleted` CHAR(1) NOT NULL DEFAULT '0' COMMENT '是否删除,0-未删除,1-已删除.默认是0' ,
+  PRIMARY KEY (`id_orders_problemcontrol_statusid`) 
+)COMMENT = 'OP认为有问题的订单之订单状态列表';
+
+INSERT INTO `orders_problemcontrol_statusid` (`orders_status_id`,`date_add`,`is_deleted`)VALUES
+(100083,'2012-5-14 11:23','0'),(100012,'2012-5-14 11:23','0'),(100078,'2012-5-14 11:23','0'),(100135,'2012-5-14 11:23','0');
+
+CREATE TABLE `orders_remark` (
+  `orders_remark_id` INT NOT NULL AUTO_INCREMENT ,
+  `orders_id` INT NOT NULL DEFAULT 0 COMMENT '订单号' ,
+  `login_id` INT NOT NULL DEFAULT 0 COMMENT '登录人ID' ,
+  `remark` VARCHAR(100) NOT NULL DEFAULT '' COMMENT '备注内容' ,
+  `role` VARCHAR(20) NOT NULL DEFAULT '' COMMENT '角色' ,
+  `add_date` DATETIME NULL COMMENT '添加时间' ,
+  PRIMARY KEY (`orders_remark_id`) ,
+  INDEX `ix_orders_id` (`orders_id` ASC) 
+)COMMENT = '订单备注记录表';
+
+# howard added 2012-05-21
+ALTER TABLE `orders` ADD `order_up_no_change_status` TINYINT( 1 ) NOT NULL DEFAULT '0' COMMENT '已付款订单更新但没改变订单状态，默认为0';
+ALTER TABLE `orders_product_eticket` ADD `eticket_comment` TEXT NOT NULL COMMENT '参团须知内容';
+ALTER TABLE `orders_travel_companion` ADD `orders_products_id` INT NOT NULL COMMENT '对应的订单产品表ID' AFTER `orders_travel_companion_id` ;
+
+# howard added 2012-05-30
+INSERT INTO `configuration` (
+`configuration_title` ,
+`configuration_key` ,
+`configuration_value` ,
+`configuration_description` ,
+`configuration_group_id` ,
+`sort_order` ,
+`last_modified` ,
+`date_added` ,
+`use_function` ,
+`set_function`
+)
+VALUES (
+ '销售联盟开关', 'AFFILIATE_SWITCH', 'True', '是否启用销售联盟功能', '900', '0', NOW( ) , NOW( ) , NULL , 'tep_cfg_select_option(array(''True'', ''False''),'
+);
+
+ALTER TABLE `orders_products` ADD `products_departure_location_sent_to_provider_confirm` TINYINT( 1 ) NOT NULL DEFAULT '0' COMMENT '此记录的上车地址信息是否可以让供应商看到了。1为可以看' AFTER `products_departure_location` ;
+
+CREATE TABLE `orders_products_departure_location_history` (
+`history_id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`orders_products_id` INT NOT NULL COMMENT '订单产品ID号',
+`departure_location` VARCHAR( 1000 ) NOT NULL COMMENT '时间地址信息',
+`added_time` DATETIME NOT NULL COMMENT '记录添加的时间',
+`updated_by` INT NOT NULL COMMENT '更新地址信息的管理员ID，不是工号。',
+INDEX ( `orders_products_id` )
+) ENGINE = MYISAM COMMENT = '上车地址更新历史记录' ;
+
+# aben added 2012-06-08
+
+ALTER TABLE `visa_order_updatetimestring` ADD COLUMN `is_batch_added` VARCHAR(1) NULL DEFAULT '1'  AFTER `add_date` ;
+ALTER TABLE `visa_order_ordermain_from_lujia` ADD COLUMN `is_batch_added` VARCHAR(1) NULL DEFAULT '1'  AFTER `ORD_FROM_SUPID` ;
+
+#aben added 2012-6-15
+ALTER TABLE `visa_order_updatetimestring` DROP INDEX `update_time_string_UNIQUE` ;
+
+
+#Picture图片管理
+CREATE TABLE `picture` (
+`picture_id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`countries_id` INT NOT NULL COMMENT '所属国家ID',
+`zone_id` INT NOT NULL COMMENT '所属州省ID',
+`city_id` INT NOT NULL COMMENT '所属城市或景点ID',
+`picture_url` VARCHAR( 1000 ) NOT NULL COMMENT '图片url地址',
+`picture_url_thumb` VARCHAR( 1000 ) NOT NULL COMMENT '缩略图url地址',
+`picture_dir_file` VARCHAR( 1000 ) NOT NULL COMMENT '图片在系统内的物理地址',
+`added_time` DATETIME NOT NULL COMMENT '图片上传日期',
+`added_admin` INT NOT NULL COMMENT '图片上传人ID'
+) ENGINE = MYISAM COMMENT = '产品图片管理数据表';
+
+
+#lwkai added 2012-06-18
+ALTER TABLE `travel_companion` CHANGE `categories_id` `categories_id` VARCHAR( 200 ) NOT NULL DEFAULT '0'
+
+#aben added 2012-06-19
+CREATE  TABLE `visa_to_embassy_info` (
+  `visa_to_embassy_info_id` INT NOT NULL AUTO_INCREMENT ,
+  `VIS_ID` INT NULL COMMENT '编号' ,
+  `VIS_GRP_ID` INT NULL COMMENT '组编号' ,
+  `FRO_ORD_ID` INT NULL COMMENT '路嘉系统上的订单号' ,
+  `USR_ID` INT NULL COMMENT '路嘉系统上的用户ID' ,
+  `VIS_TYPE` VARCHAR(45) NULL COMMENT '签证类型' ,
+  `VIS_CDATE` DATETIME NULL ,
+  `VIS_MDATE` DATETIME NULL COMMENT '修改时间' ,
+  `VIS_STATUS` VARCHAR(45) NULL COMMENT '签证状态:  NEW(填写中) ,OK(填写完毕), REG_WAIT(等待注册), REG_START(注册开始), REG_OK(注册成功), REG_ERR(注册失败)' ,
+  `VIS_XML` TEXT NULL COMMENT '注册内容' ,
+  `VIS_IMG` VARCHAR(45) NULL COMMENT '注册用照片' ,
+  `VIS_PRT` VARCHAR(45) NULL COMMENT '确认页(PDF)' ,
+  `VIS_PRT1` VARCHAR(45) NULL COMMENT '注册内容截图（PDF）' ,
+  `VIS_DATA` VARCHAR(45) NULL ,
+  `ROB_ID` VARCHAR(45) NULL ,
+  `ROB_SDATE` DATETIME NULL ,
+  `ROB_EDATE` DATETIME NULL ,
+  `ROB_APP_ID` VARCHAR(45) NULL COMMENT '确认页编号' ,
+  `ROB_PWD` VARCHAR(45) NULL ,
+  `SUP_ID` VARCHAR(45) NULL ,
+  `VIS_GUID` VARCHAR(45) NULL ,
+  `VIS_RESULT` VARCHAR(45) NULL ,
+  `VIS_REQ_FILE_TAG` VARCHAR(45) NULL ,
+  `ADM_ID` VARCHAR(45) NULL COMMENT '路嘉的admin_id' ,
+  `add_date` DATETIME NULL COMMENT '在走四方添加记录的时间' ,
+  PRIMARY KEY (`visa_to_embassy_info_id`) )
+COMMENT = '签证信息提交到大使馆后路嘉主动返回的数据';
+
+#Howard added 2012-06-19
+ALTER TABLE `picture` ADD `picture_name` VARCHAR( 200 ) NOT NULL COMMENT '图片名' AFTER `picture_id` ;
+
+
+#aben added 2012-6-29
+CREATE  TABLE `visa_order_pay_history` (
+  `visa_order_pay_history_id` INT NOT NULL AUTO_INCREMENT ,
+  `update_time_string` VARCHAR(45) NULL ,
+  `ORD_PAY_ID` INT NULL COMMENT '支付编号' ,
+  `ORD_ID` INT NOT NULL COMMENT '订单编号' ,
+  `BAS_TAG` VARCHAR(45) NULL COMMENT '标记(支付方式)' ,
+  `SUP_ID` INT NULL COMMENT '供应商编号（走四方是2）' ,
+  `ORD_PAY_MONEY` DECIMAL(10,4) NULL COMMENT '支付  如果为0是未支付，如果和订单金额一致是支付完成' ,
+  `ORD_PAY_OK` VARCHAR(2) NULL COMMENT '支付是否完成（Y/N）' ,
+  `ORD_PAY_DATE` DATETIME NULL COMMENT '开始日期' ,
+  `ORD_PAY_OK_DATE` DATETIME NULL COMMENT '结束日期' ,
+  `ORD_PAY_MEMO` VARCHAR(45) NULL COMMENT '备注' ,
+  `ADM_ID` INT NULL COMMENT '操作员' ,
+  `ORD_PAY_PARA1` VARCHAR(45) NULL ,
+  `ORD_PAY_PARA2` VARCHAR(45) NULL ,
+  `ORD_PAY_PARA3` VARCHAR(45) NULL ,
+  `ORD_PAY_PARA4` VARCHAR(45) NULL ,
+  `ORD_PAY_PARA5` VARCHAR(45) NULL ,
+  `ORD_PAY_PARA6` VARCHAR(45) NULL ,
+  `ORD_PAY_PARA7` VARCHAR(45) NULL ,
+  `ORD_PAY_PARA8` VARCHAR(45) NULL ,
+  `ORD_PAY_PARA9` VARCHAR(45) NULL ,
+  `ORD_PAY_PARA10` VARCHAR(45) NULL ,
+  `ORD_OL_XML` TEXT NULL COMMENT '网关支付XML' ,
+  `ORD_OL_OID` VARCHAR(45) NULL COMMENT '网关支付形成的订单号' ,
+  `ORD_OL_PROVIDER` VARCHAR(45) NULL COMMENT '在线支付供应商(CAPINFO,ALIPAY,UNIONPAY)' ,
+  `is_batch_added` VARCHAR(2) NULL DEFAULT '1' ,
+  PRIMARY KEY (`visa_order_pay_history_id`) )
+COMMENT = '路嘉的签证订单付款记录表';
+
+ALTER TABLE `visa_temp` ADD COLUMN `add_date` TIMESTAMP AFTER `order`;
+
+#Howard added 2012-07-03
+ALTER TABLE `affiliate_affiliate` ADD `affiliate_coupon_code` VARCHAR( 50 ) NOT NULL COMMENT '用户的联盟优惠码';
+
+#aben added 2012-07-04
+CREATE TABLE `visa_order_communication` (
+  `visa_order_com_id` int(11) NOT NULL AUTO_INCREMENT,
+  `visa_order_com_root_id` int(11) NOT NULL DEFAULT '0' COMMENT 'visa交流的根ID(最顶级记录)',
+  `visa_order_com_parent_id` int(11) NOT NULL DEFAULT '0' COMMENT 'visa交流的父ID',
+  `visa_order_id` int(11) NOT NULL DEFAULT '0' COMMENT '签证订单号',
+  `admin_id` int(11) NOT NULL DEFAULT '0' COMMENT '后台ID,如果没有,则是从路嘉过来的',
+  `sender_name` varchar(45) DEFAULT NULL COMMENT '发送人的名字,如果是路嘉发送的,则这个栏位必填',
+  `title` varchar(45) NOT NULL COMMENT '主题',
+  `message` text NOT NULL COMMENT '内容',
+  `add_date` datetime NOT NULL,
+  `need_reply` varchar(1) NOT NULL COMMENT '是否需要回复:1需要,0不需要',
+  `is_replied` varchar(1) NOT NULL DEFAULT '0' COMMENT '是否已经回复',
+  `is_read` varchar(1) NOT NULL DEFAULT '0' COMMENT '是否已读',
+  `read_date` datetime DEFAULT NULL COMMENT '读取的时间',
+  PRIMARY KEY (`visa_order_com_id`)
+) DEFAULT CHARSET=latin1 COMMENT='签证订单之与路嘉交流表'
+
+#Howard added 2012-07-09 添加会员联盟ID到优惠券数据表
+ALTER TABLE `coupons` ADD `affiliate_id` INT NOT NULL DEFAULT '0' COMMENT '会员联盟ID号，默认为0' AFTER `coupon_id` ;
+
+ALTER TABLE `tour_question` ADD `sent_mail_count` INT NOT NULL DEFAULT '0' COMMENT '已经发了多少回复邮件给客人？' AFTER `customers_email` ;
+
+#Howard added 2012-07-13 添加具体页面的seo参数表
+CREATE TABLE `seo_for_page` (
+`s_id` INT NOT NULL COMMENT 'ID',
+`s_page_name` VARCHAR( 100 ) NOT NULL COMMENT '页面中文说明',
+`s_tpl_name` VARCHAR( 100 ) NOT NULL COMMENT '页面模板名',
+`s_meta_title` VARCHAR( 500 ) NOT NULL ,
+`s_meta_keywords` VARCHAR( 500 ) NOT NULL ,
+`s_meta_description` VARCHAR( 1000 ) NOT NULL ,
+UNIQUE (
+`s_tpl_name`
+)
+) ENGINE = MYISAM COMMENT = '具体页面的SEO相关信息，如果某页面在此表能找到就调用此表的SEO信息做为最终输出的TDK信息' 
+
+ALTER TABLE `orders_products` ADD `orders_products_payment_status_remarks` TEXT NOT NULL COMMENT '付款状态备注框，财务专用！其他人只能看！';
+
+
+#lwkai added 2012-07-23 给航班信息记录表中添加一个记录在出了电子票后客户是否有更改航班信息的字段，按要求 出了电子票之后，航班信息还可以再修改一次航班信息，
+ALTER TABLE `orders_product_flight` ADD `modify_count` INT NOT NULL DEFAULT '0' COMMENT '出了电子票之后是否更新了航班信息0未更新1更新';
+
+#Howard added 2012-09-25
+ALTER TABLE `orders_product_eticket` ADD `tour_arrangement_providers` LONGTEXT NOT NULL COMMENT '供应商填写的电子票行程信息，不发给客人仅供我们内部用' AFTER `tour_arrangement` ;
+
+ CREATE TABLE `usitrip_com`.`orders_product_eticket_tour_arrangement_providers_log` (
+`orders_product_eticket_tour_arrangement_providers_log_id` INT( 11 ) NOT NULL ,
+`orders_eticket_id` INT( 11 ) NOT NULL COMMENT '电子票id',
+`tour_arrangement_providers` LONGTEXT NOT NULL COMMENT '行程内容',
+`last_modified` DATETIME NOT NULL COMMENT '记录添加日期',
+PRIMARY KEY ( `orders_product_eticket_tour_arrangement_providers_log_id` ) ,
+INDEX ( `orders_eticket_id` )
+) ENGINE = MYISAM COMMENT = '供应商更改的订单行程记录历史表，注意只记供应商的。我们后台的更新表是在orders_eticket_log' ;
+
+ALTER TABLE `orders_product_eticket_tour_arrangement_providers_log` CHANGE `orders_product_eticket_tour_arrangement_providers_log_id` `orders_product_eticket_tour_arrangement_providers_log_id` INT( 11 ) UNSIGNED NOT NULL AUTO_INCREMENT ;
+ALTER TABLE `orders_product_eticket_tour_arrangement_providers_log` ADD `providers_agency_id` INT NOT NULL COMMENT '供应商id';
+
+#Howard added 2012-10-09
+ ALTER TABLE `orders` ADD `need_accounting_todo` TINYINT( 1 ) NOT NULL DEFAULT '0' COMMENT '此订单是否需要会计去处理1为需要';
+
+#lwkai added 2012-10-11
+CREATE TABLE IF NOT EXISTS `orders_product_eticket_guest` (
+  `guest_id` int(11) NOT NULL AUTO_INCREMENT,
+  `guest_name` varchar(200) NOT NULL COMMENT '参团人姓名',
+  `orders_products_id` int(11) NOT NULL COMMENT '订单产品ID',
+  `guest_dob` date NOT NULL COMMENT '参团人生日',
+  `passport_number` varchar(200) NOT NULL COMMENT '参团人护照号码',
+  `nationality` varchar(100) NOT NULL COMMENT '参团人国籍',
+  `body_weight` varchar(100) NOT NULL COMMENT '体重',
+  `guest_email` varchar(200) NOT NULL COMMENT '参团人邮箱',
+  `guest_gender` varchar(20) NOT NULL COMMENT '参团人性别',
+  `guest_body_height` varchar(100) NOT NULL COMMENT '参团人身高',
+  PRIMARY KEY (`guest_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='参团人员信息表' AUTO_INCREMENT=1 ;
+
+#Howard added 2012-10-13
+ ALTER TABLE `products_description` ADD `manual_related_products_title` VARCHAR( 30 ) NOT NULL COMMENT '手工关联产品标题。如：选乐园',
+ ADD `manual_related_products_content` VARCHAR( 1000 ) NOT NULL COMMENT '手工关联产品内容。格式产品id=>内容;id1=>内容1...如：123=>迪士尼;456=>海洋世界...';
+
+#lwkai added 2012-10-16
+ ALTER TABLE `links` ADD `display_on_home_page` TINYINT( 1 ) NOT NULL DEFAULT '0' COMMENT '是否显示在首页。1显示0不显示';
+
+#lwkai added 2012-10-17
+ ALTER TABLE `orders_product_eticket` ADD `visa_invitation_send_date` VARCHAR( 50 ) NOT NULL COMMENT '邀请函发送日期和工号';
+
+#lwkai added 2012-10-23
+ ALTER TABLE `orders_product_eticket_guest` CHANGE `guest_id` `guest_id` INT( 11 ) NOT NULL;
+ ALTER TABLE `orders_product_eticket_guest` DROP PRIMARY KEY;
+ ALTER TABLE `orders_product_eticket_guest` ADD INDEX ( `guest_id` ) ; 
+
+#wtj added 2012-10-30
+ALTER TABLE `orders_products` ADD `is_hide` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否隐藏';
+
+#Howard added 2012-11-12
+ALTER TABLE `orders` ADD `is_top` TINYINT( 1 ) NOT NULL DEFAULT '0' COMMENT '是否在订单列表中置顶，1为是0为不是' AFTER `orders_id` ;
+ALTER TABLE `customers_info` ADD `last_ip_address` VARCHAR( 15 ) NOT NULL COMMENT '最后一次登录的IP地址' AFTER `customers_info_register_ip` ;
+
+CREATE TABLE IF NOT EXISTS `orders_op_think_problems` (
+  `orders_id` int(11) NOT NULL COMMENT '订单id',
+  `admin_id` int(11) NOT NULL COMMENT '管理员id',
+  `added_date` datetime NOT NULL COMMENT '添加日期',
+  PRIMARY KEY (`orders_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='OP认为有问题的订单表。新的！';
+
+ CREATE TABLE `orders_products_sent_provider_not_re` (
+`orders_products_id` INT NOT NULL COMMENT '订单快照id',
+`admin_id` INT NOT NULL COMMENT '管理员id',
+`added_date` DATETIME NOT NULL COMMENT '添加日期',
+PRIMARY KEY ( `orders_products_id` )
+) ENGINE = MYISAM COMMENT = '已经下单给地接，地接未回复的产品表'; 
+
+#wtj add 2012-11-26
+ CREATE TABLE `notebook_history` (
+`notebook_history_id` INT( 10 ) NOT NULL AUTO_INCREMENT PRIMARY KEY COMMENT '回复历史ID',
+`notebook_id` INT( 10 ) NOT NULL COMMENT '留言ID',
+`replay_content` TEXT NOT NULL COMMENT '回复的内容',
+`replay_user` INT( 10 ) NOT NULL COMMENT '回复的人',
+`replay_time` DATETIME NOT NULL COMMENT '回复的时间',
+INDEX ( `notebook_id` )
+) ENGINE = MYISAM COMMENT = '留言板回复的历史记录'; 
+
+#wtj add 2012-11-28
+ CREATE TABLE `orders_remark_seller` (
+`orders_remark_seller_id` INT( 10 ) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`login_id` INT( 10 ) NOT NULL COMMENT '用户ID',
+`remark` TEXT NOT NULL COMMENT '备注内容',
+`orders_id` INT( 10 ) NOT NULL COMMENT '订单ID',
+`add_time` DATETIME NOT NULL COMMENT '添加时间',
+INDEX ( `orders_id` )
+) ENGINE = MYISAM COMMENT = '销售备忘'; 
+
+#Howard added 2012-11-12
+ALTER TABLE `orders` ADD `guest_emergency_cell_phone` VARCHAR( 30 ) NOT NULL COMMENT '客户的紧急联系电话' AFTER `orders_id` ;
+ALTER TABLE `orders` ADD `allow_pay_min_money` DECIMAL( 8, 2 ) NOT NULL COMMENT '每次允许支付的最小金额',
+ADD `allow_pay_min_money_deadline` DATETIME NOT NULL COMMENT '允许支付最小金额的有效期';
+
+ CREATE TABLE `orders_allow_pay_min_money_history` (
+`history_id` INT( 11 ) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`orders_id` INT( 11 ) NOT NULL COMMENT '订单号',
+`admin_id` INT( 11 ) NOT NULL COMMENT '管理员id',
+`allow_pay_min_money` VARCHAR( 50 ) NOT NULL COMMENT '最小金额值',
+`allow_pay_min_money_deadline` VARCHAR( 10 ) NOT NULL COMMENT '有效期',
+`added_time` DATETIME NOT NULL COMMENT '添加日期'
+) ENGINE = MYISAM COMMENT = '订单客户每次允许付款最小金额值的操作历史记录';
+ ALTER TABLE `orders_allow_pay_min_money_history` CHANGE `allow_pay_min_money` `allow_pay_min_money` DECIMAL( 8, 2 ) NOT NULL COMMENT '最小金额值',
+CHANGE `allow_pay_min_money_deadline` `allow_pay_min_money_deadline` DATETIME NOT NULL COMMENT '有效期';
+
+#wtj add 2012-12-10
+ALTER TABLE `orders_product_eticket_guest` ADD `is_send` TINYINT( 1 ) NOT NULL DEFAULT '0' COMMENT '是否已发送',
+ADD `money` DOUBLE NULL COMMENT '金额';
+ALTER TABLE `orders_product_eticket_guest` ADD `send_times` TINYINT( 3 ) NULL COMMENT '发送的次数';
+ALTER TABLE `orders_product_eticket_guest` CHANGE `send_times` `send_times` DATETIME NULL DEFAULT NULL COMMENT '发送的次数' 
+ALTER TABLE `orders_product_eticket_guest` CHANGE `send_times` `send_time` DATETIME NULL DEFAULT NULL COMMENT '发送的时间' 
+ALTER TABLE `orders_product_eticket_guest` ADD `uuid` VARCHAR( 13 ) NOT NULL ;
+
+ALTER TABLE `orders_product_eticket_guest` ADD `orders_product_eticket_guest_id` INT( 10 ) NOT NULL AUTO_INCREMENT PRIMARY KEY FIRST ;
+ALTER TABLE `orders_product_eticket_guest` ADD `connet_id_str` VARCHAR( 50 ) NOT NULL COMMENT '关联的ID字符串，用逗号隔开';
+ ALTER TABLE `orders_product_eticket_guest` ADD INDEX ( `orders_products_id` ) 
+
+
+#lwkai add 2012-12-12
+ALTER TABLE `affiliate_affiliate` CHANGE `affiliate_default_payment_method` `affiliate_default_payment_method` ENUM( 'Paypal', 'Bank', 'Alipay' ) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL COMMENT '用户选择的佣金接收方式'; 
+ALTER TABLE `affiliate_affiliate` ADD `affiliate_payment_alipay` VARCHAR( 64 ) NOT NULL COMMENT '支付宝帐号';
+ ALTER TABLE `affiliate_affiliate` CHANGE `affiliate_payment_check` `affiliate_payment_check` VARCHAR( 100 ) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL COMMENT '收款人姓名(Paypal)' ;
+ALTER TABLE `affiliate_affiliate` ADD `affiliate_payment_alipay_name` VARCHAR( 100 ) NOT NULL COMMENT '支付宝收款人姓名';
+ ALTER TABLE `affiliate_affiliate` CHANGE `affiliate_payment_paypal` `affiliate_payment_paypal` VARCHAR( 64 ) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL COMMENT '收款人的Paypal账号' ;
+
+#lwkai add 2012-12-13
+ALTER TABLE `affiliate_payment` ADD `is_delete` TINYINT( 1 ) NOT NULL DEFAULT '0' COMMENT '是否删除，1为删除';
+ALTER TABLE `affiliate_payment_status_history` ADD `is_delete` TINYINT( 1 ) NOT NULL DEFAULT '0' COMMENT '是否删除，1为删除';
+
+#Howard added 2012-12-14
+ALTER TABLE `orders` ADD `need_next_urgency` ENUM( 'general', 'urgent', 'very_urgent' ) NOT NULL DEFAULT 'general' COMMENT '提交给下一个处理人时的紧急程度' AFTER `need_next_admin` ;
+
+#lwkai add 2012-12-14
+ALTER TABLE `affiliate_payment` ADD `count_ids` VARCHAR( 200 ) NOT NULL COMMENT '原来该记录统计的affiliate_sales的ID号，序列化后的数组字符串';
+ALTER TABLE `affiliate_payment` ADD `delete_admin_id` INT(11) NOT NULL DEFAULT '0' COMMENT '删除人的ID号';
+ALTER TABLE `affiliate_payment` ADD `delete_date` DATETIME NOT NULL DEFAULT '0000-00-00-00:00:00' COMMENT '删除时间';
+ALTER TABLE `affiliate_payment` CHANGE `count_ids` `count_ids` TEXT CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL COMMENT '原来该记录统计的affiliate_sales的ID号，序列化后的数组字符串' ;
+ALTER TABLE `affiliate_payment_status_history` ADD `is_delete` TINYINT( 1 ) NOT NULL DEFAULT '0' COMMENT '是否删除，1为删除';
+
+
+#lwkai add 2012-12-18
+ ALTER TABLE `affiliate_payment` CHANGE `count_ids` `count_ids` TEXT CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL COMMENT '原来该记录统计的订单ID号和联盟ID号，序列化后的数组字符串'
+ ALTER TABLE `affiliate_payment` ADD `comment` TEXT NOT NULL COMMENT '备注'; 
+ 
+ ALTER TABLE `affiliate_payment_status_history` ADD `comment_new_value` TEXT NOT NULL COMMENT '新的备注' AFTER `affiliate_old_value` ;
+ALTER TABLE `affiliate_payment_status_history` ADD `comment_old_value` TEXT NOT NULL COMMENT '旧的备注' AFTER `comment_new_value` ;
+#wtj add 2012=12=18
+ALTER TABLE `tour_question` ADD `is_top` TINYINT( 1 ) NOT NULL DEFAULT '0' COMMENT '是否置顶';
+
+#Howard added 2012-12-19
+ALTER TABLE `newsletters` ADD `send_range` TINYINT( 1 ) NOT NULL DEFAULT '1' COMMENT '发送范围0为同意接收newsletters的用户,2为全站用户';
+ALTER TABLE `orders_payment_history` ADD `is_first_payment` ENUM( 'y', 'n' ) NOT NULL DEFAULT 'n' COMMENT '是否是首次付款';
+ALTER TABLE `orders_status_history` ADD `next_admin_id` INT NULL COMMENT '下一个处理人的管理员id';
+ALTER TABLE `orders_status_history` ADD `is_processing_done` TINYINT( 1 ) NOT NULL DEFAULT '0' COMMENT '下一个处理人是否处理完成，由该处理人自己点击完成';
+ALTER TABLE `orders_status_history` ADD INDEX ( `next_admin_id` );
+
+#wtj added 2013-01-04
+CREATE TABLE `internal_question` (
+`problem_id` INT( 10 ) NOT NULL ,
+`problem_content` TEXT NOT NULL COMMENT '问题内容',
+`ower_id` INT( 10 ) NOT NULL COMMENT '所有者ID',
+`add_time` DATETIME NOT NULL COMMENT '添加时间',
+`status` TINYINT( 1 ) NOT NULL COMMENT '状态',
+PRIMARY KEY ( `problem_id` )
+) ENGINE = MYISAM COMMENT = '商务中心内部的常见问题' ;
+
+ CREATE TABLE `internal_question_answer` (
+`answer_id` INT( 10 ) NOT NULL ,
+`problem_id` INT( 10 ) NOT NULL COMMENT '问题ID',
+`content` TEXT NOT NULL COMMENT '回答内容',
+`add_time` DATETIME NOT NULL COMMENT '添加时间',
+`ower_id` INT( 10 ) NOT NULL COMMENT '添加人',
+PRIMARY KEY ( `answer_id` )
+) ENGINE = MYISAM COMMENT = '商务中心内部的常见问题回答'; 
+ALTER TABLE internal_question ADD `coss_time` DATETIME NOT NULL ;
+ALTER TABLE internal_question CHANGE `problem_id` `problem_id` INT( 10 ) NOT NULL AUTO_INCREMENT;
+ALTER TABLE internal_question_answer CHANGE `answer_id` `answer_id` INT( 10 ) NOT NULL AUTO_INCREMENT;
+
+#Howard added 2013-01-10
+UPDATE `configuration` SET `configuration_title` = '最近一次成功生成联盟payment报表的时间',
+`configuration_key` = 'AFFILIATE_LAST_SUCCESS_BILLING_TIME',
+`configuration_value` = '2006-06-07 09:25:34',
+`configuration_description` = '最近一次成功生成联盟payment报表的时间' WHERE `configuration`.`configuration_id` =147 LIMIT 1 ;
+ALTER TABLE `affiliate_payment` ADD `affiliate_paid_date` DATE NOT NULL COMMENT '给联盟成员付款的日期' AFTER `affiliate_payment_status`;
+
+#wtj added 2013-1-16
+ALTER TABLE `internal_question` ADD `is_important` TINYINT( 1 ) NOT NULL COMMENT '重要程度：0=普通 1=重要 2=非常重要';
+ALTER TABLE `notebook` ADD `next_status` TINYINT NOT NULL DEFAULT '2' COMMENT '当前状态。1已解决，2未解决';
+#Howard added 2013-1-21
+CREATE TABLE IF NOT EXISTS `cpunc_sms_pick_up` (
+  `agency_id` int(11) NOT NULL COMMENT '供应商id',
+  `send_date` date NOT NULL COMMENT '准备发送的日期',
+  `sms_content` varchar(200) NOT NULL COMMENT '短信内容',
+  `sent_status` tinyint(1) NOT NULL COMMENT '发送此短信的日期时间',
+  `sent_date_time` datetime NOT NULL COMMENT '0为未发送，1为已经发送',
+  PRIMARY KEY (`agency_id`,`send_date`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='接机导游信息发送记录';
+
+#lwkai added 2013-1-23
+# 请删了之前的表，重创建这个表
+CREATE TABLE IF NOT EXISTS `cpunc_sms_hi8d_history` (
+  `h_id` int(11) NOT NULL AUTO_INCREMENT,
+  `msg_id` varchar(10) NOT NULL COMMENT '消息ID',
+  `to_phone` text NOT NULL COMMENT '电话号码',
+  `to_content` text NOT NULL COMMENT '短信内容',
+  `add_date` datetime NOT NULL COMMENT '发送日期',
+  `msg_status` int(11) NOT NULL DEFAULT '-1' COMMENT '接收状态0成功',
+  `check_data` datetime NOT NULL COMMENT '返回发送状态的日期时间',
+  PRIMARY KEY (`h_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COMMENT='hi8d美国国际短信发送历史';
+
+#Howard added 2013-02-20
+ ALTER TABLE `products_options_values` ADD `unified_update_log` TEXT NOT NULL COMMENT '点自动更新产品属性人的日志记录，分别是日期和管理员id';
+ 
+ #wtj added 2013-02-25
+ ALTER TABLE `coupons` ADD `check_email` VARCHAR( 200 ) NOT NULL COMMENT '需要检测的Email邮箱结束标记，用逗号（英文）隔开';
+ 
+#Howard added 2013-03-04
+CREATE TABLE IF NOT EXISTS `assessment_score` (
+  `assessment_score_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `score_value` int(11) NOT NULL DEFAULT '0' COMMENT '分值-负数为减分，默认加分',
+  `field_name` varchar(100) NOT NULL COMMENT '加分的订单、留言、邮件对应的订单状态更新历史表、短信发送记录表主键的字段名称如：orders_id、notebook_id、orders_status_history_id、cpunc_sms_history_id、h_id',
+  `field_name_id` int(11) NOT NULL COMMENT '字段名具体的id值，如订单的id、留言的id、邮件对应的订单状态更新历史表、短信发送记录表的主键id值等',
+  `score_status` tinyint(2) NOT NULL COMMENT '分数的状态id，默认为0（待定分数）,1已最终确认积分',
+  `admin_id` int(11) NOT NULL COMMENT '给予评分的客服id',
+  `auditor_admin_id` int(11) NOT NULL COMMENT '评分人id，系统id为96',
+  `added_date` datetime NOT NULL COMMENT '分数记录添加的日期',
+  `edited_date` datetime NOT NULL COMMENT '最后修改日期',
+  `score_content` tinytext NOT NULL COMMENT '分数备注',
+  PRIMARY KEY (`assessment_score_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COMMENT='内部考核评分记录表';
+
+#wtj added 2013-03-05
+insert into configuration_group set configuration_group_id=904,configuration_group_title='常用系统配置',configuration_group_description='关于系统要用到的各种小参数配置',sort_order=904;
+INSERT INTO `configuration` (
+`configuration_id` ,
+`configuration_title` ,
+`configuration_key` ,
+`configuration_value` ,
+`configuration_description` ,
+`configuration_group_id` ,
+`sort_order` ,
+`last_modified` ,
+`date_added` ,
+`use_function` ,
+`set_function`
+)
+VALUES (
+NULL , 'order页面刷新的时间', 'REFRESH_ORDERS_TIME', '30', '限制ORDERS页面的刷新时间', '904', '1', NULL , '0000-00-00 00:00:00', NULL , NULL
+);
+
+#Howard added 2013-03-07
+ALTER TABLE `assessment_score` ADD `score_type` TINYINT( 1 ) NOT NULL DEFAULT '0' COMMENT '积分类型：1为订单，2为留言本' AFTER `score_value` ;
+
+CREATE TABLE `orders_email_history` (
+`orders_email_history_id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`orders_id` INT NOT NULL COMMENT '订单编号',
+`admin_id` INT NOT NULL COMMENT '管理员id',
+`sent_date` DATETIME NOT NULL COMMENT '发送时间',
+`email_address` VARCHAR( 500 ) NOT NULL COMMENT '邮箱地址',
+`subject` VARCHAR( 300 ) NOT NULL COMMENT '邮件主题',
+`content` TEXT NOT NULL COMMENT '邮件内容',
+INDEX ( `orders_id` )
+) ENGINE = MYISAM COMMENT = '订单处理电子邮件发送记录' ;
+
+ALTER TABLE `assessment_score` ADD `score_type_id` INT NOT NULL DEFAULT '0' COMMENT '订单或留言的id值' AFTER `score_type` ;
+
+#wtj add 2013-3-12
+ALTER TABLE `internal_question` ADD `angency_id` VARCHAR( 200 ) NOT NULL COMMENT '地接商编号集合，用逗号隔开';
+
+#Howard added 2013-03-13
+ CREATE TABLE `orders_sms_history` (
+`orders_sms_history_id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`orders_id` INT NOT NULL COMMENT '订单号',
+`table_name` ENUM( 'cpunc_sms_hi8d_history', 'cpunc_sms_history' ) NOT NULL COMMENT '记录短信记录的数据表名称，目前有cpunc_sms_hi8d_history和cpunc_sms_history两个',
+`key_id_name` VARCHAR( 50 ) NOT NULL COMMENT '短信记录的数据表的主键名称',
+`key_id_value` INT NOT NULL COMMENT '短信记录的数据表的主键的id值',
+`added_date` DATETIME NOT NULL COMMENT '添加日期',
+`admin_id` INT NOT NULL COMMENT '管理员id'
+) ENGINE = MYISAM COMMENT = '订单处理手机短信息发送记录'; 
+
+ALTER TABLE `assessment_score` CHANGE `field_name` `field_name` VARCHAR( 100 ) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL COMMENT '加分的订单、留言、邮件对应的订单状态更新历史表、短信发送记录表主键的字段名称如：orders_id、notebook_id、orders_status_history_id、orders_sms_history_id' ;
+ 
+ #wtj add 2013-03-14
+ CREATE TABLE `orders_get_jobs` (
+`orders_jobs_id` INT( 10 ) NOT NULL COMMENT 'ID',
+`jobs_id` INT( 10 ) NOT NULL COMMENT '工号',
+`jobs_type` TINYINT( 1 ) NOT NULL COMMENT '类型，因为分了多时间段，分个类型',
+`is_get` TINYINT( 1 ) NOT NULL COMMENT '获取订单的工号标记'
+) ENGINE = MYISAM COMMENT = '获取订单工号的表，用于客服员工自动分配订单' ;
+ ALTER TABLE `orders_products` CHANGE `products_model` `products_model` VARCHAR( 32 ) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL COMMENT '订单团号' ;
+ALTER TABLE `orders_get_jobs` ADD PRIMARY KEY(`orders_jobs_id`);
+ ALTER TABLE `orders_get_jobs` CHANGE `orders_jobs_id` `orders_jobs_id` INT( 10 ) NOT NULL AUTO_INCREMENT COMMENT 'ID'; 
+
+#wtj add 2013-0320
+ALTER TABLE `orders` ADD `is_other_owner` TINYINT( 1 ) NOT NULL COMMENT '是否是掉单的归属';
+
+#Howard added 2013-03-24
+CREATE TABLE `orders_need_pick_up_sms` (
+`orders_need_pick_up_sms_id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`orders_id` INT NOT NULL COMMENT '订单号',
+`send_date` DATETIME NOT NULL COMMENT '需要发送的日期',
+`agency_id` INT NOT NULL COMMENT '供应商id',
+`mobile_phone` VARCHAR( 100 ) NOT NULL COMMENT '接收短信的手机号',
+`admin_id` INT NOT NULL COMMENT '管理员id',
+`added_date` DATETIME NOT NULL COMMENT '添加日期',
+INDEX ( `orders_id` , `agency_id` , `added_date` )
+) ENGINE = MYISAM COMMENT = '需要发接机短信的订单表';
+
+ALTER TABLE `orders` ADD `need_pick_up_sms` TINYINT( 1 ) NOT NULL DEFAULT '0' COMMENT '是否需要发送接机导游短信1为需要，0为不需要';
+
+ALTER TABLE `orders_payment_history` ADD `comment_flights` VARCHAR( 200 ) NOT NULL COMMENT '机票备注',
+ADD `comment_individuation` VARCHAR( 200 ) NOT NULL COMMENT '定制团备注',
+ADD `comment_other` VARCHAR( 200 ) NOT NULL COMMENT '其他备注';
+
+
+#wtj add 2013-03-25
+ALTER TABLE `notebook` ADD `owner_click` TINYINT NOT NULL DEFAULT '0' COMMENT '0为本人未点击，1为本人已点击',
+ADD `owner_click_time` DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '点击时间';
+
+#Howard added 2013-04-07
+ALTER TABLE `products` CHANGE `products_date_added` `products_date_added` DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '产品添加时间',
+CHANGE `products_last_modified` `products_last_modified` DATETIME NULL DEFAULT NULL COMMENT '产品最后修改时间' ;
+ALTER TABLE `products` ADD `products_price_last_modified` DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '价格最后修改时间' AFTER `products_last_modified` ;
+ALTER TABLE  `orders_products` ADD  `products_price_last_modified` DATETIME NOT NULL DEFAULT  '0000-00-00 00:00:00' COMMENT  '产品表中的价格最后更新日期';
+
+#Howard added 2013-04-15
+ ALTER TABLE `affiliate_affiliate` ADD `changed` TINYINT( 1 ) NOT NULL DEFAULT '0' COMMENT '是否已经Sisi转换成个性化的优惠码。1为是，0为否。所有AF-开头的都没转换' AFTER `verified`;
+ 
+#wtj added 2013-04-22
+ ALTER TABLE `orders` CHANGE `is_other_owner` `is_other_owner` TINYINT( 1 ) NOT NULL COMMENT '订单下单类型：1为客人自行下的单(无销售跟踪和工号链接)，0为正常(带有工号链接的)，2无工号链接但有销售跟踪记录的订单';
+
+CREATE TABLE `salestrack_auto_history` (
+`id` INT( 11 ) NOT NULL ,
+`login_id` INT( 11 ) NOT NULL ,
+`orders_id` INT( 11 ) NOT NULL ,
+`insert_time` DATETIME NOT NULL ,
+PRIMARY KEY ( `id` )
+) ENGINE = MYISAM COMMENT = '只用于自动订单的销售跟踪历史记录_临时创建的问题找到后要删除' ;
+
+ CREATE TABLE `salestrack_auto_sql_histoty` (
+`id` INT( 11 ) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`query_sql` TEXT NOT NULL ,
+`orders_id` INT( 11 ) NOT NULL ,
+`insert_time` DATETIME NOT NULL
+) ENGINE = MYISAM COMMENT = '记录自动订单，销售跟踪生产情况的SQL。只用于记录销售跟踪自动生成的时候_临时创建的问题找到后要删除';
+
+ ALTER TABLE `salestrack_auto_history` CHANGE `id` `id` INT( 11 ) NOT NULL AUTO_INCREMENT ;
+
+#Howard added 2013-04-22
+ ALTER TABLE `orders_session_info` ADD `affiliate_id` INT NOT NULL COMMENT '销售联盟ID';
+
+#Howard added 2013-05-09
+ ALTER TABLE `affiliate_sales` ADD `affiliate_purchase_supplement` TINYINT( 1 ) NOT NULL DEFAULT '0' COMMENT '是否是下单之后由客人查看订单时再补充的记录1为是0为不是';
+
+#wtj added 2013-05-09
+ ALTER TABLE `orders` ADD INDEX ( `customers_advertiser` );
+ ALTER TABLE `ad_source_clicks_stores` ADD INDEX ( `customers_advertiser` ); 
+
+
+#lwk added 2013-05-13 信用卡支付方式不能在某些团上使用
+insert into `configuration` (configuration_title, configuration_key, configuration_value, configuration_description, configuration_group_id, sort_order, date_added) values ('某些特定的产品不允许使用此支付方式', 'MODULE_PAYMENT_PAYPAL_NVP_SAMPLES_FORBID_IDS', '', '不允许使用该支付方式的产品ID填写在这里,ID与ID之间请用英文逗号分隔', '6', '10', now());
+#wtj added 2013-05-14
+ALTER TABLE `orders_message` ADD `read_time` DATETIME NOT NULL COMMENT '设为已读时间';
+
+#lwk added 2013-05-15
+ALTER TABLE `orders` ADD `is_packet_group` INT( 1 ) NOT NULL DEFAULT '0' COMMENT '是否是包团，1是0不是';
+
+#lwk added 2013-05-28
+ALTER TABLE  `orders` ADD  `point_lock` TINYINT( 1 ) NOT NULL DEFAULT  '0' COMMENT  '财务是否锁定本订单不再自动修改积分1锁定0非锁定';
+
+#lwk added 2013-06-03
+ALTER TABLE `orders_product_flight` ADD `admin_job_number` INT NOT NULL COMMENT '点击已阅的操作员工号',
+ADD `admin_time` DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '点击已阅的时间';
+
+#Howard added 2013-06-10
+ALTER TABLE `orders_products` ADD `is_step3` TINYINT( 1 ) NOT NULL DEFAULT '0' COMMENT '是否是在已有订单再添加的新产品1为是，默认为0';
+
+#lwk added 2013-06-14 PAYAPL支付方式不能在某些团上使用
+insert into `configuration` (configuration_title, configuration_key, configuration_value, configuration_description, configuration_group_id, sort_order, date_added) values ('某些特定的产品不允许使用此支付方式', 'MODULE_PAYMENT_PAYPAL_FORBID_IDS', '', '不允许使用该支付方式的产品ID填写在这里,ID与ID之间请用英文逗号分隔', '6', '10', now());
+
+#wtj added 2013-06-24
+ALTER TABLE `travel_companion` ADD `_type` TINYINT( 2 ) NOT NULL COMMENT '1跟团拼房，2自由行，3自驾游';
+ ALTER TABLE `travel_companion` CHANGE `_type` `_type` TINYINT( 2 ) NOT NULL DEFAULT '1' COMMENT '1跟团拼房，2自由行，3自驾游' ;
+
+#Howard added 2013-06-24
+ALTER TABLE `orders_payment_history` ADD `audited` TINYINT( 1 ) NOT NULL DEFAULT '0' COMMENT '是否已审核' AFTER `checked_time` ;
+ALTER TABLE `orders_payment_history` ADD `audited_admin_id` INT NOT NULL COMMENT '审核员id' AFTER `audited` ,
+ADD `audited_time` DATETIME NOT NULL COMMENT '审核时间' AFTER `audited_admin_id` ;
+
+#lwk added 2013-07-01
+ CREATE TABLE `products_update_price` (
+`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`admin_id` INT NOT NULL DEFAULT '0' COMMENT '操作更新的管理员ID',
+`time` DATETIME NOT NULL COMMENT '更新时间',
+INDEX ( `admin_id` )
+) ENGINE = MYISAM COMMENT = '产品价格更新历史' ;
+ALTER TABLE `products_update_price` ADD `type` VARCHAR( 50 ) NOT NULL COMMENT '更新版块';
+
+#wtj add 2013-06-28
+ALTER TABLE `travel_companion` ADD `end_place` VARCHAR( 64 ) NOT NULL COMMENT '结束地，用逗号隔开',
+ADD `travel_plan` TEXT NOT NULL COMMENT '行程计划';
+ 
+#Howard added 2013-07-01
+ALTER TABLE `orders_products` ADD `is_step3_accounting_already_know` TINYINT NOT NULL DEFAULT '0' COMMENT '财务是否已经知道此产品是step3的产品，默认为0';
+CREATE TABLE `orders_refund` (
+`orders_id` INT NOT NULL COMMENT '订单号',
+`last_time` DATETIME NOT NULL COMMENT '最后提交日期',
+`last_admin_id` INT NOT NULL COMMENT '最后提交的管理员id',
+`log` TEXT NOT NULL COMMENT '日志，包括提交时间和管理员id',
+PRIMARY KEY ( `orders_id` )
+) ENGINE = MYISAM COMMENT = '订单退款主表：此表数据从订单状态9-00提交过来的' ;
+
+#lwk added 2013-07-02
+CREATE TABLE  `orders_remarks_head` (
+`orders_remark_seller_id` INT( 10 ) NOT NULL AUTO_INCREMENT ,
+ `login_id` INT( 10 ) NOT NULL COMMENT  '用户ID',
+ `remark` TEXT NOT NULL COMMENT  '备注内容',
+ `orders_id` INT( 10 ) NOT NULL COMMENT  '订单ID',
+ `add_time` DATETIME NOT NULL COMMENT  '添加时间',
+PRIMARY KEY (  `orders_remark_seller_id` ) ,
+KEY  `orders_id` (  `orders_id` )
+) ENGINE = MYISAM DEFAULT CHARSET = latin1 COMMENT =  '主管订单备注';
+
+ALTER TABLE  `orders_remarks_head` CHANGE  `orders_remark_seller_id`  `orders_remarks_head_id` INT( 10 ) NOT NULL AUTO_INCREMENT;
+
+
+#lwk added 2013-07-05
+ALTER TABLE `products_update_price` ADD `products_id` INT NOT NULL COMMENT '产品ID';  #注 已在生产站数据库添加
+
+ALTER TABLE `products_update_price` ADD INDEX ( `products_id` ) ;  #注 已在生产站数据库添加
+
+#lwkai dded 2013-07-08
+CREATE TABLE `price_notification_validation` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `orders_id` int(11) NOT NULL,
+  `job_number` int(11) NOT NULL,
+  `click_time` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `orders_id` (`orders_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_german1_ci COMMENT='价格改变后，在订单中点击知道了的点击人与点击时间';
+
+
+CREATE TABLE `orders_status_urgency` (
+  `urgency_id` int(11) NOT NULL AUTO_INCREMENT,
+  `text` varchar(100) COLLATE latin1_german1_ci NOT NULL COMMENT '中文名称',
+  `name` varchar(100) COLLATE latin1_german1_ci NOT NULL,
+  `orders_status_id` int(11) NOT NULL COMMENT '订单状态ID',
+  `time` int(11) NOT NULL COMMENT '状态有效时长',
+  `color` varchar(50) COLLATE latin1_german1_ci NOT NULL COMMENT '颜色',
+  PRIMARY KEY (`urgency_id`),
+  KEY `status_id` (`orders_status_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_german1_ci COMMENT='订单状态紧急度' ;
+
+
+INSERT INTO `orders_status_urgency` (`urgency_id`, `text`, `name`, `orders_status_id`, `time`, `color`) VALUES
+(1, '普通', 'general', 100154, 72, '#000000'),
+(2, '紧急', 'urgent', 100154, 48, '#FF6600'),
+(3, '非常紧急', 'very_urgent', 100154, 24, '#FF0000');
+
+ALTER TABLE `orders` ADD `is_timeout` INT( 1 ) NOT NULL DEFAULT '0' COMMENT '是否已经超时,与状态有关';
+
+
+#Howard added 2013-07-08
+ALTER TABLE `products_attributes` ADD `multiplier` INT( 2 ) NOT NULL DEFAULT '1' COMMENT '倍数系数，前面字段的数值已经是乘以倍数后的结果不用再乘，此值用于批量更新属性价格时才用到';
+
+#lwkai added 2013-07-09
+DROP TABLE `orders_status_urgency`;
+DROP TABLE `orders_status_update`;
+CREATE TABLE IF NOT EXISTS `orders_status_urgency` (
+  `urgency_id` int(11) NOT NULL AUTO_INCREMENT,
+  `text` varchar(100) NOT NULL COMMENT '中文名称',
+  `name` enum('general','urgent','very_urgent') NOT NULL,
+  `orders_status_id` int(8) NOT NULL COMMENT '订单状态ID',
+  `time` int(11) NOT NULL COMMENT '状态有效时长',
+  `color` varchar(50) NOT NULL COMMENT '颜色',
+  PRIMARY KEY (`urgency_id`),
+  KEY `status_id` (`orders_status_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COMMENT='订单状态紧急度';
+INSERT INTO `orders_status_urgency` (`urgency_id`, `text`, `name`, `orders_status_id`, `time`, `color`) VALUES
+(1, '普通', 'general', 100154, 72, '#000000'),
+(2, '紧急', 'urgent', 100154, 48, '#FF6600'),
+(3, '非常紧急', 'very_urgent', 100154, 24, '#FF0000');
+
+CREATE TABLE `orders_status_update` (
+  `status` int(11) NOT NULL COMMENT '订单状态',
+  `urgency_name` enum('general','urgent','very_urgent') NOT NULL COMMENT '紧急度',
+  `change_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '改变时间',
+  `orders_id` int(11) NOT NULL COMMENT '订单ID',
+  PRIMARY KEY (`orders_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COMMENT='订单状态改变记录';
+
+#Howard added 2013-07-09
+ CREATE TABLE `orders_customers_cellphone_history` (
+`orders_customers_cellphone_history_id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`orders_id` INT NOT NULL COMMENT '订单号',
+`new_number` VARCHAR( 100 ) NOT NULL COMMENT '新号码',
+`old_number` VARCHAR( 100 ) NOT NULL COMMENT '旧号码',
+`add_date` DATETIME NOT NULL COMMENT '更新日期',
+`admin_id` INT NOT NULL DEFAULT '0' COMMENT '操作员id',
+INDEX ( `orders_id` )
+) ENGINE = MYISAM COMMENT = '订单客户紧急联系电话更新历史' ;
+
+ ALTER TABLE `orders` ADD `disabled_coupon_point` TINYINT NOT NULL DEFAULT '0' COMMENT '是否禁止再次使用积分和优惠券等优惠，由财务控制。1为禁止';
+ALTER TABLE `orders` ADD `is_again_paid` TINYINT( 1 ) NOT NULL DEFAULT '0' COMMENT '是否是再次付款需更新的订单，1为是，订单完成后这个值应该是0';
+ #wtj added 2013-07-11
+ ALTER TABLE `products` ADD `only_our_free` TEXT NULL DEFAULT NULL COMMENT '独家特惠';
+
+
+#lwkai added by 2013-07-11 
+CREATE TABLE `expert_group` (
+  `expert_id` int(11) NOT NULL AUTO_INCREMENT,
+  `expert_name` varchar(100) NOT NULL COMMENT '名字',
+  `expert_title` varchar(300) NOT NULL COMMENT '签名标题',
+  `agency_id` int(11) NOT NULL COMMENT '所属供应商的ID',
+  `expert_detail` text NOT NULL COMMENT '说明',
+  `expert_img` varchar(100) NOT NULL COMMENT '专家图片',
+  `expert_job_title` varchar(100) NOT NULL COMMENT '职称',
+  PRIMARY KEY (`expert_id`),
+  KEY `agency_id` (`agency_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COMMENT='设计专家团';
+
+#lwkai added by 2013-07-17
+ALTER TABLE `products` ADD `expert_ids` VARCHAR( 50 ) NOT NULL COMMENT '本线路的专家ID，多个ID用逗号隔开';
+ALTER TABLE `expert_group` ADD `expert_disabled` INT( 1 ) NOT NULL DEFAULT '1' COMMENT '是否开放此专家，即专家是否可用';
+
+#Howard added by 2013-07-19
+ALTER TABLE `products_attributes` ADD `last_price_updated` DATETIME NOT NULL COMMENT '价格最后修改时间';
+#Howard added by 2013-07-22
+ALTER TABLE `orders_customers_cellphone_history` ADD `checked_id` INT NOT NULL DEFAULT '0' COMMENT '审核员id，如果该记录已经审核就记录审核人员的id'; 
+#wtj added 2013-07-11
+ #ALTER TABLE `products` ADD `only_our_free` TEXT NULL DEFAULT NULL COMMENT '独家特惠';
+ #ALTER TABLE `products` ADD `only_our_free` TEXT NULL DEFAULT NULL COMMENT '独家特惠';
+ CREATE TABLE IF NOT EXISTS `orders_complaints` (
+  `complaints_id` int(11) NOT NULL AUTO_INCREMENT,
+  `orders_id` int(11) NOT NULL COMMENT '订单ID',
+  `supplier_id` int(11) NOT NULL COMMENT '供应商ID',
+  `severity` enum('普通','严重','非常严重') NOT NULL COMMENT '严重度',
+  `complaints_content` text NOT NULL COMMENT '投诉内容',
+  `complaints_step` enum('待处理','已跟进','已回复','已解决') NOT NULL COMMENT '进度',
+  `complaints_remark` text NOT NULL COMMENT '备注',
+  `add_time` datetime NOT NULL COMMENT '添加时间',
+  `jobs_id` int(11) NOT NULL COMMENT '工号',
+  `type` varchar(20) NOT NULL COMMENT '种类，1积分，2现金，3coupon,用逗号隔开',
+  `money` double NOT NULL COMMENT '金额',
+  `problem` enum('接机','导游','行程安排','其他') NOT NULL COMMENT '投诉问题1：接机，2导游，3行程安排，4其他',
+  PRIMARY KEY (`complaints_id`)
+) ENGINE=MyISAM COMMENT='订单投诉表' AUTO_INCREMENT=1 ;
+ALTER TABLE `orders_complaints` CHANGE `problem` `problem` ENUM( '接机', '导游', '行程安排', '其他' )  NOT NULL DEFAULT '其他' COMMENT '投诉问题1：接机，2导游，3行程安排，4其他';
+ALTER TABLE `orders_complaints` CHANGE `money` `money` DOUBLE NOT NULL DEFAULT '0.0' COMMENT '金额';
+ALTER TABLE `orders_complaints` CHANGE `type` `type` VARCHAR( 20 ) NULL COMMENT '种类，1积分，2现金，3coupon,用逗号隔开';
+ALTER TABLE `orders_complaints` CHANGE `complaints_remark` `complaints_remark` TEXT NULL COMMENT '备注';
+ALTER TABLE `orders_complaints` CHANGE `complaints_step` `complaints_step` ENUM( '待处理', '已跟进', '已回复', '已解决' ) NOT NULL DEFAULT '待处理' COMMENT '进度';
+ALTER TABLE `orders_complaints` CHANGE `severity` `severity` ENUM( '普通', '严重', '非常严重' ) NOT NULL DEFAULT '普通' COMMENT '严重度';
+ALTER TABLE `orders_complaints` CHANGE `complaints_content` `complaints_content` TEXT NULL COMMENT '投诉内容';
+ALTER TABLE `orders_complaints` ADD `travel_name` VARCHAR( 200 ) NULL DEFAULT NULL COMMENT '行程名称';
+ALTER TABLE `orders_complaints` ADD `orders_products_id` INT( 11 ) NULL DEFAULT NULL ;
+ALTER TABLE `orders_complaints` ADD `join_time` DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '参团时间';
+CREATE TABLE IF NOT EXISTS `orders_complaints_money` (
+  `orders_complaints_money_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `orders_complaints_type` enum('积分','现金','COUPON') NOT NULL COMMENT '赔付类型',
+  `orders_complaints_money` double NOT NULL COMMENT '赔付金额',
+  `orders_complaints_id` int(11) NOT NULL COMMENT '投诉ID',
+  PRIMARY KEY (`orders_complaints_money_id`)
+) ENGINE=MyISAM COMMENT='投诉的种类跟数量' AUTO_INCREMENT=1 ;
+
+
+#wtj add 2013-07-29
+ALTER TABLE `orders_status_history` ADD `score` INT NOT NULL DEFAULT '0' COMMENT '分数';
+ CREATE TABLE `orders_change_history_use_owner` (
+`ochuo_id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY COMMENT 'ID',
+`add_time` DATETIME NOT NULL COMMENT '添加时间',
+`user_id` INT NOT NULL COMMENT '添加人',
+`change_type` TINYINT( 2 ) NOT NULL COMMENT '类型',
+`is_drop` TINYINT( 1 ) NOT NULL DEFAULT '0' COMMENT '是否被删除'
+) ENGINE = MYISAM COMMENT = '订单修改记录，用于分配订单再次归属';
+ALTER TABLE `orders_change_history_use_owner` ADD `orders_id` INT NOT NULL COMMENT '订单ID';
+ ALTER TABLE `orders_change_history_use_owner` ADD INDEX ( `orders_id` ) ;
+
+#Howard added 2013-08-02
+ALTER TABLE `orders` ADD `is_deleted` TINYINT( 1 ) NOT NULL DEFAULT '0' COMMENT '是否已被删除，1为是。如果设置为已经删除则前、后台用户将看不到此订单（新站实现）';
+
+#Howard added 2013-08-05
+CREATE TABLE IF NOT EXISTS `products_default_order` (
+  `products_default_order_id` int(10) unsigned NOT NULL COMMENT '主键id',
+  `categories_id` int(11) NOT NULL COMMENT '产品目录',
+  `categories_tag` enum('vcpackages','tours','special') NOT NULL COMMENT '产品的列表标签有vcpackages(经典休闲游),tour(周边热点游),special(限时抢购团)三项',
+  `departure_city_id` int(11) NOT NULL COMMENT '出发城市',
+  `destination_city_id` int(11) NOT NULL COMMENT '目的地和结束地',
+  `day_range` int(11) NOT NULL COMMENT '天数',
+  `keyword` varchar(50) NOT NULL COMMENT '关键词',
+  `products_ids` varchar(1000) NOT NULL COMMENT '产品id列表,产品id以英文“,”号分隔',
+  PRIMARY KEY (`products_default_order_id`),
+  KEY `categories_id` (`categories_id`,`categories_tag`,`departure_city_id`,`destination_city_id`,`day_range`,`keyword`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='产品列表默认排序表';
+#wtj added 2013-08-12
+ CREATE TABLE `orders_complaints_remark` (
+`complaints_remark_id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY COMMENT 'ID',
+`complaints_remark` TEXT NOT NULL COMMENT '内容',
+`complaints_id` INT NOT NULL COMMENT '投诉ID'
+) ENGINE = MYISAM COMMENT = '投诉备注表'; 
+
+#lwkai 2013-08-07
+ALTER TABLE `affiliate_affiliate` ADD `coupon_code_verify` INT( 1 ) NOT NULL DEFAULT '1' COMMENT '优惠码审核1未审核0已通过';
+update `affiliate_affiliate` set `coupon_code_verify`=0;
+#wtj added 2013-08-13
+ALTER TABLE `orders_complaints_remark` ADD `add_time` DATETIME NOT NULL COMMENT '添加时间',
+ADD `add_user` INT NOT NULL COMMENT '添加人，工号';
+update `affiliate_affiliate` set `coupon_code_verify`=0;
+update `affiliate_affiliate` set `coupon_code_verify`=0;
+
+#Howard added  2013-08-12
+ALTER TABLE `products_default_order` CHANGE `products_default_order_id` `products_default_order_id` INT( 10 ) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主键id' ;
+ALTER TABLE `orders_products` ADD `before_departure_cost` DECIMAL( 15, 2 ) NOT NULL COMMENT '出团前底价' AFTER `china_bookkeeper_final_price_cost` ;
+ALTER TABLE `orders_products` ADD `step3_admin_id` VARCHAR( 11 ) NOT NULL DEFAULT '0' COMMENT 'step3添加者管理员id号，如果为0则不是step3添加的产品',
+ADD `add_date` DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '添加日期' ;
+#wtj added 2013-08-21
+ ALTER TABLE `notebook` CHANGE `next_status` `next_status` TINYINT( 4 ) NOT NULL DEFAULT '3' COMMENT '1已解决，2未解决,3待处理' ;
+ 
+#Howard zdded 2013-09-10
+ CREATE TABLE `orders_up_no_change_status_history` (
+`history_id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`orders_id` INT NOT NULL COMMENT '订单号',
+`order_up_no_change_status` INT NOT NULL COMMENT '具体设置的值，有0和1两种值',
+`admin_id` INT NOT NULL COMMENT '操作员的登录id',
+`add_time` DATETIME NOT NULL COMMENT '添加的日期',
+`update_explain` VARCHAR( 1000 ) NOT NULL COMMENT '更新的位置说明',
+INDEX ( `orders_id` )
+) ENGINE = MYISAM COMMENT = '未产生费用，有更新的已付款订单更新记录' ;
+
+#lwkai added 2013-09-12
+
+CREATE TABLE `products_regular_price` (
+  `products_id` int(11) NOT NULL,
+  `status` int(11) NOT NULL COMMENT '状态11为商品编辑已更新，21为商品经理已更新，20商品经理已核对，31为财务已更新，30财务审核生效',
+  `send_message` int(11) NOT NULL COMMENT '通知商务部',
+  `detail` text NOT NULL COMMENT '备注',
+  `single_ask` decimal(15,4) NOT NULL COMMENT '单人卖价',
+  `single_upset` decimal(15,4) NOT NULL COMMENT '单人底价',
+  `double_ask` decimal(15,4) NOT NULL COMMENT '双人卖价',
+  `double_upset` decimal(15,4) NOT NULL COMMENT '双人底价',
+  `single_room_ask` decimal(15,4) NOT NULL COMMENT '单人配房卖价',
+  `single_room_upset` decimal(15,4) NOT NULL COMMENT '单人配房底价',
+  `triple_ask` decimal(15,4) NOT NULL COMMENT '三人卖价',
+  `triple_upset` decimal(15,4) NOT NULL COMMENT '三人底价',
+  `four_ask` decimal(15,4) NOT NULL COMMENT '四人卖价',
+  `four_upset` decimal(15,4) NOT NULL COMMENT '四人底价',
+  `child_ask` decimal(15,4) NOT NULL COMMENT '小孩卖价',
+  `child_upset` decimal(15,4) NOT NULL COMMENT '小孩底价',
+  `prices_from` decimal(15,4) NOT NULL COMMENT '起价',
+  `gross_profit` decimal(15,4) NOT NULL COMMENT '毛利率',
+  `last_modify` datetime NOT NULL COMMENT '最后修改时间',
+  PRIMARY KEY (`products_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='常规产品价格维护表';
+
+CREATE TABLE `products_regular_price_history` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `products_id` int(11) NOT NULL,
+  `status` int(11) NOT NULL COMMENT '状态11为商品编辑已更新，21为商品经理已更新，20商品经理已核对，31为财务已更新，30财务审核生效',
+  `send_message` int(11) NOT NULL COMMENT '通知商务部',
+  `detail` text NOT NULL COMMENT '备注',
+  `single_ask` decimal(15,4) NOT NULL COMMENT '单人卖价',
+  `single_upset` decimal(15,4) NOT NULL COMMENT '单人底价',
+  `double_ask` decimal(15,4) NOT NULL COMMENT '双人卖价',
+  `double_upset` decimal(15,4) NOT NULL COMMENT '双人底价',
+  `single_room_ask` decimal(15,4) NOT NULL COMMENT '单人配房卖价',
+  `single_room_upset` decimal(15,4) NOT NULL COMMENT '单人配房底价',
+  `triple_ask` decimal(15,4) NOT NULL COMMENT '三人卖价',
+  `triple_upset` decimal(15,4) NOT NULL COMMENT '三人底价',
+  `four_ask` decimal(15,4) NOT NULL COMMENT '四人卖价',
+  `four_upset` decimal(15,4) NOT NULL COMMENT '四人底价',
+  `child_ask` decimal(15,4) NOT NULL COMMENT '小孩卖价',
+  `child_upset` decimal(15,4) NOT NULL COMMENT '小孩底价',
+  `prices_from` decimal(15,4) NOT NULL COMMENT '起价',
+  `gross_profit` decimal(15,4) NOT NULL COMMENT '毛利率',
+  `modify_time` datetime NOT NULL COMMENT '修改时间',
+  `modify_user_id` int(11) NOT NULL COMMENT '修改人的ID',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COMMENT='常规产品价格维护历史表';
+
+# Howard added by 2013-09-16
+ ALTER TABLE `orders_product_eticket_tour_arrangement_providers_log` ADD `providers_email_address` VARCHAR( 100 ) NOT NULL COMMENT '供应商登录的账号邮箱';
+ 
+
+#lwkai added by 2013-10-08
+CREATE TABLE `remark` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `remark` text NOT NULL,
+  `admin_id` int(11) NOT NULL,
+  `type` varchar(50) NOT NULL,
+  `time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COMMENT='备注(各大操作备注)';
+
+#wtj added by 2013-10-10
+ALTER TABLE `tour_travel_agency` ADD `complaints_number` INT( 10 ) NOT NULL DEFAULT '0' COMMENT '投诉的数目';
+
+#lwkai added by 2013-10-10
+ CREATE TABLE `admin_login_logs` (
+`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`ip` VARCHAR( 15 ) NOT NULL COMMENT '登录IP',
+`admin_id` INT NOT NULL COMMENT '登录用户ID',
+`time` DATETIME NOT NULL COMMENT '登录时间'
+) ENGINE = MYISAM COMMENT = '管理员登录日志'; 
+
+#Howard added by 2013-10-21
+ALTER TABLE `orders_sms_history` ADD `sms_content` TEXT NOT NULL COMMENT '订单短信内容',
+ADD `sms_phone` TEXT NOT NULL COMMENT '接收短信的电话号码';
+
+#Howard added by 2013-10-24
+ALTER TABLE `affiliate_affiliate` ADD `affiliate_type` TINYINT( 1 ) NOT NULL DEFAULT '0' COMMENT '推广类型。0为普通，1为链接加优惠码推广。';
+
+#wtj add by 2013-10-29
+CREATE TABLE `raiders_article` (
+`article_id` INT( 11 ) NOT NULL AUTO_INCREMENT PRIMARY KEY COMMENT 'ID',
+`article_title` VARCHAR( 254 ) NOT NULL COMMENT '标题',
+`article_content` TEXT NOT NULL COMMENT '内容',
+`article_type` INT( 11 ) NOT NULL COMMENT '文章类别',
+`article_from` VARCHAR( 254 ) NOT NULL COMMENT '来源于',
+`add_time` DATETIME NOT NULL COMMENT '添加时间',
+`tags_number` BIGINT( 20 ) NOT NULL COMMENT '用于存储标签的数字',
+`is_show` TINYINT( 1 ) NOT NULL DEFAULT '0' COMMENT '是否显示，1为现实，0为不显示，默认是不显示的'
+) ENGINE = MYISAM COMMENT = '攻略文章';
+
+ CREATE TABLE `raiders_tags` (
+`tags_id` INT( 11 ) NOT NULL AUTO_INCREMENT PRIMARY KEY COMMENT 'id',
+`tags_name` VARCHAR( 254 ) NOT NULL COMMENT '标签名称',
+`tags_url` VARCHAR( 254 ) NOT NULL COMMENT '标签链接地址',
+`tags_number` BIGINT( 20 ) NOT NULL COMMENT '标签数字'
+) ENGINE = MYISAM COMMENT = '攻略标签';
+
+ CREATE TABLE `raiders_type` (
+`type_id` INT( 11 ) NOT NULL COMMENT 'ID',
+`type_name` VARCHAR( 254 ) NOT NULL COMMENT '类型名称',
+`parent_id` INT( 11 ) NOT NULL DEFAULT '0' COMMENT '父类ID'
+) ENGINE = MYISAM COMMENT = '攻略类型' ;
+
+ CREATE TABLE `raiders_article_tags` (
+`article_tags_id` INT( 11 ) NOT NULL ,
+`article_id` INT( 11 ) NOT NULL COMMENT '文章ID',
+`tags_id` INT( 11 ) NOT NULL COMMENT '标签ID',
+PRIMARY KEY ( `article_tags_id` ) ,
+INDEX ( `article_id` , `tags_id` )
+) ENGINE = MYISAM COMMENT = '攻略文章标签' ;
+
+ ALTER TABLE `raiders_type` ADD PRIMARY KEY ( `type_id` );
+ 
+  ALTER TABLE `raiders_type` CHANGE `type_id` `type_id` INT( 11 ) NOT NULL AUTO_INCREMENT COMMENT 'ID' ;
+
+  ALTER TABLE `raiders_article` ADD `add_user` VARCHAR( 16 ) NOT NULL COMMENT '添加人工号';
+
+  
+  ALTER TABLE `raiders_article` ADD `tags_id_str` VARCHAR( 128 ) NOT NULL COMMENT 'tags UID 的字符串',
+ADD `update_time` DATETIME NOT NULL COMMENT '更新时间';
+
+
+ALTER TABLE `raiders_article` ADD FULLTEXT (
+`tags_id_str`
+);
+
+ALTER TABLE `raiders_tags` ADD `tags_uid` VARCHAR( 12 ) NOT NULL COMMENT 'tags 的 UID';
+
+
+
+##wtj add 2013-11-12
+ALTER TABLE `orders` ADD `owner_id_change_str` VARCHAR( 128 ) NULL COMMENT '订单归属自动改变添加的描述',
+ADD `owner_is_change` TINYINT( 1 ) NOT NULL DEFAULT '0' COMMENT '用于判断订单是否自动改变，0为没有，1为改变了';
+
+#Howard added by 2013-11-13 
+ALTER TABLE `countries` ADD `countries_name_zh` VARCHAR( 50 ) NOT NULL COMMENT '国家的中文名称' AFTER `countries_name` ;
+
+#wtj added by 2013-11-15
+ ALTER TABLE `raiders_article` ADD `article_desc` VARCHAR( 200 ) NOT NULL COMMENT '文章的DESC',
+ADD `article_key_words` VARCHAR( 200 ) NOT NULL COMMENT '文章的key_words';
+
+#wtj added by 2013-10-25
+ALTER TABLE `raiders_article` ADD `release_time` DATETIME NOT NULL COMMENT '自动发布时间';
+ ALTER TABLE `raiders_article` ADD INDEX ( `release_time` ) ;
+  ALTER TABLE `raiders_article` CHANGE `is_show` `is_show` TINYINT( 1 ) NOT NULL DEFAULT '0' COMMENT '是否显示，1为现实，0为不显示，默认是不显示的,2为待显示' ;
+ALTER TABLE `internal_question` ADD `travel_code` VARCHAR( 64 ) NOT NULL COMMENT '旅游团号',
+ADD `problem_type` TINYINT( 2 ) NOT NULL COMMENT 'array("问题类别","接送机","乘车点","用餐","导游","酒店","费用","线路","支付","保险","签证","订购问题","走四方资质","安全","订购协议");';
+
+#Howard added by 2013-11-28
+ALTER TABLE `categories` ADD `categories_recommended_tours_ids_m` VARCHAR( 300 ) NOT NULL COMMENT '（手机版）优先在本目录显示的产品id' AFTER `categories_recommended_tours_ids` ;
+
+#Howard added by 2013-12-05
+CREATE TABLE `ip_blacklist` (
+`ip` CHAR( 15 ) NOT NULL COMMENT 'ip地址',
+`is_disable` TINYINT( 1 ) NOT NULL COMMENT '是否已封1为已封',
+PRIMARY KEY ( `ip` )
+) ENGINE = MYISAM COMMENT = 'ip黑名单列表，系统防火墙会根据此这些ip来封锁' ;
+
+#lwk added by 2013-12-24
+ALTER TABLE `orders_products` ADD `supplier_deal_with_state` TINYINT(1) NOT NULL DEFAULT '0' COMMENT '下单给地接后，标记最后哪方发言了0表示都没发言，1表示我方发言，2表示地接发言了。也就是我们与地接的对话状态';
+ALTER TABLE `orders_products` ADD `provider_order_status_id` INT(11) NOT NULL DEFAULT'0' COMMENT '地接处理状态';

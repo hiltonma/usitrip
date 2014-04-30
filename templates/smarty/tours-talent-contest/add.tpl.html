@@ -1,0 +1,554 @@
+{:include file="tours-talent-contest/header.tpl.htm":}
+<body onLoad="showFlash();"> 
+
+<div id="wrap">
+  <div class="daren">
+    <div class="darenTop"><img src="image/daren/daren_top_1.jpg" alt="{:db_to_html text=旅游体验师大赛:}" usemap="#Map" />
+      <map name="Map" id="Map">
+        <area shape="rect" coords="27,6,231,57" href="{:$severname:}" alt="" />
+      </map>
+    </div>
+    <div class="darenTop"><img src="image/daren/daren_top_2.jpg" alt="{:db_to_html text=旅游体验师大赛:}" /></div>
+    <div class="darenTop"><img src="image/daren/daren_top_3.jpg" alt="{:db_to_html text=旅游体验师大赛:}" usemap="#Map2" />
+      <map name="Map2" id="Map2">
+        <area shape="rect" coords="401,50,517,93" href="trip_player.php?mod=apply" alt="" />
+      </map>
+    </div>
+    <div class="darenNav">
+      <div class="darenNavLeft"></div>
+      <ul>
+        <li><a href="trip_player.php">{:db_to_html text=活动首页:}</a></li>
+        <li class="on"><a href="trip_player.php?mod=list">{:db_to_html text=所有作品:}</a></li>
+        <li><a href="trip_player.php?mod=prize">{:db_to_html text=奖项设置:}</a></li>
+        {:if $customer_id > 0:}
+        <li><a href="trip_player.php?mod=homepage&id={:$customer_id:}">{:db_to_html text=个人主页:}</a></li>
+        {:/if:}
+		<li><a href="trip_player.php?mod=finalists"><span>{:db_to_html text=获奖名单:}</span></a></li>
+      </ul>
+      <div class="share">
+        <div class="bshare-custom"><a title="{:db_to_html text=分享到新浪微博:}" class="bshare-sinaminiblog"></a>
+                    <a title="{:db_to_html text=分享到开心网:}" class="bshare-kaixin001"></a>
+                    <a title="{:db_to_html text=分享到人人网:}" class="bshare-renren"></a>
+                    <a title="{:db_to_html text=分享到facebook:}" class="bshare-facebook"></a>
+                    <a title="{:db_to_html text=分享到twitter:}" class="bshare-twitter"></a>
+                    <a title="{:db_to_html text=分享到qq空间:}" class="bshare-qzone"></a>
+                    <a title="{:db_to_html text=更多平台:}" class="bshare-more">{:db_to_html text=更多:}>></a> </div>
+        {:db_to_html text=分享到：:} </div>
+      <div class="darenNavRight"></div>
+    </div>
+    <div class="darenProcess darenProcess3">
+      <div class="step1">{:db_to_html text=注册/登录:}</div>
+      <div class="step2">{:db_to_html text=填写您的基本信息:}</div>
+      <div class="step3">{:db_to_html text=提交作品:}</div>
+    </div>
+    <div class="darenItem darenWrap" id="postWorks">
+      <h2><span>{:db_to_html text=提交作品:}</span></h2>
+      <div class="darenItemCon">
+        <ul class="newArticle">
+          <li>
+            <label>{:db_to_html text=作品标题：:}</label>
+            <input type="text" class="text textLong"  name="works_name" id="works_name" value="{:db_to_html text=$works.works_title:}" onBlur="this.value = simplized(this.value);"/>
+          </li>
+          <li>
+              <label>作品封面：</label>
+              <dl class="uploadImg">
+                 <dt id="need_up_img_id">{:if $works.works_frontcover_thumb != '':}<img src="{:$works.works_frontcover_thumb:}" width="114" height="114"/>{:else:}<img src="image/daren_uploadphoto.gif"/>{:/if:}</dt>
+                 <dd>
+				 	<a id="ALinkAddPhoto"  class="btn btnGrey" href="javascript:void(0)"><div id="divAddPhoto">{:db_to_html text=加载中…:}</div></a>
+					<div class="photoUploading"><ul id="ulPhotoList"></ul></div>
+				 </dd>
+                 <dd>
+                    <a href="javascript:" class="btn btnOrange" onClick="upload();"><button>开始上传</button></a>
+                 </dd>
+                <dd>允许上传jpg,gif,png格式的图片！</dd>
+               </dl>
+           </li>
+		   <input type="hidden" name="works_frontcover" id="works_frontcover" value="{:$works.works_frontcover:}"  />
+		   <input type="hidden" name="works_frontcover_thumb" id="works_frontcover_thumb" value="{:$works.works_frontcover_thumb:}"  />
+		  	<input type="hidden" name="work_id" id="work_id" value="{:$works.works_id:}" />
+			<input type="hidden" name="works_edit_num" id="works_edit_num" value="{:$works.works_edit_num:}" />
+			<input type="hidden" id="ref_action" value="{:$ref_action:}"/>
+			<textarea disabled="disabled" style="display:none" id="works_content" name="works_content">{:$works.works_content:}</textarea>
+		  	
+          <li>
+            <label>{:db_to_html text=内容：:}</label>
+            <input id="content" style="display: none" type="hidden" name="FCKeditor1">
+            <input id="content___Config" style="display:none" type="hidden">
+            <iframe id="content___Frame"    src="js/FCKeditor/editor/fckeditor.html?InstanceName=FCKeditor1&amp;Toolbar=Default" frameBorder=0 width="800" scrolling=no height=300></iframe>
+          </li>
+        </ul>
+        <div class="btnCenter"><a href="javascript:" class="btn btnOrange" onClick="subworks()" >
+          <button>{:db_to_html text=提交:}</button>
+          </a></div>
+      </div>
+    </div>
+    <div class="darenBot"></div>
+  </div>
+</div>
+<div class="popup" id="PopupSuccess">
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" class="popupTable">
+    <tr>
+      <td class="topLeft"></td>
+      <td class="side"></td>
+      <td class="topRight"></td>
+    </tr>
+    <tr>
+      <td class="side"></td>
+      <td class="con"><div class="popupCon" id="PopupSuccessCon" style=" width:400px">
+          <div class="success">
+            <div style="float:left; margin:15px 0 0 20px;"><img src="image/success.jpg" /></div>
+            <div style=" margin-left:100px; padding:30px 0; line-height:24px;">{:db_to_html text=发布成功!您的文章正在审核中，请稍后查看!:}<br/>
+            </div>
+            <div class="btnCenter">
+			<a class="btn btnOrange" id="viewwork" href="trip_player.php?mod=view&id={:$works.works_id:}">
+              {:db_to_html text=查看文章:}
+            </a>			 
+			 &nbsp;&nbsp;<a class="btn btnOrange" href="trip_player.php?mod=add" id="A1">
+              {:db_to_html text=继续添加:}
+              </a>&nbsp;&nbsp;<a class="btn btnGrey" href="javascript:;" id="PopupSuccessClose">
+              {:db_to_html text=关闭:}
+              </a><br/>
+            </div>
+          </div>
+        </div></td>
+      <td class="side"></td>
+    </tr>
+    <tr>
+      <td class="botLeft"></td>
+      <td class="side"></td>
+      <td class="botRight"></td>
+    </tr>
+  </table>
+</div>
+<div class="popup" id="PopupEditSuccess">
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" class="popupTable">
+    <tr>
+      <td class="topLeft"></td>
+      <td class="side"></td>
+      <td class="topRight"></td>
+    </tr>
+    <tr>
+      <td class="side"></td>
+      <td class="con"><div class="popupCon" id="PopupEditSuccessCon" style=" width:400px">
+          <div class="success">
+            <div style="float:left; margin:15px 0 0 20px;"><img src="image/success.jpg" /></div>
+            <div style=" margin-left:100px; padding:30px 0; line-height:24px;">{:db_to_html text=修改成功!:}<br/>
+            </div>
+            <div class="btnCenter">
+			<a class="btn btnOrange" id="viewwork" href="trip_player.php?mod=view&id={:$works.works_id:}">
+              {:db_to_html text=查看文章:}
+            </a>			 
+			 &nbsp;&nbsp;<a class="btn btnOrange" href="trip_player.php?mod=add" id="A1">
+              {:db_to_html text=继续添加:}
+              </a>&nbsp;&nbsp;<a class="btn btnGrey" href="javascript:;" id="PopupEditSuccessClose">
+              {:db_to_html text=关闭:}
+              </a><br/>
+            </div>
+          </div>
+        </div></td>
+      <td class="side"></td>
+    </tr>
+    <tr>
+      <td class="botLeft"></td>
+      <td class="side"></td>
+      <td class="botRight"></td>
+    </tr>
+  </table>
+</div>
+<div class="popup" id="PopupSuccess">
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" class="popupTable">
+    <tr>
+      <td class="topLeft"></td>
+      <td class="side"></td>
+      <td class="topRight"></td>
+    </tr>
+    <tr>
+      <td class="side"></td>
+      <td class="con"><div class="popupCon" id="PopupSuccessCon" style=" width:400px">
+          <div class="success">
+            <div style="float:left; margin:15px 0 0 20px;"><img src="image/success.jpg" /></div>
+            <div style=" margin-left:100px; padding:30px 0; line-height:24px;">{:db_to_html text=投票成功！:}</div>
+            <div class="btnCenter"><a class="btn btnGrey" href="javascript:;" id="PopupSuccessClose">
+              <button type="submit">关 闭</button>
+              </a></div>
+          </div>
+        </div></td>
+      <td class="side"></td>
+    </tr>
+    <tr>
+      <td class="botLeft"></td>
+      <td class="side"></td>
+      <td class="botRight"></td>
+    </tr>
+  </table>
+</div>
+<div class="popup" id="PopupSuccess">
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" class="popupTable">
+    <tr>
+      <td class="topLeft"></td>
+      <td class="side"></td>
+      <td class="topRight"></td>
+    </tr>
+    <tr>
+      <td class="side"></td>
+      <td class="con"><div class="popupCon" id="PopupSuccessCon" style=" width:400px">
+          <div class="success">
+            <div style="float:left; margin:15px 0 0 20px;"><img src="image/success.jpg" /></div>
+            <div style=" margin-left:100px; padding:30px 0; line-height:24px;">{:db_to_html text=投票成功！:}</div>
+            <div class="btnCenter"><a class="btn btnGrey" href="javascript:;" id="PopupSuccessClose">
+              <button type="submit">{:db_to_html text=关闭:}</button>
+              </a></div>
+          </div>
+        </div></td>
+      <td class="side"></td>
+    </tr>
+    <tr>
+      <td class="botLeft"></td>
+      <td class="side"></td>
+      <td class="botRight"></td>
+    </tr>
+  </table>
+</div>
+<div class="popup" id="PopupError">
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" class="popupTable">
+    <tr>
+      <td class="topLeft"></td>
+      <td class="side"></td>
+      <td class="topRight"></td>
+    </tr>
+    <tr>
+      <td class="side"></td>
+      <td class="con"><div class="popupCon" id="PopupErrorCon" style=" width:400px">
+          <div class="success">
+            <div style="float:left; margin:15px 0 0 20px;"><img src="image/popup_alert.jpg" /></div>
+            <div style=" margin-left:100px; padding:30px 0; line-height:24px;">{:db_to_html text=投票失败！:}<br />
+              {:db_to_html text=您今天已经超过投票限制。:}</div>
+            <div class="btnCenter"><a class="btn btnGrey" href="javascript:;" id="PopupErrorClose">
+              <button type="submit">{:db_to_html text=关闭:}</button>
+              </a></div>
+          </div>
+        </div></td>
+      <td class="side"></td>
+    </tr>
+    <tr>
+      <td class="botLeft"></td>
+      <td class="side"></td>
+      <td class="botRight"></td>
+    </tr>
+  </table>
+</div>
+<!-- 压缩上传封面 -->
+
+<script src="includes/javascript/zip_upload/swfobject.js" type="text/javascript"></script>
+<script type="text/javascript">
+        var eAddPhoto;
+        var eAppendPhoto;
+        var jPhotoList;
+        var jProcess;
+        var allSize = 0;
+        var doneCount = 0;
+        var infos = [];
+        var isInited = false;
+        function showFlash() {
+			jPhotoList = jQuery("#ulPhotoList");
+            //alert(jQuery("#ulPhotoList").html());			
+            jSelect = jQuery("#divSelect");
+            jProcess = jQuery("#divProcess");
+            jDone = jQuery("#divDone");
+			
+            var vars = {
+                serverUrl: "ajax_upload_frontcover.php",
+                jsUpdateInfo: "jsUpdateInfo",
+                imgWidth: 800,
+                imgHeight: 800,
+                imgQuality: 80
+            }
+            var vars1 = vars;
+            vars1.flashID = "divAddPhoto";
+            vars1.labelColor = "#000000";
+            vars1.labelText = "{:db_to_html text=浏览:}";
+            vars1.hasUnderLine = false;
+            swfobject.embedSWF("includes/javascript/zip_upload/PhotoUploader.swf", "divAddPhoto", "80", "25", "10.0.0", "includes/javascript/zip_upload/expressInstall.swf", vars1, { wmode: "Transparent" });                       
+
+        }
+		function jsUpdateInfo(flashID, name, status, size, message) {
+			
+            var index = (status == "selected" ? infos.length : getIndexByName(name));
+            if (status == "selected") {
+                infos=[];
+				if (infos.length == 0) {
+                    
+                    allSize = 0;
+                    //doneCount = 0;
+                    jPhotoList.children().remove();
+                    //showPopup('popupUpload_Load', 'popupConUpload');                    
+                    //jDone.hide();
+                    jSelect.show();
+                    jQuery("#divAppendPhoto").height(20);
+                }
+                if (getIndexByName(name) >= 0) {
+                    alert(name + "已存在!");
+                    return;
+                }
+                
+				if(infos.length >= 1){
+                    //alert("<?php echo db_to_html("一次只能上传100张!");?>");
+                    return;
+				}else{
+                    
+					infos.push({
+						name: name,
+						flashID: flashID,
+						title: name.substr(0, name.lastIndexOf(".")),
+						status: status
+					});
+                    
+                    jPhotoList = jQuery("#ulPhotoList");                 
+                    
+					jPhotoList.append('<li><div class="name">' + name + '</div><div class="size">' + formatSize(size) + '</div><div class="status ' + status + '"></div><div class="process" style="width:0%;"></div></li>');
+				 
+                   jQuery(".selected",jQuery("li:nth-child(" + infos.length + ")",jPhotoList)).click(function() {
+						swfobject.getObjectById(flashID).Remove(name);
+					});
+                 	
+					allSize += size;					
+				}
+            } else {
+                var jPhoto = jQuery("li:nth-child(" + (index + 1) + ")", jPhotoList);
+                var jSize = jQuery("div.size", jPhoto);
+                var jStatus = jQuery(".status", jPhoto);
+                var jProgress = jQuery(".process", jPhoto);
+                infos[index].status = status;
+                
+                if (status == "void") {
+                    jPhoto.remove();
+                    allSize -= size;
+                    var temp = [];
+                    for (i = 0; i < infos.length; i++) {
+                        if (infos[i].name != name) {
+                            temp.push(infos[i]);
+                        }
+                    }
+                    infos = temp;
+                    updateSummary();
+                } else {
+                    jStatus.removeClass();
+                    jStatus.addClass("status " + status);
+					
+					switch (status) {
+                        case "loading":
+                            jProgress.width(message);
+                            break;
+                        case "loaded":
+                            jSize.text(formatSize(size));
+                            break;
+                        case "notLoad":
+                            alert(message);
+                            break;
+                        case "uploaded":
+							
+							if(message=="0"){
+								alert('{:db_to_html text=上传失败，请重新上传!:}');
+                                infos=[];
+							}else{	
+								var tmp_array = message.split('|');
+								
+								if(tmp_array[0]=="1"){
+									tmp_array[3];	//返回的文件路径
+									tmp_array[4];	//返回的缩略图路径
+									jQuery("#need_up_img_id").html('<img src="'+tmp_array[5]+'" width="114" height="114"/>');
+									jQuery("#works_frontcover").val(tmp_array[3]);
+									jQuery("#works_frontcover_thumb").val(tmp_array[4]);
+									jQuery(".selected",jQuery("li:nth-child(" + infos.length + ")",jPhotoList)).click(function() {
+										swfobject.getObjectById(flashID).Remove(name);
+									});
+									infos=[];
+								}						
+								
+							}							
+                            break;
+                        case "notUpload":
+							
+                            
+							jProgress.width("100%");
+                            ++doneCount;
+                            updateProgress();
+                            alert(message);
+                            upload();
+                            break;
+							
+							
+                    }
+                }
+            }
+        }
+		
+		function formatSize(size) {
+            if (size > 1024 * 1024) {
+                return Math.round(size * 100 / (1024 * 1024)) / 100 + "MB";
+            } else {
+                return Math.floor(size / 1024) + "KB";
+            }
+        }
+        function updateProgress() {
+            var allPersent = Math.floor(doneCount * 100 / infos.length) + "%";
+            jQuery("div:nth-child(1) div:only-child", jProcess).width(allPersent);
+            jQuery("span:nth-child(2)", jProcess).text(allPersent);
+        }
+        function updateSummary() {
+            jQuery("#txtPhotoCount").text(infos.length);
+            jQuery("#txtAllSize").text(formatSize(allSize));
+        }
+        function getIndexByName(name) {
+            for (var i = 0; i < infos.length; i++) {
+                if (infos[i].name == name) {
+                    return i;
+                }
+            }
+            return -1;
+        }
+		
+		function upload() {
+            if (infos.length == 0) {
+                alert("请先选择照片");
+                return;
+            }
+         
+            //
+            /*点击上传时将*/
+			jQuery("#need_up_img_id").html('<img src="image/ajax-loading.gif"  style="padding:50px" />');			
+            var index;
+            for (var i = 0; i < infos.length; i++) {
+                var info = infos[i];
+                if (info.status == "selected") {
+                    index = i;
+                    break;
+                }
+            }
+            //
+            if (doneCount == 0) {
+                jQuery("#divAppendPhoto").height(0);
+                updateProgress();
+                jSelect.hide();
+                jProcess.show();
+            }
+            jQuery(".selected", jQuery("li:nth-child(" + (infos+1) + ")", jPhotoList)).unbind("click");
+            swfobject.getObjectById(infos[index].flashID).Load(infos[index].name);
+        }
+</script>		
+<!-- bshare 相关js -->
+<script language="javascript" type="text/javascript" src="http://www.bshare.cn/button.js#uuid=97319&amp;style=-1"></script>
+<script language="javascript" type="text/javascript" src="http://www.bshare.cn/bshareC1.js"></script>
+<script type="text/javascript">
+
+
+function check_upload_submit(form){
+	var LoadingIconDiv = document.getElementById('LoadingIconFaceForm');
+	if(LoadingIconDiv!=null){
+		_img = document.createElement("img");
+		_img.setAttribute("src","image/snake_transparent.gif");
+		LoadingIconDiv.appendChild(_img);
+	}
+	if(form.elements['FileDomain'].value == ""){
+		if(LoadingIconDiv!=null){
+			LoadingIconDiv.innerHTML = "";
+		}
+		alert("{:db_to_html text=请选择要上传的图片！:}");
+		return false;
+	}
+	$("#submit_images_FaceForm").attr("disabled","disabled");
+	form.submit();
+	
+}
+
+function subworks(){
+	
+	var content = encodeURIComponent(getEditorHTMLContents('FCKeditor1'));
+	var works_name = encodeURIComponent(jQuery('#works_name').val());
+	var work_id = jQuery('#work_id').val();
+	var works_frontcover = jQuery('#works_frontcover').val();
+	var works_frontcover_thumb  = jQuery('#works_frontcover_thumb').val();
+	var works_edit_num  = jQuery('#works_edit_num').val();	
+	
+	if (works_name == ''){
+			alert('{:db_to_html text=作品名称不得为空!:}');
+			jQuery('#works_name').focus();
+			return false;
+	}	
+	if (content == ''){
+			alert('{:db_to_html text=作品内容不得为空!:}');		
+			return false;
+	}
+	if (works_frontcover == ''){
+			alert('{:db_to_html text=没有上传作品封面图片!:}');
+			
+			return false;
+	}
+	
+		
+		jQuery.ajax({
+			   url:url_ssl('trip_player.php?mod=add'),
+			   data:"content=" + content + "&works_name=" + works_name + 
+			   "&work_id=" + work_id+"&action=add&works_frontcover="+works_frontcover+"&works_frontcover_thumb="+works_frontcover_thumb+"&works_edit_num="+works_edit_num,
+			   type:"POST",
+			   cache: false,
+			   dataType:"html",
+			   success: function(html){		   		
+			   		if (html > 0){
+						jQuery("#work_id").val(html);
+						jQuery("#viewwork").attr('href','trip_player.php?mod=view&id='+html);
+						jQuery("#viewwork2").attr('href','trip_player.php?mod=view&id='+html);						
+					}
+					if (jQuery("#ref_action").val() == 'edit'){						
+						showEditSuccess();
+					}else{
+						showSuccess();			 
+					}
+			   },
+			   error: function (msg){
+				   //alert(msg);
+			   }
+		 });
+	 
+
+}
+
+function showEditSuccess(){
+    new Popup('PopupEditSuccess','PopupEditSuccessCon','PopupEditSuccessClose');
+}
+
+function showSuccess(){
+    new Popup('PopupSuccess','PopupSuccessCon','PopupSuccessClose');
+}
+function showError(){
+    new Popup('PopupError','PopupErrorCon','PopupErrorClose');
+}
+// 获取编辑器中内容
+function getEditorHTMLContents(EditorName) {
+    var oEditor = FCKeditorAPI.GetInstance(EditorName);
+    return(oEditor.GetXHTML(true));
+}
+// 设置编辑器中内容
+function SetEditorContents(EditorName, ContentStr) {
+    var oEditor = FCKeditorAPI.GetInstance(EditorName) ;
+    oEditor.SetHTML(ContentStr,true) ;
+}
+
+function FCKeditor_OnComplete( FCKeditor1 ) ///
+{ 
+	var ContentStr =  document.getElementById('works_content').value;  	
+    SetEditorContents('FCKeditor1',ContentStr);
+	
+} 
+</script>
+<script type="text/javascript">
+jQuery(function(){
+if(typeof(bShare)!='undefined'){
+bShare.addEntry({
+title: "{:db_to_html text=#走四方旅游体验师大赛#:}",
+ summary:"{:db_to_html text=正在火热举行中，@走四方网:} {:db_to_html text=微博即可参与，IPAD2大奖等你拿，更有机会免费畅游美国，:}"
+})
+}
+});
+</script>
+</body></html>

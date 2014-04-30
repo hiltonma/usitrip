@@ -1,0 +1,27 @@
+<!--同意、拒绝和取消结伴申请的弹出层模板！-->
+
+<form id="close_agre_refusal_pop" name="close_agre_refusal_pop" method="post" enctype="multipart/form-data" onsubmit="Submit_close_agre_refusal_pop(this);return false;">
+    <div class="br6 bl6">
+        <div class="jb_fb_tc_bt">
+            <h3>{H3}</h3>
+            &nbsp;
+            <button type="button" style="right:12px;" title="关闭" onclick="closeDiv('GeneralNotes')" class="icon_fb_bt"></button>
+        </div>
+        <div class="jb_fb_tc_tab">
+            <table width="524px">
+                <tr>
+                    <td style="padding:8px">{TextareaField} </td>
+                <tr>
+                    <td align="right"><p id="tpl_carp_sms_info" class="in_text">你还可以输入<span>100</span>字</p></td>
+                </tr>
+                <tr>
+                    <td align="center"><input name="tca_id" type="hidden" value="" />
+                        <input name="agre_or_close" type="hidden" value="" />
+                        <input name="skip_check" type="hidden" value="" />
+                        <input name="action_exc" type="hidden" value="" />
+                        <button type="submit" class="jb_fb_all myjb_content_sq1_button" style="float:none;">确定</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</form>

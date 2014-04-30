@@ -1,0 +1,89 @@
+{:$DOCTYPE:}
+<html {:$smarty.const.HTML_PARAMS:}>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<meta http-equiv="Content-Type" content="text/html; charset={:$smarty.const.CHARSET:}">
+<title>{:$title:}</title>
+<!--Load Files for Css-->
+<link rel="stylesheet" type="text/css" href="css/new_sys_main.css">
+{:section name=n loop=$CssArray:}
+<link rel="stylesheet" type="text/css" href="{:$CssArray[n]:}">
+{:/section:}
+
+<!--Load Files for JS-->
+{:section name=i loop=$JavaScriptSrc:}
+<script language="JavaScript" type="text/javascript" src="{:$JavaScriptSrc[i]:}"></script>
+{:/section:}
+
+{:if $open_dir_id!="":}
+<script type="text/javascript">
+//var I2_iframe = parent.document.getElementById("I2");
+var I2_iframe = window.parent.frames['I2'];
+if(I2_iframe!=null){
+	try {  
+		if(typeof(eval("I2_iframe.auto_open_to_target_ul"))=="function"){
+			I2_iframe.auto_open_to_target_ul({:$open_dir_id:},"show");
+		}else{
+			//alert("not function: auto_open_to_target_ul"); 
+		}
+	}catch(e){
+	}  
+}
+</script> 
+{:/if:}
+
+<style type="text/css">
+<!--
+label {
+	display: block;
+	margin:10px;
+}
+-->
+    </style>
+</head>
+
+<body {:$body_style:}>
+
+<table width="100%"  border="0" cellpadding="0" cellspacing="0" class="centerTab">
+  <tr id="TopShow_content">
+    <td height="55px" >
+      <div class="centerTopFrame">
+        <div class="head">
+          <p class="logo"><a href="{:$smarty.const.HTTP_SERVER:}" target="_blank"><img src="images/logo.20121014.jpg" class="logoimg" /></a><span>{:$title:}</span></p>
+          <div class="changeXt"  id="changeXt" onMouseOver="document.getElementById('child').style.display='block';document.getElementById('changeXtTop').className='changeXtTopSelect'" onMouseOut="document.getElementById('child').style.display='none';document.getElementById('changeXtTop').className='changeXtTop'">
+            <div id="changeXtTop" class="changeXtTop">切换系统</div>
+            <div class="TopShowBg" id="child" style="display:none" >
+              <div class="changeOther">
+                <ul>
+                  <li><a href="domestic_orders.php">转帐支付管理系统</a></li>
+                  <li><a href="orders.php">后台订单</a></li>
+                  <li><a href="categories.php">产品管理</a></li>
+                  <li><a href="banner_manager.php">广告管理</a></li>
+                  <li><a href="question_answers.php">QA管理</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+       </div>
+       <div class="Welcome">
+	   {:$login_name:} 欢迎您登录，<a href="logoff.php" class="DChu">退出</a>
+	   {:if $login_groups_id=="1":}
+	   <a href="configuration.php" class="SZhi">系统设置</a>
+	   {:/if:}
+	   </div>
+</div>
+</td></tr>
+  <tr><td  height="7" valign="top"><div class="TopShow" id="TopShowtit" onClick="showHideLyer(this,'TopShow_content','TopShowselect')"></div></td></tr>
+  </table>
+
+<div id="notice_div"></div>
+{:if $Bread!="":}
+<div class="Bread">
+<p>&nbsp;{:$Bread:}</p>
+</div>
+{:/if:}
+
+<!--
+</body>
+</html>
+-->

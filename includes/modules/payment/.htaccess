@@ -1,0 +1,9 @@
+<ifModule mod_headers.c>
+	#支付模块下的php文件不可被缓存
+    <FilesMatch ".*\.php$">
+        Header set Expires "Thu, 19 Nov 1981 00:00:00 GMT"
+        Header set Pragma "no-cache"
+        Header set Cache-Control "no-cache, must-revalidate, max-age=0"
+	</FilesMatch>
+</ifModule>
+

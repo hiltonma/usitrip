@@ -1,0 +1,117 @@
+{:include file="tours-talent-contest/header.tpl.htm":}
+
+<div id="wrap">
+
+    <div class="daren">
+
+        <div class="darenTop"><img src="image/daren/daren_top_1.jpg" alt="{:db_to_html text=旅游体验师大赛:}" usemap="#Map" /><map name="Map" id="Map"><area shape="rect" coords="27,6,231,57" href="{:$severname:}" alt="" /></map></div>
+        <div class="darenTop"><img src="image/daren/daren_top_2.jpg" alt="{:db_to_html text=旅游体验师大赛:}" /></div>
+        <div class="darenTop"><img src="image/daren/daren_top_3.jpg" alt="{:db_to_html text=旅游体验师大赛:}" usemap="#Map2" /><map name="Map2" id="Map2"><area shape="rect" coords="401,50,517,93" href="trip_player.php?mod=apply" alt="" /></map></div>
+        
+        <div class="darenNav">
+            <div class="darenNavLeft"></div>
+            <ul>
+                <li><a href="trip_player.php">{:db_to_html text=活动首页:}</a></li>
+                <li><a href="trip_player.php?mod=list">{:db_to_html text=所有作品:}</a></li>
+                <li><a href="trip_player.php?mod=prize">{:db_to_html text=奖项设置:}</a></li>
+                {:if $customer_id > 0:}
+				<li><a href="trip_player.php?mod=homepage&id={:$customer_id:}">{:db_to_html text=个人主页:}</a></li>
+				{:/if:}
+				<li><a href="trip_player.php?mod=finalists"><span>{:db_to_html text=获奖名单:}</span></a></li>
+            </ul>
+            <div class="share">
+                <div class="bshare-custom">
+                    <a title="{:db_to_html text=分享到新浪微博:}" class="bshare-sinaminiblog"></a>
+                    <a title="{:db_to_html text=分享到开心网:}" class="bshare-kaixin001"></a>
+                    <a title="{:db_to_html text=分享到人人网:}" class="bshare-renren"></a>
+                    <a title="{:db_to_html text=分享到facebook:}" class="bshare-facebook"></a>
+                    <a title="{:db_to_html text=分享到twitter:}" class="bshare-twitter"></a>
+                    <a title="{:db_to_html text=分享到qq空间:}" class="bshare-qzone"></a>
+                    <a title="{:db_to_html text=更多平台:}" class="bshare-more">{:db_to_html text=更多:}>></a>
+                </div>
+               {:db_to_html text=分享到：:}
+            </div>
+            <div class="darenNavRight"></div>
+        
+        </div>
+        
+        
+        <div class="darenProcess">
+            <div class="step1">{:db_to_html text=注册/登录:}</div>
+            <div class="step2">{:db_to_html text=填写您的基本信息:}</div>
+            <div class="step3">{:db_to_html text=提交作品:}</div>
+        </div>
+    
+    
+        <div class="darenItem darenWrap">
+            <h2><span>{:db_to_html text=您的基本信息:}<a href="trip_player.php?mod=talent_info&action=edit">{:db_to_html text=修改:}</a></span></h2>
+            <div class="darenItemCon">
+                <ul class="address addressAll">
+                    
+                    <li>
+                        <label>{:db_to_html text=上传头像:}</label>
+                        <dl class="uploadImg">
+                            <dt id="need_up_img_id">{:if $account.customers_face != '':}<img src="images/face/{:$account.customers_face:}" width="{:$account.face_width:}" height="{:$account.face_height:}"/>{:else:}<img src="image/touxiang_no-sex.gif" />{:/if:}</dt>
+                            <dd><a href="trip_player.php?mod=talent_info&action=edit">{:db_to_html text=重新上传:}</a></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <label>{:db_to_html text=性别:}</label>
+                        <span class="fixed">{:if $account.customers_gender == 'f':}{:db_to_html text=女:}{:else:}{:db_to_html text=男:}{:/if:}</span>
+                    </li>
+                    <li>
+                        <label>{:db_to_html text=国家/地区:}</label>
+                        <span class="fixed">{:db_to_html text=$account.entry_country_id:}</span>
+                        <span class="fixed">{:if $account.entry_state !='':}{:db_to_html text=$account.entry_state:}{:/if:}</span>
+                        <span class="fixed">{:if $account.entry_city !='':}{:db_to_html text=$account.entry_city:}{:/if:}</span>
+                    </li>
+                    <li>
+                        <label>{:db_to_html text=详细地址:}</label>
+                        <span class="fixed">{:db_to_html text=$account.entry_street_address:}</span>
+                    </li>
+                    <li>
+                        <label>{:db_to_html text=电话号码:}</label>
+                        <span class="fixed">{:$account.customers_mobile_phone:}</span>
+                    </li>
+                    <li>
+                        <label>{:db_to_html text=博客地址:}</label>
+                        <span class="fixed">{:$account.blog_url:}</span>
+                    </li>
+                    <li>
+                        <label>{:db_to_html text=职业:}</label>
+                        <span class="fixed">{:db_to_html text=$account.user_job:}</span>
+                    </li>
+                    <li>
+                        <label class="long">{:db_to_html text=记忆最深刻的旅行地:}</label>
+                        <span class="fixed">{:db_to_html text=$account.rem_trip:}</span>
+                    </li>
+                    <li>
+                        <label class="long">{:db_to_html text=最想要去的旅行目的地:}</label>
+                        <span class="fixed">{:db_to_html text=$account.most_to:}</span>
+                    </li>
+                </ul>
+                <div class="btnCenter btnCenterLong"><a href="?mod=add" onclick="location.href='?mod=add'" class="btn btnOrange">{:db_to_html text=去提交作品:}</a></div>
+            </div>
+        </div>
+        
+        <div class="darenBot"></div>
+        
+    </div>
+                
+</div>
+
+<!-- bshare 相关js -->
+<script language="javascript" type="text/javascript" src="http://www.bshare.cn/button.js#uuid=97319&amp;style=-1"></script>
+<script language="javascript" type="text/javascript" src="http://www.bshare.cn/bshareC1.js"></script> 
+<script type="text/javascript">
+jQuery(function(){
+if(typeof(bShare)!='undefined'){
+bShare.addEntry({
+title: "{:db_to_html text=#走四方旅游体验师大赛#:}",
+ summary:"{:db_to_html text=正在火热举行中，@走四方网:} {:db_to_html text=微博即可参与，IPAD2大奖等你拿，更有机会免费畅游美国，:}"
+})
+}
+});
+</script>
+</body>
+</html>

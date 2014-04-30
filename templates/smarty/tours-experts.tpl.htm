@@ -1,0 +1,65 @@
+<div class="{:if $mod == 'default':}pathLinksLeft {:else:}longLink {:/if:}pathLinks">
+{:$category_breadcrumb:}
+</div>
+{:if $mod == 'default':}
+{:if $word=='':}
+	{:assign var="word" value="请输入您关注的专家的名字或简介"|db_to_html:}
+{:/if:}
+<div class="expertSearch">
+<form action="{:$baseUrl_HrefLink:}" method="get">
+{:html_input name='word' id='expert_word' title=$word enterkey='true' value=$word class="text expertipttip" maxlength="20" onFocus="checkExpertWord(this,0);" onBlur="checkExpertWord(this,1);":}
+{: if $osCsid!='' :}
+<input type="hidden" name="osCsid" value="{:$osCsid:}"/>
+{:/if:}
+<button type="submit" onclick="return submitExpert_seaechForm();"></button>
+</form>
+</div>
+<script type="text/javascript">
+function checkExpertWord(obj,t){
+    var q_content = jQuery(obj);
+    var defaultstr = jQuery.trim(q_content.attr('title'));
+    var val = jQuery.trim(q_content.val());
+    if(t){
+        if(val==''||val==defaultstr){
+            q_content.addClass('expertipttip');
+            q_content.val(defaultstr);
+        }
+    }else{
+        if(val==''||val==defaultstr){
+            q_content.val('');
+        }
+        q_content.removeClass('expertipttip');
+    }
+}
+function submitExpert_seaechForm() {
+	var q_content = jQuery('#expert_word');
+	var defaultstr = jQuery.trim(q_content.attr('title'));
+	var val = jQuery.trim(q_content.val());
+	if(val==''||val==defaultstr){
+		alert(defaultstr);
+		return false;
+	}
+	return true;
+}
+</script>
+{:/if:}
+<div class="clear"></div>
+{:include file=$modeHFile:}
+
+<div class="popup" id="popupMainPanel">
+<table width="100%" cellpadding="0" cellspacing="0" border="0" class="popupTable">
+<tr><td class="topLeft"></td><td class="side"></td><td class="topRight"></td></tr><tr><td class="side"></td><td class="con">
+  <div class="popupCon" id="popupConPanel">
+    <div class="popupConTop" id="popupDragPanel">
+      <h3><b id="popupAjaxTitle"></b><label id="popupAjaxLabel"></label></h3><span onclick="closePopup('popupMainPanel')"></span>
+    </div>
+    <div id="popupAjaxContent"></div>
+  </div>
+</td><td class="side"></td></tr><tr><td class="botLeft"></td><td class="side"></td><td class="botRight"></td></tr>
+</table>
+</div>
+<div id="popupBg" class="popupBg"></div>
+<script type="text/javascript" language="javascript" src="{:$smarty.const.DIR_WS_JAVASCRIPT:}tours-experts.js"></script>
+<script type="text/javascript">
+new divDrag([popup('popupDragPanel'),popup('popupMainPanel')]); 
+</script>

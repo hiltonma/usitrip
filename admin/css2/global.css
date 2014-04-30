@@ -1,0 +1,115 @@
+@charset "utf-8";
+/*  
+ * @usitrip.com Admin  
+ * @global 
+ * @Build By Rocky
+ * @Version 2011-03-09   
+ * -------------------------------------------------- */
+
+*{ margin:0; padding:0; font-size:12px;}
+img{border:0;}
+ul,li,ol{list-style:none;}
+body{ font-size:12px; font-family:Tahoma, Arial, sans-serif; color:#333;}
+a{ color:#00388A; text-decoration: none;}
+a:hover{ text-decoration:underline;}
+h1,h2,h3,h4,h5,h6 {font-size:12px;}
+.clear{clear:both;}
+
+
+/* top */
+.centerTopFrame{ width:100%; height:55px; background:url(../images/headbg.jpg) repeat-x; font-size:12px; position:relative; z-index:1000;}
+.centerTopFrame .head{ width:700px; height:55px; position:absolute; left:0; top:0 }
+.centerTopFrame .head .logoimg{ margin-top:5px; margin-left:7px; width:140px; height:40px; float:left}
+.centerTopFrame .head span{ float:left; color:#CFE1F8; font-weight:bold; font-size:14px;  line-height:55px;  height:55px; display:block}
+
+.changeSys{ position:relative; float:left; height:22px; margin:17px 0 0 20px;  line-height:22px;  cursor:pointer;}
+.changeSysTitle{ position:absolute; top:0; left:0; width:80px; height:20px; padding:2px 0 0 10px; background:url(../images/icons/dun.gif) 67px center no-repeat; line-height:20px; color:#98B8E1; z-index:100; white-space:nowrap;}
+.changeSysTitleHover{ width:85px;  background:url(../images/my_other_bg.jpg) no-repeat; color:#333; font-weight:bold; white-space:nowrap;}
+
+.changeSysCon{ display:none; position:absolute; top:21px; left:0; background:#fff; border:1px solid #FFC155; }
+.changeSysCon li{ width:100%; border-top:1px solid #EFF1F5; }
+.changeSysCon li:hover,.changeSysCon li.hover{ background:#ffefcf; }
+.changeSysCon a{ display:block; height:22px; padding:0 10px; line-height:22px; color:#00388A; white-space:nowrap; }
+.changeSysCon a:hover{ color:#f00; background:#ffefcf; text-decoration:none; }
+
+
+.welcome{ position:absolute; right:0; top:0;  width:240px; height:55px; line-height:55px; color:#93B5E0}
+.welcome a{ color:#D8E6F9;}
+.welcome .manage{ color:#93B5E0; padding:0 30px;}
+
+
+/* topSwitch */
+.topSwitch{ width:49px; height:7px; background:url(../images/top_switch_bg.png) no-repeat; overflow:hidden; cursor:pointer;}
+.topSwitchDown{ background:url(../images/top_switch_bg.png) 0 -7px;}
+
+/*left*/
+.leftIframe{ width:200px;}
+.leftIframe .title{ background:url(../images/lefttopbg.jpg) repeat-x;position:relative;width:200px;  border:none; height:30px; }
+.leftIframe .title h3{ color:#EBF3FE; font-weight:bold; line-height:30px; padding-left:15px;}
+.leftIframe .title .tl {left:0;top:0; background:url(../images/lefttopbg_l.jpg) no-repeat; width:6px; height:30px; position:absolute;}
+.leftIframe .title .tr {right:0; _right:-1px; top:0; background:url(../images/lefttopbg_r.jpg) no-repeat; width:6px; height:30px; position:absolute;}
+
+.leftCon{ border:1px solid #ddd; border-top:0; width:190px; padding:4px; }
+.leftConBox{ border: 1px solid #ddd; width:178px; padding:5px; }	 
+.leftConBox li{ height:22px; padding:5px 0; border-bottom:1px dashed #EFEFEF; }
+.leftConBox li a{ display:block; height:22px; line-height:22px; font-size:13px; _font-size:12px;}
+.leftConBox li a:hover,.leftConBox li a.active{ background:#556AAE; color:#fff; text-decoration:none;}
+
+/* leftSwitch */
+.leftSwitchBg{ background:#EBEFF2; width:10px; }
+.leftSwitch{ width:10px; height:47px;  background:url(../images/leftcontentshow.jpg) no-repeat; cursor:pointer; }
+.leftSwitchRight{ background:url(../images/leftcontentnone.jpg); }
+
+/* rightIframe */
+.rightIframe{ border:1px solid #ddd; }
+.minCon{ padding:10px 0; min-width:1100px; }
+
+/* footer */
+.footer{ height:35px; background:#EBEFF2; line-height:35px; color:#8c8c8c; text-align:center; }
+.footer span{ font-family:Arial;}
+
+
+
+/* widget define */
+.main{  margin:0 auto; padding:15px 10px; }
+.textAll{ width:130px; height:16px; padding:3px; border:1px solid #ccc; color:#111; font-size:12px; line-height:16px;}
+.textTime{ padding:3px; width:120px; height:16px; line-height:16px; border:1px solid #ccc; color:#111;  font-size:12px; background:url(../images/icons/Calendar.gif) no-repeat #ffffff 108px 3px;}
+.textarea{ display:inline; padding:3px; border:1px solid #D5D5D5; font-size:12px; }
+
+
+.btn{ width:90px; height:27px; line-height:25px; font-size:14px; color:#fff; cursor:pointer;}
+.btn:hover{ background:url(../images/buttonorange.jpg) #F48A00; border:1px solid #F48A00; color:#fff; }
+
+.btnOrange{ background:url(../images/buttonblue.jpg) #527FB6; border:1px solid #406083; }
+.btnGrey{ background:#c7c7c7 url(../images/buttonhui.jpg); border:1px solid #c7c7c7; color:#333;}
+
+.btnCenter{ text-align:center;}
+.btnCenter .btn{ margin:0 10px;} 
+
+.conSwitch{ height:20px; font-size:16px; font-weight:bold; background:url(../images/icons/con_switch_down.gif) no-repeat 80px 4px; cursor:pointer;}
+.conSwitchShow{ background:url(../images/icons/con_switch_up.gif) no-repeat 80px 4px;} 
+
+/* page */
+.pageNum{ float:left; width:200px;}
+.page{ float:right; height:18px; padding:5px 15px 0; line-height:16px; color:#00388a; font-family:SimSun;}
+.page a{ color:#00388a;  line-height:14px;}
+.page a.go{ float:left; padding:2px 3px; height:14px; background:url(../images/page_bg.gif) no-repeat;}
+.page a.first{ width:8px;  background-position: 2px 3px; *background-position: 2px 2px; }
+.page a.pre{ width:40px; margin-left:11px; display:inline; padding-left:11px; background-position:-33px 3px; *background-position:-33px 2px; }
+.page a.last{ width:8px; margin-left:11px; display:inline; background-position:2px -16px; *background-position:2px -17px;}
+.page a.next{ width:40px; margin-left:11px; display:inline; padding-right:10px; background-position:-33px -16px; *background-position:-33px -17px; }
+.page span{ float:left; height:18px;}
+.page span a{ padding:0 6px; line-height:16px;}
+.page span b{ padding:1px 7px 0; background:#128DDA; color:#fff;}
+
+/* search */
+.searchBox{ padding-bottom:20px;}
+.searchCon{ padding:10px 0 0 20px; width:1100px;}
+.searchCon table{ width:100%;}
+.searchCon td{ padding:5px 0; color:#777;}
+.searchCon td.btnCenter{ padding:20px 0;}
+/*html error*/
+.error {padding:10px;border:1px solid #ff0000;background:#ffd9d9;color:red;}
+/*html notice*/
+.notice {padding:10px;border:1px solid #508aeb;background:#e1f2fd;color:#004891;}
+

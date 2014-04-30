@@ -1,0 +1,23 @@
+@charset "gb2312";
+/* CSS Document */
+.category_desc{height:30px;line-height:30px;}
+.titleSmall{background:url(/image/nav/user_bg10.gif) repeat-x;border:0;border-bottom:0;color:#fff;}
+.titleSmall h3{color:#fff;margin-top:2px;}
+.titleSmall h3 a{color:#ffe400;}
+.moduleRow{background-color:#fff;}
+.moduleRowOver {background-color:#fffee9;}
+#dataTable td{border:0;}
+
+.infoBox{ border:1px solid #aed5ff; border-top:0; border-collapse:collapse; border-spacing:0;}
+.infoBox td{height:30px;line-height:30px;border:1px solid #c6e7fa;}
+.infoBox td.productListing-heading{text-align:center;height:32px;background:url(/image/nav/ui_mypoints_table_header.png) repeat-x;line-height:32px;border:none;}
+.infoBox td.productListing-data{ padding:0 5px;line-height:28px;}
+
+.ui_item{padding:20px 0;margin:0 15px;border-bottom:1px dotted #c3c3c3;overflow:hidden;}
+.ui_rules_listitle{line-height:26px;font-size:14px;color:#136cd1;}
+.ui_item p{line-height:22px;color:#4d4d4d;}
+.ui_item p.idt{text-indent:2em;}
+.ui_item p.ui_rules_notice{color:#ff6600;}
+.ui_rules_table{border-collapse:collapse;border-spacing:0;border:1px solid #e0e0e0;width:100%;margin:10px 0;}
+.ui_rules_table th{height:35px;line-height:35px;text-align:center;background:#f4f4f4;border:1px solid #e0e0e0;border-bottom:none;}
+.ui_rules_table td{border:1px solid #e0e0e0;height:28px;height:28px;text-indent:10px;border-top:none;}

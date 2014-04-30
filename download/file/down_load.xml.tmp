@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<downloadfile>
+	<file>
+		<fileName>Amendment_Request_Form.doc</fileName>
+		<cn_name>&#x66F4;&#x6539;&#x7533;&#x8BF7;&#x8868;</cn_name>
+		<filePath>download/file/Amendment_Request_Form.doc</filePath>
+		<downNumber>8</downNumber>
+	</file>
+	<file>
+		<fileName>Canceallation_Request_Form.doc</fileName>
+		<cn_name>&#x53D6;&#x6D88;&#x7533;&#x8BF7;&#x8868;</cn_name>
+		<filePath>download/file/Canceallation_Request_Form.doc</filePath>
+		<downNumber>2</downNumber>
+	</file>
+	<file>
+		<fileName>Parents_Agree_Papers.doc</fileName>
+		<cn_name>&#x672A;&#x6210;&#x5E74;&#x4EBA;&#x53C2;&#x56E2;&#x7684;&#x76D1;&#x62A4;&#x4EBA;&#x540C;&#x610F;&#x8BC1;&#x660E;</cn_name>
+		<filePath>download/file/Parents_Agree_Papers.doc</filePath>
+		<downNumber>0</downNumber>
+	</file>
+	<file>
+		<fileName>CheckDraftAuthorizationForm.pdf</fileName>
+		<cn_name>&#x652F;&#x4ED8;&#x6388;&#x6743;&#x4E66;</cn_name>
+		<filePath>CheckDraftAuthorizationForm.pdf</filePath>
+		<downNumber>0</downNumber>
+	</file>
+</downloadfile>

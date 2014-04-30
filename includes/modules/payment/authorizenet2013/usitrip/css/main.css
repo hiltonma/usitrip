@@ -1,0 +1,13 @@
+@charset "utf-8";
+/* this stylesheet by xiaoming */
+body{ margin:0; padding:0;}
+#bodyDiv{ width:860px; margin:30px auto; padding:0 20px; font-size:14px; border:solid 1px #dedede;}
+#bodyDiv h1{ font-size:24px; color:#FE6A00; margin:20px 0; text-align:center; font-weight:normal;}
+#bodyDiv ul{ margin-top:30px;}
+#bodyDiv ul li{ list-style:none; margin-bottom:20px; padding-left:150px;}
+#bodyDiv ul li span{ display:inline-block; width:150px; text-align:right;}
+#bodyDiv ul li input{ height:24px; border-style:solid; border-width:1px; border-color:#999 #ccc #ccc #999; width:200px; border-radius:2px;}
+#bodyDiv p.noti{ color:#FF0000; font-weight:bold;}
+#bodyDiv #submitAuthorize{ height:30px; padding:5px;}
+
+

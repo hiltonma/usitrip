@@ -1,0 +1,81 @@
+div.sample_popup { z-index: 1; }
+
+div.sample_popup div.menu_form_header
+{
+  border: 1px solid black;
+  border-bottom: none;
+  width: 500px;
+  height:      20px;
+  line-height: 19px;
+  vertical-align: middle;
+  /*background: url('form_header.png') no-repeat;*/
+  background-color: #C9C9C9;
+  text-decoration: none;
+  font-family: Tomaha, Arial, Verdana;
+  font-weight: 900;
+  font-size:  13px;
+  color:   #FF0000;
+  cursor:  default;
+}
+
+div.sample_popup div.menu_form_body
+{
+  width: 500px;
+  border: 1px solid black;
+ /* background: url('form.png') no-repeat left bottom;*/
+ background-color: #F0F1F1;
+}
+
+div.sample_popup img.menu_form_exit
+{
+  float:  right;
+  margin: 4px 5px 0px 0px;
+  cursor: pointer;
+}
+
+div.sample_popup table
+{
+  width: 100%;
+  border-collapse: collapse;
+}
+
+div.sample_popup th
+{
+  width: 1%;
+  padding: 0px 5px 1px 0px;
+  text-align: left;
+  font-family: Times New Roman, Serif;
+  font-weight: 900;
+  font-size:  13px;
+  color:   #004060;
+}
+
+div.sample_popup td
+{
+  width: 99%;
+  padding: 0px 0px 1px 0px;
+}
+
+div.sample_popup form
+{
+  margin:  0px;
+  padding: 8px 10px 10px 10px;
+}
+
+div.sample_popup input.field
+{
+  width: 95%;
+  border: 1px solid #808080;
+  font-family: Verdana, Sans-Serif;
+  font-size: 12px;
+}
+
+div.sample_popup input.btn
+{
+  margin-top: 2px;
+  border: 1px solid #808080;
+  background-color: #DDFFDD;
+  font-family: Verdana, Sans-Serif;
+  font-size: 11px;
+  width: 80px;
+}

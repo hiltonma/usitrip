@@ -1,0 +1,70 @@
+@charset "utf-8";
+/* 专题样式 */
+#banner{ width:100%;}
+.banner1{ background:url(../images/banner1.jpg); } 
+.banner2{ background:url(../images/banner2.jpg); } 
+.banner3{ background:url(../images/banner3.jpg); } 
+.banner1,.banner2,.banner3{ background-position:center top; height:200px; background-repeat:no-repeat; text-indent:-999px;}
+
+
+
+#main{ width:933px; margin:0 auto; position:absolute; left:50%; margin-left:-466px; top:488px;}
+.box{ _zoom:1; position:relative; margin-bottom:20px;}
+.box .tit{ height:50px;}
+.box .title-1{ background:url(../images/tit1.gif) no-repeat;}
+.box .title-2{ background:url(../images/tit2.gif) no-repeat;}
+.box .title-3{ background:url(../images/tit3.gif) no-repeat;}
+.box .title-4{ background:url(../images/tit4.gif) no-repeat;}
+.box .tit h2{ text-indent:-999px; overflow:hidden;}
+
+.cont{ background:#fff; border:1px solid #70c0ea;  overflow:hidden; zoom:1; border-top:none;}
+.content-1 dl{ overflow:hidden; zoom:1; padding:28px 0 28px 25px; border-bottom:1px solid #e5e5e5;}
+.content-1 dl dt,.content-1 dl dd{ float:left;}
+.content-1 dl dt{ width:170px; height:114px;_display:inline;*zoom:1; border:1px solid #dbdbdb; padding:4px;position:relative;}
+.content-1 dl dt b{cursor: pointer;display: block;height: 54px;left: -2px;position: absolute;text-indent: -9999em;top: -2px;width: 54px;}
+.content-1 dl dd.s_1{ width:508px; margin-left:20px; line-height:22px; padding-right:25px;}
+.content-1 dl dd.s_1 li h3{ color:#0076c5; font-family:"微软雅黑"; font-size:18px; padding-bottom:8px;}
+.content-1 dl dd.s_1 li h3 a{ color:#0076c5; font-family:"微软雅黑"; font-size:18px; padding-bottom:8px;}
+.content-1 dl dd.s_2{ border-left:1px dashed #bfbfbf; height:124px; width:172px;}
+.content-1 dl dd.s_2 p{ font-size:22px; color:#ff5400; text-align:center; padding:15px 0 5px 0;}
+.content-1 dl dd.s_2 a{ display:block; overflow:hidden; text-indent:-999px; background:url(../images/an1.gif) no-repeat; width:117px; height:34px; margin: 0 auto;}
+.content-2{ background:#e2f5ff; padding:25px 0 25px 17px;}
+.content-2 dl{ overflow:hidden; zoom:1; width:203px; float:left; margin:0 10px; display:inline;}
+.content-2 dl dt{ background:#fff ; border:1px solid #d6d9db; padding:5px; font-size:0; line-height:0;}
+.content-2 dl dt li{ font-size:12px; line-height:18px;}
+.content-2 dl dt li.s_1{ width:191px; height:113px;position:relative;}
+.content-2 dl dt li.s_1 b{cursor: pointer;display: block;height: 54px;left: -2px;position: absolute;text-indent: -9999em;top: -2px;width: 54px;}
+.t{background:url(../images/twototwo.png) no-repeat;_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true', sizingMethod='scale', src="/image/twototwo.png");_background:none;}
+.o{background:url(../images/twotoone.png) no-repeat;_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true', sizingMethod='scale', src="/image/twotoone.png");_background:none;}
+.content-2 dl dt li.s_1 img{ width:191px; height:113px;}
+.content-2 dl dt li.s_2{ overflow:hidden; zoom:1; height:30px; line-height:30px;}
+.content-2 dl dt li.s_2 a{ float:right; width:57px; height:20px; display:block; text-indent:-999px; overflow: hidden; background:url(../images/an2.gif) no-repeat; margin-top:7px;}
+.content-2 dl dt li.s_2 p{ font-size:18px; color:#ff5400; }
+.content-2 dl dd{ line-height:20px; text-align:center; color:#0076c5; padding-top:4px;}
+.content-2 dl dd a{color:#0076c5;}
+
+.content-3{ background:#fff; padding:25px 0 25px 15px; overflow:hidden; zoom:1;}
+.content-3 .left{ width:649px; float:left;}
+.content-3 dl{ overflow:hidden; zoom:1; width:203px; float:left; margin:0 10px; display:inline;}
+.content-3 dl dt{ background:#fff ; border:1px solid #d6d9db; padding:5px; font-size:0; line-height:0;}
+.content-3 dl dt li{ font-size:12px; line-height:18px;}
+.content-3 dl dt li.s_1{ width:191px; height:113px;}
+.content-3 dl dt li.s_1 img{ width:191px; height:113px;}
+
+.content-3 dl dt li.s_2{ overflow:hidden; zoom:1; height:30px; line-height:30px;}
+.content-3 dl dt li.s_2 a{ float:right; width:57px; height:20px; display:block; text-indent:-999px; overflow: hidden; background:url(../images/an2.gif) no-repeat; margin-top:7px;}
+.content-3 dl dt li.s_2 p{ font-size:18px; color:#ff5400; }
+.content-3 dl dd{ line-height:20px; text-align:center; color:#0076c5; padding-top:4px;}
+.content-3 dl dd a{color:#0076c5;}
+
+
+.content-3 .right{ width:195px; height:auto; float:left; margin-top:-5px; }
+.content-3 .right ul{ float:left;}
+.content-3 .right .img1{width:90px; height:50px; float:left; margin-left:5px; margin-top:4px;}
+
+
+
+
+
+
+

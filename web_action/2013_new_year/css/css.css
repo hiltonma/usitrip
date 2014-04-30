@@ -1,0 +1,133 @@
+﻿@charset "utf-8";
+/* 专题样式 */
+
+#main { width:100%; background-color:#ebd2ad;}
+.banner,.meniu,.content ,.copyright { margin:0 auto; width:978px; }
+.meniu{ width:978px; height:49px; background:#910006;  }
+ .meniu ul{width:978px; height:49px;  float:left;line-height:32px; }
+ .meniu ul li{width:139px; height:49px; text-align:center; font-family: "微软雅黑"; font-size:18px; font-weight: bold; color: #fdfcd5; background:url(../images/meniu_bg.jpg) right no-repeat; float:left;}
+ .meniu span{font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#FFFFFF; font-weight:100;  line-height:10px;}
+
+  .meniu ul li a{width:139px; height:49px; text-align:center;  font-family: "微软雅黑"; font-size:18px; font-weight: bold; color: #fdfcd5;  float:left;}
+.meniu ul li a:hover{width:139px; height:49px; text-align:center;  font-family: "微软雅黑"; font-size:18px; font-weight: bold color: #fff; background: #a90007; float:left; text-decoration:none;}
+
+ 
+
+.content {width:978px; background:#FFFFFF; display:table; }
+.content .left{width:244px; border: #e8ebff 1px solid; float:left; margin:21px 0 0 23px; _margin:21px 0 0 15px;}
+.content .left .biaoti{width:240px; height:46px; margin:1px auto; background:#fff3cf; text-align:center; line-height:50px; font-family:"微软雅黑"; font-weight:bold; font-size:20px; color:#910006;  }
+
+.content .left .box{ width:242px; height:120px; background: url(../images/boxbg.jpg) bottom no-repeat;}
+.content .left .box p{ text-align: left; line-height:40px; color:#910006; font-weight:bold; text-indent:1em; }
+.content .left .box a{ text-align: left; line-height:40px; color:#910006; font-weight:bold;text-indent:1em; }
+.content .left .box img{ margin:-5px 0 0 12px;}
+
+.content .right{width:667px; float:left; margin:21px 0 0 20px;}
+.content .right .title{width:667px; height:134px; border:#e8ebff 1px solid; float:left; }
+.content .right .title img{float:left; padding:1px;}
+.content .right .title p{ text-align:left; margin-left:170px; line-height:20px; color:#5c5c5c; }
+.content .right .title h1{ font-size:15px; font-weight:bold; color:#910006; line-height:35px; text-indent:0.5em; font-family:"微软雅黑";  }
+
+.content .right .boxright{width:667px; margin-top:13px; float:left}
+.content .right .boxtitle{width:667px; height:44px; background:url(../images/jingdian_bg.jpg) no-repeat;font-size:24px; color:#910006; font-family:"微软雅黑"; font-weight:bold; line-height:47px; text-align:left; text-indent:0.5em;}
+
+.content .right .boxtitle a{font-size:24px; color:#910006; font-family:"微软雅黑"; font-weight:bold; line-height:50px; text-align:left; text-indent:1em;}
+.content .right .boxtitle a:hover{font-size:24px; color: #CC0000; font-family:"微软雅黑"; font-weight:bold; line-height:50px; text-align:left; text-indent:1em; text-decoration:none;}
+
+
+
+.content .right .boxtitle p{ font-size:12px; color:#999999; text-align:center; margin-top:-53px; font-weight:100;}
+.content .right .boxtitle span{ font-size:16px; font-family:"微软雅黑"; color:#ac9a9a;  line-height:50px;}
+.content .right .boxtitle h1{color:#910006; text-align:right; margin-right:5px; font-size:12px;margin-top:-50px;}
+.content .right .boxtitle h1 a{color:#910006; text-align:right; margin-right:5px; font-size:12px;margin-top:-50px;}
+.content .right .boxtitle h1 a:hover{color:#CC0000; text-align:right; margin-right:5px; font-size:12px;margin-top:-50px;}
+
+.content .right .boxcenter{width:665px; border-bottom:#e8ebff 1px solid; border-left:#e8ebff 1px solid; border-right:#e8ebff 1px solid;}
+
+.content .right .righttxt{width:664px; height:65px; border-bottom:1px dotted #CCCCCC; }
+.content .right .righttxt .left1{width:570px; float:left}
+.content .right .righttxt img{float:left; margin:15px 0 0 10px;}
+.content .right .righttxt h1{ font-size:14px; font-weight:bold; color:#910006; line-height:40px; text-indent:0.5em;}
+.content .right .righttxt h1 a{ font-size:14px; font-weight:bold; color:#910006; line-height:40px; text-indent:0.5em;}
+.content .right .righttxt h1 a:hover{ font-size:14px; font-weight:bold; color:#910006; line-height:40px; text-indent:0.5em; }
+.content .right .righttxt span{color:#ff6600; font-size:12px;}
+.content .right .righttxt p{font-size:12px; color:#666666; margin-left:28px; line-height:12px;_line-height:15px;}
+
+.content .right .righttxt .boxan{ width:94px;float:right;color:#ff6600; text-align:center; font-size:14px; line-height:60px; }
+.content .right .righttxt .boxan span{ font-family:Arial, Helvetica, sans-serif; font-size:18px;}
+.content .right .bot{width:664px; float:left; margin-top:20px;}
+.content .right .bot .botmbg{width:210px; height:33px; background:url(../images/bottm_bg1.jpg) no-repeat; margin-left:430px;text-align:center;}
+.content .right .bot .botmbg a{ color:#FFFFFF; font-size:18px; line-height:34px; font-family:"微软雅黑"; text-align:center; }
+.content .right .bot .botmbg a:hover{ color: #FFFF00; font-size:18px; line-height:34px; font-family:"微软雅黑"; text-align:center; }
+
+/**/
+.chese{display:table; margin:0 auto 20px auto; text-align:center; clear:both;}
+
+.pr24{ padding-right:24px; }
+.pl24{ padding-left:24px; }
+.plr24{ padding:0 24px; }
+.pTB25{ padding:25px 0;}
+.mt10{ margin-top:10px;}
+.boxWarp{ background:#fff;}
+.bb1{ border-bottom:1px solid #dbdbdb;}
+.title1d {line-height:57px; height:57px; padding:0 38px; }
+.title1d h2{  font-size:32px; font-family:"微软雅黑"; float:left; color:#910006; }
+.title1d h2.font28{ font-size:28px;}
+.pt10{ padding-top:10px;}
+.title1d p{ float:left; font-family:"微软雅黑"; font-size:16px;  padding-left:12px; color:#444; }
+.gradientBg{ background: url(../images/gradientBg.gif) repeat-x;}
+.fgx{ background: url(../images/fgx.gif) repeat-x 0 bottom;}
+.cont{ padding:0 0px; }
+
+.line2{ background:#fff; border-top:1px solid #ff9524;padding-top:5px;}
+.shousuo{ z-index:0;  text-align:center; }
+.shousuo li{ float:left; width:152px; height:110px; border-right:1px solid #fff; border-bottom:1px solid #fff; position:relative; }
+.shousuo li p{ width:152px; height:110px;}
+.shousuo li p img{  width:152px; height:110px;}
+.shousuo li p span{ display:block; opacity:0.5; filter:alpha(opacity=50); position:absolute; background:#000; display:block; width:152px; height:26px; line-height:26px; position:absolute; left:0; top:84px; color:#fff; text-align:center;}
+.shousuo li p span a{ color:#fff;}
+.shousuo li p span a:hover{ color:#fff; text-decoration: underline;}
+.huodong li{ float:left; width:205px; margin-right:32px;}
+.huodong li p{ border:1px solid #e7e7e7; width:191px; height:113px; padding:6px;}
+.huodong li span{ text-align:center; height:20px; line-height:20px; display:block; padding-top:4px;}
+.huodong li.noMarginRight{ margin-right:0;}
+/**/
+
+
+
+#fixed-top{ position:fixed; right:-1px; top:0; _position:absolute; _top:expression(eval(document.documentElement.scrollTop)); z-index:1;}
+#fixed-top1{ position:fixed; right:255px; top:350px; _position:absolute; _top:expression(eval(document.documentElement.scrollTop)); z-index:1;}
+
+
+
+
+
+
+/*内页样式*/
+.content .right .boxtop{width:665px; height:120px; border-bottom:#CCCCCC 1px dotted; position:relative;}
+
+.boxtop_r{ position:absolute; right:10px; top:30px;}
+.content .right .boxtop .boxtop_r span{ color:#ec7e06; font-size:16px; font-family:Arial, Helvetica, sans-serif; font-weight:bold;}
+.content .right .boxtop .boxtop_r span b{ color:#ec7e06; font-size:12px; font-family:Arial, Helvetica, sans-serif; font-weight:normal;}
+.boxtop_r_bot{ width:83px; height:27px; background:url(../images/bottom.jpg) no-repeat;  text-align:center;}
+.boxtop_r_bot a{color:#FFFFFF; font-size:14px; font-weight:bold; line-height:27px;}
+.boxtop_r_bot a:hover{color: #FFFF00 ; }
+.content .right .boxtop .img1{width:111px; height:90px; float:left; margin:15px 0 0 13px; _margin-left:8px;  }
+.content .right .boxtop .txttop{width:450px;  float:left;margin:12px 0 0 15px;}
+.content .right .boxtop h1{width:450px; line-height:30px; color:#910006; font-weight:bold; font-size:14px;}
+.content .right .boxtop h1 a{width:450px; line-height:30px; color:#910006; font-weight:bold; font-size:14px;}
+.content .right .boxtop h1 a:hover{width:450px; line-height:30px; color:#910006; font-weight:bold; font-size:14px;}
+.content .right .boxtop span{color:#666; font-size:12px; line-height:15px;} 
+.content .right .boxtop p{color:#ec7e06; font-size:12px; line-height:9px; margin-top:8px;} 
+
+
+
+
+
+
+
+
+
+
+
+

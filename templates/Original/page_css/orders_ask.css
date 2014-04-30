@@ -1,0 +1,19 @@
+@charset "gb2312";
+/* CSS Document */
+
+#OtherContactForOrdersAsk li{ display:block;padding:3px 0 3px 25px;/*background:url(/image/nav/bg_main_box2.jpg) no-repeat;*/ font-family: Arial, Helvetica, sans-serif;line-height:20px;position:relative;}
+#OtherContactForOrdersAsk li i{background:url(/image/nav/bg_main_box2.jpg) no-repeat;font-style:normal;width:18px;height:20px;float:left;position:absolute;top:4px;left:2px;}
+#OtherContactForOrdersAsk li.s_1 i{ background-position:-2px -79px; }
+#OtherContactForOrdersAsk li.s_2 i{background-position: -2px -105px; }
+#OtherContactForOrdersAsk li.s_3 i{background-position: -2px -132px; }
+#OtherContactForOrdersAsk li.s_4 i{background-position: -2px -161px; }
+#OtherContactForOrdersAsk li.s_5 i{background-position: -2px -185px; }
+
+.myToursAsk{width:738px;}
+.contact{width:100%;}
+.border_LR{border:1px solid #DBE7F7;border-top:0;}
+.contact ul{width:723px;}
+
+.myToursAsk .btn{background:url(/image/nav/checkoutbtn.jpg) no-repeat;border:0;height:38px;width:162px;margin:0;margin:0 auto;color:#fff;font-weight:bold;font-size:14px;}
+
+

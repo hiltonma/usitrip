@@ -1,0 +1,83 @@
+@charset "utf-8";
+/* 专题样式 */
+
+
+
+
+
+
+#content {
+	background:url(../images/6advantage_bg.jpg) no-repeat center 0;
+	height:3149px;
+}
+.banner{ width:960px; height:402px; margin:0 auto;}
+.Subtitle{ width:960px; height:66px; background:#204d9e; margin:0 auto; position:relative;}
+.Subtitle img{ width: 781px; height:206px; position:absolute; left:-24px; top:-99px;}
+.Subtitle p{ font-size:24px; color:#FFF; font-family:Helvetica, Tahoma, Arial, STXihei,"Microsoft YaHei", "微软雅黑", sans-serif;}
+
+
+
+.lay_01{ width:934px; height:550px;  margin:42px auto 20px auto;}
+.lay_01 h2{ background:url(../images/h01.png) no-repeat; width:934px; height:57px;}
+.lay_01 dl{ width:460px; height:248px;border:1px solid #bdd2fb; background:#FFF; color:#666666; font-size:14px; line-height:22px; margin-top:10px; float:left; }
+.lay_01 .er{ width:460px; height:248px;border:1px solid #bdd2fb; color:#666666; font-size:14px; line-height:22px; margin-top:10px; float:right; clear:right; }
+.lay_01 dt{ width:454px; height:44px;margin:3px auto;}
+.lay_01 dd{ padding-top:5px; padding-left:10px;}
+.lay_01 dd img{ width:204px; height:166px;border:1px solid #bdd2fb; float:left; padding-top:10px; padding-left:10px;}
+.lay_01 a{  }
+.lay_01  p{ float:right; padding-left:5px; padding-right:5px; width:220px; }
+
+
+
+.lay_02{ width:934px; height:356px;margin:42px auto 20px auto; position:relative;}
+.lay_02 h2{ background:url(../images/h02.png) no-repeat; width:934px; height:57px;}
+.lay_02 .box{ width:932px; height:292px;border:1px solid #bdd2fb; background: url(../images/lay02_bg.gif) right bottom no-repeat #FFF; color:#666666; font-size:14px; line-height:22px; margin:10px auto;}
+.lay_02 .box ul{ width:510px; height:275px;position:absolute; top:75px; left:65px; line-height:25px;}
+.lay_02 li{ border-bottom:1px solid #bdd2fb; padding-bottom:20px; padding-top:25px;}
+.lay_02 .s{ border:none;}
+.lay_02 span{ font-size:22px; color:#204c9d;font-family:Helvetica, Tahoma, Arial, STXihei, "Microsoft YaHei", "微软雅黑",  sans-serif;}
+.lay_02 p{ padding-top:10px;}
+.lay_02 .lowprice{  width:270px; height:260px; position:absolute; top:87px; right:20px; }
+
+
+.lay_03{width:934px; height:376px;margin:0 auto; }
+.lay_03 h2{ background:url(../images/h03.png) no-repeat; width:934px; height:57px;}
+.lay_03 .box{ width:934px; height:295px;background: url(../images/lay03_bg.png)  center no-repeat ; color:#666666; font-size:14px; line-height:22px; margin:10px auto;position:relative;}
+.lay_03 .box ul{width:964px; height:275px;position:absolute; top:180px; left:0px; line-height:24px;position:absolute;  }
+.lay_03 .box li{ float:left; width:274px; height:100px; padding:0px 22px 0px 18px; text-align:left; }
+
+
+.lay_04{width:934px; height:466px;margin:0 auto; }
+.lay_04 h2{ background:url(../images/h04.png) no-repeat; width:934px; height:57px;}
+.lay_04 .box{ width:932px; height:380px;background: url(../images/lay04_bg.png) center center no-repeat #FFF ; color:#666666; font-size:14px; line-height:22px;border:1px solid #bdd2fb; margin:10px auto;position:relative;}
+.lay_04 .box ul{width:934px; height:275px;position:absolute; top:56px; left:0px; line-height:24px; z-index:5;}
+.lay_04 .box li{ float:left; width:300px; height:140px; padding-left:150px;  }
+.lay_04 span{ font-size:22px; color:#204c9d;font-family:Helvetica, Tahoma, Arial, STXihei,  "Microsoft YaHei", "微软雅黑", sans-serif;}
+.lay_04 p{ padding-top:5px;}
+.lay_04 .box .s{  width:750px; height:200px; padding-top:50px;}
+
+.lay_05{width:934px; height:374px;margin:0 auto; }
+.lay_05 h2{ background:url(../images/h05.png) no-repeat; width:934px; height:57px;}
+.lay_05 .box{ width:932px; height:294px;background: url(../images/lay05_bg.png) left top no-repeat #FFF ; color:#666666; font-size:14px; line-height:22px;border:1px solid #bdd2fb; margin:10px auto;position:relative;}
+.lay_05 .box ul{width:520px; height:254px;position:absolute; top:25px; left:380px; line-height:24px;}
+.lay_05 .box li{width:520px; height:140px;   }
+.lay_05 span{ font-size:22px; color:#204c9d;font-family:Helvetica, Tahoma, Arial, STXihei,  "Microsoft YaHei", "微软雅黑", sans-serif;}
+.lay_05 p{ padding-top:5px;}
+
+.lay_06{width:934px; height:364px;margin:0 auto; }
+.lay_06 h2{ background:url(../images/h06.png) no-repeat; width:934px; height:57px;}
+.lay_06 .box{ width:908px; height:300px;background: url(../images/lay06_bg.png) 22px 20px no-repeat #FFF ; color:#666666; font-size:14px; line-height:22px;border:1px solid #bdd2fb; margin:10px auto;
+padding-top:50px; padding-left:24px;}
+.lay_06 p{ width: 750px;padding-top:10px; color:#666666; font-size:14px; padding-bottom:65px; }
+
+
+.footer{ width:100%; height:150px; border-top: 4px solid #204c9d; background:#e0eafa;}
+
+
+
+
+
+
+
+
+

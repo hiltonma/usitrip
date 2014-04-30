@@ -1,0 +1,79 @@
+.thumbnail
+{	position:inherit;
+	z-index: 0;
+}
+
+.thumbnail:hover
+{
+	background-color: transparent;
+	z-index: 50;position:relative; text-decoration:none;
+}
+
+.thumbnail span
+{ /*CSS for enlarged image*/
+	position:absolute;
+	background-color: lightyellow;/*#CF4EE8;*/
+	padding: 5px;
+	left: -1000px;
+	border: 1px dashed gray;
+	visibility: hidden;
+	color: black;
+	text-decoration: none;
+	text-align:left;
+/*	opacity:50;
+	filter:alpha(opacity=70);*/
+}
+
+.thumbnail span img
+{ /*CSS for enlarged image*/
+	border-width: 0;
+	padding: 2px;
+}
+
+.thumbnail:hover span
+{ /*CSS for enlarged image on hover*/
+	visibility: visible;
+	top: 0;
+	left: -600px; /*position where enlarged image should offset horizontally */
+}
+
+.thumbnail2
+{	position:inherit;
+	z-index: 0;
+}
+
+.thumbnail2:hover
+{
+	background-color: transparent;
+	z-index: 50;position:relative; text-decoration:none;
+}
+
+.thumbnail2 span
+{ /*CSS for enlarged image*/
+	position:absolute;
+	background-color: lightyellow;/*#CF4EE8;*/
+	padding: 5px;
+	/*left: -1000px;*/
+	border: 1px dashed gray;
+	/*visibility: hidden;*/
+	display:none;
+	color: black;
+	text-decoration: none;
+	text-align:left;
+/*	opacity:50;
+	filter:alpha(opacity=70);*/
+}
+
+.thumbnail2 span img
+{ /*CSS for enlarged image*/
+	border-width: 0;
+	padding: 2px;
+}
+
+.thumbnail2:hover span
+{ /*CSS for enlarged image on hover*/
+	/*visibility: visible;*/
+	display:block;
+	top: 0;
+	/*left: -600px; *//*position where enlarged image should offset horizontally */
+}

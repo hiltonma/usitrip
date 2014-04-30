@@ -1,0 +1,55 @@
+@charset "gb2312";
+/* CSS Document */
+
+#body .tipslayer {
+	POSITION: relative
+}
+#body .tipslayer:hover {
+	Z-INDEX: 50; BACKGROUND-COLOR: transparent;
+}
+#body .tipslayer SPAN {
+BORDER-RIGHT: #52aade 1px solid; padding:5px;  BORDER-TOP: #52aade 1px solid;  FILTER: alpha(opacity=95); VISIBILITY: hidden;BORDER-LEFT: #52aade 1px solid; COLOR: black;  BORDER-BOTTOM: #52aade 1px solid; POSITION: absolute; BACKGROUND-COLOR: white; TEXT-DECORATION: none; opacity: .95; left:0px;  WIDTH: 550px; TOP: -246px;
+
+}
+#body .tipslayer:hover SPAN {LEFT: -295px !important; VISIBILITY: visible; WIDTH: 550px; CURSOR: pointer; TOP: -280px;}
+
+.cart_progress .cart_left{float:left;height:80px;width:200px; line-height:80px;}
+.cart_progress .cart_left .cart_icon{display:block;background:url(/image/nav/carts.gif) no-repeat left -99px;width:47px;height:45px;margin-top:13px;margin-left:10px;float:left;}
+.cart_progress .cart_left h3{color:#4d4d4d;font-size:24px; font-family:microsoft YaHei;}
+.cart_progress .cart_right{float:right;width:666px;height:80px;padding-top:18px;}
+.cart_progress .cart_right ul{float:right;}
+.cart_progress .cart_right li{float:left;background:#ffedca;width:161px;line-height:29px;font-size:12px;text-align:center}
+.cart_progress .cart_right li span{background:url(/image/nav/carts.gif) no-repeat -5px -144px;width:19px;height:29px;float:left;display:block;}
+.cart_progress .cart_right li.first span{background:url(/image/nav/carts.gif) no-repeat left -144px;width:5px;height:29px;display:block;float:left;}
+.cart_progress .cart_right li.cur{background:#ff6600;color:#fff;font-weight:bold;font-size:14px;}
+.cart_progress .cart_right li.cur span{ background-position:-24px -144px;}
+.cart_progress .cart_right li span.cur{background-position:-43px -144px;}
+.cart_progress .cart_right li.last{width:5px;}
+.cart_progress .cart_right li.last span{background-position:-62px -144px;width:5px;height:29px;}
+
+TD.infoBoxHeading{border-left:1px solid #a2cbf4;border-right:1px solid #a2cbf4;padding-left:25px;background:url(/image/nav/carts.gif) repeat-x left -173px;height:36px;line-height:36px;border-top:1px solid #a2cbf4;}
+TD.blue{border-top:3px solid #2686ff;height:32px;line-height:32px;background:url(/image/nav/tab_button_20130723.gif) repeat-x left -115px;}
+TD.blue .cart_list_table{color:#4d4d4d;font-weight:normal;}
+TD.blue .cart_list_table .heading_bg{font-size:12px;color:#4d4d4d;font-weight:normal;}
+TD.infoBoxHeading .heading_bg{font-size:14px;color:#134da3;border:none;background:none;margin:0;padding:0;}
+TD.infoBoxHeading .head_note{margin-top:0;padding-right:15px;}
+.infoBox_outer{border-left:1px solid #a2cbf4;border-right:1px solid #a2cbf4;}
+.infoBox_new{border:none;}
+.separator{height:9px;}
+.dazi{font-size:12px; font-weight:normal;height:36px;line-height:36px;}
+.sp1{padding-right:15px;height:36px;line-height:36px;color:#ff3d00;}
+.bg{background-color:#ebf7ff;}
+.infoBoxCt_n_c .main{padding:10px;padding-left:30px;}
+.infoBoxCt_n_c .dazi{color:#ff6900;font-size:14px;font-weight:bold;padding-left:0;}
+.infoBox{border:none;}
+.infoBox .infoBoxContents{background:none;}
+
+a.btn{display:block;height:29px;line-height:29px;width:82px;padding-left:30px;background:url(/image/nav/carts.gif) no-repeat left -30px;color:#4d4d4d;}
+a.btn span{display:block;float:right;background:url(/image/nav/carts.gif) no-repeat right -30px;height:29px;width:10px;}
+
+.subbtn input{border:none;width:100px;height:40px;line-height:40px;background:url(/image/nav/carts.gif) no-repeat left -59px;text-align:left;padding-left:30px;letter-spacing:15px;font-family:microsoft YaHei;font-weight:bold;font-size:16px;color:#fff;border-radius:4px;cursor:pointer;}
+.wenzi{font-weight:bold;font-size:14px;color:#4d4d4d;}
+.daol{font-size:28px;}
+a.orderEdit_a{background:url(/image/nav/view_03.gif) no-repeat;width:54px;height:21px;display:block;text-align:center;line-height:21px;}
+.flight_list input{    border: 1px solid #CCCCCC;    height: 17px;    padding-top: 3px;    width: 130px;}
+.flight_list TD{height:28px;line-height:28px;}

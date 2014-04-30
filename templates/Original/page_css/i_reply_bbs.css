@@ -1,0 +1,21 @@
+@charset "gb2312";
+
+table { border-collapse: collapse; border-spacing: 0; }
+table td,table th{background:#fff;}
+
+.ui-wrap{width:755px;margin:10px 50px 0 auto;}
+.ui-clearfix{display:block;clear:both;zoom:1;}
+.ui-clearfix:after{display:block;clear:both;height:0;font-size:0;visibility:hidden;content:"";}
+
+.ui-reply-tb{width:725px;border:1px solid #ccc;color:#888;}
+.ui-reply-tb th{height:31px;background:url(/image/nav/collect-thead.gif) repeat-x;}
+.ui-reply-tb td{border:1px solid #ccc;}
+
+.ui-reply-tb th.ui-reply-cnt,.ui-reply-tb th.ui-from-article,.ui-reply-tb td.ui-reply-title{width:220px;text-align:left;padding:0 15px;}
+.ui-reply-tb th.ui-last-post,.ui-reply-tb td.ui-post-author{width:135px;text-align:center;}
+.ui-reply-tb th.ui-reply-handle,.ui-reply-tb td.ui-toview{text-align:center;}
+
+.ui-reply-tb td p{line-height:20px;padding:12px 0;}
+.ui-reply-tb td a{color:#225caa;}
+.ui-reply-tb td a.ui-viewbtn{width:66px;height:23px;display:inline-block;*display:inline;zoom:1;background:url(/image/nav/ui-toview-btn.jpg) no-repeat;text-align:center;color:#888;}
+.ui-reply-tb td a:hover{color:#f60;}

@@ -1,0 +1,24 @@
+ErrorDocument 404 /lvtu/index.php
+
+#设置在开启session的情况下也能缓存（实际是告诉apache不要自作主张发这些头出去）
+<ifModule mod_headers.c>
+	#添加
+    <FilesMatch ".(js|css|xml|gz)$">
+    Header append Vary Accept-Encoding
+    </FilesMatch>
+    
+    #不发过期时间
+	Header unset Expires
+	Header unset Cache-Control
+	Header unset Pragma
+	#设置缓存有效期#private, max-age=100
+	Header set Cache-Control "max-age=-1"
+	#不暴露服务器PHP信息
+	Header set X-Powered-By "Martian"
+	
+	#首页、搜索结果页缓存1800秒
+ 	<FilesMatch "(index|advanced_search_result)\.php$">
+        Header set Cache-Control "max-age=-1"
+	</FilesMatch>
+</ifModule>
+

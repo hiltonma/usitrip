@@ -1,0 +1,129 @@
+<form action="{:gethref page=$baseUrl uid=$uid mod=$mod action=$action aid=$aid seo='false':}" method="post" onsubmit="return checkSelected(this,0);">
+<div class="expertRouteShow">
+      <div class="title titleSmall">
+        <b></b><span></span>
+        <h3>
+        {:if $isWritingsMPro:}
+        	{:db_to_html text='喜欢':} {:db_to_html text=$writings.typename:} {:db_to_html text='？看看下面有适合您的行程吗？':}
+        {:else:}
+        	{:db_to_html text='主页推荐行程':}
+        {:/if:}
+        </h3>
+      </div>
+      <div class="expertRoute">
+        <ul>
+{:foreach from=$wProducts item=products name=wProducts:}
+          <li>
+          <p>
+          {:if $isWritingsMPro:}<input type="checkbox" value="{:$products.products_id:}" name="products_id[]">{:/if:}
+          <a href="{:gethref page=$smarty.const.FILENAME_PRODUCT_INFO products_id=$products.products_id:}" target="_blank">{:db_to_html text=$products.products_name:}[{:db_to_html text=$products.products_model:}]</a>
+          </p>
+          <span class="price">{:$products.final_price:}</span>
+          {:if $isWritingsMPro:}
+          <span class="view">{:db_to_html text='浏览':}({:$products.hits:})</span>
+          <span class="order">{:db_to_html text='下单':}({:$products.ordernum:})</span>
+          {:/if:}
+          </li>
+{:foreachelse:}
+	<li><span class="price" style="width:100%;">{:db_to_html text='还没有推荐行程！':}</span></li>
+{:/foreach:}
+        </ul>
+      </div>
+    </div>
+    {:if $isWritingsMPro:}
+    <div class="expertPushBtn"><a class="btn btnGrey" href="javascript:;"><button type="submit">{:db_to_html text='取消推荐':}</button></a></div>
+    {:/if:}
+<input type="hidden" name="postType" value="cancell"/>
+</form>
+<form action="{:gethref page=$baseUrl uid=$uid mod=$mod action=$action aid=$aid seo='false':}" method="post" onsubmit="return checkSelected(this,1);">
+    <div class="expertPush">
+      <h1><b>{:db_to_html text='从走四方网中选择行程推荐到':}</b>
+      	{:if $isWritingsMPro:}
+        	{:db_to_html text='“喜欢':} {:db_to_html text=$writings.typename:} {:db_to_html text='？看看下面有适合您的行程吗？”':}
+        {:else:}
+        	{:db_to_html text='“主页推荐行程”':}
+        {:/if:}
+      </h1>
+      <h2>{:db_to_html text='选择类别：':}
+      &nbsp;|&nbsp;{:foreach from=$categoryData item=thiscategory name=categoryData:}
+      <a href="{:gethref page=$baseUrl mod='writings' action='mproducts' uid=$uid aid=$aid category=$thiscategory.id:}" {:if $thiscategory.id == $category:} class="selected"{:/if:}>{:db_to_html text=$thiscategory.name:}</a>&nbsp;|&nbsp;
+      {:/foreach:}
+	  </h2>
+      <div class="expertRoute">
+        <ul>
+{:foreach from=$categoryProducts item=products name=categoryProducts:}
+          <li>
+          <p>
+          {:if $isWritingsMPro:}
+          <input type="checkbox" value="{:$products.products_id:}" name="products_id[]">
+          {:else:}
+          <input type="radio" value="{:$products.products_id:}" name="products_id[]">
+          {:/if:}
+          <a href="{:gethref page=$smarty.const.FILENAME_PRODUCT_INFO products_id=$products.products_id:}" target="_blank">{:db_to_html text=$products.products_name:}[{:db_to_html text=$products.products_model:}]</a>
+          </p>
+          <span class="price">{:$products.final_price:}</span>
+          </li>
+{:/foreach:}
+        </ul>
+      </div>
+      
+      
+      	{:if trim($pages)!='':}
+        <div class="page">
+        {:$pages:}
+        </div>
+        {:/if:}
+        <div class="goTop"><a href="javascript:scroll(0,0);" target="_self"></a></div>
+    </div>
+    
+    <div class="expertPushBtn">
+    {:if $isWritingsMPro:}
+    <a class="btn btnGrey" href="javascript:;"><button type="submit" onclick="return setPostType(1);">{:db_to_html text='推荐行程':}</button></a>
+    {:else:}
+    <a class="btn btnGrey" href="javascript:;"><button type="submit" title="{:db_to_html text='推荐到您的专家主页！':}" onclick="return setPostType(2);">{:db_to_html text='主页推荐':}</button></a>
+    {:/if:}
+    </div>
+<input type="hidden" name="isPost" value="1" id="isPost" />
+<input type="hidden" name="postType" value="recom"/>
+</form>
+<script type="text/javascript">
+function setPostType(val){
+	jQuery('#isPost').val(val);
+	return true;
+}
+function checkSelected(form,tp){
+	form = jQuery(form);
+	var checkednum=0;
+	<!--{:if $isWritingsMPro:}-->
+    var objtype = 'checkbox';
+    <!--{:else:}-->
+	var objtype = 'radio';
+    <!--{:/if:}-->
+	form.find(':'+objtype).each(function(){
+		var element = jQuery(this);
+		var name = element.attr('name');
+		if(name == 'products_id[]'){
+			var checked = element.attr('checked');
+			if(checked){
+				checkednum++;	
+			}
+		}
+	});
+	var isPost = jQuery('#isPost').val();
+	if(checkednum<1){
+		var msg = "{:db_to_html text='取消推荐':}";
+		if(tp==1 && isPost==1){
+			msg = "{:db_to_html text='推荐':}";
+		}else if(tp==1 && isPost==2){
+			msg = "{:db_to_html text='推荐到专家主页':}";
+		}
+		alert("{:db_to_html text='请选择您要':}"+msg+"{:db_to_html text='的行程！':}");
+		return false;
+	}
+	if(tp==1 && jQuery('#isPost').val()==2 && checkednum>1){
+		alert("{:db_to_html text='推荐到专家主页的行程只能选择一条':}");
+		return false;
+	}
+	return true;
+}
+</script>

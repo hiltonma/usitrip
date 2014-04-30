@@ -1,0 +1,42 @@
+/* CSS Document */
+#help .mudidi-gl ul li{ background:none;background:url(/image/bg.gif) no-repeat -570px -106px; padding-left:12px;}
+#help .left-side-title{margin-top:5px;}
+#help .chufa-city ul { width:88%}
+#help .chufa-city ul li{ width:100%;}
+#help .chufa-city ul li a{ width:90%; white-space:nowrap; overflow:hidden;}
+#help .chufa-city ul.mudidi-doc li a{ width:97%; }
+.mudidi-doc li{ background:url(/image/xuxian-dot.gif) repeat-x left bottom; padding-bottom:1px; }
+.mudidi-doc{ width:90%;}
+.nei-leftside-top-help{height:4px; width:208px;float:left; overflow:hidden; background:#F6FCFF url(/image/bg.gif) -15px -909px;}
+.nei-leftside-top-help b{ display:block; float:left;  background:url(/image/bg.gif) -3px -909px  ; height:4px; width:4px; }
+.nei-leftside-top-help span{ display:block; float:right; background:url(/image/bg.gif) -9px -909px ; height:4px; width:4px; }
+.nei-leftside-bottom-help{background:url(/image/bg.gif) -15px -915px; height:4px; width:208px; float:left;  overflow:hidden; }
+.leftside-box-help{ background:#E7F6FF; width:206px;}
+.leftside-box-help p{ float:left; padding:10px; font-weight:bold;}
+.leftside-box-help p a{ padding-left:6px; font-weight:normal;}
+.nei-leftside-bottom-help b{ display:block; float:left;  background:url(/image/bg.gif) -3px -915px ; height:4px; width:4px; }
+.nei-leftside-bottom-help span{ display:block; float:right; background:url(/image/bg.gif) -9px -915px; height:4px; width:4px; }
+#help .need-help{ float:left; margin-top:10px;}
+
+
+
+#help .tc-help{ width:90%; line-height:18px;}
+#help .tc-help h4{ padding:10px 0px 10px 0px;}
+#help .help-content p a.teli { color:#353535;}
+#help .tc-help ul li{ padding: 0px 0px 28px 130px; margin-bottom:10px; }
+#help .tc-help ul li.hp-step1{ background:url(/image/bg.gif) -455px -1187px no-repeat; }
+#help .tc-help ul li.hp-step2{ background:url(/image/bg.gif) -455px -1253px no-repeat;}
+#help .tc-help ul li div{background:url(/image/bg2.gif) -3px -9px no-repeat; width:369px; height:104px; padding:8px 0px 4px 28px;}
+#help .tc-help ul li div p{ margin-bottom:5px; }
+#help .tc-help ul li.hp-step3{ background:url(/image/bg.gif) -301px -1187px no-repeat;}
+#help .tc-help dd dl{ background:url(/image/list_jiantou2.gif) left 7px  no-repeat; padding-left:8px;}
+#help .help_list_step{ margin-left:35px;}
+
+
+#help .Process{ width:98%;}
+#help div.Process_l2{ padding-left:18px;}
+#help .margin_b2{ margin-bottom:21px;}
+
+
+#help .faqList{ clear:both;}
+#help .faqList li{ padding:10px 10px 0;}

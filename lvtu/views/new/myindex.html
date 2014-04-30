@@ -1,0 +1,130 @@
+{{include file="head.html"}}
+<div id="body">
+	<div class="crumbs">{{*首页 > 最新发现*}}</div>
+	<h1><a href="javascript:void(0)" class="J-publish publish"></a><a href="{{$nav_index}}" class="myhome myfind"></a><a href="{{$nav_index}}" class="a_all"><span class="title"><i></i>全部游记</span></a></h1>	
+		{{*<!--内容-->
+		<!--中间内容-->*}}
+<div class="personal_main mt10 fn-bc fn-ohidden">
+	<div class="personal_content fn-fl">
+    
+    
+    
+    
+		{{section name=key loop=$piclist}}
+    	{{*<!--图片模块 开始-->*}}
+		<div style="height:34px;overflow:hidden;" class=""><span class="personal_ie6_7 bbb fn-fr mr30 mt15">{{if $piclist[key].destination !=''}}目的地：{{$piclist[key].destination}}{{/if}}</span><span class="day-date">{{$piclist[key].add_time}}</span></div>
+    	<div class="personal_pic border-bd-gray pb30 fn-bc">
+			
+        	<div class="personal_pic_tit fn-bc fn-clearfix">
+            <h1 class="personal_title fn-fl font-yahei darkgray">{{$piclist[key].travel_notes_title}}</h1>
+            
+            
+            
+            </div>
+        	<div class="personal_pic_status fn-pr fn-bc">
+                {{*<span class="time fn-tc fn-pa png24"><em class="time_day font-tahoma darkgray fn-block">{{$piclist[key].add_time|date_format:"%d"}}</em><em class="font-tahoma f14 darkgray fn-block">{{$piclist[key].add_time|date_format:"%Y/%m"}}</em></span>
+            	<span class="arrow fn-pa png24"></span>*}}
+            	<div class="J-img img fn-pr fn-tc fn-ohidden">
+                	<div class="J-imgNum img_num_cot fn-bc fn-pa fn-none"><em class="img_num_r personal_blowse font-tahoma white fn-fr png24 mr5">浏览({{$piclist[key].read_number}})</em>
+                    	<em class="img_num_r personal_comment font-tahoma white fn-fr png24 mr10">评论({{$piclist[key].replay_number}})</em>
+						<em class="img_num_r personal_approve font-tahoma white fn-fr mr10 png24">喜欢({{$piclist[key].like_number}})</em>
+                    	<span class="img_num fn-fl white font-tahoma png24">{{$piclist[key].image_number}}</span>
+                        <span class="img_num_r fn-fl white png24">张</span>
+                    </div>
+                    
+                    
+                    {{* http://img1.qunarzz.com/wugc/p151/201302/26/307f56d39183bb1893835fbb.jpg_600x400_8ad6efb1.jpg *}}
+                    	<img class="qpic" src="{{$piclist[key].image_src}}" {{*original="http://img1.qunarzz.com/wugc/p151/201302/26/307f56d39183bb1893835fbb.jpg_600x400_8ad6efb1.jpg"*}} onerror="this.src='{{$smarty.const.DIR_WS_IMG}}erroimgs.jpg'"/>
+                    
+                    
+                    {{*<input id="personAlbumHref" value="http://lvtu.qunar.com:80/mobile_ugc/web/album.htm?albumId=20307" type="hidden" /> *}}
+					<input id="personAlbumHref" value="{{$piclist[key].add_text}}" type="hidden" />
+                	{{*<div class="personal_pic_bg fn-pa p10 f12 gray_d4 lh180 fn-enter">
+				   	<p class="fn-tl">{{if $piclist[key].day_desction != ''}}
+					{{$piclist[key].day_desction}}
+					{{/if}}</p>
+                    <p>
+						<em class="personal_blowse font-tahoma white fn-fr png24 mr5">{{$piclist[key].read_number}}</em>
+                    	<em class="personal_comment font-tahoma white fn-fr png24 mr10">{{$piclist[key].replay_number}}</em>
+						<em class="personal_approve font-tahoma white fn-fr mr10 png24">{{$piclist[key].like_number}}</em>
+					</p>
+				   	</div>*}}
+                </div>
+            </div>
+            
+        </div>
+		{{/section}}
+     	<div id="pagination" class="pagination darkgray mt20 mb20 fn-tc"></div>
+     {{*<!--图片模块 结束-->*}}
+    
+    
+    
+        
+    </div>
+    {{*<!--personal_content end-->*}}
+    {{*<!--个人登录后右侧内容-->*}}
+	
+
+
+        <div class="personal_sidebar fn-pr fn-fr fn-bc ml30">
+		<div class="userbox">
+    	{{*<!--<span class="corner_tips fn-pa png24"></span>-->*}}
+    	<p class="personal_picture fn-pr png24">
+    	{{*<!-- 是否达人 -->*}}
+    	
+    	<img class="qpic fn-pa" src="{{$user_image}}" original="http://headshot.user.qunar.com/headshotsByName/dwag6158.png?l" width="200" height="200" />
+    	</p>
+        <h2 class="font-yahei ml5 darkgray fn-enter">{{$username}}</h2>
+        <span id="focus">
+    	
+		
+		
+		</span>
+        <p class="personal_attention_cancel ml5 png24" style="display:none"><a href="javascript:focus(2);">取消关注</a></p>
+        <ul>
+        <li>{{$view_counts}} 次浏览</li>
+        <li><span class="personal_total">{{*<a href="{{$user_index_href}}">*}}{{$travel_counts}} 篇游记{{*</a>*}}</span>，{{$pic_counts}} 张图片</li>
+        <li>去过 {{$travel_counts}} 个地方</li>
+        {{*<li class="personal_total"><a href="web/userFocusList.htm?userId=96761&type=1"><span id="focusNum"> 0</span> 关注{待处理}</a>，
+        <a   href="web/userFansList.htm?userId=96761&type=2"><span id="fans" >0</span> 粉丝{待处理} </a> </li>*}}
+        </ul>
+		</div>
+		
+    </div>
+</div>
+{{*<!--中间内容 end-->*}}
+	
+
+		 <input id="currIndex" value="4" type="hidden" />{{*<!-- 页面导航 -->*}}
+		<input id="isFirstCome" value="1" type="hidden" /> 
+		<input id="pageNo" value="{{$page}}" type="hidden" /> 
+		<input id="albumNum" value="{{$albumNum}}" type="hidden" />
+		<input id="pageSize" value="{{$pageSize}}" type="hidden"/>
+		<input id="hostId" value="{{$host_id}}" type="hidden"/>
+		<input id="guestId" value="{{$guest_id}}" type="hidden"/>
+
+		
+		{{*<div  class='qn_footer'>
+			<div class='inner'>
+						<!--页底页面-->
+		<div class="lvtu_footer fn-bc darkgray666 lh180 fn-tc mt30 pt15 pb15 wrapper">
+		<p class="links"> <a href="http://www.qunar.com/site/zh/Qunar.in.China_1.2.shtml" target="_top">关于Qunar.com</a> | <a href="http://www.qunar.com/site/zh/ContactUs_3.shtml" target="_top">联系我们</a> | <a href="http://www.qunar.com/site/zh/Cooperate_4.shtml" target="_top">业务合作</a> | <a href="http://hotelzt.qunar.com/xuanchuan/index.html?from=qunarfooter" target="_blank">酒店加盟</a> | <a href="http://hot.qunar.com/" target="_top">媒体报道</a> | <a href="http://www.qunar.com/site/zh/Jobs_2.shtml" target="_top">职位招聘</a> | <a href="http://www.qunar.com/site/zh/Rules.shtml" target="_top">用户协议</a> | <a href="web/lthelp.htm" target="_top">去哪儿旅图用户协议</a> | <a href="http://123.qunar.com/" target="_top">旅游导航</a> | <a href="http://bussiness.qunar.com/" target="_top">营销专家</a> | <a href="http://www.qunar.com/site/zh/Question_7.shtml" target="_top">常见问题</a> | <a href="http://www.qunar.com/site/zh/Links_8.shtml" target="_top">友情链接</a> | <a href="http://help.qunar.com/complaint.html" class="hl" target="_blank">我要投诉</a> | <a href="http://www.qunar.com/site/en/Qunar.in.China_1.1.shtml" target="_top">About Us</a> </p>
+		<p class="copyright"><a href="http://www.miibeian.gov.cn/" target="_blank">京ICP备05021087号</a> &nbsp; <a href="http://downtmp.qunar.com/qunaricp.pdf" target="_blank">电信与信息服务业务经营许可证060856号</a> &nbsp; 北京市公安局海淀分局备案编号:京公网安备110108901530</p>
+		<p>Copyright &copy; 2013 Qunar.com Inc. All Rights Reserved.</p>
+		</div>
+
+			</div>
+		</div>*}}
+		
+		
+	</div>
+{{include file="foot.html"}}
+<script src="{{$smarty.const.DIR_WS_JS}}personal-201302281703.js"></script>
+
+
+<script type="text/javascript">		
+var pathUpload = "{{$nav_index}}";
+</script>
+<!-- <script type="text/javascript" src="script/page/person_detail.js"></script> -->
+</body>
+</html>

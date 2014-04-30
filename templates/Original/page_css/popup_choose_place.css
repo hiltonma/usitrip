@@ -1,0 +1,49 @@
+.choosePlaceA{ font-weight:normal; color:#3380f4;}
+/* 弹出层 */
+.placePop{position:absolute; width:496px; left:-500px; top:100px; z-index:1000}
+
+/* 弹出层的遮盖层 */
+#DivShim{position:absolute;filter:mask();border:none;display:none;}
+
+/* 弹出层内容 */
+.placePopCon{ width:474px;  padding:10px; overflow:hidden; background:#ffffff; border:1px solid #999999;z-index:1000}
+.placePopCon h3{ width:100%; height:22px; line-height:15px; border-bottom:1px dashed #DDDDDD;  }
+.placePopCon h3 b{ float:left; line-height:22px; font-size:12px;}
+.placePopCon h3 span{ float:right; display:inline; cursor:pointer;}
+
+/* 弹出层表格 */
+.placePopConTable{ float:left; margin:10px 0px 0px; width:475px; display:inline; border:1px solid #98D4F8;}
+
+/* 弹出层表格头部 */
+/* 修改过 */.placePopConTable thead tr td{ height:25px; width:475px; background:#B2E0FA; border:0px; color:#013E5B; font-weight:bold; font-family:Tahoma;}
+/* 修改过 */.chooseTimePopPre,.chooseTimePopPre:hover{ float:left; padding:3px 10px 0; margin:5px 0 0 12px; display:inline; width:38px; height:14px; color:#000; line-height:14px; background:url(/image/popup_pre.jpg) no-repeat left center; text-decoration:none; font-weight:normal;}
+/* 修改过 */.chooseTimePopNext,.chooseTimePopNext:hover{ float:right; padding:3px 10px 0; margin:5px 12px 0 0; display:inline; width:38px; height:14px; color:#000; line-height:14px; text-align:right; background:url(/image/popup_next.jpg) no-repeat right center; text-decoration:none; font-weight:normal;}
+
+/* 弹出层表格内容 */
+.placePopConTable tr td{ border-top:1px solid #D2EEFC; line-height:20px; }
+.placePopConTable tr td span.timeS{ width:474px;}
+.placePopConTable tr td span.timeS b{ float:left; height:13px; width:13px; margin:3px 2px 0 8px; }
+.placePopConTable tr td span.timeS b input{float:left; height:13px; width:13px;}
+.placePopConTable tr td span.timeS em{ float:left; font-style:normal; margin-left:2px; display:inline; line-height:20px; font-family:Tahoma}
+.placePopConTable tr td a{ width:100%; color:#000; display:block;  cursor:pointer}
+.placePopConTable tr td a:hover{ background:#d8f1ff; text-decoration:none; overflow:hidden;}
+.placePopConTable tr td a.selected{ background:#2E6BC4; overflow:hidden;}
+.placePopConTable tr td a.selected:hover{ background:#2E6BC4}
+.placePopConTable tr td a.selected span{color:#ffffff;}
+.placePopConTable tr.placeListTitle{ height:30px; line-height:30px;  color:#999}
+.placePopConTable tr.placeListTitle span{ float:left; width:25px; margin-left:28px; display:inline;}
+.placePopConTable tr.placeList td a{width:100%; font-family:Tahoma; }
+.placePopConTable tr.placeList td a span.timeS{ width:80px; float:left;}
+
+/* 弹出层按钮 */
+.placePopCon .chooseTimeSubmit{float:left; clear:both; text-align:center; margin:8px 0 0 195px; display:inline;}
+.placePopCon .chooseTimeSubmit a.btn{height:23px; width:80px; display:block; border:1px solid #f8b709; background:url(/image/jb_bt_bg.jpg); color:#000100; cursor:pointer;}
+.placePopCon .chooseTimeSubmit a.btn:hover{background:url(/image/jb_bt_bg_h.jpg); text-decoration:none;}
+.placePopCon .chooseTimeSubmit a.btn span{ display:block; width:40px; height:23px;  line-height:23px; padding:0px 20px; font-weight:bold}
+
+.inputText{border:1px solid #999999; width:200px; line-height:14px; padding:3px; min-height:14px; overflow:visible; cursor:pointer;}
+
+
+
+
+

@@ -1,0 +1,5 @@
+@charset "gb2312";
+a.btn{display:block;height:29px;line-height:29px;width:66px;padding-left:30px;background:url(/image/nav/carts.gif) no-repeat left -30px;color:#4d4d4d;}
+a.btn span{display:block;float:right;background:url(/image/nav/carts.gif) no-repeat right -30px;height:29px;width:10px;}
+
+.subbtn input{border:none;width:100px;height:40px;line-height:40px;background:url(/image/nav/carts.gif) no-repeat left -59px;text-align:left;padding-left:30px;letter-spacing:15px;font-family:microsoft YaHei;font-weight:bold;font-size:16px;color:#fff;text-shadow:0 1px 1px #111;border-radius:4px;cursor:pointer;}

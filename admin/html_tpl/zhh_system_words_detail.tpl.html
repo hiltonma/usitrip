@@ -1,0 +1,63 @@
+{:include file="header.tpl.html" :}
+<script type="text/javascript">
+function del_words(words_id,botton_obj){
+	var obj = botton_obj;
+	if(confirm('确认要删除这个文章？')){
+		//alert('OK');
+		var urladdress = "{:$js_urladdress:}";
+		urladdress+= "&words_id="+words_id;
+		$.ajax({
+			   type: "GET",
+			   url: urladdress,
+			   success: function(){
+					$("#Lb_content").hide(500);
+					var html_code = '删除成功！[<a href="javascript:history.back(-1);">返回</a>]';
+					$("#Lb_content").html(html_code);
+					$("#Lb_content").show(500);
+				}
+			   });
+	}
+}
+
+</script>
+
+<div class="main">
+<div class="ItemsLbContent" id="Lb_content">
+<h1 class="contentH1">{:$WordsHeading:}</h1>
+<h3 class="contentBTp">发布者：<b>{:$sent_name:}</b>&nbsp;&nbsp;
+		  发布日期：<b>{:$added_time:}</b>&nbsp;&nbsp;
+		  最后更新：<b>{:$last_up_per_name:}</b>&nbsp;&nbsp;
+		更新日期：<b>{:$updated_time:}</b>
+		&nbsp;&nbsp;<i>{:$EditAHref:}</i>&nbsp;<i>{:$DeleteAHref:}</i></h3>
+<div class="wenzhangContent">
+ {:$words_content:}
+</div>
+
+{:if $annexs_dir_string!="":}		
+  <div style="display:block; float:left; margin:0 0 0 10px; display:inline;">
+	<h4>文章附件：</h4>
+		<div id="annex_boxes">
+		  {:$annexs_dir_string:}
+		</div>
+  </div>
+ {:/if:}
+
+</div>
+
+</div>
+{:if $have_everyone:}
+<table>
+<tr>
+<td>
+<div>
+	<form action="" method="post">
+		<input type="checkbox" name="read" value="1"/>
+		<input type="hidden" name="words_id" id="words_id" value="{:$words_id:}"/>
+		<input type="submit" name="submit" value="已经阅读"/>
+	</form>
+</div>
+</td>
+</tr>
+</table>
+{:/if:}
+{:include file="footer.tpl.html" :}

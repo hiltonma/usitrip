@@ -1,0 +1,256 @@
+-- phpMyAdmin SQL Dump
+-- version 2.11.11.3
+-- http://www.phpmyadmin.net
+--
+-- 主机: localhost
+-- 生成日期: 2013 年 04 月 19 日 15:09
+-- 服务器版本: 5.1.58
+-- PHP 版本: 5.2.17
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+--
+-- 数据库: `trip_image`
+--
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `configuration`
+--
+
+CREATE TABLE IF NOT EXISTS `configuration` (
+  `configuration_id` int(11) NOT NULL AUTO_INCREMENT,
+  `configuration_title` varchar(150) NOT NULL DEFAULT '',
+  `configuration_key` varchar(64) NOT NULL DEFAULT '',
+  `configuration_value` text NOT NULL,
+  `configuration_description` varchar(255) NOT NULL DEFAULT '',
+  `configuration_group_id` int(11) NOT NULL DEFAULT '0',
+  `sort_order` int(5) DEFAULT NULL,
+  `last_modified` datetime DEFAULT NULL,
+  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `use_function` varchar(255) DEFAULT NULL,
+  `set_function` varchar(1000) DEFAULT NULL,
+  PRIMARY KEY (`configuration_id`),
+  UNIQUE KEY `configuration_key` (`configuration_key`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 PACK_KEYS=0 COMMENT='网站配置表，很重要' AUTO_INCREMENT=806 ;
+
+--
+-- 导出表中的数据 `configuration`
+--
+
+INSERT INTO `configuration` (`configuration_id`, `configuration_title`, `configuration_key`, `configuration_value`, `configuration_description`, `configuration_group_id`, `sort_order`, `last_modified`, `date_added`, `use_function`, `set_function`) VALUES
+(1, '模板ID', 'SYS_THEME', '2', '使用的前台模板', 0, 0, NULL, '2013-01-04 00:00:00', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `languages`
+--
+
+CREATE TABLE IF NOT EXISTS `languages` (
+  `languages_id` int(11) NOT NULL DEFAULT '0',
+  `name` varchar(32) NOT NULL,
+  `code` char(2) NOT NULL,
+  `image` varchar(64) DEFAULT NULL,
+  `directory` varchar(32) DEFAULT NULL,
+  `sort_order` int(3) DEFAULT NULL,
+  `charset` varchar(50) NOT NULL COMMENT '语言编码',
+  PRIMARY KEY (`languages_id`,`code`),
+  KEY `IDX_LANGUAGES_NAME` (`name`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1;
+
+--
+-- 导出表中的数据 `languages`
+--
+
+INSERT INTO `languages` (`languages_id`, `name`, `code`, `image`, `directory`, `sort_order`, `charset`) VALUES
+(1, 'English', 'en', 'icon.gif', 'english', 2, 'utf-8'),
+(2, '简体', 'zh', 'icon.gif', 'chinese', 0, 'gb2312'),
+(2, '繁体', 'tw', 'icon_big5.gif', 'chinese', 1, 'big5');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `sys_theme`
+--
+
+CREATE TABLE IF NOT EXISTS `sys_theme` (
+  `sys_theme_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '模板ID',
+  `sys_theme_name` varchar(50) NOT NULL COMMENT '模板名称',
+  `sys_theme_floder_name` varchar(50) NOT NULL COMMENT '模板文件夹',
+  `sys_theme_js_floder_name` varchar(50) NOT NULL DEFAULT 'scripts' COMMENT 'JS所在位置',
+  `sys_theme_css_floder_name` varchar(50) NOT NULL DEFAULT 'styles' COMMENT 'CSS所在位置',
+  `sys_theme_image_floder_name` varchar(100) NOT NULL DEFAULT 'image' COMMENT '网站皮肤用到的图片位置',
+  PRIMARY KEY (`sys_theme_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COMMENT='模板/皮肤' AUTO_INCREMENT=3 ;
+
+--
+-- 导出表中的数据 `sys_theme`
+--
+
+INSERT INTO `sys_theme` (`sys_theme_id`, `sys_theme_name`, `sys_theme_floder_name`, `sys_theme_js_floder_name`, `sys_theme_css_floder_name`, `sys_theme_image_floder_name`) VALUES
+(1, '系统', 'default', 'scripts', 'styles', 'image'),
+(2, '走四方', 'new', 'scripts', 'styles', 'image');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `travel_comment`
+--
+
+CREATE TABLE IF NOT EXISTS `travel_comment` (
+  `comment_id` int(11) NOT NULL AUTO_INCREMENT,
+  `target_id` int(11) NOT NULL COMMENT '评论目标ID,1为图片2为心情',
+  `content` text NOT NULL COMMENT '评论内容',
+  `create_time` datetime NOT NULL COMMENT '评论时间/添加时间',
+  `user_id` int(11) NOT NULL COMMENT '评论人的ID',
+  `replay_to` int(11) DEFAULT '0' COMMENT '回复对象(用户)ID',
+  `commented_id` int(11) NOT NULL DEFAULT '0' COMMENT '被评论的对象ID',
+  `parent_id` int(11) NOT NULL DEFAULT '0' COMMENT '相对哪个评论进行的回复',
+  PRIMARY KEY (`comment_id`),
+  KEY `image_id` (`target_id`,`user_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COMMENT='评论' AUTO_INCREMENT=25 ;
+
+--
+-- 表的结构 `travel_day`
+--
+
+CREATE TABLE IF NOT EXISTS `travel_day` (
+  `day_id` int(11) NOT NULL AUTO_INCREMENT,
+  `location_id` varchar(100) NOT NULL COMMENT '拍摄地点ID，即景点ID',
+  `description` text NOT NULL COMMENT '描述',
+  `travel_notes_id` int(11) NOT NULL COMMENT '游记ID',
+  `time_taken` date NOT NULL COMMENT '拍摄日期',
+  `tag` varchar(20) NOT NULL COMMENT '标记每天的说明，是顶部还是底部的，顶部是before,底部是after',
+  `like_number` int(11) NOT NULL DEFAULT '0' COMMENT ' 喜欢数',
+  `replay_number` int(11) NOT NULL DEFAULT '0' COMMENT '评论总数',
+  `read_number` int(11) NOT NULL DEFAULT '0' COMMENT '浏览总数',
+  PRIMARY KEY (`day_id`),
+  KEY `travel_notes_id` (`travel_notes_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COMMENT='游记信息天数附带信息表' AUTO_INCREMENT=6 ;
+
+--
+-- 表的结构 `travel_exif`
+--
+
+CREATE TABLE IF NOT EXISTS `travel_exif` (
+  `exif_id` int(11) NOT NULL AUTO_INCREMENT,
+  `exif_camera` varchar(100) NOT NULL COMMENT '相机型号',
+  `exif_time` datetime NOT NULL COMMENT '拍摄时间',
+  `exif_iso` varchar(100) NOT NULL COMMENT 'ISO速度',
+  `exif_aperture` varchar(100) NOT NULL COMMENT '光圈',
+  `exif_shutter_speed` varchar(100) NOT NULL COMMENT '快门速度',
+  `exif_exposure_compensation` varchar(100) NOT NULL COMMENT '暴光补偿',
+  `exif_focal_length` varchar(100) NOT NULL COMMENT '焦距',
+  `image_id` int(11) NOT NULL COMMENT '图片ID',
+  PRIMARY KEY (`exif_id`),
+  KEY `image_id` (`image_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COMMENT='图片相机相关信息' AUTO_INCREMENT=213 ;
+
+
+--
+-- 表的结构 `travel_image`
+--
+
+CREATE TABLE IF NOT EXISTS `travel_image` (
+  `image_id` int(11) NOT NULL AUTO_INCREMENT,
+  `image_name` varchar(200) NOT NULL COMMENT '图片名称',
+  `image_src` varchar(200) NOT NULL COMMENT '图片路径',
+  `like_number` int(8) NOT NULL DEFAULT '0' COMMENT '喜欢数',
+  `replay_number` int(8) NOT NULL DEFAULT '0' COMMENT '评论数',
+  `read_number` int(8) NOT NULL DEFAULT '0' COMMENT '读取次数',
+  `image_desc` text NOT NULL COMMENT '图片描述',
+  `travel_notes_id` int(11) NOT NULL COMMENT '游记ID',
+  `time_taken` date NOT NULL COMMENT '拍摄时间，根据同一时间段来区分行程天数',
+  `is_cover` int(1) NOT NULL DEFAULT '0' COMMENT '是否是封面图',
+  `location_id` varchar(100) NOT NULL COMMENT '拍摄地点ID',
+  PRIMARY KEY (`image_id`),
+  KEY `travel_notes_id` (`travel_notes_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COMMENT='游记图片表' AUTO_INCREMENT=213 ;
+
+
+--
+-- 表的结构 `travel_like_history`
+--
+
+CREATE TABLE IF NOT EXISTS `travel_like_history` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL COMMENT '用户ID',
+  `add_id` int(11) NOT NULL COMMENT '被添加喜欢的记录ID',
+  `activity_type` int(11) NOT NULL DEFAULT '0' COMMENT '添加喜欢还是删除喜欢，即如果自己点过喜欢，再次点，则取消喜欢',
+  `time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '操作时间',
+  `target` int(11) NOT NULL DEFAULT '0' COMMENT '添加喜欢的对象，1为图片，2为心情，3为游记',
+  PRIMARY KEY (`id`),
+  KEY `user_id` (`user_id`,`add_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COMMENT='用户操作喜欢记录表' AUTO_INCREMENT=13 ;
+
+
+--
+-- 表的结构 `travel_notes`
+--
+
+CREATE TABLE IF NOT EXISTS `travel_notes` (
+  `travel_notes_id` int(11) NOT NULL AUTO_INCREMENT,
+  `travel_notes_title` varchar(200) NOT NULL COMMENT '标题',
+  `customers_id` int(11) NOT NULL COMMENT '所有者ID,即用户ID',
+  `image_number` int(5) NOT NULL COMMENT '图片数量',
+  `add_time` datetime NOT NULL COMMENT '添加时间',
+  `travel_notes_desc` text NOT NULL COMMENT '描述',
+  `like_number` int(10) NOT NULL DEFAULT '0' COMMENT '喜欢总数',
+  `read_number` int(10) NOT NULL DEFAULT '0' COMMENT '浏览总数',
+  `replay_number` int(10) NOT NULL DEFAULT '0' COMMENT '评论总数',
+  `destination` varchar(50) NOT NULL COMMENT '目的地 即景点ID',
+  `products_id` int(11) NOT NULL COMMENT '旅游线路ID 即产品ID',
+  `cover_image` varchar(200) DEFAULT NULL COMMENT '封面图片',
+  `verify` int(1) NOT NULL DEFAULT '0' COMMENT '审核1通过0还未审核2未通过',
+  PRIMARY KEY (`travel_notes_id`),
+  KEY `ower_id` (`customers_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COMMENT='游记' AUTO_INCREMENT=24 ;
+
+
+
+--
+-- 表的结构 `travel_user`
+--
+
+CREATE TABLE IF NOT EXISTS `travel_user` (
+  `user_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '用户ID',
+  `user_mail` varchar(64) NOT NULL COMMENT '用户邮箱',
+  `user_password` varchar(64) NOT NULL COMMENT '用户密码',
+  `user_nick` varchar(64) NOT NULL COMMENT '用户昵称',
+  PRIMARY KEY (`user_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='用户表' AUTO_INCREMENT=1 ;
+
+
+
+
+#by lwkai add 2013-04-25
+DROP TABLE `travel_like_history` ;
+CREATE TABLE IF NOT EXISTS `travel_like_history` (
+  `user_id` int(11) NOT NULL COMMENT '用户ID',
+  `add_id` int(11) NOT NULL DEFAULT '0' COMMENT '被添加喜欢的记录ID',
+  `travel_id` int(11) NOT NULL DEFAULT '0' COMMENT '游记ID',
+  `time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '操作时间',
+  `target` int(11) NOT NULL DEFAULT '0' COMMENT '添加喜欢的对象，1为图片，2为心情，3为游记',
+  PRIMARY KEY (`user_id`,`add_id`,`travel_id`,`target`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='用户操作喜欢记录表';
+
+#by lwkai add 2013-05-03 添加置顶景点表
+
+ CREATE TABLE `trip_image`.`travel_city_top` (
+`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`city_id` INT NOT NULL ,
+`sort_id` INT NOT NULL
+) ENGINE = MYISAM COMMENT = '置顶的景点名称' ;
+
+ALTER TABLE `travel_notes` ADD `is_top` INT NOT NULL DEFAULT '0' COMMENT '是否置顶，1为是0为否';
+
+#by lwkai add 2013-05-06
+RENAME TABLE `trip_image`.`travel_user` TO `trip_image`.`travel_admin` ;
+ALTER TABLE `travel_admin` COMMENT = '管理员表';
+ ALTER TABLE `travel_admin` CHANGE `user_id` `admin_id` INT( 11 ) NOT NULL AUTO_INCREMENT COMMENT 'ID' ;
+ ALTER TABLE `travel_admin` CHANGE `user_mail` `admin_mail` VARCHAR( 200 ) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL COMMENT '邮箱' ;
+ ALTER TABLE `travel_admin` CHANGE `user_nick` `status` INT( 11 ) NOT NULL DEFAULT '0' COMMENT '状态' ;
+ALTER TABLE `travel_admin`  DROP `user_password`;
+ALTER TABLE `travel_notes` ADD `edit_time` DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '管理员编辑日期';

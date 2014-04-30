@@ -1,0 +1,259 @@
+{:include file="tours-talent-contest/header.tpl.htm":}
+<div id="wrap">
+  <div class="daren">
+    <div class="darenTop"><img src="image/daren/daren_top_1.jpg" alt="{:db_to_html text=旅游体验师大赛:}" usemap="#Map" />
+      <map name="Map" id="Map">
+        <area shape="rect" coords="27,6,231,57" href="{:$severname:}" alt="" />
+      </map>
+    </div>
+    <div class="darenTop"><img src="image/daren/daren_top_2.jpg" alt="{:db_to_html text=旅游体验师大赛:}" /></div>
+    <div class="darenTop"><img src="image/daren/daren_top_3.jpg" alt="{:db_to_html text=旅游体验师大赛:}" usemap="#Map2" />
+      <map name="Map2" id="Map2">
+        <area shape="rect" coords="401,50,517,93" href="trip_player.php?mod=apply" alt="" />
+      </map>
+    </div>
+    <div class="darenNav">
+      <div class="darenNavLeft"></div>
+      <ul>
+        <li><a href="trip_player.php">{:db_to_html text=活动首页:}</a></li>
+        <li><a href="trip_player.php?mod=list">{:db_to_html text=所有作品:}</a></li>
+        <li><a href="trip_player.php?mod=prize">{:db_to_html text=奖项设置:}</a></li>
+         {:if $customer_id > 0:}
+				<li><a href="trip_player.php?mod=homepage&id={:$customer_id:}">{:db_to_html text=个人主页:}</a></li>
+		 {:/if:}
+		 <li><a href="trip_player.php?mod=finalists"><span>{:db_to_html text=获奖名单:}</span></a></li>
+      </ul>
+      <div class="share">
+        <div class="bshare-custom"> 
+		<a title="{:db_to_html text=分享到新浪微博:}" class="bshare-sinaminiblog"></a>
+                    <a title="{:db_to_html text=分享到开心网:}" class="bshare-kaixin001"></a>
+                    <a title="{:db_to_html text=分享到人人网:}" class="bshare-renren"></a>
+                    <a title="{:db_to_html text=分享到facebook:}" class="bshare-facebook"></a>
+                    <a title="{:db_to_html text=分享到twitter:}" class="bshare-twitter"></a>
+                    <a title="{:db_to_html text=分享到qq空间:}" class="bshare-qzone"></a>
+                    <a title="{:db_to_html text=更多平台:}" class="bshare-more">{:db_to_html text=更多:}>></a>
+		</div>
+      {:db_to_html text=分享到：:} </div>
+      <div class="darenNavRight"></div>
+    </div>
+    <div class="darenProcess">
+      <div class="step1">{:db_to_html text=注册/登录:}</div>
+      <div class="step2">{:db_to_html text=填写您的基本信息:}</div>
+      <div class="step3">{:db_to_html text=提交作品:}</div>
+    </div>
+    <div class="darenItem darenWrap">
+      <h2><span>{:db_to_html text=填写您的基本信息:}</span></h2>
+      <div class="darenItemCon">
+        <ul class="address">
+          <li>
+            <form action="ajax_upload.php" method="post" enctype="multipart/form-data" name="FaceForm" id="FaceForm" target="hidden_frame" onSubmit="check_upload_submit(this); return false;">
+              <input name="up_action" type="hidden" value="true" />
+              <input type="hidden" name="upload_type" value="face" />
+              <input type="hidden" name="save_dir" value="images/face/"/>
+              <input type="hidden" name="save_file_name" />
+              <input type="hidden" name="file_size" value="200" />
+              <!--提交完成后需要更新的图片框id-->
+              <input type="hidden" name="need_up_img_id" value="need_up_img_id"  />
+              <!--提交完成后需要更新的表单id-->
+              <input type="hidden" name="need_up_form_id" value="" />
+              <!--提交完成后需要更新的表单字段名称-->
+              <input type="hidden" name="need_up_form_input_name" value="FaceForm" />
+              <!--提交完成后需要关闭的层id,其实就是上传图片这个层-->
+              <input type="hidden" name="done_close_id" />
+              <!-- 自定义js -->
+			  <input type="hidden" name="self_js"  value="1"/>
+              <label>{:db_to_html text=上传头像：:}</label>
+              <dl class="uploadImg">
+                <dt id="need_up_img_id">{:if $account.customers_face != '':}<img src="images/face/{:$account.customers_face:}" width="{:$account.face_width:}" height="{:$account.face_height:}"/>{:else:}<img src="image/touxiang_no-sex.gif" />{:/if:}</dt>
+                <dd>
+                   <input name="FileDomain" type="file"  class="mytoursFileUpload" id="FileDomain" value=""/>
+                  <span class="need">*</span></dd>
+                <dd>
+                  <input class="btn btnOrange" type="submit" id="submit_images_FaceForm" value="{:db_to_html text=开始上传:}" />
+                  <label id="LoadingIconFaceForm"></label>
+                </dd>
+                <dd>{:db_to_html text=允许上传jpg,gif,png格式的图片！建议图像大小为114px×114px，并小于200KB!:}</dd>
+              </dl>
+              <iframe name='hidden_frame' id="hidden_frame" style="display:none; width:0px; height:0px;" ></iframe>
+            </form>
+          </li>
+          <li>
+            <label>{:db_to_html text=性别：:}</label>
+            
+			<span class="gender genderOn" id="genderm" onclick="jQuery('.gender').removeClass('genderOn'); jQuery(this).addClass('genderOn');jQuery('#gender').val('m');">{:db_to_html text=男:}</span> 
+			<span class="gender" id="genderf" onclick="jQuery('.gender').removeClass('genderOn'); jQuery(this).addClass('genderOn');jQuery('#gender').val('f');">{:db_to_html text=女:}</span>
+            <script type="text/javascript">
+			jQuery(document).ready(function(){
+			
+				var gender = '{:$account.customers_gender:}';
+				
+				if (gender == 'm'){		
+					jQuery('.gender').removeClass('genderOn');								
+					jQuery("#genderm").addClass('genderOn');
+					jQuery('#gender').val('m');
+				}
+				if (gender == 'f'){
+					jQuery('.gender').removeClass('genderOn');
+					jQuery("#genderf").addClass('genderOn');
+					jQuery('#gender').val('f');
+				}
+			});
+			
+			</script>
+			<input type="hidden" name="gender" id="gender" value="{:$account.customers_gender:}" />
+			
+            <span class="need">*</span> </li>
+          <li>
+            <label>{:db_to_html text=国家/地区：:}</label>
+			
+            <span id="defaultAddress">{:$tep_draw_full_address_input:} </span> <span class="need">*</span> </li>
+          <li>
+            <label>{:db_to_html text=详细地址：:}</label>
+            <input type="text" class="text addressDetail" name="street_address" id="street_address" value="{:db_to_html text=$account.entry_street_address:}"  name="entry_street_address" />
+            <span class="need">*</span> </li>
+          <li>
+            <label>{:db_to_html text=电话号码：:}</label>
+            <input type="text" class="text addressDetail" id="mobile_phone" name="mobile_phone" value="{:$account.customers_mobile_phone:}" onblur="this.value = simplized(this.value);"/>
+            <span><span class="need">*</span>{:db_to_html text=如果是固定电话请加上城市代码和区号，如086-028-88588855:}</span> </li>
+          <li>
+            <label>{:db_to_html text=博客地址：:}</label>
+            <input type="text" class="text addressDetail" id="blog_url" name="blog_url" value="{:$account.blog_url:}" onblur="this.value = simplized(this.value);" />
+            <span class="need">*</span> </li>
+          <li>
+            <label>{:db_to_html text=职业：:}</label>
+            <input type="text" class="text" id="user_job" name="user_job" value="{:$account.user_job:}" onblur="this.value = simplized(this.value);" />
+          </li>
+          <li>
+            <label class="long">{:db_to_html text=记忆最深刻的旅行地：:}</label>
+            <input type="text" class="text addressDetail"  id="rem_trip" name="rem_trip" value="{:$account.rem_trip:}" onblur="this.value = simplized(this.value);"/>
+          </li>
+          <li>
+            <label class="long">{:db_to_html text=最想要去的旅行目的地：:}</label>
+            <input type="text" class="text addressDetail" id="most_to" name="most_to"  value="{:$account.most_to:}" onblur="this.value = simplized(this.value);"/>
+			<input type="hidden" name="action" value="update" id="action" />
+			<input type="hidden" name="getaction" id="getaction" value="{:$getaction:}" />
+          </li>
+		  <li>
+		  	<label class="long">{:db_to_html text=参赛协议：:}</label>	 
+			<input name="agree" type="checkbox" id="agree" value="1" checked="checked">
+			{:db_to_html text=*已经:}<a href='trip_player.php?mod=agree' target="_blank">{:db_to_html text=阅读:}</a>{:db_to_html text=协议，并同意协议中的各项条款。:}
+		  </li>
+        </ul>
+        <div class="btnCenter"><a href="javascript:" class="btn btnOrange" onclick="subtalentinfo();">
+          <button>{:db_to_html text=提交:}</button>
+          </a>
+		</div>
+		
+      </div>
+    </div>
+	<div class="darenBot"></div>
+  </div>
+  
+  
+</div>
+</div>
+<script type="text/javascript">
+jQuery(document).ready(function(){
+	jQuery("#mobile_phone").val(simplized(jQuery("#mobile_phone").val()));
+	jQuery("#blog_url").val(simplized(jQuery("#blog_url").val()));
+	jQuery("#user_job").val(simplized(jQuery("#user_job").val()));
+	jQuery("#rem_trip").val(simplized(jQuery("#rem_trip").val()));
+	jQuery("#rem_trip").val(simplized(jQuery("#rem_trip").val()));	
+});
+
+<?php echo tep_draw_full_address_input_js()?>
+function check_upload_submit(form){
+	var LoadingIconDiv = document.getElementById('LoadingIconFaceForm');
+	if(LoadingIconDiv!=null){
+		_img = document.createElement("img");
+		_img.setAttribute("src","image/snake_transparent.gif");
+		LoadingIconDiv.appendChild(_img);
+	}
+	if(form.elements['FileDomain'].value == ""){
+		if(LoadingIconDiv!=null){
+			LoadingIconDiv.innerHTML = "";
+		}
+		alert("{:db_to_html text=请选择要上传的图片！:}");
+		return false;
+	}
+	jQuery("#submit_images_FaceForm").attr("disabled","disabled");
+	form.submit();
+	
+}
+
+function subtalentinfo(){
+	
+	var gender = jQuery('#gender').val();
+	var defaultAddress_country = jQuery('#defaultAddress_country').val();
+	var state = encodeURIComponent(jQuery('#defaultAddress_country').next("select").val());
+	var city = encodeURIComponent(jQuery('#defaultAddress_country').next("select").next("select").val());
+	var street_address = encodeURIComponent(jQuery('#street_address').val());
+	var mobile_phone = jQuery('#mobile_phone').val();
+	var blog_url = encodeURIComponent(jQuery('#blog_url').val());
+	var user_job = encodeURIComponent(jQuery('#user_job').val());
+	var rem_trip = encodeURIComponent(jQuery('#rem_trip').val());
+	var most_to = encodeURIComponent(jQuery('#most_to').val());
+	var getaction = jQuery('#getaction').val();
+	
+	if(jQuery("#agree").attr("checked")==true){	
+		if (jQuery('#defaultAddress_country').val() == ''){
+				alert('{:db_to_html text=请选择国家!:}');
+				jQuery('#defaultAddress_country').focus();
+				return false;
+		}
+		
+		if (jQuery('#street_address').val().length == 0){
+				alert('{:db_to_html text=详细地址不得为空!:}');
+				jQuery('#street_address').focus();
+				return false;
+		}
+		
+		if (mobile_phone == ''){
+				alert('{:db_to_html text=电话号码不得为空!:}');
+				jQuery('#mobile_phone').focus();
+				return false;
+		}
+		if (blog_url == ''){
+				alert('{:db_to_html text=博客地址不得为空!:}');
+				jQuery('#blog_url').focus();
+				return false;
+		}
+		jQuery.ajax({
+			   url:url_ssl('trip_player.php?mod=talent_info'),
+			   data:"gender=" + gender + "&defaultAddress_country=" + defaultAddress_country + 
+			   "&state=" + state + "&city=" + city + "&street_address=" + street_address +
+			   "&mobile_phone=" + mobile_phone +"&blog_url=" + blog_url +"&rem_trip="
+			   + rem_trip +"&most_to="+most_to+"&action=update" + "&user_job="+user_job+"&getaction="+getaction,
+			   type:"POST",
+			   cache: false,
+			   dataType:"html",
+			   success: function(html){
+				 document.write(html);       
+			   },
+			   error: function (msg){
+				   alert(msg);
+			   }
+		 });
+	}else{
+		alert('{:db_to_html text=您必须同意<<走四方网旅游体验师大赛参赛协议>>,方可继续!:}');		
+		return false;
+	}
+}
+
+
+</script>
+<!-- bshare 相关js -->
+<script language="javascript" type="text/javascript" src="http://www.bshare.cn/button.js#uuid=97319&amp;style=-1"></script>
+<script language="javascript" type="text/javascript" src="http://www.bshare.cn/bshareC1.js"></script> 
+<script type="text/javascript">
+jQuery(function(){
+if(typeof(bShare)!='undefined'){
+bShare.addEntry({
+title: "{:db_to_html text=#走四方旅游体验师大赛#:}",
+ summary:"{:db_to_html text=正在火热举行中，@走四方网:} {:db_to_html text=微博即可参与，IPAD2大奖等你拿，更有机会免费畅游美国，:}"
+})
+}
+});
+</script>
+</body>
+</html>

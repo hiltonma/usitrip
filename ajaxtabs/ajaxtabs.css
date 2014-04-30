@@ -1,0 +1,93 @@
+/*
+.shadetabs{
+padding: 3px 0;
+margin-left: 0;
+margin-top: 1px;
+margin-bottom: 0;
+font: bold 12px Verdana;
+list-style-type: none;
+text-align: left; 
+}
+
+.shadetabs li{
+display: inline;
+margin: 0;
+}
+
+.shadetabs li a{
+text-decoration: none;
+padding: 3px 7px;
+margin-right: 3px;
+border: 1px solid #778;
+color: #2d2b2b;
+background: white url(shade.gif) top left repeat-x;
+}
+
+.shadetabs li a:visited{
+color: #2d2b2b;
+}
+
+.shadetabs li a:hover{
+text-decoration: underline;
+color: #2d2b2b;
+}
+
+.shadetabs li.selected{
+position: relative;
+top: 1px;
+}
+
+.shadetabs li.selected a{ 
+background-image: url(shadeactive.gif);
+border-bottom-color: white;
+}
+
+.shadetabs li.selected a:hover{ 
+text-decoration: none;
+}
+
+.contentstyle{
+border: 1px solid gray;
+width: 780px;
+margin-bottom: 1em; padding: 10px;
+}
+*/
+
+
+.shadetabs {
+	 top: 0px; margin: 0px; PADDING-LEFT: 5px;  BACKGROUND: none transparent scroll repeat 0% 0%;  voice-family: inherit
+}
+.shadetabs UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; FONT: bold 70% Verdana, Arial, sans-serif; PADDING-TOP: 0px; LIST-STYLE-TYPE: none
+}
+.shadetabs LI {
+	PADDING-RIGHT: 0px; DISPLAY: inline; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px 2px 0px 0px;  PADDING-TOP: 0px
+}
+.shadetabs A {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 3px; BACKGROUND: url(color_tabs_left.gif) #005983 no-repeat left top; FLOAT: left; PADDING-BOTTOM: 1px; MARGIN: 0px 2px 0px 0px; COLOR: white; PADDING-TOP: 0px; LETTER-SPACING: 1px; TEXT-DECORATION: none
+}
+.shadetabs A SPAN {
+	PADDING-RIGHT: 9px; DISPLAY: block; PADDING-LEFT: 6px; BACKGROUND: url(color_tabs_right.gif) no-repeat right top; FLOAT: left; PADDING-BOTTOM: 3px; PADDING-TOP: 4px
+}
+.shadetabs A SPAN {
+	FLOAT: none
+}
+.shadetabs A:hover {
+	BACKGROUND-COLOR: #0077B0;
+	TEXT-DECORATION: none;
+}
+.shadetabs A:hover SPAN {
+	BACKGROUND-COLOR: #0077B0;
+	TEXT-DECORATION: none;
+}
+.shadetabs LI.selected A {
+	BACKGROUND-COLOR: #002450;
+}
+.shadetabs LI.selected SPAN {
+	BACKGROUND-COLOR: #002450;
+}
+.contentstyle {
+
+	BORDER-RIGHT: gray 1px solid; PADDING-RIGHT: 10px; BORDER-TOP: gray 1px solid; PADDING-LEFT: 5px; MARGIN-BOTTOM: 1em; PADDING-BOTTOM: 10px; BORDER-LEFT: gray 1px solid; WIDTH: 780px; PADDING-TOP: 10px; BORDER-BOTTOM: gray 1px solid
+}
+

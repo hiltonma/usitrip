@@ -1,0 +1,10 @@
+@charset "gb2312";
+.infoBox{border:none;}
+.infoBox .infoBoxContents{background:none;}
+
+a.btn{display:block;height:29px;line-height:29px;width:70px;padding-left:30px;background:url(/image/nav/carts.gif) no-repeat left -30px;}
+a.btn span{display:block;float:right;background:url(/image/nav/carts.gif) no-repeat right -30px;height:29px;width:10px;}
+a.checkout{background-position:left -59px;height:40px;line-height:40px;width:100px; border-radius:3px;padding-left:10px; font-family:"microsoft YaHei";font-weight:bold;font-size:16px;color:#fff; text-shadow:0 1px 1px #111;}
+a.checkout:hover{color:#fff;}
+a.checkout span{background-position:right -59px;height:40px;width:20px;}
+

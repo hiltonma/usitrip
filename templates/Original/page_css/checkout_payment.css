@@ -1,0 +1,56 @@
+@charset "gb2312";
+
+.cart_progress .cart_left{float:left;height:80px;width:200px; line-height:80px;}
+.cart_progress .cart_left .cart_icon{display:block;background:url(/image/nav/carts.gif) no-repeat left -99px;width:47px;height:45px;margin-top:13px;margin-left:10px;float:left;}
+.cart_progress .cart_left h3{color:#4d4d4d;font-size:24px; font-family:microsoft YaHei;}
+.cart_progress .cart_right{float:right;width:666px;height:80px;padding-top:18px;}
+.cart_progress .cart_right ul{float:right;}
+.cart_progress .cart_right li{float:left;background:#ffedca;width:161px;line-height:29px;font-size:12px;text-align:center}
+.cart_progress .cart_right li span{background:url(/image/nav/carts.gif) no-repeat -5px -144px;width:19px;height:29px;float:left;display:block;}
+.cart_progress .cart_right li.first span{background:url(/image/nav/carts.gif) no-repeat left -144px;width:5px;height:29px;display:block;float:left;}
+.cart_progress .cart_right li.cur{background:#ff6600;color:#fff;font-weight:bold;font-size:14px;}
+.cart_progress .cart_right li.cur span{ background-position:-24px -144px;}
+.cart_progress .cart_right li span.cur{background-position:-43px -144px;}
+.cart_progress .cart_right li.last{width:5px;}
+.cart_progress .cart_right li.last span{background-position:-62px -144px;width:5px;height:29px;}
+.cart_progress .cart_right li.last span.cur{background-position:-67px -144px;width:5px;height:29px;}
+
+
+TD.infoBoxHeading{border-left:1px solid #a2cbf4;border-right:1px solid #a2cbf4;padding-left:25px;background:url(/image/nav/carts.gif) repeat-x left -173px;height:36px;line-height:36px;border-top:1px solid #a2cbf4;}
+TD.blue{border-top:3px solid #2686ff;height:32px;line-height:32px;background:url(/image/nav/tab_button_20130723.gif) repeat-x left -115px; }
+TD.infoBoxHeading .heading_bg{font-size:14px;color:#134da3;border:none;background:none;margin:0;padding:0;}
+TD.infoBoxHeading .head_note{margin-top:0;padding-right:15px;}
+.infoBox_outer{border-left:1px solid #a2cbf4;border-right:1px solid #a2cbf4;}
+.infoBox_new{border:none;}
+.separator{height:9px;}
+.dazi{font-size:12px; font-weight:normal;height:36px;line-height:36px;padding-left:20px;}
+.sp1{padding-right:15px;height:36px;line-height:36px;}
+.bg{background-color:#ebf7ff;}
+.infoBoxCt_n_c .main{padding:10px;padding-left:30px;}
+.infoBoxCt_n_c .dazi{color:#ff6900;font-size:14px;font-weight:bold;padding-left:0;}
+.infoBox{border:none;}
+.infoBox .infoBoxContents{background:none;}
+
+a.btn{display:block;height:29px;line-height:29px;width:82px;padding-left:30px;background:url(/image/nav/carts.gif) no-repeat left -30px;color:#4d4d4d;}
+a.btn span{display:block;float:right;background:url(/image/nav/carts.gif) no-repeat right -30px;height:29px;width:10px;}
+
+.subbtn input{border:none;width:100px;height:40px;line-height:40px;background:url(/image/nav/carts.gif) no-repeat left -59px;text-align:left;padding-left:30px;font-family:microsoft YaHei;font-weight:bold;font-size:16px;color:#fff;text-shadow:0 1px 1px #111;border-radius:4px;cursor:pointer;}
+
+/*  Ö§¸¶°æ¿é  */
+
+
+#payment_list_table{float:left;width:230px;height:300px;}
+#payment_list_table ul li{height:39px;line-height:39px;padding-left:25px;_padding-left:20px;font-size:14px;cursor:pointer;border-bottom:dashed 1px #85add2;color:#0055b3;}
+#payment_list_table ul li label{height:39px;line-height:39px;}
+#payment_list_table ul li span{height:39px;line-height:39px;display:inline-block;}
+#payment_list_table ul li.cur{background-color:#fff;cursor:default;font-weight:bold;color:#000;}
+#payment_list_content{float:left;width:670px;min-height:340px;_height:340px;background:#fff;}
+#payment_list_content .tit{padding:5px 10px;}
+#payment_list_content .cont{padding:5px 10px;}
+#payment_list_content .pay2_warp{padding:5px 10px;}
+.pay{background:#d0e8ff;width:900px;overflow:hidden;}
+
+#payment_list_content .pay2_warp div li{ padding:20px 0; border-bottom:1px dotted #ccc}
+#payment_list_content .pay2_warp div li.last{ border:none;}
+#payment_list_content .pay2_warp div a.download{ width:181px; height:21px; text-align:center; line-height:21px; float:right; display:block; background: url(/image/shopping.png) no-repeat 0 -912px;}
+

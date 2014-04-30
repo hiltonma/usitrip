@@ -1,0 +1,67 @@
+@charset "gb2312";
+
+/*  
+ * @usitrip.com   
+ * @包含了走四方e游页面的css   
+ * @version 2011-08-05   
+ * -------------------------------------------------- */
+
+/**************** 走四方e游 **************/
+#content{ width:950px; padding:10px 0 8px; overflow:hidden; }
+.tourseLeft{ display:inline; float:left; margin:0 5px; width:185px; overflow:hidden;}
+.tourseRight{ float:left; margin:0 5px; width:743px; height:575px; background:#d7f0fd; border:1px solid #a9ccde;  display:inline; overflow:hidden;}
+/* 左侧部分 */
+.tourseLeft .titleTourse{ width:185px; background:url(/image/tourse/tourse_title.jpg); height:31px; }
+.tourseLeft .titleTourse h3  { margin-left:13px; font-weight:bold; line-height:31px; color:#FFFFFF; font-size:14px}
+.tourseLeft ul{ padding-top:20px; border:1px solid #F2F2F2; border-top:0px; }
+.tourseLeft li{ width:183px; padding-bottom:20px; text-align:center }
+.tourseLeft li a{ text-decoration:none;}
+.tourseLeft li a span:hover{ text-decoration:underline}
+.tourseLeft li a img{ margin-bottom:7px;}
+.tourseLeft li p{ margin-top:5px; color:#5e5e5e}
+.tourseLeft li p a{ color:#5e5e5e; text-decoration:underline}
+
+/* 右侧部分 */
+.tourseRight .RightTitle h3{ font-family:微软雅黑; font-size:20px; padding:10px 15px 5px; overflow:hidden}
+.tourseRight .RightTitle h3 p{ float:left; width:360px; height:44px; line-height:44px;}
+.tourseRight .RightTitle h3 a{ width:159px; height:44px; display:block; text-indent:-9999px; float:left; margin-left:17px}
+.tourseRight .RightTitle h3 a.exe{ background:url(/image/tourse/tourse_downloadexe.jpg) no-repeat right;}
+.tourseRight .RightTitle h3 a.pdf{ background:url(/image/tourse/tourse_downloadpdf.jpg) no-repeat right;}
+.toursebook{ width:732px; height:470px; padding-left:5px;}
+.toursebook .tourseImg{ width:732px; height:235px;}
+.starreade{ padding-right:10px; text-align:right}
+
+/*问卷调查*/
+.Questionnaire{ width:936px; height:558px; margin:20px 5px; border:1px solid #F2F2F2; background:url(/image/tourse/AskContent_bg.jpg) no-repeat bottom; float:left}
+.Questionnaire h3{font-family:微软雅黑; font-size:16px; height:42px; line-height:42px; background:#75b7e6; padding-left:15px; color:#125585}
+.AskContent{ padding:50px 0 0 70px}
+.AskContent td{ height:30px;}
+.AskContent td b{ font-size:14px}
+.AskContent td span{ color:#a7a6a6}
+.AskContent td div.inputbox,.tourseDy td div.inputbox{ width:164px; height:22px; border:1px solid #d2d2d2}
+.AskContent td div.inputbox input,.tourseDy td div.inputbox input{ border:1px solid #7c7c7c; border-bottom:none; border-right:none; margin:0; height:21px; line-height:21px; width:158px; padding-left:5px; margin-top:-1px; background:#FFFFFF}
+/* 弹出层 */
+.popup{ display:none;  position:absolute; text-align:center; z-index:100; }
+#popupBg{ position:absolute; z-index:99; top:0; left:0; background:#ccc; filter:alpha(opacity=30); -moz-opacity:0.3; opacity:0.3;}
+.popupBgIframe{filter:alpha(opacity=0); -moz-opacity:0; opacity:0;}
+.popupTable td.side{background:url(/image/popup/popup_png.png); _background:none; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/image/popup/popup_png.png', sizingMethod=scale);}
+.popupTable td.topLeft{width:6px; height:6px; background:url(/image/popup/popup_t1.png); _background:none; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/image/popup/popup_t1.png', sizingMethod=scale);}
+.popupTable td.topRight{width:6px; height:6px; background:url(/image/popup/popup_t3.png); _background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/image/popup/popup_t3.png', sizingMethod=scale);}
+.popupTable td.botLeft{height:6px; background:url(/image/popup/popup_b1.png); _background:none; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/image/popup/popup_b1.png', sizingMethod=scale);}
+.popupTable td.botRight{background:url(/image/popup/popup_b3.png); _background:none; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/image/popup/popup_b3.png', sizingMethod=scale);}	
+.popupTable td.con{ background:none; _filter:none; background:#fff;}
+#PopuptoursefCon, #PopuptoursefCon1{ width:670px;}
+.popuptoursef{ height:600px; overflow:auto; }
+/* 弹出框按钮 */
+.btnPopup{ margin:15px 0 0 180px; display:inline; }
+.popupCon{ padding:12px; text-align:left; overflow:hidden;}
+.popupCon .popupTitle{ width:100%; height:25px; border-bottom:1px #DBDBDB dashed; position:relative; margin-bottom:10px;}
+.popupCon .popupTitleCon{ font-size:14px; color:#111; line-height:25px;}
+.popupCon .popupClose{ position:absolute; right:0; top:3px; width:16px; height:16px; cursor:pointer;}
+.popupCon .toursemulu td{ text-align:left; line-height:18px; vertical-align:top}
+.popupCon .toursemulu td a{ color:#7A2403; font-size:14px}
+.popupCon .toursemulu1 td{ text-align:left; line-height:18px; }
+.popupCon .toursemulu1 td a{ color:#262823; font-size:14px}
+/*走四方订阅*/
+.tourseDy{ width:940px; float:left; height:32px; text-align:right}
+.tourseDy .toursDyBt{ width:57px; height:31px; background:url(/image/tourse/tourseDyBtbg.jpg); border:none; cursor:pointer;}

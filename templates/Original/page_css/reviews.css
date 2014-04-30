@@ -1,0 +1,12 @@
+@charset "gb2312";
+.review{float:none;margin:0 auto;width:945px;display:block;overflow:hidden;}
+.user-reply{border-bottom:1px dashed #ccc;margin-top:10px;display:block;clear:both;overflow:hidden;padding:5px 0 15px 0;}
+.user-reply:after{display:block;clear:both;height:0;font-size:0;visibility:hidden;content:"";}
+.user-review{float:left;width:70px;height:50px;padding-right:5px;padding-top:4px;background-image:url(/image/nav/manyi_15.gif);background-repeat:no-repeat;color:#fff;}
+.user-review em{font-style:normal;font-size:18px;display:block;}
+.user-review p,.user-review em{width:57px;text-align:center;}
+.user-review-cnt{margin-left:90px;}
+.user-review-reply{float:right;color:#ff6900;padding-right:10px;}
+.user-name-date{color:#818181;}
+.user-name-date b{color:#333;padding-right:5px;}
+.user-review-text{padding:5px 10px 10px 0;line-height:20px;}

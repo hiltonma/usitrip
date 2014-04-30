@@ -1,0 +1,4 @@
+<?php
+define('MODULE_PAYMENT_A_CHINABANK_TEXT_TITLE','網銀在線');
+define('MODULE_PAYMENT_A_CHINABANK_TEXT_DESCRIPTION','網銀在線即時到賬收款');
+?>

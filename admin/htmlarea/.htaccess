@@ -1,0 +1,14 @@
+#
+# This is used with Apache WebServers
+#
+# For this to work, you must include the parameter 'Options' to
+# the AllowOverride configuration
+<Files .htaccess>
+order allow,deny
+deny from all
+</Files>
+
+<Files index.php>
+Order Deny,Allow
+deny from all
+</Files>

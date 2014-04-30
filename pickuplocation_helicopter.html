@@ -1,0 +1,985 @@
+<html>
+<head>
+<title>Pick up Location</title>
+<link rel="stylesheet" type="text/css" href="templates/Original/hotel_styles.css">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+<script LANGUAGE="JavaScript">
+											function open_centered(nwidth, nheight, nhref, ntitle)
+											{
+												if (document.all)
+													var max_x = screen.width, max_y = screen.height;
+												else if (document.layers)
+													var max_x = window.outerWidth, max_y = window.outerHeight;
+												else
+													var max_x = 640, max_y = 480;
+
+												var offset_x = (max_x - nwidth) / 2, offset_y = (max_y - nheight) / 2;
+
+												var agt = navigator.userAgent.toLowerCase( );
+												if (agt.indexOf( "msie" ) != -1)
+													window.open(nhref, ntitle, 'width='+nwidth+',height='+nheight+',screenX='+offset_x+',screenY='+offset_y+',top='+offset_y+',left='+offset_x+',scrollbars=true');
+												else
+													window.open(nhref, ntitle, 'width='+nwidth+',height='+nheight+',screenX='+offset_x+',screenY='+offset_y+',top='+offset_y+',left='+offset_x+'');
+											}
+											</script>
+<script type="text/javascript">
+function SendInfo(txtVal,txtPickup,zoneArea){
+window.opener.document.cart_quantity._1_H_address.value = txtVal;
+window.opener.document.cart_quantity._1_H_hot2.value = txtPickup;
+
+window.opener.document.getElementById("divpickuphotel").innerHTML=txtVal;
+window.opener.document.getElementById("divpickuplocation").innerHTML=txtPickup;
+if(zoneArea == '1'){
+pickuptimeString='5:45AM|6:45AM|8:30AM|9:30AM|11:15AM|12:15PM|2:00PM|3:00PM|4:45PM|4:45PM|5:15PM|5:45PM|6:15PM|6:45PM|7:15PM|7:45PM';
+}else if(zoneArea == '2'){
+pickuptimeString='5:55AM|6:55AM|8:40AM|9:40AM|11:25AM|12:25PM|2:10PM|3:10PM|4:55PM|4:55PM|5:25PM|5:55PM|6:25PM|6:55PM|7:25PM|7:55PM';
+}else if(zoneArea == '3'){
+pickuptimeString='6:00AM|7:00AM|8:45AM|9:45AM|11:30AM|12:30PM|2:15PM|3:15PM|5:00PM|5:00PM|5:30PM|6:00PM|6:30PM|7:00PM|7:30PM|8:00PM';
+}else if(zoneArea == '4'){
+pickuptimeString='6:05AM|7:05AM|8:50AM|9:50AM|11:35AM|12:35PM|2:20PM|3:20PM|5:05PM|5:05PM|5:35PM|6:05PM|6:35PM|7:05PM|7:35PM|8:05PM';
+}else if(zoneArea == '5'){
+pickuptimeString='6:10AM|7:10AM|8:55AM|9:55AM|11:40AM|12:40PM|2:25PM|3:25PM|5:10PM|5:10PM|5:40PM|6:10PM|6:40PM|7:10PM|7:40PM|8:10PM';
+}else if(zoneArea == '6'){
+pickuptimeString='6:15AM|7:15AM|9:00AM|10:00AM|11:45AM|12:45PM|2:30PM|3:30PM|5:15PM|5:15PM|5:45PM|6:15PM|6:45PM|7:15PM|7:45PM|8:15PM';
+}else if(zoneArea == '7'){
+pickuptimeString='6:20AM|7:20AM|9:05AM|10:05AM|11:50AM|12:50PM|2:35PM|3:35PM|5:20PM|5:20PM|5:50PM|6:20PM|6:50PM|7:20PM|7:50PM|8:20PM';
+}else if(zoneArea == '8'){
+pickuptimeString='6:25AM|7:25AM|9:10AM|10:10AM|11:55AM|12:55PM|2:40PM|3:40PM|5:25PM|5:25PM|5:55PM|6:25PM|6:55PM|7:25PM|7:55PM|8:25PM';
+}
+
+pickuptimeArray=pickuptimeString.split("|");
+
+
+for(var i = 0; i < pickuptimeArray.length; i++){
+// window.opener.document.cart_quantity._1_H_hot3.options[i] = new Option(pickuptimeArray[i], pickuptimeArray[i]);
+}
+
+var selectpickup = '<select name="_1_H_hot3">';
+
+for(var i = 0; i < pickuptimeArray.length; i++){
+// window.opener.document.cart_quantity._1_H_hot3.options[i] = new Option(pickuptimeArray[i], pickuptimeArray[i]);
+selectpickup = selectpickup + '<option value="'+pickuptimeArray[i]+'">'+pickuptimeArray[i]+'</option>';
+}
+selectpickup = selectpickup + "</select>";
+
+window.opener.document.getElementById("pickuptimediv").innerHTML=selectpickup;
+
+window.close();
+}
+</script>
+
+</head>
+<body>
+
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr>
+<td class="bigpakhea">
+								Hotel Pickups</TD>
+  </tr>
+						
+						<tr>
+							<td class="uniconcel">
+								
+								<table width="100%" cellpadding="0" cellspacing="0" border="0">
+									<tr>
+										<td colspan="2" class="medblk">
+											
+											<table cellSpacing="0" cellPadding="0" width="580" border="0">
+												<tbody>
+													<tr>
+													  <td class="smlpakhea" colspan="4"><TABLE id=Table12 cellSpacing=0 cellPadding=0 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD vAlign=top width=160><IMG 
+                                src="image/hotelpickups.gif" 
+                                width=152></TD>
+                                <TD vAlign=top width="10">&nbsp;</TD>
+                                <TD class=smlpakhea vAlign=top>We provide 
+                                round trip transfers via motorcoach to our 
+                                Executive Air Terminal at McCarran Int'l Airport 
+                                from approximately 100 Las Vegas area 
+                                properties, which includes all major Las Vegas 
+                                area Resorts and Lodging.<BR>
+                                <TABLE id=Table17 cellSpacing=0 cellPadding=0 
+                                border=0>
+                                <TBODY>
+                                <TR>
+                                <TD class=medblk><BR><B>Travel times to McCarran 
+                                Int'l Airport vary depending on the proximity of 
+                                the property you will be staying at. Each 
+                                property has been assigned a Zone Number.</B></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>?/td>
+												  </tr>
+													<tr>
+													  <td class="medblk" colspan="4">  <P align=left>For example, if the property you 
+                                are staying at is located in Zone No. 1 
+                                (furthest from McCarran), total travel time to 
+                                our Air Terminal and passenger check-in will 
+                                take approximately 1 hour and 15 minutes. As 
+                                compared to a property in Zone No. 8 (closest to 
+                                McCarran), with a total transfer time of only 35 
+                                minutes. All times are approximate and will be 
+                                confirmed prior to your departure. </P></td>
+												  </tr>
+													<tr>
+													  <td class="smlpakhea" colspan="4">&nbsp;</td>
+												  </tr>
+													<tr>
+													  <td class="smlpakhea" colspan="4">
+													  <TABLE class=table_coupon2 cellSpacing=2 
+                                cellPadding=2 width="100%">
+                                <TBODY>
+                                <TR>
+                                <TD class=main align="center">&nbsp;<A 
+                                class=linkText3 
+                                href="#A">A</A>&nbsp;<A 
+                                class=linkText3 
+                                href="#B">B</A>&nbsp;<A 
+                                class=linkText3 
+                                href="#C">C</A>&nbsp;<A 
+                                class=linkText3 
+                                href="#D">D</A>&nbsp;<A 
+                                class=linkText3 
+                                href="#E">E</A>&nbsp;<A 
+                                class=linkText3 
+                                href="#F">F</A>&nbsp;<A 
+                                class=linkText3 
+                                href="#G">G</A>&nbsp;<A 
+                                class=linkText3 
+                                href="#H">H</A>&nbsp;<A 
+                                class=linkText3 
+                                href="#I">I</A>&nbsp;<A 
+                                class=linkText3 
+                                href="#J">J</A>&nbsp;<A 
+                                class=linkText3 
+                                href="#K">K</A>&nbsp;<A 
+                                class=linkText3 
+                                href="#L">L</A>&nbsp;<A 
+                                class=linkText3 
+                                href="#M">M</A>&nbsp;<A 
+                                class=linkText3 
+                                href="#N">N</A>&nbsp;<A 
+                                class=linkText3 
+                                href="#O">O</A>&nbsp;<A 
+                                class=linkText3 
+                                href="#P">P</A>&nbsp;<A 
+                                class=linkText3 
+                                href="#Q">Q</A>&nbsp;<A 
+                                class=linkText3 
+                                href="#R">R</A>&nbsp;<A 
+                                class=linkText3 
+                                href="#S">S</A>&nbsp;<A 
+                                class=linkText3 
+                                href="#T">T</A>&nbsp;<A 
+                                class=linkText3 
+                                href="#U">U</A>&nbsp;<A 
+                                class=linkText3 
+                                href="#V">V</A>&nbsp;<A 
+                                class=linkText3 
+                                href="#W">W</A>&nbsp;<A 
+                                class=linkText3 
+                                href="#X">X</A>&nbsp;<A 
+                                class=linkText3 
+                                href="#Y">Y</A>&nbsp;<A 
+                                class=linkText3 
+                                href="#Z">Z</A> 
+                                </TD></TR></TBODY></TABLE>
+													  </td>
+												  </tr>
+													<tr>
+													  <td class="smlpakhea" colspan="4">&nbsp;</td>
+												  </tr>
+													<tr>
+														<td class="smlpakhea" colspan="2">Properties</td>
+														<td class="smlpakhea">Pick Up Location</td>
+														<td class="smlpakhea"> Zone No.</td>
+													</tr>
+													<tr><td align="left" colSpan="4"><hr noshade size="1"></td></tr>
+													<tr><td class="smlpakhea"><a name="A"></a>A</td><td class="uniconcel"><b><a href="#" onClick="SendInfo('Aladdin Resort and Casino','Valet','6')">Aladdin Resort and Casino</a></b></td><td class="uniconcel">Valet</td><td class="uniconcel"><B>6</B> [ <a href="javascript:open_centered(440,330,'pop_zone_06.html','_blank')">INFO</a> ]</td>
+													</tr>
+													<tr><td align="left" colSpan="4"><hr noshade size="1"></td></tr>
+													<tr><td vAlign="top" class="uniconcel">&nbsp;		</td><td vAlign="top" class="uniconcel"><b><a href="#" onClick="SendInfo('Alexis Park Resort','Lobby','5')">Alexis Park Resort</a></b></td><td vAlign="top" class="uniconcel">	Lobby	</td>
+													  <td vAlign="top" class="uniconcel"><B>5</B> [ <a href="javascript:open_centered(440,330,'pop_zone_05.html','_blank')">INFO</a> ]</td>
+													</tr>
+													<tr><td align="left" colSpan="4"><hr noshade size="1"></td></tr>
+													<tr><td vAlign="top" class="uniconcel">&nbsp;		</td><td vAlign="top" class="uniconcel"><b><a href="#" onClick="SendInfo('Algiers Hotel','Main Door','3')">	Algiers Hotel	</a></b></td><td vAlign="top" class="uniconcel">	Main Door	</td><td vAlign="top" class="uniconcel"><B>3</B> [ <a href="javascript:open_centered(440,330,'pop_zone_03.html','_blank')">INFO</a> ]	</td>
+													</tr>
+													<tr><td align="left" colSpan="4"><hr noshade size="1"></td></tr>
+													<tr><td vAlign="top" class="uniconcel">&nbsp;		</td><td vAlign="top" class="uniconcel"><b><a href="#" onClick="SendInfo('AmeriSuites','Main Door','5')">	AmeriSuites	</a></b></td><td vAlign="top" class="uniconcel">	Main Door	</td><td vAlign="top" class="uniconcel"><B>5</B> [ <a href="javascript:open_centered(440,330,'pop_zone_05.html','_blank')">INFO</a> ]	</td>
+													</tr>
+													<tr><td align="left" colSpan="4"><hr noshade size="1"></td></tr>
+													<tr><td class="smlpakhea"><a name="B"></a>	B	</td><td class="uniconcel"><b><a href="#" onClick="SendInfo('Bally\'s','North Door','7')">	Bally's	</a></b></td><td class="uniconcel">	North Door	</td><td class="uniconcel"><B>7</B> [ <a href="javascript:open_centered(440,330,'pop_zone_07.html','_blank')">INFO</a> ]	</td>
+													</tr>
+													<tr><td align="left" colSpan="4"><hr noshade size="1"></td></tr>
+													<tr><td vAlign="top" class="uniconcel">&nbsp;		</td><td vAlign="top" class="uniconcel"><b><a href="#" onClick="SendInfo('Barbary Coast','South Door','4')">	Barbary Coast	</a></b></td><td vAlign="top" class="uniconcel">	South Door	</td><td vAlign="top" class="uniconcel"><B>4</B> [ <a href="javascript:open_centered(440,330,'pop_zone_04.html','_blank')">INFO</a> ]	</td>
+													</tr>
+													<tr><td align="left" colSpan="4"><hr noshade size="1"></td></tr>
+													<tr><td vAlign="top" class="uniconcel">&nbsp;		</td><td vAlign="top" class="uniconcel"><b><a href="#" onClick="SendInfo('Bellagio','Lower Lobby','7')">	Bellagio	</a></b></td><td vAlign="top" class="uniconcel">	Lower Lobby	</td><td vAlign="top" class="uniconcel"><B>7</B> [ <a href="javascript:open_centered(440,330,'pop_zone_07.html','_blank')">INFO</a> ]	</td>
+													</tr>
+													<tr><td align="left" colSpan="4"><hr noshade size="1"></td></tr>
+													<tr><td vAlign="top" class="uniconcel">&nbsp;		</td><td vAlign="top" class="uniconcel"><b><a href="#" onClick="SendInfo('Best Western McCarran','Main Door','5')">	Best Western McCarran	</a></b></td><td vAlign="top" class="uniconcel">	Main Door	</td><td vAlign="top" class="uniconcel"><B>5</B> [ <a href="javascript:open_centered(440,330,'pop_zone_05.html','_blank')">INFO</a> ]	</td>
+													</tr>
+													<tr><td align="left" colSpan="4"><hr noshade size="1"></td></tr>
+													<tr><td vAlign="top" class="uniconcel">&nbsp;		</td><td vAlign="top" class="uniconcel"><b><a href="#" onClick="SendInfo('Best Western Mardi Gras','Main Door','5')">	Best Western Mardi Gras	</a></b></td><td vAlign="top" class="uniconcel">	Main Door	</td><td vAlign="top" class="uniconcel"><B>5</B> [ <a href="javascript:open_centered(440,330,'pop_zone_05.html','_blank')">INFO</a> ]	</td>
+													</tr>
+													<tr><td align="left" colSpan="4"><hr noshade size="1"></td></tr>
+													<tr><td vAlign="top" class="uniconcel">&nbsp;		</td><td vAlign="top" class="uniconcel"><b><a href="#" onClick="SendInfo('Blair House','Main Door','2')">	Blair House	</a></b></td><td vAlign="top" class="uniconcel">	Main Door	</td><td vAlign="top" class="uniconcel"><B>2</B> [ <a href="javascript:open_centered(440,330,'pop_zone_02.html','_blank')">INFO</a> ]	</td>
+													</tr>
+													<tr><td align="left" colSpan="4"><hr noshade size="1"></td></tr>
+													<tr><td vAlign="top" class="uniconcel">&nbsp;		</td><td vAlign="top" class="uniconcel"><b><a href="#" onClick="SendInfo('Bourbon Street','Main Door','4')">	Bourbon Street	</a></b></td><td vAlign="top" class="uniconcel">	Main Door	</td><td vAlign="top" class="uniconcel"><B>4</B> [ <a href="javascript:open_centered(440,330,'pop_zone_04.html','_blank')">INFO</a> ]	</td>
+													</tr>
+													<tr><td align="left" colSpan="4"><hr noshade size="1"></td></tr>
+													<tr><td vAlign="top" class="uniconcel">&nbsp;		</td><td vAlign="top" class="uniconcel"><b><a href="#" onClick="SendInfo('Budget Suites (by Stardust)','Lobby','3')">	Budget Suites (by Stardust)	</a></b></td><td vAlign="top" class="uniconcel">	Lobby	</td><td vAlign="top" class="uniconcel"><B>3</B> [ <a href="javascript:open_centered(440,330,'pop_zone_03.html','_blank')">INFO</a> ]	</td>
+													</tr>
+													<tr><td align="left" colSpan="4"><hr noshade size="1"></td></tr>
+													<tr><td class="smlpakhea"><a name="C"></a>	C	</td><td class="uniconcel"><b><a href="#" onClick="SendInfo('Caesars Palace','Pavilion Entrance','3')">	Caesars Palace	</a></b></td><td class="uniconcel">	Pavilion Entrance	</td><td class="uniconcel"><B>3</B> [ <a href="javascript:open_centered(440,330,'pop_zone_03.html','_blank')">INFO</a> ]	</td>
+													</tr>
+													<tr><td align="left" colSpan="4"><hr noshade size="1"></td></tr>
+													<tr><td vAlign="top" class="uniconcel">&nbsp;		</td><td vAlign="top" class="uniconcel"><b><a href="#" onClick="SendInfo('California Hotel','Valet','1')">	California Hotel	</a></b></td><td vAlign="top" class="uniconcel">	Valet	</td><td vAlign="top" class="uniconcel"><B>1</B> [ <a href="javascript:open_centered(440,330,'pop_zone_01.html','_blank')">INFO</a> ]	</td>
+													</tr>
+													<tr><td align="left" colSpan="4"><hr noshade size="1"></td></tr>
+													<tr><td vAlign="top" class="uniconcel">&nbsp;		</td><td vAlign="top" class="uniconcel"><b><a href="#" onClick="SendInfo('Candlewood Suites','Main Door','4')">	Candlewood Suites	</a></b></td><td vAlign="top" class="uniconcel">	Main Door	</td><td vAlign="top" class="uniconcel"><B>4</B> [ <a href="javascript:open_centered(440,330,'pop_zone_04.html','_blank')">INFO</a> ]	</td>
+													</tr>
+													<tr><td align="left" colSpan="4"><hr noshade size="1"></td></tr>
+													<tr><td vAlign="top" class="uniconcel">&nbsp;		</td><td vAlign="top" class="uniconcel"><b><a href="#" onClick="SendInfo('Carriage House','Lobby','7')">	Carriage House	</a></b></td><td vAlign="top" class="uniconcel">	Lobby	</td><td vAlign="top" class="uniconcel"><B>7</B> [ <a href="javascript:open_centered(440,330,'pop_zone_07.html','_blank')">INFO</a> ]	</td>
+													</tr>
+													<tr><td align="left" colSpan="4"><hr noshade size="1"></td></tr>
+													<tr><td vAlign="top" class="uniconcel">&nbsp;		</td><td vAlign="top" class="uniconcel"><b><a href="#" onClick="SendInfo('Casino Royal','South Door','4')">	Casino Royal	</a></b></td><td vAlign="top" class="uniconcel">	South Door	</td><td vAlign="top" class="uniconcel"><B>4</B> [ <a href="javascript:open_centered(440,330,'pop_zone_04.html','_blank')">INFO</a> ]	</td>
+													</tr>
+													<tr><td align="left" colSpan="4"><hr noshade size="1"></td></tr>
+													<tr><td vAlign="top" class="uniconcel">&nbsp;		</td><td vAlign="top" class="uniconcel"><b><a href="#" onClick="SendInfo('Circus Circus','Front Door (Strip)','3')">	Circus Circus	</a></b></td><td vAlign="top" class="uniconcel">	Front Door (Strip)	</td><td vAlign="top" class="uniconcel"><B>3</B> [ <a href="javascript:open_centered(440,330,'pop_zone_03.html','_blank')">INFO</a> ]	</td>
+													</tr>
+													<tr><td align="left" colSpan="4"><hr noshade size="1"></td></tr>
+													<tr><td vAlign="top" class="uniconcel">&nbsp;		</td><td vAlign="top" class="uniconcel"><b><a href="#" onClick="SendInfo('Comfort Inn (Koval)','Main Door','8')">	Comfort Inn (Koval)	</a></b></td><td vAlign="top" class="uniconcel">	Main Door	</td><td vAlign="top" class="uniconcel"><B>8</B> [ <a href="javascript:open_centered(440,330,'pop_zone_08.html','_blank')">INFO</a> ]	</td>
+													</tr>
+													<tr><td align="left" colSpan="4"><hr noshade size="1"></td></tr>
+													<tr><td vAlign="top" class="uniconcel">&nbsp;		</td><td vAlign="top" class="uniconcel"><b><a href="#" onClick="SendInfo('Courtyard-Marriott (Paradise)','Main Door','2')">	Courtyard-Marriott (Paradise)	</a></b></td><td vAlign="top" class="uniconcel">	Main Door	</td>
+													<td vAlign="top" class="uniconcel"><B>2</B> [ <a href="javascript:open_centered(440,330,'pop_zone_02.html','_blank')">INFO</a> ]</td>
+													</tr>
+													<tr><td align="left" colSpan="4"><hr noshade size="1"></td></tr>
+													<tr><td vAlign="top" class="uniconcel">&nbsp;		</td><td vAlign="top" class="uniconcel"><b><a href="#" onClick="SendInfo('Crown Plaza','Lobby','5')">	Crown Plaza	</a></b></td><td vAlign="top" class="uniconcel">	Lobby	</td><td vAlign="top" class="uniconcel"><B>5</B> [ <a href="javascript:open_centered(440,330,'pop_zone_05.html','_blank')">INFO</a> ]	</td>
+													</tr>
+													<tr><td align="left" colSpan="4"><hr noshade size="1"></td></tr>
+													<tr><td class="smlpakhea"><a name="D"></a>	D	</td><td class="uniconcel"><b><a href="#" onClick="SendInfo('Days Inn (Koval)','Lobby','5')">	Days Inn (Koval)	</a></b></td><td class="uniconcel">	Lobby	</td><td class="uniconcel"><B>5</B> [ <a href="javascript:open_centered(440,330,'pop_zone_05.html','_blank')">INFO</a> ]	</td>
+													</tr>
+													<tr><td align="left" colSpan="4"><hr noshade size="1"></td></tr>
+													<tr><td vAlign="top" class="uniconcel">&nbsp;		</td><td vAlign="top" class="uniconcel"><b><a href="#" onClick="SendInfo('Days Inn (Downtown)','Lobby','1')">	Days Inn (Downtown)	</a></b></td><td vAlign="top" class="uniconcel">	Lobby	</td><td vAlign="top" class="uniconcel"><B>1</B> [ <a href="javascript:open_centered(440,330,'pop_zone_01.html','_blank')">INFO</a> ]	</td>
+													</tr>
+													<tr><td align="left" colSpan="4"><hr noshade size="1"></td></tr>
+													<tr><td vAlign="top" class="uniconcel">&nbsp;		</td><td vAlign="top" class="uniconcel"><b><a href="#" onClick="SendInfo('Desert Paradise Resort','Main Lobby','6')">	Desert Paradise Resort	</a></b></td><td vAlign="top" class="uniconcel">	Main Lobby	</td><td vAlign="top" class="uniconcel"><B>6</B> [ <a href="javascript:open_centered(440,330,'pop_zone_06.html','_blank')">INFO</a> ]	</td>
+													</tr>
+													<tr><td align="left" colSpan="4"><hr noshade size="1"></td></tr>
+													<tr><td class="smlpakhea"><a name="E"></a>	E	</td><td class="uniconcel"><b><a href="#" onClick="SendInfo('Embassy Suites','Main Lobby','5')">	Embassy Suites	</a></b></td><td class="uniconcel">	Main Lobby	</td><td class="uniconcel"><B>5</B> [ <a href="javascript:open_centered(440,330,'pop_zone_05.html','_blank')">INFO</a> ]	</td>
+													</tr>
+													<tr><td align="left" colSpan="4"><hr noshade size="1"></td></tr>
+													<tr><td vAlign="top" class="uniconcel">&nbsp;		</td><td vAlign="top" class="uniconcel"><b><a href="#" onClick="SendInfo('Excalibur','Back Tour Rotunda','8')">	Excalibur	</a></b></td><td vAlign="top" class="uniconcel">	Back Tour Rotunda	</td><td vAlign="top" class="uniconcel"><B>8</B> [ <a href="javascript:open_centered(440,330,'pop_zone_08.html','_blank')">INFO</a> ]	</td>
+													</tr>
+													<tr><td align="left" colSpan="4"><hr noshade size="1"></td></tr>
+													<tr><td vAlign="top" class="uniconcel">&nbsp;		</td><td vAlign="top" class="uniconcel"><b><a href="#" onClick="SendInfo('Extended Stay America','Main Lobby','6')">	Extended Stay America	</a></b></td><td vAlign="top" class="uniconcel">	Main Lobby	</td><td vAlign="top" class="uniconcel"><B>6</B> [ <a href="javascript:open_centered(440,330,'pop_zone_06.html','_blank')">INFO</a> ]	</td>
+													</tr>
+													<tr><td align="left" colSpan="4"><hr noshade size="1"></td></tr>
+													<tr><td class="smlpakhea"><a name="F"></a>	F	</td><td class="uniconcel"><b><a href="#" onClick="SendInfo('Fairfield Inn','Lobby','1')">	Fairfield Inn	</a></b></td><td class="uniconcel">	Lobby	</td><td class="uniconcel"><B>1</B> [ <a href="javascript:open_centered(440,330,'pop_zone_01.html','_blank')">INFO</a> ]	</td>
+													</tr>
+													<tr><td align="left" colSpan="4"><hr noshade size="1"></td></tr>
+													<tr><td vAlign="top" class="uniconcel">&nbsp;		</td><td vAlign="top" class="uniconcel"><b><a href="#" onClick="SendInfo('Fitzgeralds','Valet','1')">	Fitzgeralds	</a></b></td><td vAlign="top" class="uniconcel">	Valet	</td><td vAlign="top" class="uniconcel"><B>1</B> [ <a href="javascript:open_centered(440,330,'pop_zone_01.html','_blank')">INFO</a> ]	</td>
+													</tr>
+													<tr><td align="left" colSpan="4"><hr noshade size="1"></td></tr>
+													<tr><td vAlign="top" class="uniconcel">&nbsp;		</td><td vAlign="top" class="uniconcel"><b><a href="#" onClick="SendInfo('Flamingo Hilton','North Tour Lobby','4')">	Flamingo Hilton	</a></b></td><td vAlign="top" class="uniconcel">	North Tour Lobby	</td><td vAlign="top" class="uniconcel"><B>4</B> [ <a href="javascript:open_centered(440,330,'pop_zone_04.html','_blank')">INFO</a> ]	</td>
+													</tr>
+													<tr><td align="left" colSpan="4"><hr noshade size="1"></td></tr>
+													<tr><td vAlign="top" class="uniconcel">&nbsp;		</td><td vAlign="top" class="uniconcel"><b><a href="#" onClick="SendInfo('Four Queens','East Door','1')">	Four Queens	</a></b></td><td vAlign="top" class="uniconcel">	East Door	</td><td vAlign="top" class="uniconcel"><B>1</B> [ <a href="javascript:open_centered(440,330,'pop_zone_01.html','_blank')">INFO</a> ]	</td>
+													</tr>
+													<tr><td align="left" colSpan="4"><hr noshade size="1"></td></tr>
+													<tr><td vAlign="top" class="uniconcel">&nbsp;		</td><td vAlign="top" class="uniconcel"><b><a href="#" onClick="SendInfo('Four Seasons','Main Entrance','8')">	Four Seasons	</a></b></td><td vAlign="top" class="uniconcel">	Main Entrance	</td><td vAlign="top" class="uniconcel"><B>8</B> [ <a href="javascript:open_centered(440,330,'pop_zone_08.html','_blank')">INFO</a> ]	</td>
+													</tr>
+													<tr><td align="left" colSpan="4"><hr noshade size="1"></td></tr>
+													<tr><td vAlign="top" class="uniconcel">&nbsp;		</td><td vAlign="top" class="uniconcel"><b><a href="#" onClick="SendInfo('Fremont','West Door','1')">	Fremont	</a></b></td><td vAlign="top" class="uniconcel">	West Door	</td><td vAlign="top" class="uniconcel"><B>1</B> [ <a href="javascript:open_centered(440,330,'pop_zone_01.html','_blank')">INFO</a> ]	</td>
+													</tr>
+													<tr><td align="left" colSpan="4"><hr noshade size="1"></td></tr>
+													<tr><td vAlign="top" class="uniconcel">&nbsp;		</td><td vAlign="top" class="uniconcel"><b><a href="#" onClick="SendInfo('Frontier, The New','Rear Valet','3')">	Frontier, The New	</a></b></td><td vAlign="top" class="uniconcel">	Rear Valet	</td><td vAlign="top" class="uniconcel"><B>3</B> [ <a href="javascript:open_centered(440,330,'pop_zone_03.html','_blank')">INFO</a> ]	</td>
+													</tr>
+													<tr><td align="left" colSpan="4"><hr noshade size="1"></td></tr>
+													<!--- G-N START --->
+													<tr>
+														<TD class=smlpakhea><a name="G"></a>G</TD>
+                                <TD class=uniconcel>
+								<B><a href="#" onClick="SendInfo('Gold Coast','Valet','5')">Gold Coast</a></B></TD>
+                                <TD class=uniconcel>Valet</TD>
+                                <TD class=uniconcel><B>5</B> [ <A 
+                                href="javascript:open_centered(440,330,'pop_zone_05.html','_blank')">INFO</A> 
+                                ]</TD></TR>
+                                <TR>
+                                <TD align=left colSpan=4>
+                                <HR noShade SIZE=1></TD></TR>
+                                <TR>
+                                <TD class=uniconcel vAlign=top>&nbsp;</TD>
+                                <TD class=uniconcel vAlign=top><B><a href="#" onClick="SendInfo('Golden Nugget','South 1st &amp; Bridger','1')">Golden Nugget 
+                                </a></B></TD>
+                                <TD class=uniconcel vAlign=top>South 1st &amp; 
+                                Bridger</TD>
+                                <TD class=uniconcel vAlign=top><B>1</B> [ <A 
+                                href="javascript:open_centered(440,330,'pop_zone_01.html','_blank')">INFO</A> 
+                                ]</TD></TR>
+                                <TR>
+                                <TD align=left colSpan=4>
+                                <HR noShade SIZE=1></TD></TR>
+                                <TR>
+                                <TD class=smlpakhea><a name="H"></a>H</TD>
+                                <TD class=uniconcel><B><a href="#" onClick="SendInfo('Hampton Inn (Industrial)','Main Lobby','6')">Hampton Inn (Industrial) 
+                                </a></B></TD>
+                                <TD class=uniconcel>Main Lobby</TD>
+                                <TD class=uniconcel><B>6</B> [ <A 
+                                href="javascript:open_centered(440,330,'pop_zone_06.html','_blank')">INFO</A> 
+                                ]</TD></TR>
+                                <TR>
+                                <TD align=left colSpan=4>
+                                <HR noShade SIZE=1></TD></TR>
+                                <TR>
+                                <TD class=uniconcel vAlign=top>&nbsp;</TD>
+                                <TD class=uniconcel vAlign=top><B><a href="#" onClick="SendInfo('Hard Rock Hotel','Valet','5')">Hard Rock Hotel</a></B></TD>
+                                <TD class=uniconcel vAlign=top>Valet</TD>
+                                <TD class=uniconcel vAlign=top><B>5</B> [ <A 
+                                href="javascript:open_centered(440,330,'pop_zone_05.html','_blank')">INFO</A> 
+                                ]</TD></TR>
+                                <TR>
+                                <TD align=left colSpan=4>
+                                <HR noShade SIZE=1></TD></TR>
+                                <TR>
+                                <TD class=uniconcel vAlign=top>&nbsp;</TD>
+                                <TD class=uniconcel vAlign=top><B><a href="#" onClick="SendInfo('Harrahs','Valet','4')">Harrahs 
+                                </a></B></TD>
+                                <TD class=uniconcel vAlign=top>Valet</TD>
+                                <TD class=uniconcel vAlign=top><B>4</B> [ <A 
+                                href="javascript:open_centered(440,330,'pop_zone_04.html','_blank')">INFO</A> 
+                                ]</TD></TR>
+                                <TR>
+                                <TD align=left colSpan=4>
+                                <HR noShade SIZE=1></TD></TR>
+                                <TR>
+                                <TD class=uniconcel vAlign=top>&nbsp;</TD>
+                                <TD class=uniconcel vAlign=top><B><a href="#" onClick="SendInfo('Hawthorne Suites','Main Lobby','8')">Hawthorne Suites </a></B></TD>
+                                <TD class=uniconcel vAlign=top>Main Lobby</TD>
+                                <TD class=uniconcel vAlign=top><B>8</B> [ <A 
+                                href="javascript:open_centered(440,330,'pop_zone_08.html','_blank')">INFO</A> 
+                                ]</TD></TR>
+                                <TR>
+                                <TD align=left colSpan=4>
+                                <HR noShade SIZE=1></TD></TR>
+                                <TR>
+                                <TD class=uniconcel vAlign=top>&nbsp;</TD>
+                                <TD class=uniconcel vAlign=top><B><a href="#" onClick="SendInfo('Hilton Vacation Suites','Main Lobby','4')">Hilton Vacation Suites </a></B></TD>
+                                <TD class=uniconcel vAlign=top>Main Lobby</TD>
+                                <TD class=uniconcel vAlign=top><B>4</B> [ <A 
+                                href="javascript:open_centered(440,330,'pop_zone_04.html','_blank')">INFO</A> 
+                                ]</TD></TR>
+                                <TR>
+                                <TD align=left colSpan=4>
+                                <HR noShade SIZE=1></TD></TR>
+                                <TR>
+                                <TD class=uniconcel vAlign=top>&nbsp;</TD>
+                                <TD class=uniconcel vAlign=top><B><a href="#" onClick="SendInfo('Hilton Vacation Club','Main Lobby','1')">Hilton Vacation Club </a></B></TD>
+                                <TD class=uniconcel vAlign=top>Main Lobby</TD>
+                                <TD class=uniconcel vAlign=top><B>1</B> [ <A 
+                                href="javascript:open_centered(440,330,'pop_zone_01.html','_blank')">INFO</A> 
+                                ]</TD></TR>
+                                <TR>
+                                <TD align=left colSpan=4>
+                                <HR noShade SIZE=1></TD></TR>
+                                <TR>
+                                <TD class=uniconcel vAlign=top>&nbsp;</TD>
+                                <TD class=uniconcel vAlign=top><B><a href="#" onClick="SendInfo('Holiday Inn Boardwalk','South Door','7')">Holiday Inn Boardwalk </a></B></TD>
+                                <TD class=uniconcel vAlign=top>South Door</TD>
+                                <TD class=uniconcel vAlign=top><B>7</B> [ <A 
+                                href="javascript:open_centered(440,330,'pop_zone_07.html','_blank')">INFO</A> 
+                                ]</TD></TR>
+                                <TR>
+                                <TD align=left colSpan=4>
+                                <HR noShade SIZE=1></TD></TR>
+                                <TR>
+                                <TD align=left>&nbsp;</TD>
+                                <TD class=uniconcel vAlign=top><B><a href="#" onClick="SendInfo('Hooters','Valet','8')">Hooters 
+                                </a></B></TD>
+                                <TD class=uniconcel vAlign=top>Valet</TD>
+                                <TD class=uniconcel vAlign=top><B>8</B> [ <A 
+                                href="javascript:open_centered(440,330,'pop_zone_08.html','_blank')">INFO</A> 
+                                ]</TD></TR>
+                                <TR>
+                                <TD align=left colSpan=4>
+                                <HR></TD></TR>
+                                <TR>
+                                <TD class=uniconcel vAlign=top>&nbsp;</TD>
+                                <TD class=uniconcel vAlign=top><B><a href="#" onClick="SendInfo('Horseshoe, Binion\'s','West Door','1')">Horseshoe, Binion's </a></B></TD>
+                                <TD class=uniconcel vAlign=top>West Door</TD>
+                                <TD class=uniconcel vAlign=top><B>1</B> [ <A 
+                                href="javascript:open_centered(440,330,'pop_zone_01.html','_blank')">INFO</A> 
+                                ]</TD></TR>
+                                <TR>
+                                <TD align=left colSpan=4>
+                                <HR noShade SIZE=1></TD></TR>
+                                <TR>
+                                <TD class=uniconcel vAlign=top>&nbsp;</TD>
+                                <TD class=uniconcel vAlign=top><B><a href="#" onClick="SendInfo('Howard Johnson (Tropicana)','Main Door','6')">Howard Johnson (Tropicana) </a></B></TD>
+                                <TD class=uniconcel vAlign=top>Main Door</TD>
+                                <TD class=uniconcel vAlign=top><B>6</B> [ <A 
+                                href="javascript:open_centered(440,330,'pop_zone_06.html','_blank')">INFO</A> 
+                                ]</TD></TR>
+                                <TR>
+                                <TD align=left colSpan=4>
+                                <HR noShade SIZE=1></TD></TR>
+                                <TR>
+                                <TD class=uniconcel vAlign=top>&nbsp;</TD>
+                                <TD class=uniconcel vAlign=top><B><a href="#" onClick="SendInfo('Howard Johnson (Paradise)','Main Door','5')">Howard Johnson (Paradise) </a></B></TD>
+                                <TD class=uniconcel vAlign=top>Main Door</TD>
+                                <TD class=uniconcel vAlign=top><B>5</B> [ <A 
+                                href="javascript:open_centered(440,330,'pop_zone_05.html','_blank')">INFO</A> 
+                                ]</TD></TR>
+                                <TR>
+                                <TD align=left colSpan=4>
+                                <HR noShade SIZE=1></TD></TR>
+                                <TR>
+                                <TD class=smlpakhea><a name="I"></a>I</TD>
+                                <TD class=uniconcel><B><a href="#" onClick="SendInfo('Imperial Palace','North Tour Lobby','4')">Imperial Palace </a></B></TD>
+                                <TD class=uniconcel>North Tour Lobby</TD>
+                                <TD class=uniconcel><B>4</B> [ <A 
+                                href="javascript:open_centered(440,330,'pop_zone_04.html','_blank')">INFO</A> 
+                                ]</TD></TR>
+                                <TR>
+                                <TD align=left colSpan=4>
+                                <HR noShade SIZE=1></TD></TR>
+                                <TR>
+                                <TD class=smlpakhea><a name="J"></a>J</TD>
+                                <TD class=uniconcel><B><a href="#" onClick="SendInfo('Jockey Club','Lobby','7')">Jockey Club </a></B></TD>
+                                <TD class=uniconcel>Lobby</TD>
+                                <TD class=uniconcel><B>7</B> [ <A 
+                                href="javascript:open_centered(440,330,'pop_zone_07.html','_blank')">INFO</A> 
+                                ]</TD></TR>
+                                <TR>
+                                <TD align=left colSpan=4>
+                                <HR noShade SIZE=1></TD></TR>
+                                <TR>
+                                <TD class=smlpakhea><a name="K"></a>K</TD>
+                                <TD class=uniconcel><B><a href="#" onClick="SendInfo('Klondike','Lobby','1')">Klondike </a></B></TD>
+                                <TD class=uniconcel>Lobby</TD>
+                                <TD class=uniconcel><B>1</B> [ <A 
+                                href="javascript:open_centered(440,330,'pop_zone_01.html','_blank')">INFO</A> 
+                                ]</TD></TR>
+                                <TR>
+                                <TD align=left colSpan=4>
+                                <HR noShade SIZE=1></TD></TR>
+                                <TR>
+                                <TD class=smlpakhea><a name="L"></a>L</TD>
+                                <TD class=uniconcel><B><a href="#" onClick="SendInfo('La Quinta Inn (Strip)','Lobby','7')">La Quinta Inn (Strip) 
+                                </a></B></TD>
+                                <TD class=uniconcel>Lobby</TD>
+                                <TD class=uniconcel><B>7</B> [ <A 
+                                href="javascript:open_centered(440,330,'pop_zone_07.html','_blank')">INFO</A> 
+                                ]</TD></TR>
+                                <TR>
+                                <TD align=left colSpan=4>
+                                <HR noShade SIZE=1></TD></TR>
+                                <TR>
+                                <TD class=uniconcel vAlign=top>&nbsp;</TD>
+                                <TD class=uniconcel vAlign=top><B><a href="#" onClick="SendInfo('La Quinta Inn (Paradise)','Lobby','5')">La Quinta Inn (Paradise) </a></B></TD>
+                                <TD class=uniconcel vAlign=top>Lobby</TD>
+                                <TD class=uniconcel vAlign=top><B>5</B> [ <A 
+                                href="javascript:open_centered(440,330,'pop_zone_05.html','_blank')">INFO</A> 
+                                ]</TD></TR>
+                                <TR>
+                                <TD align=left colSpan=4>
+                                <HR noShade SIZE=1></TD></TR>
+                                <TR>
+                                <TD class=uniconcel vAlign=top>&nbsp;</TD>
+                                <TD class=uniconcel vAlign=top><B><a href="#" onClick="SendInfo('Lady Luck','Bell Desk','1')">Lady Luck 
+                                </a></B></TD>
+                                <TD class=uniconcel vAlign=top>Bell Desk</TD>
+                                <TD class=uniconcel vAlign=top><B>1</B> [ <A 
+                                href="javascript:open_centered(440,330,'pop_zone_01.html','_blank')">INFO</A> 
+                                ]</TD></TR>
+                                <TR>
+                                <TD align=left colSpan=4>
+                                <HR noShade SIZE=1></TD></TR>
+                                <TR>
+                                <TD class=uniconcel vAlign=top>&nbsp;</TD>
+                                <TD class=uniconcel vAlign=top><B><a href="#" onClick="SendInfo('Las Vegas Club','Bell Desk','1')">Las Vegas Club 
+                                </a></B></TD>
+                                <TD class=uniconcel vAlign=top>Bell Desk</TD>
+                                <TD class=uniconcel vAlign=top><B>1</B> [ <A 
+                                href="javascript:open_centered(440,330,'pop_zone_01.html','_blank')">INFO</A> 
+                                ]</TD></TR>
+                                <TR>
+                                <TD align=left colSpan=4>
+                                <HR noShade SIZE=1></TD></TR>
+                                <TR>
+                                <TD class=uniconcel vAlign=top>&nbsp;</TD>
+                                <TD class=uniconcel vAlign=top><B><a href="#" onClick="SendInfo('Las Vegas Hilton','East Door','1')">Las Vegas Hilton </a></B></TD>
+                                <TD class=uniconcel vAlign=top>East Door</TD>
+                                <TD class=uniconcel vAlign=top><B>1</B> [ <A 
+                                href="javascript:open_centered(440,330,'pop_zone_01.html','_blank')">INFO</A> 
+                                ]</TD></TR>
+                                <TR>
+                                <TD align=left colSpan=4>
+                                <HR noShade SIZE=1></TD></TR>
+                                <TR>
+                                <TD class=uniconcel vAlign=top>&nbsp;</TD>
+                                <TD class=uniconcel vAlign=top><B><a href="#" onClick="SendInfo('Luxor','North Door','8')">Luxor </a></B></TD>
+                                <TD class=uniconcel vAlign=top>North Door</TD>
+                                <TD class=uniconcel vAlign=top><B>8</B> [ <A 
+                                href="javascript:open_centered(440,330,'pop_zone_08.html','_blank')">INFO</A> 
+                                ]</TD></TR>
+                                <TR>
+                                <TD align=left colSpan=4>
+                                <HR noShade SIZE=1></TD></TR>
+                                <TR>
+                                <TD class=smlpakhea><a name="M"></a>M</TD>
+                                <TD class=uniconcel><B><a href="#" onClick="SendInfo('Main Street Station','Bell Desk','1')">Main Street Station 
+                                </a></B></TD>
+                                <TD class=uniconcel>Bell Desk</TD>
+                                <TD class=uniconcel><B>1</B> [ <A 
+                                href="javascript:open_centered(440,330,'pop_zone_01.html','_blank')">INFO</A> 
+                                ]</TD></TR>
+                                <TR>
+                                <TD align=left colSpan=4>
+                                <HR noShade SIZE=1></TD></TR>
+                                <TR>
+                                <TD class=uniconcel vAlign=top>&nbsp;</TD>
+                                <TD class=uniconcel vAlign=top><B><a href="#" onClick="SendInfo('Mandalay Bay','Tour/Travel Pickup','8')">Mandalay Bay 
+                                </a></B></TD>
+                                <TD class=uniconcel vAlign=top>Tour/Travel Pickup</TD>
+                                <TD class=uniconcel vAlign=top><B>8</B> [ <A 
+                                href="javascript:open_centered(440,330,'pop_zone_08.html','_blank')">INFO</A> 
+                                ]</TD></TR>
+                                <TR>
+                                <TD align=left colSpan=4>
+                                <HR noShade SIZE=1></TD></TR>
+                                <TR>
+                                <TD class=uniconcel vAlign=top>&nbsp;</TD>
+                                <TD class=uniconcel vAlign=top><B><a href="#" onClick="SendInfo('Marriott Suites (Convention Center)','Main Door','3')">Marriott Suites (Convention Center) </a></B></TD>
+                                <TD class=uniconcel vAlign=top>Main Door</TD>
+                                <TD class=uniconcel vAlign=top><B>3</B> [ <A 
+                                href="javascript:open_centered(440,330,'pop_zone_03.html','_blank')">INFO</A> 
+                                ]</TD></TR>
+                                <TR>
+                                <TD align=left colSpan=4>
+                                <HR noShade SIZE=1></TD></TR>
+                                <TR>
+                                <TD class=uniconcel vAlign=top>&nbsp;</TD>
+                                <TD class=uniconcel vAlign=top><B><a href="#" onClick="SendInfo('MGM Grand','Tour/Travel Lobby','7')">MGM Grand 
+                                </a></B></TD>
+                                <TD class=uniconcel vAlign=top>Tour/Travel Lobby</TD>
+                                <TD class=uniconcel vAlign=top><B>7</B> [ <A 
+                                href="javascript:open_centered(440,330,'pop_zone_07.html','_blank')">INFO</A> 
+                                ]</TD></TR>
+                                <TR>
+                                <TD align=left colSpan=4>
+                                <HR noShade SIZE=1></TD></TR>
+                                <TR>
+                                <TD class=uniconcel vAlign=top>&nbsp;</TD>
+                                <TD class=uniconcel vAlign=top><B><a href="#" onClick="SendInfo('Mirage','North Door','4')">Mirage 
+                                </a></B></TD>
+                                <TD class=uniconcel vAlign=top>North Door</TD>
+                                <TD class=uniconcel vAlign=top><B>4</B> [ <A 
+                                href="javascript:open_centered(440,330,'pop_zone_04.html','_blank')">INFO</A> 
+                                ]</TD></TR>
+                                <TR>
+                                <TD align=left colSpan=4>
+                                <HR noShade SIZE=1></TD></TR>
+                                <TR>
+                                <TD class=uniconcel vAlign=top>&nbsp;</TD>
+                                <TD class=uniconcel vAlign=top><B><a href="#" onClick="SendInfo('Monte Carlo','West Door','6')">Monte Carlo 
+                                </a></B></TD>
+                                <TD class=uniconcel vAlign=top>West Door</TD>
+                                <TD class=uniconcel vAlign=top><B>6</B> [ <A 
+                                href="javascript:open_centered(440,330,'pop_zone_06.html','_blank')">INFO</A> 
+                                ]</TD></TR>
+                                <TR>
+                                <TD align=left colSpan=4>
+                                <HR noShade SIZE=1></TD></TR>
+                                <TR>
+                                <TD class=uniconcel vAlign=top>&nbsp;</TD>
+                                <TD class=uniconcel vAlign=top><B><a href="#" onClick="SendInfo('Motel 6 (Koval)','Lobby','8')">Motel 6 (Koval) </a></B></TD>
+                                <TD class=uniconcel vAlign=top>Lobby</TD>
+                                <TD class=uniconcel vAlign=top><B>8</B> [ <A 
+                                href="javascript:open_centered(440,330,'pop_zone_08.html','_blank')">INFO</A> 
+                                ]</TD></TR>
+                                <TR>
+                                <TD align=left colSpan=4>
+                                <HR noShade SIZE=1></TD></TR>
+                                <TR>
+                                <TD class=uniconcel vAlign=top>&nbsp;</TD>
+                                <TD class=uniconcel vAlign=top><B><a href="#" onClick="SendInfo('Motel 6 (Industrial)','Lobby','6')">Motel 6 (Industrial) </a></B></TD>
+                                <TD class=uniconcel vAlign=top>Lobby</TD>
+                                <TD class=uniconcel vAlign=top><B>6</B> [ <A 
+                                href="javascript:open_centered(440,330,'pop_zone_06.html','_blank')">INFO</A> 
+                                ]</TD></TR>
+                                <TR>
+                                <TD align=left colSpan=4>
+                                <HR noShade SIZE=1></TD></TR>
+                                <TR>
+                                <TD class=smlpakhea><a name="N"></a>N</TD>
+                                <TD class=uniconcel><B><a href="#" onClick="SendInfo('New York - New York','North Door','7')">New York - New York 
+                                </a></B></TD>
+                                <TD class=uniconcel>North Door</TD>
+                                <TD class=uniconcel><B>7</B> [ <A 
+                                href="javascript:open_centered(440,330,'pop_zone_07.html','_blank')">INFO</A> 
+                                ]</TD></TR>
+                                <TR>
+                                <TD align=left colSpan=4>
+                                <HR noShade SIZE=1></TD>
+													</tr>
+													<!--- G-N END --->
+													<!--- O-Z START --->
+													<TR>
+													<TD class=smlpakhea><a name="O"></a>O </TD>
+													<TD class=uniconcel><B><a href="#" onClick="SendInfo('Orleans','East Door','5')">Orleans</A></B></TD>
+													<TD class=uniconcel>East Door </TD>
+													<TD class=uniconcel><B>5</B> [ <A 
+													href="javascript:open_centered(440,330,'pop_zone_05.html','_blank')">INFO</A> 
+													] </TD></TR>
+													<TR>
+													<TD align=left colSpan=4>
+													<HR noShade SIZE=1>
+													</TD></TR>
+													<TR>
+													<TD class=uniconcel vAlign=top>&nbsp; </TD>
+													<TD class=uniconcel vAlign=top><B><a href="#" onClick="SendInfo('Oasis RV Resort','Concierge','8')">Oasis RV Resort</A></B></TD>
+													<TD class=uniconcel vAlign=top>Concierge </TD>
+													<TD class=uniconcel vAlign=top><B>8</B> [ <A 
+													href="javascript:open_centered(440,330,'pop_zone_08.html','_blank')">INFO</A> 
+													] </TD></TR>
+													<TR>
+													<TD align=left colSpan=4>
+													<HR noShade SIZE=1>
+													</TD></TR>
+													<TR>
+													<TD class=smlpakhea><a name="P"></a>P </TD>
+													<TD class=uniconcel><B><a href="#" onClick="SendInfo('Palace Station','West Door','3')">Palace Station</A></B></TD>
+													<TD class=uniconcel>West Door </TD>
+													<TD class=uniconcel><B>3</B> [ <A 
+													href="javascript:open_centered(440,330,'pop_zone_03.html','_blank')">INFO</A> 
+													] </TD></TR>
+													<TR>
+													<TD align=left colSpan=4>
+													<HR noShade SIZE=1>
+													</TD></TR>
+													<TR>
+													<TD class=uniconcel vAlign=top>&nbsp; </TD>
+													<TD class=uniconcel vAlign=top><B><a href="#" onClick="SendInfo('Paris','North Door','7')">Paris</A></B></TD>
+													<TD class=uniconcel vAlign=top>North Door </TD>
+													<TD class=uniconcel vAlign=top><B>7</B> [ <A 
+													href="javascript:open_centered(440,330,'pop_zone_07.html','_blank')">INFO</A> 
+													] </TD></TR>
+													<TR>
+													<TD align=left colSpan=4>
+													<HR noShade SIZE=1>
+													</TD></TR>
+													<TR>
+													<TD class=uniconcel vAlign=top>&nbsp; </TD>
+													<TD class=uniconcel vAlign=top><B><a href="#" onClick="SendInfo('Polo Towers','Main Valet','7')">Polo Towers</A></B></TD>
+													<TD class=uniconcel vAlign=top>Main Valet </TD>
+													<TD class=uniconcel vAlign=top><B>7</B> [ <A 
+													href="javascript:open_centered(440,330,'pop_zone_07.html','_blank')">INFO</A> 
+													] </TD></TR>
+													<TR>
+													<TD align=left colSpan=4>
+													<HR noShade SIZE=1>
+													</TD></TR>
+													<TR>
+													<TD class=smlpakhea><a name="Q"></a>Q </TD>
+													<TD class=uniconcel><B><a href="#" onClick="SendInfo('Quality Inn Key Largo','Lobby','5')">Quality Inn Key Largo</A></B></TD>
+													<TD class=uniconcel>Lobby </TD>
+													<TD class=uniconcel><B>5</B> [ <A 
+													href="javascript:open_centered(440,330,'pop_zone_05.html','_blank')">INFO</A> 
+													] </TD></TR>
+													<TR>
+													<TD align=left colSpan=4>
+													<HR noShade SIZE=1>
+													</TD></TR>
+													<TR>
+													<TD class=smlpakhea><a name="R"></a>R </TD>
+													<TD class=uniconcel><B><a href="#" onClick="SendInfo('Ramada Vacation Suites','Main Door','4')">Ramada Vacation Suites</A></B></TD>
+													<TD class=uniconcel>Main Door </TD>
+													<TD class=uniconcel><B>4</B> [ <A 
+													href="javascript:open_centered(440,330,'pop_zone_04.html','_blank')">INFO</A> 
+													] </TD></TR>
+													<TR>
+													<TD align=left colSpan=4>
+													<HR noShade SIZE=1>
+													</TD></TR>
+													<TR>
+													<TD class=uniconcel vAlign=top>&nbsp; </TD>
+													<TD class=uniconcel vAlign=top><B><a href="#" onClick="SendInfo('Residence Inn (Paradise)','Main Door','2')">Residence Inn (Paradise)</A></B></TD>
+													<TD class=uniconcel vAlign=top>Main Door </TD>
+													<TD class=uniconcel vAlign=top><B>2</B> [ <A 
+													href="javascript:open_centered(440,330,'pop_zone_02.html','_blank')">INFO</A> 
+													] </TD></TR>
+													<TR>
+													<TD align=left colSpan=4>
+													<HR noShade SIZE=1>
+													</TD></TR>
+													<TR>
+													<TD class=uniconcel vAlign=top>&nbsp; </TD>
+													<TD class=uniconcel vAlign=top><B><a href="#" onClick="SendInfo('Residence Inn (Hughes Center)','Main Door','2')">Residence Inn (Hughes Center)</A></B></TD>
+													<TD class=uniconcel vAlign=top>Main Door </TD>
+													<TD class=uniconcel vAlign=top><B>2</B> [ <A 
+													href="javascript:open_centered(440,330,'pop_zone_02.html','_blank')">INFO</A> 
+													] </TD></TR>
+													<TR>
+													<TD align=left colSpan=4>
+													<HR noShade SIZE=1>
+													</TD></TR>
+													<TR>
+													<TD class=uniconcel vAlign=top>&nbsp; </TD>
+													<TD class=uniconcel vAlign=top><B><a href="#" onClick="SendInfo('Rio','Front Valet','5')">Rio</A></B></TD>
+													<TD class=uniconcel vAlign=top>Front Valet </TD>
+													<TD class=uniconcel vAlign=top><B>5</B> [ <A 
+													href="javascript:open_centered(440,330,'pop_zone_05.html','_blank')">INFO</A> 
+													] </TD></TR>
+													<TR>
+													<TD align=left colSpan=4>
+													<HR noShade SIZE=1>
+													</TD></TR>
+													<TR>
+													<TD class=uniconcel vAlign=top>&nbsp; </TD>
+													<TD class=uniconcel vAlign=top><B><a href="#" onClick="SendInfo('Riviera','South Door','2')">Riviera</A></B></TD>
+													<TD class=uniconcel vAlign=top>South Door </TD>
+													<TD class=uniconcel vAlign=top><B>2</B> [ <A 
+													href="javascript:open_centered(440,330,'pop_zone_02.html','_blank')">INFO</A> 
+													] </TD></TR>
+													<TR>
+													<TD align=left colSpan=4>
+													<HR noShade SIZE=1>
+													</TD></TR>
+													<TR>
+													<TD class=uniconcel vAlign=top>&nbsp; </TD>
+													<TD class=uniconcel vAlign=top><B><a href="#" onClick="SendInfo('Roadway Inn','Lobby','8')">Roadway Inn</A></B></TD>
+													<TD class=uniconcel vAlign=top>Lobby </TD>
+													<TD class=uniconcel vAlign=top><B>8</B> [ <A 
+													href="javascript:open_centered(440,330,'pop_zone_08.html','_blank')">INFO</A> 
+													] </TD></TR>
+													<TR>
+													<TD align=left colSpan=4>
+													<HR noShade SIZE=1>
+													</TD></TR>
+													<TR>
+													<TD class=uniconcel vAlign=top>&nbsp; </TD>
+													<TD class=uniconcel vAlign=top><B><a href="#" onClick="SendInfo('Royal Hotel','Main Door','3')">Royal Hotel</A></B></TD>
+													<TD class=uniconcel vAlign=top>Main Door </TD>
+													<TD class=uniconcel vAlign=top><B>3</B> [ <A 
+													href="javascript:open_centered(440,330,'pop_zone_03.html','_blank')">INFO</A> 
+													] </TD></TR>
+													<TR>
+													<TD align=left colSpan=4>
+													<HR noShade SIZE=1>
+													</TD></TR>
+													<TR>
+													<TD class=smlpakhea><a name="S"></a>S </TD>
+													<TD class=uniconcel><B><a href="#" onClick="SendInfo('Sahara','Paradise Entrance','2')">Sahara</A></B></TD>
+													<TD class=uniconcel>Paradise Entrance </TD>
+													<TD class=uniconcel><B>2</B> [ <A 
+													href="javascript:open_centered(440,330,'pop_zone_02.html','_blank')">INFO</A> 
+													] </TD></TR>
+													<TR>
+													<TD align=left colSpan=4>
+													<HR noShade SIZE=1>
+													</TD></TR>
+													<TR>
+													<TD class=uniconcel vAlign=top>&nbsp; </TD>
+													<TD class=uniconcel vAlign=top><B><a href="#" onClick="SendInfo('St. Tropez','Main Door','5')">St. Tropez</A></B></TD>
+													<TD class=uniconcel vAlign=top>Main Door </TD>
+													<TD class=uniconcel vAlign=top><B>5</B> [ <A 
+													href="javascript:open_centered(440,330,'pop_zone_05.html','_blank')">INFO</A> 
+													] </TD></TR>
+													<TR>
+													<TD align=left colSpan=4>
+													<HR noShade SIZE=1>
+													</TD></TR>
+													<TR>
+													<TD class=uniconcel vAlign=top>&nbsp; </TD>
+													<TD class=uniconcel vAlign=top><B><a href="#" onClick="SendInfo('Silverton Hotel','North Door','6')">Silverton Hotel</A></B></TD>
+													<TD class=uniconcel vAlign=top>North Door </TD>
+													<TD class=uniconcel vAlign=top><B>6</B> [ <A 
+													href="javascript:open_centered(440,330,'pop_zone_06.html','_blank')">INFO</A> 
+													] </TD></TR>
+													<TR>
+													<TD align=left colSpan=4>
+													<HR noShade SIZE=1>
+													</TD></TR>
+													<TR>
+													<TD class=uniconcel vAlign=top>&nbsp; </TD>
+													<TD class=uniconcel vAlign=top><B><a href="#" onClick="SendInfo('Stardust','South Door','3')">Stardust</A></B></TD>
+													<TD class=uniconcel vAlign=top>South Door </TD>
+													<TD class=uniconcel vAlign=top><B>3</B> [ <A 
+													href="javascript:open_centered(440,330,'pop_zone_03.html','_blank')">INFO</A> 
+													] </TD></TR>
+													<TR>
+													<TD align=left colSpan=4>
+													<HR noShade SIZE=1>
+													</TD></TR>
+													<TR>
+													<TD class=uniconcel vAlign=top>&nbsp; </TD>
+													<TD class=uniconcel vAlign=top><B><a href="#" onClick="SendInfo('Stratosphere','Rear Valet Area','1')">Stratosphere</A></B></TD>
+													<TD class=uniconcel vAlign=top>Rear Valet Area 
+													</TD>
+													<TD class=uniconcel vAlign=top><B>1</B> [ <A 
+													href="javascript:open_centered(440,330,'pop_zone_01.html','_blank')">INFO</A> 
+													] </TD></TR>
+													<TR>
+													<TD align=left colSpan=4>
+													<HR noShade SIZE=1>
+													</TD></TR>
+													<TR>
+													<TD class=uniconcel vAlign=top>&nbsp; </TD>
+													<TD class=uniconcel vAlign=top><B><a href="#" onClick="SendInfo('Super 8 (Koval)','Lobby','5')">Super 8 (Koval)</A></B></TD>
+													<TD class=uniconcel vAlign=top>Lobby </TD>
+													<TD class=uniconcel vAlign=top><B>5</B> [ <A 
+													href="javascript:open_centered(440,330,'pop_zone_05.html','_blank')">INFO</A> 
+													] </TD></TR>
+													<TR>
+													<TD align=left colSpan=4>
+													<HR noShade SIZE=1>
+													</TD></TR>
+													<TR>
+													<TD class=smlpakhea><a name="T"></a>T </TD>
+													<TD class=uniconcel><B><a href="#" onClick="SendInfo('Terrible\'s Hotel &amp; Casino','Main Door','5')">Terrible's Hotel &amp; Casino</A></B></TD>
+													<TD class=uniconcel>Main Door </TD>
+													<TD class=uniconcel><B>5</B> [ <A 
+													href="javascript:open_centered(440,330,'pop_zone_05.html','_blank')">INFO</A> 
+													] </TD></TR>
+													<TR>
+													<TD align=left colSpan=4>
+													<HR noShade SIZE=1>
+													</TD></TR>
+													<TR>
+													<TD class=uniconcel vAlign=top>&nbsp; </TD>
+													<TD class=uniconcel vAlign=top><B><a href="#" onClick="SendInfo('Travel Lodge (Polo)','Lobby','7')">Travel Lodge (Polo)</A></B></TD>
+													<TD class=uniconcel vAlign=top>Lobby </TD>
+													<TD class=uniconcel vAlign=top><B>7</B> [ <A 
+													href="javascript:open_centered(440,330,'pop_zone_07.html','_blank')">INFO</A> 
+													] </TD></TR>
+													<TR>
+													<TD align=left colSpan=4>
+													<HR noShade SIZE=1>
+													</TD></TR>
+													<TR>
+													<TD class=uniconcel vAlign=top>&nbsp; </TD>
+													<TD class=uniconcel vAlign=top><B><a href="#" onClick="SendInfo('Travel Lodge (Circus)','Lobby','3')">Travel Lodge (Circus)</A></B></TD>
+													<TD class=uniconcel vAlign=top>Lobby </TD>
+													<TD class=uniconcel vAlign=top><B>3</B> [ <A 
+													href="javascript:open_centered(440,330,'pop_zone_03.html','_blank')">INFO</A> 
+													] </TD></TR>
+													<TR>
+													<TD align=left colSpan=4>
+													<HR noShade SIZE=1>
+													</TD></TR>
+													<TR>
+													<TD class=uniconcel vAlign=top>&nbsp; </TD>
+													<TD class=uniconcel vAlign=top><B><a href="#" onClick="SendInfo('Travel Lodge (Fremont)','Lobby','1')">Travel Lodge (Fremont)</A></B></TD>
+													<TD class=uniconcel vAlign=top>Lobby </TD>
+													<TD class=uniconcel vAlign=top><B>1</B> [ <A 
+													href="javascript:open_centered(440,330,'pop_zone_01.html','_blank')">INFO</A> 
+													] </TD></TR>
+													<TR>
+													<TD align=left colSpan=4>
+													<HR noShade SIZE=1>
+													</TD></TR>
+													<TR>
+													<TD class=uniconcel vAlign=top>&nbsp; </TD>
+													<TD class=uniconcel vAlign=top><B><a href="#" onClick="SendInfo('Treasure Island','Buccaneer Bus Stop','4')">Treasure Island</A></B></TD>
+													<TD class=uniconcel vAlign=top>Buccaneer Bus Stop </TD>
+													<TD class=uniconcel vAlign=top><B>4</B> [ <A 
+													href="javascript:open_centered(440,330,'pop_zone_04.html','_blank')">INFO</A> 
+													] </TD></TR>
+													<TR>
+													<TD align=left colSpan=4>
+													<HR noShade SIZE=1>
+													</TD></TR>
+													<TR>
+													<TD class=uniconcel vAlign=top>&nbsp; </TD>
+													<TD class=uniconcel vAlign=top><B><a href="#" onClick="SendInfo('Tropicana','East Door','8')">Tropicana</A></B></TD>
+													<TD class=uniconcel vAlign=top>East Door </TD>
+													<TD class=uniconcel vAlign=top><B>8</B> [ <A 
+													href="javascript:open_centered(440,330,'pop_zone_08.html','_blank')">INFO</A> 
+													] </TD></TR>
+													<TR>
+													<TD align=left colSpan=4>
+													<HR noShade SIZE=1>
+													</TD></TR>
+													<TR>
+													<TD class=smlpakhea><a name="U"></a>U </TD>
+													<TD class=uniconcel><B><a href="#" onClick="SendInfo('Union Plaza, Jackie Gaughan\'s','Valet','1')">Union Plaza, Jackie Gaughan's</A></B></TD>
+													<TD class=uniconcel>Valet </TD>
+													<TD class=uniconcel><B>1</B> [ <A 
+													href="javascript:open_centered(440,330,'pop_zone_01.html','_blank')">INFO</A> 
+													] </TD></TR>
+													<TR>
+													<TD align=left colSpan=4>
+													<HR noShade SIZE=1>
+													</TD></TR>
+													<TR>
+													<TD class=smlpakhea><a name="V"></a>V </TD>
+													<TD class=uniconcel><B><a href="#" onClick="SendInfo('Vagabond Inn','Lobby','4')">Vagabond Inn</A></B></TD>
+													<TD class=uniconcel>Lobby </TD>
+													<TD class=uniconcel><B>4</B> [ <A 
+													href="javascript:open_centered(440,330,'pop_zone_04.html','_blank')">INFO</A> 
+													] </TD></TR>
+													<TR>
+													<TD align=left colSpan=4>
+													<HR noShade SIZE=1>
+													</TD></TR>
+													<TR>
+													<TD class=uniconcel vAlign=top>&nbsp; </TD>
+													<TD class=uniconcel vAlign=top><B><a href="#" onClick="SendInfo('Vitamin Factory','Main Door','7')">Vitamin Factory</A></B></TD>
+													<TD class=uniconcel vAlign=top>Main Door </TD>
+													<TD class=uniconcel vAlign=top><B>7</B> [ <A 
+													href="javascript:open_centered(440,330,'pop_zone_07.html','_blank')">INFO</A> 
+													] </TD></TR>
+													<TR>
+													<TD align=left colSpan=4>
+													<HR noShade SIZE=1>
+													</TD></TR>
+													<TR>
+													<TD class=uniconcel vAlign=top>&nbsp; </TD>
+													<TD class=uniconcel vAlign=top><B><a href="#" onClick="SendInfo('Venetian','Tour Bus Area (Sands Expo)','3')">Venetian</A></B></TD>
+													<TD class=uniconcel vAlign=top>Tour Bus Area (Sands Expo) </TD>
+													<TD class=uniconcel vAlign=top><B>3</B> [ <A 
+													href="javascript:open_centered(440,330,'pop_zone_03.html','_blank')">INFO</A> 
+													] </TD></TR>
+													<TR>
+													<TD align=left colSpan=4>
+													<HR noShade SIZE=1>
+													</TD></TR>
+													<TR>
+													<TD class=smlpakhea><a name="W"></a>W </TD>
+													<TD class=uniconcel><B><a href="#" onClick="SendInfo('Westward Ho','Rear Taxi Stop','3')">Westward Ho</A></B></TD>
+													<TD class=uniconcel>Rear Taxi Stop </TD>
+													<TD class=uniconcel><B>3</B> [ <A 
+													href="javascript:open_centered(440,330,'pop_zone_03.html','_blank')">INFO</A> 
+													] </TD></TR>
+													<TR>
+													<TD align=left colSpan=4>
+													<HR noShade SIZE=1>
+													</TD></TR>
+													<TR>
+													<TD class=uniconcel vAlign=top>&nbsp; </TD>
+													<TD class=uniconcel vAlign=top><B><a href="#" onClick="SendInfo('Wild Wild West','Main Door','5')">Wild Wild West</A></B></TD>
+													<TD class=uniconcel vAlign=top>Main Door </TD>
+													<TD class=uniconcel vAlign=top><B>5</B> [ <A 
+													href="javascript:open_centered(440,330,'pop_zone_05.html','_blank')">INFO</A> 
+													] </TD></TR>
+													<TR>
+													<TD align=left colSpan=4>
+													<HR noShade SIZE=1>
+													</TD>
+													</TR>
+													<!--- O-Z END --->
+											</table></TD>
+									</tr>
+									
+								</table></TD>
+						</tr>
+</table>
+
+
+</body>
+</html> 

@@ -1,0 +1,50 @@
+@charset "utf-8";
+
+DIV.cal-wrapper {
+	DISPLAY: none; Z-INDEX: 9999; BACKGROUND: #fff; OVERFLOW: hidden; WIDTH: 220px; POSITION: absolute
+}
+DIV.cal-wrapper IFRAME {
+	Z-INDEX: -1; LEFT: 0px; WIDTH: 220px; POSITION: absolute; TOP: 0px; HEIGHT: 158px; opacity: 0; frameborder: 0
+}
+DIV.cal-wrapper .date-picker {
+	BORDER-RIGHT: #bababa 1px solid; BORDER-TOP: #bababa 1px solid; BACKGROUND: url(/image/calendar_fangxiaomin/calendar_bg.png) no-repeat; FLOAT: right; MARGIN-LEFT: -1px; BORDER-LEFT: #bababa 1px solid; WIDTH: 190px; CURSOR: default; BORDER-BOTTOM: #bababa 1px solid; HEIGHT: 158px
+}
+DIV.cal-wrapper .prev {
+	Z-INDEX: 999; BACKGROUND: url(/image/calendar_fangxiaomin/calendar_btn.gif) no-repeat; WIDTH: 20px; CURSOR: pointer; POSITION: absolute; TOP: 5px; HEIGHT: 20px
+}
+DIV.cal-wrapper .next {
+	Z-INDEX: 999; BACKGROUND: url(/image/calendar_fangxiaomin/calendar_btn.gif) no-repeat; WIDTH: 20px; CURSOR: pointer; POSITION: absolute; TOP: 5px; HEIGHT: 20px
+}
+DIV.cal-wrapper .prev {
+	BACKGROUND-POSITION: -48px 5px; LEFT: 5px
+}
+DIV.cal-wrapper .next {
+	BACKGROUND-POSITION: -65px 5px; RIGHT: 5px
+}
+DIV.cal-wrapper TABLE {
+	BORDER-COLLAPSE: collapse; border-spacing: 0
+}
+DIV.cal-wrapper .head {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 5px; COLOR: #0069ca; PADDING-TOP: 5px; BORDER-BOTTOM: #aaa 1px solid; TEXT-ALIGN: center
+}
+DIV.cal-wrapper TH {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: normal; FONT-SIZE: 12px; PADDING-BOTTOM: 0px; WIDTH: 28px; LINE-HEIGHT: 18px; PADDING-TOP: 0px; HEIGHT: 18px; TEXT-ALIGN: center
+}
+DIV.cal-wrapper TD {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: normal; FONT-SIZE: 12px; PADDING-BOTTOM: 0px; WIDTH: 28px; LINE-HEIGHT: 18px; PADDING-TOP: 0px; HEIGHT: 18px; TEXT-ALIGN: center
+}
+DIV.cal-wrapper A {
+	DISPLAY: block; WIDTH: 100%; HEIGHT: 100%; TEXT-DECORATION: none
+}
+DIV.cal-wrapper A:unknown {
+	outline: none
+}
+DIV.cal-wrapper A.notallowed {
+	CURSOR: not-allowed; COLOR: #ccc
+}
+DIV.cal-wrapper A.accept:hover {
+	BACKGROUND: #f90; COLOR: #fff
+}
+DIV.cal-wrapper A.selected {
+	BACKGROUND: rgb(0,153,255); COLOR: #fff
+}

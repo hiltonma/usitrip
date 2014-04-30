@@ -1,0 +1,230 @@
+{:include file="tours-talent-contest/header.tpl.htm":}
+<div id="wrap">
+
+    <div class="daren">
+    
+        <div class="darenTop"><img src="image/daren/daren_top_1.jpg" alt="{:db_to_html text=旅游体验师大赛:}" usemap="#Map" /><map name="Map" id="Map"><area shape="rect" coords="27,6,231,57" href="{:$severname:}" alt="" /></map></div>
+        <div class="darenTop"><img src="image/daren/daren_top_2.jpg" alt="{:db_to_html text=旅游体验师大赛:}" /></div>
+        <div class="darenTop"><img src="image/daren/daren_top_3.jpg" alt="{:db_to_html text=旅游体验师大赛:}" usemap="#Map2" /><map name="Map2" id="Map2"><area shape="rect" coords="401,50,517,93" href="trip_player.php?mod=apply" alt="" /></map></div>
+        
+        <div class="darenNav">
+            <div class="darenNavLeft"></div>
+            <ul>
+              <li><a href="trip_player.php">{:db_to_html text=活动首页:}</a></li>
+                <li><a href="trip_player.php?mod=list">{:db_to_html text=所有作品:}</a></li>
+                <li><a href="trip_player.php?mod=prize">{:db_to_html text=奖项设置:}</a></li>
+                {:if $customer_id > 0:}
+                <li class="on"><a href="trip_player.php?mod=homepage&id={:$customer_id:}">{:db_to_html text=个人主页:}</a></li>
+                {:/if:}
+                <li><a href="trip_player.php?mod=finalists"><span>{:db_to_html text=获奖名单:}</span></a></li>
+            </ul>
+          <div class="share">
+                <div class="bshare-custom">
+                    <a title="{:db_to_html text=分享到新浪微博:}" class="bshare-sinaminiblog"></a>
+                    <a title="{:db_to_html text=分享到开心网:}" class="bshare-kaixin001"></a>
+                    <a title="{:db_to_html text=分享到人人网:}" class="bshare-renren"></a>
+                    <a title="{:db_to_html text=分享到facebook:}" class="bshare-facebook"></a>
+                    <a title="{:db_to_html text=分享到twitter:}" class="bshare-twitter"></a>
+                    <a title="{:db_to_html text=分享到qq空间:}" class="bshare-qzone"></a>
+                    <a title="{:db_to_html text=更多平台:}" class="bshare-more">{:db_to_html text=更多:}>></a>
+                </div>
+               
+              {:db_to_html text=分享到：:}          </div>
+            <div class="darenNavRight"></div>
+        
+        </div>
+
+        <div class="darenUserLeft">
+            <div class="userPhoto"><a href="trip_player.php?mod=homepage&id={:$account.customers_id:}">{:if $account.customers_face != '':}<img src="images/face/{:$account.customers_face:}" />{:else:}<img src="image/touxiang_no-sex.gif" />{:/if:}</a></div>
+            <p><a href="trip_player.php?mod=homepage&id={:$account.customers_id:}">{:db_to_html text=$account.customers_firstname|truncate:10:}</a></p>
+        </div>
+        
+        <div class="darenUserRight">
+        {:if $user:}
+            <div class="darenItem">
+                <h2><span>{:db_to_html text=您的基本信息:}<a href="trip_player.php?mod=talent_info&action=edit&id={:$account.customers_id:}">{:db_to_html text=修改:}</a></span></h2>
+                <div class="darenItemCon darenDes">
+                    <ul class="address addressAll">
+                        <li>
+                            <label>{:db_to_html text=上传头像：:}</label>
+                            
+                            <dl class="uploadImg">
+                                <dt>{:if $account.customers_face != '':}<img src="images/face/{:$account.customers_face:}" style="max-width:114px; max-height:114px"/>{:else:}<img src="image/touxiang_no-sex.gif" />{:/if:}</dt>
+                                <dd><a href="trip_player.php?mod=talent_info&action=edit&id={:$account.customers_id:}">{:db_to_html text=重新上传:}</a></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <label>{:db_to_html text=国家/地区：:}</label>
+                            <span class="fixed">{:db_to_html text=$account.entry_country_id:}</span>
+                            <span class="fixed">{:if $account.entry_state !='':}{:db_to_html text=$account.entry_state:}{:/if:}</span>
+                            <span class="fixed">{:if $account.entry_city  !='':}{:db_to_html text=$account.entry_city:}{:/if:}</span>                        </li>
+                        <li>
+                            <label>{:db_to_html text=详细地址：:}</label>
+                            <span class="fixed">{:db_to_html text=$account.entry_street_address:}</span>                        </li>
+                        <li>
+                            <label>{:db_to_html text=博客地址：:}</label>
+                            <span class="fixed">{:db_to_html text=$account.blog_url:}</span>                        </li>
+                        <li>
+                            <label>{:db_to_html text=职业：:}</label>
+                            <span class="fixed">{:db_to_html text=$account.user_job:}</span>                        </li>
+                        <li>
+                            <label class="long">{:db_to_html text=记忆最深刻的旅行地：:}</label>
+                            <span class="fixed">{:db_to_html text=$account.rem_trip:}</span>                        </li>
+                        <li>
+                            <label class="long">{:db_to_html text=最想要去的旅行目的地：:}</label>
+                            <span class="fixed">{:db_to_html text=$account.most_to:}</span>                        </li>
+                    </ul>
+              </div>
+            </div>
+         {:/if:}   
+            <div class="darenItem darenItem2">
+                {:if $user :}<div class="newArticleBtn"><a href="trip_player.php?mod=add#postWorks" class="btn btnOrange"><button type="button" onclick="location.href='trip_player.php?mod=add#postWorks'">发布新作品</button></a></div>{:/if:}
+                <h2><span>{:if $user :}{:db_to_html text=您发布的所有作品:}{:else:}{:db_to_html text=$account.customers_firstname:}{:db_to_html text=发布的所有作品:}{:/if:}</span></h2>
+                <div class="darenItemCon article">
+                    <ul>
+                    {:if $works != '':}
+                    {:section name=i loop=$works:}
+                        <li>
+                            <div class="left">
+                            
+                            <a href="{:$works[i].works_frontcover:}" rel="lightbox[]" title="<a href='trip_player.php?mod=view&id={:$works[i].works_id:}'>{:db_to_html text=$works[i].works_title:}</a>">{:if $works[i].works_frontcover_thumb != '':}<img src="{:$works[i].works_frontcover_thumb:}" />{:else:}<img src="image/daren_uploadphoto.gif" />{:/if:}</a>
+                            
+                            </div><div class="mid">
+                                <h3><a href="trip_player.php?mod=view&id={:$works[i].works_id:}">{:db_to_html text=$works[i].works_title:}</a></h3>
+                                <p class="des">
+                                    {:db_to_html text=$works[i].works_content:}
+                                </p>
+                                <p class="info">
+                                    <span>{:db_to_html text=发布时间：:}<b>{:$works[i].works_addtime|date_format:'%Y-%m-%d':}</b></span>
+                                    <span>{:db_to_html text=浏览数：:}<b>{:$works[i].works_readnum:}</b></span>
+                                    <span>{:db_to_html text=评论数：:}<b>{:$works[i].works_commnum:}</b></span>
+                                </p>
+                            </div><div class="right">
+                                {:if $user :}
+                                {:if $works[i].works_is_view == -1:}<p class="pass">{:db_to_html text=未通过:}</p>{:/if:}
+                                {:if $works[i].works_is_view == 1:}<p class="votes"><label>{:db_to_html text=票数:}：</label>{:$works[i].works_votes:}</p>{:/if:}
+                                {:if $works[i].works_is_view == 0:}<p class="pass">{:db_to_html text=审核中:}</p>{:/if:}
+                                {:if $works[i].works_is_view == 3:}<p class="pass">{:db_to_html text=已删除:}</p>{:/if:}
+                                {:if $works[i].works_is_view != 3:} 
+                                {:if $works[i].works_is_view != 0:}
+                                <p><a class="btn btnOrange" href="trip_player.php?mod=add&action=edit&id={:$works[i].works_id:}" ><button type="button" onclick="location.href='trip_player.php?mod=add&action=edit&id={:$works[i].works_id:}'">{:db_to_html text=编辑:}</button></a></p>
+                                {:/if:}
+                                <p><a class="btn btnGrey"><button type="button" onclick="if (confirm('{:db_to_html text=真的要删除该作品？\n删除后将不能恢复!:}')) location.href='trip_player.php?mod=homepage&action=del&worksid={:$works[i].works_id:}&id={:$account.customers_id:}&pp={:$pp:}'">{:db_to_html text=删除:}</button></a></p>
+                                {:/if:}
+                                {:else:}
+                                <p class="votes"  id="votes_{:$works[i].works_id:}"><label>{:db_to_html text=票数:}：</label>{:$works[i].works_votes:}</p>
+                                <p></p>
+                                {:/if:}
+                            </div>
+                        </li>
+                     {:/section:}  
+                     {:else:}
+                     <li>您还没有发布作品！</li>
+                     {:/if:} 
+                        
+                    </ul>
+                    
+                    <div class="page _search_option_other after__search_load">					
+                 {:$pages:}
+                  </div>
+            
+                </div>
+            </div>
+        </div>
+    </div>
+        
+</div>
+<div class="popup" id="PopupLoading">
+<table width="100%" cellpadding="0" cellspacing="0" border="0" class="popupTable">
+<tr><td class="topLeft"></td><td class="side"></td><td class="topRight"></td></tr><tr><td class="side"></td><td class="con">
+ 
+  <div class="popupCon" id="PopupLoadingCon" style="width:400px;">
+    <div class="success">
+        <div class="promptImg"><img src="image/ajax-loading.gif"  style="20px 0 0 20px" ></div>
+        <div class="prompt">{:db_to_html text=投票中...:}</div>
+        <div class="btnCenter"><a class="" href="javascript:;" id="PopupLoadingClose"></a></div>
+    </div>
+</div>
+</td><td class="side"></td></tr><tr><td class="botLeft"></td><td class="side"></td><td class="botRight"></td></tr>
+</table>
+</div>
+
+<div class="popup" id="PopupDel">
+<table width="100%" cellpadding="0" cellspacing="0" border="0" class="popupTable">
+<tr><td class="topLeft"></td><td class="side"></td><td class="topRight"></td></tr><tr><td class="side"></td><td class="con">
+ 
+  <div class="popupCon" id="PopupDelCon" style="width:400px;">
+    <div class="Success">
+        <div style="float:left; margin:15px 0 0 20px;"><img src="image/success.jpg" /></div>
+        <div style=" margin-left:100px; padding:30px 0; line-height:24px;">{:db_to_html text=真的要删除该作品？删除后将不能恢复:}！<br /></div>
+        <div class="btnCenter"><a class="btn btnGrey" href="javascript:;" id="PopupDelClose"><button type="submit">{:db_to_html text=删除:}</button></a>&nbsp;&nbsp;&nbsp;<a class="btn btnGrey" href="javascript:;" id="PopupDelClose"><button type="submit">{:db_to_html text=关闭:}</button></a></div>
+    </div>
+  
+    
+  </div>
+  
+</td><td class="side"></td></tr><tr><td class="botLeft"></td><td class="side"></td><td class="botRight"></td></tr>
+</table>
+</div>
+ 
+ 
+<div class="popup" id="PopupSuccess">
+<table width="100%" cellpadding="0" cellspacing="0" border="0" class="popupTable">
+<tr><td class="topLeft"></td><td class="side"></td><td class="topRight"></td></tr><tr><td class="side"></td><td class="con">
+ 
+  <div class="popupCon" id="PopupSuccessCon" style="width:400px;">
+    <div class="success">
+        <div class="promptImg"><img src="image/success.jpg" /></div>
+        <div class="prompt">{:db_to_html text=投票成功！:}</div>
+        <div class="btnCenter"><a class="btn btnGrey" href="javascript:;" id="PopupSuccessClose"><button type="submit">{:db_to_html text=关闭:}</button></a></div>
+    </div>    
+  </div>
+  
+</td><td class="side"></td></tr><tr><td class="botLeft"></td><td class="side"></td><td class="botRight"></td></tr>
+</table>
+</div>
+ <div class="popup" id="PopupError">
+<table width="100%" cellpadding="0" cellspacing="0" border="0" class="popupTable">
+<tr><td class="topLeft"></td><td class="side"></td><td class="topRight"></td></tr><tr><td class="side"></td><td class="con">
+ 
+  <div class="popupCon" id="PopupErrorCon" style="width:400px;">
+    <div class="success">
+        <div class="promptImg"><img src="image/popup_alert.jpg" /></div>
+        <div class="prompt">{:db_to_html text=投票失败！:}<br />{:db_to_html text=您今天已经超过投票限制。:}</div>
+        <div class="btnCenter"><a class="btn btnGrey" href="javascript:;" id="PopupErrorClose"><button type="submit">{:db_to_html text=关闭:}</button></a></div>
+    </div>
+  
+    
+  </div>
+  
+</td><td class="side"></td></tr><tr><td class="botLeft"></td><td class="side"></td><td class="botRight"></td></tr>
+</table>
+</div>
+ <!-- bshare 相关js -->
+<script language="javascript" type="text/javascript" src="http://www.bshare.cn/button.js#uuid=97319&amp;style=-1"></script>
+<script language="javascript" type="text/javascript" src="http://www.bshare.cn/bshareC1.js"></script> 
+
+<script type="text/javascript"> 
+
+
+function showDelete(id){
+    new Popup('PopupDel','PopupDelCon','PopupDelClose');
+    if (id > 0){
+        window.location.href='trip_player.php?mod=homepage&action=del&id='+id;
+    }
+}
+
+
+</script>
+<script type="text/javascript">
+jQuery(function(){
+if(typeof(bShare)!='undefined'){
+bShare.addEntry({
+title: "{:db_to_html text=#走四方旅游体验师大赛#:}",
+ summary:"{:db_to_html text=正在火热举行中，@走四方网:} {:db_to_html text=微博即可参与，IPAD2大奖等你拿，更有机会免费畅游美国，:}"
+})
+}
+});
+</script>
+</body>
+</html>

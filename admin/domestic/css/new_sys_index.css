@@ -1,0 +1,212 @@
+/*index*/
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+body{ 
+	background:#EBEFF2;
+	font-size: 12px; /* font-size: 0.625em;  */
+	font-family: 宋体, Tahoma, Arial, Verdana, Helvetica, sans-serif,;
+	color:#000;
+	}
+table {
+	border-collapse: collapse;
+}
+a {
+	color: #000;
+	text-decoration: none;
+}
+a:hover {
+	color: #000;
+	text-decoration: underline;
+}
+em {
+	font-style: normal;
+}
+ins {
+	text-decoration: none;
+}
+img {
+	border: 0;
+}
+.clear{ clear:both;}
+.clearfloat {clear:both;height:0;font-size: 1px;line-height: 0px;}
+/*index*/
+.main{  margin:0 auto; padding:20px 8px; background:#fff; }
+.textAll{ width:155px; height:22px; line-height:22px; border:1px solid #ccc; color:#000; padding-left:5px; font-size:12px;}
+.DdTextarea{ width:750px; height:82px; line-height:22px; border:1px solid #ccc; color:#000; padding-left:5px; font-size:12px;}
+.ItemsTj{ padding-bottom:20px;}
+.ItemsH1{ font-size:16px;
+		  font-weight:bold;
+		  background:url(../image/icons/Sotf.gif) no-repeat;
+		  background-position:80px 4px;
+		  padding-bottom:5px;
+		  display:block;
+		  cursor:pointer;
+		  width:110px;		  
+		  }
+.ItemsH1Select{ font-size:16px; 
+				  font-weight:bold;
+				  background:url(../image/icons/Sot.gif) no-repeat;
+				  background-position:80px 4px;
+				  padding-bottom:5px;
+				  display:block;
+				  cursor:pointer;		  
+				  }      
+.ItemsTjContent{ padding:20px 0 20px 0; width:1100px;}
+.ItemsTjContent table{ width:100%;}
+.ItemsTjContent table td{ padding:5px 0; color:#888;}
+.ItemsLb{ width:100%;}
+.ItemsLbContent{ padding:20px 0 20px 0; min-width:1000px; *min-width:990px; *width:expression(this.offsetParent.clientWidth*0.95 <990? "990px ": "95% "); width:expression(this.offsetParent.clientWidth*1 <1000? "1000px ": "100% ");}
+.TellOther{ font-size:14px; font-weight:normal; color:#00388A;}
+.TellOther:hover{  color:#000; text-decoration:underline;}
+/*tab*/
+.TabPanel_myjb {
+	width: 100%; /* IE Hack to force proper layout when preceded by a paragraph. (hasLayout Bug)*/
+}
+.TabPanelGroup_myjb {
+	margin: 0px;
+	padding: 2px 0 0 40px;
+	height:30px;
+	
+	/*background: url(jc-jindian-bg1.gif) repeat-x;*/
+	/*width:100%;*/
+	border-bottom:#CDEAFC solid 1px;
+}
+.TabPanelGroup_myjb i{ float:right; font-style:normal; display:block; padding:6px 5px 0px 0px; }
+.Tab_1_myjb {
+	position: relative;
+	float: left;
+	padding: 0 0 0 17px;
+	height:30px;
+
+	font-size: 12px;
+	color:#000;
+	list-style: none;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	cursor: pointer;
+	background:url(../image/all_tab_h1.jpg) no-repeat left top;
+	margin-right:2px
+}
+.Tab_1_myjb span{ height:20px;
+padding-top:10px;
+float:left;
+display:block;
+padding-right:17px; background:url(../image/all_tab_h22.jpg) no-repeat right top; font-size:14px;}
+.TabbedPanelsTabHover_myjb {
+	background-color: #93CFF5;
+}
+.TabbedPanelsTabSelected_myjb {
+    background:url(../image/4_tab_h1.gif) no-repeat left top;
+	border-bottom-style: none;
+	font-weight:bold;
+	color:#353535;
+	font-size:14px;
+	height:32px;
+	
+}
+.TabbedPanelsTabSelected_myjb span
+{ background:url(../image/4_tab_h22.gif) no-repeat right top;
+height:22px;_padding-top:8px;
+padding-top:10px;
+float:left;
+display:block;
+padding-right:17px; font-size:14px;}
+
+.Tab_1_myjb a {
+    text-align:center;
+	color: #223D6A;
+	text-decoration: none;
+}
+
+.Tab_Content11_myjb {  padding:0px; width:100%; padding-top:20px;}
+
+.TabbedPanelsContentVisible_myjb {
+}
+
+.VTabbedPanels_myjb {
+	width: 25%;
+	height: 28px;
+	background-color: #FFF;
+	position: relative;
+}
+
+.VTabbedPanels_myjb .Tab_1_myjb {
+	float: none;
+	margin: 0px;
+	border: 0px;
+}
+
+.VTabbedPanels_myjb .TabbedPanelsTabSelected_myjb {
+	background-color: #fff;
+	border-bottom: solid 1px #999;
+}
+
+.VTabbedPanels_myjb .Tab_Content_myjb {
+	clear: none;
+	width: 100%;
+}
+/*tab结束*/
+.DdZt{ float:left; padding-bottom:20px;}
+.DdZt li{ float:left; margin-right:25px; }
+.Dd{ color:#0078FF; font-size:12px;}
+.Dd:hover{ color:#0078FF; font-size:12px;text-decoration:underline;}
+.DdSelect{color:#0078FF;
+            font-size:14px;
+			font-weight:bold;
+			text-decoration:none}
+.DdTab{ float:left; width:100%; border:1px solid #CEE3FA;}
+.DdTab th{ background:url(../image/th_bg.jpg) repeat-x; color:#1D4D79; font-size:14px; height:31px; line-height:31px; text-align:left; padding-left:10px;}		
+.DdTab td{ padding:0; text-align:left; height:31px; line-height:31px; padding-left:15px;}
+.DdXc{ color:#035db1; text-decoration:none;}
+.DdXc:hover{ color:#035db1; text-decoration:underline;}
+.DdTab .MainTabHui { background:#F5F5F5;}
+.Tabselect{ background:url(../image/tabhover_bg.jpg) repeat-x;}
+.TabselectBg{ background:#F9FEF2; border-bottom:1px solid #787878; }
+.DdXxContent{padding:10px 10px 10px 0;}
+.DdXxContent .DdTabXx{  width:100%; margin-bottom:20px;}
+.DdXxContent .DdTabXx .DdTabXxTab{ min-width:975px; *min-width:965px; *width:expression(this.offsetParent.clientWidth*1 <965? "965px ": "100% "); width:expression(this.offsetParent.clientWidth*1 <975? "975px ": "100% "); }
+.DdXxContent .DdTabXx td{ padding-left:0; }
+.DdXxContent .DdTabXx .ColHui{ color:#888; vertical-align:top}
+.DdXxContent .DdTabXx .DdTabXxCaozuo{border:solid #D8DDD2; border-width:1px 1px 0 1px; background:#fff; margin:10px 0;}
+.DdXxContent .DdTabXx .DdTabXxCaozuo th{ background:#DFEDCC; color:#335504; font-size:12px; font-weight:normal; padding:0px 10px; height:22px; line-height:22px; }
+.DdXxContent .DdTabXx .DdTabXxCaozuo td{border:solid #D8DDD2; border-width:0 0 1px 0;  padding:0px 10px; height:22px; line-height:22px; }
+.DdXxContent .DdTabXx .TabFg{ border-bottom:1px dashed #888; line-height:20px; height:20px;}
+.Radiozf{ margin-left:15px; margin-right:5px;}
+.checkDd{ margin-left:10px; margin-right:5px;}
+.ItemsTjContent .ButtonAligh{ text-align:center; padding:30px 0;}
+.DdTabXx .ButtonAligh{ text-align:center;}
+.DdTabXx .ButtonAligh .Allbutton{ margin-right:30px;}
+
+.Xiangxi{ background:url(../image/CkXx.jpg) no-repeat;
+          font-size:12px; color:#0078FF;
+		  background-position:10px 8px;
+		  display:block;
+		  cursor:pointer; padding-left:27px; }
+.Xiangxi:hover{color:#0078FF;}
+.XiangxiSelect{ background:url(../image/CkXx_select.jpg) no-repeat;
+          font-size:12px; color:#0078FF;
+		  background-position:0px 1px;
+		  display:block;
+		  cursor:pointer; padding-left:27px; }
+.XiangxiSelect:hover{color:#0078FF;}
+.DdShoukuan{ float:left; width:100%; min-width:1000px; *min-width:990px; *width:expression(this.offsetParent.clientWidth*1 <990? "990px ": "100% ");   border: solid #D8DDD2; border-width:1px 1px 0 1px; margin-top:50px;}
+.DdShoukuan th{ background:#D7F0FA; color:#622C00; font-weight:normal; line-height:24px; height:24px; text-align:left; padding-left:15px;}
+.DdShoukuan td{padding-left:15px; line-height:24px; border: solid #D8DDD2; border-width:0 0 1px 0;}
+.DdShoukuan .fLeft{ text-align:right;}
+.DdShoukuan .fCenter{ text-align:center;}
+.Colbold{ font-weight:bold;}
+.ColOrange{ color:#F37800; font-weight:bold; }
+.selectText{width:163px; height:24px; *height:24px; _height:24px; line-height:24px; padding:3px 3px; border:1px solid #ccc; color:#000; font-size:12px;}
+.textTime{width:85px; height:22px; line-height:22px; border:1px solid #ccc; color:#000; padding-left:5px; font-size:12px; margin-right:2px; margin-left:2px; background:url(../image/icons/Calendar.gif) no-repeat; background-position:72px 3px;}
+.Allbutton{ border:1px solid #406083; background: #406083 url(../image/buttonblue.jpg) repeat-x top left; padding-left:25px; padding-right:25px; color:#fff; line-height:25px; height:27px; cursor:pointer; overflow:visible; *border:1px solid #fff;  *line-height:29px; *height:29px; _line-height:24px; _height:27px; }
+.Allbutton:hover{ background:#F48A00 url(../image/buttonorange.jpg) repeat-x; padding-left:25px; padding-right:25px; border:1px solid #F48A00; color:#fff; line-height:25px; height:27px; cursor:pointer; overflow:visible; *border:1px solid #fff;  *line-height:29px; *height:29px; _line-height:24px; _height:27px; }
+.AllbuttonHui{ background:#c7c7c7 url(../image/buttonhui.jpg) repeat-x; padding-left:25px; padding-right:25px; border:1px solid #c7c7c7; color:#000; line-height:25px; height:27px; cursor:pointer;  overflow:visible; *border:1px solid #fff;  *line-height:29px; *height:29px; _line-height:24px; _height:27px;}
+.AllbuttonHui:hover{ background:#F48A00 url(../image/buttonorange.jpg) repeat-x; padding-left:25px; padding-right:25px; border:1px solid #F48A00; color:#fff; line-height:25px; height:27px; cursor:pointer; overflow:visible; *border:1px solid #fff;  *line-height:29px; *height:29px; _line-height:24px; _height:27px; }
+.ButtonAlighright{ text-align:right; padding-top:20px; padding-bottom:20px;}
+.Ddbutton{   min-width:1000px; *min-width:990px; *width:expression(this.offsetParent.clientWidth*1 <990? "990px ": "100% ");  }
+.TdGd{ width:62px;}
+.TdCt{ width:100px;}
+.IndexWidth{ min-width:1130px;*min-width:1130px; *width:expression(this.offsetParent.clientWidth*1 <1130? "1130px ": "100% "); }

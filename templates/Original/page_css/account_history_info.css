@@ -1,0 +1,18 @@
+@charset "gb2312";
+/* CSS Document */
+
+.title_name { font-size:14px; font-weight:bold;}
+.text_time{ border:#ddd solid 1px; background:url(/image/icons/Calendar.gif) no-repeat right center ;  width:129px; height:17px; padding-top:3px; padding-left:5px; padding-right:15px; background-color:#FFF; cursor:pointer;}
+i { font-size:12px; font-style:normal;}
+button {padding:10px; font-size:14px; font-weight:bold; background-color:#F90; }
+.fl{float:left;width:520px;}
+.fl .ui-msg-title{display:block;line-height:20px;font-weight:700;}
+.fl #message_txt{width:515px;height:70px;margin:5px auto;border:1px solid #ccc;resize:none;padding:5px;overflow-y:hidden;}
+.fl .ui-msg-btn{width:90px;height:26px;line-height:26px;border:none;border-radius:3px;background:#7abcff;float:right;cursor:pointer;}
+
+.ui-fcc{padding:15px 10px;}
+.ui-fcc input#gv_redeem_code,.ui-fcc input#customer_shopping_points_spending,.ui-guestIpt{height:20px;line-height:20px;padding:2px;border:1px solid #DDD;}
+.ui-fcc input#gv_redeem_code:focus,.ui-fcc input#customer_shopping_points_spending:focus,.ui-guestIpt:focus{border-color:#5E9EDE;box-shadow:inset 0 1px 3px #999;}
+.ui-fcc input.fcc-sbtn,.ui-guestBtn{height:26px;line-height:26px;width:69px;text-align:center;padding-bottom:2px;overflow:hidden;background:url(/image/fcc-sbtn-bg.gif) no-repeat;border:0 none;colorcolor:#233B67;cursor:pointer;}
+.ui-fcc p{padding:3px 0;vertical-align:middle;}
+#ui-invitation-btn{width:105px;margin-left:5px;}

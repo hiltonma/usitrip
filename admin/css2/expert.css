@@ -1,0 +1,61 @@
+@charset "utf-8";
+/*  
+ * @usitrip.com 
+ * @expert  
+ * @Build By Rocky
+ * @Version 2011-03-09   
+ * -------------------------------------------------- */
+
+/* index */
+.nav{ padding:10px 0 15px 10px; overflow:hidden;}
+.nav li{ display:inline-block; *display:inline; zoom:1; margin-right:25px; color:#0078FF; font-size:12px;}
+.nav li a{ display:block; padding:2px 5px; color:#327EF6;}
+.nav li.selected a { background:#556aae; color:#fff; font-size:14px; font-weight:bold; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px;}
+
+.expertTable{ width:100%; border:1px solid #CEE3FA;}
+.expertTable th{ background:url(../images/th_bg.jpg) repeat-x; color:#1D4D79; font-size:14px; height:31px; line-height:31px; text-align:left; padding-left:15px;}
+		
+.expertTable td{ padding:0; text-align:left; height:31px; line-height:31px; padding-left:15px;}
+.expertTable td.pass{ color:#319114;}
+
+
+.expertTable .trDetail{ display:none; background:#FAFDF2; }
+.expertTable .trDetail td{border-bottom:1px solid #787878;}
+.trEven{ background:#f5f5f5;}
+.trHover,.trOut{ background:url(../images/tabhover_bg.jpg); cursor:pointer;}
+.trClick{ background:url(../images/tabhover_bg.jpg);}
+.expertTable .showMore{ width:62px; font-size:12px; color:#0078FF; display:block; cursor:pointer; padding-left:27px; }
+.trClick .showMore{ background:url(../images/CkXx_select.jpg) no-repeat; background-position:0px 1px;}
+
+
+/* ;רҲ */
+.expertInfo{ width:1100px; padding:10px 0; line-height:24px;}
+.expertInfo h2{ font-size:14px;}
+.expertInfo label{ color:#777;}
+.expertInfo .baseInfo{ margin-left:20px; padding-bottom:10px;}
+.expertInfo .baseInfo li{ display:inline-block; *display:inline; zoom:1; width:200px; }
+.expertInfo .baseInfo li .textAll{ width:130px;}
+.expertInfo li input{ vertical-align:middle;}
+
+.expertInfo .detail{ margin-left:20px;}
+.expertInfo .detail li{ width:100%; padding:5px 0; line-height:24px; overflow:hidden;}
+.expertInfo .detail label{ float:left; width:60px;}
+.expertInfo .detail span{ margin-left:15px; color:#777;}
+.expertInfo .detail .options{  margin-left:60px;}
+.expertInfo .detail .options span{ float:left; width:130px; margin:0; color:#111; }
+.expertInfo .detail .options input{ float:left; width:13px; height:13px; margin:5px 3px 0 0; }
+
+.expertInfo .detail .textarea{ width:866px; height:150px;}
+
+
+.expertInfo .btnCenter{ padding:10px 0 20px;}
+
+
+
+.expertTable .basicTable{ width:900px; margin:0 0 10px 20px; }
+.expertTable .basicTable td{ height:24px; padding:0 20px 0 0; border:0; line-height:24px;}
+
+
+.expertTable .route{ width:1000px; margin:10px 0 0 20px; border:solid #D8DDD2; border-width:1px 1px 0 1px; background:#fff; }
+.expertTable .route th{ background:#DFEDCC; color:#335504; font-size:12px; font-weight:normal; padding:0px 10px; height:24px; line-height:24px; }
+.expertTable .route td{ border:solid #D8DDD2; border-width:0 0 1px 0;  padding:5px 10px; height:22px; line-height:22px; }

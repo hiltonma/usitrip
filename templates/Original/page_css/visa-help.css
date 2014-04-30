@@ -1,0 +1,23 @@
+@charset "gb2312";
+/* CSS Document */
+*{margin:0; padding:0; outline: 0;}
+ol, ul { list-style: none;}
+:focus {outline: 0;}
+img{border:0;}
+body{font-size:12px; font-family:Î¢ÈíÑÅºÚ,Tahoma,Arial,Verdana,Helvetica,sans-serif; color:#353535; background:url(/image/head/body_bg.jpg) repeat-x top left #98CCF1;}
+table{border-collapse: collapse;}
+a{color: #00388A; text-decoration: none;}
+a:hover {color:#000; text-decoration: underline;}
+h1, h2, h3, h4, h5, h6 {font-size: 12px;}
+.contentLandingpage{ width:950px; margin:0 auto;  background:#ffffff; padding-top:2px; background:url(/imgs/style1_bg.jpg) repeat-y top left; padding-bottom:10px; font-family:Arial, Helvetica, sans-serif; font-family:Î¢ÈíÑÅºÚ,Tahoma,Arial,Verdana,Helvetica,sans-serif; margin-left:-10px;}
+.dhan_banner{ width:950px; float:left; height:180px;}
+.pgContent{ width:950px; background:url(/imgs/style2_06.jpg) repeat-x top left; background-color:#FFFFFF; float:left; padding-bottom:25px;}
+.pgContentLeft{ width:174px; height:456px; margin-left:86px; float:left;  background:url(/imgs/style1_03.jpg) repeat-x top left; padding-top:28px;}
+.pgContentRight{ width:689px; float:left; background:url(/imgs/style1_09.jpg) no-repeat top left;}
+.pgContentJs{ width:494px; margin-top:279px; float:left;margin-left:20px;}
+.pgContentJs2{ width:494px; margin-top:10px; float:left; border-top:1px solid #8ea891; padding-top:10px; margin-left:20px;}
+.pgContentJsPic{  width:112px; height:119px; float:left;margin-left:10px;}
+.pgContentJsTxt{ width:330px; float:left; margin:10px;}
+.pgContentLittlevan{ text-align:right; margin-top:6px; float:left; width:150px; padding-right:25px; height:55px;}
+.pgContentLittlevan a{ font-size:18px; color:#625705;}
+.pgContentLittlevan a:hover{color:#0592ab;}

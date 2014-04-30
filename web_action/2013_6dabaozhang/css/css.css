@@ -1,0 +1,74 @@
+@charset "utf-8";
+/* 专题样式 */
+
+
+
+#main { width:100%; background-color:#f2e9cb;margin:0 auto; color:#5d5d5e;}
+.banner{width:100%; height:443px; background:url(../images/banner.jpg) no-repeat center;}
+
+
+/*01*/
+.conter{width:978px; margin:0 auto; background:#FFFFFF; border:#dbcd9d 1px solid;display:table;}
+.conter .title{width:443px; height:53px; float:left; margin:15px 0 0 0;}
+
+.conter .box{width:978px; height:109px; margin:14px 0 0 auto;float:left;}
+.conter .box .img1{width:266px; height:109px; margin:0 0 0 30px; _margin-left:15px; float:left;}
+.conter .box .right{width:629px; height:109px; background:#e5f6fa; margin-left:19px;float:left;}
+.conter .box .right .imgg{width:600px; height:39px; margin-left:19px;_margin-left:10px;float:left; border-bottom:1px solid #b9dfea; }
+.conter .box .right .txt{width:600px;margin-left:19px;line-height:21px; _margin-left:10px;text-align:left; float:left; }
+.conter .box .right .txt a{color:#FF0000;}
+
+.conter .box1{width:978px; height:159px; margin:14px 0 0 auto;float:left;}
+.conter .box1 .img11{width:266px; height:159px; margin:0 0 0 30px; _margin-left:15px;float:left;}
+.conter .box1 .right1{width:629px; height:159px; background:#e5f6fa; margin-left:19px;float:left;}
+.conter .box1 .right1 .imgg1{width:600px; height:39px; margin-left:19px;_margin-left:10px;float:left; border-bottom:1px solid #b9dfea;}
+.conter .box1 .right1 .txt1{width:600px; height:120px; margin-left:19px;line-height:21px;_margin-left:10px; text-align:left; float:left;}
+.conter .box1 .right1 .txt1 a{color:#FF0000;}
+
+.conter .box2{width:978px; height:163px; margin:14px 0 0 auto;float:left;}
+.conter .box2 .img12{width:266px; height:159px; margin:0 0 0 30px; _margin-left:15px;float:left;}
+.conter .box2 .right2{width:629px; height:159px; background:#e5f6fa; margin-left:19px;float:left;}
+.conter .box2 .right2 .imgg2{width:600px; height:39px; margin-left:19px;_margin-left:10px;float:left; border-bottom:1px solid #b9dfea;}
+.conter .box2 .right2 .txt2{width:600px; height:120px; margin-left:19px;line-height:21px;_margin-left:10px; text-align:left; float:left;}
+.conter .box2 .right2 .txt2 span{color:#de8300; font-size:14px; font-weight:bold;}
+.conter .box2 .right2 .goulu{width:412px; height:71px; margin-left:30px;float:left;}
+
+
+
+
+/*02*/
+.conter .c2box{width:978px; height:192px; margin:14px 0 0 auto;float:left; }
+.conter .c2box .boxbg{width:902px; height:185px; border:#d6f2ea 1px solid; background:#f8fffd;margin:0 0 0 30px; _margin-left:15px;float:left; }
+.conter .c2box .boxbg .txtleft{ width:500px;line-height:25px; color:#1c799c; float:left; color:#1c799c;margin:40px 0 0 20px; _margin-left:10px; float:left;}
+.conter .c2box .boxbg img{width:363px; height:185px; float:right;}
+.conter .c2box .boxbg span{color:#FF0000; font-size:16px; font-weight:bold;}
+.conter .c2box .boxbg span a{color:#FF0000; font-size:16px; font-weight:bold;}
+.conter .c2box .boxbg .h11{width:276px; height:31px; background:url(../images/yajin.jpg) no-repeat;}
+
+
+/*03*/
+.conter .c3box{width:978px; height:165px; margin:14px 0 0 auto;float:left; }
+.conter .c3box .left_1{width:469px; height:165px; background: url(../images/pingpai_56.jpg) no-repeat; margin:10px 0 0 30px; _margin-left:15px; float:left;}
+.conter .c3box .left_1 .txt3{width:380px;  margin:35px 0 0 65px; line-height:25px; text-align:left; }
+.conter .c3box .right_1{width:385px; height:165px; margin:5px 0 0 20px; float:left;}
+
+.conter .c3box1{width:978px; height:165px; margin:14px 0 0 auto;float:left; }
+.conter .c3box1 .left_2{width:473px; height:250px; background: url(../images/pingpai_60.jpg) no-repeat; margin:10px 0 0 30px; _margin-left:15px; float:left;}
+.conter .c3box1 .left_2 .txt4{width:380px; margin:35px 0 0 65px; line-height:25px; text-align:left; }
+.conter .c3box1 .left_2 .txt4 span{color:#FF0000; font-size:16px; font-weight:bold;}
+.conter .c3box1 .left_2 .txt4 a{color:#FF0000; font-size:16px; font-weight:bold;}
+.conter .c3box1 .right_2{width:264px; height:90px; margin:30px 0 0 60px; float:left;}
+
+
+/*04*/
+.conter .c4box{width:859px; margin:14px 0 0 30px;float:left; line-height:30px; }
+.conter .c4box span{font-size:16px; color:#FF0000; font-weight:bold;}
+
+
+/*05*/
+.conter .c5box{width:834px; margin:14px 0 0 60px; _margin-left:30px;float:left;  }
+
+/*06*/
+.conter .c5box{width:844px; margin:14px 0 0 60px; _margin-left:30px;float:left; padding:0 0 20px 0;  }
+
+
